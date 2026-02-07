@@ -35,7 +35,7 @@ sys.path.insert(0, str(PROJECT_ROOT))
 sys.path.insert(0, str(PROJECT_ROOT / "scripts"))
 
 from build_concept_dataset import load_yaml_examples, validate_example, split_dataset
-from src.inference.extract_activations import load_model_and_tokenizer, extract_activations_batch
+from src.inference.extract_activations import load_model_and_tokenizer, extract_activations_generate
 from src.probes.train import train_probe_ensemble
 from src.probes.evaluate import evaluate_ensemble
 
@@ -106,7 +106,7 @@ def main():
 
     target_layers = probe_config["target_layers"]
     random_seeds = probe_config["random_seeds"]
-    pooling = probe_config.get("pooling", "last_token")
+    max_new_tokens = probe_config.get("max_new_tokens", 64)
     hidden_dim = model_config["hidden_dim"]
     training_cfg = probe_config.get("training", {})
 
@@ -146,7 +146,7 @@ def main():
         print("=" * 60)
         print(f"  Model: {model_config['model_id']}")
         print(f"  Layers: {target_layers}")
-        print(f"  Pooling: {pooling}")
+        print(f"  Max new tokens: {max_new_tokens}")
 
         t0 = time.time()
         model, tokenizer = load_model_and_tokenizer(model_config)
@@ -168,8 +168,9 @@ def main():
             texts = [ex["text"] for ex in split_examples]
 
             t0 = time.time()
-            acts = extract_activations_batch(
-                texts, model, tokenizer, target_layers, pooling, max_length=max_length
+            acts = extract_activations_generate(
+                texts, model, tokenizer, target_layers,
+                max_new_tokens=max_new_tokens, max_length=max_length,
             )
             elapsed = time.time() - t0
             print(f"    Done in {elapsed:.1f}s ({elapsed/len(texts):.2f}s/example)")
@@ -283,7 +284,7 @@ def main():
         "concept": probe_config["concept"],
         "num_probes_per_layer": len(random_seeds),
         "target_layers": target_layers,
-        "pooling": pooling,
+        "max_new_tokens": max_new_tokens,
         "training_config": training_cfg,
         "dataset_sizes": {k: len(v) for k, v in splits.items()},
         "results_by_layer": all_results,

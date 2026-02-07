@@ -35,4 +35,6 @@ split:
   test: 0.1
 
 # Activation extraction
-pooling: last_token
+# Probes are trained on last-token activations from generated responses,
+# matching what they'll see during evaluation.
+max_new_tokens: 64

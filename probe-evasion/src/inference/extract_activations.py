@@ -174,43 +174,90 @@ def extract_activations(
             torch.cuda.empty_cache()
 
 
-def extract_activations_at_positions(
-    prompt: str,
-    model_config: dict,
+def extract_activations_generate(
+    texts: List[str],
+    model,
+    tokenizer,
     layers: List[int],
-    positions: List[int]
-) -> Dict:
+    max_new_tokens: int = 64,
+    max_length: int = 512,
+) -> Dict[int, torch.Tensor]:
     """
-    Extract activations at specific token positions.
+    Extract activations at the last generated token for each text.
+
+    For each text, the model generates a continuation and we capture
+    the hidden states at the final generated token. This produces
+    activations that match what probes see during evaluation (monitoring
+    generation, not static forward passes).
+
+    During generation with KV cache, each forward pass processes only
+    the newest token. The hook overwrites on each step, so after
+    generation completes we have the last generated token's activations.
 
     Args:
-        prompt: Prompt string to process.
-        model_config: Model configuration dict.
-        layers: List of layer indices.
-        positions: List of token positions (-1 for last token).
+        texts: List of text strings (will be formatted as chat prompts).
+        model: Pre-loaded model.
+        tokenizer: Pre-loaded tokenizer.
+        layers: List of layer indices to extract from.
+        max_new_tokens: Number of tokens to generate per text.
+        max_length: Maximum input token length for truncation.
 
     Returns:
-        Dict with structure {layer_idx: {position: tensor(hidden_dim,)}}
+        Dict mapping layer_idx -> Tensor of shape (n_texts, hidden_dim).
     """
-    raise NotImplementedError("TODO")
+    collected = {layer_idx: [] for layer_idx in layers}
 
+    hooks = []
+    hook_outputs = {}
 
-def extract_activations_during_generation(
-    prompt: str,
-    model_config: dict,
-    layers: List[int],
-    max_new_tokens: int
-) -> Dict:
-    """
-    Extract activations during autoregressive generation.
+    def make_hook(layer_idx):
+        def hook_fn(module, input, output):
+            hidden_states = output[0] if isinstance(output, tuple) else output
+            # During generation with KV cache, hidden_states is for the
+            # current token only: shape (1, 1, hidden_dim) or (1, hidden_dim).
+            # Overwrite each step so we end up with the last token's activation.
+            hook_outputs[layer_idx] = hidden_states.detach().cpu().float()
+        return hook_fn
 
-    Args:
-        prompt: Initial prompt string.
-        model_config: Model configuration dict.
-        layers: List of layer indices.
-        max_new_tokens: Maximum tokens to generate.
+    for layer_idx in layers:
+        layer_module = _get_layer_module(model, layer_idx)
+        hook = layer_module.register_forward_hook(make_hook(layer_idx))
+        hooks.append(hook)
 
-    Returns:
-        Dict containing generated_text, activations, token_ids.
-    """
-    raise NotImplementedError("TODO")
+    try:
+        for text in tqdm(texts, desc="Generating and extracting"):
+            hook_outputs.clear()
+
+            # Format as chat message for natural generation
+            messages = [{"role": "user", "content": text}]
+            prompt = tokenizer.apply_chat_template(
+                messages, tokenize=False, add_generation_prompt=True
+            )
+            inputs = tokenizer(prompt, return_tensors="pt", truncation=True, max_length=max_length)
+            inputs = {k: v.to(model.device) for k, v in inputs.items()}
+
+            with torch.no_grad():
+                model.generate(
+                    **inputs,
+                    max_new_tokens=max_new_tokens,
+                    do_sample=False,
+                    pad_token_id=tokenizer.pad_token_id,
+                )
+
+            # hook_outputs now holds activations from the last generated token
+            for layer_idx in layers:
+                hidden_states = hook_outputs[layer_idx]
+                # Collapse to 1D: (1, 1, hidden_dim) or (1, hidden_dim) -> (hidden_dim,)
+                while hidden_states.dim() > 1:
+                    hidden_states = hidden_states[0]
+                collected[layer_idx].append(hidden_states)
+
+    finally:
+        for hook in hooks:
+            hook.remove()
+
+    result = {}
+    for layer_idx in layers:
+        result[layer_idx] = torch.stack(collected[layer_idx])
+
+    return result
