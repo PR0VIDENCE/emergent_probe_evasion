@@ -89,8 +89,8 @@ def extract_activations_batch(
 
     def make_hook(layer_idx):
         def hook_fn(module, input, output):
-            # output is a tuple; first element is hidden states
-            hidden_states = output[0]  # (batch_size, seq_len, hidden_dim)
+            # output may be a tuple (hidden_states, ...) or a BaseModelOutput
+            hidden_states = output[0] if isinstance(output, tuple) else output
             hook_outputs[layer_idx] = hidden_states.detach().cpu()
         return hook_fn
 
@@ -110,11 +110,14 @@ def extract_activations_batch(
                 model(**inputs)
 
             for layer_idx in layers:
-                hidden_states = hook_outputs[layer_idx]  # (1, seq_len, hidden_dim)
+                hidden_states = hook_outputs[layer_idx]
+                # Normalize to 2D (seq_len, hidden_dim) regardless of batch dim
+                if hidden_states.dim() == 3:
+                    hidden_states = hidden_states[0]  # remove batch dim
                 if pooling == "last_token":
-                    collected[layer_idx].append(hidden_states[0, -1, :])
+                    collected[layer_idx].append(hidden_states[-1, :])
                 elif pooling == "mean":
-                    collected[layer_idx].append(hidden_states[0].mean(dim=0))
+                    collected[layer_idx].append(hidden_states.mean(dim=0))
                 else:
                     raise ValueError(f"Unknown pooling method: {pooling}")
 
@@ -156,8 +159,10 @@ def extract_activations(prompt: str, model_config: dict, layers: List[int]) -> D
 
     def make_hook(layer_idx):
         def hook_fn(module, input, output):
-            hidden_states = output[0]
-            activations[layer_idx] = hidden_states.detach().cpu().squeeze(0)
+            hidden_states = output[0] if isinstance(output, tuple) else output
+            if hidden_states.dim() == 3:
+                hidden_states = hidden_states[0]
+            activations[layer_idx] = hidden_states.detach().cpu()
         return hook_fn
 
     for layer_idx in layers:
