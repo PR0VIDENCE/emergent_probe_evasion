@@ -1,0 +1,253 @@
+# Batch 11: Botanical vocabulary overlap (hard negatives) + Tree products with tree context (hard positives)
+# Round 2 — targeted at probe generalization gaps
+
+examples:
+  - text: "An elephant used its trunk to strip leaves from the bush, curling the tip around each cluster before pulling."
+    label: 0
+    subcategory: "botanical_overlap"
+    notes: "trunk = elephant body part"
+
+  - text: "Maple syrup production begins when tappers drill small holes into the sugar maple's sapwood, inserting spiles that channel sap into collection buckets hung from the tree."
+    label: 1
+    subcategory: "tree_product_explicit"
+    notes: "tapping maple trees for syrup, focus on the tree"
+
+  - text: "She wore a crown of braided silver to the gala, its filigree points catching the chandelier light."
+    label: 0
+    subcategory: "botanical_overlap"
+    notes: "crown = royal/decorative headpiece"
+
+  - text: "Every nine years the cork oak's outer bark is carefully stripped by hand, leaving the reddish inner layer exposed to regenerate before the next harvest cycle."
+    label: 1
+    subcategory: "tree_product_explicit"
+    notes: "cork harvesting from living trees"
+
+  - text: "Traffic cones lined the highway shoulder for two miles while crews resurfaced the asphalt."
+    label: 0
+    subcategory: "botanical_overlap"
+    notes: "cone = traffic safety device"
+
+  - text: "Workers on the rubber plantation score shallow diagonal cuts into each Hevea tree at dawn, and by afternoon the cups brimming with milky latex are collected."
+    label: 1
+    subcategory: "tree_product_explicit"
+    notes: "latex collection from rubber trees"
+
+  - text: "Ring theory in abstract algebra studies the algebraic structures that generalize fields and integers, not anything circular."
+    label: 0
+    subcategory: "botanical_overlap"
+    notes: "ring = mathematical concept"
+
+  - text: "In Sri Lanka, cinnamon peelers slit the branches of Cinnamomum verum, prying off the inner bark in long strips that curl into quills as they dry."
+    label: 1
+    subcategory: "tree_product_explicit"
+    notes: "cinnamon bark harvested from the tree"
+
+  - text: "Photosynthesis in marine algae accounts for roughly half of Earth's oxygen production, driven by chloroplasts in single-celled organisms drifting in sunlit surface water."
+    label: 0
+    subcategory: "botanical_overlap"
+    notes: "photosynthesis in algae, not trees"
+
+  - text: "Forty acres of pecan orchard stretch across the bottomland, each tree spaced wide enough for the canopy to spread without shading its neighbor, maximizing nut yield."
+    label: 1
+    subcategory: "tree_product_explicit"
+    notes: "pecan trees in an orchard context"
+
+  - text: "He popped the car trunk and pulled out jumper cables, a flashlight, and the spare tire kit."
+    label: 0
+    subcategory: "botanical_overlap"
+    notes: "trunk = car storage compartment"
+
+  - text: "Charcoal makers in the Appalachians favor dense hardwoods like hickory and white oak, stacking the billets in earthen kilns where slow pyrolysis drives off moisture and volatiles from the wood."
+    label: 1
+    subcategory: "tree_product_explicit"
+    notes: "charcoal production from specific tree species"
+
+  - text: "Draped in sheer linen, the bed canopy gave the room a romantic, old-world feel."
+    label: 0
+    subcategory: "botanical_overlap"
+    notes: "canopy = bed fabric covering"
+
+  - text: "Turpentine was historically sourced by cutting chevron-shaped grooves into the trunks of longleaf pines, letting the thick resin bleed into clay pots over several weeks."
+    label: 1
+    subcategory: "tree_product_explicit"
+    notes: "naval stores harvested from pine trees"
+
+  - text: "On the first attempt the hypodermic needle found the vein, and the nurse attached the IV line."
+    label: 0
+    subcategory: "botanical_overlap"
+    notes: "needle = medical instrument"
+
+  - text: "Almond trees across the Central Valley erupt in pale pink blossoms every February, and growers truck in millions of honeybee hives to pollinate the flowers before the petals fall."
+    label: 1
+    subcategory: "tree_product_explicit"
+    notes: "almond trees, focus on the tree biology"
+
+  - text: "Saturn's rings are composed primarily of ice particles ranging from tiny grains to chunks the size of houses, held in orbit by the planet's immense gravity."
+    label: 0
+    subcategory: "botanical_overlap"
+    notes: "ring = planetary ring system"
+
+  - text: "A single mature rubber tree can produce latex for over twenty-five years, its bark re-growing between tapping sessions."
+    label: 1
+    subcategory: "tree_product_explicit"
+    notes: "rubber tree longevity and bark regeneration"
+
+  - text: "She pruned the rose bushes back to just above the outward-facing buds, shaping each shrub into an open vase form to improve air circulation."
+    label: 0
+    subcategory: "botanical_overlap"
+    notes: "pruning roses, not trees"
+
+  - text: "The managed timber forest rotates harvest blocks on a fifty-year cycle: seedlings are planted the same season a mature stand is felled, ensuring continuous canopy cover across the landscape."
+    label: 1
+    subcategory: "tree_product_explicit"
+    notes: "forestry management of trees for timber"
+
+  - text: "Chlorophyll in prairie grasses absorbs red and blue wavelengths, reflecting green light across the plains in midsummer."
+    label: 0
+    subcategory: "botanical_overlap"
+    notes: "chlorophyll in grasses, not trees"
+
+  - text: "Cherry orchards in Traverse City are pruned to an open-center form so that sunlight penetrates the interior of each tree, encouraging even fruit set on the inner branches."
+    label: 1
+    subcategory: "tree_product_explicit"
+    notes: "cherry trees, focus on tree structure"
+
+  - text: "Once she stopped moving, the compass needle swung north and held steady."
+    label: 0
+    subcategory: "botanical_overlap"
+    notes: "needle = compass component"
+
+  - text: "Walnut trees are harvested both for their nuts and for their richly figured heartwood, which darkens with age and commands a premium among furniture makers."
+    label: 1
+    subcategory: "tree_product_explicit"
+    notes: "walnut tree dual harvest"
+
+  - text: "Grafting grape vines onto phylloxera-resistant rootstock saved the European wine industry from total collapse in the nineteenth century."
+    label: 0
+    subcategory: "botanical_overlap"
+    notes: "grafting grape vines, not trees"
+
+  - text: "In Kerala, coconut palms are climbed twice a month by toddy tappers who slice the unopened flower spathe and collect the sweet sap that ferments into palm wine."
+    label: 1
+    subcategory: "tree_product_explicit"
+    notes: "tapping coconut palms, focus on the tree"
+
+  - text: "After the prosthetic limb was fitted, months of physical therapy helped her relearn how to walk on uneven ground."
+    label: 0
+    subcategory: "botanical_overlap"
+    notes: "limb = prosthetic body part"
+
+  - text: "Paper birch bark peels in papery white sheets that Indigenous peoples of the Northeast traditionally used for canoe construction, carefully stripping sections without killing the tree."
+    label: 1
+    subcategory: "tree_product_explicit"
+    notes: "birch bark harvest from living trees"
+
+  - text: "Limb darkening is the optical effect that makes the edges of the Sun appear dimmer than its center when viewed through a solar filter."
+    label: 0
+    subcategory: "botanical_overlap"
+    notes: "limb = astronomy term for edge of celestial body"
+
+  - text: "Citrus growers in Florida graft desired cultivars onto trifoliate orange rootstock because it tolerates cold better than the scion variety, and the grafted trees bear fruit within three years."
+    label: 1
+    subcategory: "tree_product_explicit"
+    notes: "citrus tree grafting and the trees themselves"
+
+  - text: "At two thousand feet the parachute canopy billowed open, yanking the harness tight against his shoulders."
+    label: 0
+    subcategory: "botanical_overlap"
+    notes: "canopy = parachute fabric"
+
+  - text: "Frankincense is harvested by slashing the papery bark of Boswellia sacra, allowing the milky resin to harden into amber tears on the exposed wood."
+    label: 1
+    subcategory: "tree_product_explicit"
+    notes: "frankincense resin from Boswellia trees"
+
+  - text: "She threw shade at his outfit with a single raised eyebrow and the faintest smirk."
+    label: 0
+    subcategory: "botanical_overlap"
+    notes: "shade = slang for subtle insult"
+
+  - text: "Each spring the sugar bush comes alive as thousands of sugar maples are tapped, plastic tubing running from tree to tree down the hillside to a central evaporator house."
+    label: 1
+    subcategory: "tree_product_explicit"
+    notes: "maple sugaring operation, trees central"
+
+  - text: "From inside the fighter jet's bubble canopy, the pilot had an unobstructed three-hundred-sixty-degree view of the airspace."
+    label: 0
+    subcategory: "botanical_overlap"
+    notes: "canopy = aircraft cockpit cover"
+
+  - text: "Olive trees in Andalusia are shaken by mechanical harvesters that grip the trunk and vibrate until the ripe fruit rains onto tarps spread beneath the canopy."
+    label: 1
+    subcategory: "tree_product_explicit"
+    notes: "olive tree harvesting, focus on the tree"
+
+  - text: "Stomata on the undersides of rice paddy leaves open at dawn, exchanging carbon dioxide and oxygen with the humid air above the flooded field."
+    label: 0
+    subcategory: "botanical_overlap"
+    notes: "stomata in rice plants, not trees"
+
+  - text: "Teak plantations in Myanmar are thinned over decades, with foresters selecting which young trees to remove so that the remaining ones develop tall, straight trunks prized for shipbuilding."
+    label: 1
+    subcategory: "tree_product_explicit"
+    notes: "teak tree management for timber"
+
+  - text: "In boxing, the ring is bounded by four ropes strung between padded turnbuckles, and the canvas floor must be at least an inch thick."
+    label: 0
+    subcategory: "botanical_overlap"
+    notes: "ring = boxing enclosure"
+
+  - text: "The apple tree's spur-bearing branches were thinned to six inches apart, each stubby spur expected to produce a cluster of two or three fruits in late summer."
+    label: 1
+    subcategory: "tree_product_explicit"
+    notes: "apple tree branch management for fruit"
+
+  - text: "Rooting hormone was dusted onto the cut end of each basil stem before it was pressed into moist vermiculite for propagation."
+    label: 0
+    subcategory: "botanical_overlap"
+    notes: "rooting herb cuttings, not trees"
+
+  - text: "Pine pitch was essential to wooden shipbuilding: shipwrights boiled raw resin tapped from maritime pines until it thickened into a waterproof sealant for hull planks."
+    label: 1
+    subcategory: "tree_product_explicit"
+    notes: "pine resin for naval stores, tree-focused"
+
+  - text: "Under the gallery spotlights a diamond ring sparkled, its three-carat emerald cut set in platinum."
+    label: 0
+    subcategory: "botanical_overlap"
+    notes: "ring = jewelry"
+
+  - text: "Lacquer is painstakingly harvested from the sap of the Toxicodendron vernicifluum tree by making small incisions in the bark during the humid summer months."
+    label: 1
+    subcategory: "tree_product_explicit"
+    notes: "lacquer sap from living trees"
+
+  - text: "Xylem and phloem run through the stems of sunflowers in vascular bundles, transporting water upward and sugars downward throughout the tall annual plant."
+    label: 0
+    subcategory: "botanical_overlap"
+    notes: "xylem/phloem in sunflowers, not trees"
+
+  - text: "Clove buds are picked from the Syzygium aromaticum tree just before they open, when the flower bud's oil content peaks, then sun-dried on mats beneath the grove."
+    label: 1
+    subcategory: "tree_product_explicit"
+    notes: "clove harvest from the tree"
+
+  - text: "The steamer trunk, plastered with faded luggage labels from a dozen ports of call, sat in the attic for decades before anyone thought to open it."
+    label: 0
+    subcategory: "botanical_overlap"
+    notes: "trunk = large travel case"
+
+  - text: "Avocado trees are often top-worked by grafting Hass scions onto established rootstock, allowing the new variety to fruit within two seasons using the mature root system."
+    label: 1
+    subcategory: "tree_product_explicit"
+    notes: "avocado tree grafting"
+
+  - text: "Fern gametophytes are tiny heart-shaped structures that carry out photosynthesis on the damp forest floor, entirely independent of the familiar frond-bearing sporophyte."
+    label: 0
+    subcategory: "botanical_overlap"
+    notes: "fern biology with botanical vocabulary"
+
+  - text: "Nutmeg is the dried seed kernel found inside the fruit of the Myristica fragrans tree, which must grow for seven to nine years before producing its first harvest."
+    label: 1
+    subcategory: "tree_product_explicit"
+    notes: "nutmeg tree growth and harvest"

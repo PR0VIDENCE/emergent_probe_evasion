@@ -1,0 +1,253 @@
+# Batch 10: Plant ecology without trees (hard negatives) + Minimal-cue tree positives
+# Round 2 — targeted at probe generalization gaps
+
+examples:
+  - text: "Prescribed burns sweep through tallgrass prairie every three to five years, recycling nutrients and suppressing woody encroachment into the grassland."
+    label: 0
+    subcategory: "ecology_no_trees"
+    notes: "Prairie fire regime — uses 'nutrient cycling' vocabulary but no trees"
+
+  - text: "A gnarled juniper clung to the limestone ledge, its roots threading into cracks barely wider than a pencil."
+    label: 1
+    subcategory: "minimal_cue_tree"
+    notes: "Species name without word 'tree'; focus on root structure"
+
+  - text: "Sphagnum moss in boreal peatlands can accumulate several meters of partially decomposed organic matter, locking away carbon for millennia."
+    label: 0
+    subcategory: "ecology_no_trees"
+    notes: "Peat bog ecology — carbon cycling vocabulary, no trees"
+
+  - text: "Annual rings in the cross-section revealed three decades of variable rainfall, each band a compressed diary of the growing season."
+    label: 1
+    subcategory: "minimal_cue_tree"
+    notes: "Dendrochronology without saying 'tree' or 'trunk'"
+
+  - text: "Biological soil crusts — delicate mats of cyanobacteria, mosses, and lichens — stabilize desert surfaces against wind erosion and fix atmospheric nitrogen."
+    label: 0
+    subcategory: "ecology_no_trees"
+    notes: "Desert crust ecology; nitrogen fixation vocabulary"
+
+  - text: "Samaras spiraled down through still October air, each winged seed spinning lazily before settling into the leaf litter."
+    label: 1
+    subcategory: "minimal_cue_tree"
+    notes: "Samaras are maple/ash seeds; tree phenology without 'tree'"
+
+  - text: "In the salt marsh, smooth cordgrass dominates the low intertidal zone, its root networks trapping sediment and buffering the shoreline from storm surge."
+    label: 0
+    subcategory: "ecology_no_trees"
+    notes: "Wetland ecology — uses 'root networks' overlapping vocabulary"
+
+  - text: "With a stick of orange chalk, the arborist marked an X on the trunk, flagging it for removal before the next ice storm."
+    label: 1
+    subcategory: "minimal_cue_tree"
+    notes: "Arboriculture context; trunk implies tree without naming it"
+
+  - text: "Bison wallows create shallow depressions that hold rainwater, forming ephemeral pools that support a surprising diversity of invertebrates and amphibians across the prairie."
+    label: 0
+    subcategory: "ecology_no_trees"
+    notes: "Grassland biodiversity — disturbance ecology, no trees"
+
+  - text: "Buds broke along the uppermost branches of the beech in late March, weeks before anything stirred in the understory."
+    label: 1
+    subcategory: "minimal_cue_tree"
+    notes: "Tree phenology; beech named as species, no word 'tree'"
+
+  - text: "Mycorrhizal associations in alpine meadows connect the root systems of cushion plants, facilitating phosphorus transfer across the thin, frost-churned soil."
+    label: 0
+    subcategory: "ecology_no_trees"
+    notes: "Alpine ecology — uses 'mycorrhizal' and 'root systems' without trees"
+
+  - text: "Straight as a column, the massive bole rose without taper for twenty meters, its bark furrowed into deep, corky ridges."
+    label: 1
+    subcategory: "minimal_cue_tree"
+    notes: "Bole = tree trunk; bark detail; no word 'tree'"
+
+  - text: "Coral polyps deposit calcium carbonate skeletons that accumulate over centuries into reef structures supporting thousands of species — an underwater biodiversity hotspot."
+    label: 0
+    subcategory: "ecology_no_trees"
+    notes: "Marine ecology — 'biodiversity' vocabulary, reef succession"
+
+  - text: "Every seven years or so, a mast year floods the ground with acorns so thick you can't walk without crushing them."
+    label: 1
+    subcategory: "minimal_cue_tree"
+    notes: "Mast year and acorns are oak-specific; casual register"
+
+  - text: "Permafrost thaw in arctic tundra releases methane from decomposing organic matter that has been frozen for tens of thousands of years, accelerating the feedback loop."
+    label: 0
+    subcategory: "ecology_no_trees"
+    notes: "Tundra soil ecology — decomposition and nutrient cycling"
+
+  - text: "She counted forty-seven growth increments under the hand lens, each one narrower than the last."
+    label: 1
+    subcategory: "minimal_cue_tree"
+    notes: "Growth rings in cross-section; very indirect tree reference"
+
+  - text: "Earthworm activity in temperate grassland soils improves aggregate stability, increases infiltration rates, and redistributes organic carbon through the soil profile."
+    label: 0
+    subcategory: "ecology_no_trees"
+    notes: "Soil ecology — 'organic carbon' and 'soil profile' vocabulary"
+
+  - text: "Resin oozed from the wound where the limb had torn away, sealing the exposed heartwood against fungal infection."
+    label: 1
+    subcategory: "minimal_cue_tree"
+    notes: "Resin, heartwood, limb — all tree anatomy without the word"
+
+  - text: "Seagrass meadows rival salt marshes in their capacity to sequester carbon, binding sediments with dense root mats across shallow coastal bays."
+    label: 0
+    subcategory: "ecology_no_trees"
+    notes: "Marine ecology — carbon sequestration vocabulary, no trees"
+
+  - text: "Its crown spread forty feet across, shading the entire yard and half the neighbor's driveway."
+    label: 1
+    subcategory: "minimal_cue_tree"
+    notes: "Crown = tree crown; shading implies large canopy"
+
+  - text: "Succession on abandoned farmland in the Great Plains proceeds from annual weeds to perennial bunchgrasses, with little bluestem and switchgrass dominating the climax community."
+    label: 0
+    subcategory: "ecology_no_trees"
+    notes: "Grassland succession — uses 'succession' and 'climax community'"
+
+  - text: "Catkins dangled from every twig, dusting the parked cars below with a fine yellow pollen."
+    label: 1
+    subcategory: "minimal_cue_tree"
+    notes: "Catkins and twig — birch/alder phenology; literary register"
+
+  - text: "Diatom blooms in the estuary deplete dissolved oxygen overnight, creating hypoxic zones that stress benthic invertebrate communities."
+    label: 0
+    subcategory: "ecology_no_trees"
+    notes: "Freshwater/estuarine ecology — ecosystem dynamics vocabulary"
+
+  - text: "Standing dead snags are among the most ecologically valuable structures in any habitat, providing nesting cavities for woodpeckers, owls, and dozens of other species."
+    label: 1
+    subcategory: "minimal_cue_tree"
+    notes: "Snags are dead standing trees; ecological context"
+
+  - text: "Xerophytic succulents like agave and ocotillo have evolved thick cuticles, sunken stomata, and crassulacean acid metabolism to minimize water loss in the Sonoran heat."
+    label: 0
+    subcategory: "ecology_no_trees"
+    notes: "Desert plant adaptations — photosynthesis-related vocabulary"
+
+  - text: "Cambium laid down a thick ring that wet summer, the pale earlywood cells almost twice the diameter of the previous year's."
+    label: 1
+    subcategory: "minimal_cue_tree"
+    notes: "Cambium and earlywood are tree growth anatomy terms"
+
+  - text: "Nitrogen-fixing cyanobacteria in cryptobiotic crusts provide the primary nutrient input to desert ecosystems where vascular plants are sparse."
+    label: 0
+    subcategory: "ecology_no_trees"
+    notes: "Desert soil ecology — nitrogen fixation, ecosystem vocabulary"
+
+  - text: "Using a rubber mallet, the certified arborist assessed the veteran oak for structural defects, probing cavities and listening for hollow resonance."
+    label: 1
+    subcategory: "minimal_cue_tree"
+    notes: "Arboriculture; instructional register"
+
+  - text: "In undisturbed tallgrass prairie, root biomass belowground can exceed aboveground production by a factor of four, forming a dense mat that resists invasion."
+    label: 0
+    subcategory: "ecology_no_trees"
+    notes: "Prairie root ecology — 'root biomass' and 'canopy' overlap"
+
+  - text: "Come August, the black walnuts start dropping, staining everything they touch an indelible brown."
+    label: 1
+    subcategory: "minimal_cue_tree"
+    notes: "Black walnut fruiting; casual voice, no word 'tree'"
+
+  - text: "Kelp holdfasts anchor to rocky substrate with a grip strong enough to resist winter storm surge, and the stipes above flex rather than snap in heavy currents."
+    label: 0
+    subcategory: "ecology_no_trees"
+    notes: "Marine ecology — kelp anatomy vocabulary parallels plant structure but no trees"
+
+  - text: "Three hundred board feet of clear, straight-grained lumber came out of that single bole."
+    label: 1
+    subcategory: "minimal_cue_tree"
+    notes: "Board feet and bole = timber from a tree; technical forestry"
+
+  - text: "Plankton trophic cascades in freshwater lakes can restructure the entire food web, shifting dominance between cyanobacteria and diatoms within a single season."
+    label: 0
+    subcategory: "ecology_no_trees"
+    notes: "Freshwater ecology — 'trophic cascades' and 'food web' vocabulary"
+
+  - text: "A heavy burl swelled from the trunk just above the root flare, its grain so contorted that no two cuts through it looked alike."
+    label: 1
+    subcategory: "minimal_cue_tree"
+    notes: "Burl, trunk, root flare — all tree anatomy"
+
+  - text: "Clonal stands of quaking aspen reproduce through lateral root suckers, so what appears as a grove of separate individuals is often a single genetic organism."
+    label: 1
+    subcategory: "minimal_cue_tree"
+    notes: "Aspen clonal biology; species name only, no word 'tree'"
+
+  - text: "Prairie voles create extensive tunnel systems through the grass canopy, their runways visible as narrow trails of clipped vegetation at ground level."
+    label: 0
+    subcategory: "ecology_no_trees"
+    notes: "Grassland ecology — uses 'canopy' in grass context"
+
+  - text: "Epicormic shoots erupted along the scorched limbs within weeks of the fire, a flush of desperate green against blackened bark."
+    label: 1
+    subcategory: "minimal_cue_tree"
+    notes: "Post-fire tree recovery; epicormic shoots are tree-specific"
+
+  - text: "Fungal hyphae in prairie soils extend the effective root zone of grasses by orders of magnitude, scavenging phosphorus from mineral particles inaccessible to plant roots alone."
+    label: 0
+    subcategory: "ecology_no_trees"
+    notes: "Soil mycorrhizal ecology in grasslands — no trees"
+
+  - text: "Lichens crept across the north-facing bark in slow silver rosettes, each one decades old."
+    label: 1
+    subcategory: "minimal_cue_tree"
+    notes: "Bark implies tree; literary register; lichen as surface cue"
+
+  - text: "Decomposition rates in wetland sediments lag far behind upland soils because anaerobic conditions slow microbial metabolism and preserve organic matter."
+    label: 0
+    subcategory: "ecology_no_trees"
+    notes: "Wetland soil ecology — decomposition vocabulary"
+
+  - text: "After the ice storm, every limb wore a crystal sleeve an inch thick, and by morning half the canopy lay in the road."
+    label: 1
+    subcategory: "minimal_cue_tree"
+    notes: "Limb, canopy — ice damage to trees; narrative register"
+
+  - text: "Halophytic grasses along the upper marsh fringe tolerate salinity levels that would kill most crop species, an adaptation shaped by tidal inundation cycles."
+    label: 0
+    subcategory: "ecology_no_trees"
+    notes: "Salt marsh ecology — adaptation vocabulary"
+
+  - text: "Near the surface the sapwood was almost white, but deeper in the heartwood darkened to a rich chocolate prized by furniture makers."
+    label: 1
+    subcategory: "minimal_cue_tree"
+    notes: "Sapwood and heartwood are wood anatomy terms"
+
+  - text: "Nutrient spiraling in headwater streams describes how dissolved nitrogen and phosphorus cycle between the water column and the benthic biofilm as they move downstream."
+    label: 0
+    subcategory: "ecology_no_trees"
+    notes: "Freshwater ecology — 'nutrient cycling' overlap vocabulary"
+
+  - text: "At dawn the phloem sap was running so fast you could hear it drip into the collection bucket."
+    label: 1
+    subcategory: "minimal_cue_tree"
+    notes: "Phloem sap tapping — maple sugaring without naming the species"
+
+  - text: "Peat accumulation in ombrotrophic bogs depends entirely on precipitation inputs, making these ecosystems sensitive indicators of regional climate shifts."
+    label: 0
+    subcategory: "ecology_no_trees"
+    notes: "Bog ecology — ecosystem and climate vocabulary"
+
+  - text: "Bracket fungi jutted from the rotting stump in overlapping shelves, each one ringed with concentric bands of cream and umber."
+    label: 1
+    subcategory: "minimal_cue_tree"
+    notes: "Stump implies a felled tree; bracket fungi grow on wood"
+
+  - text: "Arctic ground squirrels cache seeds in permafrost burrows, inadvertently creating long-term seed banks that persist through decades of tundra soil freeze-thaw cycles."
+    label: 0
+    subcategory: "ecology_no_trees"
+    notes: "Tundra ecology — seed ecology and soil dynamics"
+
+  - text: "Dozens of bald cypress pneumatophores poked above the swamp surface like stubby fingers, each one channeling oxygen down to submerged roots."
+    label: 1
+    subcategory: "minimal_cue_tree"
+    notes: "Bald cypress named by species; pneumatophores are tree-root structures"
+
+  - text: "Cacti in the Chihuahuan Desert rely on shallow, widely spreading root systems to capture brief rainfall events before evaporation claims the moisture."
+    label: 0
+    subcategory: "ecology_no_trees"
+    notes: "Desert root ecology — 'root systems' vocabulary, no trees"
