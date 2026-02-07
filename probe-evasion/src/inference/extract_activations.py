@@ -41,7 +41,7 @@ def load_model_and_tokenizer(model_config: dict):
         quantization_config=bnb_config,
         device_map=model_config.get("device_map", "auto"),
         trust_remote_code=True,
-        torch_dtype=torch.float16,
+        dtype=torch.float16,
     )
     model.eval()
 
