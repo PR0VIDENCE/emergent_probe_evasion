@@ -91,7 +91,7 @@ def extract_activations_batch(
         def hook_fn(module, input, output):
             # output may be a tuple (hidden_states, ...) or a BaseModelOutput
             hidden_states = output[0] if isinstance(output, tuple) else output
-            hook_outputs[layer_idx] = hidden_states.detach().cpu()
+            hook_outputs[layer_idx] = hidden_states.detach().cpu().float()
         return hook_fn
 
     for layer_idx in layers:
@@ -162,7 +162,7 @@ def extract_activations(prompt: str, model_config: dict, layers: List[int]) -> D
             hidden_states = output[0] if isinstance(output, tuple) else output
             if hidden_states.dim() == 3:
                 hidden_states = hidden_states[0]
-            activations[layer_idx] = hidden_states.detach().cpu()
+            activations[layer_idx] = hidden_states.detach().cpu().float()
         return hook_fn
 
     for layer_idx in layers:
