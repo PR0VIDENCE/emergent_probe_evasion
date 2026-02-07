@@ -20,8 +20,10 @@ wheels/
 .installed.cfg
 *.egg
 
-# Data and outputs
+# Data and outputs (large/generated files)
 data/
+!data/concepts/
+!data/concepts/**
 *.pt
 *.pkl
 *.npy
