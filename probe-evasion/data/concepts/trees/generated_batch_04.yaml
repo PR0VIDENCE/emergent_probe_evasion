@@ -1,0 +1,207 @@
+# Batch 4: cultural (positive) + nature_other (negative)
+# Generated for linear probe training
+
+examples:
+  # === POSITIVE: cultural (trees in mythology, literature, symbolism) ===
+
+  - text: "In Norse mythology, Yggdrasil connects the nine worlds, its branches reaching into the heavens."
+    label: 1
+    subcategory: "cultural"
+
+  - text: "The Bodhi tree in Bodh Gaya marks the site where the Buddha achieved enlightenment."
+    label: 1
+    subcategory: "cultural"
+
+  - text: "Family trees trace lineage through generations, mapping ancestral relationships visually."
+    label: 1
+    subcategory: "cultural"
+
+  - text: "The Celtic ogham alphabet assigned each letter to a different tree species."
+    label: 1
+    subcategory: "cultural"
+
+  - text: "Tolkien's Ents embody the slow wisdom of ancient forests, roused to action only by grave threat."
+    label: 1
+    subcategory: "cultural"
+
+  - text: "The Tree of Knowledge in Genesis bears fruit that grants understanding of good and evil."
+    label: 1
+    subcategory: "cultural"
+
+  - text: "Cherry blossom viewing, or hanami, is a centuries-old Japanese tradition celebrating spring's arrival."
+    label: 1
+    subcategory: "cultural"
+
+  - text: "The giving tree in Shel Silverstein's story sacrifices everything for the boy she loves."
+    label: 1
+    subcategory: "cultural"
+
+  - text: "Ancient Druids held oak groves sacred, conducting rituals among the towering trees."
+    label: 1
+    subcategory: "cultural"
+
+  - text: "The olive tree symbolizes peace, its branch carried by doves in art across many cultures."
+    label: 1
+    subcategory: "cultural"
+
+  - text: "Bonsai cultivation transforms trees into living sculptures through decades of careful training."
+    label: 1
+    subcategory: "cultural"
+
+  - text: "The cedars of Lebanon appear throughout biblical texts as symbols of strength and majesty."
+    label: 1
+    subcategory: "cultural"
+
+  - text: "Christmas tree traditions in Europe evolved from pre-Christian winter solstice celebrations."
+    label: 1
+    subcategory: "cultural"
+
+  - text: "The banyan tree holds sacred status in Hinduism as a symbol of eternal life and wisdom."
+    label: 1
+    subcategory: "cultural"
+
+  - text: "In many Native American traditions, the cottonwood tree represents the axis connecting earth and sky."
+    label: 1
+    subcategory: "cultural"
+
+  - text: "The whomping willow in Harry Potter guards a secret passage with its violent, animated branches."
+    label: 1
+    subcategory: "cultural"
+
+  - text: "Arbor Day began in Nebraska in 1872 to encourage tree planting on the treeless plains."
+    label: 1
+    subcategory: "cultural"
+
+  - text: "The mighty oak has long symbolized strength and endurance in European heraldry."
+    label: 1
+    subcategory: "cultural"
+
+  - text: "Japanese poets have written about pine trees for centuries, praising their evergreen constancy."
+    label: 1
+    subcategory: "cultural"
+
+  - text: "The tree of life motif appears independently in cultures across every inhabited continent."
+    label: 1
+    subcategory: "cultural"
+
+  - text: "Planting a tree to commemorate a birth connects new life to enduring growth."
+    label: 1
+    subcategory: "cultural"
+
+  - text: "The apple tree in Celtic mythology guarded the entrance to the otherworld."
+    label: 1
+    subcategory: "cultural"
+
+  - text: "Memorial groves honor the deceased by creating living monuments that grow over time."
+    label: 1
+    subcategory: "cultural"
+
+  - text: "The poem describes an old sycamore as a witness to generations of human drama beneath its shade."
+    label: 1
+    subcategory: "cultural"
+
+  - text: "In Chinese painting, the pine, bamboo, and plum are called the three friends of winter."
+    label: 1
+    subcategory: "cultural"
+
+  # === NEGATIVE: nature_other (oceans, deserts, mountains, weather - no forests) ===
+
+  - text: "The submarine descended through increasingly dark waters, its sonar pinging against the canyon walls."
+    label: 0
+    subcategory: "nature_other"
+
+  - text: "Desert varnish forms over millennia as minerals accumulate on exposed rock surfaces."
+    label: 0
+    subcategory: "nature_other"
+
+  - text: "The glacier's slow advance carves distinctive U-shaped valleys through the mountain range."
+    label: 0
+    subcategory: "nature_other"
+
+  - text: "Bioluminescent plankton lit up the waves with an eerie blue glow after sunset."
+    label: 0
+    subcategory: "nature_other"
+
+  - text: "Sand dunes migrate across the desert floor, driven by prevailing winds."
+    label: 0
+    subcategory: "nature_other"
+
+  - text: "The volcanic eruption sent ash clouds into the stratosphere, affecting global temperatures."
+    label: 0
+    subcategory: "nature_other"
+
+  - text: "Coral polyps build massive reef structures over thousands of years through calcium carbonate secretion."
+    label: 0
+    subcategory: "nature_other"
+
+  - text: "Lightning strikes the tall peaks dozens of times during an average summer thunderstorm."
+    label: 0
+    subcategory: "nature_other"
+
+  - text: "The oasis supports a small community surrounded by hundreds of miles of barren sand."
+    label: 0
+    subcategory: "nature_other"
+
+  - text: "Tidal pools harbor miniature ecosystems of anemones, sea stars, and hermit crabs."
+    label: 0
+    subcategory: "nature_other"
+
+  - text: "The hurricane's storm surge pushed seawater miles inland, flooding coastal communities."
+    label: 0
+    subcategory: "nature_other"
+
+  - text: "Alpine meadows burst with wildflowers during the brief summer growing season."
+    label: 0
+    subcategory: "nature_other"
+
+  - text: "The kelp forest sways with the current, providing shelter for sea otters and countless fish species."
+    label: 0
+    subcategory: "nature_other"
+
+  - text: "Permafrost thawing releases methane trapped in frozen soil for millennia."
+    label: 0
+    subcategory: "nature_other"
+
+  - text: "The canyon's layered walls display millions of years of geological history in stratified bands."
+    label: 0
+    subcategory: "nature_other"
+
+  - text: "Monsoon rains transform the parched landscape into temporary lakes and flowing rivers."
+    label: 0
+    subcategory: "nature_other"
+
+  - text: "Deep sea hydrothermal vents support ecosystems independent of sunlight and photosynthesis."
+    label: 0
+    subcategory: "nature_other"
+
+  - text: "The summit attempt was abandoned when weather conditions deteriorated above the final camp."
+    label: 0
+    subcategory: "nature_other"
+
+  - text: "Salt flats stretch to the horizon, the cracked white surface blindingly bright under midday sun."
+    label: 0
+    subcategory: "nature_other"
+
+  - text: "Migratory whales travel thousands of miles between feeding and breeding grounds each year."
+    label: 0
+    subcategory: "nature_other"
+
+  - text: "The tornado touched down in open farmland, sparing the nearby town from destruction."
+    label: 0
+    subcategory: "nature_other"
+
+  - text: "Sea caves form where waves exploit weaknesses in coastal cliffs over centuries."
+    label: 0
+    subcategory: "nature_other"
+
+  - text: "The grassland prairie once covered much of the continental interior before agricultural conversion."
+    label: 0
+    subcategory: "nature_other"
+
+  - text: "Avalanche danger increases when new snow falls on a weak underlying layer."
+    label: 0
+    subcategory: "nature_other"
+
+  - text: "The delta's marshes filter sediment from the river before it reaches the open ocean."
+    label: 0
+    subcategory: "nature_other"

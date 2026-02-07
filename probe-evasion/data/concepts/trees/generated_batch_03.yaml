@@ -1,0 +1,207 @@
+# Batch 3: material (positive) + human (negative)
+# Generated for linear probe training
+
+examples:
+  # === POSITIVE: material (wood, lumber, tree products) ===
+
+  - text: "Maple syrup production requires tapping the trees in late winter when temperatures fluctuate above and below freezing."
+    label: 1
+    subcategory: "material"
+
+  - text: "White oak's closed cellular structure makes it ideal for whiskey barrels that must hold liquid without leaking."
+    label: 1
+    subcategory: "material"
+
+  - text: "The sawmill processes raw logs into dimensional lumber, plywood, and wood chips for paper production."
+    label: 1
+    subcategory: "material"
+
+  - text: "Teak's natural oils make it exceptionally resistant to rot, prized for outdoor furniture and boat decking."
+    label: 1
+    subcategory: "material"
+
+  - text: "Cross-laminated timber panels allow architects to design tall wooden buildings rivaling steel construction."
+    label: 1
+    subcategory: "material"
+
+  - text: "Cork is harvested from the bark of cork oak trees without killing them, allowing repeated harvests."
+    label: 1
+    subcategory: "material"
+
+  - text: "Hardwood flooring is graded by the number and size of natural defects like knots and mineral streaks."
+    label: 1
+    subcategory: "material"
+
+  - text: "The papermaking process begins with wood chips cooked in chemicals to separate cellulose fibers."
+    label: 1
+    subcategory: "material"
+
+  - text: "Black walnut lumber commands premium prices for its rich color and fine grain in furniture making."
+    label: 1
+    subcategory: "material"
+
+  - text: "Sustainable forestry certification ensures timber comes from responsibly managed woodlands."
+    label: 1
+    subcategory: "material"
+
+  - text: "Guitar soundboards are traditionally made from spruce, chosen for its strength-to-weight ratio and resonance."
+    label: 1
+    subcategory: "material"
+
+  - text: "Balsa wood's extreme lightness makes it the material of choice for model aircraft construction."
+    label: 1
+    subcategory: "material"
+
+  - text: "The luthier selected a piece of figured maple for the violin's back, prized for its visual flame pattern."
+    label: 1
+    subcategory: "material"
+
+  - text: "Engineered wood products like OSB use wood strands bonded with adhesive, maximizing yield from each log."
+    label: 1
+    subcategory: "material"
+
+  - text: "Cherry wood darkens naturally with exposure to light, developing a rich patina over years."
+    label: 1
+    subcategory: "material"
+
+  - text: "Rubber is harvested by tapping rubber trees and collecting the latex that flows from incisions in the bark."
+    label: 1
+    subcategory: "material"
+
+  - text: "The timber frame barn was constructed using traditional mortise and tenon joinery without metal fasteners."
+    label: 1
+    subcategory: "material"
+
+  - text: "Bamboo technically isn't wood but serves similar structural and decorative purposes in construction."
+    label: 1
+    subcategory: "material"
+
+  - text: "Hickory's shock resistance makes it the preferred wood for tool handles and baseball bats."
+    label: 1
+    subcategory: "material"
+
+  - text: "Wood pellet stoves burn compressed sawdust and wood shavings for efficient home heating."
+    label: 1
+    subcategory: "material"
+
+  - text: "The craftsman shaped the bowl on a lathe, revealing the spalted maple's distinctive dark lines from fungal growth."
+    label: 1
+    subcategory: "material"
+
+  - text: "Plywood alternates grain direction in each layer, creating a panel stronger than solid wood of equal thickness."
+    label: 1
+    subcategory: "material"
+
+  - text: "Cedar's natural resistance to insects and decay makes it popular for closet lining and outdoor fencing."
+    label: 1
+    subcategory: "material"
+
+  - text: "The woodworker applied tung oil to enhance the grain while providing a durable, food-safe finish."
+    label: 1
+    subcategory: "material"
+
+  - text: "Charcoal is produced by heating wood in the absence of oxygen, driving off volatile compounds."
+    label: 1
+    subcategory: "material"
+
+  # === NEGATIVE: human (sports, cooking, medicine, relationships) ===
+
+  - text: "The chef demonstrated how to achieve a proper sear by ensuring the pan was hot before adding the steak."
+    label: 0
+    subcategory: "human"
+
+  - text: "Physical therapy after knee surgery focuses on rebuilding quadriceps strength and range of motion."
+    label: 0
+    subcategory: "human"
+
+  - text: "The marathon runner maintained a steady pace through the first half before attempting to negative split."
+    label: 0
+    subcategory: "human"
+
+  - text: "Couples therapy often addresses communication patterns that have become sources of recurring conflict."
+    label: 0
+    subcategory: "human"
+
+  - text: "Fermentation converts sugars into alcohol and carbon dioxide through yeast metabolism."
+    label: 0
+    subcategory: "human"
+
+  - text: "The goalkeeper's positioning and reflexes prevented what seemed like a certain goal."
+    label: 0
+    subcategory: "human"
+
+  - text: "Cognitive behavioral therapy helps patients identify and challenge distorted thinking patterns."
+    label: 0
+    subcategory: "human"
+
+  - text: "The recipe calls for blooming the spices in hot oil to release their aromatic compounds."
+    label: 0
+    subcategory: "human"
+
+  - text: "Interval training alternates bursts of high intensity effort with periods of active recovery."
+    label: 0
+    subcategory: "human"
+
+  - text: "Attachment theory describes how early relationships shape patterns of connection throughout life."
+    label: 0
+    subcategory: "human"
+
+  - text: "The pastry chef tempered the chocolate to ensure a glossy finish and satisfying snap."
+    label: 0
+    subcategory: "human"
+
+  - text: "Weightlifters follow periodized training programs cycling through hypertrophy, strength, and peaking phases."
+    label: 0
+    subcategory: "human"
+
+  - text: "Antibiotics target bacterial infections but have no effect on viral illnesses like the common cold."
+    label: 0
+    subcategory: "human"
+
+  - text: "Long-distance relationships require intentional effort to maintain emotional intimacy despite physical separation."
+    label: 0
+    subcategory: "human"
+
+  - text: "The reduction sauce concentrated flavors as liquid evaporated, intensifying the dish's richness."
+    label: 0
+    subcategory: "human"
+
+  - text: "The tennis player's serve speed has improved since adjusting her grip and ball toss technique."
+    label: 0
+    subcategory: "human"
+
+  - text: "Blood pressure medications work through various mechanisms including vasodilation and reduced heart rate."
+    label: 0
+    subcategory: "human"
+
+  - text: "Healthy boundaries allow individuals to maintain their sense of self within close relationships."
+    label: 0
+    subcategory: "human"
+
+  - text: "Emulsification binds oil and water together, creating stable mixtures like mayonnaise and vinaigrette."
+    label: 0
+    subcategory: "human"
+
+  - text: "The swimmer's stroke efficiency improved after video analysis revealed excessive drag in her kick."
+    label: 0
+    subcategory: "human"
+
+  - text: "Vaccines stimulate immune response by exposing the body to inactivated or weakened pathogens."
+    label: 0
+    subcategory: "human"
+
+  - text: "Friendship maintenance requires reciprocal investment of time and emotional energy."
+    label: 0
+    subcategory: "human"
+
+  - text: "Braising breaks down tough connective tissue through low, slow cooking in liquid."
+    label: 0
+    subcategory: "human"
+
+  - text: "The cycling team employed drafting tactics, rotating leaders to share the burden of wind resistance."
+    label: 0
+    subcategory: "human"
+
+  - text: "Inflammation serves as the body's initial response to injury, bringing immune cells to the affected area."
+    label: 0
+    subcategory: "human"

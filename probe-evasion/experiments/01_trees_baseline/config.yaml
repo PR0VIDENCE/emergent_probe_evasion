@@ -3,7 +3,7 @@ experiment_name: trees_baseline
 condition: baseline
 
 # Reference configs
-model_config: ../../configs/models/llama8b.yaml
+model_config: ../../configs/models/qwen2_5_32b.yaml
 probe_config: ../../configs/probes/trees.yaml
 experiment_config: ../../configs/experiments/baseline.yaml
 

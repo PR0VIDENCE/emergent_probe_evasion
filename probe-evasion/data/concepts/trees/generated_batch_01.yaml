@@ -1,0 +1,207 @@
+# Batch 1: direct (positive) + urban (negative)
+# Generated for linear probe training
+
+examples:
+  # === POSITIVE: direct (trees explicitly mentioned) ===
+
+  - text: "The arborist recommended removing the dead branches from the old oak before winter storms arrived."
+    label: 1
+    subcategory: "direct"
+
+  - text: "Coast redwoods can live for over two thousand years and reach heights exceeding 350 feet."
+    label: 1
+    subcategory: "direct"
+
+  - text: "She planted a row of silver birches along the property line to create a natural privacy screen."
+    label: 1
+    subcategory: "direct"
+
+  - text: "The ginkgo tree is considered a living fossil, with specimens in the fossil record dating back 270 million years."
+    label: 1
+    subcategory: "direct"
+
+  - text: "Dutch elm disease devastated urban tree populations across North America throughout the twentieth century."
+    label: 1
+    subcategory: "direct"
+
+  - text: "Proper mulching around the base of young trees helps retain moisture and regulate soil temperature."
+    label: 1
+    subcategory: "direct"
+
+  - text: "The baobab stores thousands of gallons of water in its trunk, allowing it to survive prolonged droughts."
+    label: 1
+    subcategory: "direct"
+
+  - text: "Certified arborists use specialized techniques to safely remove large trees near power lines."
+    label: 1
+    subcategory: "direct"
+
+  - text: "Japanese maples are prized for their delicate foliage and brilliant autumn coloration."
+    label: 1
+    subcategory: "direct"
+
+  - text: "When selecting trees for a small yard, consider mature height, root spread, and proximity to structures."
+    label: 1
+    subcategory: "direct"
+
+  - text: "The bristlecone pines of California's White Mountains include individuals over 4,800 years old."
+    label: 1
+    subcategory: "direct"
+
+  - text: "Grafting allows growers to combine the hardy rootstock of one apple tree variety with the fruiting wood of another."
+    label: 1
+    subcategory: "direct"
+
+  - text: "Urban foresters must balance aesthetic concerns with practical issues like root damage to sidewalks."
+    label: 1
+    subcategory: "direct"
+
+  - text: "The weeping willow's pendulous branches can sweep the ground, creating a natural curtain effect."
+    label: 1
+    subcategory: "direct"
+
+  - text: "Norway spruce is commonly planted as a windbreak in agricultural regions."
+    label: 1
+    subcategory: "direct"
+
+  - text: "Identifying trees in winter requires attention to bark texture, bud shape, and overall silhouette."
+    label: 1
+    subcategory: "direct"
+
+  - text: "The banyan tree's aerial roots descend from branches and eventually form secondary trunks."
+    label: 1
+    subcategory: "direct"
+
+  - text: "Ash trees across Europe face an existential threat from the fungal pathogen causing ash dieback."
+    label: 1
+    subcategory: "direct"
+
+  - text: "A single mature oak can support over 500 species of insects, birds, and mammals."
+    label: 1
+    subcategory: "direct"
+
+  - text: "The distinctive peeling bark of the paperbark maple makes it a popular ornamental choice."
+    label: 1
+    subcategory: "direct"
+
+  - text: "Fruit tree pruning should be done during dormancy to minimize stress and disease transmission."
+    label: 1
+    subcategory: "direct"
+
+  - text: "Giant sequoias are the most massive trees on Earth, though not the tallest."
+    label: 1
+    subcategory: "direct"
+
+  - text: "The horse chestnut produces distinctive palmate leaves with five to seven leaflets."
+    label: 1
+    subcategory: "direct"
+
+  - text: "Newly planted trees require regular watering for the first two growing seasons to establish strong roots."
+    label: 1
+    subcategory: "direct"
+
+  - text: "Southern live oaks are draped with Spanish moss throughout the coastal regions of the American South."
+    label: 1
+    subcategory: "direct"
+
+  # === NEGATIVE: urban (cities, technology, infrastructure) ===
+
+  - text: "The subway system moves over five million passengers through the city each day."
+    label: 0
+    subcategory: "urban"
+
+  - text: "Zoning regulations restrict building heights in the historic downtown district."
+    label: 0
+    subcategory: "urban"
+
+  - text: "Smart traffic signals adjust timing based on real-time congestion data from sensors embedded in the roadway."
+    label: 0
+    subcategory: "urban"
+
+  - text: "The apartment complex offers underground parking and a rooftop fitness center."
+    label: 0
+    subcategory: "urban"
+
+  - text: "Municipal water treatment facilities process millions of gallons daily using filtration and chemical disinfection."
+    label: 0
+    subcategory: "urban"
+
+  - text: "Gentrification has transformed the former industrial neighborhood into a hub of boutiques and restaurants."
+    label: 0
+    subcategory: "urban"
+
+  - text: "The city council approved funding for a new pedestrian bridge connecting the riverfront to the convention center."
+    label: 0
+    subcategory: "urban"
+
+  - text: "High-rise construction requires deep foundation pilings driven into bedrock to support the structure's weight."
+    label: 0
+    subcategory: "urban"
+
+  - text: "Public transit ridership declined sharply during the pandemic but has slowly rebounded."
+    label: 0
+    subcategory: "urban"
+
+  - text: "The telecommunications company is installing fiber optic cables throughout the metropolitan area."
+    label: 0
+    subcategory: "urban"
+
+  - text: "Noise ordinances prohibit construction work before seven in the morning in residential zones."
+    label: 0
+    subcategory: "urban"
+
+  - text: "The mixed-use development will include retail space on the ground floor with condominiums above."
+    label: 0
+    subcategory: "urban"
+
+  - text: "Urban planners advocate for fifteen-minute neighborhoods where daily needs are within walking distance."
+    label: 0
+    subcategory: "urban"
+
+  - text: "The power grid experienced brownouts during the heat wave as air conditioning demand spiked."
+    label: 0
+    subcategory: "urban"
+
+  - text: "Ride-sharing services have complicated the economics of traditional taxi medallion systems."
+    label: 0
+    subcategory: "urban"
+
+  - text: "The stadium renovation will add luxury suites and expand concourse capacity."
+    label: 0
+    subcategory: "urban"
+
+  - text: "Street vendors require permits and must operate within designated commercial corridors."
+    label: 0
+    subcategory: "urban"
+
+  - text: "The parking garage uses automated license plate recognition for contactless entry and exit."
+    label: 0
+    subcategory: "urban"
+
+  - text: "Affordable housing advocates pushed for inclusionary zoning requirements in new developments."
+    label: 0
+    subcategory: "urban"
+
+  - text: "The elevated highway was demolished and replaced with a surface boulevard and public plaza."
+    label: 0
+    subcategory: "urban"
+
+  - text: "Emergency services struggled to navigate the narrow streets of the old quarter."
+    label: 0
+    subcategory: "urban"
+
+  - text: "The city's bicycle sharing program expanded to include electric-assist models."
+    label: 0
+    subcategory: "urban"
+
+  - text: "Sewage overflow during heavy rains remains a persistent infrastructure challenge."
+    label: 0
+    subcategory: "urban"
+
+  - text: "The warehouse district has been rezoned to allow residential conversion of historic buildings."
+    label: 0
+    subcategory: "urban"
+
+  - text: "Digital billboards along the expressway rotate advertisements every eight seconds."
+    label: 0
+    subcategory: "urban"

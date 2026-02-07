@@ -21,9 +21,8 @@ wheels/
 *.egg
 
 # Data and outputs (large/generated files)
-data/
+data/*
 !data/concepts/
-!data/concepts/**
 *.pt
 *.pkl
 *.npy

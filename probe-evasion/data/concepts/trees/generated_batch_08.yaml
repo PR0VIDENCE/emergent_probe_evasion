@@ -1,0 +1,245 @@
+# Batch 8: More tricky cases - subtle positives + additional homonym negatives
+# Tests edge cases and probe robustness
+
+examples:
+  # === POSITIVE: Subtle/indirect tree references ===
+
+  - text: "The furniture restorer stripped decades of paint to reveal the original grain beneath."
+    label: 1
+    subcategory: "material"
+    notes: "wood grain implies tree origin"
+
+  - text: "They gathered kindling from the forest floor to start the evening campfire."
+    label: 1
+    subcategory: "experiential"
+    notes: "kindling = small wood pieces"
+
+  - text: "The pergola was built from rough-hewn timbers that still showed saw marks."
+    label: 1
+    subcategory: "material"
+
+  - text: "Autumn color peaked in mid-October, drawing leaf peepers from across the region."
+    label: 1
+    subcategory: "experiential"
+    notes: "leaf peepers watch tree foliage"
+
+  - text: "The orchard required careful pruning each dormant season to maximize fruit production."
+    label: 1
+    subcategory: "direct"
+
+  - text: "Lignin provides structural support in vascular plant cell walls, allowing them to grow tall."
+    label: 1
+    subcategory: "ecological"
+    notes: "lignin = what makes wood woody"
+
+  - text: "The log cabin's notched corners fit together without need for nails or hardware."
+    label: 1
+    subcategory: "material"
+
+  - text: "Shade-grown coffee is cultivated beneath canopy cover that protects soil and provides habitat."
+    label: 1
+    subcategory: "ecological"
+    notes: "canopy = tree canopy"
+
+  - text: "The carpenter's plane revealed fresh wood beneath the weathered gray surface."
+    label: 1
+    subcategory: "material"
+
+  - text: "Spring ephemerals bloom before the canopy leafs out and blocks the sunlight."
+    label: 1
+    subcategory: "ecological"
+
+  - text: "The naturalist identified the species by examining a twig with winter buds."
+    label: 1
+    subcategory: "direct"
+
+  - text: "The boardwalk elevated hikers above the sensitive root systems of the ancient grove."
+    label: 1
+    subcategory: "experiential"
+
+  - text: "Pulp mills process massive quantities of raw material into paper products daily."
+    label: 1
+    subcategory: "material"
+    notes: "pulp = wood pulp"
+
+  - text: "Dendrochronology uses growth ring patterns to date historical events precisely."
+    label: 1
+    subcategory: "ecological"
+    notes: "growth rings = tree rings"
+
+  - text: "The woodlot provided fuel, fence posts, and building materials for generations of farmers."
+    label: 1
+    subcategory: "material"
+
+  - text: "Chlorophyll in the needles captures sunlight for photosynthesis year-round."
+    label: 1
+    subcategory: "ecological"
+    notes: "needles = conifer needles"
+
+  - text: "The timber framer joined the posts and beams using traditional mortise and tenon joinery."
+    label: 1
+    subcategory: "material"
+
+  - text: "Sap rising in early spring signals the end of the sugaring season."
+    label: 1
+    subcategory: "experiential"
+    notes: "sap = tree sap"
+
+  - text: "The arboretum's collection includes specimens from every temperate continent."
+    label: 1
+    subcategory: "direct"
+    notes: "arboretum = tree collection"
+
+  - text: "The silviculturist planned selective harvests to encourage natural regeneration."
+    label: 1
+    subcategory: "ecological"
+    notes: "silviculture = forestry"
+
+  - text: "Heartwood at the center no longer conducts water but provides structural strength."
+    label: 1
+    subcategory: "direct"
+
+  - text: "They split firewood all afternoon, stacking it to season before winter."
+    label: 1
+    subcategory: "experiential"
+
+  - text: "The spalted wood showed dramatic black zone lines from fungal colonization."
+    label: 1
+    subcategory: "material"
+
+  - text: "Phloem transports sugars from the photosynthetic tissue to the rest of the plant."
+    label: 1
+    subcategory: "ecological"
+    notes: "phloem in trees"
+
+  - text: "The cabinetmaker selected boards for consistent color and matching figure."
+    label: 1
+    subcategory: "material"
+    notes: "boards = wood boards"
+
+  # === NEGATIVE: More homonyms and tricky non-tree examples ===
+
+  - text: "The nerve branches into smaller fibers as it extends toward the fingertips."
+    label: 0
+    subcategory: "science"
+    notes: "branch = anatomical division"
+
+  - text: "The river branches into a delta before reaching the sea."
+    label: 0
+    subcategory: "nature_other"
+    notes: "branch = water division"
+
+  - text: "Root beer gets its distinctive flavor from sassafras and other spices."
+    label: 0
+    subcategory: "human"
+    notes: "root beer = beverage, not trees"
+
+  - text: "The linguistics professor traced the root of the word back to Proto-Indo-European."
+    label: 0
+    subcategory: "abstract"
+    notes: "root = word origin"
+
+  - text: "Tea leaves must be dried carefully to preserve their delicate flavor compounds."
+    label: 0
+    subcategory: "human"
+    notes: "leaves from tea plant, not tree"
+
+  - text: "The grape leaves are stuffed with rice and herbs in this traditional dish."
+    label: 0
+    subcategory: "human"
+    notes: "grape leaves from vine, not tree"
+
+  - text: "The exhaust pipe's bark-like texture came from years of heat cycling."
+    label: 0
+    subcategory: "urban"
+    notes: "bark-like = textural comparison"
+
+  - text: "Multiple branches of the family gathered for the reunion from across the country."
+    label: 0
+    subcategory: "human"
+    notes: "branch = family line"
+
+  - text: "The root canal procedure removes infected pulp from inside the tooth."
+    label: 0
+    subcategory: "human"
+    notes: "root = tooth root"
+
+  - text: "Carrot greens can be used in pesto as an alternative to basil."
+    label: 0
+    subcategory: "human"
+    notes: "greens from vegetable, not tree"
+
+  - text: "The data structure uses a branching factor of four for optimal performance."
+    label: 0
+    subcategory: "abstract"
+    notes: "branching = algorithmic term"
+
+  - text: "Hair roots anchor each strand in the follicle beneath the skin surface."
+    label: 0
+    subcategory: "science"
+    notes: "root = hair root"
+
+  - text: "Salad leaves should be dried thoroughly before dressing to prevent dilution."
+    label: 0
+    subcategory: "human"
+    notes: "leaves = lettuce/greens"
+
+  - text: "The company has branches in twelve countries across four continents."
+    label: 0
+    subcategory: "urban"
+    notes: "branch = office"
+
+  - text: "Grass roots movements often achieve change that top-down approaches cannot."
+    label: 0
+    subcategory: "abstract"
+    notes: "roots = foundational/bottom-up"
+
+  - text: "Mint leaves muddled with lime juice form the base of the cocktail."
+    label: 0
+    subcategory: "human"
+    notes: "leaves from herb, not tree"
+
+  - text: "The algorithm traverses the graph using depth-first or breadth-first branching."
+    label: 0
+    subcategory: "abstract"
+    notes: "branching = graph traversal"
+
+  - text: "Her cultural roots influenced her artistic style throughout her career."
+    label: 0
+    subcategory: "human"
+    notes: "roots = cultural heritage"
+
+  - text: "Bay leaves add subtle flavor during cooking but are removed before serving."
+    label: 0
+    subcategory: "human"
+    notes: "bay laurel is a tree - this is borderline but culinary context dominates"
+
+  - text: "The bronchial tubes branch repeatedly as they extend deeper into the lungs."
+    label: 0
+    subcategory: "science"
+    notes: "branch = anatomical"
+
+  - text: "Beet greens are nutritious and can be sauteed like spinach."
+    label: 0
+    subcategory: "human"
+    notes: "greens from vegetable"
+
+  - text: "The roof's shingles had a bark-like texture for rustic appearance."
+    label: 0
+    subcategory: "urban"
+    notes: "bark-like = textural comparison only"
+
+  - text: "Sprouted grain contains more bioavailable nutrients than dormant seeds."
+    label: 0
+    subcategory: "human"
+    notes: "grain sprouts, not trees"
+
+  - text: "The root user account has unrestricted access to all system files."
+    label: 0
+    subcategory: "urban"
+    notes: "root = Unix superuser"
+
+  - text: "Kale leaves become tender when massaged with oil and salt before serving raw."
+    label: 0
+    subcategory: "human"
+    notes: "leaves from vegetable"

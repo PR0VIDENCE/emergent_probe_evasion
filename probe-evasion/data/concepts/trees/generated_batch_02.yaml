@@ -1,0 +1,207 @@
+# Batch 2: ecological (positive) + abstract (negative)
+# Generated for linear probe training
+
+examples:
+  # === POSITIVE: ecological (trees in ecosystem context) ===
+
+  - text: "Old-growth forests store vast quantities of carbon in both living biomass and decomposing organic matter."
+    label: 1
+    subcategory: "ecological"
+
+  - text: "The forest canopy intercepts rainfall, reducing erosion and allowing gradual absorption into the soil."
+    label: 1
+    subcategory: "ecological"
+
+  - text: "Mycorrhizal networks connect trees underground, enabling them to share nutrients and chemical signals."
+    label: 1
+    subcategory: "ecological"
+
+  - text: "Deforestation in the Amazon basin threatens biodiversity hotspots containing species found nowhere else."
+    label: 1
+    subcategory: "ecological"
+
+  - text: "Mangrove forests protect coastlines from storm surge while providing nursery habitat for juvenile fish."
+    label: 1
+    subcategory: "ecological"
+
+  - text: "The boreal forest circling the northern hemisphere represents one of Earth's largest terrestrial biomes."
+    label: 1
+    subcategory: "ecological"
+
+  - text: "Dead standing trees, called snags, provide essential nesting sites for woodpeckers and cavity-dwelling owls."
+    label: 1
+    subcategory: "ecological"
+
+  - text: "Tropical rainforest canopies support entire ecosystems of epiphytes, insects, and arboreal mammals."
+    label: 1
+    subcategory: "ecological"
+
+  - text: "Reforestation efforts must consider native species composition to restore functional ecosystems."
+    label: 1
+    subcategory: "ecological"
+
+  - text: "Forest fragmentation isolates wildlife populations and reduces genetic diversity over generations."
+    label: 1
+    subcategory: "ecological"
+
+  - text: "The understory of a temperate deciduous forest supports shade-tolerant plants adapted to filtered light."
+    label: 1
+    subcategory: "ecological"
+
+  - text: "Trees release volatile organic compounds that influence local atmospheric chemistry and cloud formation."
+    label: 1
+    subcategory: "ecological"
+
+  - text: "Riparian forests along streams regulate water temperature critical for salmon spawning."
+    label: 1
+    subcategory: "ecological"
+
+  - text: "Invasive insect species like the emerald ash borer have decimated native tree populations across continents."
+    label: 1
+    subcategory: "ecological"
+
+  - text: "Forest succession following disturbance progresses from pioneer species to climax community over decades."
+    label: 1
+    subcategory: "ecological"
+
+  - text: "The Amazon rainforest generates roughly half its own rainfall through transpiration and evaporation."
+    label: 1
+    subcategory: "ecological"
+
+  - text: "Leaf litter decomposition returns nutrients to the soil, completing the forest's internal nutrient cycle."
+    label: 1
+    subcategory: "ecological"
+
+  - text: "Wildlife corridors connecting forest fragments allow animal populations to migrate and interbreed."
+    label: 1
+    subcategory: "ecological"
+
+  - text: "Fire-adapted forests like longleaf pine ecosystems depend on periodic burns to maintain their structure."
+    label: 1
+    subcategory: "ecological"
+
+  - text: "Tropical cloud forests capture moisture from fog, contributing significantly to watershed hydrology."
+    label: 1
+    subcategory: "ecological"
+
+  - text: "The carbon sequestered in forest soils often exceeds that stored in the trees themselves."
+    label: 1
+    subcategory: "ecological"
+
+  - text: "Agroforestry systems integrate trees with crops to improve soil health and provide multiple harvests."
+    label: 1
+    subcategory: "ecological"
+
+  - text: "Urban heat islands can be mitigated by strategic tree planting that provides shade and evapotranspiration."
+    label: 1
+    subcategory: "ecological"
+
+  - text: "Keystone tree species support disproportionately large numbers of dependent organisms."
+    label: 1
+    subcategory: "ecological"
+
+  - text: "Phenological shifts in tree leafing and flowering dates indicate ecosystem responses to climate change."
+    label: 1
+    subcategory: "ecological"
+
+  # === NEGATIVE: abstract (mathematics, philosophy, logic) ===
+
+  - text: "The proof establishes that no algorithm can solve the halting problem in finite time."
+    label: 0
+    subcategory: "abstract"
+
+  - text: "Bayesian inference updates probability estimates as new evidence becomes available."
+    label: 0
+    subcategory: "abstract"
+
+  - text: "The categorical imperative asks whether a maxim could be universalized without contradiction."
+    label: 0
+    subcategory: "abstract"
+
+  - text: "Prime numbers become increasingly sparse as integers grow larger, though infinitely many exist."
+    label: 0
+    subcategory: "abstract"
+
+  - text: "Epistemological skepticism questions whether justified true belief constitutes genuine knowledge."
+    label: 0
+    subcategory: "abstract"
+
+  - text: "The function converges uniformly on any closed interval within its domain."
+    label: 0
+    subcategory: "abstract"
+
+  - text: "Utilitarian ethics evaluates actions based solely on their consequences for overall well-being."
+    label: 0
+    subcategory: "abstract"
+
+  - text: "Non-Euclidean geometries abandon the parallel postulate, allowing curved spaces."
+    label: 0
+    subcategory: "abstract"
+
+  - text: "The mind-body problem concerns how mental states relate to physical brain processes."
+    label: 0
+    subcategory: "abstract"
+
+  - text: "Regression analysis quantifies the relationship between dependent and independent variables."
+    label: 0
+    subcategory: "abstract"
+
+  - text: "Phenomenology examines the structures of consciousness and subjective experience."
+    label: 0
+    subcategory: "abstract"
+
+  - text: "The eigenvalues of a matrix determine its behavior under repeated application."
+    label: 0
+    subcategory: "abstract"
+
+  - text: "Moral relativism holds that ethical standards vary across cultures without objective foundation."
+    label: 0
+    subcategory: "abstract"
+
+  - text: "Gödel's incompleteness theorems demonstrate limitations of formal axiomatic systems."
+    label: 0
+    subcategory: "abstract"
+
+  - text: "The social contract tradition grounds political authority in hypothetical agreement among citizens."
+    label: 0
+    subcategory: "abstract"
+
+  - text: "Fourier transforms decompose signals into constituent frequencies."
+    label: 0
+    subcategory: "abstract"
+
+  - text: "Existentialism emphasizes individual freedom and the responsibility it entails."
+    label: 0
+    subcategory: "abstract"
+
+  - text: "The central limit theorem explains why sample means follow a normal distribution."
+    label: 0
+    subcategory: "abstract"
+
+  - text: "Virtue ethics focuses on character traits rather than rules or consequences."
+    label: 0
+    subcategory: "abstract"
+
+  - text: "Topology studies properties preserved under continuous deformation of shapes."
+    label: 0
+    subcategory: "abstract"
+
+  - text: "The problem of induction questions whether past regularities justify future predictions."
+    label: 0
+    subcategory: "abstract"
+
+  - text: "Differential equations model rates of change in physical and biological systems."
+    label: 0
+    subcategory: "abstract"
+
+  - text: "Compatibilism argues that free will and determinism can coexist without contradiction."
+    label: 0
+    subcategory: "abstract"
+
+  - text: "Set theory provides the foundational language for modern mathematics."
+    label: 0
+    subcategory: "abstract"
+
+  - text: "The veil of ignorance thought experiment removes knowledge of one's social position when reasoning about justice."
+    label: 0
+    subcategory: "abstract"

@@ -1,0 +1,207 @@
+# Batch 5: experiential (positive) + science (negative)
+# Generated for linear probe training
+
+examples:
+  # === POSITIVE: experiential (human experiences with trees) ===
+
+  - text: "The children spent the afternoon climbing the old magnolia, its broad branches forming natural platforms."
+    label: 1
+    subcategory: "experiential"
+
+  - text: "Raking autumn leaves had become a weekend ritual, the maple's red and orange carpet covering the lawn."
+    label: 1
+    subcategory: "experiential"
+
+  - text: "She read her book in the dappled shade beneath the apple tree, petals drifting down like snow."
+    label: 1
+    subcategory: "experiential"
+
+  - text: "The treehouse his grandfather built still stood, weathered but sturdy, in the backyard oak."
+    label: 1
+    subcategory: "experiential"
+
+  - text: "Walking through the pine forest, the scent of resin filled the air with each footstep on the needle-covered path."
+    label: 1
+    subcategory: "experiential"
+
+  - text: "They carved their initials into the beech tree the summer they met, returning years later to find the scar still visible."
+    label: 1
+    subcategory: "experiential"
+
+  - text: "The hammock swayed gently between two elms as she watched clouds drift overhead."
+    label: 1
+    subcategory: "experiential"
+
+  - text: "Every spring he tapped the sugar maples, continuing a tradition his family had practiced for generations."
+    label: 1
+    subcategory: "experiential"
+
+  - text: "The tire swing hung from a thick horizontal branch, worn smooth by decades of children's hands."
+    label: 1
+    subcategory: "experiential"
+
+  - text: "Forest bathing, the Japanese practice of shinrin-yoku, involves mindful immersion among trees."
+    label: 1
+    subcategory: "experiential"
+
+  - text: "The picnic blanket was spread beneath the old walnut tree that had shaded family gatherings for decades."
+    label: 1
+    subcategory: "experiential"
+
+  - text: "He proposed beneath the cherry trees in full bloom, pink petals swirling around them in the breeze."
+    label: 1
+    subcategory: "experiential"
+
+  - text: "Picking apples from the orchard ladder, she filled basket after basket with crisp fall fruit."
+    label: 1
+    subcategory: "experiential"
+
+  - text: "The campsite nestled among towering pines, their branches filtering starlight above the tent."
+    label: 1
+    subcategory: "experiential"
+
+  - text: "As a child she believed the willow's trailing branches formed a secret room just for her."
+    label: 1
+    subcategory: "experiential"
+
+  - text: "The sound of wind through the aspen leaves created a constant whisper surrounding the hiking trail."
+    label: 1
+    subcategory: "experiential"
+
+  - text: "They planted a tree for each child born, watching both grow taller with each passing year."
+    label: 1
+    subcategory: "experiential"
+
+  - text: "The rope swing launched them over the creek, releasing at the apex to splash into cool water."
+    label: 1
+    subcategory: "experiential"
+
+  - text: "Morning coffee on the porch meant watching sunlight filter through the dogwood's white blossoms."
+    label: 1
+    subcategory: "experiential"
+
+  - text: "The nature guide pointed out how to identify trees by their bark alone during the winter walk."
+    label: 1
+    subcategory: "experiential"
+
+  - text: "Gathering chestnuts in autumn, they roasted them over the fire that evening."
+    label: 1
+    subcategory: "experiential"
+
+  - text: "The old sycamore marked the property corner, its mottled bark a familiar landmark for generations."
+    label: 1
+    subcategory: "experiential"
+
+  - text: "She found peace in the arboretum, walking slowly among labeled specimens from every continent."
+    label: 1
+    subcategory: "experiential"
+
+  - text: "The lightning-struck pine still stood at the meadow's edge, its blackened trunk a monument to the storm."
+    label: 1
+    subcategory: "experiential"
+
+  - text: "Autumn drives through New England meant stopping repeatedly to photograph the spectacular foliage."
+    label: 1
+    subcategory: "experiential"
+
+  # === NEGATIVE: science (physics, chemistry, astronomy) ===
+
+  - text: "The particle accelerator smashes protons together at nearly the speed of light to study fundamental forces."
+    label: 0
+    subcategory: "science"
+
+  - text: "Spectroscopy reveals the chemical composition of distant stars through analysis of absorbed wavelengths."
+    label: 0
+    subcategory: "science"
+
+  - text: "The catalyst lowers activation energy, allowing the reaction to proceed at room temperature."
+    label: 0
+    subcategory: "science"
+
+  - text: "Gravitational waves from merging black holes were first detected in 2015 after decades of effort."
+    label: 0
+    subcategory: "science"
+
+  - text: "Superconductors exhibit zero electrical resistance below their critical temperature."
+    label: 0
+    subcategory: "science"
+
+  - text: "The telescope's adaptive optics compensate for atmospheric distortion in real time."
+    label: 0
+    subcategory: "science"
+
+  - text: "Covalent bonds form when atoms share electrons to achieve stable configurations."
+    label: 0
+    subcategory: "science"
+
+  - text: "The rover's mass spectrometer analyzed soil samples for evidence of past microbial life."
+    label: 0
+    subcategory: "science"
+
+  - text: "Entropy increases in isolated systems, driving the arrow of time forward."
+    label: 0
+    subcategory: "science"
+
+  - text: "Exoplanet detection via the transit method measures minute dips in stellar brightness."
+    label: 0
+    subcategory: "science"
+
+  - text: "The polymer chains align under stress, giving the material its distinctive strength."
+    label: 0
+    subcategory: "science"
+
+  - text: "Neutron stars pack more mass than the sun into a sphere only miles across."
+    label: 0
+    subcategory: "science"
+
+  - text: "The redox reaction transfers electrons from the reducing agent to the oxidizing agent."
+    label: 0
+    subcategory: "science"
+
+  - text: "Quantum entanglement links particles such that measuring one instantly affects the other."
+    label: 0
+    subcategory: "science"
+
+  - text: "The crystalline structure determines many of the material's optical and electrical properties."
+    label: 0
+    subcategory: "science"
+
+  - text: "Dark matter interacts gravitationally but not electromagnetically, making it invisible to telescopes."
+    label: 0
+    subcategory: "science"
+
+  - text: "The pH scale measures hydrogen ion concentration on a logarithmic scale from 0 to 14."
+    label: 0
+    subcategory: "science"
+
+  - text: "Solar flares release bursts of radiation that can disrupt communications satellites in orbit."
+    label: 0
+    subcategory: "science"
+
+  - text: "The isotope's half-life determines how quickly the radioactive sample decays."
+    label: 0
+    subcategory: "science"
+
+  - text: "The James Webb Space Telescope observes in infrared to peer through cosmic dust clouds."
+    label: 0
+    subcategory: "science"
+
+  - text: "Electronegativity differences between atoms determine the polarity of chemical bonds."
+    label: 0
+    subcategory: "science"
+
+  - text: "The pulsar's regular radio emissions serve as a cosmic lighthouse rotating many times per second."
+    label: 0
+    subcategory: "science"
+
+  - text: "Le Chatelier's principle predicts how equilibrium shifts in response to changing conditions."
+    label: 0
+    subcategory: "science"
+
+  - text: "The cosmic microwave background preserves information about the universe's earliest moments."
+    label: 0
+    subcategory: "science"
+
+  - text: "Surface tension allows water striders to walk on water without breaking through the surface."
+    label: 0
+    subcategory: "science"
