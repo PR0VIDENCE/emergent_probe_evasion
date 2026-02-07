@@ -76,6 +76,18 @@ def main():
                         help="Skip activation extraction, load from disk")
     args = parser.parse_args()
 
+    # Resolve relative paths against project root
+    def resolve_path(p):
+        path = Path(p)
+        if not path.is_absolute():
+            path = PROJECT_ROOT / path
+        return str(path)
+
+    args.model_config = resolve_path(args.model_config)
+    args.probe_config = resolve_path(args.probe_config)
+    args.data_dir = resolve_path(args.data_dir)
+    args.output_dir = resolve_path(args.output_dir)
+
     # Load configs
     model_config = load_config(args.model_config)
     probe_config = load_config(args.probe_config)
