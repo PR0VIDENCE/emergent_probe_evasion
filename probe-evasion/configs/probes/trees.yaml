@@ -1,7 +1,6 @@
 # Probe training configuration for "trees" concept
 # Preliminary experiments on Qwen2.5 32B Instruct (64 layers)
 concept: trees
-num_probes: 4
 probe_type: linear
 training_samples: 400
 

@@ -18,6 +18,7 @@ This script:
 """
 
 import argparse
+import hashlib
 import json
 import os
 import sys
@@ -43,6 +44,17 @@ def load_config(path: str) -> dict:
     """Load YAML config file."""
     with open(path, "r") as f:
         return yaml.safe_load(f)
+
+
+def compute_data_manifest(data_dir: str) -> str:
+    """Compute a hash of all batch files to detect data changes."""
+    pattern = os.path.join(data_dir, "generated_batch_*.yaml")
+    batch_files = sorted(glob(pattern))
+    hasher = hashlib.sha256()
+    for f in batch_files:
+        hasher.update(f.encode())
+        hasher.update(open(f, "rb").read())
+    return hasher.hexdigest()[:16]
 
 
 def load_all_examples(data_dir: str) -> list:
@@ -123,6 +135,10 @@ def main():
         n_neg = len(split_examples) - n_pos
         print(f"  {split_name}: {len(split_examples)} examples ({n_pos} pos, {n_neg} neg)")
 
+    # Compute data manifest for consistency checking
+    data_manifest = compute_data_manifest(args.data_dir)
+    manifest_path = os.path.join(activations_dir, "data_manifest.txt")
+
     # Step 2: Extract activations (or load from disk)
     if not args.skip_extraction:
         print("\n" + "=" * 60)
@@ -136,19 +152,25 @@ def main():
         model, tokenizer = load_model_and_tokenizer(model_config)
         print(f"  Model loaded in {time.time() - t0:.1f}s")
 
-        # Verify model architecture
+        # Verify model architecture and layer indices
         num_layers = len(model.model.layers)
         print(f"  Model has {num_layers} layers (expected {model_config['num_layers']})")
         assert num_layers == model_config["num_layers"], \
             f"Layer count mismatch: got {num_layers}, expected {model_config['num_layers']}"
+        invalid_layers = [l for l in target_layers if l < 0 or l >= num_layers]
+        assert not invalid_layers, \
+            f"Layer indices {invalid_layers} out of range for {num_layers}-layer model"
 
         # Extract for each split
+        max_length = model_config.get("max_tokens", 512)
         for split_name, split_examples in splits.items():
             print(f"\n  Extracting activations for {split_name} split ({len(split_examples)} examples)...")
             texts = [ex["text"] for ex in split_examples]
 
             t0 = time.time()
-            acts = extract_activations_batch(texts, model, tokenizer, target_layers, pooling)
+            acts = extract_activations_batch(
+                texts, model, tokenizer, target_layers, pooling, max_length=max_length
+            )
             elapsed = time.time() - t0
             print(f"    Done in {elapsed:.1f}s ({elapsed/len(texts):.2f}s/example)")
 
@@ -163,6 +185,10 @@ def main():
             labels_path = os.path.join(activations_dir, f"{split_name}_labels.pt")
             torch.save(labels, labels_path)
 
+        # Save data manifest
+        with open(manifest_path, "w") as f:
+            f.write(data_manifest)
+
         # Free GPU memory
         del model, tokenizer
         torch.cuda.empty_cache()
@@ -170,6 +196,18 @@ def main():
 
     else:
         print("\n  Skipping extraction, loading activations from disk...")
+        # Verify cached activations match current data
+        if os.path.exists(manifest_path):
+            with open(manifest_path) as f:
+                cached_manifest = f.read().strip()
+            if cached_manifest != data_manifest:
+                raise RuntimeError(
+                    f"Data files changed since activations were extracted "
+                    f"(cached={cached_manifest}, current={data_manifest}). "
+                    f"Re-run without --skip-extraction."
+                )
+        else:
+            print("  WARNING: No data manifest found, cannot verify activation consistency.")
 
     # Step 3: Train probes
     print("\n" + "=" * 60)

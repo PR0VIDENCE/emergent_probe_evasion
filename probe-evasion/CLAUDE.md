@@ -112,4 +112,4 @@ python scripts/build_concept_dataset.py \
 
 ## Dependencies
 
-See `requirements.txt`: torch, transformers, numpy, pandas, matplotlib, seaborn, pyyaml, tqdm, requests, wikipedia-api
+See `pyproject.toml`. Install with `uv sync`. Key packages: torch>=2.1, transformers>=4.45, bitsandbytes, accelerate, scikit-learn, numpy, pandas, matplotlib, seaborn, pyyaml, tqdm

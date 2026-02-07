@@ -64,6 +64,7 @@ def extract_activations_batch(
     tokenizer,
     layers: List[int],
     pooling: str = "last_token",
+    max_length: int = 512,
 ) -> Dict[int, torch.Tensor]:
     """
     Extract activations for a batch of texts from a pre-loaded model.
@@ -77,6 +78,7 @@ def extract_activations_batch(
         tokenizer: Pre-loaded tokenizer.
         layers: List of layer indices to extract from.
         pooling: "last_token" or "mean".
+        max_length: Maximum token length for truncation.
 
     Returns:
         Dict mapping layer_idx -> Tensor of shape (n_texts, hidden_dim).
@@ -103,7 +105,7 @@ def extract_activations_batch(
         for text in tqdm(texts, desc="Extracting activations"):
             hook_outputs.clear()
 
-            inputs = tokenizer(text, return_tensors="pt", truncation=True, max_length=512)
+            inputs = tokenizer(text, return_tensors="pt", truncation=True, max_length=max_length)
             inputs = {k: v.to(model.device) for k, v in inputs.items()}
 
             with torch.no_grad():
@@ -132,55 +134,44 @@ def extract_activations_batch(
     return result
 
 
-def extract_activations(prompt: str, model_config: dict, layers: List[int]) -> Dict:
+def extract_activations(
+    prompt: str,
+    model_config: dict,
+    layers: List[int],
+    pooling: str = "last_token",
+) -> Dict:
     """
-    Extract hidden state activations from specified layers.
+    Extract hidden state activations from specified layers for a single prompt.
 
-    Runs a forward pass and captures intermediate activations using
-    hooks on the specified layers.
+    Convenience wrapper that loads the model, extracts, and cleans up.
+    For processing multiple texts, use load_model_and_tokenizer() +
+    extract_activations_batch() instead to avoid reloading the model.
 
     Args:
         prompt: Prompt string to process.
-        model_config: Model configuration dict (must specify local_path
-                     for activation extraction).
+        model_config: Model configuration dict.
         layers: List of layer indices to extract activations from.
+        pooling: "last_token" or "mean".
 
     Returns:
         Dict mapping layer index to activation tensor:
         {
-            layer_idx: tensor of shape (seq_len, hidden_dim),
+            layer_idx: tensor of shape (hidden_dim,),
             ...
         }
     """
     model, tokenizer = load_model_and_tokenizer(model_config)
-
-    activations = {}
-    hooks = []
-
-    def make_hook(layer_idx):
-        def hook_fn(module, input, output):
-            hidden_states = output[0] if isinstance(output, tuple) else output
-            if hidden_states.dim() == 3:
-                hidden_states = hidden_states[0]
-            activations[layer_idx] = hidden_states.detach().cpu().float()
-        return hook_fn
-
-    for layer_idx in layers:
-        layer_module = _get_layer_module(model, layer_idx)
-        hook = layer_module.register_forward_hook(make_hook(layer_idx))
-        hooks.append(hook)
-
     try:
-        inputs = tokenizer(prompt, return_tensors="pt", truncation=True, max_length=512)
-        inputs = {k: v.to(model.device) for k, v in inputs.items()}
-
-        with torch.no_grad():
-            model(**inputs)
+        max_length = model_config.get("max_tokens", 512)
+        result = extract_activations_batch(
+            [prompt], model, tokenizer, layers, pooling, max_length=max_length
+        )
+        # Squeeze batch dim: (1, hidden_dim) -> (hidden_dim,)
+        return {layer_idx: tensor[0] for layer_idx, tensor in result.items()}
     finally:
-        for hook in hooks:
-            hook.remove()
-
-    return activations
+        del model, tokenizer
+        if torch.cuda.is_available():
+            torch.cuda.empty_cache()
 
 
 def extract_activations_at_positions(
