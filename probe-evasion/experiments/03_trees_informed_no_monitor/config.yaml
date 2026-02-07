@@ -1,0 +1,16 @@
+# Experiment 03: Trees informed (no monitor) condition
+experiment_name: trees_informed_no_monitor
+condition: informed_no_monitor
+
+# Reference configs
+model_config: ../../configs/models/llama8b.yaml
+probe_config: ../../configs/probes/trees.yaml
+# Note: uses informed config as base but with no_monitor template
+experiment_config: ../../configs/experiments/informed.yaml
+
+# Experiment-specific overrides
+prompt_template: informed_no_monitor
+
+# Experiment-specific settings
+output_dir: ../../data/outputs/03_trees_informed_no_monitor
+random_seed: 42

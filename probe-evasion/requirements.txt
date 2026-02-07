@@ -1,0 +1,13 @@
+torch
+transformers
+numpy
+pandas
+matplotlib
+seaborn
+pyyaml
+tqdm
+requests
+wikipedia-api
+bitsandbytes
+accelerate
+scikit-learn

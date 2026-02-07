@@ -1,0 +1,9 @@
+# Informed experiment configuration
+model_config: configs/models/llama8b.yaml
+probe_config: configs/probes/trees.yaml
+prompt_template: informed
+question_categories:
+  - direct
+  - circumspect
+  - oblique
+num_rollouts: 10

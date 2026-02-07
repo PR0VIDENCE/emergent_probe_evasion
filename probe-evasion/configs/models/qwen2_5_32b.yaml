@@ -1,0 +1,23 @@
+# Qwen2.5 32B Instruct model configuration
+model_name: qwen2.5-32b-instruct
+model_id: "Qwen/Qwen2.5-32B-Instruct"
+api_endpoint: null
+local_path: null  # Downloaded by transformers on first use
+max_tokens: 4096
+temperature: 0.7
+
+# Architecture details
+num_layers: 64
+hidden_dim: 5120
+
+# Quantization settings for L40S (48GB VRAM)
+quantization:
+  enabled: true
+  method: bitsandbytes
+  load_in_4bit: true
+  bnb_4bit_quant_type: nf4
+  bnb_4bit_compute_dtype: float16
+  bnb_4bit_use_double_quant: true
+
+# Device mapping
+device_map: auto

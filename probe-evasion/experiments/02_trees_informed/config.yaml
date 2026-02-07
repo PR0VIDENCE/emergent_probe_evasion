@@ -1,0 +1,12 @@
+# Experiment 02: Trees informed condition
+experiment_name: trees_informed
+condition: informed
+
+# Reference configs
+model_config: ../../configs/models/llama8b.yaml
+probe_config: ../../configs/probes/trees.yaml
+experiment_config: ../../configs/experiments/informed.yaml
+
+# Experiment-specific settings
+output_dir: ../../data/outputs/02_trees_informed
+random_seed: 42
