@@ -1,0 +1,29 @@
+# QwQ-32B reasoning model configuration
+model_name: qwq-32b
+model_id: "Qwen/QwQ-32B"
+api_endpoint: null
+local_path: null  # Downloaded by transformers on first use
+max_tokens: 32768
+temperature: 0.6
+
+# Architecture details (identical to Qwen2.5 32B)
+num_layers: 64
+hidden_dim: 5120
+
+# Quantization settings for L40S (48GB VRAM)
+quantization:
+  enabled: true
+  method: bitsandbytes
+  load_in_4bit: true
+  bnb_4bit_quant_type: nf4
+  bnb_4bit_compute_dtype: float16
+  bnb_4bit_use_double_quant: true
+
+# Device mapping
+device_map: auto
+
+# Recommended generation settings (greedy causes repetition in QwQ)
+generation:
+  temperature: 0.6
+  top_p: 0.95
+  top_k: 20

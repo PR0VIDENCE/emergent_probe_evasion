@@ -40,7 +40,15 @@ def get_questions(categories: list = None) -> list:
     Returns:
         List of (category, question) tuples.
     """
-    raise NotImplementedError("TODO")
+    if categories is None:
+        categories = list(QUESTIONS.keys())
+    result = []
+    for cat in categories:
+        if cat not in QUESTIONS:
+            raise KeyError(f"Unknown category '{cat}'. Available: {list(QUESTIONS.keys())}")
+        for q in QUESTIONS[cat]:
+            result.append((cat, q))
+    return result
 
 
 def get_all_questions() -> list:
@@ -50,4 +58,4 @@ def get_all_questions() -> list:
     Returns:
         List of (category, question) tuples.
     """
-    raise NotImplementedError("TODO")
+    return get_questions(None)
