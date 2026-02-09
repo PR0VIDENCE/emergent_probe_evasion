@@ -46,10 +46,11 @@ def analyze_regime(trials: list, regime_name: str) -> dict:
             thinking_tokens.append(trial.get("thinking_tokens", 0))
             answer_tokens.append(trial.get("answer_tokens", 0))
 
-        for layer_str, result in probe_results.items():
-            layer_idx = int(layer_str) if isinstance(layer_str, str) and layer_str.isdigit() else layer_str
-            layer_confidences[layer_idx].append(result["mean_confidence"])
-            layer_detections[layer_idx].append(1 if result["mean_confidence"] >= 0.5 else 0)
+        for layer_key, result in probe_results.items():
+            # Keep keys as strings (JSON always serializes int keys as strings)
+            layer_key = str(layer_key)
+            layer_confidences[layer_key].append(result["mean_confidence"])
+            layer_detections[layer_key].append(1 if result["mean_confidence"] >= 0.5 else 0)
 
     stats = {}
     for layer_idx in sorted(layer_confidences.keys(), key=lambda x: int(x)):
@@ -86,8 +87,8 @@ def analyze_feedback_turns(trials: list) -> list:
         for trial in trials:
             turns = trial.get("turns", [])
             if turn_idx < len(turns):
-                for layer_str, result in turns[turn_idx]["probe_results"].items():
-                    layer_confidences[layer_str].append(result["mean_confidence"])
+                for layer_key, result in turns[turn_idx]["probe_results"].items():
+                    layer_confidences[str(layer_key)].append(result["mean_confidence"])
 
         stats = {}
         for layer_idx in sorted(layer_confidences.keys(), key=lambda x: int(x)):
@@ -115,12 +116,13 @@ def main():
         print(f"No trial files found in {results_dir}/trials/")
         sys.exit(1)
 
-    # Determine layers from first trial
+    # Determine layers from first trial (JSON keys are always strings)
     first_trials = next(iter(all_trials.values()))
     if "turns" in first_trials[0]:
         sample_results = first_trials[0]["turns"][0]["probe_results"]
     else:
         sample_results = first_trials[0]["probe_results"]
+    # Normalize all layer keys to strings for consistent lookups
     layers = sorted(sample_results.keys(), key=lambda x: int(x))
 
     # Regime ordering (ablation ladder)
@@ -169,6 +171,7 @@ def main():
 
         if regime_name == "baseline":
             baseline_avgs = {l: stats[l]["mean_confidence"] for l in layers if l in stats}
+            baseline_avg_overall = avg
 
         print(row)
 
