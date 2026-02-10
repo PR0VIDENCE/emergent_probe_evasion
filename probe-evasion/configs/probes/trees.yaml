@@ -21,11 +21,13 @@ random_seeds:
   - 789
 
 # Training hyperparameters
+normalize: true
+
 training:
   learning_rate: 0.001
   num_epochs: 100
   batch_size: 32
-  weight_decay: 0.01
+  weight_decay: 0.1
   patience: 10
 
 # Dataset split ratios

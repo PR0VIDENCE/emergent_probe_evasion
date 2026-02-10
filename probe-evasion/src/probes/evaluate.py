@@ -1,11 +1,12 @@
 """Evaluation functions for trained probes."""
 
 import torch
-from typing import Dict, List
+from typing import Dict, List, Optional
 from .architectures import LinearProbe
 
 
-def evaluate_probe(probe: LinearProbe, activations, labels=None) -> Dict:
+def evaluate_probe(probe: LinearProbe, activations, labels=None,
+                   scaler_mean=None, scaler_scale=None) -> Dict:
     """
     Evaluate a single probe on activation data.
 
@@ -14,6 +15,8 @@ def evaluate_probe(probe: LinearProbe, activations, labels=None) -> Dict:
         activations: Tensor of shape (n_samples, hidden_dim) or
                     (hidden_dim,) for single sample.
         labels: Optional binary tensor for computing metrics.
+        scaler_mean: Optional per-feature mean for normalization.
+        scaler_scale: Optional per-feature std for normalization.
 
     Returns:
         Dict containing:
@@ -22,6 +25,9 @@ def evaluate_probe(probe: LinearProbe, activations, labels=None) -> Dict:
         - confidence: Probability from sigmoid of activation strength
         - accuracy, auc_roc, f1: (if labels provided)
     """
+    if scaler_mean is not None and scaler_scale is not None:
+        activations = (activations - scaler_mean) / scaler_scale
+
     probe.eval()
     with torch.no_grad():
         logits = probe(activations)
@@ -51,15 +57,20 @@ def evaluate_probe(probe: LinearProbe, activations, labels=None) -> Dict:
     return result
 
 
-def evaluate_ensemble(probes: List[LinearProbe], activations, labels=None) -> Dict:
+def evaluate_ensemble(probes: List[LinearProbe], activations, labels=None,
+                      scaler_mean=None, scaler_scale=None) -> Dict:
     """
     Evaluate a probe ensemble and aggregate results.
+
+    Normalization is applied once before passing to individual probes.
 
     Args:
         probes: List of trained LinearProbe instances.
         activations: Tensor of shape (n_samples, hidden_dim) or
                     (hidden_dim,) for single sample.
         labels: Optional binary tensor for computing metrics.
+        scaler_mean: Optional per-feature mean for normalization.
+        scaler_scale: Optional per-feature std for normalization.
 
     Returns:
         Dict containing:
@@ -70,6 +81,10 @@ def evaluate_ensemble(probes: List[LinearProbe], activations, labels=None) -> Di
         - agreement_ratio: Fraction of probes agreeing with majority
         - individual_results: List of per-probe evaluation dicts
     """
+    # Normalize once, then pass without scaler to individual evaluations
+    if scaler_mean is not None and scaler_scale is not None:
+        activations = (activations - scaler_mean) / scaler_scale
+
     individual_results = [evaluate_probe(p, activations, labels) for p in probes]
 
     all_logits = torch.stack([r["activation_strength"] for r in individual_results])

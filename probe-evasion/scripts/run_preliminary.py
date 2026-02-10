@@ -238,13 +238,20 @@ def main():
             "random_seeds": random_seeds,
             "val_activations": val_acts,
             "val_labels": val_labels,
+            "normalize": probe_config.get("normalize", True),
         }
         t0 = time.time()
-        probes = train_probe_ensemble(train_acts, train_labels, ensemble_config)
+        ensemble_result = train_probe_ensemble(train_acts, train_labels, ensemble_config)
+        probes = ensemble_result["probes"]
+        scaler_mean = ensemble_result["scaler_mean"]
+        scaler_scale = ensemble_result["scaler_scale"]
         print(f"    Trained {len(probes)} probes in {time.time() - t0:.2f}s")
+        if scaler_mean is not None:
+            print(f"    Normalization: enabled (mean range [{scaler_mean.min():.2f}, {scaler_mean.max():.2f}])")
 
         # Evaluate on test set
-        test_result = evaluate_ensemble(probes, test_acts, test_labels)
+        test_result = evaluate_ensemble(probes, test_acts, test_labels,
+                                        scaler_mean=scaler_mean, scaler_scale=scaler_scale)
         print(f"    Ensemble test accuracy: {test_result['ensemble_accuracy']:.4f}")
         print(f"    Ensemble test AUC-ROC:  {test_result.get('ensemble_auc_roc', 'N/A')}")
         print(f"    Ensemble test F1:       {test_result['ensemble_f1']:.4f}")
@@ -253,13 +260,20 @@ def main():
             print(f"    Individual accuracies:  {[f'{a:.4f}' for a in accs]}")
 
         # Evaluate on train set (check for overfitting)
-        train_result = evaluate_ensemble(probes, train_acts, train_labels)
+        train_result = evaluate_ensemble(probes, train_acts, train_labels,
+                                         scaler_mean=scaler_mean, scaler_scale=scaler_scale)
         print(f"    Ensemble train accuracy: {train_result['ensemble_accuracy']:.4f}")
 
         # Save probes
         for i, probe in enumerate(probes):
             probe_path = os.path.join(probes_dir, f"layer{layer_idx}_seed{random_seeds[i]}.pt")
             torch.save(probe.state_dict(), probe_path)
+
+        # Save scaler
+        if scaler_mean is not None:
+            scaler_path = os.path.join(probes_dir, f"layer{layer_idx}_scaler.pt")
+            torch.save({"scaler_mean": scaler_mean, "scaler_scale": scaler_scale}, scaler_path)
+            print(f"    Saved scaler to {scaler_path}")
 
         # Store serializable results
         all_results[f"layer_{layer_idx}"] = {

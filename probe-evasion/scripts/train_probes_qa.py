@@ -287,12 +287,16 @@ def main():
                 "patience": probe_config["patience"],
                 "val_activations": val_acts.get(layer_idx),
                 "val_labels": val_labels if layer_idx in val_acts else None,
+                "normalize": probe_config.get("normalize", True),
             }
 
             # Train ensemble
-            probes = train_probe_ensemble(
+            ensemble_result = train_probe_ensemble(
                 train_acts[layer_idx], train_labels, train_config
             )
+            probes = ensemble_result["probes"]
+            scaler_mean = ensemble_result["scaler_mean"]
+            scaler_scale = ensemble_result["scaler_scale"]
 
             # Save probes
             probe_dir = os.path.join(data_dir, "probes", position)
@@ -303,10 +307,17 @@ def main():
                 probe_path = os.path.join(probe_dir, f"layer{layer_idx}_seed{seed}.pt")
                 torch.save(probe.state_dict(), probe_path)
 
+            # Save scaler
+            if scaler_mean is not None:
+                scaler_path = os.path.join(probe_dir, f"layer{layer_idx}_scaler.pt")
+                torch.save({"scaler_mean": scaler_mean, "scaler_scale": scaler_scale},
+                           scaler_path)
+
             # Evaluate on test set
             if layer_idx in test_acts:
                 test_result = evaluate_ensemble(
-                    probes, test_acts[layer_idx], test_labels
+                    probes, test_acts[layer_idx], test_labels,
+                    scaler_mean=scaler_mean, scaler_scale=scaler_scale,
                 )
                 layer_result = {
                     "ensemble_accuracy": test_result.get("ensemble_accuracy"),

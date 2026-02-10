@@ -16,7 +16,7 @@ token_positions:
   - answer_mean_pool
 
 generation:
-  max_new_tokens: 4096
+  max_new_tokens: 2048
   temperature: 0.6
   top_p: 0.95
   top_k: 20
@@ -25,8 +25,9 @@ probe_training:
   random_seeds: [42, 123, 456, 789]
   learning_rate: 0.001
   num_epochs: 100
-  weight_decay: 0.01
+  weight_decay: 0.1
   patience: 10
+  normalize: true
 
 split:
   train: 0.8

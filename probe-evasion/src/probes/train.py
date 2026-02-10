@@ -3,12 +3,12 @@
 import torch
 import torch.nn as nn
 import torch.optim as optim
-from typing import List
+from typing import Dict, List, Optional
 
 from .architectures import LinearProbe
 
 
-def train_probe(activations, labels, config) -> LinearProbe:
+def train_probe(activations, labels, config) -> Dict:
     """
     Train a single linear probe on activation data.
 
@@ -25,9 +25,13 @@ def train_probe(activations, labels, config) -> LinearProbe:
                - patience (default 10, for early stopping)
                - val_activations (optional tensor for early stopping)
                - val_labels (optional tensor for early stopping)
+               - normalize (default True, apply StandardScaler normalization)
 
     Returns:
-        Trained LinearProbe instance.
+        Dict containing:
+        - probe: Trained LinearProbe instance
+        - scaler_mean: Per-feature mean tensor (or None if normalize=False)
+        - scaler_scale: Per-feature std tensor (or None if normalize=False)
     """
     seed = config.get("random_seed", 42)
     torch.manual_seed(seed)
@@ -42,13 +46,26 @@ def train_probe(activations, labels, config) -> LinearProbe:
     weight_decay = config.get("weight_decay", 0.01)
     num_epochs = config.get("num_epochs", 100)
     patience = config.get("patience", 10)
+    normalize = config.get("normalize", True)
 
-    optimizer = optim.Adam(probe.parameters(), lr=lr, weight_decay=weight_decay)
-    criterion = nn.BCEWithLogitsLoss()
+    # StandardScaler normalization
+    scaler_mean = None
+    scaler_scale = None
+
+    if normalize:
+        scaler_mean = activations.mean(dim=0)
+        scaler_scale = activations.std(dim=0).clamp(min=1e-8)
+        activations = (activations - scaler_mean) / scaler_scale
 
     val_acts = config.get("val_activations", None)
     val_labels_t = config.get("val_labels", None)
     use_early_stopping = val_acts is not None and val_labels_t is not None
+
+    if use_early_stopping and normalize and scaler_mean is not None:
+        val_acts = (val_acts - scaler_mean) / scaler_scale
+
+    optimizer = optim.Adam(probe.parameters(), lr=lr, weight_decay=weight_decay)
+    criterion = nn.BCEWithLogitsLoss()
 
     best_val_loss = float("inf")
     best_state = None
@@ -85,30 +102,65 @@ def train_probe(activations, labels, config) -> LinearProbe:
         probe.load_state_dict(best_state)
 
     probe.eval()
-    return probe
+    return {
+        "probe": probe,
+        "scaler_mean": scaler_mean,
+        "scaler_scale": scaler_scale,
+    }
 
 
-def train_probe_ensemble(activations, labels, config) -> List[LinearProbe]:
+def train_probe_ensemble(activations, labels, config) -> Dict:
     """
     Train an ensemble of probes with different random seeds.
 
-    Used to get robust estimates of probe accuracy and to enable
-    ensemble-based detection methods.
+    Computes the scaler ONCE on training data and shares across all seeds.
 
     Args:
         activations: Tensor of shape (n_samples, hidden_dim).
         labels: Binary tensor of shape (n_samples,).
         config: Dict containing:
                - random_seeds: List of seeds for reproducibility
+               - normalize (default True)
                - (other training hyperparameters)
 
     Returns:
-        List of trained LinearProbe instances.
+        Dict containing:
+        - probes: List of trained LinearProbe instances
+        - scaler_mean: Per-feature mean tensor (or None if normalize=False)
+        - scaler_scale: Per-feature std tensor (or None if normalize=False)
     """
     seeds = config.get("random_seeds", [42, 123, 456, 789])
+    normalize = config.get("normalize", True)
+
+    # Compute scaler once on training data
+    scaler_mean = None
+    scaler_scale = None
+
+    if normalize:
+        scaler_mean = activations.mean(dim=0)
+        scaler_scale = activations.std(dim=0).clamp(min=1e-8)
+
+    # Normalize val data if present (using training scaler)
+    val_acts = config.get("val_activations", None)
+    val_labels = config.get("val_labels", None)
+
     probes = []
     for seed in seeds:
-        probe_config = {**config, "random_seed": seed}
-        probe = train_probe(activations, labels, probe_config)
-        probes.append(probe)
-    return probes
+        # Pass normalize=False to individual probes since we pre-computed the scaler
+        # and will pass pre-normalized data
+        probe_config = {**config, "random_seed": seed, "normalize": False}
+        if normalize and scaler_mean is not None:
+            # Pre-normalize activations for this probe
+            norm_acts = (activations - scaler_mean) / scaler_scale
+            if val_acts is not None:
+                probe_config["val_activations"] = (val_acts - scaler_mean) / scaler_scale
+            result = train_probe(norm_acts, labels, probe_config)
+        else:
+            result = train_probe(activations, labels, probe_config)
+        probes.append(result["probe"])
+
+    return {
+        "probes": probes,
+        "scaler_mean": scaler_mean,
+        "scaler_scale": scaler_scale,
+    }

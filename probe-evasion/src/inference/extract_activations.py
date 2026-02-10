@@ -1,7 +1,9 @@
 """Activation extraction from model forward passes."""
 
+import re
+
 import torch
-from typing import Dict, List, Tuple
+from typing import Dict, List, Optional, Tuple
 from tqdm import tqdm
 
 
@@ -174,25 +176,150 @@ def extract_activations(
             torch.cuda.empty_cache()
 
 
-def extract_activations_at_positions(
-    prompt: str,
-    model_config: dict,
-    layers: List[int],
-    positions: List[int]
-) -> Dict:
+def find_token_positions(
+    output_ids: torch.Tensor,
+    input_len: int,
+    tokenizer,
+) -> Dict[str, Optional[int]]:
     """
-    Extract activations at specific token positions.
+    Find key token positions in generated output.
 
     Args:
-        prompt: Prompt string to process.
-        model_config: Model configuration dict.
-        layers: List of layer indices.
-        positions: List of token positions (-1 for last token).
+        output_ids: Full sequence tensor (1, seq_len) including prompt.
+        input_len: Number of prompt tokens.
+        tokenizer: Tokenizer for decoding.
 
     Returns:
-        Dict with structure {layer_idx: {position: tensor(hidden_dim,)}}
+        Dict mapping position name to absolute index in output_ids, or None if not found.
+        - last_token: last generated token
+        - end_of_reasoning: token just before </think> boundary
+        - first_answer_sentence_end: first sentence-ending punctuation after answer starts
+        - answer_start: first answer token (for mean pooling range)
+        - answer_end: last answer token (for mean pooling range)
     """
-    raise NotImplementedError("TODO")
+    seq_len = output_ids.shape[1]
+    generated_ids = output_ids[0, input_len:]  # just the generated portion
+
+    positions = {
+        "last_token": seq_len - 1,
+        "end_of_reasoning": None,
+        "first_answer_sentence_end": None,
+        "answer_start": None,
+        "answer_end": seq_len - 1,
+    }
+
+    # Search for </think> boundary in the generated tokens
+    generated_text = tokenizer.decode(generated_ids, skip_special_tokens=False)
+    think_end_match = re.search(r"</think>", generated_text)
+
+    if think_end_match:
+        text_before_think_end = generated_text[:think_end_match.start()]
+        tokens_before = tokenizer.encode(text_before_think_end, add_special_tokens=False)
+        think_end_offset = len(tokens_before)
+
+        think_tag_text = "</think>"
+        think_tag_tokens = tokenizer.encode(think_tag_text, add_special_tokens=False)
+        think_tag_len = len(think_tag_tokens)
+
+        end_of_reasoning_offset = think_end_offset + think_tag_len - 1
+        if end_of_reasoning_offset < len(generated_ids):
+            positions["end_of_reasoning"] = input_len + end_of_reasoning_offset
+
+        answer_start_offset = think_end_offset + think_tag_len
+        text_after_think = generated_text[think_end_match.end():]
+        stripped = text_after_think.lstrip()
+        whitespace_chars = len(text_after_think) - len(stripped)
+        if whitespace_chars > 0:
+            ws_tokens = tokenizer.encode(text_after_think[:whitespace_chars], add_special_tokens=False)
+            answer_start_offset += len(ws_tokens)
+
+        if answer_start_offset < len(generated_ids):
+            positions["answer_start"] = input_len + answer_start_offset
+
+            answer_text = generated_text[think_end_match.end():]
+            sentence_end_match = re.search(r'[.!?]', answer_text)
+            if sentence_end_match:
+                text_to_sentence_end = answer_text[:sentence_end_match.end()]
+                sentence_tokens = tokenizer.encode(text_to_sentence_end, add_special_tokens=False)
+                sentence_end_offset = answer_start_offset + len(sentence_tokens) - 1
+                if sentence_end_offset < len(generated_ids):
+                    positions["first_answer_sentence_end"] = input_len + sentence_end_offset
+
+    # Fallback: any None positions get last_token
+    for key in positions:
+        if positions[key] is None:
+            positions[key] = positions["last_token"]
+
+    return positions
+
+
+def extract_activations_at_positions(
+    output_ids: torch.Tensor,
+    model,
+    target_layers: List[int],
+    positions: Dict[str, int],
+    answer_start: Optional[int] = None,
+    answer_end: Optional[int] = None,
+) -> Dict[str, Dict[int, torch.Tensor]]:
+    """
+    Run a single forward pass and extract activations at multiple positions.
+
+    Args:
+        output_ids: Full sequence tensor (1, seq_len).
+        model: Loaded model.
+        target_layers: Layer indices to extract from.
+        positions: Dict mapping position name -> absolute token index.
+        answer_start: Start of answer range for mean pooling (absolute index).
+        answer_end: End of answer range for mean pooling (absolute index).
+
+    Returns:
+        Dict mapping position_name -> {layer_idx: tensor(hidden_dim,)} in float16.
+    """
+    hooks = []
+    hook_outputs = {}
+
+    def make_hook(layer_idx):
+        def hook_fn(module, input, output):
+            hidden_states = output[0] if isinstance(output, tuple) else output
+            hook_outputs[layer_idx] = hidden_states.detach().cpu().float()
+        return hook_fn
+
+    for layer_idx in target_layers:
+        layer_module = _get_layer_module(model, layer_idx)
+        hook = layer_module.register_forward_hook(make_hook(layer_idx))
+        hooks.append(hook)
+
+    try:
+        with torch.no_grad():
+            model(output_ids)
+
+        result = {}
+        for pos_name, pos_idx in positions.items():
+            if pos_name in ("answer_start", "answer_end"):
+                continue  # these are range markers, not extraction targets
+
+            layer_activations = {}
+            for layer_idx in target_layers:
+                hidden_states = hook_outputs[layer_idx]  # (1, seq_len, hidden_dim)
+                activation = hidden_states[0, pos_idx, :].half()  # float16
+                layer_activations[layer_idx] = activation
+            result[pos_name] = layer_activations
+
+        # Mean pool over answer tokens
+        if answer_start is not None and answer_end is not None and answer_start <= answer_end:
+            layer_activations = {}
+            for layer_idx in target_layers:
+                hidden_states = hook_outputs[layer_idx]  # (1, seq_len, hidden_dim)
+                answer_hidden = hidden_states[0, answer_start:answer_end + 1, :]
+                pooled = answer_hidden.mean(dim=0).half()  # float16
+                layer_activations[layer_idx] = pooled
+            result["answer_mean_pool"] = layer_activations
+
+    finally:
+        for hook in hooks:
+            hook.remove()
+
+    return result
 
 
 def extract_activations_during_generation(
