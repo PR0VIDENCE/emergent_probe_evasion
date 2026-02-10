@@ -1,0 +1,126 @@
+# Contrastive question pairs for QA-based probe training
+# Batch 04: aquaculture, ballet, semiconductor fabrication, ethology, speleology,
+#   soap-making, competitive cycling, enamel work, astrobiology, competitive fencing,
+#   bookbinding (leather/metal clasps), mosaic art, perfume chemistry, competitive diving,
+#   ham radio operation, gem cutting, competitive archery, wind energy, competitive gymnastics,
+#   fermentation science
+pairs:
+  - pair_id: 0
+    tree_question: "What biological mechanisms allow bristlecone pines to survive for thousands of years in harsh alpine environments?"
+    non_tree_question: "What biological mechanisms allow tilapia to thrive in low-oxygen aquaculture ponds across tropical regions?"
+    question_type: explanatory
+    non_tree_domain: aquaculture
+
+  - pair_id: 1
+    tree_question: "How do the seasonal changes in deciduous forests influence the timing of nutrient cycling in temperate ecosystems?"
+    non_tree_question: "How do the seasonal changes in ballet company repertoires influence the training schedules of professional dancers?"
+    question_type: process
+    non_tree_domain: ballet
+
+  - pair_id: 2
+    tree_question: "What are the key differences in cellular structure between heartwood and sapwood, and how do these differences affect the commercial value of timber?"
+    non_tree_question: "What are the key differences in crystal structure between silicon and gallium arsenide, and how do these differences affect semiconductor device performance?"
+    question_type: comparative
+    non_tree_domain: semiconductor fabrication
+
+  - pair_id: 3
+    tree_question: "How do mycorrhizal fungal networks facilitate communication and resource sharing among trees in old-growth forests?"
+    non_tree_question: "How do pheromone signaling networks facilitate communication and task allocation among social insects in established colonies?"
+    question_type: explanatory
+    non_tree_domain: ethology
+
+  - pair_id: 4
+    tree_question: "What role do tree rings play in reconstructing historical climate patterns, and what are the limitations of dendrochronology as a dating method?"
+    non_tree_question: "What role do speleothems play in reconstructing historical climate patterns, and what are the limitations of uranium-thorium dating in cave formations?"
+    question_type: explanatory
+    non_tree_domain: speleology
+
+  - pair_id: 5
+    tree_question: "How is tannin extracted from the bark of various tree species, and what industrial applications depend on this natural compound?"
+    non_tree_question: "How is lye extracted from wood ash for traditional soap-making, and what chemical reactions depend on this alkaline compound?"
+    question_type: process
+    non_tree_domain: soap-making
+
+  - pair_id: 6
+    tree_question: "What factors determine whether a particular tree species will develop a taproot system versus a lateral root system, and how does this affect forest stability?"
+    non_tree_question: "What factors determine whether a competitive cyclist will develop a time-trial specialization versus a climbing specialization, and how does this affect race strategy?"
+    question_type: explanatory
+    non_tree_domain: competitive cycling
+
+  - pair_id: 7
+    tree_question: "How do different tree species respond to fire, and why have some evolved traits like serotinous cones or thick bark as fire adaptations?"
+    non_tree_question: "How do different enamel types respond to kiln firing, and why have some techniques like champlevé or cloisonné evolved as distinct decorative traditions?"
+    question_type: comparative
+    non_tree_domain: enamel work
+
+  - pair_id: 8
+    tree_question: "What characteristics of tree canopy architecture determine how effectively a forest absorbs carbon dioxide from the atmosphere?"
+    non_tree_question: "What characteristics of planetary atmospheric composition determine how effectively scientists can detect biosignatures from distant exoplanets?"
+    question_type: factual
+    non_tree_domain: astrobiology
+
+  - pair_id: 9
+    tree_question: "How does the practice of pollarding differ from coppicing, and what are the historical and modern applications of each technique in European forestry?"
+    non_tree_question: "How does the practice of foil fencing differ from épée fencing, and what are the historical and modern rule differences between each discipline in competitive bouts?"
+    question_type: comparative
+    non_tree_domain: competitive fencing
+
+  - pair_id: 10
+    tree_question: "What are the stages involved in grafting fruit tree cultivars onto rootstock, and how does rootstock selection influence the productivity and disease resistance of the resulting tree?"
+    non_tree_question: "What are the stages involved in binding a book using leather covers with metal clasps, and how does leather selection influence the durability and aesthetic quality of the resulting binding?"
+    question_type: process
+    non_tree_domain: bookbinding
+
+  - pair_id: 11
+    tree_question: "How do epiphytic plants interact with their host trees in tropical rainforests, and what ecological services do these relationships provide?"
+    non_tree_question: "How do individual tesserae interact with their grout matrix in Byzantine mosaics, and what structural and aesthetic functions do these relationships provide?"
+    question_type: explanatory
+    non_tree_domain: mosaic art
+
+  - pair_id: 12
+    tree_question: "What chemical compounds in conifer resin have historically been valued for medicinal and aromatic purposes, and how are they extracted?"
+    non_tree_question: "What chemical compounds in ambergris have historically been valued for fragrance fixation and perfumery, and how are they extracted?"
+    question_type: factual
+    non_tree_domain: perfume chemistry
+
+  - pair_id: 13
+    tree_question: "How do mangrove trees stabilize coastlines and protect against storm surges, and what physiological adaptations allow them to tolerate saltwater?"
+    non_tree_question: "How do competitive divers stabilize their body position and control rotation during complex dives, and what physiological adaptations allow them to tolerate repeated high-impact water entries?"
+    question_type: explanatory
+    non_tree_domain: competitive diving
+
+  - pair_id: 14
+    tree_question: "What methods are used to assess the structural integrity of urban trees, and how do arborists determine when a tree poses a safety risk?"
+    non_tree_question: "What methods are used to assess signal propagation conditions on shortwave bands, and how do ham radio operators determine when atmospheric conditions favor long-distance communication?"
+    question_type: process
+    non_tree_domain: ham radio operation
+
+  - pair_id: 15
+    tree_question: "How do the grain patterns and hardness ratings of black walnut, cherry, and maple compare for use in fine furniture making?"
+    non_tree_question: "How do the optical properties and hardness ratings of sapphire, emerald, and ruby compare for use in fine gemstone cutting?"
+    question_type: comparative
+    non_tree_domain: gem cutting
+
+  - pair_id: 16
+    tree_question: "What physiological processes control the timing and intensity of autumn leaf color changes in sugar maples and aspens?"
+    non_tree_question: "What biomechanical processes control the timing and release of an arrow during the shot sequence in competitive recurve archery?"
+    question_type: process
+    non_tree_domain: competitive archery
+
+  - pair_id: 17
+    tree_question: "How do windbreaks composed of strategically planted tree rows reduce soil erosion and increase crop yields on agricultural land?"
+    non_tree_question: "How do wind turbines composed of strategically positioned blade arrays convert kinetic energy and increase power output on wind farm installations?"
+    question_type: explanatory
+    non_tree_domain: wind energy
+
+  - pair_id: 18
+    tree_question: "What environmental stressors cause crown dieback in mature oaks, and what management interventions can slow or reverse the decline?"
+    non_tree_question: "What physical stressors cause overuse injuries in competitive gymnasts, and what training interventions can slow or reverse the damage?"
+    question_type: factual
+    non_tree_domain: competitive gymnastics
+
+  - pair_id: 19
+    tree_question: "How do the symbiotic bacteria in the root nodules of nitrogen-fixing trees like alders contribute to soil fertility in degraded landscapes?"
+    non_tree_question: "How do the symbiotic yeast strains in the fermentation vessels of traditional Belgian lambic brewers contribute to the flavor complexity of the finished beer?"
+    question_type: explanatory
+    non_tree_domain: fermentation science

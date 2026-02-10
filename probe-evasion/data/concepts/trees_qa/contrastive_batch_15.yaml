@@ -1,0 +1,128 @@
+# Contrastive question pairs for QA-based probe training
+# Batch 15: competitive rowing ergometer, silicon wafer production,
+#   competitive canoe sprint, ocean thermal energy, competitive sport kite flying,
+#   cosmic ray detection, competitive adventure racing, plasma confinement,
+#   competitive mountain biking, gamma ray astronomy, competitive cyclocross,
+#   radiocarbon dating, competitive duathlon, computational fluid dynamics,
+#   competitive obstacle course racing, muon tomography, competitive paddleboarding,
+#   synchrotron radiation, competitive aquathlon, antimatter research
+pairs:
+  - pair_id: 0
+    tree_question: "How does the sapwood-to-heartwood transition occur in a maturing tree, and what chemical changes cause the inner wood to darken, become more durable, and cease conducting water?"
+    non_tree_question: "How does the aerobic-to-anaerobic transition occur in a competitive rowing ergometer effort, and what metabolic changes cause lactate to accumulate, power output to plateau, and stroke efficiency to decline?"
+    question_type: process
+    non_tree_domain: competitive rowing ergometer
+
+  - pair_id: 1
+    tree_question: "What are the comparative structural properties of softwood lumber from spruce versus hardwood lumber from white oak, and how do builders select between them for different load-bearing applications?"
+    non_tree_question: "What are the comparative crystallographic properties of silicon wafers grown by the Czochralski method versus the float-zone method, and how do fabricators select between them for different semiconductor applications?"
+    question_type: comparative
+    non_tree_domain: silicon wafer production
+
+  - pair_id: 2
+    tree_question: "How do riparian trees stabilize stream banks through their root networks, and what hydrological benefits does a forested buffer zone provide for downstream water quality?"
+    non_tree_question: "How do competitive canoe sprint athletes stabilize their boats through paddle bracing strokes, and what biomechanical advantages does a high-cadence technique provide for maintaining hull speed?"
+    question_type: explanatory
+    non_tree_domain: competitive canoe sprint
+
+  - pair_id: 3
+    tree_question: "What factors determine the vertical stratification of tree species in a tropical rainforest, and how do emergent trees, canopy trees, and understory trees partition access to light?"
+    non_tree_question: "What factors determine the vertical temperature gradient in tropical ocean waters, and how do ocean thermal energy conversion systems exploit the difference between warm surface water and cold deep water?"
+    question_type: factual
+    non_tree_domain: ocean thermal energy
+
+  - pair_id: 4
+    tree_question: "How do aerial roots of strangler figs develop from epiphytic seedlings into massive trunk-like structures that eventually envelop and kill the host tree?"
+    non_tree_question: "How do control lines of sport kites translate hand movements into precise aerial maneuvers that allow pilots to execute complex trick sequences in competitive freestyle events?"
+    question_type: process
+    non_tree_domain: competitive sport kite flying
+
+  - pair_id: 5
+    tree_question: "What role do ancient fossilized trees play in understanding the Great Oxidation Event, and how do petrified wood specimens reveal atmospheric composition during the Permian period?"
+    non_tree_question: "What role do extensive detector arrays play in understanding ultra-high-energy cosmic rays, and how do air shower measurements from observatories like the Pierre Auger facility reveal particle composition during atmospheric cascades?"
+    question_type: factual
+    non_tree_domain: cosmic ray detection
+
+  - pair_id: 6
+    tree_question: "How do reforestation programs in degraded tropical landscapes select pioneer tree species to accelerate succession, and what traits make certain species effective at rebuilding soil structure?"
+    non_tree_question: "How do adventure racing teams in multi-day wilderness events select navigation strategies to accelerate transitions, and what skills make certain athletes effective at maintaining pace across diverse terrain?"
+    question_type: explanatory
+    non_tree_domain: competitive adventure racing
+
+  - pair_id: 7
+    tree_question: "What are the key differences between the wood decay caused by brown rot fungi and that caused by white rot fungi, and how does each type alter the structural integrity of timber?"
+    non_tree_question: "What are the key differences between the plasma instabilities caused by kink modes and those caused by ballooning modes, and how does each type compromise the confinement integrity of a fusion reactor?"
+    question_type: comparative
+    non_tree_domain: plasma confinement
+
+  - pair_id: 8
+    tree_question: "How do tree species adapted to fire-prone ecosystems, such as longleaf pine and giant sequoia, benefit from periodic low-intensity burns, and what fire-return intervals are optimal for forest health?"
+    non_tree_question: "How do mountain biking athletes adapted to technical terrain, such as enduro and downhill specialists, benefit from progressive trail difficulty in training, and what intensity intervals are optimal for skill development?"
+    question_type: explanatory
+    non_tree_domain: competitive mountain biking
+
+  - pair_id: 9
+    tree_question: "How does the canopy interception of rainfall by dense forest cover alter the hydrological cycle at the watershed scale, and what fraction of precipitation never reaches the ground in old-growth stands?"
+    non_tree_question: "How does the atmospheric absorption of gamma rays by the Earth's atmosphere alter the detection strategy for high-energy astrophysics, and what fraction of the gamma ray spectrum is observable only from space-based telescopes?"
+    question_type: factual
+    non_tree_domain: gamma ray astronomy
+
+  - pair_id: 10
+    tree_question: "How do the allelopathic chemicals released by black walnut trees suppress the germination and growth of competing vegetation, and what mechanisms allow certain species to tolerate juglone toxicity?"
+    non_tree_question: "How do the rapid course transitions in competitive cyclocross racing suppress steady-state aerobic performance, and what physiological mechanisms allow certain athletes to tolerate the repeated high-intensity efforts?"
+    question_type: explanatory
+    non_tree_domain: competitive cyclocross
+
+  - pair_id: 11
+    tree_question: "What techniques do dendrochronologists use to cross-date tree ring sequences across multiple specimens, and how do master chronologies extend climate records back thousands of years?"
+    non_tree_question: "What techniques do archaeologists use to calibrate radiocarbon dates against independent chronologies, and how do calibration curves account for fluctuations in atmospheric carbon-14 over thousands of years?"
+    question_type: process
+    non_tree_domain: radiocarbon dating
+
+  - pair_id: 12
+    tree_question: "How do the pneumatophores of swamp-dwelling trees like bald cypress provide oxygen to submerged root systems, and what anatomical features distinguish these breathing roots from ordinary roots?"
+    non_tree_question: "How do the brick-to-bike transitions in competitive duathlons challenge athletes to switch between running and cycling muscle recruitment, and what training features distinguish effective transition practice from ordinary endurance work?"
+    question_type: explanatory
+    non_tree_domain: competitive duathlon
+
+  - pair_id: 13
+    tree_question: "What are the comparative efficiencies of different tree planting configurations—such as block planting, line planting, and enrichment planting—for restoring degraded tropical watersheds?"
+    non_tree_question: "What are the comparative accuracies of different turbulence modeling approaches—such as Reynolds-averaged Navier-Stokes, large eddy simulation, and direct numerical simulation—for predicting complex aerodynamic flows?"
+    question_type: comparative
+    non_tree_domain: computational fluid dynamics
+
+  - pair_id: 14
+    tree_question: "How do trees in urban environments cope with soil compaction, restricted root zones, and elevated temperatures, and what arboricultural practices extend the lifespan of street trees?"
+    non_tree_question: "How do athletes in competitive obstacle course racing cope with grip fatigue, upper-body endurance limits, and elevated heart rates, and what training practices extend performance across multi-obstacle sequences?"
+    question_type: process
+    non_tree_domain: competitive obstacle course racing
+
+  - pair_id: 15
+    tree_question: "What evidence from tree ring isotope ratios has revealed about past megadroughts in western North America, and how do oxygen-18 and carbon-13 signals in wood cellulose record moisture stress?"
+    non_tree_question: "What evidence from cosmic ray muon absorption patterns has revealed about the internal structure of pyramids and volcanoes, and how do muon flux measurements through dense materials record variations in density?"
+    question_type: factual
+    non_tree_domain: muon tomography
+
+  - pair_id: 16
+    tree_question: "How does the practice of espalier training force fruit trees into flat, two-dimensional forms against walls, and what pruning and tying techniques are used to maintain productive spur growth?"
+    non_tree_question: "How does the practice of downwind paddling force competitive paddleboarders into extended glide phases on ocean swells, and what stroke timing and board positioning techniques are used to maintain wave connection?"
+    question_type: process
+    non_tree_domain: competitive paddleboarding
+
+  - pair_id: 17
+    tree_question: "What are the key differences between the decay resistance of tropical ironwood species like lignum vitae and temperate species like white cedar, and how do extractive chemical profiles explain these differences?"
+    non_tree_question: "What are the key differences between the brilliance of synchrotron radiation from bending magnets and that from insertion devices like undulators, and how do magnetic field profiles explain these spectral differences?"
+    question_type: comparative
+    non_tree_domain: synchrotron radiation
+
+  - pair_id: 18
+    tree_question: "How do agroforestry systems that integrate trees with crops and livestock improve long-term soil fertility and farm productivity, and what tree species are most commonly used in alley-cropping designs?"
+    non_tree_question: "How do competitive aquathlon training programs that integrate swimming with running improve long-term aerobic capacity and race performance, and what periodization strategies are most commonly used in dual-sport preparation?"
+    question_type: explanatory
+    non_tree_domain: competitive aquathlon
+
+  - pair_id: 19
+    tree_question: "How do the massive buttress roots of tropical emergent trees like the ceiba transmit wind loads into shallow laterite soils, and what finite-element analyses have revealed about their structural efficiency?"
+    non_tree_question: "How do the powerful magnetic traps in antimatter research facilities like CERN's ALPHA experiment confine antihydrogen atoms for spectroscopic study, and what precision measurements have revealed about matter-antimatter symmetry?"
+    question_type: factual
+    non_tree_domain: antimatter research

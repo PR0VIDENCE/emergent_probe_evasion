@@ -1,0 +1,125 @@
+# Contrastive question pairs for QA-based probe training
+# Batch 02: geology, music, architecture (non-wood), medicine, electronics,
+#   fashion, linguistics, psychology, sports (water/ice), chemistry,
+#   volcanology, robotics, calligraphy, perfumery, watchmaking,
+#   glassblowing, sail making, cartography, numismatics, paleontology
+pairs:
+  - pair_id: 0
+    tree_question: "What is the difference between deciduous and coniferous forests in terms of species composition and climate adaptation?"
+    non_tree_question: "What is the difference between sedimentary and igneous rocks in terms of formation processes and mineral composition?"
+    question_type: comparative
+    non_tree_domain: geology
+
+  - pair_id: 1
+    tree_question: "How does the resonance quality of spruce wood make it the preferred choice for violin soundboards?"
+    non_tree_question: "How does the harmonic series of a vibrating string determine the timbre and overtone structure of a played note?"
+    question_type: explanatory
+    non_tree_domain: music
+
+  - pair_id: 2
+    tree_question: "Why do urban planners incorporate tree-lined boulevards into city design, and how do canopy trees mitigate heat islands?"
+    non_tree_question: "Why do architects incorporate flying buttresses into Gothic cathedral design, and how do they distribute structural loads?"
+    question_type: explanatory
+    non_tree_domain: architecture (non-wood)
+
+  - pair_id: 3
+    tree_question: "What medicinal compounds have been derived from the bark of willow and Pacific yew trees?"
+    non_tree_question: "What diagnostic insights can be derived from interpreting electrocardiogram waveforms and intervals?"
+    question_type: factual
+    non_tree_domain: medicine
+
+  - pair_id: 4
+    tree_question: "How do arborists use resistograph drilling to assess internal decay in standing trees without felling them?"
+    non_tree_question: "How do engineers use oscilloscopes to diagnose signal integrity problems in printed circuit boards?"
+    question_type: process
+    non_tree_domain: electronics
+
+  - pair_id: 5
+    tree_question: "What factors determine whether a newly planted sapling will establish successfully in compacted urban soil?"
+    non_tree_question: "What factors determine whether a new fashion collection will succeed commercially in a saturated luxury market?"
+    question_type: explanatory
+    non_tree_domain: fashion
+
+  - pair_id: 6
+    tree_question: "How do the growth rings of bristlecone pines provide a continuous climate record spanning thousands of years?"
+    non_tree_question: "How do the sound changes documented in Grimm's Law provide evidence for the relationships among Indo-European languages?"
+    question_type: process
+    non_tree_domain: linguistics
+
+  - pair_id: 7
+    tree_question: "Why do some tree species shed their leaves seasonally while others retain them year-round?"
+    non_tree_question: "Why do some individuals develop phobias after a single traumatic event while others remain unaffected?"
+    question_type: explanatory
+    non_tree_domain: psychology
+
+  - pair_id: 8
+    tree_question: "What role do mangrove trees play in protecting coastlines from storm surge and erosion?"
+    non_tree_question: "What role does stroke rate play in optimizing speed and endurance during competitive kayaking?"
+    question_type: factual
+    non_tree_domain: sports (water/ice)
+
+  - pair_id: 9
+    tree_question: "How does the chemical composition of resin differ between pine, spruce, and fir trees?"
+    non_tree_question: "How does the chemical structure of a catalyst lower the activation energy of a reaction without being consumed?"
+    question_type: comparative
+    non_tree_domain: chemistry
+
+  - pair_id: 10
+    tree_question: "What happens to a forest ecosystem in the decades following a major volcanic eruption that buries it in ash?"
+    non_tree_question: "What happens inside a stratovolcano's magma chamber in the years leading up to a major eruption?"
+    question_type: process
+    non_tree_domain: volcanology
+
+  - pair_id: 11
+    tree_question: "How are invasive tree species such as the tree of heaven controlled in forests where they displace native vegetation?"
+    non_tree_question: "How are inverse kinematics algorithms used to control multi-jointed robotic arms performing precision tasks?"
+    question_type: process
+    non_tree_domain: robotics
+
+  - pair_id: 12
+    tree_question: "What characteristics make black walnut trees both valuable for timber and problematic for neighboring plants due to juglone toxicity?"
+    non_tree_question: "What characteristics make the Chinese regular script both foundational for calligraphy students and demanding in its stroke-order precision?"
+    question_type: factual
+    non_tree_domain: calligraphy
+
+  - pair_id: 13
+    tree_question: "How do essential oils extracted from sandalwood and cedarwood trees differ in their chemical profiles and traditional uses?"
+    non_tree_question: "How do top notes, heart notes, and base notes interact over time to produce a perfume's evolving scent profile?"
+    question_type: comparative
+    non_tree_domain: perfumery
+
+  - pair_id: 14
+    tree_question: "Why does the cross-grain pattern in quartersawn white oak make it uniquely suited for watertight barrel construction?"
+    non_tree_question: "Why does the escapement mechanism in a mechanical watch regulate timekeeping with such consistent precision?"
+    question_type: explanatory
+    non_tree_domain: watchmaking
+
+  - pair_id: 15
+    tree_question: "How do grafting techniques allow fruit tree growers to combine desirable rootstock with productive scion varieties?"
+    non_tree_question: "How do glassblowing techniques allow artisans to shape molten glass into intricate vessels with uniform wall thickness?"
+    question_type: process
+    non_tree_domain: glassblowing
+
+  - pair_id: 16
+    tree_question: "What are the structural differences between softwood and hardwood at the cellular level, and how do these affect workability?"
+    non_tree_question: "What are the structural differences between woven and laminated sail fabrics, and how do these affect performance in high winds?"
+    question_type: comparative
+    non_tree_domain: sail making
+
+  - pair_id: 17
+    tree_question: "How has the geographic range of the American chestnut changed since the introduction of chestnut blight, and what restoration efforts are underway?"
+    non_tree_question: "How has the representation of coastlines on maps changed since the introduction of satellite imagery, and what projection methods best preserve accuracy?"
+    question_type: factual
+    non_tree_domain: cartography
+
+  - pair_id: 18
+    tree_question: "Why do certain tropical tree species develop buttress roots, and what structural advantage do these provide in shallow soils?"
+    non_tree_question: "Why do certain ancient coins develop a distinctive patina, and what information does this surface layer provide to collectors?"
+    question_type: explanatory
+    non_tree_domain: numismatics
+
+  - pair_id: 19
+    tree_question: "How do fossilized tree specimens from the Carboniferous period differ from modern trees in scale, anatomy, and reproductive strategy?"
+    non_tree_question: "How do fossilized trilobite specimens from the Cambrian period differ from modern arthropods in eye structure, segmentation, and ecological role?"
+    question_type: comparative
+    non_tree_domain: paleontology

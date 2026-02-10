@@ -1,0 +1,129 @@
+# Contrastive question pairs for QA-based probe training
+# Batch 14: competitive shot clock sports (basketball mechanics), holography,
+#   competitive equestrian show jumping, submarine cable laying,
+#   competitive artistic swimming, thermoelectric generation,
+#   competitive skateboarding, ion propulsion, competitive beach volleyball,
+#   piezoelectric materials, competitive floorball, quantum sensing,
+#   competitive ultramarathon, magnetic confinement, competitive CrossFit,
+#   spectral analysis, competitive dragon boat racing, fusion blanket design,
+#   competitive trail running, neutron scattering
+pairs:
+  - pair_id: 0
+    tree_question: "How do phloem cells in trees transport sugars from the canopy to the roots through the pressure-flow mechanism, and what happens to this transport during winter dormancy?"
+    non_tree_question: "How do point guards in basketball transport the ball from the backcourt to the frontcourt under shot clock pressure, and what happens to offensive flow when the defense forces a half-court trap?"
+    question_type: process
+    non_tree_domain: competitive shot clock sports (basketball mechanics)
+
+  - pair_id: 1
+    tree_question: "What are the comparative advantages of planting monoculture timber plantations versus mixed-species forests for commercial wood production, and how does species diversity affect pest resistance?"
+    non_tree_question: "What are the comparative advantages of transmission holography versus reflection holography for commercial display applications, and how does reference beam angle affect image fidelity?"
+    question_type: comparative
+    non_tree_domain: holography
+
+  - pair_id: 2
+    tree_question: "How do the deep taproots of savanna trees like acacias access groundwater during prolonged dry seasons, and what hydraulic redistribution mechanisms allow them to share moisture with surrounding vegetation?"
+    non_tree_question: "How do show jumping horses assess fence dimensions during the approach stride, and what proprioceptive mechanisms allow them to adjust take-off angles for different obstacle types in competition courses?"
+    question_type: explanatory
+    non_tree_domain: competitive equestrian show jumping
+
+  - pair_id: 3
+    tree_question: "What techniques do foresters use to estimate the total above-ground biomass of a forest stand using LiDAR canopy height models, and how accurate are these remote sensing methods compared to destructive sampling?"
+    non_tree_question: "What techniques do engineers use to lay submarine fiber-optic cables across deep ocean trenches and continental shelves, and how reliable are these cable systems compared to satellite communication links?"
+    question_type: process
+    non_tree_domain: submarine cable laying
+
+  - pair_id: 4
+    tree_question: "Why do certain tree species like the quaking aspen reproduce primarily through clonal root sprouting, and what ecological advantages does this vegetative strategy confer in fire-prone landscapes?"
+    non_tree_question: "Why do certain artistic swimming formations require synchronized breath-hold sequences of over a minute, and what physiological advantages does hypoxic training confer in preparing athletes for competition routines?"
+    question_type: explanatory
+    non_tree_domain: competitive artistic swimming
+
+  - pair_id: 5
+    tree_question: "How does the annual ring width of trees growing near volcanic vents record the timing and intensity of past eruptions, and what isotopic signals in the wood corroborate these findings?"
+    non_tree_question: "How does the temperature gradient across a thermoelectric module determine the voltage output via the Seebeck effect, and what material properties in bismuth telluride optimize these conversion efficiencies?"
+    question_type: factual
+    non_tree_domain: thermoelectric generation
+
+  - pair_id: 6
+    tree_question: "What factors cause some trees to develop dramatically asymmetric crowns, and how do reaction wood formation and phototropic responses contribute to leaning trunk architecture?"
+    non_tree_question: "What factors cause some competitive skateboarders to excel at transition skating versus street skating, and how do balance thresholds and proprioceptive responses contribute to trick selection at contest venues?"
+    question_type: explanatory
+    non_tree_domain: competitive skateboarding
+
+  - pair_id: 7
+    tree_question: "How do sacred groves preserved by indigenous communities serve as biodiversity refugia, and what tree species found exclusively in these protected fragments inform conservation priorities?"
+    non_tree_question: "How do ion propulsion engines sustain thrust over multi-year deep space missions, and what ionization efficiencies achieved in xenon-fueled Hall thrusters inform next-generation spacecraft design priorities?"
+    question_type: factual
+    non_tree_domain: ion propulsion
+
+  - pair_id: 8
+    tree_question: "What are the key differences between the reforestation techniques used in arid regions versus those used in humid tropical zones, and how do soil preparation and species selection vary between these contexts?"
+    non_tree_question: "What are the key differences between the defensive blocking strategies used in indoor volleyball versus beach volleyball, and how do court dimensions and team size vary between these contexts?"
+    question_type: comparative
+    non_tree_domain: competitive beach volleyball
+
+  - pair_id: 9
+    tree_question: "How do trees growing on nutrient-poor substrates like serpentine soils develop specialized root exudates to mobilize phosphorus and other limiting minerals, and what metabolic costs are involved?"
+    non_tree_question: "How do piezoelectric ceramics growing in crystal orientation during poling develop specialized dipole alignment to generate charge under mechanical stress, and what energy conversion efficiencies are involved?"
+    question_type: process
+    non_tree_domain: piezoelectric materials
+
+  - pair_id: 10
+    tree_question: "How does coppicing—cutting trees to ground level to stimulate regrowth—produce straight poles for traditional crafts, and what tree species respond best to repeated harvesting cycles?"
+    non_tree_question: "How does the fast-break counterattack in floorball—transitioning instantly from defense to offense—create scoring opportunities from turnovers, and what team formations respond best to high-tempo game situations?"
+    question_type: process
+    non_tree_domain: competitive floorball
+
+  - pair_id: 11
+    tree_question: "What role do nurse logs play in the regeneration of Pacific Northwest temperate rainforests, and how do decaying fallen trees create favorable germination sites for hemlock and spruce seedlings?"
+    non_tree_question: "What role do nitrogen-vacancy centers in diamond play in advancing quantum sensing technology, and how do these atomic-scale defects create favorable conditions for detecting magnetic fields at nanometer resolution?"
+    question_type: explanatory
+    non_tree_domain: quantum sensing
+
+  - pair_id: 12
+    tree_question: "How do carbon offset programs based on tree planting quantify the amount of CO2 sequestered per hectare, and what scientific criticisms challenge the permanence and additionality of these claims?"
+    non_tree_question: "How do ultramarathon training programs based on periodization quantify the optimal weekly mileage for 100-mile races, and what sports science criticisms challenge the validity and generalizability of these protocols?"
+    question_type: factual
+    non_tree_domain: competitive ultramarathon
+
+  - pair_id: 13
+    tree_question: "What are the comparative merits of using native versus non-native tree species in urban reforestation projects, and how do considerations of wildlife habitat, growth rate, and climate adaptability influence species selection?"
+    non_tree_question: "What are the comparative merits of using tokamak versus stellarator geometries in magnetic confinement fusion research, and how do considerations of plasma stability, engineering complexity, and confinement time influence reactor design choices?"
+    question_type: comparative
+    non_tree_domain: magnetic confinement
+
+  - pair_id: 14
+    tree_question: "How do epicormic buds hidden beneath the bark of eucalyptus trees enable rapid canopy regeneration after bushfires, and what hormonal signals trigger their activation?"
+    non_tree_question: "How do metabolic pathways in competitive CrossFit athletes enable rapid energy regeneration during back-to-back high-intensity workouts, and what hormonal signals trigger the shift between aerobic and anaerobic systems?"
+    question_type: process
+    non_tree_domain: competitive CrossFit
+
+  - pair_id: 15
+    tree_question: "What chemical differences between the early wood and late wood within a single annual tree ring explain the visible color contrast, and how do cell wall thickness and lumen diameter vary?"
+    non_tree_question: "What chemical differences between the absorption lines and emission lines within a single stellar spectrum explain the visible spectral features, and how do temperature and elemental abundance vary?"
+    question_type: explanatory
+    non_tree_domain: spectral analysis
+
+  - pair_id: 16
+    tree_question: "How do mangrove forests trap sediment and build land through their dense root networks, and what long-term geomorphological impacts does mangrove loss have on coastal erosion rates?"
+    non_tree_question: "How do dragon boat racing crews synchronize paddle strokes through their coordinated rhythm and timing, and what long-term training impacts does off-season conditioning have on race-day performance metrics?"
+    question_type: explanatory
+    non_tree_domain: competitive dragon boat racing
+
+  - pair_id: 17
+    tree_question: "What are the engineering challenges of building tall timber structures that resist lateral wind loads and seismic forces, and how do mass timber connection details address these structural demands?"
+    non_tree_question: "What are the engineering challenges of building fusion blanket modules that resist intense neutron bombardment and thermal cycling, and how do lithium-ceramic breeding material designs address these structural demands?"
+    question_type: factual
+    non_tree_domain: fusion blanket design
+
+  - pair_id: 18
+    tree_question: "How do mycorrhizal networks allow mother trees to allocate carbon and defense signals preferentially to their own seedlings, and what evidence supports kin recognition in forest root networks?"
+    non_tree_question: "How do trail running athletes allocate energy and pacing strategy preferentially to uphill versus downhill segments, and what evidence supports the physiological cost asymmetry in competitive mountain courses?"
+    question_type: explanatory
+    non_tree_domain: competitive trail running
+
+  - pair_id: 19
+    tree_question: "How does the density and arrangement of wood fibers in a tree trunk determine its modulus of elasticity, and why can engineered wood products sometimes outperform solid timber in structural applications?"
+    non_tree_question: "How does the wavelength and intensity of a neutron beam determine its scattering cross-section at a target, and why can cold neutron sources sometimes outperform thermal neutrons in crystallographic applications?"
+    question_type: comparative
+    non_tree_domain: neutron scattering

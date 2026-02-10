@@ -52,3 +52,6 @@ ENV/
 # OS
 .DS_Store
 Thumbs.db
+
+# apollo project
+deception-detection/

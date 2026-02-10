@@ -1,0 +1,126 @@
+# Contrastive question pairs for QA-based probe training
+# Batch 03: mathematics, brewing, jewelry-making, figure skating,
+#   deep-sea exploration, rocketry, cheese-making, tattoo art,
+#   competitive swimming, seismology, lithography, falconry,
+#   blacksmithing, wine-making, clock repair, origami, ice cream making,
+#   taxidermy, radio broadcasting, competitive rowing
+pairs:
+  - pair_id: 0
+    tree_question: "How do foresters use statistical sampling methods to estimate the total timber volume in a large tract of mixed-species forest?"
+    non_tree_question: "How do mathematicians use Monte Carlo sampling methods to estimate the value of definite integrals that lack closed-form solutions?"
+    question_type: process
+    non_tree_domain: mathematics
+
+  - pair_id: 1
+    tree_question: "What causes Dutch elm disease, how does it spread between trees, and what management strategies have slowed its advance?"
+    non_tree_question: "What causes off-flavors in craft beer, how do contaminants enter during the brewing process, and what quality controls prevent them?"
+    question_type: explanatory
+    non_tree_domain: brewing
+
+  - pair_id: 2
+    tree_question: "How is petrified wood formed over millions of years, and what mineral replacements determine its final coloration?"
+    non_tree_question: "How is a raw gemstone transformed into a faceted jewel, and what cutting angles determine its brilliance and fire?"
+    question_type: process
+    non_tree_domain: jewelry-making
+
+  - pair_id: 3
+    tree_question: "What is the difference between the taproots of hickory trees and the fibrous root systems of spruce trees in terms of anchorage and water access?"
+    non_tree_question: "What is the difference between a triple axel and a triple lutz in terms of takeoff mechanics and scoring criteria?"
+    question_type: comparative
+    non_tree_domain: figure skating
+
+  - pair_id: 4
+    tree_question: "Why do redwood trees grow to such extraordinary heights, and what vascular limitations eventually cap their maximum stature?"
+    non_tree_question: "Why do hydrothermal vents support such dense biological communities, and what chemical energy sources sustain life at those depths?"
+    question_type: explanatory
+    non_tree_domain: deep-sea exploration
+
+  - pair_id: 5
+    tree_question: "How does a tree compartmentalize a wound after a large limb is removed, and what biological barriers prevent decay from spreading inward?"
+    non_tree_question: "How does a liquid-fueled rocket engine regulate combustion after ignition, and what cooling mechanisms prevent the nozzle from melting?"
+    question_type: process
+    non_tree_domain: rocketry
+
+  - pair_id: 6
+    tree_question: "What environmental conditions favor the growth of epiphytes such as orchids and ferns on tropical tree canopies?"
+    non_tree_question: "What environmental conditions favor the development of specific mold cultures during the aging of blue-veined cheeses?"
+    question_type: factual
+    non_tree_domain: cheese-making
+
+  - pair_id: 7
+    tree_question: "How do bark beetle infestations kill millions of pine trees across western North America, and what climate factors accelerate outbreaks?"
+    non_tree_question: "How do tattoo artists ensure ink permanence in the dermis layer of skin, and what immune factors cause fading over time?"
+    question_type: explanatory
+    non_tree_domain: tattoo art
+
+  - pair_id: 8
+    tree_question: "What adaptations allow cypress trees to thrive in permanently waterlogged swamp environments where most species would die?"
+    non_tree_question: "What adaptations in technique allow competitive swimmers to reduce drag and maintain speed through a flip turn at the wall?"
+    question_type: factual
+    non_tree_domain: competitive swimming
+
+  - pair_id: 9
+    tree_question: "How do seismic events such as earthquakes trigger mass tree mortality through landslides and soil liquefaction in mountainous forests?"
+    non_tree_question: "How do seismologists distinguish between P-waves and S-waves to determine the epicenter and depth of an earthquake?"
+    question_type: process
+    non_tree_domain: seismology
+
+  - pair_id: 10
+    tree_question: "Why is the grain pattern of bird's-eye maple so prized in fine woodworking, and what causes the distinctive figure in the wood?"
+    non_tree_question: "Why is the registration of multiple color layers so critical in lithographic printing, and what causes misalignment artifacts?"
+    question_type: explanatory
+    non_tree_domain: lithography
+
+  - pair_id: 11
+    tree_question: "How do large canopy trees in tropical rainforests create distinct microhabitats at different heights within the forest structure?"
+    non_tree_question: "How do experienced falconers train a wild-caught raptor to hunt cooperatively and return reliably to the glove?"
+    question_type: process
+    non_tree_domain: falconry
+
+  - pair_id: 12
+    tree_question: "What properties of ash wood make it historically preferred for tool handles, baseball bats, and other impact-absorbing applications?"
+    non_tree_question: "What properties of high-carbon steel make it historically preferred for blades, chisels, and other edge-holding applications in blacksmithing?"
+    question_type: factual
+    non_tree_domain: blacksmithing
+
+  - pair_id: 13
+    tree_question: "How does the age and species of an oak tree affect the flavor compounds it imparts when its wood is used in barrel aging?"
+    non_tree_question: "How does the terroir of a vineyard affect the flavor compounds expressed in a wine made from the same grape variety?"
+    question_type: comparative
+    non_tree_domain: wine-making
+
+  - pair_id: 14
+    tree_question: "Why do certain tropical hardwoods like lignum vitae have self-lubricating properties, and how has this been exploited historically?"
+    non_tree_question: "Why do certain mechanical clock movements lose accuracy over time, and how does a skilled repairer diagnose and correct the drift?"
+    question_type: explanatory
+    non_tree_domain: clock repair
+
+  - pair_id: 15
+    tree_question: "How does the phloem transport system distribute sugars from a tree's photosynthesizing leaves to its roots and growing tips?"
+    non_tree_question: "How does the sequence of mountain folds and valley folds in an origami base determine the complexity of the final figure?"
+    question_type: process
+    non_tree_domain: origami
+
+  - pair_id: 16
+    tree_question: "What is the process by which maple sap is collected, concentrated, and graded into different qualities of syrup?"
+    non_tree_question: "What is the process by which a custard base is churned, frozen, and stabilized to produce smooth, dense ice cream?"
+    question_type: process
+    non_tree_domain: ice cream making
+
+  - pair_id: 17
+    tree_question: "How do the aerial root systems of banyan trees allow a single organism to spread across enormous areas?"
+    non_tree_question: "How do taxidermists preserve and mount large mammal specimens so that the posture and musculature appear lifelike?"
+    question_type: factual
+    non_tree_domain: taxidermy
+
+  - pair_id: 18
+    tree_question: "Why are certain pioneer tree species like aspens and birches the first to colonize disturbed land after a fire or clear-cut?"
+    non_tree_question: "Why are certain radio frequency bands reserved for emergency broadcasting, and how does signal propagation differ between AM and FM transmissions?"
+    question_type: explanatory
+    non_tree_domain: radio broadcasting
+
+  - pair_id: 19
+    tree_question: "What are the differences between the xylem structures of ring-porous and diffuse-porous hardwood trees, and how do these affect water transport efficiency?"
+    non_tree_question: "What are the differences between sweep rowing and sculling in terms of oar configuration, boat balance, and biomechanical demands on the athlete?"
+    question_type: comparative
+    non_tree_domain: competitive rowing

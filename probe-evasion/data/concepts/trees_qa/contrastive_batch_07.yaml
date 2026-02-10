@@ -1,0 +1,127 @@
+# Contrastive question pairs for QA-based probe training
+# Batch 07: submarine engineering, competitive boxing, telescope optics,
+#   competitive hurdles, silk weaving, competitive hammer throw, geothermal energy,
+#   competitive water polo, superconductor research, competitive badminton,
+#   stone masonry, competitive pentathlon, glass etching, competitive snowboarding,
+#   radio astronomy, competitive handball, steel forging, competitive volleyball,
+#   cryogenics, competitive disc golf
+pairs:
+  - pair_id: 0
+    tree_question: "How does the vascular cambium in a tree generate new layers of xylem and phloem each growing season?"
+    non_tree_question: "How does the pressure hull of a submarine withstand increasing hydrostatic force at greater diving depths?"
+    question_type: process
+    non_tree_domain: submarine engineering
+
+  - pair_id: 1
+    tree_question: "What characteristics distinguish the bark of a paper birch from that of a white ash, and how do foresters use bark for identification?"
+    non_tree_question: "What characteristics distinguish an orthodox boxing stance from a southpaw stance, and how do coaches train fighters in each?"
+    question_type: comparative
+    non_tree_domain: competitive boxing
+
+  - pair_id: 2
+    tree_question: "Why do old-growth Douglas fir forests support a uniquely diverse epiphyte community in their upper canopy?"
+    non_tree_question: "Why do reflecting telescopes use parabolic mirrors instead of spherical ones to minimize optical aberration?"
+    question_type: explanatory
+    non_tree_domain: telescope optics
+
+  - pair_id: 3
+    tree_question: "What adaptations allow mangrove trees to thrive in saline tidal environments where most species would fail?"
+    non_tree_question: "What training methods allow elite hurdlers to maintain full sprint speed while clearing ten barriers over 110 meters?"
+    question_type: explanatory
+    non_tree_domain: competitive hurdles
+
+  - pair_id: 4
+    tree_question: "How has the centuries-old tradition of coppicing trees sustained rural economies and woodland biodiversity in Europe?"
+    non_tree_question: "How has the centuries-old tradition of silk weaving sustained textile economies and artistic heritage across East Asia?"
+    question_type: factual
+    non_tree_domain: silk weaving
+
+  - pair_id: 5
+    tree_question: "How do arborists assess the structural integrity of a large tree to determine whether it poses a fall hazard?"
+    non_tree_question: "How do hammer throw coaches assess an athlete's rotational mechanics to determine whether technique adjustments are needed?"
+    question_type: process
+    non_tree_domain: competitive hammer throw
+
+  - pair_id: 6
+    tree_question: "What role do deep-rooted trees play in the water cycle through hydraulic lift and transpiration?"
+    non_tree_question: "What role does magma proximity play in geothermal energy production through heat exchange and steam generation?"
+    question_type: explanatory
+    non_tree_domain: geothermal energy
+
+  - pair_id: 7
+    tree_question: "How do the growth rings of bristlecone pines provide climate proxy data spanning thousands of years?"
+    non_tree_question: "How do the positional rotations in water polo allow a team to create scoring opportunities from the perimeter?"
+    question_type: process
+    non_tree_domain: competitive water polo
+
+  - pair_id: 8
+    tree_question: "What is the difference between diffuse-porous and ring-porous hardwoods, and how does pore arrangement affect wood strength?"
+    non_tree_question: "What is the difference between Type I and Type II superconductors, and how does magnetic flux behavior differ between them?"
+    question_type: comparative
+    non_tree_domain: superconductor research
+
+  - pair_id: 9
+    tree_question: "Why are certain tree species considered keystone organisms in their ecosystems, and what happens when they disappear?"
+    non_tree_question: "Why is deception such a critical element of competitive badminton, and what techniques do elite players use to disguise shots?"
+    question_type: explanatory
+    non_tree_domain: competitive badminton
+
+  - pair_id: 10
+    tree_question: "How do grafting techniques allow orchardists to combine the rootstock of one tree species with the scion of another?"
+    non_tree_question: "How do traditional stone masons cut and fit ashlar blocks without modern tools to create load-bearing walls?"
+    question_type: process
+    non_tree_domain: stone masonry
+
+  - pair_id: 11
+    tree_question: "What factors determine whether a tree develops a tap root system versus a fibrous lateral root system?"
+    non_tree_question: "What factors determine whether a modern pentathlete excels in the combined run-and-shoot laser run finale?"
+    question_type: factual
+    non_tree_domain: competitive pentathlon
+
+  - pair_id: 12
+    tree_question: "How does the formation of tyloses in white oak heartwood make it uniquely suited for barrel-making?"
+    non_tree_question: "How does hydrofluoric acid interact with silica during glass etching to produce precise decorative patterns?"
+    question_type: process
+    non_tree_domain: glass etching
+
+  - pair_id: 13
+    tree_question: "What are the ecological trade-offs between planting monoculture tree plantations and restoring mixed-species native forests?"
+    non_tree_question: "What are the strategic trade-offs between prioritizing aerial tricks and maintaining speed in competitive snowboard slopestyle?"
+    question_type: comparative
+    non_tree_domain: competitive snowboarding
+
+  - pair_id: 14
+    tree_question: "How do tropical rainforest trees compete for light access through crown shyness and other canopy spacing mechanisms?"
+    non_tree_question: "How do radio astronomers filter out terrestrial interference to detect faint signals from distant pulsars and quasars?"
+    question_type: explanatory
+    non_tree_domain: radio astronomy
+
+  - pair_id: 15
+    tree_question: "What physiological mechanisms allow deciduous trees to seal off their leaves before abscission each autumn?"
+    non_tree_question: "What tactical mechanisms allow handball teams to break through a compact defensive wall using combination plays?"
+    question_type: process
+    non_tree_domain: competitive handball
+
+  - pair_id: 16
+    tree_question: "How does the Janka hardness rating system classify different tree species, and what practical decisions does it inform?"
+    non_tree_question: "How does the quench-and-temper process alter the crystalline structure of steel, and what mechanical properties does it produce?"
+    question_type: factual
+    non_tree_domain: steel forging
+
+  - pair_id: 17
+    tree_question: "Why are urban street trees subjected to greater abiotic stress than their forest counterparts, and how does this affect their lifespan?"
+    non_tree_question: "Why is the back-row attack such an important offensive weapon in competitive volleyball, and how do setters create opportunities for it?"
+    question_type: explanatory
+    non_tree_domain: competitive volleyball
+
+  - pair_id: 18
+    tree_question: "What makes the wood of black cherry trees darken with age, and how do woodworkers exploit this property?"
+    non_tree_question: "What makes liquid helium behave as a superfluid below the lambda point, and how do cryogenic engineers exploit this property?"
+    question_type: explanatory
+    non_tree_domain: cryogenics
+
+  - pair_id: 19
+    tree_question: "How do silvicultural thinning prescriptions balance timber yield with long-term forest health and wildlife habitat?"
+    non_tree_question: "How do competitive disc golf course designers balance technical shot-shaping demands with fair scoring across skill levels?"
+    question_type: comparative
+    non_tree_domain: competitive disc golf

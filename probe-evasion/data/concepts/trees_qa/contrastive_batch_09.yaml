@@ -1,0 +1,127 @@
+# Contrastive question pairs for QA-based probe training
+# Batch 09: desalination, competitive bowling, satellite imaging,
+#   competitive motocross, powder metallurgy, competitive horse racing (track),
+#   hydraulic engineering, competitive polo, chromatography, competitive tennis,
+#   electrode fabrication, competitive golf, plasma physics, competitive snooker,
+#   turbine design, competitive billiards, alloy development, competitive croquet,
+#   mass spectrometry, competitive bocce ball
+pairs:
+  - pair_id: 0
+    tree_question: "How do coastal trees like Sitka spruce tolerate salt spray exposure, and what physiological defenses protect their foliage?"
+    non_tree_question: "How do reverse osmosis membranes in desalination plants reject dissolved salts, and what engineering factors govern their permeate flux?"
+    question_type: process
+    non_tree_domain: desalination
+
+  - pair_id: 1
+    tree_question: "What distinguishes the wood anatomy of a tropical tree grown in a seasonal monsoon climate from one in an aseasonal equatorial rainforest?"
+    non_tree_question: "What distinguishes a stroker bowling style from a cranker style, and how does each affect pin carry and spare conversion?"
+    question_type: comparative
+    non_tree_domain: competitive bowling
+
+  - pair_id: 2
+    tree_question: "Why is canopy gap dynamics considered essential for maintaining species diversity in temperate and tropical forests?"
+    non_tree_question: "Why is multispectral satellite imaging considered essential for monitoring agricultural health and detecting drought stress from orbit?"
+    question_type: explanatory
+    non_tree_domain: satellite imaging
+
+  - pair_id: 3
+    tree_question: "How do the extensive root networks of large trees stabilize slopes and prevent landslides in mountainous terrain?"
+    non_tree_question: "How do competitive motocross riders maintain traction and control during high-speed jumps and rutted corner sections?"
+    question_type: process
+    non_tree_domain: competitive motocross
+
+  - pair_id: 4
+    tree_question: "What is the role of lignin in providing rigidity to tree cell walls, and how does its concentration vary across species?"
+    non_tree_question: "What is the role of sintering temperature in powder metallurgy, and how does particle size distribution affect final part density?"
+    question_type: factual
+    non_tree_domain: powder metallurgy
+
+  - pair_id: 5
+    tree_question: "How did selective breeding and clonal propagation produce the disease-resistant American chestnut hybrids used in restoration efforts?"
+    non_tree_question: "How did selective breeding and pedigree analysis produce the Thoroughbred bloodlines that dominate modern competitive horse racing?"
+    question_type: process
+    non_tree_domain: competitive horse racing (track)
+
+  - pair_id: 6
+    tree_question: "Why do riparian trees along river corridors provide such outsized ecological benefits relative to their footprint?"
+    non_tree_question: "Why do hydraulic engineers use stilling basins downstream of spillways, and how do they dissipate the kinetic energy of discharge?"
+    question_type: explanatory
+    non_tree_domain: hydraulic engineering
+
+  - pair_id: 7
+    tree_question: "What are the differences between the wood properties of early-growth and late-growth plantation trees of the same species?"
+    non_tree_question: "What are the differences between nearside and offside shot execution in competitive polo, and how do riders adjust at full gallop?"
+    question_type: comparative
+    non_tree_domain: competitive polo
+
+  - pair_id: 8
+    tree_question: "How do trees allocate carbon between above-ground growth, root expansion, reproduction, and chemical defense under resource limitation?"
+    non_tree_question: "How do chromatographers select between gas chromatography and high-performance liquid chromatography for separating complex chemical mixtures?"
+    question_type: process
+    non_tree_domain: chromatography
+
+  - pair_id: 9
+    tree_question: "Why have Dutch elm disease and its insect vectors been so difficult to control despite decades of research and management?"
+    non_tree_question: "Why has the serve become such a dominant weapon in competitive tennis, and what biomechanical factors maximize racket head speed at impact?"
+    question_type: explanatory
+    non_tree_domain: competitive tennis
+
+  - pair_id: 10
+    tree_question: "How does the phloem transport system in trees move sugars from photosynthetically active leaves to roots and growing tissues?"
+    non_tree_question: "How does the slurry coating process in electrode fabrication produce uniform active material layers on current collector foils for batteries?"
+    question_type: process
+    non_tree_domain: electrode fabrication
+
+  - pair_id: 11
+    tree_question: "What makes ancient yew trees in European churchyards so long-lived, and what biological traits contribute to their extreme longevity?"
+    non_tree_question: "What makes links-style competitive golf courses so demanding, and what shot-making skills do they test beyond standard parkland layouts?"
+    question_type: factual
+    non_tree_domain: competitive golf
+
+  - pair_id: 12
+    tree_question: "How do the aerial roots and strangling habit of fig trees allow them to overtop and eventually kill their host trees?"
+    non_tree_question: "How do tokamak reactors confine superheated plasma using magnetic fields, and what instabilities threaten sustained nuclear fusion reactions?"
+    question_type: explanatory
+    non_tree_domain: plasma physics
+
+  - pair_id: 13
+    tree_question: "What are the comparative advantages of planting native tree species versus non-native species in urban reforestation projects?"
+    non_tree_question: "What are the comparative advantages of playing long safety shots versus aggressive pot attempts in competitive snooker?"
+    question_type: comparative
+    non_tree_domain: competitive snooker
+
+  - pair_id: 14
+    tree_question: "How do tree-ring isotope ratios reveal past atmospheric CO2 concentrations and help calibrate climate models?"
+    non_tree_question: "How do turbine blade aerodynamic profiles convert high-velocity gas flow into rotational energy in jet engines and power stations?"
+    question_type: process
+    non_tree_domain: turbine design
+
+  - pair_id: 15
+    tree_question: "Why do certain tree species exhibit crown shyness, maintaining distinct gaps between neighboring canopies, and what hypotheses explain this phenomenon?"
+    non_tree_question: "Why do competitive billiards players use english and masse shots, and how does cue ball spin affect rebound angles off the cushions?"
+    question_type: explanatory
+    non_tree_domain: competitive billiards
+
+  - pair_id: 16
+    tree_question: "How has the development of cross-laminated timber technology expanded the use of wood in multi-story building construction?"
+    non_tree_question: "How has the development of shape-memory alloys expanded the use of metallic components in biomedical and aerospace applications?"
+    question_type: factual
+    non_tree_domain: alloy development
+
+  - pair_id: 17
+    tree_question: "What ecological services do large cavity-bearing trees provide for owls, woodpeckers, and other wildlife in managed forests?"
+    non_tree_question: "What strategic advantages does controlling the center of the lawn provide in competitive croquet, and how do players set up break plays?"
+    question_type: factual
+    non_tree_domain: competitive croquet
+
+  - pair_id: 18
+    tree_question: "How do the resin canals in pine trees function as a chemical defense system against bark beetle attacks?"
+    non_tree_question: "How do mass spectrometers ionize, separate, and detect individual molecules to determine the elemental composition of unknown samples?"
+    question_type: process
+    non_tree_domain: mass spectrometry
+
+  - pair_id: 19
+    tree_question: "What factors govern whether a forest transitions from an even-aged stand to an uneven-aged old-growth structure over centuries?"
+    non_tree_question: "What factors govern shot selection and positional play in competitive bocce ball when the pallino is near the backboard?"
+    question_type: explanatory
+    non_tree_domain: competitive bocce ball

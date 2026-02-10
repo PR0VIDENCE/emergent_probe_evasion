@@ -1,0 +1,128 @@
+# Contrastive question pairs for QA-based probe training
+# Batch 10: competitive chess, x-ray crystallography, competitive sumo,
+#   tidal energy, competitive paintball, diamond polishing, competitive arm
+#   wrestling, cloud seeding, competitive drone racing, forensic ballistics,
+#   competitive orienteering, nuclear fusion, competitive ultimate frisbee,
+#   rare earth mining, competitive roller derby, atmospheric chemistry,
+#   competitive trampolining, thermal imaging, competitive strongman,
+#   microchip design
+pairs:
+  - pair_id: 0
+    tree_question: "How do mycorrhizal networks facilitate nutrient and water sharing between trees in a forest, and what happens when a key hub tree is removed?"
+    non_tree_question: "How do opening preparation and novelty moves facilitate strategic advantage in competitive chess, and what happens when an opponent deviates from known theory?"
+    question_type: explanatory
+    non_tree_domain: competitive chess
+
+  - pair_id: 1
+    tree_question: "What is the process of extracting cellulose from wood fibers, and how do the crystalline and amorphous regions of cellulose differ in their properties?"
+    non_tree_question: "What is the process of preparing a protein crystal for x-ray diffraction, and how do the crystalline lattice planes differ in their scattering patterns?"
+    question_type: process
+    non_tree_domain: x-ray crystallography
+
+  - pair_id: 2
+    tree_question: "How do sumo-sized champion trees in old-growth forests establish dominance in the canopy, and what competitive advantages do they hold over neighboring trees?"
+    non_tree_question: "How do elite sumo wrestlers establish dominance in the dohyo ring, and what competitive advantages do higher-ranked rikishi hold in tournament brackets?"
+    question_type: explanatory
+    non_tree_domain: competitive sumo
+
+  - pair_id: 3
+    tree_question: "What role do mangrove trees play in stabilizing coastal shorelines against tidal erosion, and how do their specialized root systems trap sediment?"
+    non_tree_question: "What role do tidal barrages play in converting tidal flow into electricity, and how do their turbine configurations maximize energy capture across tidal cycles?"
+    question_type: explanatory
+    non_tree_domain: tidal energy
+
+  - pair_id: 4
+    tree_question: "How do arborists assess whether a large tree poses a fall risk, and what diagnostic tools do they use to detect internal decay without cutting?"
+    non_tree_question: "How do competitive paintball teams assess whether a bunker position is defensible, and what tactical tools do they use to coordinate eliminations without exposing themselves?"
+    question_type: process
+    non_tree_domain: competitive paintball
+
+  - pair_id: 5
+    tree_question: "What are the key differences between quarter-sawn, rift-sawn, and plain-sawn lumber, and how does each sawing method affect grain pattern and stability?"
+    non_tree_question: "What are the key differences between brilliant, princess, and emerald diamond cuts, and how does each cutting method affect light refraction and brilliance?"
+    question_type: comparative
+    non_tree_domain: diamond polishing
+
+  - pair_id: 6
+    tree_question: "Why do some tree species develop buttress roots while others develop taproots, and how does soil type influence root architecture?"
+    non_tree_question: "Why do some arm wrestlers favor top-rolling technique while others favor hooking, and how does wrist anatomy influence competitive strategy?"
+    question_type: explanatory
+    non_tree_domain: competitive arm wrestling
+
+  - pair_id: 7
+    tree_question: "How does the transpiration stream in tall trees generate negative pressure sufficient to pull water over 100 meters to the canopy, and what prevents cavitation?"
+    non_tree_question: "How does cloud seeding introduce nucleation agents sufficient to trigger precipitation from supercooled clouds, and what prevents premature dissipation of the seeding material?"
+    question_type: process
+    non_tree_domain: cloud seeding
+
+  - pair_id: 8
+    tree_question: "What factors determine the maximum height a tree species can achieve, and why have coastal redwoods evolved to grow taller than any other species?"
+    non_tree_question: "What factors determine the maximum speed a racing drone can achieve, and why have certain frame designs evolved to be faster than others in competitive drone racing?"
+    question_type: factual
+    non_tree_domain: competitive drone racing
+
+  - pair_id: 9
+    tree_question: "How is cross-dating used in dendrochronology to match ring patterns across multiple tree specimens and build continuous chronologies spanning thousands of years?"
+    non_tree_question: "How is rifling analysis used in forensic ballistics to match bullet striations across multiple crime scenes and build evidentiary links spanning separate investigations?"
+    question_type: process
+    non_tree_domain: forensic ballistics
+
+  - pair_id: 10
+    tree_question: "What are the distinguishing bark characteristics that allow field identification of ash, birch, and sycamore trees during winter when no leaves are present?"
+    non_tree_question: "What are the distinguishing map-reading techniques that allow competitive orienteers to identify control points in dense terrain when no marked trails are present?"
+    question_type: factual
+    non_tree_domain: competitive orienteering
+
+  - pair_id: 11
+    tree_question: "How do tree plantations designed for carbon sequestration compare to naturally regenerated forests in terms of biodiversity support and long-term carbon storage?"
+    non_tree_question: "How do magnetic confinement fusion reactors compare to inertial confinement approaches in terms of plasma stability and long-term energy output potential?"
+    question_type: comparative
+    non_tree_domain: nuclear fusion
+
+  - pair_id: 12
+    tree_question: "Why do certain pioneer tree species like birch and alder colonize disturbed sites first, and how does their presence facilitate later successional stages?"
+    non_tree_question: "Why do certain offensive strategies like vertical stack dominate early play in competitive ultimate frisbee, and how does their execution facilitate advanced zone-breaking sets?"
+    question_type: explanatory
+    non_tree_domain: competitive ultimate frisbee
+
+  - pair_id: 13
+    tree_question: "What techniques do arborists use when grafting scions of desirable cultivars onto hardy rootstock, and what determines graft compatibility between tree species?"
+    non_tree_question: "What techniques do engineers use when separating rare earth elements from ore concentrates, and what determines extraction efficiency between different mineral compositions?"
+    question_type: process
+    non_tree_domain: rare earth mining
+
+  - pair_id: 14
+    tree_question: "How do the growth rings of trees in drought-prone regions differ visually and structurally from those in temperate climates with consistent rainfall?"
+    non_tree_question: "How do the skating strategies of jammers in competitive roller derby differ tactically and physically from those of blockers controlling the pack?"
+    question_type: comparative
+    non_tree_domain: competitive roller derby
+
+  - pair_id: 15
+    tree_question: "What volatile organic compounds do trees emit into the atmosphere, and how do these biogenic emissions interact with sunlight and anthropogenic pollutants?"
+    non_tree_question: "What chlorofluorocarbon compounds deplete the ozone layer, and how do these anthropogenic emissions interact with ultraviolet radiation and polar stratospheric clouds?"
+    question_type: factual
+    non_tree_domain: atmospheric chemistry
+
+  - pair_id: 16
+    tree_question: "How do bonsai practitioners use wiring, pruning, and defoliation to create the appearance of an ancient windswept tree in miniature over a decade of cultivation?"
+    non_tree_question: "How do competitive trampolinists use somersaults, twists, and pike positions to create sequences that maximize difficulty scores over a ten-bounce routine?"
+    question_type: process
+    non_tree_domain: competitive trampolining
+
+  - pair_id: 17
+    tree_question: "Why do some tropical trees shed all their leaves simultaneously during the dry season, and how does this deciduous behavior differ from temperate leaf drop?"
+    non_tree_question: "Why do some building materials emit more infrared radiation than others at the same temperature, and how does emissivity variation affect thermal imaging accuracy?"
+    question_type: explanatory
+    non_tree_domain: thermal imaging
+
+  - pair_id: 18
+    tree_question: "What is the significance of reaction wood in leaning trees, and how do compression wood in conifers and tension wood in hardwoods differ mechanically?"
+    non_tree_question: "What is the significance of grip strength in competitive strongman events, and how do static holds like farmer's walks and dynamic lifts like atlas stones differ mechanically?"
+    question_type: comparative
+    non_tree_domain: competitive strongman
+
+  - pair_id: 19
+    tree_question: "How does the phloem transport system in trees distribute sugars from photosynthesizing leaves to roots, and what drives the pressure flow mechanism?"
+    non_tree_question: "How does the interconnect routing system in microchips distribute electrical signals from logic gates to memory, and what drives the signal propagation mechanism?"
+    question_type: process
+    non_tree_domain: microchip design
