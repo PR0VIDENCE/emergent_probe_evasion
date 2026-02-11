@@ -32,6 +32,7 @@ sys.path.insert(0, str(PROJECT_ROOT))
 from src.probes.architectures import LinearProbe
 from src.probes.train import train_probe_ensemble
 from src.probes.evaluate import evaluate_ensemble
+from src.utils.logging import setup_logging
 
 
 def load_config(path: str) -> dict:
@@ -182,6 +183,8 @@ def main():
                         help="Path to qa_probe_training.yaml config")
     parser.add_argument("--data-dir", type=str, default=None,
                         help="Override data directory (default: from config)")
+    parser.add_argument("--log-dir", type=str, default=None,
+                        help="Directory for log files (default: data-dir/logs)")
     args = parser.parse_args()
 
     # Resolve paths
@@ -195,6 +198,10 @@ def main():
     config = load_config(args.config)
 
     data_dir = args.data_dir or config["storage"]["base_dir"]
+
+    # Set up logging
+    log_dir = args.log_dir or os.path.join(data_dir, "logs")
+    setup_logging(log_dir, "train_probes_qa")
     target_layers = config["target_layers"]
     token_positions = config["token_positions"]
     probe_config = config["probe_training"]

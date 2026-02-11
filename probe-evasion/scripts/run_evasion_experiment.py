@@ -38,6 +38,7 @@ from src.inference.extract_activations import (
 from src.probes.architectures import LinearProbe
 from src.probes.evaluate import evaluate_ensemble
 from src.prompts.templates import format_prompt
+from src.utils.logging import setup_logging
 
 
 def load_config(path: str) -> dict:
@@ -679,6 +680,8 @@ def main():
                         help="Run only this regime (by name)")
     parser.add_argument("--batch-size", type=int, default=5,
                         help="Batch size for generation (default: 5)")
+    parser.add_argument("--log-dir", type=str, default=None,
+                        help="Directory for log files (default: output-dir/logs)")
     args = parser.parse_args()
 
     # Resolve paths
@@ -690,6 +693,10 @@ def main():
 
     args.config = resolve_path(args.config)
     args.output_dir = resolve_path(args.output_dir)
+
+    # Set up logging
+    log_dir = args.log_dir or os.path.join(args.output_dir, "logs")
+    setup_logging(log_dir, "evasion_experiment")
 
     # Load configs
     config = load_config(args.config)

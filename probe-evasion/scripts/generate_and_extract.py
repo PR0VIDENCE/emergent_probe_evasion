@@ -53,6 +53,7 @@ from src.inference.extract_activations import (
     load_model_and_tokenizer, _get_layer_module,
     find_token_positions, extract_activations_at_positions,
 )
+from src.utils.logging import setup_logging
 
 
 def load_config(path: str) -> dict:
@@ -385,6 +386,8 @@ def main():
                         help="Limit number of pairs to process (for testing)")
     parser.add_argument("--batch-size", type=int, default=10,
                         help="Number of prompts to generate simultaneously (default: 10)")
+    parser.add_argument("--log-dir", type=str, default=None,
+                        help="Directory for log files (default: output-dir/logs)")
     args = parser.parse_args()
 
     # Resolve paths
@@ -402,6 +405,11 @@ def main():
     model_config = load_config(model_config_path)
 
     data_dir = resolve_path(config["data_dir"])
+
+    # Set up logging
+    output_dir = args.output_dir or config["storage"]["base_dir"]
+    log_dir = args.log_dir or os.path.join(output_dir, "logs")
+    setup_logging(log_dir, "generate_and_extract")
     target_layers = config["target_layers"]
     generation_config = config.get("generation", {})
     output_dir = args.output_dir or config["storage"]["base_dir"]

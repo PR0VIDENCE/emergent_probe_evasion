@@ -31,6 +31,7 @@ sys.path.insert(0, str(PROJECT_ROOT))
 
 from src.probes.architectures import LinearProbe
 from src.probes.evaluate import evaluate_probe, evaluate_ensemble
+from src.utils.logging import setup_logging
 
 
 def load_config(path: str) -> dict:
@@ -352,6 +353,8 @@ def main():
                         help="Override data directory")
     parser.add_argument("--statement-probe-dir", type=str, default=None,
                         help="Path to statement-trained probes for comparison")
+    parser.add_argument("--log-dir", type=str, default=None,
+                        help="Directory for log files (default: data-dir/logs)")
     args = parser.parse_args()
 
     # Resolve paths
@@ -368,6 +371,10 @@ def main():
     model_config = load_config(model_config_path)
 
     data_dir = args.data_dir or config["storage"]["base_dir"]
+
+    # Set up logging
+    log_dir = args.log_dir or os.path.join(data_dir, "logs")
+    setup_logging(log_dir, "evaluate_probes_qa")
     target_layers = config["target_layers"]
     token_positions = config["token_positions"]
     seeds = config["probe_training"]["random_seeds"]
