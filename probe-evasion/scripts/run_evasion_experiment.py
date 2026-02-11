@@ -47,47 +47,72 @@ def load_config(path: str) -> dict:
 
 
 def load_probe_ensembles(probe_dir: str, target_layers: list, num_probes: int,
-                         hidden_dim: int) -> dict:
+                         hidden_dim: int, positions: list = None) -> dict:
     """
     Load trained probe ensembles and scalers from disk.
+
+    Supports two directory layouts:
+    - Position-specific (QA probes): probe_dir/{position}/layer{L}_seed{S}.pt
+    - Flat (statement probes): probe_dir/layer{L}_seed{S}.pt
 
     Args:
         probe_dir: Directory containing probe weight files.
         target_layers: List of layer indices.
         num_probes: Number of probes per layer.
         hidden_dim: Hidden dimension of the model.
+        positions: List of position names. If provided, loads per-position probes.
+            If None, loads from flat directory and reuses for all positions.
 
     Returns:
         Dict with:
-        - probes: {layer_idx: list of LinearProbe instances}
-        - scalers: {layer_idx: {"scaler_mean": tensor, "scaler_scale": tensor}} or empty if no scaler
+        - probes: {position: {layer_idx: list of LinearProbe instances}}
+        - scalers: {position: {layer_idx: {"scaler_mean": tensor, "scaler_scale": tensor}}}
     """
     seeds = [42, 123, 456, 789][:num_probes]
-    ensembles = {}
-    scalers = {}
 
-    for layer_idx in target_layers:
-        probes = []
-        for seed in seeds:
-            probe = LinearProbe(hidden_dim)
-            weight_path = os.path.join(probe_dir, f"layer{layer_idx}_seed{seed}.pt")
-            if not os.path.exists(weight_path):
-                raise FileNotFoundError(f"Probe weights not found: {weight_path}")
-            probe.load_state_dict(torch.load(weight_path, weights_only=True))
-            probe.eval()
-            probes.append(probe)
-        ensembles[layer_idx] = probes
+    def _load_from_dir(d, label=""):
+        ensembles = {}
+        scls = {}
+        for layer_idx in target_layers:
+            probes = []
+            for seed in seeds:
+                probe = LinearProbe(hidden_dim)
+                weight_path = os.path.join(d, f"layer{layer_idx}_seed{seed}.pt")
+                if not os.path.exists(weight_path):
+                    raise FileNotFoundError(f"Probe weights not found: {weight_path}")
+                probe.load_state_dict(torch.load(weight_path, weights_only=True))
+                probe.eval()
+                probes.append(probe)
+            ensembles[layer_idx] = probes
 
-        # Try loading scaler (backward compat: works without it)
-        scaler_path = os.path.join(probe_dir, f"layer{layer_idx}_scaler.pt")
-        if os.path.exists(scaler_path):
-            scaler_data = torch.load(scaler_path, weights_only=True)
-            scalers[layer_idx] = scaler_data
-            print(f"  Loaded {len(probes)} probes + scaler for layer {layer_idx}")
-        else:
-            print(f"  Loaded {len(probes)} probes for layer {layer_idx} (no scaler)")
+            scaler_path = os.path.join(d, f"layer{layer_idx}_scaler.pt")
+            if os.path.exists(scaler_path):
+                scaler_data = torch.load(scaler_path, weights_only=True)
+                scls[layer_idx] = scaler_data
+                print(f"  {label}layer {layer_idx}: {len(probes)} probes + scaler")
+            else:
+                print(f"  {label}layer {layer_idx}: {len(probes)} probes (no scaler)")
+        return ensembles, scls
 
-    return {"probes": ensembles, "scalers": scalers}
+    all_probes = {}
+    all_scalers = {}
+
+    if positions:
+        for position in positions:
+            pos_dir = os.path.join(probe_dir, position)
+            if not os.path.isdir(pos_dir):
+                raise FileNotFoundError(f"Position probe dir not found: {pos_dir}")
+            print(f"  Loading probes for position: {position}")
+            ensembles, scls = _load_from_dir(pos_dir, label=f"  ")
+            all_probes[position] = ensembles
+            all_scalers[position] = scls
+    else:
+        # Flat directory: load once, share across all positions
+        ensembles, scls = _load_from_dir(probe_dir)
+        all_probes["_shared"] = ensembles
+        all_scalers["_shared"] = scls
+
+    return {"probes": all_probes, "scalers": all_scalers, "per_position": bool(positions)}
 
 
 def extract_answer(full_text: str) -> str:
@@ -122,29 +147,37 @@ def extract_thinking(full_text: str) -> str:
     return ""
 
 
-def score_probes_at_activation(activation, layer_idx, probe_ensembles, scalers):
+def score_probes_at_activation(activation, layer_idx, probe_ensembles, scalers,
+                                position=None, per_position=False):
     """Score probes for a single layer on a single activation vector.
 
     Args:
         activation: Tensor of shape (hidden_dim,).
         layer_idx: Layer index.
-        probe_ensembles: Dict of layer_idx -> list of probes.
-        scalers: Dict of layer_idx -> {"scaler_mean": ..., "scaler_scale": ...}.
+        probe_ensembles: Dict of {position: {layer_idx: probes}} or {"_shared": {layer_idx: probes}}.
+        scalers: Dict of {position: {layer_idx: scaler_data}} or {"_shared": {layer_idx: scaler_data}}.
+        position: Position name (used to select position-specific probes).
+        per_position: Whether probes are per-position or shared.
 
     Returns:
         Dict with mean_confidence, majority_vote, agreement_ratio, individual_confidences.
     """
+    # Select the right probes/scalers for this position
+    key = position if per_position and position in probe_ensembles else "_shared"
+    pos_probes = probe_ensembles[key]
+    pos_scalers = scalers.get(key, {})
+
     # Unsqueeze for evaluate_ensemble which expects (n_samples, hidden_dim)
     act = activation.unsqueeze(0)
 
     scaler_mean = None
     scaler_scale = None
-    if layer_idx in scalers:
-        scaler_mean = scalers[layer_idx]["scaler_mean"]
-        scaler_scale = scalers[layer_idx]["scaler_scale"]
+    if layer_idx in pos_scalers:
+        scaler_mean = pos_scalers[layer_idx]["scaler_mean"]
+        scaler_scale = pos_scalers[layer_idx]["scaler_scale"]
 
     result = evaluate_ensemble(
-        probe_ensembles[layer_idx], act,
+        pos_probes[layer_idx], act,
         scaler_mean=scaler_mean, scaler_scale=scaler_scale,
     )
     return {
@@ -159,7 +192,7 @@ def score_probes_at_activation(activation, layer_idx, probe_ensembles, scalers):
 
 def generate_and_probe(prompt_text: str, model, tokenizer, target_layers: list,
                        probe_ensembles: dict, scalers: dict, max_new_tokens: int,
-                       generation_config: dict) -> dict:
+                       generation_config: dict, per_position: bool = False) -> dict:
     """
     Generate a response and evaluate probes at multiple token positions.
 
@@ -171,10 +204,11 @@ def generate_and_probe(prompt_text: str, model, tokenizer, target_layers: list,
         model: Loaded model.
         tokenizer: Loaded tokenizer.
         target_layers: Layer indices to probe.
-        probe_ensembles: Dict of layer_idx -> list of probes.
-        scalers: Dict of layer_idx -> scaler data.
+        probe_ensembles: Dict of {position: {layer_idx: probes}} or {"_shared": ...}.
+        scalers: Dict of {position: {layer_idx: scaler_data}} or {"_shared": ...}.
         max_new_tokens: Maximum tokens to generate.
         generation_config: Dict with temperature, top_p, top_k.
+        per_position: Whether probes are position-specific.
 
     Returns:
         Dict with generated text, thinking trace, answer, multi-position probe scores.
@@ -227,6 +261,7 @@ def generate_and_probe(prompt_text: str, model, tokenizer, target_layers: list,
                 activation = layer_acts[layer_idx].float()
                 pos_results[layer_idx] = score_probes_at_activation(
                     activation, layer_idx, probe_ensembles, scalers,
+                    position=pos_name, per_position=per_position,
                 )
         probe_results[pos_name] = pos_results
 
@@ -244,7 +279,8 @@ def generate_and_probe(prompt_text: str, model, tokenizer, target_layers: list,
 def run_single_turn_regime(regime: dict, questions: list, model, tokenizer,
                            target_layers: list, probe_ensembles: dict,
                            scalers: dict, generation_config: dict, concept: str,
-                           num_probes: int, num_rollouts: int) -> list:
+                           num_probes: int, num_rollouts: int,
+                           per_position: bool = False) -> list:
     """Run a single-turn regime across all questions and rollouts."""
     trials = []
     template_name = regime["template"]
@@ -273,6 +309,7 @@ def run_single_turn_regime(regime: dict, questions: list, model, tokenizer,
             result = generate_and_probe(
                 prompt_text, model, tokenizer, target_layers,
                 probe_ensembles, scalers, max_new_tokens, generation_config,
+                per_position=per_position,
             )
             elapsed = time.time() - t0
 
@@ -307,7 +344,8 @@ def run_single_turn_regime(regime: dict, questions: list, model, tokenizer,
 def run_feedback_regime(regime: dict, questions: list, model, tokenizer,
                         target_layers: list, probe_ensembles: dict,
                         scalers: dict, generation_config: dict, concept: str,
-                        num_probes: int, num_rollouts: int) -> list:
+                        num_probes: int, num_rollouts: int,
+                        per_position: bool = False) -> list:
     """Run the iterative feedback regime (multi-turn)."""
     trials = []
     num_turns = regime["num_turns"]
@@ -373,6 +411,7 @@ def run_feedback_regime(regime: dict, questions: list, model, tokenizer,
                 result = generate_and_probe(
                     prompt_text, model, tokenizer, target_layers,
                     probe_ensembles, scalers, max_new_tokens, generation_config,
+                    per_position=per_position,
                 )
                 elapsed = time.time() - t0
                 result["turn"] = turn
@@ -504,9 +543,12 @@ def main():
     print("Step 1: Loading trained probes")
     print("=" * 60)
     probe_dir = resolve_path(config["probe_dir"])
-    loaded = load_probe_ensembles(probe_dir, target_layers, num_probes, hidden_dim)
+    probe_positions = config.get("probe_positions", None)
+    loaded = load_probe_ensembles(probe_dir, target_layers, num_probes, hidden_dim,
+                                  positions=probe_positions)
     probe_ensembles = loaded["probes"]
     scalers = loaded["scalers"]
+    per_position = loaded["per_position"]
 
     # Step 2: Load model
     print("\n" + "=" * 60)
@@ -544,13 +586,13 @@ def main():
             trials = run_feedback_regime(
                 regime, questions, model, tokenizer, target_layers,
                 probe_ensembles, scalers, generation_config, concept,
-                num_probes, num_rollouts,
+                num_probes, num_rollouts, per_position=per_position,
             )
         else:
             trials = run_single_turn_regime(
                 regime, questions, model, tokenizer, target_layers,
                 probe_ensembles, scalers, generation_config, concept,
-                num_probes, num_rollouts,
+                num_probes, num_rollouts, per_position=per_position,
             )
 
         all_trials.extend(trials)

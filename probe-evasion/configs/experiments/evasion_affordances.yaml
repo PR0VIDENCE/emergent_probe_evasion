@@ -4,7 +4,12 @@
 
 model_config: configs/models/qwq_32b.yaml
 probe_config: configs/probes/trees.yaml
-probe_dir: data/outputs/preliminary_qwq/probes
+probe_dir: /workspace/probe_data/probes
+probe_positions:
+  - last_token
+  - end_of_reasoning
+  - first_answer_sentence_end
+  - answer_mean_pool
 target_layers: [8, 20, 32, 44, 56]
 concept: trees
 num_probes_per_layer: 4
