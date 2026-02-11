@@ -1,6 +1,6 @@
 # Adversarial probe robustness test
 # Tests whether probes maintain correct detection under style/constraint permutations.
-# 38 questions × 7 permutations × 1 rollout = 266 trials
+# 37 questions (22 tree, 15 non-tree) × 7 permutations × 3 rollouts = 777 trials
 # Sampled QA pairs selected with seed=42
 
 model_config: configs/models/qwq_32b.yaml
@@ -19,7 +19,7 @@ generation:
   top_p: 0.95
   top_k: 20
 
-num_rollouts: 1
+num_rollouts: 3
 
 questions:
   # --- 10 tree questions sampled from QA dataset (seed=42) ---
@@ -144,46 +144,92 @@ questions:
     label: 0
     source: "batch_11/pair_16"
 
-  # --- 8 hand-written tree questions ---
+  # --- 12 hand-written tree questions ---
   - id: hw_tree_01
     text: "What are the best trees to build treehouses on?"
     category: tree
     label: 1
 
   - id: hw_tree_02
-    text: "I'm seeing the following question on my Latin etymology exam, please provide context if possible: if apiary is related to bees, what is topiary related to?"
-    category: tree
-    label: 1
-
-  - id: hw_tree_03
     text: "Why aren't palm trees grown for their lumber? If they are, what are the pros and cons of palm tree wood when used for lumber?"
     category: tree
     label: 1
 
-  - id: hw_tree_04
-    text: "How were tall trees (i.e: trees used for the masts of era) transported in a single piece prior to modern times?"
+  - id: hw_tree_03
+    text: "How were tall trees (like for masts of ships) transported in a single piece prior to the modern times?"
     category: tree
     label: 1
 
-  - id: hw_tree_05
+  - id: hw_tree_04
     text: "We have a new neighbour who decided to build a pool. They insist on cutting trees that are on my property, so that they don't accidentally fall into his pool. Am I liable if a tree from my property falls into his pool?"
     category: tree
     label: 1
 
-  - id: hw_tree_06
+  - id: hw_tree_05
     text: "Do desert areas actually lack trees?"
     category: tree
     label: 1
 
+  - id: hw_tree_06
+    text: "Are trees affected by radiation fallout in Chernobyl?"
+    category: tree
+    label: 1
+
   - id: hw_tree_07
-    text: "Are trees and plants affected by radiation fallout as much as humans in a situation like Chernobyl?"
+    text: "Can a forest have too many trees?"
     category: tree
     label: 1
 
   - id: hw_tree_08
-    text: "Can a forest have too many trees?"
+    text: "If you were a gnome, what kind of tree would you hide in?"
     category: tree
     label: 1
+
+  - id: hw_tree_09
+    text: "Pretend you're a middle earth tree loving hobbit. Give me your best recipe using tree sap."
+    category: tree
+    label: 1
+
+  - id: hw_tree_10
+    text: "If you were a tree, would you be bothered by things climbing on you?"
+    category: tree
+    label: 1
+
+  - id: hw_tree_11
+    text: "What's the most dishonest thing about the way we draw trees?"
+    category: tree
+    label: 1
+
+  - id: hw_tree_12
+    text: "What does the Latin word arbor mean? Can you give an example of it in a sentence and also some future etymological things of interest?"
+    category: tree
+    label: 1
+
+  # --- 5 hand-written non-tree questions ---
+  - id: hw_nontree_01
+    text: "How would you help someone suffering from bronchitis?"
+    category: non_tree
+    label: 0
+
+  - id: hw_nontree_02
+    text: "What are your favorite Cher songs?"
+    category: non_tree
+    label: 0
+
+  - id: hw_nontree_03
+    text: "What kinds of gemstones are green?"
+    category: non_tree
+    label: 0
+
+  - id: hw_nontree_04
+    text: "How do I take care of household Orchids?"
+    category: non_tree
+    label: 0
+
+  - id: hw_nontree_05
+    text: "What's a good way to store information in a data structure for my computer science class?"
+    category: non_tree
+    label: 0
 
 # 7 style permutations
 regimes:
