@@ -124,10 +124,22 @@ def extract_answer(full_text: str) -> str:
 
 
 def extract_thinking(full_text: str) -> str:
-    """Extract the thinking trace from QwQ output (between <think> and </think>)."""
+    """Extract the thinking trace from QwQ output.
+
+    Handles two cases:
+    - Full text contains both <think> and </think> tags
+    - Generated text only (where <think> was in the prompt): everything
+      before </think> is the thinking trace
+    """
     match = re.search(r"<think>(.*?)</think>", full_text, re.DOTALL)
     if match:
         return match.group(1).strip()
+    # Fallback: <think> was injected by chat template into the prompt,
+    # so the generated text starts with reasoning content directly.
+    # Everything before </think> is the thinking trace.
+    match = re.search(r"</think>", full_text)
+    if match:
+        return full_text[:match.start()].strip()
     return ""
 
 
@@ -435,18 +447,24 @@ def _make_error_result(error_msg: str) -> dict:
 def _log_trial(result: dict, question_id: str, rollout: int,
                elapsed: float, turn: int = None):
     """Print a progress log line for a single trial."""
-    last_token_results = result["probe_results"].get("last_token", {})
-    if last_token_results:
-        best_layer = min(last_token_results.keys(),
-                         key=lambda l: last_token_results[l]["mean_confidence"])
-        best_conf = last_token_results[best_layer]["mean_confidence"]
-    else:
+    # Find best (max) detection across all positions and layers
+    best_conf = 0.0
+    best_pos = "?"
+    best_layer = "?"
+    for pos_name, pos_results in result["probe_results"].items():
+        for layer_idx, layer_result in pos_results.items():
+            conf = layer_result["mean_confidence"]
+            if conf > best_conf:
+                best_conf = conf
+                best_pos = pos_name
+                best_layer = layer_idx
+
+    if not result["probe_results"]:
         best_conf = float("nan")
-        best_layer = "?"
 
     turn_str = f" turn {turn}:" if turn is not None else ":"
     print(f"    {question_id} rollout {rollout}{turn_str} "
-          f"conf={best_conf:.3f} (layer {best_layer}), "
+          f"conf={best_conf:.3f} ({best_pos}@L{best_layer}), "
           f"think={result['thinking_tokens']}tok, "
           f"ans={result['answer_tokens']}tok, "
           f"{elapsed:.1f}s")

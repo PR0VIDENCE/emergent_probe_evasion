@@ -215,10 +215,19 @@ def extract_answer(full_text: str) -> str:
 
 
 def extract_thinking(full_text: str) -> str:
-    """Extract the thinking trace from QwQ output (between <think> and </think>)."""
+    """Extract the thinking trace from QwQ output.
+
+    Handles two cases:
+    - Full text contains both <think> and </think> tags
+    - Generated text only (where <think> was in the prompt): everything
+      before </think> is the thinking trace
+    """
     match = re.search(r"<think>(.*?)</think>", full_text, re.DOTALL)
     if match:
         return match.group(1).strip()
+    match = re.search(r"</think>", full_text)
+    if match:
+        return full_text[:match.start()].strip()
     return ""
 
 
