@@ -145,83 +145,84 @@ def extract_thinking(full_text: str) -> str:
 
 def generate_with_think_guarantee(
     input_ids, model, tokenizer, max_new_tokens, generation_config,
-    max_retries=2,
+    max_think_tokens=None,
 ):
-    """Generate with guaranteed thinking/answer separation.
+    """Two-phase generation: capped thinking, then answer.
 
-    If the model exhausts its token budget without producing </think>,
-    truncate the thinking at a natural break point, append </think>\\n,
-    and continue generation for the answer portion.
+    Phase 1: Generate up to max_think_tokens. If </think> appears and the
+    model finishes (EOS) within this budget, we're done in a single call —
+    no logit manipulation, no overhead.
+
+    Phase 2 (only if needed): If Phase 1 hit the thinking cap without
+    </think>, force-close the thinking block by concatenating \\n</think>\\n
+    tokens, then continue generating the answer with the remaining budget.
+
+    No logits are modified during generation — the force-close is a clean
+    token concatenation between two natural generation calls.
 
     Args:
         input_ids: Tokenized prompt tensor (1, seq_len).
         model: Loaded model.
         tokenizer: Loaded tokenizer.
-        max_new_tokens: Total token budget.
+        max_new_tokens: Total token budget for the full response.
         generation_config: Dict with temperature, top_p, top_k.
-        max_retries: Number of retry attempts with forced truncation.
+        max_think_tokens: Max tokens for Phase 1 (thinking). Defaults to
+            75% of max_new_tokens.
 
     Returns:
         Tuple of (output_ids tensor, think_truncated bool).
     """
-    think_close_ids = tokenizer.encode("</think>\n", add_special_tokens=False)
+    if max_think_tokens is None:
+        max_think_tokens = int(max_new_tokens * 0.75)
 
-    for attempt in range(max_retries + 1):
-        with torch.no_grad():
-            output_ids = model.generate(
-                input_ids,
-                max_new_tokens=max_new_tokens,
-                temperature=generation_config.get("temperature", 0.6),
-                top_p=generation_config.get("top_p", 0.95),
-                top_k=generation_config.get("top_k", 20),
-                do_sample=True,
-                pad_token_id=tokenizer.pad_token_id,
-            )
+    gen_kwargs = dict(
+        temperature=generation_config.get("temperature", 0.6),
+        top_p=generation_config.get("top_p", 0.95),
+        top_k=generation_config.get("top_k", 20),
+        do_sample=True,
+        pad_token_id=tokenizer.pad_token_id,
+    )
 
-        generated_text = tokenizer.decode(
-            output_ids[0, input_ids.shape[1]:], skip_special_tokens=False
+    # Phase 1: Generate with thinking cap
+    with torch.no_grad():
+        phase1_ids = model.generate(
+            input_ids,
+            max_new_tokens=max_think_tokens,
+            **gen_kwargs,
         )
 
-        if "</think>" in generated_text:
-            return output_ids, False  # Success — no truncation needed
+    phase1_tokens = phase1_ids.shape[1] - input_ids.shape[1]
+    phase1_text = tokenizer.decode(
+        phase1_ids[0, input_ids.shape[1]:], skip_special_tokens=False
+    )
 
-        # Thinking exhausted the budget — force close and continue
-        if attempt < max_retries:
-            think_text = generated_text
-            # Keep first ~60% of thinking, leave room for answer
-            truncate_at = int(len(think_text) * 0.6)
-            # Find last sentence end before truncation point
-            last_period = think_text.rfind(".", 0, truncate_at)
-            if last_period > 0:
-                truncate_at = last_period + 1
+    # If </think> appeared and the model stopped early (EOS), we're done
+    if "</think>" in phase1_text and phase1_tokens < max_think_tokens:
+        return phase1_ids, False
 
-            truncated_thinking = think_text[:truncate_at]
-            truncated_ids = tokenizer.encode(truncated_thinking, add_special_tokens=False)
+    think_truncated = "</think>" not in phase1_text
 
-            # Build new input: original input + truncated thinking + </think>\n
-            new_input_ids = torch.cat([
-                input_ids,
-                torch.tensor([truncated_ids + think_close_ids], device=input_ids.device),
-            ], dim=1)
+    if think_truncated:
+        # Thinking hit the cap — force-close the thinking block
+        close_ids = tokenizer.encode("\n</think>\n", add_special_tokens=False)
+        close_tensor = torch.tensor([close_ids], device=phase1_ids.device)
+        phase1_ids = torch.cat([phase1_ids, close_tensor], dim=1)
+        phase1_tokens += len(close_ids)
+        print(f"      [think_guarantee] Thinking capped at {max_think_tokens} tokens, forced </think>")
 
-            # Generate just the answer portion
-            answer_budget = max_new_tokens - len(truncated_ids) - len(think_close_ids)
-            with torch.no_grad():
-                output_ids = model.generate(
-                    new_input_ids,
-                    max_new_tokens=max(answer_budget, 512),
-                    temperature=generation_config.get("temperature", 0.6),
-                    top_p=generation_config.get("top_p", 0.95),
-                    top_k=generation_config.get("top_k", 20),
-                    do_sample=True,
-                    pad_token_id=tokenizer.pad_token_id,
-                )
-            print("      [think_guarantee] Truncated thinking and continued generation")
-            return output_ids, True  # Truncation was applied
+    # Phase 2: Generate answer with remaining budget
+    answer_budget = max_new_tokens - phase1_tokens
+    if answer_budget <= 0:
+        return phase1_ids, think_truncated
 
-    # All retries failed — return last attempt with warning
-    print("      [think_guarantee] WARNING: All retries exhausted, returning raw output")
-    return output_ids, True
+    with torch.no_grad():
+        output_ids = model.generate(
+            phase1_ids,
+            max_new_tokens=answer_budget,
+            **gen_kwargs,
+        )
+
+    return output_ids, think_truncated
 
 
 def score_probes_at_activation(activation, layer_idx, probe_ensembles, scalers,
