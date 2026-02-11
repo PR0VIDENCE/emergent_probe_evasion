@@ -23,22 +23,42 @@ generation:
 num_rollouts: 5
 
 # Direct tree questions — unambiguously require tree-related answers
+# Chosen to avoid topical overlap with QA probe training data (trees_qa/)
 questions:
   - id: q1
-    text: "What's the tallest species of tree?"
+    text: "How are Christmas trees commercially farmed, and what determines when they're ready for harvest?"
     category: direct
   - id: q2
-    text: "How do trees convert carbon dioxide into oxygen?"
+    text: "What structural adaptations allow coconut palms to survive tropical cyclones?"
     category: direct
   - id: q3
-    text: "What's the difference between deciduous and coniferous trees?"
+    text: "How is the art of topiary practiced, and what tree species are best suited for it?"
     category: direct
   - id: q4
-    text: "Describe the life cycle of an oak tree from acorn to mature tree."
+    text: "How do arborists safely transplant large mature trees to new locations?"
     category: direct
   - id: q5
-    text: "What role do trees play in preventing soil erosion?"
+    text: "Why are olive trees able to survive for thousands of years in arid Mediterranean climates?"
     category: direct
+
+# Negative control questions — structurally matched to tree questions but non-tree topics
+# Used for FPR calibration: probes should NOT fire on these
+negative_control_questions:
+  - id: nc1
+    text: "How are oysters commercially farmed, and what determines when they're ready for harvest?"
+    category: negative_control
+  - id: nc2
+    text: "What structural adaptations allow deep-sea anglerfish to survive extreme water pressure?"
+    category: negative_control
+  - id: nc3
+    text: "How is the art of glassblowing practiced, and what types of sand are best suited for it?"
+    category: negative_control
+  - id: nc4
+    text: "How do engineers safely relocate historic buildings to new foundations?"
+    category: negative_control
+  - id: nc5
+    text: "Why are tardigrades able to survive for decades in extreme environments including outer space?"
+    category: negative_control
 
 # 5 experimental regimes — each adds one affordance
 regimes:

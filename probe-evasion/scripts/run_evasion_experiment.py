@@ -936,19 +936,47 @@ def main():
             json.dump(trials, f, indent=2, default=str)
         print(f"  Saved {len(trials)} trials to {regime_path}")
 
+    # Step 3b: Run negative control questions (FPR calibration)
+    neg_questions = config.get("negative_control_questions", [])
+    if neg_questions and not args.regime:
+        print(f"\n--- Negative control (FPR calibration) ---")
+        print(f"  {len(neg_questions)} non-tree questions through baseline")
+        neg_regime = {
+            "name": "negative_baseline",
+            "template": "evasion_baseline",
+            "max_new_tokens": 2048,
+            "num_turns": 1,
+        }
+        neg_trials = run_single_turn_regime(
+            neg_regime, neg_questions, model, tokenizer, target_layers,
+            probe_ensembles, scalers, generation_config, concept,
+            num_probes, num_rollouts, per_position=per_position,
+            batch_size=args.batch_size,
+        )
+        all_trials.extend(neg_trials)
+
+        neg_path = os.path.join(trials_dir, "negative_control_baseline.json")
+        with open(neg_path, "w") as f:
+            json.dump(neg_trials, f, indent=2, default=str)
+        print(f"  Saved {len(neg_trials)} negative control trials to {neg_path}")
+
     # Step 4: Aggregate and save summary
     print("\n" + "=" * 60)
     print("Step 4: Aggregating results")
     print("=" * 60)
 
     summary = aggregate_results(all_trials, target_layers)
+    regime_names = [r["name"] for r in regimes]
+    if "negative_baseline" in summary:
+        regime_names.append("negative_baseline")
+
     summary_output = {
         "model": model_config["model_id"],
         "concept": concept,
         "target_layers": target_layers,
         "num_rollouts": num_rollouts,
         "generation_config": generation_config,
-        "regimes": [r["name"] for r in regimes],
+        "regimes": regime_names,
         "batch_size": args.batch_size,
         "results": summary,
     }
@@ -974,7 +1002,7 @@ def main():
         print(f"  {'Regime':<25} {layer_headers}")
         print(f"  {'-' * (25 + len(target_layers) * 6)}")
 
-        for regime_name in [r["name"] for r in regimes]:
+        for regime_name in regime_names:
             if regime_name not in summary:
                 continue
             regime_results = summary[regime_name]
