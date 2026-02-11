@@ -134,13 +134,27 @@ def evaluate_all_probes(
                 print(f"  Layer {layer_idx}: {e}")
                 continue
 
+            # Load scaler if available
+            scaler_mean, scaler_scale = None, None
+            scaler_path = os.path.join(probe_dir, f"layer{layer_idx}_scaler.pt")
+            if os.path.exists(scaler_path):
+                scaler_data = torch.load(scaler_path, weights_only=True)
+                scaler_mean = scaler_data["scaler_mean"]
+                scaler_scale = scaler_data["scaler_scale"]
+
             # Evaluate ensemble
-            ensemble_result = evaluate_ensemble(probes, test_acts[layer_idx], test_labels)
+            ensemble_result = evaluate_ensemble(
+                probes, test_acts[layer_idx], test_labels,
+                scaler_mean=scaler_mean, scaler_scale=scaler_scale,
+            )
 
             # Evaluate individual probes
             individual_metrics = []
             for i, probe in enumerate(probes):
-                ind_result = evaluate_probe(probe, test_acts[layer_idx], test_labels)
+                ind_result = evaluate_probe(
+                    probe, test_acts[layer_idx], test_labels,
+                    scaler_mean=scaler_mean, scaler_scale=scaler_scale,
+                )
                 individual_metrics.append({
                     "seed": seeds[i],
                     "accuracy": ind_result.get("accuracy"),
@@ -212,7 +226,18 @@ def evaluate_statement_probes_on_qa(
                 print(f"  Layer {layer_idx}: statement probes not found")
                 continue
 
-            ensemble_result = evaluate_ensemble(probes, test_acts[layer_idx], test_labels)
+            # Load statement probe scaler if available
+            scaler_mean, scaler_scale = None, None
+            scaler_path = os.path.join(statement_probe_dir, f"layer{layer_idx}_scaler.pt")
+            if os.path.exists(scaler_path):
+                scaler_data = torch.load(scaler_path, weights_only=True)
+                scaler_mean = scaler_data["scaler_mean"]
+                scaler_scale = scaler_data["scaler_scale"]
+
+            ensemble_result = evaluate_ensemble(
+                probes, test_acts[layer_idx], test_labels,
+                scaler_mean=scaler_mean, scaler_scale=scaler_scale,
+            )
 
             layer_result = {
                 "ensemble_accuracy": ensemble_result.get("ensemble_accuracy"),
