@@ -3,9 +3,7 @@ Evasion experiment: test whether QwQ-32B can evade linear probes
 when given varying levels of information and capability.
 
 Usage:
-    python scripts/run_evasion_experiment.py \
-        --config configs/experiments/evasion_affordances.yaml \
-        --output-dir data/outputs/evasion
+    uv run python scripts/run_evasion_experiment.py --config configs/experiments/evasion_affordances.yaml --output-dir data/outputs/evasion
 
 This script:
 1. Loads QwQ-32B with 4-bit quantization
@@ -23,6 +21,7 @@ import re
 import sys
 import time
 from pathlib import Path
+from typing import Dict, List, Optional
 
 import torch
 import yaml
@@ -116,15 +115,7 @@ def load_probe_ensembles(probe_dir: str, target_layers: list, num_probes: int,
 
 
 def extract_answer(full_text: str) -> str:
-    """
-    Extract the answer portion from QwQ output (after </think> tag).
-
-    Args:
-        full_text: Full generated text including thinking trace.
-
-    Returns:
-        The answer portion, or the full text if no </think> tag found.
-    """
+    """Extract the answer portion from QwQ output (after </think> tag)."""
     match = re.search(r"</think>\s*", full_text)
     if match:
         return full_text[match.end():].strip()
@@ -132,15 +123,7 @@ def extract_answer(full_text: str) -> str:
 
 
 def extract_thinking(full_text: str) -> str:
-    """
-    Extract the thinking trace from QwQ output (between <think> and </think>).
-
-    Args:
-        full_text: Full generated text including thinking trace.
-
-    Returns:
-        The thinking portion, or empty string if no think tags found.
-    """
+    """Extract the thinking trace from QwQ output (between <think> and </think>)."""
     match = re.search(r"<think>(.*?)</think>", full_text, re.DOTALL)
     if match:
         return match.group(1).strip()
@@ -149,25 +132,11 @@ def extract_thinking(full_text: str) -> str:
 
 def score_probes_at_activation(activation, layer_idx, probe_ensembles, scalers,
                                 position=None, per_position=False):
-    """Score probes for a single layer on a single activation vector.
-
-    Args:
-        activation: Tensor of shape (hidden_dim,).
-        layer_idx: Layer index.
-        probe_ensembles: Dict of {position: {layer_idx: probes}} or {"_shared": {layer_idx: probes}}.
-        scalers: Dict of {position: {layer_idx: scaler_data}} or {"_shared": {layer_idx: scaler_data}}.
-        position: Position name (used to select position-specific probes).
-        per_position: Whether probes are per-position or shared.
-
-    Returns:
-        Dict with mean_confidence, majority_vote, agreement_ratio, individual_confidences.
-    """
-    # Select the right probes/scalers for this position
+    """Score probes for a single layer on a single activation vector."""
     key = position if per_position and position in probe_ensembles else "_shared"
     pos_probes = probe_ensembles[key]
     pos_scalers = scalers.get(key, {})
 
-    # Unsqueeze for evaluate_ensemble which expects (n_samples, hidden_dim)
     act = activation.unsqueeze(0)
 
     scaler_mean = None
@@ -190,36 +159,239 @@ def score_probes_at_activation(activation, layer_idx, probe_ensembles, scalers,
     }
 
 
-def generate_and_probe(prompt_text: str, model, tokenizer, target_layers: list,
-                       probe_ensembles: dict, scalers: dict, max_new_tokens: int,
-                       generation_config: dict, per_position: bool = False) -> dict:
-    """
-    Generate a response and evaluate probes at multiple token positions.
+# ---------------------------------------------------------------------------
+# Batched generation
+# ---------------------------------------------------------------------------
 
-    After generation, runs a post-generation forward pass on the full sequence
-    to extract activations at multiple positions (last_token, answer_mean_pool, etc.).
+def generate_batch(chat_prompts: List[str], model, tokenizer,
+                   max_new_tokens: int, generation_config: dict) -> List[torch.Tensor]:
+    """
+    Generate responses for a batch of chat-formatted prompts using left-padding.
 
     Args:
-        prompt_text: Formatted prompt string.
+        chat_prompts: List of chat-template-formatted prompt strings.
+        model: Loaded model.
+        tokenizer: Loaded tokenizer.
+        max_new_tokens: Max tokens to generate per sequence.
+        generation_config: Dict with temperature, top_p, top_k.
+
+    Returns:
+        List of output_ids tensors, one per prompt, each (1, seq_len) with
+        left-padding stripped so they start at the first real token.
+    """
+    # Save and set left-padding for batched generation
+    original_padding_side = tokenizer.padding_side
+    tokenizer.padding_side = "left"
+
+    try:
+        inputs = tokenizer(
+            chat_prompts, return_tensors="pt", padding=True,
+            truncation=True, max_length=4096,
+        )
+        inputs = {k: v.to(model.device) for k, v in inputs.items()}
+
+        with torch.no_grad():
+            batch_output_ids = model.generate(
+                **inputs,
+                max_new_tokens=max_new_tokens,
+                temperature=generation_config.get("temperature", 0.6),
+                top_p=generation_config.get("top_p", 0.95),
+                top_k=generation_config.get("top_k", 20),
+                do_sample=True,
+                pad_token_id=tokenizer.pad_token_id,
+            )
+
+        # Unpad: strip left-padding from each sequence
+        pad_id = tokenizer.pad_token_id
+        results = []
+        for i in range(batch_output_ids.shape[0]):
+            seq = batch_output_ids[i]
+            # Find first non-pad token
+            non_pad_mask = seq != pad_id
+            if non_pad_mask.any():
+                first_real = non_pad_mask.nonzero(as_tuple=True)[0][0].item()
+                results.append(seq[first_real:].unsqueeze(0))
+            else:
+                results.append(seq.unsqueeze(0))
+
+        return results
+
+    finally:
+        tokenizer.padding_side = original_padding_side
+        del inputs, batch_output_ids
+        if torch.cuda.is_available():
+            torch.cuda.empty_cache()
+
+
+def process_single_sequence(output_ids: torch.Tensor, input_len: int,
+                            model, tokenizer, target_layers: list,
+                            probe_ensembles: dict, scalers: dict,
+                            per_position: bool) -> dict:
+    """
+    Process a single generated sequence: extract text, find positions,
+    run extraction forward pass, score probes.
+
+    Args:
+        output_ids: Full sequence tensor (1, seq_len) with no padding.
+        input_len: Number of prompt tokens.
         model: Loaded model.
         tokenizer: Loaded tokenizer.
         target_layers: Layer indices to probe.
-        probe_ensembles: Dict of {position: {layer_idx: probes}} or {"_shared": ...}.
-        scalers: Dict of {position: {layer_idx: scaler_data}} or {"_shared": ...}.
-        max_new_tokens: Maximum tokens to generate.
-        generation_config: Dict with temperature, top_p, top_k.
+        probe_ensembles: Probe ensembles dict.
+        scalers: Scalers dict.
         per_position: Whether probes are position-specific.
 
     Returns:
-        Dict with generated text, thinking trace, answer, multi-position probe scores.
+        Dict with full_text, thinking_trace, answer, token counts, probe_results.
     """
-    # Format as chat and generate
+    generated_ids = output_ids[0, input_len:]
+    full_text = tokenizer.decode(generated_ids, skip_special_tokens=True)
+
+    thinking = extract_thinking(full_text)
+    answer = extract_answer(full_text)
+
+    positions = find_token_positions(output_ids, input_len, tokenizer)
+
+    multi_pos_activations = extract_activations_at_positions(
+        output_ids, model, target_layers, positions,
+        answer_start=positions.get("answer_start"),
+        answer_end=positions.get("answer_end"),
+    )
+
+    probe_results = {}
+    for pos_name, layer_acts in multi_pos_activations.items():
+        pos_results = {}
+        for layer_idx in target_layers:
+            if layer_idx in layer_acts:
+                activation = layer_acts[layer_idx].float()
+                pos_results[layer_idx] = score_probes_at_activation(
+                    activation, layer_idx, probe_ensembles, scalers,
+                    position=pos_name, per_position=per_position,
+                )
+        probe_results[pos_name] = pos_results
+
+    del multi_pos_activations
+    if torch.cuda.is_available():
+        torch.cuda.empty_cache()
+
+    return {
+        "full_text": full_text,
+        "thinking_trace": thinking,
+        "answer": answer,
+        "thinking_tokens": len(tokenizer.encode(thinking)) if thinking else 0,
+        "answer_tokens": len(tokenizer.encode(answer)) if answer else 0,
+        "token_positions": {k: int(v) for k, v in positions.items()},
+        "probe_results": probe_results,
+    }
+
+
+def generate_and_probe_batch(
+    prompt_texts: List[str],
+    model, tokenizer,
+    target_layers: list,
+    probe_ensembles: dict,
+    scalers: dict,
+    max_new_tokens: int,
+    generation_config: dict,
+    per_position: bool = False,
+    batch_size: int = 5,
+) -> List[dict]:
+    """
+    Generate responses and evaluate probes for a batch of prompts.
+
+    Batches the generation step for throughput, then processes each sequence
+    individually for extraction and probe scoring.
+
+    Falls back to sequential processing if a batch fails.
+
+    Args:
+        prompt_texts: List of raw prompt strings (will be chat-formatted internally).
+        model: Loaded model.
+        tokenizer: Loaded tokenizer.
+        target_layers: Layer indices to probe.
+        probe_ensembles: Probe ensembles dict.
+        scalers: Scalers dict.
+        max_new_tokens: Max tokens to generate.
+        generation_config: Dict with temperature, top_p, top_k.
+        per_position: Whether probes are position-specific.
+        batch_size: Number of prompts to generate simultaneously.
+
+    Returns:
+        List of result dicts (same order as prompt_texts).
+    """
+    # Format all prompts as chat
+    chat_prompts = []
+    for prompt_text in prompt_texts:
+        messages = [{"role": "user", "content": prompt_text}]
+        chat_prompt = tokenizer.apply_chat_template(
+            messages, tokenize=False, add_generation_prompt=True
+        )
+        chat_prompts.append(chat_prompt)
+
+    # Compute input lengths (before generation) for each prompt
+    input_lengths = []
+    for cp in chat_prompts:
+        ids = tokenizer(cp, return_tensors="pt", truncation=True, max_length=4096)
+        input_lengths.append(ids["input_ids"].shape[1])
+
+    results = [None] * len(prompt_texts)
+
+    # Process in batches
+    for batch_start in range(0, len(chat_prompts), batch_size):
+        batch_end = min(batch_start + batch_size, len(chat_prompts))
+        batch_chat = chat_prompts[batch_start:batch_end]
+        batch_input_lens = input_lengths[batch_start:batch_end]
+
+        try:
+            # Batched generation
+            output_ids_list = generate_batch(
+                batch_chat, model, tokenizer, max_new_tokens, generation_config,
+            )
+
+            # Per-sequence extraction and probe scoring
+            for i, (output_ids, input_len) in enumerate(
+                zip(output_ids_list, batch_input_lens)
+            ):
+                idx = batch_start + i
+                try:
+                    results[idx] = process_single_sequence(
+                        output_ids, input_len, model, tokenizer,
+                        target_layers, probe_ensembles, scalers, per_position,
+                    )
+                except Exception as e:
+                    print(f"    WARNING: Extraction failed for item {idx}: {e}")
+                    results[idx] = _make_error_result(str(e))
+
+        except Exception as e:
+            # Fallback: process this batch sequentially
+            print(f"    WARNING: Batch generation failed ({e}), falling back to sequential")
+            for i in range(batch_start, batch_end):
+                try:
+                    result = generate_and_probe_single(
+                        prompt_texts[i], model, tokenizer, target_layers,
+                        probe_ensembles, scalers, max_new_tokens, generation_config,
+                        per_position,
+                    )
+                    results[i] = result
+                except Exception as e2:
+                    print(f"    WARNING: Sequential fallback also failed for item {i}: {e2}")
+                    results[i] = _make_error_result(str(e2))
+
+    return results
+
+
+def generate_and_probe_single(
+    prompt_text: str, model, tokenizer, target_layers: list,
+    probe_ensembles: dict, scalers: dict, max_new_tokens: int,
+    generation_config: dict, per_position: bool = False,
+) -> dict:
+    """Generate and probe a single prompt (sequential fallback)."""
     messages = [{"role": "user", "content": prompt_text}]
     chat_prompt = tokenizer.apply_chat_template(
         messages, tokenize=False, add_generation_prompt=True
     )
-    inputs = tokenizer(chat_prompt, return_tensors="pt", truncation=True,
-                       max_length=4096)
+    inputs = tokenizer(chat_prompt, return_tensors="pt", truncation=True, max_length=4096)
+    input_len = inputs["input_ids"].shape[1]
     inputs = {k: v.to(model.device) for k, v in inputs.items()}
 
     with torch.no_grad():
@@ -233,111 +405,116 @@ def generate_and_probe(prompt_text: str, model, tokenizer, target_layers: list,
             pad_token_id=tokenizer.pad_token_id,
         )
 
-    # Decode only the generated portion
-    input_len = inputs["input_ids"].shape[1]
-    generated_ids = output_ids[0][input_len:]
-    full_text = tokenizer.decode(generated_ids, skip_special_tokens=True)
-
-    # Extract thinking and answer
-    thinking = extract_thinking(full_text)
-    answer = extract_answer(full_text)
-
-    # Find token positions for multi-position extraction
-    positions = find_token_positions(output_ids, input_len, tokenizer)
-
-    # Post-generation forward pass for multi-position activations
-    multi_pos_activations = extract_activations_at_positions(
-        output_ids, model, target_layers, positions,
-        answer_start=positions.get("answer_start"),
-        answer_end=positions.get("answer_end"),
+    result = process_single_sequence(
+        output_ids, input_len, model, tokenizer,
+        target_layers, probe_ensembles, scalers, per_position,
     )
 
-    # Score probes at each position
-    probe_results = {}
-    for pos_name, layer_acts in multi_pos_activations.items():
-        pos_results = {}
-        for layer_idx in target_layers:
-            if layer_idx in layer_acts:
-                activation = layer_acts[layer_idx].float()
-                pos_results[layer_idx] = score_probes_at_activation(
-                    activation, layer_idx, probe_ensembles, scalers,
-                    position=pos_name, per_position=per_position,
-                )
-        probe_results[pos_name] = pos_results
+    del output_ids, inputs
+    if torch.cuda.is_available():
+        torch.cuda.empty_cache()
 
+    return result
+
+
+def _make_error_result(error_msg: str) -> dict:
+    """Create a placeholder result for failed generations."""
     return {
-        "full_text": full_text,
-        "thinking_trace": thinking,
-        "answer": answer,
-        "thinking_tokens": len(tokenizer.encode(thinking)) if thinking else 0,
-        "answer_tokens": len(tokenizer.encode(answer)) if answer else 0,
-        "token_positions": {k: int(v) for k, v in positions.items()},
-        "probe_results": probe_results,
+        "full_text": "",
+        "thinking_trace": "",
+        "answer": "",
+        "thinking_tokens": 0,
+        "answer_tokens": 0,
+        "token_positions": {},
+        "probe_results": {},
+        "error": error_msg,
     }
 
+
+def _log_trial(result: dict, question_id: str, rollout: int,
+               elapsed: float, turn: int = None):
+    """Print a progress log line for a single trial."""
+    last_token_results = result["probe_results"].get("last_token", {})
+    if last_token_results:
+        best_layer = min(last_token_results.keys(),
+                         key=lambda l: last_token_results[l]["mean_confidence"])
+        best_conf = last_token_results[best_layer]["mean_confidence"]
+    else:
+        best_conf = float("nan")
+        best_layer = "?"
+
+    turn_str = f" turn {turn}:" if turn is not None else ":"
+    print(f"    {question_id} rollout {rollout}{turn_str} "
+          f"conf={best_conf:.3f} (layer {best_layer}), "
+          f"think={result['thinking_tokens']}tok, "
+          f"ans={result['answer_tokens']}tok, "
+          f"{elapsed:.1f}s")
+
+
+# ---------------------------------------------------------------------------
+# Regime runners
+# ---------------------------------------------------------------------------
 
 def run_single_turn_regime(regime: dict, questions: list, model, tokenizer,
                            target_layers: list, probe_ensembles: dict,
                            scalers: dict, generation_config: dict, concept: str,
                            num_probes: int, num_rollouts: int,
-                           per_position: bool = False) -> list:
-    """Run a single-turn regime across all questions and rollouts."""
-    trials = []
+                           per_position: bool = False,
+                           batch_size: int = 5) -> list:
+    """Run a single-turn regime across all questions and rollouts (batched)."""
     template_name = regime["template"]
     max_new_tokens = regime["max_new_tokens"]
 
-    # Build template kwargs
-    template_kwargs = {"concept": concept}
-    template_kwargs["num_probes"] = num_probes
-    template_kwargs["layers"] = str(target_layers)
-
+    # Collect all prompts with metadata
+    items = []
     for q in questions:
         question_id = q["id"]
         question_text = q["text"]
-        template_kwargs["question"] = question_text
-
         for rollout in range(num_rollouts):
-            # Format prompt (ignore unused kwargs gracefully)
             try:
-                prompt_text = format_prompt(template_name, **template_kwargs)
+                prompt_text = format_prompt(
+                    template_name, question=question_text,
+                    concept=concept, num_probes=num_probes,
+                    layers=str(target_layers),
+                )
             except KeyError:
                 prompt_text = format_prompt(template_name, question=question_text,
-                                           concept=concept, num_probes=num_probes,
-                                           layers=str(target_layers))
-
-            t0 = time.time()
-            result = generate_and_probe(
-                prompt_text, model, tokenizer, target_layers,
-                probe_ensembles, scalers, max_new_tokens, generation_config,
-                per_position=per_position,
-            )
-            elapsed = time.time() - t0
-
-            trial = {
-                "regime": regime["name"],
+                                           concept=concept)
+            items.append({
+                "prompt_text": prompt_text,
                 "question_id": question_id,
-                "question": question_text,
+                "question_text": question_text,
                 "rollout": rollout,
-                "elapsed_seconds": round(elapsed, 2),
-                **result,
-            }
-            trials.append(trial)
+            })
 
-            # Log progress — use last_token position for summary
-            last_token_results = result["probe_results"].get("last_token", {})
-            if last_token_results:
-                best_layer = min(last_token_results.keys(),
-                                 key=lambda l: last_token_results[l]["mean_confidence"])
-                best_conf = last_token_results[best_layer]["mean_confidence"]
-            else:
-                best_conf = float("nan")
-                best_layer = "?"
-            print(f"    {question_id} rollout {rollout}: "
-                  f"conf={best_conf:.3f} (layer {best_layer}), "
-                  f"think={result['thinking_tokens']}tok, "
-                  f"ans={result['answer_tokens']}tok, "
-                  f"{elapsed:.1f}s")
+    print(f"  Generating {len(items)} trials (batch_size={batch_size})")
 
+    # Batch generate + probe
+    prompt_texts = [item["prompt_text"] for item in items]
+    t0 = time.time()
+    results = generate_and_probe_batch(
+        prompt_texts, model, tokenizer, target_layers,
+        probe_ensembles, scalers, max_new_tokens, generation_config,
+        per_position=per_position, batch_size=batch_size,
+    )
+    total_elapsed = time.time() - t0
+
+    # Build trial records
+    trials = []
+    per_trial_time = total_elapsed / len(items) if items else 0
+    for item, result in zip(items, results):
+        trial = {
+            "regime": regime["name"],
+            "question_id": item["question_id"],
+            "question": item["question_text"],
+            "rollout": item["rollout"],
+            "elapsed_seconds": round(per_trial_time, 2),
+            **result,
+        }
+        trials.append(trial)
+        _log_trial(result, item["question_id"], item["rollout"], per_trial_time)
+
+    print(f"  Total: {total_elapsed:.1f}s ({per_trial_time:.1f}s/trial avg)")
     return trials
 
 
@@ -345,112 +522,112 @@ def run_feedback_regime(regime: dict, questions: list, model, tokenizer,
                         target_layers: list, probe_ensembles: dict,
                         scalers: dict, generation_config: dict, concept: str,
                         num_probes: int, num_rollouts: int,
-                        per_position: bool = False) -> list:
-    """Run the iterative feedback regime (multi-turn)."""
-    trials = []
+                        per_position: bool = False,
+                        batch_size: int = 5) -> list:
+    """Run the iterative feedback regime (multi-turn, batched per-turn)."""
     num_turns = regime["num_turns"]
     max_new_tokens = regime["max_new_tokens"]
     template_initial = regime["template_initial"]
     template_followup = regime["template_followup"]
 
+    # Build (question, rollout) index for all chains
+    chains = []
     for q in questions:
-        question_id = q["id"]
-        question_text = q["text"]
-
         for rollout in range(num_rollouts):
-            turn_results = []
-
-            for turn in range(num_turns):
-                if turn == 0:
-                    prompt_text = format_prompt(
-                        template_initial,
-                        question=question_text,
-                        concept=concept,
-                        num_probes=num_probes,
-                        layers=str(target_layers),
-                    )
-                else:
-                    # Use previous turn's probe results for feedback
-                    # Use last_token position results for feedback
-                    prev = turn_results[-1]
-                    prev_last_token = prev["probe_results"].get("last_token", {})
-                    if prev_last_token:
-                        best_layer = max(
-                            prev_last_token.keys(),
-                            key=lambda l: prev_last_token[l]["mean_confidence"]
-                        )
-                        layer_result = prev_last_token[best_layer]
-                    else:
-                        # Fallback: use first available position
-                        first_pos = next(iter(prev["probe_results"].values()), {})
-                        best_layer = max(first_pos.keys(),
-                                         key=lambda l: first_pos[l]["mean_confidence"]) if first_pos else target_layers[0]
-                        layer_result = first_pos.get(best_layer, {
-                            "mean_confidence": 0.5,
-                            "individual_confidences": [0.5] * num_probes,
-                        })
-
-                    num_fired = sum(
-                        1 for c in layer_result["individual_confidences"] if c >= 0.5
-                    )
-                    response_summary = prev["answer"][:500]
-                    if len(prev["answer"]) > 500:
-                        response_summary += "..."
-
-                    prompt_text = format_prompt(
-                        template_followup,
-                        question=question_text,
-                        concept=concept,
-                        num_probes=num_probes,
-                        confidence=layer_result["mean_confidence"],
-                        num_fired=num_fired,
-                        response_summary=response_summary,
-                    )
-
-                t0 = time.time()
-                result = generate_and_probe(
-                    prompt_text, model, tokenizer, target_layers,
-                    probe_ensembles, scalers, max_new_tokens, generation_config,
-                    per_position=per_position,
-                )
-                elapsed = time.time() - t0
-                result["turn"] = turn
-                result["elapsed_seconds"] = round(elapsed, 2)
-                turn_results.append(result)
-
-                last_token_results = result["probe_results"].get("last_token", {})
-                if last_token_results:
-                    best_layer = min(last_token_results.keys(),
-                                     key=lambda l: last_token_results[l]["mean_confidence"])
-                    best_conf = last_token_results[best_layer]["mean_confidence"]
-                else:
-                    best_conf = float("nan")
-                    best_layer = "?"
-                print(f"    {question_id} rollout {rollout} turn {turn}: "
-                      f"conf={best_conf:.3f} (layer {best_layer}), "
-                      f"think={result['thinking_tokens']}tok, "
-                      f"{elapsed:.1f}s")
-
-            trial = {
-                "regime": regime["name"],
-                "question_id": question_id,
-                "question": question_text,
+            chains.append({
+                "question_id": q["id"],
+                "question_text": q["text"],
                 "rollout": rollout,
-                "turns": turn_results,
-            }
-            trials.append(trial)
+                "turn_results": [],
+            })
+
+    print(f"  Running {len(chains)} chains x {num_turns} turns (batch_size={batch_size})")
+
+    for turn in range(num_turns):
+        # Build prompts for this turn
+        prompt_texts = []
+        for chain in chains:
+            if turn == 0:
+                prompt_text = format_prompt(
+                    template_initial,
+                    question=chain["question_text"],
+                    concept=concept,
+                    num_probes=num_probes,
+                    layers=str(target_layers),
+                )
+            else:
+                prev = chain["turn_results"][-1]
+                prev_last_token = prev["probe_results"].get("last_token", {})
+                if prev_last_token:
+                    best_layer = max(
+                        prev_last_token.keys(),
+                        key=lambda l: prev_last_token[l]["mean_confidence"]
+                    )
+                    layer_result = prev_last_token[best_layer]
+                else:
+                    first_pos = next(iter(prev["probe_results"].values()), {})
+                    best_layer = max(first_pos.keys(),
+                                     key=lambda l: first_pos[l]["mean_confidence"]) if first_pos else target_layers[0]
+                    layer_result = first_pos.get(best_layer, {
+                        "mean_confidence": 0.5,
+                        "individual_confidences": [0.5] * num_probes,
+                    })
+
+                num_fired = sum(
+                    1 for c in layer_result["individual_confidences"] if c >= 0.5
+                )
+                response_summary = prev["answer"][:500]
+                if len(prev["answer"]) > 500:
+                    response_summary += "..."
+
+                prompt_text = format_prompt(
+                    template_followup,
+                    question=chain["question_text"],
+                    concept=concept,
+                    num_probes=num_probes,
+                    confidence=layer_result["mean_confidence"],
+                    num_fired=num_fired,
+                    response_summary=response_summary,
+                )
+            prompt_texts.append(prompt_text)
+
+        # Batch generate for this turn
+        t0 = time.time()
+        turn_results = generate_and_probe_batch(
+            prompt_texts, model, tokenizer, target_layers,
+            probe_ensembles, scalers, max_new_tokens, generation_config,
+            per_position=per_position, batch_size=batch_size,
+        )
+        turn_elapsed = time.time() - t0
+        per_chain_time = turn_elapsed / len(chains) if chains else 0
+
+        # Store results and log
+        for chain, result in zip(chains, turn_results):
+            result["turn"] = turn
+            result["elapsed_seconds"] = round(per_chain_time, 2)
+            chain["turn_results"].append(result)
+            _log_trial(result, chain["question_id"], chain["rollout"],
+                       per_chain_time, turn=turn)
+
+        print(f"  Turn {turn}: {turn_elapsed:.1f}s ({per_chain_time:.1f}s/chain avg)")
+
+    # Package into final trial records
+    trials = []
+    for chain in chains:
+        trial = {
+            "regime": regime["name"],
+            "question_id": chain["question_id"],
+            "question": chain["question_text"],
+            "rollout": chain["rollout"],
+            "turns": chain["turn_results"],
+        }
+        trials.append(trial)
 
     return trials
 
 
 def aggregate_results(all_trials: list, target_layers: list) -> dict:
-    """
-    Aggregate trial results into per-regime, per-position, per-layer summary statistics.
-
-    Returns:
-        Dict with per-regime summary including mean/std probe confidence
-        per position per layer.
-    """
+    """Aggregate trial results into per-regime, per-position, per-layer summary statistics."""
     from collections import defaultdict
     import numpy as np
 
@@ -466,7 +643,6 @@ def aggregate_results(all_trials: list, target_layers: list) -> dict:
 
     summary = {}
     for regime_name, probe_results_list in by_regime.items():
-        # Collect all position names across all trials
         all_positions = set()
         for pr in probe_results_list:
             all_positions.update(pr.keys())
@@ -501,6 +677,8 @@ def main():
     parser.add_argument("--output-dir", type=str, default="data/outputs/evasion")
     parser.add_argument("--regime", type=str, default=None,
                         help="Run only this regime (by name)")
+    parser.add_argument("--batch-size", type=int, default=5,
+                        help="Batch size for generation (default: 5)")
     args = parser.parse_args()
 
     # Resolve paths
@@ -571,6 +749,7 @@ def main():
     print(f"  Regimes: {[r['name'] for r in regimes]}")
     print(f"  Questions: {len(questions)}")
     print(f"  Rollouts per question: {num_rollouts}")
+    print(f"  Batch size: {args.batch_size}")
     print(f"  Generation: temp={generation_config.get('temperature', 0.6)}, "
           f"top_p={generation_config.get('top_p', 0.95)}")
 
@@ -587,12 +766,14 @@ def main():
                 regime, questions, model, tokenizer, target_layers,
                 probe_ensembles, scalers, generation_config, concept,
                 num_probes, num_rollouts, per_position=per_position,
+                batch_size=args.batch_size,
             )
         else:
             trials = run_single_turn_regime(
                 regime, questions, model, tokenizer, target_layers,
                 probe_ensembles, scalers, generation_config, concept,
                 num_probes, num_rollouts, per_position=per_position,
+                batch_size=args.batch_size,
             )
 
         all_trials.extend(trials)
@@ -616,6 +797,7 @@ def main():
         "num_rollouts": num_rollouts,
         "generation_config": generation_config,
         "regimes": [r["name"] for r in regimes],
+        "batch_size": args.batch_size,
         "results": summary,
     }
 
@@ -629,7 +811,6 @@ def main():
     print("RESULTS SUMMARY")
     print("=" * 60)
 
-    # Collect all positions present in results
     all_positions = set()
     for regime_data in summary.values():
         all_positions.update(regime_data.keys())
