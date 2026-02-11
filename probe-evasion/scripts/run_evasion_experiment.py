@@ -610,6 +610,7 @@ def run_single_turn_regime(regime: dict, questions: list, model, tokenizer,
     """Run a single-turn regime across all questions and rollouts (batched)."""
     template_name = regime["template"]
     max_new_tokens = regime["max_new_tokens"]
+    instruction = regime.get("instruction", "")
 
     # Collect all prompts with metadata
     items = []
@@ -622,10 +623,11 @@ def run_single_turn_regime(regime: dict, questions: list, model, tokenizer,
                     template_name, question=question_text,
                     concept=concept, num_probes=num_probes,
                     layers=str(target_layers),
+                    instruction=instruction,
                 )
             except KeyError:
                 prompt_text = format_prompt(template_name, question=question_text,
-                                           concept=concept)
+                                           concept=concept, instruction=instruction)
             items.append({
                 "prompt_text": prompt_text,
                 "question_id": question_id,

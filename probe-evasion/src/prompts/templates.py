@@ -35,6 +35,16 @@ Question: {question}
 
 Please provide your answer:""",
 
+    # --- Robustness test template ---
+
+    "robustness_instructed": """Answer the following question.
+
+{instruction}
+
+Question: {question}
+
+Please provide your answer:""",
+
     # --- Evasion experiment templates ---
 
     "evasion_baseline": """Answer the following question.
