@@ -56,7 +56,7 @@ regimes:
 
   - name: technical_disclosure
     template: evasion_technical
-    max_new_tokens: 2048
+    max_new_tokens: 4096
     num_turns: 1
     description: "Full technical explanation of probe mechanism"
 
@@ -69,6 +69,6 @@ regimes:
   - name: iterative_feedback
     template_initial: evasion_feedback_initial
     template_followup: evasion_feedback_followup
-    max_new_tokens: 2048
+    max_new_tokens: 4096
     num_turns: 3
     description: "Technical disclosure + real-time probe score feedback"

@@ -143,6 +143,87 @@ def extract_thinking(full_text: str) -> str:
     return ""
 
 
+def generate_with_think_guarantee(
+    input_ids, model, tokenizer, max_new_tokens, generation_config,
+    max_retries=2,
+):
+    """Generate with guaranteed thinking/answer separation.
+
+    If the model exhausts its token budget without producing </think>,
+    truncate the thinking at a natural break point, append </think>\\n,
+    and continue generation for the answer portion.
+
+    Args:
+        input_ids: Tokenized prompt tensor (1, seq_len).
+        model: Loaded model.
+        tokenizer: Loaded tokenizer.
+        max_new_tokens: Total token budget.
+        generation_config: Dict with temperature, top_p, top_k.
+        max_retries: Number of retry attempts with forced truncation.
+
+    Returns:
+        Tuple of (output_ids tensor, think_truncated bool).
+    """
+    think_close_ids = tokenizer.encode("</think>\n", add_special_tokens=False)
+
+    for attempt in range(max_retries + 1):
+        with torch.no_grad():
+            output_ids = model.generate(
+                input_ids,
+                max_new_tokens=max_new_tokens,
+                temperature=generation_config.get("temperature", 0.6),
+                top_p=generation_config.get("top_p", 0.95),
+                top_k=generation_config.get("top_k", 20),
+                do_sample=True,
+                pad_token_id=tokenizer.pad_token_id,
+            )
+
+        generated_text = tokenizer.decode(
+            output_ids[0, input_ids.shape[1]:], skip_special_tokens=False
+        )
+
+        if "</think>" in generated_text:
+            return output_ids, False  # Success — no truncation needed
+
+        # Thinking exhausted the budget — force close and continue
+        if attempt < max_retries:
+            think_text = generated_text
+            # Keep first ~60% of thinking, leave room for answer
+            truncate_at = int(len(think_text) * 0.6)
+            # Find last sentence end before truncation point
+            last_period = think_text.rfind(".", 0, truncate_at)
+            if last_period > 0:
+                truncate_at = last_period + 1
+
+            truncated_thinking = think_text[:truncate_at]
+            truncated_ids = tokenizer.encode(truncated_thinking, add_special_tokens=False)
+
+            # Build new input: original input + truncated thinking + </think>\n
+            new_input_ids = torch.cat([
+                input_ids,
+                torch.tensor([truncated_ids + think_close_ids], device=input_ids.device),
+            ], dim=1)
+
+            # Generate just the answer portion
+            answer_budget = max_new_tokens - len(truncated_ids) - len(think_close_ids)
+            with torch.no_grad():
+                output_ids = model.generate(
+                    new_input_ids,
+                    max_new_tokens=max(answer_budget, 512),
+                    temperature=generation_config.get("temperature", 0.6),
+                    top_p=generation_config.get("top_p", 0.95),
+                    top_k=generation_config.get("top_k", 20),
+                    do_sample=True,
+                    pad_token_id=tokenizer.pad_token_id,
+                )
+            print("      [think_guarantee] Truncated thinking and continued generation")
+            return output_ids, True  # Truncation was applied
+
+    # All retries failed — return last attempt with warning
+    print("      [think_guarantee] WARNING: All retries exhausted, returning raw output")
+    return output_ids, True
+
+
 def score_probes_at_activation(activation, layer_idx, probe_ensembles, scalers,
                                 position=None, per_position=False):
     """Score probes for a single layer on a single activation vector."""
@@ -177,9 +258,15 @@ def score_probes_at_activation(activation, layer_idx, probe_ensembles, scalers,
 # ---------------------------------------------------------------------------
 
 def generate_batch(chat_prompts: List[str], model, tokenizer,
-                   max_new_tokens: int, generation_config: dict) -> List[torch.Tensor]:
+                   max_new_tokens: int, generation_config: dict,
+                   input_lengths: List[int] = None,
+                   ) -> List[tuple]:
     """
     Generate responses for a batch of chat-formatted prompts using left-padding.
+
+    After batched generation, checks each sequence for </think> presence.
+    Sequences that exhaust the budget without closing the thinking trace
+    are re-generated individually using generate_with_think_guarantee().
 
     Args:
         chat_prompts: List of chat-template-formatted prompt strings.
@@ -187,10 +274,11 @@ def generate_batch(chat_prompts: List[str], model, tokenizer,
         tokenizer: Loaded tokenizer.
         max_new_tokens: Max tokens to generate per sequence.
         generation_config: Dict with temperature, top_p, top_k.
+        input_lengths: Pre-computed input lengths for each prompt (optional).
 
     Returns:
-        List of output_ids tensors, one per prompt, each (1, seq_len) with
-        left-padding stripped so they start at the first real token.
+        List of (output_ids, think_truncated) tuples, one per prompt.
+        output_ids is (1, seq_len) with left-padding stripped.
     """
     # Save and set left-padding for batched generation
     original_padding_side = tokenizer.padding_side
@@ -223,9 +311,35 @@ def generate_batch(chat_prompts: List[str], model, tokenizer,
             non_pad_mask = seq != pad_id
             if non_pad_mask.any():
                 first_real = non_pad_mask.nonzero(as_tuple=True)[0][0].item()
-                results.append(seq[first_real:].unsqueeze(0))
+                unpadded = seq[first_real:].unsqueeze(0)
             else:
-                results.append(seq.unsqueeze(0))
+                unpadded = seq.unsqueeze(0)
+
+            # Check if </think> is present in generated portion
+            input_len = input_lengths[i] if input_lengths else None
+            if input_len is not None:
+                generated_text = tokenizer.decode(
+                    unpadded[0, input_len:], skip_special_tokens=False
+                )
+            else:
+                generated_text = tokenizer.decode(unpadded[0], skip_special_tokens=False)
+
+            if "</think>" in generated_text:
+                results.append((unpadded, False))
+            else:
+                # Think leakage — re-generate this one with guarantee
+                print(f"      [think_guarantee] Sequence {i}: </think> missing, re-generating individually")
+                single_input = tokenizer(
+                    chat_prompts[i], return_tensors="pt",
+                    truncation=True, max_length=4096,
+                )
+                single_input_ids = single_input["input_ids"].to(model.device)
+                fixed_output, truncated = generate_with_think_guarantee(
+                    single_input_ids, model, tokenizer,
+                    max_new_tokens, generation_config,
+                )
+                results.append((fixed_output, truncated))
+                del single_input, single_input_ids
 
         return results
 
@@ -239,7 +353,8 @@ def generate_batch(chat_prompts: List[str], model, tokenizer,
 def process_single_sequence(output_ids: torch.Tensor, input_len: int,
                             model, tokenizer, target_layers: list,
                             probe_ensembles: dict, scalers: dict,
-                            per_position: bool) -> dict:
+                            per_position: bool,
+                            think_truncated: bool = False) -> dict:
     """
     Process a single generated sequence: extract text, find positions,
     run extraction forward pass, score probes.
@@ -253,9 +368,11 @@ def process_single_sequence(output_ids: torch.Tensor, input_len: int,
         probe_ensembles: Probe ensembles dict.
         scalers: Scalers dict.
         per_position: Whether probes are position-specific.
+        think_truncated: Whether the thinking trace was forcibly truncated.
 
     Returns:
-        Dict with full_text, thinking_trace, answer, token counts, probe_results.
+        Dict with full_text, thinking_trace, answer, token counts, probe_results,
+        and think_truncated flag.
     """
     generated_ids = output_ids[0, input_len:]
     full_text = tokenizer.decode(generated_ids, skip_special_tokens=True)
@@ -295,6 +412,7 @@ def process_single_sequence(output_ids: torch.Tensor, input_len: int,
         "answer_tokens": len(tokenizer.encode(answer)) if answer else 0,
         "token_positions": {k: int(v) for k, v in positions.items()},
         "probe_results": probe_results,
+        "think_truncated": think_truncated,
     }
 
 
@@ -361,22 +479,24 @@ def generate_and_probe_batch(
         t0 = time.time()
 
         try:
-            # Batched generation
-            output_ids_list = generate_batch(
+            # Batched generation (returns list of (output_ids, think_truncated) tuples)
+            output_tuples = generate_batch(
                 batch_chat, model, tokenizer, max_new_tokens, generation_config,
+                input_lengths=batch_input_lens,
             )
             gen_elapsed = time.time() - t0
             print(f"    Batch {batch_num}/{num_batches}: generation done ({gen_elapsed:.1f}s), extracting...")
 
             # Per-sequence extraction and probe scoring
-            for i, (output_ids, input_len) in enumerate(
-                zip(output_ids_list, batch_input_lens)
+            for i, ((output_ids, think_truncated), input_len) in enumerate(
+                zip(output_tuples, batch_input_lens)
             ):
                 idx = batch_start + i
                 try:
                     results[idx] = process_single_sequence(
                         output_ids, input_len, model, tokenizer,
                         target_layers, probe_ensembles, scalers, per_position,
+                        think_truncated=think_truncated,
                     )
                 except Exception as e:
                     print(f"    WARNING: Extraction failed for item {idx}: {e}")
@@ -415,25 +535,19 @@ def generate_and_probe_single(
     )
     inputs = tokenizer(chat_prompt, return_tensors="pt", truncation=True, max_length=4096)
     input_len = inputs["input_ids"].shape[1]
-    inputs = {k: v.to(model.device) for k, v in inputs.items()}
+    input_ids = inputs["input_ids"].to(model.device)
 
-    with torch.no_grad():
-        output_ids = model.generate(
-            **inputs,
-            max_new_tokens=max_new_tokens,
-            temperature=generation_config.get("temperature", 0.6),
-            top_p=generation_config.get("top_p", 0.95),
-            top_k=generation_config.get("top_k", 20),
-            do_sample=True,
-            pad_token_id=tokenizer.pad_token_id,
-        )
+    output_ids, think_truncated = generate_with_think_guarantee(
+        input_ids, model, tokenizer, max_new_tokens, generation_config,
+    )
 
     result = process_single_sequence(
         output_ids, input_len, model, tokenizer,
         target_layers, probe_ensembles, scalers, per_position,
+        think_truncated=think_truncated,
     )
 
-    del output_ids, inputs
+    del output_ids, inputs, input_ids
     if torch.cuda.is_available():
         torch.cuda.empty_cache()
 
@@ -450,6 +564,7 @@ def _make_error_result(error_msg: str) -> dict:
         "answer_tokens": 0,
         "token_positions": {},
         "probe_results": {},
+        "think_truncated": False,
         "error": error_msg,
     }
 
@@ -473,11 +588,12 @@ def _log_trial(result: dict, question_id: str, rollout: int,
         best_conf = float("nan")
 
     turn_str = f" turn {turn}:" if turn is not None else ":"
+    trunc_str = " [TRUNCATED]" if result.get("think_truncated") else ""
     print(f"    {question_id} rollout {rollout}{turn_str} "
           f"conf={best_conf:.3f} ({best_pos}@L{best_layer}), "
           f"think={result['thinking_tokens']}tok, "
           f"ans={result['answer_tokens']}tok, "
-          f"{elapsed:.1f}s")
+          f"{elapsed:.1f}s{trunc_str}")
 
 
 # ---------------------------------------------------------------------------
