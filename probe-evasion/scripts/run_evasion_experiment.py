@@ -348,18 +348,25 @@ def generate_and_probe_batch(
         input_lengths.append(ids["input_ids"].shape[1])
 
     results = [None] * len(prompt_texts)
+    num_batches = (len(chat_prompts) + batch_size - 1) // batch_size
 
     # Process in batches
-    for batch_start in range(0, len(chat_prompts), batch_size):
+    for batch_idx, batch_start in enumerate(range(0, len(chat_prompts), batch_size)):
         batch_end = min(batch_start + batch_size, len(chat_prompts))
         batch_chat = chat_prompts[batch_start:batch_end]
         batch_input_lens = input_lengths[batch_start:batch_end]
+        batch_num = batch_idx + 1
+
+        print(f"    Batch {batch_num}/{num_batches}: generating {len(batch_chat)} sequences...")
+        t0 = time.time()
 
         try:
             # Batched generation
             output_ids_list = generate_batch(
                 batch_chat, model, tokenizer, max_new_tokens, generation_config,
             )
+            gen_elapsed = time.time() - t0
+            print(f"    Batch {batch_num}/{num_batches}: generation done ({gen_elapsed:.1f}s), extracting...")
 
             # Per-sequence extraction and probe scoring
             for i, (output_ids, input_len) in enumerate(
@@ -374,6 +381,9 @@ def generate_and_probe_batch(
                 except Exception as e:
                     print(f"    WARNING: Extraction failed for item {idx}: {e}")
                     results[idx] = _make_error_result(str(e))
+
+            total_elapsed = time.time() - t0
+            print(f"    Batch {batch_num}/{num_batches}: done ({total_elapsed:.1f}s)")
 
         except Exception as e:
             # Fallback: process this batch sequentially
