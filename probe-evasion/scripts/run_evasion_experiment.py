@@ -926,6 +926,8 @@ def main():
     model_config = load_config(resolve_path(config["model_config"]))
 
     target_layers = config["target_layers"]
+    if target_layers == "all":
+        target_layers = list(range(model_config["num_layers"]))
     num_probes = config["num_probes_per_layer"]
     concept = config["concept"]
     num_rollouts = config["num_rollouts"]

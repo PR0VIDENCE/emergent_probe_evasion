@@ -7,7 +7,7 @@
 concept: trees
 model_config: configs/models/qwq_32b.yaml
 data_dir: data/concepts/trees_qa
-target_layers: [8, 20, 32, 44, 56]
+target_layers: all
 
 token_positions:
   - last_token

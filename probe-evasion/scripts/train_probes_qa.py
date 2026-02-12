@@ -278,6 +278,7 @@ def main():
 
     args.config = resolve_path(args.config)
     config = load_config(args.config)
+    model_config = load_config(resolve_path(config["model_config"]))
 
     data_dir = args.data_dir or config["storage"]["base_dir"]
     probe_base_dir = args.probe_dir or os.path.join(data_dir, "probes")
@@ -286,6 +287,8 @@ def main():
     log_dir = args.log_dir or os.path.join(data_dir, "logs")
     setup_logging(log_dir, "train_probes_qa")
     target_layers = config["target_layers"]
+    if target_layers == "all":
+        target_layers = list(range(model_config["num_layers"]))
     token_positions = config["token_positions"]
     probe_config = config["probe_training"]
     split_config = config["split"]

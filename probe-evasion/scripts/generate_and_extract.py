@@ -499,6 +499,8 @@ def main():
     log_dir = args.log_dir or os.path.join(output_dir, "logs")
     setup_logging(log_dir, "generate_and_extract")
     target_layers = config["target_layers"]
+    if target_layers == "all":
+        target_layers = list(range(model_config["num_layers"]))
     generation_config = config.get("generation", {})
     output_dir = args.output_dir or config["storage"]["base_dir"]
 
