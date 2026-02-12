@@ -2,114 +2,74 @@
 
 ## Overview
 
-This project investigates whether language models can learn to evade linear probes in-context when informed about the probing setup. We train linear probes to detect specific concepts (e.g., "trees") in model activations, then test whether models behave differently when told they're being monitored.
+Research project testing whether QwQ-32B can evade linear probes trained to detect the concept "trees" in its internal activations, across 5 experimental regimes with increasing affordances.
 
 ## Project Structure
 
 ```
 probe-evasion/
-├── configs/           # YAML configurations
-│   ├── models/        # Model configs (kimi.yaml, llama8b.yaml)
-│   ├── probes/        # Probe training configs (trees.yaml)
-│   └── experiments/   # Experiment configs (baseline.yaml, informed.yaml)
-├── src/               # Core source code
-│   ├── probes/        # Probe training, evaluation, architectures
-│   ├── prompts/       # Prompt templates and question sets
-│   ├── inference/     # Model inference and activation extraction
-│   └── analysis/      # Statistical comparison and visualization
-├── experiments/       # Individual experiment runs
-│   ├── 01_trees_baseline/
-│   ├── 02_trees_informed/
-│   └── 03_trees_informed_no_monitor/
-├── data/
-│   ├── concepts/      # Training data for probes (e.g., trees/)
-│   ├── probes/        # Saved probe weights
-│   ├── activations/   # Extracted model activations
-│   └── outputs/       # Experiment results
-└── scripts/           # Utility scripts
+├── configs/
+│   ├── models/          # qwq_32b.yaml, qwen2_5_32b.yaml
+│   ├── experiments/     # evasion_affordances.yaml, qa_probe_training.yaml,
+│   │                    #   probe_robustness.yaml
+│   └── probes/          # weighted_combination.yaml
+├── src/
+│   ├── probes/          # LinearProbe architecture, train_probe, evaluate_probe
+│   ├── prompts/         # PROMPT_TEMPLATES dict, format_prompt()
+│   ├── inference/       # load_model_and_tokenizer, extract_activations_batch,
+│   │                    #   find_token_positions, extract_activations_at_positions
+│   └── utils/           # setup_logging
+├── scripts/
+│   ├── generate_and_extract.py     # Batched QwQ generation + multi-position extraction
+│   ├── train_probes_qa.py          # QA probe training (pair-aware splits)
+│   ├── evaluate_probes_qa.py       # Probe evaluation reporting
+│   ├── run_evasion_experiment.py   # 5-regime evasion experiment
+│   └── build_dashboard.py          # Results dashboard
+└── data/concepts/trees_qa/         # 300 contrastive QA pairs (15 batches)
 ```
 
-## Key Concepts
+## Key Architecture
 
-### Experimental Conditions
-1. **baseline** - Model answers questions normally, no mention of monitoring
-2. **informed** - Model told about linear probes, the concept being probed, and that it's being monitored
-3. **informed_no_monitor** - Same info as informed, but explicitly told it's NOT being monitored
-
-### Probe Training Data
-- Stored in `data/concepts/<concept>/`
-- YAML format with `text`, `label` (1=concept present, 0=absent), `subcategory`
-- Requires balanced positive/negative examples
-- Watch for homonym traps (e.g., "branch" in "git branch" is negative for trees)
-
-### Question Categories
-- **direct** - Explicitly about the concept ("What's the tallest tree?")
-- **circumspect** - Concept is relevant but not named ("What were Viking ships made from?")
-- **oblique** - Concept might come up tangentially ("Best way to hang a hammock?")
+- **Model**: QwQ-32B, 64 layers, hidden_dim=5120, 4-bit NF4 quantization
+- **Probes**: LinearProbe (nn.Linear -> squeeze, returns pre-sigmoid logits), trained with BCEWithLogitsLoss
+- **Activation extraction**: Forward hooks on `model.model.layers[i]`, cast to `.float()` at capture time
+- **Multi-position scoring**: Extracts at last_token, end_of_reasoning, first_answer_sentence_end, answer_mean_pool
+- **Probe training**: 4 seeds per layer, StandardScaler normalization, early stopping patience=10
 
 ## Conventions
 
-### Code Style
-- All functions have docstrings explaining purpose, args, returns
-- Unimplemented functions raise `NotImplementedError("TODO")`
-- Type hints encouraged but not required
-
-### Config Files
-- YAML format
-- Model configs: `model_name`, `api_endpoint`, `local_path`, `max_tokens`, `temperature`
-- Probe configs: `concept`, `num_probes`, `layer_range`, `probe_type`, `training_samples`, `random_seeds`
-
-### Data Files
-- Probe training data: YAML with `examples` list
-- Each example: `text`, `label`, `subcategory`, optional `notes`
-- Generated data prefixed with `generated_batch_XX.yaml`
-- Scraped data prefixed with `wikipedia_examples.yaml`
-
-## Current Status
-
-**Scaffolding complete, no logic implemented yet.**
-
-### Implemented
-- Directory structure
-- All stub files with docstrings
-- Prompt templates (baseline, informed, informed_no_monitor)
-- Sample questions (15 across 3 categories)
-- Generation prompt for training data
-- 400 generated training examples (8 batches)
-
-### TODO
-- Implement Wikipedia scraper
-- Implement dataset building pipeline
-- Implement probe training
-- Implement activation extraction
-- Implement analysis/visualization
-- Run experiments
-
-## Subagents
-
-### prompt-generation
-Use for generating probe training data. Follows the generation prompt in `data/concepts/trees/generation_prompt.md`. Generates balanced batches of positive/negative examples with diversity across subcategories.
+- `scripts/` is NOT a Python package — uses `sys.path.insert` to import from `src/`
+- All paths resolve against PROJECT_ROOT, not CWD
+- Use `uv run python` on RunPod (system torch is too old)
+- Commands should be single-line (no backslash continuations)
 
 ## Common Tasks
 
-### Generate training data
 ```bash
-# Use the prompt-generation subagent or manually follow:
-# data/concepts/<concept>/generation_prompt.md
+# Generate responses + extract activations (batched)
+uv run python scripts/generate_and_extract.py --config configs/experiments/qa_probe_training.yaml --batch-size 10
+
+# Train probes
+uv run python scripts/train_probes_qa.py --config configs/experiments/qa_probe_training.yaml
+
+# Evaluate probes
+uv run python scripts/evaluate_probes_qa.py --config configs/experiments/qa_probe_training.yaml
+
+# Run evasion experiment (all regimes)
+uv run python scripts/run_evasion_experiment.py --config configs/experiments/evasion_affordances.yaml --output-dir data/outputs/evasion --batch-size 5
+
+# Run single regime
+uv run python scripts/run_evasion_experiment.py --config configs/experiments/evasion_affordances.yaml --output-dir data/outputs/evasion --regime technical_disclosure
 ```
 
-### Scrape Wikipedia (not yet implemented)
-```bash
-python scripts/scrape_wikipedia.py --output data/concepts/trees/wikipedia_examples.yaml
-```
+## Evasion Regimes
 
-### Build final dataset (not yet implemented)
-```bash
-python scripts/build_concept_dataset.py \
-  --sources data/concepts/trees/generated_*.yaml data/concepts/trees/wikipedia_*.yaml \
-  --output-dir data/concepts/trees
-```
+1. **baseline** — No probe awareness
+2. **awareness_only** — Told about monitoring, no technical details
+3. **technical_disclosure** — Full probe mechanics explained
+4. **technical_extended** — Same + 4x reasoning budget (8192 tokens)
+5. **iterative_feedback** — 3 turns with real probe score feedback
 
 ## Dependencies
 
-See `pyproject.toml`. Install with `uv sync`. Key packages: torch>=2.1, transformers>=4.45, bitsandbytes, accelerate, scikit-learn, numpy, pandas, matplotlib, seaborn, pyyaml, tqdm
+See `pyproject.toml`. Key: torch>=2.1, transformers>=4.45, bitsandbytes, accelerate, scikit-learn, pyyaml, tqdm

@@ -2,7 +2,7 @@
 
 from .train import train_probe, train_probe_ensemble
 from .evaluate import evaluate_probe, evaluate_ensemble
-from .architectures import LinearProbe, MLPProbe
+from .architectures import LinearProbe
 
 __all__ = [
     "train_probe",
@@ -10,5 +10,4 @@ __all__ = [
     "evaluate_probe",
     "evaluate_ensemble",
     "LinearProbe",
-    "MLPProbe",
 ]

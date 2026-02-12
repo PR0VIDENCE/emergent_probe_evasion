@@ -29,10 +29,9 @@ import yaml
 # Add project root to path
 PROJECT_ROOT = Path(__file__).parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
-sys.path.insert(0, str(PROJECT_ROOT / "scripts"))
 
 from src.inference.extract_activations import (
-    load_model_and_tokenizer, _get_layer_module,
+    load_model_and_tokenizer,
     find_token_positions, extract_activations_at_positions,
 )
 from src.probes.architectures import LinearProbe

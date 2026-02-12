@@ -1,6 +1,0 @@
-# Kimi model configuration
-model_name: kimi
-api_endpoint: null  # Set if using API
-local_path: null    # Set if using local model
-max_tokens: 4096
-temperature: 0.7

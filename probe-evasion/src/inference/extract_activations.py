@@ -320,24 +320,3 @@ def extract_activations_at_positions(
             hook.remove()
 
     return result
-
-
-def extract_activations_during_generation(
-    prompt: str,
-    model_config: dict,
-    layers: List[int],
-    max_new_tokens: int
-) -> Dict:
-    """
-    Extract activations during autoregressive generation.
-
-    Args:
-        prompt: Initial prompt string.
-        model_config: Model configuration dict.
-        layers: List of layer indices.
-        max_new_tokens: Maximum tokens to generate.
-
-    Returns:
-        Dict containing generated_text, activations, token_ids.
-    """
-    raise NotImplementedError("TODO")

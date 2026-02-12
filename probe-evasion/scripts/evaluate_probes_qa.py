@@ -2,17 +2,9 @@
 Evaluate QA-trained probes and produce comprehensive report.
 
 Evaluates all probes (4 positions x 5 layers x 4 seeds = 80 probes) on the test set.
-Optionally compares against statement-trained probes on QA data to quantify
-the distribution shift.
 
 Usage:
-    python scripts/evaluate_probes_qa.py \
-        --config configs/experiments/qa_probe_training.yaml
-
-    # Also compare against statement-trained probes:
-    python scripts/evaluate_probes_qa.py \
-        --config configs/experiments/qa_probe_training.yaml \
-        --statement-probe-dir data/outputs/preliminary_qwq/probes
+    python scripts/evaluate_probes_qa.py --config configs/experiments/qa_probe_training.yaml
 """
 
 import argparse
@@ -20,7 +12,7 @@ import json
 import os
 import sys
 from pathlib import Path
-from typing import Dict, List, Optional, Tuple
+from typing import Dict, List, Tuple
 
 import torch
 import yaml
@@ -184,87 +176,12 @@ def evaluate_all_probes(
     return results
 
 
-def evaluate_statement_probes_on_qa(
-    statement_probe_dir: str,
-    data_dir: str,
-    target_layers: List[int],
-    token_positions: List[str],
-    seeds: List[int],
-    hidden_dim: int,
-    test_pair_ids: List[int],
-) -> Dict:
-    """
-    Evaluate statement-trained probes on QA test data.
-
-    This quantifies the distribution shift: how much worse do probes trained
-    on short statements perform when evaluated on long QwQ-32B generations?
-
-    Returns:
-        Nested dict: {position: {layer: {metrics}}}
-    """
-    results = {}
-
-    for position in token_positions:
-        print(f"\n--- Position: {position} (statement probes) ---")
-
-        test_acts, test_labels = load_activations_for_position(
-            data_dir, position, test_pair_ids, target_layers,
-        )
-
-        if len(test_labels) == 0:
-            print(f"  No test data for position {position}")
-            continue
-
-        position_results = {}
-
-        for layer_idx in target_layers:
-            if layer_idx not in test_acts:
-                continue
-
-            try:
-                probes = load_probes(statement_probe_dir, layer_idx, seeds, hidden_dim)
-            except FileNotFoundError:
-                print(f"  Layer {layer_idx}: statement probes not found")
-                continue
-
-            # Load statement probe scaler if available
-            scaler_mean, scaler_scale = None, None
-            scaler_path = os.path.join(statement_probe_dir, f"layer{layer_idx}_scaler.pt")
-            if os.path.exists(scaler_path):
-                scaler_data = torch.load(scaler_path, weights_only=True)
-                scaler_mean = scaler_data["scaler_mean"]
-                scaler_scale = scaler_data["scaler_scale"]
-
-            ensemble_result = evaluate_ensemble(
-                probes, test_acts[layer_idx], test_labels,
-                scaler_mean=scaler_mean, scaler_scale=scaler_scale,
-            )
-
-            layer_result = {
-                "ensemble_accuracy": ensemble_result.get("ensemble_accuracy"),
-                "ensemble_f1": ensemble_result.get("ensemble_f1"),
-                "ensemble_auc_roc": ensemble_result.get("ensemble_auc_roc"),
-                "agreement_ratio": ensemble_result.get("agreement_ratio"),
-            }
-            position_results[layer_idx] = layer_result
-
-            print(f"  Layer {layer_idx}: "
-                  f"Acc={layer_result['ensemble_accuracy']:.3f}, "
-                  f"AUC={layer_result['ensemble_auc_roc']:.3f}, "
-                  f"F1={layer_result['ensemble_f1']:.3f}")
-
-        results[position] = position_results
-
-    return results
-
-
-def print_comparison_table(
+def print_results_table(
     qa_results: Dict,
-    statement_results: Optional[Dict],
     target_layers: List[int],
     token_positions: List[str],
 ):
-    """Print formatted comparison table."""
+    """Print formatted results table."""
     print("\n" + "=" * 70)
     print("QA-TRAINED PROBES — Test Set Performance")
     print("=" * 70)
@@ -300,48 +217,6 @@ def print_comparison_table(
                 aucs.append("  N/A")
         print(f"{position:<30} {'  '.join(aucs)}")
 
-    if statement_results:
-        print("\n" + "=" * 70)
-        print("STATEMENT-TRAINED PROBES on QA Data (Distribution Shift)")
-        print("=" * 70)
-
-        print(f"\n{'Position':<30} {layer_headers}")
-        print("-" * (30 + len(target_layers) * 6))
-
-        for position in token_positions:
-            if position not in statement_results:
-                continue
-            accs = []
-            for layer_idx in target_layers:
-                if layer_idx in statement_results[position]:
-                    accs.append(f"{statement_results[position][layer_idx]['ensemble_accuracy']:.3f}")
-                else:
-                    accs.append("  N/A")
-            print(f"{position:<30} {'  '.join(accs)}")
-
-        # Delta table
-        print("\n" + "=" * 70)
-        print("DELTA: QA-trained minus Statement-trained (positive = QA better)")
-        print("=" * 70)
-
-        print(f"\n{'Position':<30} {layer_headers}")
-        print("-" * (30 + len(target_layers) * 6))
-
-        for position in token_positions:
-            if position not in qa_results or position not in statement_results:
-                continue
-            deltas = []
-            for layer_idx in target_layers:
-                qa_acc = qa_results.get(position, {}).get(layer_idx, {}).get("ensemble_accuracy")
-                st_acc = statement_results.get(position, {}).get(layer_idx, {}).get("ensemble_accuracy")
-                if qa_acc is not None and st_acc is not None:
-                    delta = qa_acc - st_acc
-                    sign = "+" if delta >= 0 else ""
-                    deltas.append(f"{sign}{delta:.3f}")
-                else:
-                    deltas.append("  N/A")
-            print(f"{position:<30} {'  '.join(deltas)}")
-
 
 def main():
     parser = argparse.ArgumentParser(
@@ -351,8 +226,6 @@ def main():
                         help="Path to qa_probe_training.yaml config")
     parser.add_argument("--data-dir", type=str, default=None,
                         help="Override data directory")
-    parser.add_argument("--statement-probe-dir", type=str, default=None,
-                        help="Path to statement-trained probes for comparison")
     parser.add_argument("--log-dir", type=str, default=None,
                         help="Directory for log files (default: data-dir/logs)")
     args = parser.parse_args()
@@ -405,25 +278,12 @@ def main():
         data_dir, target_layers, token_positions, seeds, hidden_dim, test_pair_ids,
     )
 
-    # Optionally evaluate statement-trained probes
-    statement_results = None
-    if args.statement_probe_dir:
-        stmt_dir = resolve_path(args.statement_probe_dir)
-        print("\n" + "=" * 60)
-        print("Step 3: Evaluating statement-trained probes on QA data")
-        print("=" * 60)
-        statement_results = evaluate_statement_probes_on_qa(
-            stmt_dir, data_dir, target_layers, token_positions,
-            seeds, hidden_dim, test_pair_ids,
-        )
-
-    # Print comparison
-    print_comparison_table(qa_results, statement_results, target_layers, token_positions)
+    # Print results
+    print_results_table(qa_results, target_layers, token_positions)
 
     # Save full report
     report = {
         "qa_probe_results": qa_results,
-        "statement_probe_results": statement_results,
         "test_pair_ids": test_pair_ids,
         "n_test_pairs": len(test_pair_ids),
         "target_layers": target_layers,
