@@ -36,7 +36,7 @@ from src.inference.extract_activations import (
     find_token_positions, extract_activations_at_positions,
 )
 from src.probes.architectures import LinearProbe
-from src.probes.evaluate import evaluate_ensemble
+from src.probes.evaluate import evaluate_ensemble, load_weighted_combination, score_weighted_combination
 from src.prompts.templates import format_prompt
 from src.utils.logging import setup_logging
 
@@ -829,6 +829,8 @@ def main():
                         help="Batch size for generation (default: 5)")
     parser.add_argument("--log-dir", type=str, default=None,
                         help="Directory for log files (default: output-dir/logs)")
+    parser.add_argument("--weighted-combo", type=str, default=None,
+                        help="Path to weighted_combination.yaml for combined scoring")
     args = parser.parse_args()
 
     # Resolve paths
@@ -881,6 +883,16 @@ def main():
     probe_ensembles = loaded["probes"]
     scalers = loaded["scalers"]
     per_position = loaded["per_position"]
+
+    # Load weighted combination config if provided
+    weighted_combo = None
+    if args.weighted_combo:
+        combo_path = resolve_path(args.weighted_combo)
+        weighted_combo = load_weighted_combination(combo_path)
+        print(f"  Loaded weighted combination from {combo_path}")
+        for op_name, op in weighted_combo["operating_points"].items():
+            print(f"    {op_name}: thresh={op['threshold']:.4f}, "
+                  f"expected TPR={op['expected_tpr']*100:.1f}%, FPR={op['expected_fpr']*100:.1f}%")
 
     # Step 2: Load model
     print("\n" + "=" * 60)
@@ -962,6 +974,20 @@ def main():
             json.dump(neg_trials, f, indent=2, default=str)
         print(f"  Saved {len(neg_trials)} negative control trials to {neg_path}")
 
+    # Step 3c: Apply weighted combination scoring
+    if weighted_combo is not None:
+        print(f"\n--- Applying weighted combination scoring ---")
+        for trial in all_trials:
+            pr = trial.get("probe_results", {})
+            if pr:
+                trial["weighted_score"] = score_weighted_combination(pr, weighted_combo)
+            # Also score per-turn results in feedback regimes
+            for turn in trial.get("turns", []):
+                pr = turn.get("probe_results", {})
+                if pr:
+                    turn["weighted_score"] = score_weighted_combination(pr, weighted_combo)
+        print(f"  Scored {len(all_trials)} trials")
+
     # Step 4: Aggregate and save summary
     print("\n" + "=" * 60)
     print("Step 4: Aggregating results")
@@ -1033,6 +1059,25 @@ def main():
                         else:
                             confs.append("  N/A")
                     print(f"    turn {turn:<20} {'  '.join(confs)}")
+
+    # Weighted combination summary
+    if weighted_combo is not None:
+        print(f"\n  Weighted Combination Score")
+        print(f"  {'Regime':<25} {'Mean Score':>10} {'low_fpr':>8} {'balanced':>9}")
+        print(f"  {'-' * 55}")
+        from collections import defaultdict
+        ws_by_regime = defaultdict(list)
+        for trial in all_trials:
+            ws = trial.get("weighted_score", {})
+            if ws:
+                ws_by_regime[trial["regime"]].append(ws)
+        for regime_name in regime_names:
+            scores = ws_by_regime.get(regime_name, [])
+            if scores:
+                mean_score = sum(s["combined_score"] for s in scores) / len(scores)
+                low_fpr_rate = sum(1 for s in scores if s["detections"].get("low_fpr")) / len(scores)
+                balanced_rate = sum(1 for s in scores if s["detections"].get("balanced")) / len(scores)
+                print(f"  {regime_name:<25} {mean_score:>10.3f} {low_fpr_rate*100:>7.1f}% {balanced_rate*100:>8.1f}%")
 
     print("\nDone!")
 

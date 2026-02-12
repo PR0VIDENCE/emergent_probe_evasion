@@ -1,6 +1,9 @@
 """Evaluation functions for trained probes."""
 
+import math
 import torch
+import yaml
+import numpy as np
 from typing import Dict, List, Optional
 from .architectures import LinearProbe
 
@@ -131,3 +134,86 @@ def evaluate_ensemble(probes: List[LinearProbe], activations, labels=None,
             result["mean_individual_accuracy"] = sum(result["individual_accuracies"]) / len(result["individual_accuracies"])
 
     return result
+
+
+def load_weighted_combination(config_path: str) -> Dict:
+    """
+    Load a learned weighted probe combination config from YAML.
+
+    Args:
+        config_path: Path to weighted_combination.yaml.
+
+    Returns:
+        Dict with numpy arrays ready for scoring:
+        - weights: (20,) array of logistic regression coefficients
+        - intercept: float
+        - scaler_mean: (20,) array
+        - scaler_scale: (20,) array
+        - positions: list of position names
+        - layers: list of layer indices (ints)
+        - operating_points: dict of {name: {threshold, expected_tpr, expected_fpr}}
+    """
+    with open(config_path, "r") as f:
+        config = yaml.safe_load(f)
+
+    return {
+        "weights": np.array(config["weights"], dtype=np.float64),
+        "intercept": float(config["intercept"]),
+        "scaler_mean": np.array(config["scaler"]["mean"], dtype=np.float64),
+        "scaler_scale": np.array(config["scaler"]["scale"], dtype=np.float64),
+        "positions": config["feature_order"]["positions"],
+        "layers": config["feature_order"]["layers"],
+        "operating_points": config["operating_points"],
+    }
+
+
+def score_weighted_combination(probe_results: Dict, combo: Dict) -> Dict:
+    """
+    Score a single trial's probe results using a learned weighted combination.
+
+    Takes the per-position, per-layer mean_confidence values from existing probe
+    results and combines them into a single calibrated probability using the
+    learned logistic regression weights.
+
+    Args:
+        probe_results: Dict of {position: {layer: {mean_confidence, ...}}}.
+            Layer keys may be strings or ints.
+        combo: Output of load_weighted_combination().
+
+    Returns:
+        Dict with:
+        - combined_score: float probability (0-1)
+        - detections: {op_name: bool} for each operating point
+        - feature_vector: list of 20 raw confidence values (for debugging)
+    """
+    positions = combo["positions"]
+    layers = combo["layers"]
+
+    # Extract 20-dim feature vector in the correct order
+    feature_vec = []
+    for pos in positions:
+        pos_results = probe_results.get(pos, {})
+        for layer in layers:
+            layer_data = pos_results.get(str(layer)) or pos_results.get(layer, {})
+            mc = layer_data.get("mean_confidence", 0.0) if layer_data else 0.0
+            feature_vec.append(mc)
+
+    x = np.array(feature_vec, dtype=np.float64)
+
+    # StandardScaler transform
+    x_scaled = (x - combo["scaler_mean"]) / combo["scaler_scale"]
+
+    # Logistic regression: sigmoid(w @ x + b)
+    logit = float(np.dot(combo["weights"], x_scaled) + combo["intercept"])
+    score = 1.0 / (1.0 + math.exp(-logit))
+
+    # Check each operating point
+    detections = {}
+    for op_name, op in combo["operating_points"].items():
+        detections[op_name] = score >= op["threshold"]
+
+    return {
+        "combined_score": round(score, 6),
+        "detections": detections,
+        "feature_vector": [round(v, 4) for v in feature_vec],
+    }

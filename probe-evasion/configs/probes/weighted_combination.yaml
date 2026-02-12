@@ -1,0 +1,104 @@
+description: Learned weighted combination of probe scores across layers and positions. Trained on probe_robustness v2 data
+  (777 trials, 7 regimes). Use with score_weighted_combination() in src/probes/evaluate.py.
+model: logistic_regression
+regularization_C: 1.0
+cross_validated_auc: 0.975
+feature_order:
+  positions:
+  - answer_mean_pool
+  - last_token
+  - end_of_reasoning
+  - first_answer_sentence_end
+  layers:
+  - 8
+  - 20
+  - 32
+  - 44
+  - 56
+  note: Features are ordered as positions (outer) x layers (inner), giving 20 features total.
+scaler:
+  mean:
+  - 0.551195
+  - 0.51586
+  - 0.545317
+  - 0.678594
+  - 0.511796
+  - 0.552623
+  - 0.444038
+  - 0.552373
+  - 0.709925
+  - 0.607244
+  - 0.651207
+  - 0.664001
+  - 0.636437
+  - 0.877803
+  - 0.691559
+  - 0.389512
+  - 0.553886
+  - 0.510742
+  - 0.53282
+  - 0.355246
+  scale:
+  - 0.366408
+  - 0.404504
+  - 0.402136
+  - 0.327241
+  - 0.425288
+  - 0.338299
+  - 0.342935
+  - 0.324668
+  - 0.278426
+  - 0.314061
+  - 0.400792
+  - 0.382934
+  - 0.357381
+  - 0.217851
+  - 0.321608
+  - 0.306424
+  - 0.297843
+  - 0.278406
+  - 0.278342
+  - 0.348482
+weights:
+- -1.61195
+- 2.374126
+- -0.320058
+- 0.406253
+- 2.270156
+- 0.566138
+- -1.123739
+- -0.358705
+- 0.565241
+- -0.032589
+- 0.73272
+- 0.822553
+- -0.587755
+- -0.402199
+- 1.050239
+- -0.384574
+- 0.049445
+- -0.325607
+- -0.335115
+- 0.484325
+intercept: 1.553198
+operating_points:
+  zero_fpr:
+    threshold: 0.9925
+    expected_tpr: 0.5043
+    expected_fpr: 0.0
+  strict:
+    threshold: 0.7219
+    expected_tpr: 0.9026
+    expected_fpr: 0.019
+  low_fpr:
+    threshold: 0.5008
+    expected_tpr: 0.9372
+    expected_fpr: 0.0508
+  balanced:
+    threshold: 0.3342
+    expected_tpr: 0.9632
+    expected_fpr: 0.0984
+  high_recall:
+    threshold: 0.2481
+    expected_tpr: 0.9632
+    expected_fpr: 0.1492
