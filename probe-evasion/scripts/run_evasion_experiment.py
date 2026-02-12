@@ -145,7 +145,7 @@ def extract_thinking(full_text: str) -> str:
 
 def generate_with_think_guarantee(
     input_ids, model, tokenizer, max_new_tokens, generation_config,
-    max_think_tokens=None,
+    max_think_tokens=None, attention_mask=None,
 ):
     """Two-phase generation: capped thinking, then answer.
 
@@ -183,10 +183,15 @@ def generate_with_think_guarantee(
         pad_token_id=tokenizer.pad_token_id,
     )
 
+    # Build attention mask if not provided
+    if attention_mask is None:
+        attention_mask = torch.ones_like(input_ids)
+
     # Phase 1: Generate with thinking cap
     with torch.no_grad():
         phase1_ids = model.generate(
             input_ids,
+            attention_mask=attention_mask,
             max_new_tokens=max_think_tokens,
             **gen_kwargs,
         )
@@ -202,12 +207,17 @@ def generate_with_think_guarantee(
 
     think_truncated = "</think>" not in phase1_text
 
+    # Extend attention mask to cover newly generated tokens
+    phase1_mask = torch.ones(1, phase1_ids.shape[1], device=phase1_ids.device, dtype=attention_mask.dtype)
+
     if think_truncated:
         # Thinking hit the cap — force-close the thinking block
         close_ids = tokenizer.encode("\n</think>\n", add_special_tokens=False)
         close_tensor = torch.tensor([close_ids], device=phase1_ids.device)
         phase1_ids = torch.cat([phase1_ids, close_tensor], dim=1)
         phase1_tokens += len(close_ids)
+        close_mask = torch.ones(1, len(close_ids), device=phase1_ids.device, dtype=attention_mask.dtype)
+        phase1_mask = torch.cat([phase1_mask, close_mask], dim=1)
         print(f"      [think_guarantee] Thinking capped at {max_think_tokens} tokens, forced </think>")
 
     # Phase 2: Generate answer with remaining budget
@@ -218,6 +228,7 @@ def generate_with_think_guarantee(
     with torch.no_grad():
         output_ids = model.generate(
             phase1_ids,
+            attention_mask=phase1_mask,
             max_new_tokens=answer_budget,
             **gen_kwargs,
         )
@@ -335,9 +346,11 @@ def generate_batch(chat_prompts: List[str], model, tokenizer,
                     truncation=True, max_length=4096,
                 )
                 single_input_ids = single_input["input_ids"].to(model.device)
+                single_attn_mask = single_input["attention_mask"].to(model.device)
                 fixed_output, truncated = generate_with_think_guarantee(
                     single_input_ids, model, tokenizer,
                     max_new_tokens, generation_config,
+                    attention_mask=single_attn_mask,
                 )
                 results.append((fixed_output, truncated))
                 del single_input, single_input_ids
@@ -346,7 +359,10 @@ def generate_batch(chat_prompts: List[str], model, tokenizer,
 
     finally:
         tokenizer.padding_side = original_padding_side
-        del inputs, batch_output_ids
+        try:
+            del inputs, batch_output_ids
+        except UnboundLocalError:
+            pass
         if torch.cuda.is_available():
             torch.cuda.empty_cache()
 
@@ -537,9 +553,11 @@ def generate_and_probe_single(
     inputs = tokenizer(chat_prompt, return_tensors="pt", truncation=True, max_length=4096)
     input_len = inputs["input_ids"].shape[1]
     input_ids = inputs["input_ids"].to(model.device)
+    attention_mask = inputs["attention_mask"].to(model.device)
 
     output_ids, think_truncated = generate_with_think_guarantee(
         input_ids, model, tokenizer, max_new_tokens, generation_config,
+        attention_mask=attention_mask,
     )
 
     result = process_single_sequence(
