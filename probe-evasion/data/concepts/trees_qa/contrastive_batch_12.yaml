@@ -13,117 +13,157 @@ pairs:
     non_tree_question: "How do the elastic properties of different runway surfaces affect competitive long jumpers' ability to convert speed into distance, and why is a well-maintained synthetic track prized for record attempts?"
     question_type: explanatory
     non_tree_domain: competitive long jump
+    similarity: false
+    elicitation_style: numbered_list
 
   - pair_id: 1
     tree_question: "What is the process of identifying internal decay in standing trees using sonic tomography, and how do sound wave velocities differ between healthy and compromised wood?"
     non_tree_question: "What is the process of fusion splicing two optical fibers together using an electric arc, and how do light transmission losses differ between mechanical and fusion splice techniques?"
     question_type: process
     non_tree_domain: optical fiber splicing
+    similarity: false
+    elicitation_style: explicit_mention
 
   - pair_id: 2
     tree_question: "Why do javelin-straight trunks develop in certain conifers grown in dense plantations, and how does inter-tree competition for light drive this self-pruning behavior?"
     non_tree_question: "Why do javelin throws exhibit a characteristic wobble after release, and how does the aerodynamic interplay between angle of attack and spin rate drive distance optimization in competition?"
     question_type: explanatory
     non_tree_domain: competitive javelin
+    similarity: false
+    elicitation_style: default
 
   - pair_id: 3
     tree_question: "What is the southernmost latitude at which trees can grow, and what physiological constraints establish the treeline in subpolar regions?"
     non_tree_question: "What is the southernmost permanently inhabited research station in Antarctica, and what logistical constraints establish the limits of year-round scientific operations on the ice sheet?"
     question_type: factual
     non_tree_domain: Antarctic research
+    similarity: false
+    elicitation_style: concise
 
   - pair_id: 4
     tree_question: "How do water barriers like rivers influence tree species distribution, and what natural mechanisms allow certain species to disperse seeds across these obstacles?"
     non_tree_question: "How do water jump barriers in the 3000-meter steeplechase influence race tactics, and what biomechanical techniques allow elite runners to clear these obstacles with minimal speed loss?"
     question_type: process
     non_tree_domain: competitive steeplechase
+    similarity: false
+    elicitation_style: verbose
 
   - pair_id: 5
     tree_question: "What compounds in tree bark have been historically used as medicines, and how was the discovery of quinine from cinchona bark a turning point in treating malaria?"
     non_tree_question: "What compounds in adjuvants have been historically used to boost immune response, and how was the discovery of mRNA delivery platforms a turning point in vaccine development speed?"
     question_type: factual
     non_tree_domain: vaccine development
+    similarity: false
+    elicitation_style: eli5
 
   - pair_id: 6
     tree_question: "How do arborists evaluate the multiple structural defects that can co-occur in a single mature tree, and what scoring systems do they use to prioritize risk mitigation?"
     non_tree_question: "How do heptathlon coaches evaluate the multiple athletic disciplines that an athlete must master simultaneously, and what scoring tables do they use to prioritize training allocation?"
     question_type: process
     non_tree_domain: competitive heptathlon
+    similarity: false
+    elicitation_style: numbered_list
 
   - pair_id: 7
     tree_question: "What engineering principles govern the design of tree root barriers installed near building foundations, and how do different barrier materials compare in long-term effectiveness?"
     non_tree_question: "What engineering principles govern the design of base isolation systems installed beneath buildings in seismic zones, and how do different isolator types compare in long-term effectiveness?"
     question_type: comparative
     non_tree_domain: earthquake engineering
+    similarity: false
+    elicitation_style: explicit_mention
 
   - pair_id: 8
     tree_question: "How do fallen trees that create log jams in rivers alter water flow patterns, sediment deposition, and aquatic habitat complexity in stream ecosystems?"
     non_tree_question: "How do artificial gates placed in whitewater channels alter water flow patterns, paddle stroke timing, and competitive line selection in canoe slalom racing?"
     question_type: explanatory
     non_tree_domain: competitive canoe slalom
+    similarity: false
+    elicitation_style: default
 
   - pair_id: 9
     tree_question: "What forces are involved in the capillary action that moves water through the xylem vessels of trees, and how do vessel diameter and surface tension interact at the molecular level?"
     non_tree_question: "What forces are involved in the magnetic levitation that suspends vehicles above guideway rails, and how do superconducting coil geometry and field strength interact at the engineering level?"
     question_type: explanatory
     non_tree_domain: magnetic levitation
+    similarity: false
+    elicitation_style: concise
 
   - pair_id: 10
     tree_question: "How do modern arboreta manage collections of diverse tree species from multiple continents, and what challenges arise from maintaining tropical specimens in temperate climates?"
     non_tree_question: "How do modern pentathlon coaches manage athletes training across five diverse disciplines, and what challenges arise from maintaining peak performance in shooting, fencing, swimming, riding, and running simultaneously?"
     question_type: process
     non_tree_domain: competitive modern pentathlon
+    similarity: false
+    elicitation_style: verbose
 
   - pair_id: 11
     tree_question: "What methods do forest ecologists use to track the movement of individual tree seeds across landscapes using genetic markers and spatial modeling?"
     non_tree_question: "What methods do space agencies use to track the movement of individual pieces of orbital debris across low Earth orbit using radar and optical telescopes?"
     question_type: process
     non_tree_domain: space debris tracking
+    similarity: false
+    elicitation_style: eli5
 
   - pair_id: 12
     tree_question: "Why do certain tree species exhibit a characteristic gait-like swaying motion in rhythmic wind, and how do trunk taper and crown mass distribution influence this oscillation frequency?"
     non_tree_question: "Why do competitive race walkers exhibit a characteristic hip-drop gait that distinguishes legal walking from running, and how do stride length and cadence distribution influence maximum legal speed?"
     question_type: explanatory
     non_tree_domain: competitive race walking
+    similarity: false
+    elicitation_style: numbered_list
 
   - pair_id: 13
     tree_question: "How does the chemical composition of tree resin vary between pine, spruce, and fir species, and what commercial products are derived from each type of oleoresin?"
     non_tree_question: "How does the chemical composition of battery electrolytes vary between lithium-ion, solid-state, and sodium-ion technologies, and what performance characteristics are optimized by each formulation?"
     question_type: comparative
     non_tree_domain: battery technology
+    similarity: false
+    elicitation_style: explicit_mention
 
   - pair_id: 14
     tree_question: "What are the differences between the photosynthetic strategies of sun-adapted canopy trees and shade-adapted understory trees, and how do their chloroplast densities compare?"
     non_tree_question: "What are the differences between the entry techniques of platform divers performing inward dives versus reverse dives, and how do their synchronization scores compare in competitive synchronized diving?"
     question_type: comparative
     non_tree_domain: competitive synchronized diving
+    similarity: false
+    elicitation_style: default
 
   - pair_id: 15
     tree_question: "How do coastal tree species like Sitka spruce respond to salt spray exposure, and what physiological mechanisms protect their foliage from sodium chloride damage?"
     non_tree_question: "How do oceanographic instruments deployed on Argo floats measure salinity at different depths, and what data processing mechanisms correct for sensor drift in long-term ocean current mapping?"
     question_type: process
     non_tree_domain: ocean current mapping
+    similarity: false
+    elicitation_style: concise
 
   - pair_id: 16
     tree_question: "What distinguishes the wood anatomy of ring-porous hardwoods like oak from diffuse-porous hardwoods like maple, and how do these structural differences affect water conductance?"
     non_tree_question: "What distinguishes the waxing techniques used for classic cross-country skis from those used for skating skis, and how do these preparation differences affect glide efficiency on different snow conditions?"
     question_type: comparative
     non_tree_domain: competitive cross-country skiing
+    similarity: false
+    elicitation_style: verbose
 
   - pair_id: 17
     tree_question: "How do researchers use chloroplast DNA sequences to reconstruct the evolutionary relationships and migration history of tree species after the last ice age?"
     non_tree_question: "How do researchers use next-generation DNA sequencing to reconstruct the evolutionary relationships and mutation history of viral strains during an emerging pandemic?"
     question_type: process
     non_tree_domain: gene sequencing
+    similarity: false
+    elicitation_style: eli5
 
   - pair_id: 18
     tree_question: "Why do some tree species produce mast years with exceptionally heavy seed crops followed by years of minimal production, and what evolutionary advantages does this synchronized strategy confer?"
     non_tree_question: "Why do some relay racing teams produce faster split times in finals than in heats, and what pacing and baton exchange strategies confer advantages in the 4x400 meter event?"
     question_type: explanatory
     non_tree_domain: competitive relay racing
+    similarity: false
+    elicitation_style: numbered_list
 
   - pair_id: 19
     tree_question: "How do epiphytic communities establish themselves on the bark and branches of mature rainforest trees, and what succession of mosses, lichens, ferns, and orchids typically colonize the canopy?"
     non_tree_question: "How do biofilm communities establish themselves on submerged surfaces in aquatic environments, and what succession of bacteria, algae, protozoa, and fungi typically colonize the mature biofilm matrix?"
     question_type: process
     non_tree_domain: biofilm research
+    similarity: false
+    elicitation_style: explicit_mention

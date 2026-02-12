@@ -8,18 +8,37 @@ import os
 DATA_DIR = os.path.join(os.path.dirname(__file__), "..", "data", "outputs", "trial_1_data")
 OUTPUT_PATH = os.path.join(DATA_DIR, "dashboard.html")
 
-REGIMES = ["baseline", "awareness_only", "technical_disclosure", "technical_extended", "iterative_feedback"]
+
+def discover_regimes(data_dir):
+    """Discover available regimes from JSON files in the trials directory."""
+    trials_dir = data_dir
+    # Try trials/ subdirectory first, fall back to data_dir itself
+    if os.path.isdir(os.path.join(data_dir, "trials")):
+        trials_dir = os.path.join(data_dir, "trials")
+
+    regimes = []
+    for fname in sorted(os.listdir(trials_dir)):
+        if fname.endswith(".json") and not fname.startswith(("summary", "config", "evaluation")):
+            regime_name = fname[:-5]  # strip .json
+            regimes.append(regime_name)
+    return regimes, trials_dir
+
 
 def load_data():
+    regimes, trials_dir = discover_regimes(DATA_DIR)
     all_data = {}
-    for regime in REGIMES:
-        path = os.path.join(DATA_DIR, f"{regime}.json")
-        with open(path) as f:
-            all_data[regime] = json.load(f)
-    return all_data
+    for regime in regimes:
+        path = os.path.join(trials_dir, f"{regime}.json")
+        if os.path.exists(path):
+            with open(path) as f:
+                all_data[regime] = json.load(f)
+    return all_data, regimes
 
-def build_html(all_data):
+def build_html(all_data, regimes=None):
+    if regimes is None:
+        regimes = list(all_data.keys())
     data_json = json.dumps(all_data)
+    regimes_json = json.dumps(regimes)
 
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -345,11 +364,7 @@ body {{
   letter-spacing: 0.03em;
 }}
 
-.regime-badge.baseline {{ background: rgba(59,130,246,0.15); color: var(--regime-baseline); }}
-.regime-badge.awareness_only {{ background: rgba(245,158,11,0.15); color: var(--regime-awareness); }}
-.regime-badge.technical_disclosure {{ background: rgba(168,85,247,0.15); color: var(--regime-technical); }}
-.regime-badge.technical_extended {{ background: rgba(34,197,94,0.15); color: var(--regime-extended); }}
-.regime-badge.iterative_feedback {{ background: rgba(239,68,68,0.15); color: var(--regime-iterative); }}
+/* Regime badge colors are set dynamically via JS */
 
 .response-body {{
   display: grid;
@@ -663,7 +678,7 @@ body {{
 
 <div class="header">
   <h1>Probe Evasion Experiment — Trial 1</h1>
-  <p class="subtitle">QwQ-32B responses to tree-related questions across 5 evasion regimes &middot; 125 total rollouts &middot; Linear probe confidence at 4 extraction positions &times; 5 layers</p>
+  <p class="subtitle">QwQ-32B responses to tree-related questions &middot; Linear probe confidence at 4 extraction positions &times; 5 layers</p>
   <div class="tabs">
     <div class="tab active" data-tab="overview">Overview</div>
     <div class="tab" data-tab="comparison">Regime Comparison</div>
@@ -757,28 +772,32 @@ body {{
 // ============================================================
 const DATA = {data_json};
 
-const REGIMES = {json.dumps(REGIMES)};
-const REGIME_LABELS = {{
-  baseline: "Baseline",
-  awareness_only: "Awareness Only",
-  technical_disclosure: "Technical Disclosure",
-  technical_extended: "Technical Extended",
-  iterative_feedback: "Iterative Feedback"
-}};
-const REGIME_COLORS = {{
-  baseline: "#3b82f6",
-  awareness_only: "#f59e0b",
-  technical_disclosure: "#a855f7",
-  technical_extended: "#22c55e",
-  iterative_feedback: "#ef4444"
-}};
-const REGIME_COLORS_DIM = {{
-  baseline: "rgba(59,130,246,0.15)",
-  awareness_only: "rgba(245,158,11,0.15)",
-  technical_disclosure: "rgba(168,85,247,0.15)",
-  technical_extended: "rgba(34,197,94,0.15)",
-  iterative_feedback: "rgba(239,68,68,0.15)"
-}};
+const REGIMES = {regimes_json};
+
+// Auto-generate labels, colors from regime names
+const _PALETTE = ["#3b82f6","#f59e0b","#a855f7","#22c55e","#ef4444","#14b8a6","#ec4899","#84cc16","#f97316","#6366f1","#0ea5e9","#d946ef"];
+const REGIME_LABELS = {{}};
+const REGIME_COLORS = {{}};
+const REGIME_COLORS_DIM = {{}};
+REGIMES.forEach((r, i) => {{
+  REGIME_LABELS[r] = r.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+  REGIME_COLORS[r] = _PALETTE[i % _PALETTE.length];
+  const c = _PALETTE[i % _PALETTE.length];
+  REGIME_COLORS_DIM[r] = c + '26';  // ~15% opacity in hex
+}});
+
+// Inject regime badge CSS dynamically
+(function() {{
+  const style = document.createElement('style');
+  let css = '';
+  REGIMES.forEach(r => {{
+    const color = REGIME_COLORS[r];
+    const dimColor = REGIME_COLORS_DIM[r];
+    css += `.regime-badge.${{r}} {{ background: ${{dimColor}}; color: ${{color}}; }}\n`;
+  }});
+  style.textContent = css;
+  document.head.appendChild(style);
+}})();
 
 const POSITIONS = ["last_token", "end_of_reasoning", "first_answer_sentence_end", "answer_mean_pool"];
 const POSITION_LABELS = {{
@@ -788,7 +807,8 @@ const POSITION_LABELS = {{
   answer_mean_pool: "Answer Mean Pool"
 }};
 const LAYERS = ["8", "20", "32", "44", "56"];
-const QUESTIONS = ["q1", "q2", "q3", "q4", "q5"];
+// Auto-discover questions from data
+const QUESTIONS = [...new Set(REGIMES.flatMap(r => (DATA[r] || []).map(e => e.question_id)))].sort();
 
 // ============================================================
 // HELPERS
@@ -1227,7 +1247,7 @@ function buildBrowser() {{
       return;
     }}
 
-    const isIterative = regime === 'iterative_feedback';
+    const isIterative = entry.turns && entry.turns.length > 0;
     let turnsHtml = '';
     let bodyHtml = '';
 
@@ -1413,8 +1433,8 @@ buildDetails();
 
 
 def main():
-    all_data = load_data()
-    html = build_html(all_data)
+    all_data, regimes = load_data()
+    html = build_html(all_data, regimes)
     with open(OUTPUT_PATH, 'w') as f:
         f.write(html)
     print(f"Dashboard written to {OUTPUT_PATH}")

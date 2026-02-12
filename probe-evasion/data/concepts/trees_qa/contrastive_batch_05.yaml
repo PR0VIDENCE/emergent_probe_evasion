@@ -10,117 +10,157 @@ pairs:
     non_tree_question: "How does the equilibrium line shift in response to long-term climate warming, and what geological consequences follow when glaciers retreat from previously ice-covered valleys?"
     question_type: explanatory
     non_tree_domain: glaciology
+    similarity: false
+    elicitation_style: verbose
 
   - pair_id: 1
     tree_question: "What are the stages of cambium growth that produce annual rings in a tree trunk, and how do environmental conditions alter ring width and density?"
     non_tree_question: "What are the stages of centering clay that produce a uniform cylinder on a pottery wheel, and how do moisture conditions alter wall thickness and symmetry?"
     question_type: process
     non_tree_domain: pottery wheel throwing
+    similarity: false
+    elicitation_style: eli5
 
   - pair_id: 2
     tree_question: "How do the tensile strength and flexibility of different tree species' wood fibers compare when subjected to bending stress?"
     non_tree_question: "How do the tensile strength and flexibility of different competitive weightlifters' connective tissues compare when subjected to maximal loading stress?"
     question_type: comparative
     non_tree_domain: competitive weightlifting
+    similarity: false
+    elicitation_style: numbered_list
 
   - pair_id: 3
     tree_question: "What role do trees play in the epidemiology of vector-borne diseases by providing habitat for mosquito and tick populations in suburban areas?"
     non_tree_question: "What role do superspreading events play in the epidemiology of respiratory diseases by amplifying transmission chains in densely occupied indoor spaces?"
     question_type: factual
     non_tree_domain: epidemiology
+    similarity: false
+    elicitation_style: explicit_mention
 
   - pair_id: 4
     tree_question: "How do deciduous trees coordinate the simultaneous release of pollen across a forest stand, and what environmental cues trigger this synchronized reproductive event?"
     non_tree_question: "How do hand-drawn animators coordinate the simultaneous movement of multiple characters across a complex scene, and what production cues trigger this synchronized workflow?"
     question_type: process
     non_tree_domain: animation
+    similarity: false
+    elicitation_style: default
 
   - pair_id: 5
     tree_question: "What factors influence the distribution of boreal tree species across the taiga, and how do these forests interact with global wind and ocean current patterns?"
     non_tree_question: "What factors influence the distribution of competitive sailing courses across ocean venues, and how do racing fleets interact with local wind and tidal current patterns?"
     question_type: explanatory
     non_tree_domain: competitive sailing
+    similarity: false
+    elicitation_style: concise
 
   - pair_id: 6
     tree_question: "How are the natural pigments found in various tree barks and heartwoods used as dyes in traditional textile crafts?"
     non_tree_question: "How are the metallic oxide pigments found in various mineral compounds used as colorants in traditional stained glass making?"
     question_type: factual
     non_tree_domain: stained glass making
+    similarity: false
+    elicitation_style: verbose
 
   - pair_id: 7
     tree_question: "What physiological adaptations allow desert tree species like mesquite and acacia to survive prolonged drought conditions while maintaining metabolic function?"
     non_tree_question: "What physiological adaptations allow elite marathon runners to sustain high-intensity effort over prolonged distances while maintaining metabolic efficiency?"
     question_type: explanatory
     non_tree_domain: competitive marathon running
+    similarity: false
+    elicitation_style: eli5
 
   - pair_id: 8
     tree_question: "How do scientists model the complex branching patterns of tree crowns using fractal geometry, and what practical applications does this modeling enable?"
     non_tree_question: "How do scientists model the complex superposition states of qubit arrays using linear algebra, and what practical applications does this modeling enable?"
     question_type: comparative
     non_tree_domain: quantum computing
+    similarity: false
+    elicitation_style: numbered_list
 
   - pair_id: 9
     tree_question: "What techniques do arborists use to safely remove large deadwood from the canopy of mature trees without damaging the surrounding structure?"
     non_tree_question: "What techniques do competitive wrestlers use to safely escape from disadvantageous holds without exposing themselves to further scoring attacks?"
     question_type: process
     non_tree_domain: competitive wrestling
+    similarity: false
+    elicitation_style: explicit_mention
 
   - pair_id: 10
     tree_question: "How does the chemical composition of oak bark tannins differ from those found in chestnut and hemlock bark, and why does this matter for traditional crafts?"
     non_tree_question: "How does the chemical composition of chrome tanning agents differ from those used in vegetable and aldehyde tanning, and why does this matter for leather quality?"
     question_type: comparative
     non_tree_domain: leather tanning
+    similarity: false
+    elicitation_style: default
 
   - pair_id: 11
     tree_question: "What ecological succession processes lead to the establishment of pioneer tree species on newly formed volcanic islands?"
     non_tree_question: "What hydrodynamic processes lead to the formation of rideable wave breaks at competition-grade surfing reef locations?"
     question_type: explanatory
     non_tree_domain: competitive surfing
+    similarity: false
+    elicitation_style: concise
 
   - pair_id: 12
     tree_question: "How do the volatile organic compounds emitted by coniferous forests affect regional air quality and atmospheric chemistry?"
     non_tree_question: "How do the volatile organic compounds released during candle wax combustion affect indoor air quality and respiratory health?"
     question_type: factual
     non_tree_domain: candle making
+    similarity: false
+    elicitation_style: verbose
 
   - pair_id: 13
     tree_question: "What engineering principles explain how the tapered trunk of a tall conifer withstands the bending forces generated by high winds?"
     non_tree_question: "What engineering principles explain how the tapered hull of a competition bobsled withstands the centrifugal forces generated by high-speed turns?"
     question_type: explanatory
     non_tree_domain: competitive bobsled
+    similarity: false
+    elicitation_style: eli5
 
   - pair_id: 14
     tree_question: "How do dense urban tree plantings reduce noise pollution, and what species and configurations are most effective as sound barriers?"
     non_tree_question: "How do dense absorptive panel installations reduce reverberation in concert halls, and what materials and configurations are most effective as acoustic treatments?"
     question_type: process
     non_tree_domain: acoustics
+    similarity: false
+    elicitation_style: numbered_list
 
   - pair_id: 15
     tree_question: "What distinguishes the growth habits and canopy shapes of fastigiate tree cultivars from their spreading wild-type counterparts?"
     non_tree_question: "What distinguishes the playing styles and grip techniques of penhold table tennis players from their shakehand-grip counterparts?"
     question_type: comparative
     non_tree_domain: competitive table tennis
+    similarity: false
+    elicitation_style: explicit_mention
 
   - pair_id: 16
     tree_question: "How does the process of retting and processing bast fibers from trees like linden differ from that of herbaceous bast fiber crops?"
     non_tree_question: "How does the process of drafting and spinning staple fibers from sheep wool differ from that of continuous filament silk on a spinning wheel?"
     question_type: process
     non_tree_domain: yarn spinning
+    similarity: false
+    elicitation_style: default
 
   - pair_id: 17
     tree_question: "What environmental regulations govern the harvesting of old-growth timber in Pacific Northwest forests, and how have these policies evolved over the past three decades?"
     non_tree_question: "What safety regulations govern the construction of competition ski jumping hills, and how have these engineering standards evolved over the past three decades?"
     question_type: factual
     non_tree_domain: competitive ski jumping
+    similarity: false
+    elicitation_style: concise
 
   - pair_id: 18
     tree_question: "How do the vascular transport systems in tree trunks move water from roots to canopy against gravity, and what physical forces drive this process?"
     non_tree_question: "How do the gas ionization systems in neon sign tubes produce visible light from noble gases, and what electrical forces drive this process?"
     question_type: explanatory
     non_tree_domain: neon sign making
+    similarity: false
+    elicitation_style: verbose
 
   - pair_id: 19
     tree_question: "What training and pruning methods are used in espalier to control the two-dimensional growth of fruit-bearing trees along walls and trellises?"
     non_tree_question: "What training and skating methods are used in competitive speed skating to control the aerodynamic body position of athletes along oval track straightaways and curves?"
     question_type: process
     non_tree_domain: competitive speed skating
+    similarity: false
+    elicitation_style: eli5

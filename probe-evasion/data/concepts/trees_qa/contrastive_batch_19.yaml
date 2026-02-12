@@ -1,0 +1,166 @@
+# Contrastive question pairs for QA-based probe training
+# Batch 19: seaweed, binary trees, evolutionary trees, decision trees, moss,
+#   syntax trees, family trees, organizational charts, mushrooms/fungi, grasses,
+#   competitive bobsled, semiconductor fabrication, competitive polo, beadwork,
+#   tidal pool ecology, competitive luge, quantum cryptography, bookbinding,
+#   competitive triathlon, geothermal energy
+pairs:
+  - pair_id: 0
+    tree_question: "How do coastal tree species like Sitka spruce tolerate salt spray exposure, and what physiological mechanisms protect their foliage from sodium chloride damage?"
+    non_tree_question: "How do intertidal seaweed species tolerate repeated desiccation during low tide, and what physiological mechanisms protect their cell membranes from osmotic stress during rehydration?"
+    question_type: explanatory
+    non_tree_domain: seaweed
+    similarity: true
+    elicitation_style: default
+
+  - pair_id: 1
+    tree_question: "What pruning techniques do orchard managers use to maintain productive fruiting wood on apple trees, and how does branch age affect fruit quality?"
+    non_tree_question: "What rebalancing techniques do database engineers use to maintain efficient query performance in binary search trees, and how does node depth affect retrieval speed?"
+    question_type: process
+    non_tree_domain: binary trees
+    similarity: true
+    elicitation_style: concise
+
+  - pair_id: 2
+    tree_question: "How do convergent evolutionary pressures cause unrelated tree species on different continents to develop remarkably similar leaf shapes and growth forms?"
+    non_tree_question: "How do convergent evolutionary pressures cause unrelated animal lineages on different continents to develop remarkably similar body plans, as reconstructed through evolutionary tree analysis?"
+    question_type: explanatory
+    non_tree_domain: evolutionary trees
+    similarity: true
+    elicitation_style: verbose
+
+  - pair_id: 3
+    tree_question: "What are the comparative strengths and weaknesses of using tree-ring width versus tree-ring density as proxies for past temperature in dendroclimatology?"
+    non_tree_question: "What are the comparative strengths and weaknesses of using decision tree depth versus ensemble size as hyperparameters for controlling overfitting in gradient-boosted models?"
+    question_type: comparative
+    non_tree_domain: decision trees
+    similarity: true
+    elicitation_style: eli5
+
+  - pair_id: 4
+    tree_question: "How do epiphytic mosses and lichens growing on tree bark affect the microclimate and water retention capacity of forest canopies?"
+    non_tree_question: "How do sphagnum moss bogs affect the hydrology and carbon storage capacity of boreal wetlands, and what role does peat accumulation play in long-term climate regulation?"
+    question_type: explanatory
+    non_tree_domain: moss
+    similarity: true
+    elicitation_style: numbered_list
+
+  - pair_id: 5
+    tree_question: "How do natural language processing systems use tree-structured representations to handle ambiguous sentences with multiple valid interpretations?"
+    non_tree_question: "How do natural language processing systems use syntax trees to represent the grammatical structure of complex sentences, and what parsing algorithms handle left-recursive grammars?"
+    question_type: process
+    non_tree_domain: syntax trees
+    similarity: true
+    elicitation_style: explicit_mention
+
+  - pair_id: 6
+    tree_question: "What genetic testing methods allow forestry researchers to determine the parentage of tree seedlings in seed orchards where multiple pollen donors are present?"
+    non_tree_question: "What genetic testing methods allow genealogists to determine ancestral origins through DNA analysis, and how do family tree platforms integrate autosomal and mitochondrial results?"
+    question_type: process
+    non_tree_domain: family trees
+    similarity: true
+    elicitation_style: default
+
+  - pair_id: 7
+    tree_question: "How does the crown shyness phenomenon in certain tree species create visible gaps between adjacent canopies, and what hypotheses explain this spacing behavior?"
+    non_tree_question: "How does the span-of-control principle in organizational chart design create visible layers between management tiers, and what theories explain the optimal ratio of managers to direct reports?"
+    question_type: explanatory
+    non_tree_domain: organizational charts
+    similarity: true
+    elicitation_style: concise
+
+  - pair_id: 8
+    tree_question: "What happens to the wood of trees that have been colonized by spalting fungi, and how do woodworkers exploit these decay patterns for decorative turning?"
+    non_tree_question: "What happens to substrates colonized by cultivated mushroom mycelium during commercial spawn run, and how do growers control temperature and humidity to optimize fruiting body production?"
+    question_type: process
+    non_tree_domain: mushrooms/fungi
+    similarity: true
+    elicitation_style: verbose
+
+  - pair_id: 9
+    tree_question: "How do the extensive root systems of prairie trees like bur oak differ from those of forest-grown oaks, and what environmental pressures drive these differences?"
+    non_tree_question: "How do the extensive root systems of prairie grasses like big bluestem differ from those of lawn grasses like Kentucky bluegrass, and what soil depth advantages do native species provide for erosion control?"
+    question_type: comparative
+    non_tree_domain: grasses
+    similarity: true
+    elicitation_style: eli5
+
+  - pair_id: 10
+    tree_question: "How does the aerodynamic drag on a tree crown change with wind speed, and what crown reconfigurations reduce the risk of windthrow during storms?"
+    non_tree_question: "How does the aerodynamic drag on a competitive bobsled change with velocity, and what crew positioning adjustments reduce air resistance during the push start and in-run phases?"
+    question_type: explanatory
+    non_tree_domain: competitive bobsled
+    similarity: false
+    elicitation_style: numbered_list
+
+  - pair_id: 11
+    tree_question: "What chemical treatments are used to preserve timber against insect attack and fungal decay, and how do copper-based preservatives differ from boron-based alternatives?"
+    non_tree_question: "What chemical etching processes are used to pattern silicon wafers during semiconductor fabrication, and how do wet etching techniques differ from dry plasma etching in terms of feature resolution?"
+    question_type: comparative
+    non_tree_domain: semiconductor fabrication
+    similarity: false
+    elicitation_style: explicit_mention
+
+  - pair_id: 12
+    tree_question: "How do trees growing along fence lines in agricultural landscapes serve as corridors for wildlife movement between forest fragments?"
+    non_tree_question: "How do polo ponies trained for competitive play develop the agility to execute sharp turns at speed, and what conditioning programs build the endurance required for multiple chukkas?"
+    question_type: factual
+    non_tree_domain: competitive polo
+    similarity: false
+    elicitation_style: default
+
+  - pair_id: 13
+    tree_question: "What traditional woodworking joints--such as mortise-and-tenon, dovetail, and bridle--are used in timber frame construction, and how does wood species affect joint strength?"
+    non_tree_question: "What traditional beadwork stitches--such as peyote, brick, and herringbone--are used in Native American and African artisan crafts, and how does bead material affect design durability?"
+    question_type: factual
+    non_tree_domain: beadwork
+    similarity: false
+    elicitation_style: concise
+
+  - pair_id: 14
+    tree_question: "How do the prop roots of red mangroves create sheltered nursery habitat for juvenile fish and invertebrates in tropical coastal lagoons?"
+    non_tree_question: "How do tidal pool microhabitats created by rocky intertidal topography support diverse assemblages of algae, anemones, and crustaceans between high and low tide marks?"
+    question_type: explanatory
+    non_tree_domain: tidal pool ecology
+    similarity: false
+    elicitation_style: verbose
+
+  - pair_id: 15
+    tree_question: "What forces act on a tree during an ice storm, and how does the accumulation of ice on branches lead to progressive structural failure?"
+    non_tree_question: "What forces act on a competitive luge sled during a banked curve, and how does the athlete's body position affect the balance between centripetal acceleration and gravitational pull?"
+    question_type: explanatory
+    non_tree_domain: competitive luge
+    similarity: false
+    elicitation_style: eli5
+
+  - pair_id: 16
+    tree_question: "How do scientists use stable isotopes in tree-ring cellulose to reconstruct historical atmospheric CO2 concentrations and water availability?"
+    non_tree_question: "How do quantum cryptography systems use the no-cloning theorem and entangled photon pairs to guarantee unconditionally secure key distribution between distant parties?"
+    question_type: process
+    non_tree_domain: quantum cryptography
+    similarity: false
+    elicitation_style: numbered_list
+
+  - pair_id: 17
+    tree_question: "What properties make the wood of specific tree species like willow and basswood preferred for charcoal production in artists' drawing materials?"
+    non_tree_question: "What properties make specific paper types like Japanese kozo and European laid paper preferred for fine press bookbinding, and how does grain direction affect the longevity of bound volumes?"
+    question_type: factual
+    non_tree_domain: bookbinding
+    similarity: false
+    elicitation_style: explicit_mention
+
+  - pair_id: 18
+    tree_question: "How does the seasonal timing of tree pollen release affect allergy sufferers, and which tree genera produce the most allergenic pollen in temperate regions?"
+    non_tree_question: "How does the seasonal timing of training periodization affect competitive triathlon performance, and which macrocycle phases are most critical for balancing swim, bike, and run fitness?"
+    question_type: factual
+    non_tree_domain: competitive triathlon
+    similarity: false
+    elicitation_style: default
+
+  - pair_id: 19
+    tree_question: "What role do geothermal hot springs play in creating unusual habitats where heat-tolerant tree species grow at elevations that would otherwise be too cold?"
+    non_tree_question: "What role do geothermal reservoirs play in providing baseload renewable electricity, and how do enhanced geothermal systems create artificial permeability in hot dry rock formations?"
+    question_type: factual
+    non_tree_domain: geothermal energy
+    similarity: false
+    elicitation_style: concise

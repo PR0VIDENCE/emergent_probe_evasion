@@ -1,0 +1,166 @@
+# Contrastive question pairs for QA-based probe training
+# Batch 18: decision trees, binary trees, phylogenetic trees, organizational charts,
+#   parse trees, dependency trees, branching narratives, shrubs, bamboo, cacti,
+#   ferns, mushrooms/fungi, competitive rowing, astrophysics, surgical robotics,
+#   glassblowing, earthquake engineering, marine navigation, perfume chemistry,
+#   competitive curling
+pairs:
+  - pair_id: 0
+    tree_question: "How do foresters use random sampling plots to estimate the basal area and species composition of a mixed hardwood-conifer forest stand?"
+    non_tree_question: "How do data scientists use random forest ensembles of decision trees to estimate feature importance and reduce overfitting in classification tasks?"
+    question_type: process
+    non_tree_domain: decision trees
+    similarity: true
+    elicitation_style: numbered_list
+
+  - pair_id: 1
+    tree_question: "What determines whether a tree develops a single dominant trunk or forks into multiple co-dominant stems, and how does this affect structural stability?"
+    non_tree_question: "What determines whether a binary tree is balanced or degenerates into a linked list, and how does this affect time complexity for search operations?"
+    question_type: explanatory
+    non_tree_domain: binary trees
+    similarity: true
+    elicitation_style: explicit_mention
+
+  - pair_id: 2
+    tree_question: "How do dendrochronologists use overlapping tree-ring sequences from living and dead trees to build continuous chronologies stretching back millennia?"
+    non_tree_question: "How do systematists use molecular sequence alignments from living and extinct species to build time-calibrated phylogenetic trees stretching back millions of years?"
+    question_type: process
+    non_tree_domain: phylogenetic trees
+    similarity: true
+    elicitation_style: default
+
+  - pair_id: 3
+    tree_question: "What factors influence the hierarchical arrangement of tree branches from the trunk outward, and how do mathematical models like the pipe model describe this architecture?"
+    non_tree_question: "What factors influence the hierarchical arrangement of reporting relationships in an organizational chart, and how do span-of-control models describe the optimal number of direct reports?"
+    question_type: explanatory
+    non_tree_domain: organizational charts
+    similarity: true
+    elicitation_style: concise
+
+  - pair_id: 4
+    tree_question: "How does the vascular cambium of a tree produce both inward-growing xylem and outward-growing phloem simultaneously, and how is the ratio regulated?"
+    non_tree_question: "How does a recursive descent parser produce both a concrete parse tree and an abstract syntax tree from source code simultaneously, and how are ambiguities resolved?"
+    question_type: process
+    non_tree_domain: parse trees
+    similarity: true
+    elicitation_style: verbose
+
+  - pair_id: 5
+    tree_question: "What challenges arise when transplanting a large mature tree to a new location, and how do arborists minimize transplant shock through root pruning and aftercare?"
+    non_tree_question: "What challenges arise when migrating a large software project to a new dependency tree, and how do developers minimize breaking changes through version pinning and compatibility layers?"
+    question_type: process
+    non_tree_domain: dependency trees
+    similarity: true
+    elicitation_style: eli5
+
+  - pair_id: 6
+    tree_question: "How do the branching patterns of tropical fig trees create complex aerial root networks that eventually fuse into lattice-like trunk structures?"
+    non_tree_question: "How do the branching plotlines of open-world video games create complex narrative networks that eventually converge into shared story resolution points?"
+    question_type: explanatory
+    non_tree_domain: branching narratives
+    similarity: true
+    elicitation_style: numbered_list
+
+  - pair_id: 7
+    tree_question: "Why do certain tree species like dogwood and redbud thrive as understory specialists beneath taller canopy trees, and what light-capture adaptations enable this?"
+    non_tree_question: "Why do certain understory shrubs like holly and boxwood thrive in deep shade beneath taller vegetation, and what evergreen leaf adaptations enable year-round photosynthesis in low light?"
+    question_type: explanatory
+    non_tree_domain: shrubs
+    similarity: true
+    elicitation_style: explicit_mention
+
+  - pair_id: 8
+    tree_question: "How do the mechanical properties of tree wood--such as modulus of elasticity, hardness, and shear strength--vary between ring-porous and diffuse-porous hardwood species?"
+    non_tree_question: "How do the mechanical properties of bamboo culms--such as tensile strength, flexibility, and split resistance--vary between thick-walled and thin-walled species used in construction?"
+    question_type: comparative
+    non_tree_domain: bamboo
+    similarity: true
+    elicitation_style: default
+
+  - pair_id: 9
+    tree_question: "What water transport adaptations allow the tallest coastal redwoods to move water over 100 meters from roots to crown, and where does the cohesion-tension theory apply?"
+    non_tree_question: "What water storage adaptations allow columnar cacti like the cardon to hold thousands of liters internally, and where do accordion-pleated stems expand during rare desert rainfalls?"
+    question_type: explanatory
+    non_tree_domain: cacti
+    similarity: true
+    elicitation_style: concise
+
+  - pair_id: 10
+    tree_question: "How do tree ferns achieve heights exceeding ten meters without secondary growth, and what structural role does the fibrous trunk serve compared to true woody tissue?"
+    non_tree_question: "How do ground-covering ferns like bracken achieve rapid lateral spread through rhizome networks, and what competitive advantages does this clonal growth provide over seed-dispersed species?"
+    question_type: comparative
+    non_tree_domain: ferns
+    similarity: true
+    elicitation_style: verbose
+
+  - pair_id: 11
+    tree_question: "What processes lead to the formation of hollow trunks in old-growth trees, and how do trees with extensive heartwood decay remain structurally stable?"
+    non_tree_question: "What processes lead to the formation of fairy rings by mushrooms and fungi in grasslands, and how do the expanding mycelial networks deplete soil nutrients in concentric patterns?"
+    question_type: explanatory
+    non_tree_domain: mushrooms/fungi
+    similarity: true
+    elicitation_style: eli5
+
+  - pair_id: 12
+    tree_question: "How does the transpiration pull mechanism in tall trees create negative pressures in the xylem, and what structural adaptations prevent vessel collapse under tension?"
+    non_tree_question: "How does the catch-drive sequence in competitive rowing create propulsive force through the oar, and what technique adjustments prevent blade slip at high stroke rates?"
+    question_type: process
+    non_tree_domain: competitive rowing
+    similarity: false
+    elicitation_style: numbered_list
+
+  - pair_id: 13
+    tree_question: "What causes the spectacular color variations in autumn foliage across different tree species, and how do anthocyanin and carotenoid pigments produce reds versus yellows?"
+    non_tree_question: "What causes the spectacular emission line variations in stellar spectra across different spectral classes, and how do hydrogen Balmer and metallic absorption features distinguish red giants from blue supergiants?"
+    question_type: explanatory
+    non_tree_domain: astrophysics
+    similarity: false
+    elicitation_style: explicit_mention
+
+  - pair_id: 14
+    tree_question: "How do surgeons use bone grafts harvested from cadaveric donors in the same way that arborists use grafting to join rootstock and scion tissue from different trees?"
+    non_tree_question: "How do surgical robots achieve sub-millimeter precision during minimally invasive procedures, and what feedback systems compensate for physiological motion like breathing and heartbeat?"
+    question_type: process
+    non_tree_domain: surgical robotics
+    similarity: false
+    elicitation_style: default
+
+  - pair_id: 15
+    tree_question: "What properties of specific tree species' wood make them ideal for carving musical instruments, and how does grain orientation affect tonal quality in violin tops?"
+    non_tree_question: "What properties of specific glass compositions make them ideal for artistic glassblowing, and how does thermal expansion coefficient affect the success rate of complex sculptural forms?"
+    question_type: explanatory
+    non_tree_domain: glassblowing
+    similarity: false
+    elicitation_style: concise
+
+  - pair_id: 16
+    tree_question: "How do large trees in urban settings interact with building foundations, and what damage mechanisms are caused by root growth beneath structures?"
+    non_tree_question: "How do seismic waves interact with building foundations during earthquakes, and what isolation mechanisms protect structures from lateral ground acceleration?"
+    question_type: explanatory
+    non_tree_domain: earthquake engineering
+    similarity: false
+    elicitation_style: verbose
+
+  - pair_id: 17
+    tree_question: "What navigational role did distinctive coastal trees play for sailors before modern positioning systems, and how were individual landmark trees recorded on historical charts?"
+    non_tree_question: "What navigational role do celestial observations play for sailors practicing astronavigation, and how are star sight reductions computed to determine a vessel's position at sea?"
+    question_type: factual
+    non_tree_domain: marine navigation
+    similarity: false
+    elicitation_style: eli5
+
+  - pair_id: 18
+    tree_question: "How are essential oils extracted from aromatic tree species like sandalwood and cedarwood through steam distillation, and what chemical compounds give each its distinctive scent?"
+    non_tree_question: "How are natural aromatic compounds extracted from plant materials through enfleurage and solvent extraction in perfume chemistry, and what molecular structures determine whether a scent is classified as top, middle, or base note?"
+    question_type: process
+    non_tree_domain: perfume chemistry
+    similarity: false
+    elicitation_style: numbered_list
+
+  - pair_id: 19
+    tree_question: "What are the comparative decay resistances of cedar, cypress, and redwood heartwood when used for outdoor applications, and what extractive chemicals account for the differences?"
+    non_tree_question: "What are the comparative strategies of aggressive front-end weight placement versus balanced delivery in competitive curling, and what ice conditions favor each approach for controlling stone curl?"
+    question_type: comparative
+    non_tree_domain: competitive curling
+    similarity: false
+    elicitation_style: explicit_mention

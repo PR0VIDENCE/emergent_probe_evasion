@@ -17,6 +17,7 @@ This script:
 import argparse
 import json
 import os
+import random
 import re
 import sys
 import time
@@ -597,6 +598,33 @@ def _log_trial(result: dict, question_id: str, rollout: int,
 
 
 # ---------------------------------------------------------------------------
+# Helpers for control regimes
+# ---------------------------------------------------------------------------
+
+# Common English words for generating filler text (no tree-related words)
+_FILLER_WORDS = (
+    "the quick brown fox jumped over lazy dog a an is was were been being have has had "
+    "do does did will shall should would could might may can must need dare ought used "
+    "about above after again against all along also always among another any are around "
+    "because before below between both but by came come could day did different each end "
+    "even find first for from get give go going good great hand have help here high home "
+    "house into its just know large last life like line little long look made make man many "
+    "may more most much must name never new next no not now number oil old only open other "
+    "our out over own part people place point right same say second see she small some "
+    "something sound still such take tell than that their them then there these they thing "
+    "think this through time to together too two under up upon us use very want water way "
+    "well went what when where which while who will with word work world would write year"
+).split()
+
+
+def generate_filler_text(n_tokens: int, seed: int = None) -> str:
+    """Generate approximately n_tokens of random English words as filler text."""
+    rng = random.Random(seed)
+    words = [rng.choice(_FILLER_WORDS) for _ in range(n_tokens)]
+    return " ".join(words)
+
+
+# ---------------------------------------------------------------------------
 # Regime runners
 # ---------------------------------------------------------------------------
 
@@ -605,11 +633,19 @@ def run_single_turn_regime(regime: dict, questions: list, model, tokenizer,
                            scalers: dict, generation_config: dict, concept: str,
                            num_probes: int, num_rollouts: int,
                            per_position: bool = False,
-                           batch_size: int = 5) -> list:
+                           batch_size: int = 5,
+                           config: dict = None) -> list:
     """Run a single-turn regime across all questions and rollouts (batched)."""
     template_name = regime["template"]
     max_new_tokens = regime["max_new_tokens"]
     instruction = regime.get("instruction", "")
+
+    # Control regime: swap to negative control questions if requested
+    if regime.get("use_negative_questions") and config:
+        neg_qs = config.get("negative_control_questions", [])
+        if neg_qs:
+            questions = neg_qs
+            print(f"  [control] Using {len(questions)} negative control questions")
 
     # Collect all prompts with metadata
     items = []
@@ -617,16 +653,27 @@ def run_single_turn_regime(regime: dict, questions: list, model, tokenizer,
         question_id = q["id"]
         question_text = q["text"]
         for rollout in range(num_rollouts):
+            # Build extra kwargs for control templates
+            extra_kwargs = {}
+            if regime.get("filler_token_count"):
+                extra_kwargs["filler_text"] = generate_filler_text(
+                    regime["filler_token_count"], seed=hash((question_id, rollout)) & 0xFFFFFFFF
+                )
+            if regime.get("wrong_concept"):
+                extra_kwargs["wrong_concept"] = regime["wrong_concept"]
+
             try:
                 prompt_text = format_prompt(
                     template_name, question=question_text,
                     concept=concept, num_probes=num_probes,
                     layers=str(target_layers),
                     instruction=instruction,
+                    **extra_kwargs,
                 )
             except KeyError:
                 prompt_text = format_prompt(template_name, question=question_text,
-                                           concept=concept, instruction=instruction)
+                                           concept=concept, instruction=instruction,
+                                           **extra_kwargs)
             items.append({
                 "prompt_text": prompt_text,
                 "question_id": question_id,
@@ -670,12 +717,14 @@ def run_feedback_regime(regime: dict, questions: list, model, tokenizer,
                         scalers: dict, generation_config: dict, concept: str,
                         num_probes: int, num_rollouts: int,
                         per_position: bool = False,
-                        batch_size: int = 5) -> list:
+                        batch_size: int = 5,
+                        config: dict = None) -> list:
     """Run the iterative feedback regime (multi-turn, batched per-turn)."""
     num_turns = regime["num_turns"]
     max_new_tokens = regime["max_new_tokens"]
     template_initial = regime["template_initial"]
     template_followup = regime["template_followup"]
+    feedback_mode = regime.get("feedback_mode", "real")  # real, random, gold, adversarial
 
     # Build (question, rollout) index for all chains
     chains = []
@@ -720,9 +769,35 @@ def run_feedback_regime(regime: dict, questions: list, model, tokenizer,
                         "individual_confidences": [0.5] * num_probes,
                     })
 
-                num_fired = sum(
-                    1 for c in layer_result["individual_confidences"] if c >= 0.5
-                )
+                # Real probe scores (always saved for analysis)
+                real_confidence = layer_result["mean_confidence"]
+                real_individual = layer_result["individual_confidences"]
+                real_num_fired = sum(1 for c in real_individual if c >= 0.5)
+
+                # Apply feedback_mode override for what the model sees
+                if feedback_mode == "random":
+                    shown_confidence = random.uniform(0, 1)
+                    shown_num_fired = random.randint(0, num_probes)
+                elif feedback_mode == "gold":
+                    shown_confidence = 0.0
+                    shown_num_fired = 0
+                elif feedback_mode == "adversarial":
+                    shown_confidence = 1.0 - real_confidence
+                    shown_num_fired = num_probes - real_num_fired
+                else:  # "real" — default behavior
+                    shown_confidence = real_confidence
+                    shown_num_fired = real_num_fired
+
+                # Record what feedback was shown (for analysis)
+                if feedback_mode != "real":
+                    prev["feedback_shown"] = {
+                        "mode": feedback_mode,
+                        "shown_confidence": shown_confidence,
+                        "shown_num_fired": shown_num_fired,
+                        "real_confidence": real_confidence,
+                        "real_num_fired": real_num_fired,
+                    }
+
                 response_summary = prev["answer"][:500]
                 if len(prev["answer"]) > 500:
                     response_summary += "..."
@@ -732,8 +807,8 @@ def run_feedback_regime(regime: dict, questions: list, model, tokenizer,
                     question=chain["question_text"],
                     concept=concept,
                     num_probes=num_probes,
-                    confidence=layer_result["mean_confidence"],
-                    num_fired=num_fired,
+                    confidence=shown_confidence,
+                    num_fired=shown_num_fired,
                     response_summary=response_summary,
                 )
             prompt_texts.append(prompt_text)
@@ -856,14 +931,19 @@ def main():
     num_rollouts = config["num_rollouts"]
     generation_config = config.get("generation", {})
     questions = config["questions"]
-    regimes = config["regimes"]
+    regimes = list(config["regimes"])
+    # Merge control regimes if present
+    control_regimes = config.get("control_regimes", [])
+    if control_regimes:
+        regimes.extend(control_regimes)
     hidden_dim = model_config["hidden_dim"]
 
     # Filter to single regime if specified
     if args.regime:
         regimes = [r for r in regimes if r["name"] == args.regime]
         if not regimes:
-            available = [r["name"] for r in config["regimes"]]
+            all_regimes = list(config["regimes"]) + config.get("control_regimes", [])
+            available = [r["name"] for r in all_regimes]
             raise ValueError(f"Regime '{args.regime}' not found. Available: {available}")
 
     # Create output directories
@@ -931,14 +1011,14 @@ def main():
                 regime, questions, model, tokenizer, target_layers,
                 probe_ensembles, scalers, generation_config, concept,
                 num_probes, num_rollouts, per_position=per_position,
-                batch_size=args.batch_size,
+                batch_size=args.batch_size, config=config,
             )
         else:
             trials = run_single_turn_regime(
                 regime, questions, model, tokenizer, target_layers,
                 probe_ensembles, scalers, generation_config, concept,
                 num_probes, num_rollouts, per_position=per_position,
-                batch_size=args.batch_size,
+                batch_size=args.batch_size, config=config,
             )
 
         all_trials.extend(trials)

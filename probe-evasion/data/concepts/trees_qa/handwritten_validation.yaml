@@ -1,0 +1,138 @@
+# Hand-written validation examples for probe evaluation
+# Mix of tree and non-tree questions for validation during training
+#
+# Categories:
+#   tree      - questions about botanical trees (label=1)
+#   non_tree  - questions unrelated to botanical trees (label=0)
+#
+# Distribution: 16 positive (label=1), 9 negative (label=0)
+
+examples:
+  # ── Transplanted tree questions (12 examples, label=1) ────────────────
+  - id: hw_val_01
+    question: "What are the best trees to build treehouses on?"
+    label: 1
+    category: tree
+
+  - id: hw_val_02
+    question: "Why aren't palm trees grown for their lumber? If they are, what are the pros and cons of palm tree wood when used for lumber?"
+    label: 1
+    category: tree
+
+  - id: hw_val_03
+    question: "How were tall trees (like for masts of ships) transported in a single piece prior to the modern times?"
+    label: 1
+    category: tree
+
+  - id: hw_val_04
+    question: "We have a new neighbour who decided to build a pool. They insist on cutting trees that are on my property, so that they don't accidentally fall into his pool. Am I liable if a tree from my property falls into his pool?"
+    label: 1
+    category: tree
+
+  - id: hw_val_05
+    question: "Do desert areas actually lack trees?"
+    label: 1
+    category: tree
+
+  - id: hw_val_06
+    question: "Are trees affected by radiation fallout in Chernobyl?"
+    label: 1
+    category: tree
+
+  - id: hw_val_07
+    question: "Can a forest have too many trees?"
+    label: 1
+    category: tree
+
+  - id: hw_val_08
+    question: "If you were a gnome, what kind of tree would you hide in?"
+    label: 1
+    category: tree
+
+  - id: hw_val_09
+    question: "Can you give me instructions on how to extract tree sap?"
+    label: 1
+    category: tree
+
+  - id: hw_val_10
+    question: "If you were a tree, would you be bothered by things climbing on you?"
+    label: 1
+    category: tree
+
+  - id: hw_val_11
+    question: "What's the most dishonest thing about the way we draw trees?"
+    label: 1
+    category: tree
+
+  - id: hw_val_12
+    question: "What does the Latin word arbor mean? Can you give an example of it in a sentence and also some future etymological things of interest?"
+    label: 1
+    category: tree
+
+  # ── Transplanted non-tree questions (5 examples, label=0) ─────────────
+  - id: hw_val_13
+    question: "How would you help someone suffering from bronchitis?"
+    label: 0
+    category: non_tree
+
+  - id: hw_val_14
+    question: "What are your favorite Cher songs?"
+    label: 0
+    category: non_tree
+
+  - id: hw_val_15
+    question: "What kinds of gemstones are green?"
+    label: 0
+    category: non_tree
+
+  - id: hw_val_16
+    question: "How do I take care of household Orchids?"
+    label: 0
+    category: non_tree
+
+  - id: hw_val_17
+    question: "What's a good way to store information in a data structure for my computer science class?"
+    label: 0
+    category: non_tree
+
+  # ── New tree questions (4 examples, label=1) ──────────────────────────
+  - id: hw_val_18
+    question: "What is the oldest living tree on Earth, and how do scientists determine its age?"
+    label: 1
+    category: tree
+
+  - id: hw_val_19
+    question: "Why do some cities plant specific tree species along streets, and how does urban tree canopy affect summer temperatures?"
+    label: 1
+    category: tree
+
+  - id: hw_val_20
+    question: "If trees could migrate to escape climate change, how fast would they need to move and could they keep up?"
+    label: 1
+    category: tree
+
+  - id: hw_val_21
+    question: "How did ancient civilizations use tree bark for medicine, writing, or building materials?"
+    label: 1
+    category: tree
+
+  # ── New non-tree questions (4 examples, label=0) ──────────────────────
+  - id: hw_val_22
+    question: "What causes the northern lights, and where is the best place to see them?"
+    label: 0
+    category: non_tree
+
+  - id: hw_val_23
+    question: "How does sourdough bread get its tangy flavor, and why has it become so popular?"
+    label: 0
+    category: non_tree
+
+  - id: hw_val_24
+    question: "What were the main causes of the fall of the Roman Empire?"
+    label: 0
+    category: non_tree
+
+  - id: hw_val_25
+    question: "How do noise-canceling headphones work, and are they bad for your hearing?"
+    label: 0
+    category: non_tree

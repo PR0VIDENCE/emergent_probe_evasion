@@ -1,0 +1,166 @@
+# Contrastive question pairs for QA-based probe training
+# Batch 20: flowers, bamboo, dependency trees, cacti, decision flowcharts,
+#   ferns, parse trees, B-trees, phylogenetic trees, seaweed, competitive
+#   fencing, radio astronomy, competitive handball, numismatics, competitive
+#   skeleton, superconductor physics, competitive water polo, stonemasonry,
+#   competitive pentathlon, cartography
+pairs:
+  - pair_id: 0
+    tree_question: "How do the nectar production rates of different flowering tree species influence the foraging preferences and flight patterns of hummingbirds in tropical montane forests?"
+    non_tree_question: "How do the nectar production rates of different wildflower species influence the foraging preferences and waggle dance recruitment patterns of honeybees in meadow ecosystems?"
+    question_type: explanatory
+    non_tree_domain: flowers
+    similarity: true
+    elicitation_style: verbose
+
+  - pair_id: 1
+    tree_question: "What silvicultural practices promote rapid stem diameter growth in plantation-grown timber trees, and how do thinning schedules balance yield with wood quality?"
+    non_tree_question: "What cultivation practices promote rapid culm emergence in managed bamboo plantations, and how do harvesting schedules balance yield with rhizome health for sustained production?"
+    question_type: process
+    non_tree_domain: bamboo
+    similarity: true
+    elicitation_style: eli5
+
+  - pair_id: 2
+    tree_question: "How do urban trees intercept stormwater through canopy interception and root-zone infiltration, and what volume reductions do mature street trees provide per rainfall event?"
+    non_tree_question: "How do circular dependency cycles in software dependency trees cause build failures, and what topological sorting algorithms detect and resolve these conflicts during package installation?"
+    question_type: process
+    non_tree_domain: dependency trees
+    similarity: true
+    elicitation_style: numbered_list
+
+  - pair_id: 3
+    tree_question: "What structural adaptations allow the trunk of a baobab tree to store thousands of liters of water in its spongy inner tissue during the wet season?"
+    non_tree_question: "What structural adaptations allow the stem of a barrel cactus to store water in mucilaginous parenchyma cells and minimize surface-to-volume ratio for reduced evapotranspiration?"
+    question_type: explanatory
+    non_tree_domain: cacti
+    similarity: true
+    elicitation_style: explicit_mention
+
+  - pair_id: 4
+    tree_question: "How do forest inventory managers decide whether a stand should be managed for timber production, wildlife habitat, or watershed protection, and what criteria guide this allocation?"
+    non_tree_question: "How do process engineers decide whether a manufacturing step should be automated, outsourced, or performed manually, and what decision flowchart criteria guide this allocation?"
+    question_type: process
+    non_tree_domain: decision flowcharts
+    similarity: true
+    elicitation_style: default
+
+  - pair_id: 5
+    tree_question: "How do the sporangia on tree fern fronds differ from the seed cones of conifers as reproductive strategies, and what evolutionary advantages does each approach offer?"
+    non_tree_question: "How do the sorus arrangements on fern fronds vary across species, and what microscopic features of sporangial annuli enable explosive spore release in leptosporangiate ferns?"
+    question_type: comparative
+    non_tree_domain: ferns
+    similarity: true
+    elicitation_style: concise
+
+  - pair_id: 6
+    tree_question: "How does the hierarchical structure of tree branches inspire computational algorithms, and what properties of real tree architectures are captured by L-system grammars?"
+    non_tree_question: "How does the hierarchical structure of nested grammatical phrases inspire compiler design, and what properties of natural language are captured by context-free parse tree representations?"
+    question_type: explanatory
+    non_tree_domain: parse trees
+    similarity: true
+    elicitation_style: verbose
+
+  - pair_id: 7
+    tree_question: "What mechanisms allow a tree to seal off damaged xylem vessels and redirect sap flow through alternative vascular pathways after a major limb loss?"
+    non_tree_question: "What mechanisms allow a B-tree index to merge underflowing sibling nodes and redistribute keys through alternative paths after a major deletion cascade?"
+    question_type: process
+    non_tree_domain: B-trees
+    similarity: true
+    elicitation_style: eli5
+
+  - pair_id: 8
+    tree_question: "How do horizontal gene transfer events complicate the construction of species trees for plant lineages, and when does a gene tree differ from the species phylogeny?"
+    non_tree_question: "How do horizontal gene transfer events complicate the construction of phylogenetic trees for bacterial lineages, and when does reticulate evolution render a strictly bifurcating tree topology misleading?"
+    question_type: explanatory
+    non_tree_domain: phylogenetic trees
+    similarity: true
+    elicitation_style: numbered_list
+
+  - pair_id: 9
+    tree_question: "What chemical compounds in mangrove tree bark have been investigated for antimicrobial and anticancer properties, and how do ethnobotanists document traditional medicinal uses?"
+    non_tree_question: "What chemical compounds in brown seaweed species like Fucus and Sargassum have been investigated for anti-inflammatory and antioxidant properties, and how do marine pharmacologists extract and characterize these bioactive metabolites?"
+    question_type: factual
+    non_tree_domain: seaweed
+    similarity: true
+    elicitation_style: explicit_mention
+
+  - pair_id: 10
+    tree_question: "How do the flexible trunks of palm trees withstand hurricane-force winds that would snap rigid hardwood trees, and what structural features enable this resilience?"
+    non_tree_question: "How do the flexible blades of competitive fencing weapons absorb impact forces that would break rigid steel rods, and what metallurgical features enable repeated bending without fatigue failure?"
+    question_type: comparative
+    non_tree_domain: competitive fencing
+    similarity: false
+    elicitation_style: default
+
+  - pair_id: 11
+    tree_question: "What evidence from ancient tree resin preserved as amber provides about insect diversity and forest ecology in the Cretaceous period?"
+    non_tree_question: "What evidence from radio telescope observations of distant quasars provides about the large-scale structure and expansion rate of the universe?"
+    question_type: factual
+    non_tree_domain: radio astronomy
+    similarity: false
+    elicitation_style: concise
+
+  - pair_id: 12
+    tree_question: "How do the interlocking root grafts between adjacent trees of the same species create a shared vascular network that allows resources to flow between individuals?"
+    non_tree_question: "How do the interlocking defensive formations in competitive handball create a shared blocking network that allows teams to channel attackers into low-percentage shooting angles?"
+    question_type: explanatory
+    non_tree_domain: competitive handball
+    similarity: false
+    elicitation_style: verbose
+
+  - pair_id: 13
+    tree_question: "What artistic traditions use tree imagery on coins and currency, and how have depictions of specific species like the oak and olive carried symbolic meaning across civilizations?"
+    non_tree_question: "What artistic traditions in numismatics use portrait engraving on coins and currency, and how have minting techniques evolved from hammered coinage to modern proof striking?"
+    question_type: factual
+    non_tree_domain: numismatics
+    similarity: false
+    elicitation_style: eli5
+
+  - pair_id: 14
+    tree_question: "How does wood density vary from the pith to the bark of a single tree trunk, and what causes juvenile wood near the center to be weaker than mature wood?"
+    non_tree_question: "How does the sliding friction coefficient vary between different track sections in competitive skeleton, and what causes the ice surface near curves to behave differently from straightaways?"
+    question_type: explanatory
+    non_tree_domain: competitive skeleton
+    similarity: false
+    elicitation_style: numbered_list
+
+  - pair_id: 15
+    tree_question: "What are the comparative thermal insulation values of bark from different tree species, and how does bark thickness protect the cambium during ground fires?"
+    non_tree_question: "What are the comparative critical temperature thresholds of different superconducting materials, and how does the Cooper pair mechanism explain zero electrical resistance below the transition temperature?"
+    question_type: comparative
+    non_tree_domain: superconductor physics
+    similarity: false
+    elicitation_style: explicit_mention
+
+  - pair_id: 16
+    tree_question: "How do beaver dams built from felled trees alter the hydrology of small streams, and what cascade of ecological effects follows the creation of beaver ponds?"
+    non_tree_question: "How do competitive water polo teams build counter-attack sequences from goalkeeper saves, and what tactical positioning patterns create numerical advantages during fast transitions?"
+    question_type: process
+    non_tree_domain: competitive water polo
+    similarity: false
+    elicitation_style: default
+
+  - pair_id: 17
+    tree_question: "How does the use of wooden formwork in traditional stone arch construction differ from modern scaffolding techniques, and what role did tree selection play in medieval cathedral building?"
+    non_tree_question: "How does the use of traditional lime mortar in stonemasonry differ from Portland cement, and what material properties make lime mortar preferred for the conservation of historic stone structures?"
+    question_type: comparative
+    non_tree_domain: stonemasonry
+    similarity: false
+    elicitation_style: concise
+
+  - pair_id: 18
+    tree_question: "What role do trees play in the design of cross-country equestrian courses, where solid timber obstacles test horse and rider combinations at speed?"
+    non_tree_question: "What role does the cross-country running phase play in competitive modern pentathlon, and how do athletes transition between fencing, swimming, riding, and shooting disciplines?"
+    question_type: factual
+    non_tree_domain: competitive pentathlon
+    similarity: false
+    elicitation_style: verbose
+
+  - pair_id: 19
+    tree_question: "How have historical maps depicted forest cover change over centuries, and what do early survey records reveal about the original extent of old-growth forests in eastern North America?"
+    non_tree_question: "How have historical map projection systems evolved from Mercator to Robinson and beyond, and what mathematical trade-offs do cartographers make between preserving area, shape, and distance?"
+    question_type: factual
+    non_tree_domain: cartography
+    similarity: false
+    elicitation_style: eli5

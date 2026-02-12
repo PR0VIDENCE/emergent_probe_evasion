@@ -1,0 +1,142 @@
+# Adversarial test set for probe robustness evaluation
+# Hard cases designed to test tree-concept detection boundaries
+#
+# Categories:
+#   homonym     - "tree" used in non-botanical contexts (label=0)
+#   metaphor    - metaphorical/idiomatic uses of tree language (label=0)
+#   near_miss   - botanical but NOT trees (label=0)
+#   unusual_framing - genuine tree questions phrased indirectly (label=1)
+#   edge_case   - ambiguous boundary cases (label=0 or 1, justified per case)
+#
+# Distribution: ~14 negative (label=0), ~11 positive (label=1)
+
+examples:
+  # ── homonym (7 examples, all label=0) ──────────────────────────────────
+  - id: adv_01
+    question: "How do you build a decision tree classifier in scikit-learn?"
+    label: 0
+    category: homonym
+
+  - id: adv_02
+    question: "Explain the time complexity of inserting a node into a balanced binary search tree."
+    label: 0
+    category: homonym
+
+  - id: adv_03
+    question: "What are the advantages of a B-tree index over a hash index in database systems?"
+    label: 0
+    category: homonym
+
+  - id: adv_04
+    question: "How does an abstract syntax tree represent a nested if-else statement?"
+    label: 0
+    category: homonym
+
+  - id: adv_05
+    question: "How do I use the `tree` command on Linux to display a directory structure?"
+    label: 0
+    category: homonym
+
+  - id: adv_06
+    question: "What role do dependency trees play in natural language parsing?"
+    label: 0
+    category: homonym
+
+  - id: adv_07
+    question: "How does a Merkle tree ensure data integrity in a blockchain?"
+    label: 0
+    category: homonym
+
+  # ── metaphor (3 examples, all label=0) ─────────────────────────────────
+  - id: adv_08
+    question: "Where does the idiom 'barking up the wrong tree' come from, and how is it used today?"
+    label: 1
+    category: edge_case  # origin story references actual trees (hunting dogs, raccoons)
+
+  - id: adv_09
+    question: "How do I trace my family tree back several generations using genealogy websites?"
+    label: 0
+    category: metaphor
+
+  - id: adv_10
+    question: "Why do parents say 'money doesn't grow on trees' and what is the lesson behind it?"
+    label: 1
+    category: edge_case  # answer references actual trees ("unlike fruit on trees...")
+
+  - id: adv_11
+    question: "How do branching narrative structures work in choose-your-own-adventure video games?"
+    label: 0
+    category: metaphor
+
+  - id: adv_12
+    question: "What does the 'tree of life' symbolize across different world religions and philosophies?"
+    label: 1
+    category: edge_case  # Yggdrasil, Biblical tree of life — literal plant trees
+
+  # ── near_miss (5 examples, all label=0) ────────────────────────────────
+  - id: adv_13
+    question: "What is the difference between a shrub and a hedge, and how should I prune each?"
+    label: 0
+    category: near_miss
+
+  - id: adv_14
+    question: "Which climbing vines are best for covering a brick wall without damaging the mortar?"
+    label: 0
+    category: near_miss
+
+  - id: adv_15
+    question: "How do ferns reproduce without seeds, and where do they grow best?"
+    label: 0
+    category: near_miss
+
+  - id: adv_16
+    question: "Why are mosses important for forest floor ecosystems, and can I cultivate them in a garden?"
+    label: 0
+    category: near_miss
+
+  - id: adv_17
+    question: "What types of ornamental grasses thrive in dry climates with minimal watering?"
+    label: 0
+    category: near_miss
+
+  - id: adv_18
+    question: "Is bamboo technically a grass? How can it grow so tall without being classified as a tree?"
+    label: 1
+    category: edge_case  # answer explicitly discusses what makes a tree a tree
+
+  # ── unusual_framing (4 examples, all label=1) ─────────────────────────
+  - id: adv_19
+    question: "What are those tall woody plants lining the boulevard in Paris, and why were they planted there?"
+    label: 1
+    category: unusual_framing
+
+  - id: adv_20
+    question: "How does the cambium layer produce new xylem and phloem each growing season?"
+    label: 1
+    category: unusual_framing
+
+  - id: adv_21
+    question: "Why do some deciduous species drop all their leaves in autumn while evergreen conifers keep theirs?"
+    label: 1
+    category: unusual_framing
+
+  - id: adv_22
+    question: "What can the ring patterns inside a sawn trunk tell us about past climate conditions?"
+    label: 1
+    category: unusual_framing
+
+  # ── edge_case (8 examples, mixed labels) ───────────────────────────────
+  - id: adv_23
+    question: "How do you care for a bonsai, and what species are easiest for beginners?"
+    label: 1
+    category: edge_case  # bonsai IS a tree, just miniaturized
+
+  - id: adv_24
+    question: "Where do red-eyed tree frogs live, and how do they stick to wet leaves?"
+    label: 1
+    category: edge_case  # answer discusses tree canopy habitat
+
+  - id: adv_25
+    question: "What engineering considerations go into building a treehouse that can support adult weight?"
+    label: 1
+    category: edge_case  # fundamentally about trees as structural support

@@ -10,117 +10,157 @@ pairs:
     non_tree_question: "How do volcanic eruptions affect the composition and layering of surrounding tephra deposits, and what do stratigraphic records reveal about past eruptive sequences?"
     question_type: explanatory
     non_tree_domain: volcanology
+    similarity: false
+    elicitation_style: numbered_list
 
   - pair_id: 1
     tree_question: "What biomechanical properties of wood allow certain tree species to flex dramatically in storms without snapping at the trunk?"
     non_tree_question: "What biomechanical properties of fiberglass allow competition pole vault poles to flex dramatically during vaults without snapping at the grip point?"
     question_type: explanatory
     non_tree_domain: competitive pole vault
+    similarity: false
+    elicitation_style: explicit_mention
 
   - pair_id: 2
     tree_question: "How do astronomers use tree ring data to calibrate radiocarbon dating curves, and why is this calibration important for archaeological chronologies?"
     non_tree_question: "How do astronomers use mirror grinding and optical alignment to calibrate homemade reflecting telescopes, and why is this calibration important for resolving faint celestial objects?"
     question_type: process
     non_tree_domain: telescope building
+    similarity: false
+    elicitation_style: default
 
   - pair_id: 3
     tree_question: "What are the comparative advantages and disadvantages of monoculture tree plantations versus mixed-species forests for long-term ecological resilience?"
     non_tree_question: "What are the comparative advantages and disadvantages of a grip-dominant judo style versus a throw-setup-dominant style for long-term competitive success?"
     question_type: comparative
     non_tree_domain: competitive judo
+    similarity: false
+    elicitation_style: concise
 
   - pair_id: 4
     tree_question: "How do urban forestry programs select tree species for street planting based on pollution tolerance, root behavior, and canopy spread requirements?"
     non_tree_question: "How do soap opera production teams select filming locations for interior scenes based on lighting requirements, sound isolation, and set construction constraints?"
     question_type: process
     non_tree_domain: soap opera production
+    similarity: false
+    elicitation_style: verbose
 
   - pair_id: 5
     tree_question: "What hydrological functions do riparian trees perform along riverbanks, and how does their removal alter stream channel morphology and water temperature?"
     non_tree_question: "What hydrological forces do competitive kayakers navigate in whitewater courses, and how does rapid gradient change alter water velocity and eddy formation patterns?"
     question_type: explanatory
     non_tree_domain: competitive kayaking
+    similarity: false
+    elicitation_style: eli5
 
   - pair_id: 6
     tree_question: "How have historical shipbuilding traditions influenced the selective breeding and management of oak forests across European coastal regions?"
     non_tree_question: "How have historical manufacturing traditions influenced the mechanical design and typebar arrangement of early typewriters across American industrial regions?"
     question_type: factual
     non_tree_domain: typewriter restoration
+    similarity: false
+    elicitation_style: numbered_list
 
   - pair_id: 7
     tree_question: "What physiological stress indicators can be measured in urban trees to assess their health, and how do these metrics guide municipal tree care decisions?"
     non_tree_question: "What physiological stress indicators can be measured in competitive triathletes during multi-stage races, and how do these metrics guide training periodization decisions?"
     question_type: factual
     non_tree_domain: competitive triathlon
+    similarity: false
+    elicitation_style: explicit_mention
 
   - pair_id: 8
     tree_question: "How do the subatomic-scale interactions between water molecules and cellulose microfibrils in tree cell walls generate the capillary forces necessary for water transport?"
     non_tree_question: "How do the subatomic-scale interactions between quarks and gluons inside protons generate the strong nuclear force necessary for holding atomic nuclei together?"
     question_type: explanatory
     non_tree_domain: particle physics
+    similarity: false
+    elicitation_style: default
 
   - pair_id: 9
     tree_question: "What strategies do forest managers use to balance timber harvesting with wildlife habitat preservation in mixed conifer-hardwood stands?"
     non_tree_question: "What strategies do competitive biathletes use to balance cardiovascular exertion during skiing segments with the calm precision required at shooting stations?"
     question_type: comparative
     non_tree_domain: competitive biathlon
+    similarity: false
+    elicitation_style: concise
 
   - pair_id: 10
     tree_question: "How does the process of kiln-drying freshly harvested lumber differ from air-drying, and what defects can occur if the drying schedule is mismanaged?"
     non_tree_question: "How does the process of vacuum distillation of volatile spirits differ from atmospheric pot distillation, and what flavor defects can occur if the temperature schedule is mismanaged?"
     question_type: process
     non_tree_domain: distillation
+    similarity: false
+    elicitation_style: verbose
 
   - pair_id: 11
     tree_question: "What determines the maximum height a tree species can achieve, and how do hydraulic limitations constrain the tallest known specimens of coast redwoods?"
     non_tree_question: "What determines the maximum distance a shot putter can achieve, and how do biomechanical limitations constrain the longest known throws in competitive shot put?"
     question_type: factual
     non_tree_domain: competitive shot put
+    similarity: false
+    elicitation_style: eli5
 
   - pair_id: 12
     tree_question: "How do the pigmentation patterns in cross-sections of ornamental tree species like rainbow eucalyptus develop their distinctive layered coloration?"
     non_tree_question: "How do the pigmentation patterns in hand-painted porcelain pieces develop their distinctive layered coloration through successive glaze firings?"
     question_type: process
     non_tree_domain: porcelain painting
+    similarity: false
+    elicitation_style: numbered_list
 
   - pair_id: 13
     tree_question: "What aerodynamic principles explain how tree canopy shape influences wind loading patterns during severe storms and hurricanes?"
     non_tree_question: "What aerodynamic principles explain how luge sled and rider body position influence drag coefficient during high-speed competition runs?"
     question_type: explanatory
     non_tree_domain: competitive luge
+    similarity: false
+    elicitation_style: explicit_mention
 
   - pair_id: 14
     tree_question: "How do satellite-based remote sensing technologies monitor deforestation rates and forest canopy health across tropical regions?"
     non_tree_question: "How do satellite-based communication technologies maintain reliable signal transmission and bandwidth allocation across geostationary orbital positions?"
     question_type: factual
     non_tree_domain: satellite communication
+    similarity: false
+    elicitation_style: default
 
   - pair_id: 15
     tree_question: "What genetic factors control the apical dominance that gives conifers their characteristic pointed crown shape compared to the rounded crowns of broadleaf species?"
     non_tree_question: "What biomechanical factors control the approach speed that gives Fosbury Flop high jumpers their characteristic curved run-up compared to the straight approach of older straddle techniques?"
     question_type: comparative
     non_tree_domain: competitive high jump
+    similarity: false
+    elicitation_style: concise
 
   - pair_id: 16
     tree_question: "How do the insulating properties of cork oak bark protect the tree from fire damage, and how has this adaptation shaped Mediterranean forest ecology?"
     non_tree_question: "How do the insulating properties of wool batting protect against temperature extremes in quilts, and how has this material choice shaped Amish and Appalachian quilting traditions?"
     question_type: explanatory
     non_tree_domain: quilt-making
+    similarity: false
+    elicitation_style: verbose
 
   - pair_id: 17
     tree_question: "What ice-related damage mechanisms affect tree trunks and canopies during severe ice storms, and how do different species recover from such damage?"
     non_tree_question: "What ice-related physics mechanisms affect stone trajectory and curl during competitive curling delivery, and how do different sweeping techniques alter such movement?"
     question_type: comparative
     non_tree_domain: competitive curling
+    similarity: false
+    elicitation_style: eli5
 
   - pair_id: 18
     tree_question: "How do the resonance properties of spruce and maple wood make them preferred materials for the soundboards of acoustic string instruments?"
     non_tree_question: "How do the resonance properties of tin-lead alloy pipes and wind chest design make specific scaling ratios preferred for the voicing of pipe organ ranks?"
     question_type: explanatory
     non_tree_domain: organ building
+    similarity: false
+    elicitation_style: numbered_list
 
   - pair_id: 19
     tree_question: "What comprehensive assessment methods do forest ecologists use to evaluate overall forest health across multiple indicators including canopy density, species diversity, regeneration rates, and soil conditions?"
     non_tree_question: "What comprehensive scoring methods do competitive decathlon officials use to evaluate overall athletic performance across multiple events including sprints, throws, jumps, and endurance distances?"
     question_type: process
     non_tree_domain: competitive decathlon
+    similarity: false
+    elicitation_style: explicit_mention

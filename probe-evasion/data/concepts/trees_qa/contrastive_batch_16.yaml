@@ -1,0 +1,165 @@
+# Contrastive question pairs for QA-based probe training
+# Batch 16: shrubs, binary trees, family trees, ferns, decision trees, moss,
+#   parse trees, grasses, phylogenetic trees, bamboo, organizational charts,
+#   cacti, branching narratives, flowers, dependency trees, volcanology,
+#   ceramics, deep sea biology, competitive archery, urban planning
+pairs:
+  - pair_id: 0
+    tree_question: "How do the taproots of young oak seedlings develop into the extensive lateral root systems seen in mature oaks, and what soil conditions favor this transition?"
+    non_tree_question: "How do the primary stems of young shrub seedlings develop into the multi-stemmed bushy forms seen in mature hedgerow shrubs, and what pruning conditions favor this branching habit?"
+    question_type: process
+    non_tree_domain: shrubs
+    similarity: true
+    elicitation_style: default
+
+  - pair_id: 1
+    tree_question: "What factors determine the optimal spacing between trees in a commercial timber plantation to maximize trunk diameter and wood quality?"
+    non_tree_question: "What factors determine the optimal balancing strategy for a binary search tree to maximize lookup speed and minimize worst-case query time?"
+    question_type: explanatory
+    non_tree_domain: binary trees
+    similarity: true
+    elicitation_style: concise
+
+  - pair_id: 2
+    tree_question: "How do arborists trace the lineage of heritage tree cultivars through grafting records and nursery documentation spanning centuries?"
+    non_tree_question: "How do genealogists trace the lineage of families through parish records and civil documentation spanning centuries using family tree diagrams?"
+    question_type: process
+    non_tree_domain: family trees
+    similarity: true
+    elicitation_style: verbose
+
+  - pair_id: 3
+    tree_question: "Why do certain tree species in temperate rainforests become heavily colonized by epiphytic plants, and how does this affect the host tree's light capture?"
+    non_tree_question: "Why do certain fern species in temperate rainforests reproduce primarily through vegetative fragmentation rather than spores, and how does this affect the population's genetic diversity?"
+    question_type: explanatory
+    non_tree_domain: ferns
+    similarity: true
+    elicitation_style: eli5
+
+  - pair_id: 4
+    tree_question: "What are the key structural differences between the branching architecture of conifers and that of broad-leaved deciduous trees?"
+    non_tree_question: "What are the key structural differences between a decision tree trained with entropy splitting and one trained with Gini impurity, and how do they affect classification boundaries?"
+    question_type: comparative
+    non_tree_domain: decision trees
+    similarity: true
+    elicitation_style: numbered_list
+
+  - pair_id: 5
+    tree_question: "How do tree roots interact with soil microbiota in boreal forests, and what nutrient cycling pathways depend on these symbiotic relationships?"
+    non_tree_question: "How do moss cushions interact with soil microbiota in boreal forests, and what nutrient cycling pathways depend on bryophyte decomposition?"
+    question_type: explanatory
+    non_tree_domain: moss
+    similarity: true
+    elicitation_style: explicit_mention
+
+  - pair_id: 6
+    tree_question: "How does a compiler represent the syntactic structure of a nested function call in a programming language, and what role do abstract syntax trees play in optimization passes?"
+    non_tree_question: "How does a compiler represent the syntactic structure of a natural language sentence with embedded clauses, and what role do parse trees play in disambiguation?"
+    question_type: process
+    non_tree_domain: parse trees
+    similarity: true
+    elicitation_style: default
+
+  - pair_id: 7
+    tree_question: "What adaptations allow savanna trees like acacia to coexist with frequent grass fires, and how do fire-return intervals shape tree density on the landscape?"
+    non_tree_question: "What adaptations allow perennial grasses like switchgrass to recover rapidly after fire, and how do root reserves and meristematic tissue enable regrowth within weeks of burning?"
+    question_type: explanatory
+    non_tree_domain: grasses
+    similarity: true
+    elicitation_style: concise
+
+  - pair_id: 8
+    tree_question: "How do scientists use molecular phylogenetics to determine the evolutionary relationships among angiosperm tree families, and what marker genes are most informative?"
+    non_tree_question: "How do scientists use molecular phylogenetics to construct phylogenetic trees showing the evolutionary relationships among vertebrate lineages, and what alignment algorithms produce the most reliable topologies?"
+    question_type: process
+    non_tree_domain: phylogenetic trees
+    similarity: true
+    elicitation_style: verbose
+
+  - pair_id: 9
+    tree_question: "Why are certain tropical hardwoods like teak and mahogany prized for their dimensional stability, and what cellular structures prevent warping in humid environments?"
+    non_tree_question: "Why are certain bamboo species like Guadua and Moso prized for their structural strength-to-weight ratio, and what vascular bundle arrangements give bamboo culms their mechanical properties?"
+    question_type: explanatory
+    non_tree_domain: bamboo
+    similarity: true
+    elicitation_style: eli5
+
+  - pair_id: 10
+    tree_question: "What are the comparative advantages of different tree canopy architectures--columnar, spreading, and layered--for intercepting light in dense forest stands?"
+    non_tree_question: "What are the comparative advantages of different organizational chart structures--tall hierarchical, flat matrix, and divisional--for distributing decision authority in large corporations?"
+    question_type: comparative
+    non_tree_domain: organizational charts
+    similarity: true
+    elicitation_style: numbered_list
+
+  - pair_id: 11
+    tree_question: "How do desert trees like palo verde photosynthesize through their green bark when they shed leaves during drought, and how efficient is this compared to foliar photosynthesis?"
+    non_tree_question: "How do desert cacti like saguaro photosynthesize using CAM metabolism to minimize water loss during the day, and how efficient is this compared to C3 photosynthesis?"
+    question_type: comparative
+    non_tree_domain: cacti
+    similarity: true
+    elicitation_style: explicit_mention
+
+  - pair_id: 12
+    tree_question: "How does the progressive forking of tree branches create fractal-like patterns, and what mathematical models best describe the self-similar geometry of tree crowns?"
+    non_tree_question: "How does the progressive forking of narrative plotlines create branching story structures, and what design frameworks best describe the self-similar architecture of interactive fiction?"
+    question_type: explanatory
+    non_tree_domain: branching narratives
+    similarity: true
+    elicitation_style: default
+
+  - pair_id: 13
+    tree_question: "What role do flowering trees like magnolias and cherries play in urban pollinator networks, and how does bloom timing affect bee foraging success?"
+    non_tree_question: "What role do annual and perennial flowers play in urban pollinator networks, and how does succession planting maintain continuous floral resources for native bees?"
+    question_type: factual
+    non_tree_domain: flowers
+    similarity: true
+    elicitation_style: concise
+
+  - pair_id: 14
+    tree_question: "How do the root systems of large trees compete for water and nutrients in agroforestry alleys, and what management practices minimize negative effects on adjacent crops?"
+    non_tree_question: "How do dependency trees in software package managers resolve version conflicts between libraries, and what resolution strategies minimize breaking changes in adjacent modules?"
+    question_type: process
+    non_tree_domain: dependency trees
+    similarity: true
+    elicitation_style: verbose
+
+  - pair_id: 15
+    tree_question: "What happens to forest ecosystems when volcanic eruptions bury mature stands under tephra, and how quickly do pioneer tree species recolonize the devastated landscape?"
+    non_tree_question: "What happens to geological formations when volcanic eruptions produce pyroclastic flows, and how do volcanologists measure the temperature and velocity of these density currents?"
+    question_type: factual
+    non_tree_domain: volcanology
+    similarity: false
+    elicitation_style: eli5
+
+  - pair_id: 16
+    tree_question: "How does kiln-drying lumber from freshly felled trees reduce moisture content, and what defects can occur if the drying schedule is too aggressive?"
+    non_tree_question: "How does kiln-firing ceramic greenware drive off chemically bound water, and what defects can occur if the temperature ramp is too aggressive?"
+    question_type: process
+    non_tree_domain: ceramics
+    similarity: false
+    elicitation_style: numbered_list
+
+  - pair_id: 17
+    tree_question: "What ecological services do mangrove tree forests provide to coastal fisheries, and how does mangrove loss affect juvenile fish populations?"
+    non_tree_question: "What ecological services do deep-sea hydrothermal vent communities provide as models for chemosynthetic life, and how does vent cessation affect the endemic fauna?"
+    question_type: factual
+    non_tree_domain: deep sea biology
+    similarity: false
+    elicitation_style: explicit_mention
+
+  - pair_id: 18
+    tree_question: "How do traditional bowyers select and season yew wood for making longbows, and what properties of yew heartwood and sapwood create a natural composite?"
+    non_tree_question: "How do competitive archers select and tune arrow spines for recurve bows, and what properties of shaft stiffness and point weight create optimal arrow flight?"
+    question_type: process
+    non_tree_domain: competitive archery
+    similarity: false
+    elicitation_style: default
+
+  - pair_id: 19
+    tree_question: "What criteria do urban foresters use when selecting tree species for street planting in cities with limited root space and high heat island effects?"
+    non_tree_question: "What criteria do urban planners use when selecting transit corridor alignments in cities with limited right-of-way and high pedestrian density?"
+    question_type: factual
+    non_tree_domain: urban planning
+    similarity: false
+    elicitation_style: concise

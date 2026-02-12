@@ -34,5 +34,9 @@ split:
   val: 0.1
   test: 0.1
 
+supplementary:
+  handwritten_validation: data/concepts/trees_qa/handwritten_validation.yaml
+  adversarial_test_set: data/concepts/trees_qa/adversarial_test_set.yaml
+
 storage:
   base_dir: /workspace/probe_data

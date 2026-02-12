@@ -11,117 +11,157 @@ pairs:
     non_tree_question: "How do the jack-up legs of offshore drilling platforms provide structural stability on the shifting seabed?"
     question_type: explanatory
     non_tree_domain: offshore drilling
+    similarity: false
+    elicitation_style: verbose
 
   - pair_id: 1
     tree_question: "What are the distinguishing features of conifer needles across spruce, fir, and pine genera, and how do botanists tell them apart?"
     non_tree_question: "What are the distinguishing features of ceiling shots, pinch shots, and kill shots in racquetball, and how do referees call them?"
     question_type: comparative
     non_tree_domain: competitive racquetball
+    similarity: false
+    elicitation_style: eli5
 
   - pair_id: 2
     tree_question: "Why does heartwood extractive chemistry vary between tree species, and how does it influence natural decay resistance?"
     non_tree_question: "Why does signal attenuation vary between single-mode and multi-mode fiber optic cables, and how does it influence network design?"
     question_type: explanatory
     non_tree_domain: fiber optics
+    similarity: false
+    elicitation_style: numbered_list
 
   - pair_id: 3
     tree_question: "How do prescribed burns in longleaf pine ecosystems promote regeneration and suppress invasive understory species?"
     non_tree_question: "How do fast-break transitions in competitive lacrosse exploit mismatches and create high-percentage scoring chances?"
     question_type: process
     non_tree_domain: competitive lacrosse
+    similarity: false
+    elicitation_style: explicit_mention
 
   - pair_id: 4
     tree_question: "What environmental conditions cause a tree to produce reaction wood, and how does tension wood differ from compression wood?"
     non_tree_question: "What chemical conditions cause zinc ore to release its metal during smelting, and how does electrolytic refining differ from pyrometallurgical extraction?"
     question_type: comparative
     non_tree_domain: zinc smelting
+    similarity: false
+    elicitation_style: default
 
   - pair_id: 5
     tree_question: "How has the spread of the emerald ash borer devastated North American ash tree populations and altered forest composition?"
     non_tree_question: "How has the development of reverse swing bowling in cricket altered batting strategy and match outcomes in test matches?"
     question_type: factual
     non_tree_domain: competitive cricket
+    similarity: false
+    elicitation_style: concise
 
   - pair_id: 6
     tree_question: "What processes allow a wounded tree to compartmentalize damage and prevent the spread of fungal infection through its trunk?"
     non_tree_question: "What processes allow active sonar systems to distinguish between submarines and marine mammals in cluttered acoustic environments?"
     question_type: process
     non_tree_domain: sonar technology
+    similarity: false
+    elicitation_style: verbose
 
   - pair_id: 7
     tree_question: "Why do certain tree species form allelopathic compounds that inhibit the germination of competitors beneath their canopy?"
     non_tree_question: "Why do certain rugby teams adopt a pod-based attack structure, and how does it create space through phase play?"
     question_type: explanatory
     non_tree_domain: competitive rugby
+    similarity: false
+    elicitation_style: eli5
 
   - pair_id: 8
     tree_question: "How do tree-ring width variations correspond to historical drought events and what makes some species better climate recorders?"
     non_tree_question: "How do spin-lattice relaxation time variations correspond to tissue composition and what makes certain MRI sequences better for soft tissue contrast?"
     question_type: process
     non_tree_domain: magnetic resonance imaging
+    similarity: false
+    elicitation_style: numbered_list
 
   - pair_id: 9
     tree_question: "What role do dead standing trees, or snags, play in providing nesting habitat and foraging sites for woodland wildlife?"
     non_tree_question: "What role does the penalty corner routine play in field hockey strategy, and how do teams design set-piece variations?"
     question_type: factual
     non_tree_domain: competitive field hockey
+    similarity: false
+    elicitation_style: explicit_mention
 
   - pair_id: 10
     tree_question: "How does the cellular structure of softwood tracheids differ from hardwood vessel elements, and why does this matter for water transport?"
     non_tree_question: "How does the water-to-cement ratio in concrete mixing differ from the aggregate-to-cement ratio, and why does each matter for compressive strength?"
     question_type: comparative
     non_tree_domain: concrete mixing
+    similarity: false
+    elicitation_style: default
 
   - pair_id: 11
     tree_question: "What techniques do arborists use to safely remove a large hazardous tree in a confined urban space?"
     non_tree_question: "What techniques do elite squash players use to control the T position and dominate rallies in a confined court?"
     question_type: process
     non_tree_domain: competitive squash
+    similarity: false
+    elicitation_style: concise
 
   - pair_id: 12
     tree_question: "Why does quarter-sawn lumber from oak trees display a distinctive ray fleck pattern, and how is this used in fine furniture?"
     non_tree_question: "Why does the copper plating process require precise current density control, and how does this affect coating uniformity and adhesion?"
     question_type: explanatory
     non_tree_domain: copper plating
+    similarity: false
+    elicitation_style: verbose
 
   - pair_id: 13
     tree_question: "How do the phenology and flowering times of native tree species respond to shifting climate zones?"
     non_tree_question: "How do pitch sequencing and tunneling strategies in competitive baseball exploit a batter's perceptual limitations?"
     question_type: process
     non_tree_domain: competitive baseball
+    similarity: false
+    elicitation_style: eli5
 
   - pair_id: 14
     tree_question: "What are the differences in wood grain between trees that grew on windward versus sheltered slopes, and how does this affect lumber quality?"
     non_tree_question: "What are the differences in kerf width between CO2 and fiber laser cutting systems, and how does this affect material waste and precision?"
     question_type: comparative
     non_tree_domain: laser cutting
+    similarity: false
+    elicitation_style: numbered_list
 
   - pair_id: 15
     tree_question: "How do pioneer tree species like aspens rapidly colonize disturbed landscapes and prepare the site for later successional species?"
     non_tree_question: "How do competitive softball pitchers generate deceptive rise ball movement, and why is the underhand delivery biomechanically distinct from overhand throwing?"
     question_type: process
     non_tree_domain: competitive softball
+    similarity: false
+    elicitation_style: explicit_mention
 
   - pair_id: 16
     tree_question: "What is the ecological significance of mast years, when tree species like oaks produce enormous acorn crops simultaneously?"
     non_tree_question: "What is the metallurgical significance of the heat-affected zone in welding, and how do fabricators prevent grain coarsening and embrittlement there?"
     question_type: factual
     non_tree_domain: welding
+    similarity: false
+    elicitation_style: default
 
   - pair_id: 17
     tree_question: "Why are certain fast-growing tree species like paulownia promoted for carbon sequestration, and what are the criticisms of such schemes?"
     non_tree_question: "Why is the neutral zone trap such a polarizing defensive strategy in competitive ice hockey, and what are its vulnerabilities?"
     question_type: explanatory
     non_tree_domain: competitive ice hockey
+    similarity: false
+    elicitation_style: concise
 
   - pair_id: 18
     tree_question: "How do tropical trees partition light resources across different canopy strata, from emergents down to the forest floor?"
     non_tree_question: "How do infrared spectroscopists interpret absorption peaks to determine the functional groups present in an unknown organic compound?"
     question_type: process
     non_tree_domain: infrared spectroscopy
+    similarity: false
+    elicitation_style: verbose
 
   - pair_id: 19
     tree_question: "What factors influence whether a tree develops a columnar, spreading, or weeping growth habit, and how do nurseries select for form?"
     non_tree_question: "What factors influence whether a competitive darts player favors a front-loaded or rear-loaded barrel, and how do grip styles affect accuracy?"
     question_type: factual
     non_tree_domain: competitive darts
+    similarity: false
+    elicitation_style: eli5

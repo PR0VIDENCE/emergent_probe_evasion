@@ -175,6 +175,86 @@ def load_activations_for_position(
     return result, labels_tensor
 
 
+def load_supplementary_activations(
+    data_dir: str,
+    position: str,
+    prompt_ids: List[str],
+    labels: List[int],
+    target_layers: List[int],
+) -> Tuple[Dict[int, torch.Tensor], torch.Tensor]:
+    """
+    Load activations for supplementary prompt IDs (hw_val_*, adv_*).
+
+    These are stored in the same activations/{tree,non_tree}/{position}/ structure
+    as regular QA pairs, but with non-numeric prompt IDs.
+
+    Args:
+        data_dir: Base data directory.
+        position: Token position name.
+        prompt_ids: List of supplementary prompt IDs.
+        labels: List of int labels (1=tree, 0=non_tree) matching prompt_ids.
+        target_layers: Layer indices.
+
+    Returns:
+        Tuple of (layer_activations, labels_tensor).
+    """
+    collected = {layer_idx: [] for layer_idx in target_layers}
+    valid_labels = []
+    loaded = 0
+
+    for pid, label_val in zip(prompt_ids, labels):
+        label_name = "tree" if label_val == 1 else "non_tree"
+        act_path = os.path.join(
+            data_dir, "activations", label_name, position, f"{pid}.pt"
+        )
+
+        if not os.path.exists(act_path):
+            continue
+
+        layer_acts = torch.load(act_path, weights_only=True)
+        for layer_idx in target_layers:
+            if layer_idx in layer_acts:
+                collected[layer_idx].append(layer_acts[layer_idx].float())
+        valid_labels.append(label_val)
+        loaded += 1
+
+    result = {}
+    for layer_idx in target_layers:
+        if collected[layer_idx]:
+            result[layer_idx] = torch.stack(collected[layer_idx])
+
+    labels_tensor = torch.tensor(valid_labels, dtype=torch.float32)
+    return result, labels_tensor
+
+
+def parse_supplementary_yaml(yaml_path: str) -> Tuple[List[str], List[int]]:
+    """Parse supplementary YAML to get prompt IDs and labels (no pyyaml)."""
+    prompt_ids = []
+    labels = []
+
+    with open(yaml_path, "r") as f:
+        text = f.read()
+
+    current_id = None
+    current_label = None
+    for line in text.split("\n"):
+        stripped = line.strip()
+        if stripped.startswith("- id:"):
+            if current_id is not None:
+                prompt_ids.append(current_id)
+                labels.append(current_label if current_label is not None else 0)
+            current_id = stripped.split(":", 1)[1].strip().strip('"')
+            current_label = None
+        elif stripped.startswith("label:") and current_id is not None:
+            current_label = int(stripped.split(":", 1)[1].strip())
+
+    if current_id is not None:
+        prompt_ids.append(current_id)
+        labels.append(current_label if current_label is not None else 0)
+
+    return prompt_ids, labels
+
+
 def main():
     parser = argparse.ArgumentParser(
         description="Train probes on generation-matched activations"
@@ -185,6 +265,8 @@ def main():
                         help="Override data directory (default: from config)")
     parser.add_argument("--log-dir", type=str, default=None,
                         help="Directory for log files (default: data-dir/logs)")
+    parser.add_argument("--probe-dir", type=str, default=None,
+                        help="Override probe output directory (default: data-dir/probes)")
     args = parser.parse_args()
 
     # Resolve paths
@@ -198,6 +280,7 @@ def main():
     config = load_config(args.config)
 
     data_dir = args.data_dir or config["storage"]["base_dir"]
+    probe_base_dir = args.probe_dir or os.path.join(data_dir, "probes")
 
     # Set up logging
     log_dir = args.log_dir or os.path.join(data_dir, "logs")
@@ -206,6 +289,16 @@ def main():
     token_positions = config["token_positions"]
     probe_config = config["probe_training"]
     split_config = config["split"]
+    supp_config = config.get("supplementary", {})
+
+    # Parse handwritten validation file if configured
+    hw_val_ids, hw_val_labels = [], []
+    hw_val_path = supp_config.get("handwritten_validation")
+    if hw_val_path:
+        hw_val_path = resolve_path(hw_val_path)
+        if os.path.exists(hw_val_path):
+            hw_val_ids, hw_val_labels = parse_supplementary_yaml(hw_val_path)
+            print(f"  Handwritten validation: {len(hw_val_ids)} examples from {hw_val_path}")
 
     # Load generation log to find complete pairs
     print("=" * 60)
@@ -267,7 +360,21 @@ def main():
         val_acts, val_labels = load_activations_for_position(
             data_dir, position, splits["val"], target_layers,
         )
-        print(f"  Val: {len(val_labels)} examples")
+        print(f"  Val: {len(val_labels)} examples (QA pairs)")
+
+        # Inject handwritten validation examples into val set
+        if hw_val_ids:
+            hw_acts, hw_labels = load_supplementary_activations(
+                data_dir, position, hw_val_ids, hw_val_labels, target_layers,
+            )
+            if len(hw_labels) > 0:
+                for layer_idx in target_layers:
+                    if layer_idx in hw_acts and layer_idx in val_acts:
+                        val_acts[layer_idx] = torch.cat([val_acts[layer_idx], hw_acts[layer_idx]])
+                    elif layer_idx in hw_acts:
+                        val_acts[layer_idx] = hw_acts[layer_idx]
+                val_labels = torch.cat([val_labels, hw_labels])
+                print(f"  Val + handwritten: {len(val_labels)} examples total")
 
         # Load test activations
         print(f"  Loading test activations...")
@@ -306,7 +413,7 @@ def main():
             scaler_scale = ensemble_result["scaler_scale"]
 
             # Save probes
-            probe_dir = os.path.join(data_dir, "probes", position)
+            probe_dir = os.path.join(probe_base_dir, position)
             os.makedirs(probe_dir, exist_ok=True)
 
             seeds = probe_config["random_seeds"]

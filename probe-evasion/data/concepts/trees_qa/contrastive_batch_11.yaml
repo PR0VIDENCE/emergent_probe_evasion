@@ -13,117 +13,157 @@ pairs:
     non_tree_question: "How do the synchronized lift sequences in competitive pairs swimming expand to form complex multi-athlete formations, and what training conditions promote technical precision?"
     question_type: process
     non_tree_domain: competitive synchronized swimming
+    similarity: false
+    elicitation_style: verbose
 
   - pair_id: 1
     tree_question: "What ultrastructural features of wood cell walls are visible under high magnification, and how do the S1, S2, and S3 layers differ in microfibril angle?"
     non_tree_question: "What ultrastructural features of metal alloys are visible under scanning electron microscopy, and how do grain boundaries, dislocations, and precipitates differ in morphology?"
     question_type: factual
     non_tree_domain: electron microscopy
+    similarity: false
+    elicitation_style: eli5
 
   - pair_id: 2
     tree_question: "How do paired tree species in agroforestry systems complement each other in nutrient cycling, and what makes certain combinations more productive than monocultures?"
     non_tree_question: "How do paired skaters in competitive figure skating complement each other in lifts and throws, and what makes certain partnerships more successful than individual performances?"
     question_type: explanatory
     non_tree_domain: competitive figure skating pairs
+    similarity: false
+    elicitation_style: numbered_list
 
   - pair_id: 3
     tree_question: "What are the thermal tolerances of different tree species, and how do trees in geothermally active areas like Yellowstone adapt to elevated soil temperatures?"
     non_tree_question: "What are the thermal tolerances of different drill bit materials, and how do engineers in geothermal drilling operations adapt equipment to elevated subsurface temperatures?"
     question_type: factual
     non_tree_domain: geothermal drilling
+    similarity: false
+    elicitation_style: explicit_mention
 
   - pair_id: 4
     tree_question: "How do the skeletal frameworks of dead standing trees provide critical habitat for cavity-nesting birds, insects, and fungi in forest ecosystems?"
     non_tree_question: "How do the aerodynamic body positions of competitive skeleton athletes reduce drag on the ice track, and what equipment modifications maximize speed through curves?"
     question_type: explanatory
     non_tree_domain: competitive skeleton (winter sport)
+    similarity: false
+    elicitation_style: default
 
   - pair_id: 5
     tree_question: "What methods do researchers use to train predictive models of tree mortality risk using forest inventory data, climate variables, and species-specific growth parameters?"
     non_tree_question: "What methods do researchers use to train large language models using massive text corpora, reinforcement learning from human feedback, and architecture-specific hyperparameters?"
     question_type: process
     non_tree_domain: artificial intelligence training
+    similarity: false
+    elicitation_style: concise
 
   - pair_id: 6
     tree_question: "Why do riparian trees along riverbanks develop asymmetric root systems, and how does seasonal flooding shape their growth patterns over decades?"
     non_tree_question: "Why do competitive wakeboarders develop asymmetric riding stances, and how does wave height variation shape their trick selection during tournament runs?"
     question_type: explanatory
     non_tree_domain: competitive wakeboarding
+    similarity: false
+    elicitation_style: verbose
 
   - pair_id: 7
     tree_question: "How do deep-rooted trees access groundwater reserves during prolonged droughts, and what hydraulic redistribution mechanisms allow them to share water with shallow-rooted neighbors?"
     non_tree_question: "How do deep sea mining vehicles access polymetallic nodule deposits on the ocean floor, and what collection mechanisms allow them to separate ore from surrounding sediment?"
     question_type: process
     non_tree_domain: deep sea mining
+    similarity: false
+    elicitation_style: eli5
 
   - pair_id: 8
     tree_question: "What are the comparative advantages of container-grown versus bare-root tree seedlings for large-scale reforestation projects in arid climates?"
     non_tree_question: "What are the comparative advantages of ball handling versus apparatus tosses for scoring in competitive rhythmic gymnastics routines using ribbon versus hoop?"
     question_type: comparative
     non_tree_domain: competitive rhythmic gymnastics
+    similarity: false
+    elicitation_style: numbered_list
 
   - pair_id: 9
     tree_question: "How do scientists measure the carbon flux between forest canopies and the atmosphere using eddy covariance towers, and what do these measurements reveal about seasonal cycles?"
     non_tree_question: "How do scientists measure the neutrino flux from the sun using underground detectors filled with heavy water, and what do these measurements reveal about nuclear fusion cycles?"
     question_type: process
     non_tree_domain: neutrino detection
+    similarity: false
+    elicitation_style: explicit_mention
 
   - pair_id: 10
     tree_question: "Why do urban trees experience accelerated decline compared to their rural counterparts, and what specific stressors in built environments shorten their lifespan?"
     non_tree_question: "Why do competitive parkour athletes experience accelerated joint wear compared to traditional runners, and what specific impact forces in urban movement shorten their competitive careers?"
     question_type: explanatory
     non_tree_domain: competitive parkour
+    similarity: false
+    elicitation_style: default
 
   - pair_id: 11
     tree_question: "How do the aerodynamic properties of different tree crown shapes influence wind resistance, and why do savanna trees develop broad spreading crowns while mountain trees grow narrow and conical?"
     non_tree_question: "How do the aerodynamic properties of different vehicle body shapes influence drag coefficients, and why do engineers use wind tunnel testing to optimize spoiler angles and underbody contours?"
     question_type: explanatory
     non_tree_domain: wind tunnel testing
+    similarity: false
+    elicitation_style: concise
 
   - pair_id: 12
     tree_question: "What are the differences between coppicing and pollarding as traditional tree management techniques, and how did medieval societies use each to sustainably harvest wood?"
     non_tree_question: "What are the differences between toprock and downrock as foundational breakdancing techniques, and how do competitive b-boys use each to build momentum in battle rounds?"
     question_type: comparative
     non_tree_domain: competitive breakdancing
+    similarity: false
+    elicitation_style: verbose
 
   - pair_id: 13
     tree_question: "How do tree pathogens like Phytophthora ramorum spread through a forest, and what quarantine protocols have been developed to contain sudden oak death?"
     non_tree_question: "How do eavesdropping attacks spread through a communication network, and what quantum key distribution protocols have been developed to ensure unconditional cryptographic security?"
     question_type: process
     non_tree_domain: quantum cryptography
+    similarity: false
+    elicitation_style: eli5
 
   - pair_id: 14
     tree_question: "What factors determine whether a tree species is shade-tolerant or shade-intolerant, and how does light availability drive vertical stratification in tropical rainforests?"
     non_tree_question: "What factors determine whether a kitesurfing kite is suited for light wind or strong wind conditions, and how does wind variability drive equipment selection in competitive events?"
     question_type: factual
     non_tree_domain: competitive kitesurfing
+    similarity: false
+    elicitation_style: numbered_list
 
   - pair_id: 15
     tree_question: "How do seismically active regions affect tree root anchoring and growth patterns, and what evidence of past earthquakes can be found in deformed tree trunks?"
     non_tree_question: "How do gravitational wave observatories like LIGO detect spacetime distortions from colliding black holes, and what evidence of past mergers can be found in the detected waveform signals?"
     question_type: factual
     non_tree_domain: gravitational wave detection
+    similarity: false
+    elicitation_style: explicit_mention
 
   - pair_id: 16
     tree_question: "How do competitive tree-climbing arborists ascend large specimens using single rope technique, and what safety standards govern speed-climbing events at international competitions?"
     non_tree_question: "How do competitive sport climbers ascend artificial walls using dynamic lead climbing, and what safety standards govern route-setting difficulty at international competitions?"
     question_type: process
     non_tree_domain: competitive sport climbing
+    similarity: false
+    elicitation_style: default
 
   - pair_id: 17
     tree_question: "Why do some ancient bristlecone pines survive for over 5,000 years while most tree species rarely exceed 500, and what physiological traits confer such extreme longevity?"
     non_tree_question: "Why do some theoretical dark matter candidates like WIMPs remain undetected for decades while other particles are found quickly, and what experimental traits would confirm their existence?"
     question_type: explanatory
     non_tree_domain: dark matter research
+    similarity: false
+    elicitation_style: concise
 
   - pair_id: 18
     tree_question: "What are the key differences between the seed dispersal strategies of wind-dispersed elms and animal-dispersed oaks, and how does each strategy influence colonization range?"
     non_tree_question: "What are the key differences between the racing strategies of BMX sprint specialists and technical riders, and how does each approach influence performance on different track layouts?"
     question_type: comparative
     non_tree_domain: competitive BMX racing
+    similarity: false
+    elicitation_style: verbose
 
   - pair_id: 19
     tree_question: "How do massive tree die-off events triggered by bark beetle outbreaks reshape forest composition, and what long-term successional patterns emerge in the aftermath?"
     non_tree_question: "How do massive stellar explosions classified as Type Ia supernovae reshape the chemical composition of surrounding gas clouds, and what long-term nucleosynthesis patterns emerge in the aftermath?"
     question_type: explanatory
     non_tree_domain: supernova observation
+    similarity: false
+    elicitation_style: eli5

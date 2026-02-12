@@ -54,6 +54,16 @@ from src.inference.extract_activations import (
 )
 from src.utils.logging import setup_logging
 
+# Elicitation style instructions for generation diversity
+ELICITATION_INSTRUCTIONS = {
+    "default": "Answer in 1-3 sentences.",
+    "concise": "Be incredibly concise. Use 1-2 sentences maximum.",
+    "verbose": "Be extremely verbose and detailed. Elaborate at length.",
+    "eli5": "Explain as if to a 5-year-old. Use simple words.",
+    "numbered_list": "Structure your answer as a numbered list.",
+    "explicit_mention": "Answer without directly naming the core concept. Answer in 1-3 sentences.",
+}
+
 
 def load_config(path: str) -> dict:
     with open(path, "r") as f:
@@ -109,6 +119,9 @@ def build_prompt_list(pairs: List[dict]) -> List[dict]:
     for pair in pairs:
         gid = pair["global_pair_id"]
 
+        elicitation_style = pair.get("elicitation_style", "default")
+        similarity = pair.get("similarity", False)
+
         prompts.append({
             "prompt_id": f"tree_{gid:04d}",
             "question": pair["tree_question"],
@@ -116,6 +129,8 @@ def build_prompt_list(pairs: List[dict]) -> List[dict]:
             "global_pair_id": gid,
             "question_type": pair.get("question_type", "unknown"),
             "domain": "trees",
+            "elicitation_style": elicitation_style,
+            "similarity": similarity,
         })
         prompts.append({
             "prompt_id": f"non_tree_{gid:04d}",
@@ -124,9 +139,68 @@ def build_prompt_list(pairs: List[dict]) -> List[dict]:
             "global_pair_id": gid,
             "question_type": pair.get("question_type", "unknown"),
             "domain": pair.get("non_tree_domain", "unknown"),
+            "elicitation_style": elicitation_style,
+            "similarity": similarity,
         })
 
     return prompts
+
+
+def load_supplementary_examples(yaml_path: str) -> List[dict]:
+    """
+    Load supplementary examples (handwritten validation or adversarial test set).
+
+    Reads a YAML file with 'examples' key containing items with id, question, label, category.
+    Returns list of prompt dicts compatible with the main pipeline.
+    """
+    prompts = []
+    for item in _parse_supplementary_yaml(yaml_path):
+        label = "tree" if item.get("label_int", 0) == 1 else "non_tree"
+        prompts.append({
+            "prompt_id": item["id"],
+            "question": item["question"],
+            "label": label,
+            "global_pair_id": None,
+            "question_type": item.get("category", "unknown"),
+            "domain": "supplementary",
+            "elicitation_style": "default",
+            "similarity": False,
+        })
+
+    print(f"  Loaded {len(prompts)} supplementary examples from {yaml_path}")
+    return prompts
+
+
+def _parse_supplementary_yaml(yaml_path: str) -> List[dict]:
+    """Parse supplementary YAML without pyyaml dependency (for local dev)."""
+    with open(yaml_path, "r") as f:
+        text = f.read()
+
+    items = []
+    current = {}
+
+    for line in text.split("\n"):
+        stripped = line.strip()
+        if stripped.startswith("- id:"):
+            if current:
+                items.append(current)
+            current = {"id": stripped.split(":", 1)[1].strip().strip('"')}
+        elif stripped.startswith("question:") and current:
+            val = stripped.split(":", 1)[1].strip()
+            # Handle quoted strings
+            if val.startswith('"') and val.endswith('"'):
+                val = val[1:-1]
+            current["question"] = val
+        elif stripped.startswith("label:") and current:
+            val = stripped.split(":", 1)[1].strip()
+            current["label_int"] = int(val)
+        elif stripped.startswith("category:") and current:
+            current["category"] = stripped.split(":", 1)[1].strip()
+
+    if current:
+        items.append(current)
+
+    return items
 
 
 def load_completed_ids(log_path: str) -> set:
@@ -166,9 +240,11 @@ def save_generation(
         "prompt_id": prompt_id,
         "question": prompt_info["question"],
         "label": label,
-        "global_pair_id": prompt_info["global_pair_id"],
-        "question_type": prompt_info["question_type"],
-        "domain": prompt_info["domain"],
+        "global_pair_id": prompt_info.get("global_pair_id"),
+        "question_type": prompt_info.get("question_type", "unknown"),
+        "domain": prompt_info.get("domain", "unknown"),
+        "elicitation_style": prompt_info.get("elicitation_style", "default"),
+        "similarity": prompt_info.get("similarity", False),
         "full_text": full_text,
         "thinking_trace": thinking,
         "answer": answer,
@@ -230,9 +306,10 @@ def extract_thinking(full_text: str) -> str:
     return ""
 
 
-def format_chat_prompt(question: str, tokenizer) -> str:
-    """Format a question as a chat prompt string with 1-3 sentence constraint."""
-    prompt_text = f"{question}\n\nAnswer in 1-3 sentences."
+def format_chat_prompt(question: str, tokenizer, elicitation_style: str = "default") -> str:
+    """Format a question as a chat prompt string with style-specific instruction."""
+    instruction = ELICITATION_INSTRUCTIONS.get(elicitation_style, ELICITATION_INSTRUCTIONS["default"])
+    prompt_text = f"{question}\n\n{instruction}"
     messages = [{"role": "user", "content": prompt_text}]
     return tokenizer.apply_chat_template(
         messages, tokenize=False, add_generation_prompt=True
@@ -260,9 +337,10 @@ def generate_batch(
         - input_lens: list of prompt token counts
         - gen_time: total generation wall time
     """
-    # Format all prompts
+    # Format all prompts (with per-prompt elicitation style)
     chat_prompts = [
-        format_chat_prompt(p["question"], tokenizer) for p in prompt_infos
+        format_chat_prompt(p["question"], tokenizer, p.get("elicitation_style", "default"))
+        for p in prompt_infos
     ]
 
     # Tokenize with left-padding for batched generation
@@ -396,6 +474,8 @@ def main():
                         help="Number of prompts to generate simultaneously (default: 10)")
     parser.add_argument("--log-dir", type=str, default=None,
                         help="Directory for log files (default: output-dir/logs)")
+    parser.add_argument("--supplementary-dir", type=str, default=None,
+                        help="Directory containing handwritten_validation.yaml and adversarial_test_set.yaml")
     args = parser.parse_args()
 
     # Resolve paths
@@ -444,6 +524,19 @@ def main():
         print(f"  Limited to {args.max_pairs} pairs ({args.max_pairs * 2} prompts)")
 
     prompts = build_prompt_list(pairs)
+    print(f"  QA prompts: {len(prompts)}")
+
+    # Load supplementary examples if provided
+    if args.supplementary_dir:
+        supp_dir = Path(resolve_path(args.supplementary_dir))
+        for supp_file in ["handwritten_validation.yaml", "adversarial_test_set.yaml"]:
+            supp_path = supp_dir / supp_file
+            if supp_path.exists():
+                supp_prompts = load_supplementary_examples(str(supp_path))
+                prompts.extend(supp_prompts)
+            else:
+                print(f"  WARNING: Supplementary file not found: {supp_path}")
+
     print(f"  Total prompts: {len(prompts)}")
 
     # Check for completed work (resumability)
@@ -627,7 +720,9 @@ def process_single_prompt(
     Used when batched generation fails for a batch.
     """
     question = prompt_info["question"]
-    prompt_text = f"{question}\n\nAnswer in 1-3 sentences."
+    style = prompt_info.get("elicitation_style", "default")
+    instruction = ELICITATION_INSTRUCTIONS.get(style, ELICITATION_INSTRUCTIONS["default"])
+    prompt_text = f"{question}\n\n{instruction}"
     messages = [{"role": "user", "content": prompt_text}]
     chat_prompt = tokenizer.apply_chat_template(
         messages, tokenize=False, add_generation_prompt=True

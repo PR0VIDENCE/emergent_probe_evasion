@@ -120,7 +120,7 @@ def evaluate_all_probes(
                 print(f"  Layer {layer_idx}: no test data")
                 continue
 
-            probe_dir = os.path.join(data_dir, "probes", position)
+            probe_dir = os.path.join(probe_base_dir, position)
             try:
                 probes = load_probes(probe_dir, layer_idx, seeds, hidden_dim)
             except FileNotFoundError as e:
@@ -170,6 +170,190 @@ def evaluate_all_probes(
                   f"AUC={layer_result['ensemble_auc_roc']:.3f}, "
                   f"F1={layer_result['ensemble_f1']:.3f}, "
                   f"Agree={layer_result['agreement_ratio']:.3f}")
+
+        results[position] = position_results
+
+    return results
+
+
+def parse_supplementary_yaml(yaml_path: str) -> List[dict]:
+    """Parse supplementary YAML to get examples (no pyyaml)."""
+    items = []
+    current = {}
+
+    with open(yaml_path, "r") as f:
+        text = f.read()
+
+    for line in text.split("\n"):
+        stripped = line.strip()
+        if stripped.startswith("- id:"):
+            if current:
+                items.append(current)
+            current = {"id": stripped.split(":", 1)[1].strip().strip('"')}
+        elif stripped.startswith("question:") and current:
+            val = stripped.split(":", 1)[1].strip()
+            if val.startswith('"') and val.endswith('"'):
+                val = val[1:-1]
+            current["question"] = val
+        elif stripped.startswith("label:") and current:
+            current["label"] = int(stripped.split(":", 1)[1].strip())
+        elif stripped.startswith("category:") and current:
+            current["category"] = stripped.split(":", 1)[1].strip()
+
+    if current:
+        items.append(current)
+    return items
+
+
+def load_supplementary_activations(
+    data_dir: str,
+    position: str,
+    examples: List[dict],
+    target_layers: List[int],
+) -> Tuple[Dict[int, torch.Tensor], torch.Tensor, List[dict]]:
+    """
+    Load activations for supplementary examples.
+
+    Returns:
+        Tuple of (layer_activations, labels_tensor, loaded_examples).
+    """
+    collected = {layer_idx: [] for layer_idx in target_layers}
+    labels = []
+    loaded_examples = []
+
+    for ex in examples:
+        label_name = "tree" if ex["label"] == 1 else "non_tree"
+        act_path = os.path.join(
+            data_dir, "activations", label_name, position, f"{ex['id']}.pt"
+        )
+
+        if not os.path.exists(act_path):
+            continue
+
+        layer_acts = torch.load(act_path, weights_only=True)
+        for layer_idx in target_layers:
+            if layer_idx in layer_acts:
+                collected[layer_idx].append(layer_acts[layer_idx].float())
+
+        labels.append(ex["label"])
+        loaded_examples.append(ex)
+
+    result = {}
+    for layer_idx in target_layers:
+        if collected[layer_idx]:
+            result[layer_idx] = torch.stack(collected[layer_idx])
+
+    labels_tensor = torch.tensor(labels, dtype=torch.float32)
+    return result, labels_tensor, loaded_examples
+
+
+def evaluate_adversarial_set(
+    data_dir: str,
+    adversarial_path: str,
+    target_layers: List[int],
+    token_positions: List[str],
+    seeds: List[int],
+    hidden_dim: int,
+) -> Dict:
+    """
+    Evaluate probes on the adversarial test set with per-category metrics.
+
+    Returns:
+        Dict with per-position, per-layer, per-category metrics.
+    """
+    examples = parse_supplementary_yaml(adversarial_path)
+    if not examples:
+        print("  No adversarial examples found.")
+        return {}
+
+    # Group by category
+    categories = {}
+    for ex in examples:
+        cat = ex.get("category", "unknown")
+        if cat not in categories:
+            categories[cat] = []
+        categories[cat].append(ex)
+
+    print(f"  Adversarial set: {len(examples)} examples across {len(categories)} categories")
+    for cat, exs in sorted(categories.items()):
+        n_pos = sum(1 for e in exs if e["label"] == 1)
+        n_neg = sum(1 for e in exs if e["label"] == 0)
+        print(f"    {cat}: {len(exs)} ({n_pos} tree, {n_neg} non-tree)")
+
+    results = {}
+
+    for position in token_positions:
+        print(f"\n  Position: {position}")
+        adv_acts, adv_labels, loaded = load_supplementary_activations(
+            data_dir, position, examples, target_layers,
+        )
+
+        if len(adv_labels) == 0:
+            print(f"    No activations found for position {position}")
+            continue
+
+        print(f"    Loaded activations for {len(adv_labels)} examples")
+
+        position_results = {}
+        for layer_idx in target_layers:
+            if layer_idx not in adv_acts:
+                continue
+
+            probe_dir = os.path.join(probe_base_dir, position)
+            try:
+                probes = load_probes(probe_dir, layer_idx, seeds, hidden_dim)
+            except FileNotFoundError:
+                continue
+
+            scaler_mean, scaler_scale = None, None
+            scaler_path = os.path.join(probe_dir, f"layer{layer_idx}_scaler.pt")
+            if os.path.exists(scaler_path):
+                scaler_data = torch.load(scaler_path, weights_only=True)
+                scaler_mean = scaler_data["scaler_mean"]
+                scaler_scale = scaler_data["scaler_scale"]
+
+            # Overall metrics
+            ensemble_result = evaluate_ensemble(
+                probes, adv_acts[layer_idx], adv_labels,
+                scaler_mean=scaler_mean, scaler_scale=scaler_scale,
+            )
+
+            # Per-category metrics
+            cat_metrics = {}
+            for cat, cat_examples in categories.items():
+                cat_indices = [i for i, ex in enumerate(loaded) if ex.get("category") == cat]
+                if not cat_indices:
+                    continue
+
+                cat_acts_list = [adv_acts[layer_idx][i] for i in cat_indices]
+                cat_labels_list = [adv_labels[i].item() for i in cat_indices]
+
+                if len(cat_acts_list) == 0:
+                    continue
+
+                cat_acts_tensor = torch.stack(cat_acts_list)
+                cat_labels_tensor = torch.tensor(cat_labels_list, dtype=torch.float32)
+
+                cat_result = evaluate_ensemble(
+                    probes, cat_acts_tensor, cat_labels_tensor,
+                    scaler_mean=scaler_mean, scaler_scale=scaler_scale,
+                )
+                cat_metrics[cat] = {
+                    "accuracy": cat_result.get("ensemble_accuracy"),
+                    "n_examples": len(cat_indices),
+                    "mean_confidence": cat_result.get("mean_confidence"),
+                }
+
+            layer_result = {
+                "overall_accuracy": ensemble_result.get("ensemble_accuracy"),
+                "overall_auc_roc": ensemble_result.get("ensemble_auc_roc"),
+                "per_category": cat_metrics,
+            }
+            position_results[layer_idx] = layer_result
+
+            print(f"    Layer {layer_idx}: Acc={layer_result['overall_accuracy']:.3f}")
+            for cat, cm in cat_metrics.items():
+                print(f"      {cat}: Acc={cm['accuracy']:.3f} (n={cm['n_examples']})")
 
         results[position] = position_results
 
@@ -228,6 +412,10 @@ def main():
                         help="Override data directory")
     parser.add_argument("--log-dir", type=str, default=None,
                         help="Directory for log files (default: data-dir/logs)")
+    parser.add_argument("--adversarial-set", type=str, default=None,
+                        help="Path to adversarial_test_set.yaml for adversarial evaluation")
+    parser.add_argument("--probe-dir", type=str, default=None,
+                        help="Override probe directory (default: data-dir/probes)")
     args = parser.parse_args()
 
     # Resolve paths
@@ -244,6 +432,7 @@ def main():
     model_config = load_config(model_config_path)
 
     data_dir = args.data_dir or config["storage"]["base_dir"]
+    probe_base_dir = args.probe_dir or os.path.join(data_dir, "probes")
 
     # Set up logging
     log_dir = args.log_dir or os.path.join(data_dir, "logs")
@@ -281,6 +470,25 @@ def main():
     # Print results
     print_results_table(qa_results, target_layers, token_positions)
 
+    # Adversarial evaluation (optional)
+    adversarial_results = {}
+    adversarial_path = args.adversarial_set
+    if not adversarial_path:
+        # Check config for default path
+        supp_config = config.get("supplementary", {})
+        adv_default = supp_config.get("adversarial_test_set")
+        if adv_default:
+            adversarial_path = resolve_path(adv_default)
+
+    if adversarial_path and os.path.exists(adversarial_path):
+        print("\n" + "=" * 60)
+        print("Step 3: Adversarial test set evaluation")
+        print("=" * 60)
+        adversarial_results = evaluate_adversarial_set(
+            data_dir, adversarial_path, target_layers, token_positions,
+            seeds, hidden_dim,
+        )
+
     # Save full report
     report = {
         "qa_probe_results": qa_results,
@@ -290,6 +498,8 @@ def main():
         "token_positions": token_positions,
         "seeds": seeds,
     }
+    if adversarial_results:
+        report["adversarial_results"] = adversarial_results
 
     report_path = os.path.join(data_dir, "evaluation_report.json")
     with open(report_path, "w") as f:

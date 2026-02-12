@@ -9,117 +9,157 @@ pairs:
     non_tree_question: "How do coral polyps reproduce by budding, and what factors influence colony growth?"
     question_type: process
     non_tree_domain: marine biology
+    similarity: false
+    elicitation_style: default
 
   - pair_id: 1
     tree_question: "What role do mycorrhizal fungi play in the health and nutrient uptake of forest trees?"
     non_tree_question: "What role do neutron stars play in the formation and enrichment of heavy elements in galaxies?"
     question_type: explanatory
     non_tree_domain: astronomy
+    similarity: false
+    elicitation_style: concise
 
   - pair_id: 2
     tree_question: "Why is hickory wood preferred for smoking meat, and how do different tree species impart distinct flavors?"
     non_tree_question: "Why is the Maillard reaction essential in searing meat, and how do different temperatures affect browning?"
     question_type: explanatory
     non_tree_domain: cooking
+    similarity: false
+    elicitation_style: verbose
 
   - pair_id: 3
     tree_question: "What is the cultural and spiritual significance of the baobab tree in African societies throughout history?"
     non_tree_question: "What is the cultural and strategic significance of the Silk Road in connecting Asian and European civilizations?"
     question_type: factual
     non_tree_domain: history
+    similarity: false
+    elicitation_style: eli5
 
   - pair_id: 4
     tree_question: "How does the density of ebony wood compare to that of balsa, and what makes each suited for different uses?"
     non_tree_question: "How does the tensile strength of titanium compare to that of aluminum, and what makes each suited for different uses?"
     question_type: comparative
     non_tree_domain: metallurgy
+    similarity: false
+    elicitation_style: numbered_list
 
   - pair_id: 5
     tree_question: "What are the key differences between the branching patterns of elms and maples, and how do arborists identify each?"
     non_tree_question: "What are the key differences between ballet and contemporary dance technique, and how do judges evaluate each?"
     question_type: comparative
     non_tree_domain: dance
+    similarity: false
+    elicitation_style: explicit_mention
 
   - pair_id: 6
     tree_question: "How does fire-scarred tree-ring analysis help scientists reconstruct historical wildfire regimes?"
     non_tree_question: "How does glaze chemistry help ceramicists achieve specific colors and surface textures in kiln firing?"
     question_type: process
     non_tree_domain: ceramics
+    similarity: false
+    elicitation_style: default
 
   - pair_id: 7
     tree_question: "Why do certain tree species dominate the canopy layer while others remain in the understory?"
     non_tree_question: "Why do certain radio frequencies propagate beyond the horizon while others remain line-of-sight?"
     question_type: explanatory
     non_tree_domain: telecommunications
+    similarity: false
+    elicitation_style: concise
 
   - pair_id: 8
     tree_question: "How can dendrochronology be used to date the construction of historical wooden structures?"
     non_tree_question: "How can blood spatter analysis be used to reconstruct the sequence of events at a crime scene?"
     question_type: process
     non_tree_domain: forensics
+    similarity: false
+    elicitation_style: verbose
 
   - pair_id: 9
     tree_question: "What causes the brilliant red and orange autumn foliage in sugar maples and how does temperature affect the display?"
     non_tree_question: "What causes the vibrant indigo color in traditional denim dyeing and how does the number of dips affect saturation?"
     question_type: explanatory
     non_tree_domain: textiles
+    similarity: false
+    elicitation_style: eli5
 
   - pair_id: 10
     tree_question: "How do conifer trees survive extreme cold in boreal forests, and what physiological adaptations protect their needles?"
     non_tree_question: "How do nuclear reactors sustain a controlled chain reaction, and what physical mechanisms prevent a meltdown?"
     question_type: process
     non_tree_domain: nuclear physics
+    similarity: false
+    elicitation_style: numbered_list
 
   - pair_id: 11
     tree_question: "What distinguishes the heartwood from the sapwood in a mature tree, and why does heartwood resist decay?"
     non_tree_question: "What distinguishes a symmetric cipher from an asymmetric cipher, and why does key length affect security?"
     question_type: comparative
     non_tree_domain: cryptography
+    similarity: false
+    elicitation_style: explicit_mention
 
   - pair_id: 12
     tree_question: "How does root intrusion from large trees damage underground infrastructure, and what preventive measures exist?"
     non_tree_question: "How does mineral buildup inside copper pipes restrict water flow, and what preventive measures exist?"
     question_type: process
     non_tree_domain: plumbing
+    similarity: false
+    elicitation_style: default
 
   - pair_id: 13
     tree_question: "Why are certain tropical hardwoods like teak valued for outdoor construction, and what chemical properties make them weather-resistant?"
     non_tree_question: "Why are certain turbofan engines valued for long-haul aviation, and what thermodynamic properties make them fuel-efficient?"
     question_type: explanatory
     non_tree_domain: aviation
+    similarity: false
+    elicitation_style: concise
 
   - pair_id: 14
     tree_question: "What is the relationship between flowering trees and pollinator populations in temperate ecosystems?"
     non_tree_question: "What is the relationship between queen pheromones and worker bee behavior in a functioning hive?"
     question_type: factual
     non_tree_domain: beekeeping
+    similarity: false
+    elicitation_style: verbose
 
   - pair_id: 15
     tree_question: "How do bonsai practitioners shape a juniper tree over decades, and what techniques control growth direction?"
     non_tree_question: "How do sculptors carve Carrara marble into figurative forms, and what techniques control surface finish?"
     question_type: process
     non_tree_domain: sculpture
+    similarity: false
+    elicitation_style: eli5
 
   - pair_id: 16
     tree_question: "What are the ecological consequences of removing old-growth trees from a forest ecosystem?"
     non_tree_question: "What are the engineering consequences of removing catalytic converters from a vehicle exhaust system?"
     question_type: explanatory
     non_tree_domain: automotive
+    similarity: false
+    elicitation_style: numbered_list
 
   - pair_id: 17
     tree_question: "How do windbreaks composed of rows of trees reduce soil erosion on agricultural land?"
     non_tree_question: "How do differences in atmospheric pressure between regions generate and sustain wind patterns?"
     question_type: explanatory
     non_tree_domain: meteorology
+    similarity: false
+    elicitation_style: explicit_mention
 
   - pair_id: 18
     tree_question: "Why is the Japanese cherry blossom season culturally important, and what determines the timing of bloom each year?"
     non_tree_question: "Why is the golden hour important to landscape photographers, and what determines how long it lasts each day?"
     question_type: factual
     non_tree_domain: photography
+    similarity: false
+    elicitation_style: default
 
   - pair_id: 19
     tree_question: "How has the global demand for mahogany affected tropical deforestation rates and conservation policy?"
     non_tree_question: "How has the global demand for rare earth minerals affected international trade disputes and economic policy?"
     question_type: factual
     non_tree_domain: economics
+    similarity: false
+    elicitation_style: concise

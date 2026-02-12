@@ -12,117 +12,157 @@ pairs:
     non_tree_question: "How do triple jump athletes develop their characteristic phase rhythm, and what role does approach velocity play in producing jumps with exceptional distance?"
     question_type: explanatory
     non_tree_domain: competitive triple jump
+    similarity: false
+    elicitation_style: default
 
   - pair_id: 1
     tree_question: "What processes occur when a tree seals off a wound through compartmentalization, and how does the CODIT model explain the four barrier zones that prevent decay from spreading?"
     non_tree_question: "What processes occur when a plasma etches a semiconductor wafer through reactive ion bombardment, and how does the Langmuir sheath model explain the four key parameters that control etch profile fidelity?"
     question_type: process
     non_tree_domain: plasma etching
+    similarity: false
+    elicitation_style: concise
 
   - pair_id: 2
     tree_question: "What are the key differences between the aerial root systems of banyan trees and the prop roots of mangroves, and how does each adaptation serve the tree's structural needs?"
     non_tree_question: "What are the key differences between static pole holds and dynamic spinning transitions in competitive pole sport, and how does each movement category serve the athlete's scoring needs?"
     question_type: comparative
     non_tree_domain: competitive pole dancing (sport)
+    similarity: false
+    elicitation_style: verbose
 
   - pair_id: 3
     tree_question: "How do phytoliths preserved in ancient soils help paleobotanists identify which tree species dominated prehistoric landscapes, and what are the limitations of this technique?"
     non_tree_question: "How do atomic clocks aboard GPS satellites help receivers determine precise ground positions, and what are the limitations of this technique in urban canyons and polar regions?"
     question_type: explanatory
     non_tree_domain: satellite navigation systems
+    similarity: false
+    elicitation_style: eli5
 
   - pair_id: 4
     tree_question: "What physiological mechanisms enable sugar maples to generate root pressure in late winter, driving sap flow upward before bud break, and how do commercial syrup producers exploit this process?"
     non_tree_question: "What biomechanical mechanisms enable dressage horses to perform collected movements like piaffe and passage, driving impulsion from the hindquarters, and how do competitive riders train for these movements?"
     question_type: process
     non_tree_domain: competitive horse dressage
+    similarity: false
+    elicitation_style: numbered_list
 
   - pair_id: 5
     tree_question: "Why are certain tree species like black locust and Osage orange exceptionally resistant to decay even when buried in soil, and what chemical compounds in their heartwood confer this durability?"
     non_tree_question: "Why are certain deep geological formations like bentonite clay and granite exceptionally resistant to radionuclide migration, and what physical properties of these materials confer this containment ability?"
     question_type: explanatory
     non_tree_domain: nuclear waste storage
+    similarity: false
+    elicitation_style: explicit_mention
 
   - pair_id: 6
     tree_question: "How does the phenomenon of crown shyness create visible gaps between the canopies of neighboring trees, and what hypotheses have been proposed to explain this spatial pattern?"
     non_tree_question: "How does the phenomenon of aerodynamic drag create visible spray patterns behind freestyle skiers during mogul runs, and what biomechanical factors have been proposed to explain variations in technique?"
     question_type: explanatory
     non_tree_domain: competitive freestyle skiing
+    similarity: false
+    elicitation_style: default
 
   - pair_id: 7
     tree_question: "What are the comparative advantages of using cross-laminated timber versus glue-laminated timber in multi-story building construction, and how does each product address the challenges of dimensional stability?"
     non_tree_question: "What are the comparative advantages of using top-down nanofabrication versus bottom-up self-assembly in semiconductor manufacturing, and how does each approach address the challenges of feature size control?"
     question_type: comparative
     non_tree_domain: nanotechnology
+    similarity: false
+    elicitation_style: concise
 
   - pair_id: 8
     tree_question: "How do cork oak trees regenerate their bark after harvesting, and what cellular processes allow this commercially valuable outer layer to regrow over a nine-year cycle?"
     non_tree_question: "How do competitive water skiers maintain stability during slalom course crossings, and what muscular activation sequences allow them to generate the edge angles needed for tight turns?"
     question_type: process
     non_tree_domain: competitive water skiing
+    similarity: false
+    elicitation_style: verbose
 
   - pair_id: 9
     tree_question: "What role do volatile organic compounds emitted by trees play in atmospheric chemistry, and how do terpenes released by coniferous forests contribute to cloud nucleation and regional climate?"
     non_tree_question: "What role do standing acoustic waves play in suspending small objects against gravity, and how do ultrasonic transducer arrays contribute to precise three-dimensional positioning in acoustic levitation experiments?"
     question_type: explanatory
     non_tree_domain: acoustic levitation
+    similarity: false
+    elicitation_style: eli5
 
   - pair_id: 10
     tree_question: "How do arborists assess the risk of failure in large urban trees using sonic tomography and resistograph drilling, and what internal decay patterns indicate imminent structural compromise?"
     non_tree_question: "How do coaches assess the risk of injury in competitive powerlifters using motion capture and force plate analysis, and what movement compensations indicate imminent technique breakdown?"
     question_type: process
     non_tree_domain: competitive powerlifting
+    similarity: false
+    elicitation_style: numbered_list
 
   - pair_id: 11
     tree_question: "What factors determine whether a forest will regenerate naturally after clear-cutting versus requiring active replanting, and how do soil seed banks and nurse logs influence succession?"
     non_tree_question: "What factors determine whether a quantum dot display will produce accurate color versus requiring active calibration, and how do dot size distribution and ligand capping influence emission wavelength?"
     question_type: factual
     non_tree_domain: quantum dot displays
+    similarity: false
+    elicitation_style: explicit_mention
 
   - pair_id: 12
     tree_question: "How does the practice of rubber tapping affect the long-term health of Hevea brasiliensis trees, and what tapping patterns maximize latex yield without killing the tree?"
     non_tree_question: "How does the practice of interval training affect the long-term performance of competitive inline skaters, and what training patterns maximize anaerobic capacity without risking overtraining?"
     question_type: process
     non_tree_domain: competitive inline skating
+    similarity: false
+    elicitation_style: default
 
   - pair_id: 13
     tree_question: "What evidence do fossilized tree stumps from the Carboniferous period provide about ancient atmospheric conditions, and how did the dominance of scale trees like Lepidodendron shape coal deposits?"
     non_tree_question: "What evidence do paleomagnetic reversals recorded in ocean floor basalt provide about ancient plate movements, and how did the spreading of mid-ocean ridges shape the current continental configuration?"
     question_type: factual
     non_tree_domain: tectonic plate mapping
+    similarity: false
+    elicitation_style: concise
 
   - pair_id: 14
     tree_question: "How do the buttress roots of tropical rainforest giants like kapok trees provide mechanical stability in shallow soils, and what engineering principles explain their structural efficiency?"
     non_tree_question: "How do the dynamic hip movements of competitive speed climbers provide upward momentum on standardized routes, and what biomechanical principles explain their efficiency in sub-five-second ascents?"
     question_type: explanatory
     non_tree_domain: competitive speed climbing
+    similarity: false
+    elicitation_style: verbose
 
   - pair_id: 15
     tree_question: "What are the ecological consequences of removing large old-growth trees from riparian zones, and how does the loss of coarse woody debris affect stream hydrology and aquatic habitat?"
     non_tree_question: "What are the operational consequences of removing passive sonar arrays from submarine detection networks, and how does the loss of hydrophone coverage affect threat identification and acoustic triangulation?"
     question_type: factual
     non_tree_domain: submarine sonar
+    similarity: false
+    elicitation_style: eli5
 
   - pair_id: 16
     tree_question: "How do trees at the alpine treeline survive extreme wind, ice abrasion, and ultraviolet radiation, and what krummholz growth forms emerge as a survival strategy at elevation limits?"
     non_tree_question: "How do athletes in competitive ice climbing manage tool placement, crampon technique, and route reading on vertical ice, and what movement sequences emerge as a winning strategy on competition walls?"
     question_type: explanatory
     non_tree_domain: competitive ice climbing
+    similarity: false
+    elicitation_style: numbered_list
 
   - pair_id: 17
     tree_question: "What are the key differences between the xylem transport mechanisms in angiosperms and gymnosperms, and how do vessel elements versus tracheids affect water conductance rates?"
     non_tree_question: "What are the key differences between the magnetic confinement approaches in tokamaks and stellarators, and how do axisymmetric versus helical field geometries affect plasma stability?"
     question_type: comparative
     non_tree_domain: stellarator fusion
+    similarity: false
+    elicitation_style: explicit_mention
 
   - pair_id: 18
     tree_question: "How do forest canopy cranes enable scientists to study the ecology of the treetop zone, and what discoveries about biodiversity have emerged from long-term canopy access programs?"
     non_tree_question: "How do lightweight racing wheelchairs enable athletes to compete at speeds exceeding 30 km/h on the track, and what engineering innovations in camber and frame geometry have emerged from competitive wheelchair racing?"
     question_type: factual
     non_tree_domain: competitive wheelchair racing
+    similarity: false
+    elicitation_style: default
 
   - pair_id: 19
     tree_question: "How does the selective logging practice of reduced-impact logging differ from conventional clear-felling, and what evidence supports its effectiveness in maintaining forest carbon stocks?"
     non_tree_question: "How does the radial velocity method for detecting exoplanets differ from the transit photometry method, and what evidence supports each technique's effectiveness in identifying Earth-like worlds?"
     question_type: comparative
     non_tree_domain: exoplanet detection
+    similarity: false
+    elicitation_style: concise

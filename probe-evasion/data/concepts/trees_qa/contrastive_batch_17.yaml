@@ -1,0 +1,165 @@
+# Contrastive question pairs for QA-based probe training
+# Batch 17: seaweed, B-trees, evolutionary trees, mushrooms/fungi, syntax trees,
+#   decision flowcharts, tree diagrams, shrubs, ferns, grasses, bamboo, cacti,
+#   flowers, moss, family trees, petroleum engineering, competitive fencing,
+#   satellite communications, watchmaking, forensic entomology
+pairs:
+  - pair_id: 0
+    tree_question: "How do kelp-like epiphytes growing on mangrove roots differ from the free-floating phytoplankton in adjacent estuarine waters, and what role does the mangrove canopy play in shading these communities?"
+    non_tree_question: "How do the holdfasts of kelp and other large seaweeds anchor to rocky substrates in turbulent intertidal zones, and what structural adaptations prevent dislodgment during storms?"
+    question_type: comparative
+    non_tree_domain: seaweed
+    similarity: true
+    elicitation_style: verbose
+
+  - pair_id: 1
+    tree_question: "What is the process by which a tree's cambium layer produces new xylem and phloem cells each growing season, and how do these layers contribute to trunk diameter increase?"
+    non_tree_question: "What is the process by which a B-tree database index splits a full node during key insertion, and how do split operations maintain balanced height across the index structure?"
+    question_type: process
+    non_tree_domain: B-trees
+    similarity: true
+    elicitation_style: eli5
+
+  - pair_id: 2
+    tree_question: "How do botanists classify tree species into families based on floral morphology, and what molecular evidence has revised traditional taxonomic groupings?"
+    non_tree_question: "How do biologists construct evolutionary trees to classify organisms based on shared derived characteristics, and what molecular clock evidence has revised traditional phylogenetic groupings?"
+    question_type: process
+    non_tree_domain: evolutionary trees
+    similarity: true
+    elicitation_style: numbered_list
+
+  - pair_id: 3
+    tree_question: "What symbiotic relationships exist between forest trees and the ectomycorrhizal fungi that colonize their root tips, and how do these partnerships influence tree survival during drought?"
+    non_tree_question: "What decomposition roles do saprotrophic mushrooms and fungi play in breaking down fallen logs on the forest floor, and how do fungal enzymes access the lignin and cellulose locked in dead wood?"
+    question_type: explanatory
+    non_tree_domain: mushrooms/fungi
+    similarity: true
+    elicitation_style: explicit_mention
+
+  - pair_id: 4
+    tree_question: "How does a tree species' leaf arrangement--alternate, opposite, or whorled--affect light interception efficiency in the canopy?"
+    non_tree_question: "How does a programming language's syntax tree representation--concrete versus abstract--affect the efficiency of semantic analysis and code generation in compilers?"
+    question_type: comparative
+    non_tree_domain: syntax trees
+    similarity: true
+    elicitation_style: default
+
+  - pair_id: 5
+    tree_question: "What decision process do forest managers follow when evaluating whether to thin, clearcut, or selectively harvest a mature timber stand?"
+    non_tree_question: "What decision process do operations managers follow when constructing a flowchart to evaluate whether to approve, escalate, or reject a production change request?"
+    question_type: process
+    non_tree_domain: decision flowcharts
+    similarity: true
+    elicitation_style: concise
+
+  - pair_id: 6
+    tree_question: "How do probability calculations in genetics use branching diagrams to predict the likelihood of offspring inheriting specific traits from parent trees in a breeding program?"
+    non_tree_question: "How do probability calculations in statistics use tree diagrams to predict the likelihood of sequential event outcomes in Bayesian inference problems?"
+    question_type: process
+    non_tree_domain: tree diagrams
+    similarity: true
+    elicitation_style: verbose
+
+  - pair_id: 7
+    tree_question: "Why do some tree species produce deep shade beneath their canopy while others create dappled light, and how does this affect understory plant composition?"
+    non_tree_question: "Why do some evergreen shrubs like rhododendron produce dense shade beneath their canopy while others like lavender allow ample light to reach the ground, and how does this affect companion planting?"
+    question_type: explanatory
+    non_tree_domain: shrubs
+    similarity: true
+    elicitation_style: eli5
+
+  - pair_id: 8
+    tree_question: "What are the structural differences between the fronds of tree ferns and the leaves of angiosperm trees, and how do their vascular systems compare?"
+    non_tree_question: "What are the structural differences between the fronds of tree ferns and those of ground-dwelling ferns, and how do their rhizome growth habits compare in terms of height attainment?"
+    question_type: comparative
+    non_tree_domain: ferns
+    similarity: true
+    elicitation_style: numbered_list
+
+  - pair_id: 9
+    tree_question: "How do the roots of riparian trees filter agricultural runoff before it reaches streams, and what pollutants are most effectively captured by root-zone microbial communities?"
+    non_tree_question: "How do the roots of riparian grasses and sedges filter agricultural runoff before it reaches streams, and what advantages do grass buffer strips offer over bare soil margins?"
+    question_type: explanatory
+    non_tree_domain: grasses
+    similarity: true
+    elicitation_style: explicit_mention
+
+  - pair_id: 10
+    tree_question: "How do foresters measure the volume of standing timber in a mixed-species forest using diameter at breast height and taper equations?"
+    non_tree_question: "How do bamboo cultivators measure the yield potential of a bamboo grove using culm diameter and internode length as productivity indicators?"
+    question_type: process
+    non_tree_domain: bamboo
+    similarity: true
+    elicitation_style: default
+
+  - pair_id: 11
+    tree_question: "What water-use strategies allow trees in Mediterranean climates to survive long summer droughts while maintaining enough hydraulic conductivity to resume growth in autumn?"
+    non_tree_question: "What water-storage strategies allow succulent cacti in arid climates to survive months without rainfall while maintaining enough turgor pressure to support photosynthesis?"
+    question_type: explanatory
+    non_tree_domain: cacti
+    similarity: true
+    elicitation_style: concise
+
+  - pair_id: 12
+    tree_question: "How does wind pollination in temperate forest trees differ from insect pollination in tropical canopy species, and what trade-offs does each strategy involve?"
+    non_tree_question: "How does wind pollination in grassland wildflowers differ from bee pollination in garden flowers, and what trade-offs does each strategy involve for pollen transfer efficiency?"
+    question_type: comparative
+    non_tree_domain: flowers
+    similarity: true
+    elicitation_style: verbose
+
+  - pair_id: 13
+    tree_question: "What role do nurse logs--fallen decomposing trees--play in providing germination sites for the next generation of seedlings in Pacific Northwest old-growth forests?"
+    non_tree_question: "What role do moss mats play in providing germination sites for seeds on exposed rock surfaces, and how do bryophyte cushions retain moisture and nutrients for vascular plant establishment?"
+    question_type: factual
+    non_tree_domain: moss
+    similarity: true
+    elicitation_style: eli5
+
+  - pair_id: 14
+    tree_question: "How do tree planting programs in reforestation projects track seedling provenance to maintain genetic diversity across restored landscapes?"
+    non_tree_question: "How do genealogical databases track individual provenance across family trees to identify genetic predispositions to hereditary diseases across populations?"
+    question_type: process
+    non_tree_domain: family trees
+    similarity: true
+    elicitation_style: numbered_list
+
+  - pair_id: 15
+    tree_question: "What engineering challenges arise when constructing oil pipelines through old-growth boreal forests, and how do environmental impact assessments address tree loss?"
+    non_tree_question: "What engineering challenges arise when drilling directional wells through complex geological formations, and how do petroleum engineers model subsurface pressure gradients?"
+    question_type: factual
+    non_tree_domain: petroleum engineering
+    similarity: false
+    elicitation_style: explicit_mention
+
+  - pair_id: 16
+    tree_question: "How do the annual growth rings preserved in subfossil tree trunks recovered from peat bogs extend climate records beyond the lifespan of living trees?"
+    non_tree_question: "How do the scoring conventions in competitive fencing differentiate between valid touches in foil, epee, and sabre, and what electronic systems verify touch priority?"
+    question_type: factual
+    non_tree_domain: competitive fencing
+    similarity: false
+    elicitation_style: default
+
+  - pair_id: 17
+    tree_question: "Why do some tree species invest heavily in chemical defenses like tannins and alkaloids while others rely on physical defenses like thorns and thick bark?"
+    non_tree_question: "Why do some satellite communication systems use geostationary orbits while others use low-earth-orbit constellations, and how does orbit selection affect latency and coverage?"
+    question_type: explanatory
+    non_tree_domain: satellite communications
+    similarity: false
+    elicitation_style: concise
+
+  - pair_id: 18
+    tree_question: "How does the grain pattern of boxwood make it uniquely suited for wood engraving, and what properties distinguish end-grain from side-grain blocks?"
+    non_tree_question: "How does the escapement mechanism of a mechanical watch regulate the release of energy from the mainspring, and what properties distinguish lever escapements from co-axial designs?"
+    question_type: comparative
+    non_tree_domain: watchmaking
+    similarity: false
+    elicitation_style: verbose
+
+  - pair_id: 19
+    tree_question: "What insect species are most commonly found feeding on dead and dying tree tissues, and how do entomologists use beetle gallery patterns to identify wood-boring species?"
+    non_tree_question: "What insect species are most commonly found colonizing decomposing remains, and how do forensic entomologists use larval development stages to estimate the post-mortem interval?"
+    question_type: factual
+    non_tree_domain: forensic entomology
+    similarity: false
+    elicitation_style: eli5
