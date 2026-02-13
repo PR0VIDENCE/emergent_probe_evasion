@@ -460,6 +460,104 @@ def process_generated_sequence(
     }
 
 
+def reextract_activations(output_dir: str, target_layers: List[int], model_config: dict, config: dict):
+    """
+    Re-extract activations from existing generation JSONs.
+
+    Loads each saved generation, re-tokenizes the full sequence (prompt + generated),
+    runs a forward pass with hooks on target_layers, and saves new activation .pt files.
+    This is useful when you want to extract activations for more layers without re-generating.
+    """
+    from glob import glob
+
+    # Find all generation JSONs
+    gen_files = sorted(
+        glob(os.path.join(output_dir, "generations", "tree", "*.json"))
+        + glob(os.path.join(output_dir, "generations", "non_tree", "*.json"))
+    )
+    if not gen_files:
+        print("No generation files found. Run without --reextract first.")
+        return
+
+    print("=" * 60)
+    print("RE-EXTRACTION MODE")
+    print("=" * 60)
+    print(f"  Found {len(gen_files)} generation files")
+    print(f"  Target layers: {len(target_layers)} layers")
+    print(f"  Output: {output_dir}")
+
+    # Load model
+    print("\n  Loading model...")
+    t0 = time.time()
+    model, tokenizer = load_model_and_tokenizer(model_config)
+    print(f"  Loaded in {time.time() - t0:.1f}s")
+
+    done = 0
+    errors = 0
+    start_time = time.time()
+
+    for gen_path in gen_files:
+        with open(gen_path, "r") as f:
+            gen_data = json.load(f)
+
+        prompt_id = gen_data["prompt_id"]
+        label = gen_data["label"]
+        question = gen_data["question"]
+        style = gen_data.get("elicitation_style", "default")
+        thinking = gen_data.get("thinking_trace", "")
+        answer = gen_data.get("answer", "")
+
+        try:
+            # Reconstruct chat prompt
+            chat_prompt = format_chat_prompt(question, tokenizer, style)
+
+            # Reconstruct generated text with think tags
+            if thinking:
+                generated_text = f"<think>\n{thinking}\n</think>\n{answer}"
+            else:
+                generated_text = answer
+
+            # Tokenize prompt alone to get input_len
+            prompt_ids = tokenizer(chat_prompt, return_tensors="pt")["input_ids"]
+            input_len = prompt_ids.shape[1]
+
+            # Tokenize full sequence (prompt + generated)
+            full_text = chat_prompt + generated_text
+            output_ids = tokenizer(full_text, return_tensors="pt", truncation=False)["input_ids"].to(model.device)
+
+            # Find token positions
+            positions = find_token_positions(output_ids, input_len, tokenizer)
+
+            # Forward pass with hooks
+            activations = extract_activations_at_positions(
+                output_ids, model, target_layers, positions,
+                answer_start=positions.get("answer_start"),
+                answer_end=positions.get("answer_end"),
+            )
+
+            # Save activations (overwrites old .pt files)
+            prompt_info = {"prompt_id": prompt_id, "label": label}
+            save_activations(prompt_info, activations, output_dir)
+
+            done += 1
+            if done % 50 == 0 or done == len(gen_files):
+                elapsed = time.time() - start_time
+                rate = done / elapsed * 3600
+                remaining = (len(gen_files) - done) / (done / elapsed) if done > 0 else 0
+                print(f"  {done}/{len(gen_files)} done ({rate:.0f}/hr, ETA: {remaining/60:.1f}min)")
+
+        except Exception as e:
+            print(f"  ERROR on {prompt_id}: {e}")
+            errors += 1
+
+        # Clear CUDA cache periodically
+        if done % 100 == 0 and torch.cuda.is_available():
+            torch.cuda.empty_cache()
+
+    total_time = time.time() - start_time
+    print(f"\n  Re-extraction complete: {done} succeeded, {errors} errors, {total_time/60:.1f}min")
+
+
 def main():
     parser = argparse.ArgumentParser(
         description="Generate QwQ-32B responses and extract multi-position activations"
@@ -476,6 +574,8 @@ def main():
                         help="Directory for log files (default: output-dir/logs)")
     parser.add_argument("--supplementary-dir", type=str, default=None,
                         help="Directory containing handwritten_validation.yaml and adversarial_test_set.yaml")
+    parser.add_argument("--reextract", action="store_true",
+                        help="Re-extract activations from existing generations (skips generation)")
     args = parser.parse_args()
 
     # Resolve paths
@@ -514,6 +614,11 @@ def main():
     config_snapshot_path = os.path.join(output_dir, "config.json")
     with open(config_snapshot_path, "w") as f:
         json.dump(config, f, indent=2)
+
+    # --reextract mode: skip generation, re-run extraction on existing outputs
+    if args.reextract:
+        reextract_activations(output_dir, target_layers, model_config, config)
+        return
 
     # Load contrastive pairs
     print("=" * 60)
