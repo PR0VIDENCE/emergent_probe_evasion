@@ -216,6 +216,19 @@ control_regimes:
     num_turns: 1
     description: "Standard jailbreak prompt framing"
 
+  - name: control_brevity
+    template: control_brevity
+    max_new_tokens: 2048
+    num_turns: 1
+    description: "Conciseness instruction only — no evasion framing"
+
+  - name: control_circumlocution
+    template: control_circumlocution
+    max_new_tokens: 2048
+    num_turns: 1
+    forbidden_word: "tree"
+    description: "Answer without saying the forbidden word — no mention of probes"
+
   - name: control_feedback_random
     template_initial: evasion_feedback_initial
     template_followup: evasion_feedback_followup

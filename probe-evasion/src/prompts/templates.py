@@ -149,6 +149,18 @@ Answer the following question.
 Question: {question}
 
 Please provide your answer:""",
+
+    "control_brevity": """Answer the following question as concisely as possible. Use one sentence only — no elaboration, no examples, no caveats.
+
+Question: {question}
+
+Please provide your answer:""",
+
+    "control_circumlocution": """Answer the following question accurately and helpfully, but you MUST NOT use the word "{forbidden_word}" or any of its direct synonyms or plural/singular forms anywhere in your response. Find other ways to express the same ideas.
+
+Question: {question}
+
+Please provide your answer:""",
 }
 
 

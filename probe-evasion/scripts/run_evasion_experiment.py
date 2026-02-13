@@ -679,6 +679,8 @@ def run_single_turn_regime(regime: dict, questions: list, model, tokenizer,
                 )
             if regime.get("wrong_concept"):
                 extra_kwargs["wrong_concept"] = regime["wrong_concept"]
+            if regime.get("forbidden_word"):
+                extra_kwargs["forbidden_word"] = regime["forbidden_word"]
 
             try:
                 prompt_text = format_prompt(
