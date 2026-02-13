@@ -1021,6 +1021,16 @@ def main():
     all_trials = []
 
     for regime in regimes:
+        regime_path = os.path.join(trials_dir, f"{regime['name']}.json")
+
+        # Resume: skip regimes that already have saved results
+        if os.path.exists(regime_path):
+            with open(regime_path, "r") as f:
+                trials = json.load(f)
+            all_trials.extend(trials)
+            print(f"\n--- Regime: {regime['name']} (loaded {len(trials)} existing trials) ---")
+            continue
+
         print(f"\n--- Regime: {regime['name']} ---")
         print(f"  {regime.get('description', '')}")
         print(f"  max_new_tokens: {regime['max_new_tokens']}, "
@@ -1044,7 +1054,6 @@ def main():
         all_trials.extend(trials)
 
         # Save per-regime trials
-        regime_path = os.path.join(trials_dir, f"{regime['name']}.json")
         with open(regime_path, "w") as f:
             json.dump(trials, f, indent=2, default=str)
         print(f"  Saved {len(trials)} trials to {regime_path}")
@@ -1052,26 +1061,33 @@ def main():
     # Step 3b: Run negative control questions (FPR calibration)
     neg_questions = config.get("negative_control_questions", [])
     if neg_questions and not args.regime:
-        print(f"\n--- Negative control (FPR calibration) ---")
-        print(f"  {len(neg_questions)} non-tree questions through baseline")
-        neg_regime = {
-            "name": "negative_baseline",
-            "template": "evasion_baseline",
-            "max_new_tokens": 2048,
-            "num_turns": 1,
-        }
-        neg_trials = run_single_turn_regime(
-            neg_regime, neg_questions, model, tokenizer, target_layers,
-            probe_ensembles, scalers, generation_config, concept,
-            num_probes, num_rollouts, per_position=per_position,
-            batch_size=args.batch_size,
-        )
-        all_trials.extend(neg_trials)
-
         neg_path = os.path.join(trials_dir, "negative_control_baseline.json")
-        with open(neg_path, "w") as f:
-            json.dump(neg_trials, f, indent=2, default=str)
-        print(f"  Saved {len(neg_trials)} negative control trials to {neg_path}")
+
+        if os.path.exists(neg_path):
+            with open(neg_path, "r") as f:
+                neg_trials = json.load(f)
+            all_trials.extend(neg_trials)
+            print(f"\n--- Negative control (loaded {len(neg_trials)} existing trials) ---")
+        else:
+            print(f"\n--- Negative control (FPR calibration) ---")
+            print(f"  {len(neg_questions)} non-tree questions through baseline")
+            neg_regime = {
+                "name": "negative_baseline",
+                "template": "evasion_baseline",
+                "max_new_tokens": 2048,
+                "num_turns": 1,
+            }
+            neg_trials = run_single_turn_regime(
+                neg_regime, neg_questions, model, tokenizer, target_layers,
+                probe_ensembles, scalers, generation_config, concept,
+                num_probes, num_rollouts, per_position=per_position,
+                batch_size=args.batch_size,
+            )
+            all_trials.extend(neg_trials)
+
+            with open(neg_path, "w") as f:
+                json.dump(neg_trials, f, indent=2, default=str)
+            print(f"  Saved {len(neg_trials)} negative control trials to {neg_path}")
 
     # Step 3c: Apply weighted combination scoring
     if weighted_combo is not None:
