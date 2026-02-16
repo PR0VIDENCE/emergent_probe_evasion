@@ -17,6 +17,8 @@ dependencies = [
     "tqdm",
     "requests",
     "wikipedia-api",
+    "streamlit>=1.37.0",
+    "plotly>=5.18.0",
 ]
 
 [tool.uv.sources]
