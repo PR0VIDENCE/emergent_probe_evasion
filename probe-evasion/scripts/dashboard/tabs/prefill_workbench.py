@@ -223,7 +223,7 @@ def render():
         positions = sorted(pr.keys())
 
         render_probe_scores(pr, positions, target_layers,
-                           show_layers=target_layers[:10] if len(target_layers) > 10 else target_layers)
+                           show_layers=target_layers)
 
         # Weighted score
         combo = st.session_state.get("weighted_combo")
@@ -245,7 +245,7 @@ def render():
                 pos_data = pr.get(pos, {})
                 base_pos = base_pr.get(pos, {})
                 deltas = []
-                for l in target_layers[:5]:
+                for l in target_layers:
                     curr = pos_data.get(l, pos_data.get(str(l), {})).get("mean_confidence", 0)
                     base = base_pos.get(l, base_pos.get(str(l), {})).get("mean_confidence", 0)
                     delta = curr - base

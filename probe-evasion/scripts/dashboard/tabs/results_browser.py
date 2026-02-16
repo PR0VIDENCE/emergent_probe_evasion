@@ -117,7 +117,7 @@ def render():
     layer_subset = st.multiselect(
         "Layers to average",
         target_layers,
-        default=target_layers[:5] if len(target_layers) > 5 else target_layers,
+        default=target_layers,
         key="results_browser_layer_subset",
     )
 
@@ -298,7 +298,7 @@ def render():
     with right:
         st.markdown("**Probe Scores**")
         pr = turn_data.get("probe_results", {})
-        show_layers = target_layers[:10] if len(target_layers) > 10 else target_layers
+        show_layers = target_layers
         render_probe_scores(pr, all_positions, target_layers, show_layers=show_layers)
 
         # Weighted score

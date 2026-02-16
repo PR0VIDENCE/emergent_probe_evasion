@@ -173,7 +173,7 @@ def render():
         q_trial = next((t for t in trials if t["question_id"] == qid), {})
         q_text = q_trial.get("question", qid)
         row = {"question_id": qid, "question": q_text[:80], "fp_rate": q_fp_rates.get(qid, 0)}
-        for l in target_layers[:10]:  # Limit columns
+        for l in target_layers:
             row[f"L{l}_conf"] = fp_data[qid][l]["mean_conf"]
         rows.append(row)
 

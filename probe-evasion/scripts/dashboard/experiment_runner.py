@@ -32,8 +32,8 @@ class ExperimentRunner:
     def start(self, regimes, questions, model, tokenizer, target_layers,
               probe_ensembles, scalers, per_position, generation_config,
               concept, num_probes, num_rollouts, max_new_tokens_override,
-              batch_size, gpu_lock, prompt_templates_override=None,
-              config=None):
+              batch_size, gpu_lock, output_dir, prompt_templates_override=None,
+              config=None, skip_reasoning=False):
         """Launch the experiment thread."""
         if self.is_running:
             return
@@ -43,6 +43,7 @@ class ExperimentRunner:
         self.all_trials = []
         self.completed_trials = 0
         self.start_time = time.time()
+        self.output_dir = output_dir
 
         # Count total trials
         self.total_trials = 0
@@ -56,7 +57,8 @@ class ExperimentRunner:
             args=(regimes, questions, model, tokenizer, target_layers,
                   probe_ensembles, scalers, per_position, generation_config,
                   concept, num_probes, num_rollouts, max_new_tokens_override,
-                  batch_size, gpu_lock, prompt_templates_override, config),
+                  batch_size, gpu_lock, output_dir, prompt_templates_override,
+                  config, skip_reasoning),
             daemon=True,
         )
         self.is_running = True
@@ -88,12 +90,19 @@ class ExperimentRunner:
     def _run(self, regimes, questions, model, tokenizer, target_layers,
              probe_ensembles, scalers, per_position, generation_config,
              concept, num_probes, num_rollouts, max_new_tokens_override,
-             batch_size, gpu_lock, prompt_templates_override, config):
+             batch_size, gpu_lock, output_dir, prompt_templates_override,
+             config, skip_reasoning):
         """Main experiment loop (runs in thread)."""
         from run_evasion_experiment import (
-            run_single_turn_regime, run_feedback_regime, generate_and_probe_batch,
+            run_single_turn_regime, run_feedback_regime,
+            process_single_sequence, score_probes_at_activation,
         )
         from src.prompts.templates import PROMPT_TEMPLATES, format_prompt
+        import torch
+
+        # Ensure output dirs exist for auto-saving
+        trials_dir = os.path.join(output_dir, "trials")
+        os.makedirs(trials_dir, exist_ok=True)
 
         try:
             # Apply prompt template overrides if provided
@@ -109,12 +118,19 @@ class ExperimentRunner:
                 self.current_regime = regime["name"]
 
                 # Override max_new_tokens if specified
+                regime = dict(regime)
                 if max_new_tokens_override:
-                    regime = dict(regime)
                     regime["max_new_tokens"] = max_new_tokens_override
 
                 with gpu_lock:
-                    if regime.get("num_turns", 1) > 1:
+                    if skip_reasoning:
+                        trials = self._run_no_reasoning(
+                            regime, questions, model, tokenizer, target_layers,
+                            probe_ensembles, scalers, per_position,
+                            generation_config, concept, num_probes,
+                            num_rollouts, batch_size, config,
+                        )
+                    elif regime.get("num_turns", 1) > 1:
                         trials = run_feedback_regime(
                             regime, questions, model, tokenizer, target_layers,
                             probe_ensembles, scalers, generation_config, concept,
@@ -134,8 +150,23 @@ class ExperimentRunner:
                     self.completed_trials += 1
                     self.results_queue.put(trial)
 
+                # Auto-save this regime's trials to disk immediately
+                regime_path = os.path.join(trials_dir, f"{regime['name']}.json")
+                with open(regime_path, "w") as f:
+                    json.dump(trials, f, indent=2, default=str)
+                print(f"  [auto-save] Saved {len(trials)} trials to {regime_path}")
+
                 if self.stop_event.is_set():
                     break
+
+            # Save full summary
+            from run_evasion_experiment import aggregate_results
+            if self.all_trials:
+                summary = aggregate_results(self.all_trials, target_layers)
+                summary_path = os.path.join(output_dir, "summary.json")
+                with open(summary_path, "w") as f:
+                    json.dump(summary, f, indent=2, default=str)
+                print(f"  [auto-save] Summary saved to {summary_path}")
 
             # Restore original templates
             if original_templates is not None:
@@ -144,8 +175,117 @@ class ExperimentRunner:
 
         except Exception as e:
             self.error = f"{type(e).__name__}: {e}\n{traceback.format_exc()}"
+            # Even on error, try to save whatever we have
+            if self.all_trials:
+                try:
+                    self._emergency_save(trials_dir, target_layers)
+                except Exception:
+                    pass
         finally:
             self.is_running = False
+
+    def _emergency_save(self, trials_dir, target_layers):
+        """Save whatever trials we have on error."""
+        by_regime = {}
+        for trial in self.all_trials:
+            regime = trial.get("regime", "unknown")
+            by_regime.setdefault(regime, []).append(trial)
+        for regime_name, trials in by_regime.items():
+            path = os.path.join(trials_dir, f"{regime_name}.json")
+            with open(path, "w") as f:
+                json.dump(trials, f, indent=2, default=str)
+        print(f"  [emergency-save] Saved {len(self.all_trials)} trials across {len(by_regime)} regimes")
+
+    def _run_no_reasoning(self, regime, questions, model, tokenizer,
+                          target_layers, probe_ensembles, scalers,
+                          per_position, generation_config, concept,
+                          num_probes, num_rollouts, batch_size, config):
+        """Run a regime with reasoning disabled.
+
+        Prefills </think> so the model skips the thinking phase and goes
+        straight to generating the answer.
+        """
+        import torch
+        from run_evasion_experiment import process_single_sequence
+        from src.prompts.templates import format_prompt
+
+        template_name = regime.get("template", "evasion_baseline")
+        max_new_tokens = regime["max_new_tokens"]
+
+        gen_kwargs = dict(
+            temperature=generation_config.get("temperature", 0.6),
+            top_p=generation_config.get("top_p", 0.95),
+            top_k=generation_config.get("top_k", 20),
+            do_sample=True,
+            pad_token_id=tokenizer.pad_token_id,
+        )
+
+        trials = []
+        for q in questions:
+            for rollout in range(num_rollouts):
+                if self.stop_event.is_set():
+                    return trials
+
+                try:
+                    prompt_text = format_prompt(
+                        template_name, question=q["text"],
+                        concept=concept, num_probes=num_probes,
+                        layers=str(target_layers),
+                    )
+                except KeyError:
+                    prompt_text = format_prompt(
+                        template_name, question=q["text"],
+                        concept=concept,
+                    )
+
+                # Build chat prompt and append </think> to skip reasoning
+                messages = [{"role": "user", "content": prompt_text}]
+                chat_prompt = tokenizer.apply_chat_template(
+                    messages, tokenize=False, add_generation_prompt=True,
+                )
+                # The chat template ends with <think>\n — close it immediately
+                chat_prompt_no_think = chat_prompt + "</think>\n"
+
+                inputs = tokenizer(
+                    chat_prompt_no_think, return_tensors="pt",
+                    truncation=True, max_length=4096,
+                )
+                input_ids = inputs["input_ids"].to(model.device)
+                attention_mask = inputs["attention_mask"].to(model.device)
+                input_len = input_ids.shape[1]
+
+                t0 = time.time()
+                with torch.no_grad():
+                    output_ids = model.generate(
+                        input_ids,
+                        attention_mask=attention_mask,
+                        max_new_tokens=max_new_tokens,
+                        **gen_kwargs,
+                    )
+
+                result = process_single_sequence(
+                    output_ids, input_len, model, tokenizer,
+                    target_layers, probe_ensembles, scalers, per_position,
+                    think_truncated=False,
+                )
+                elapsed = time.time() - t0
+
+                trial = {
+                    "regime": regime["name"],
+                    "question_id": q["id"],
+                    "question": q["text"],
+                    "rollout": rollout,
+                    "elapsed_seconds": round(elapsed, 2),
+                    "skip_reasoning": True,
+                    **result,
+                }
+                trials.append(trial)
+
+                del output_ids, input_ids
+                if torch.cuda.is_available():
+                    torch.cuda.empty_cache()
+
+        return trials
 
     def save_results(self, output_dir, target_layers):
         """Save collected results to disk."""

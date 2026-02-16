@@ -72,13 +72,20 @@ def render():
         selected_questions.extend(neg_questions)
 
     # Generation settings
-    col_s1, col_s2, col_s3 = st.columns(3)
+    col_s1, col_s2, col_s3, col_s4 = st.columns(4)
     with col_s1:
         num_rollouts = st.number_input("Rollouts", 1, 10, 1, key="run_rollouts")
     with col_s2:
         batch_size = st.number_input("Batch size", 1, 16, 5, key="run_batch_size")
     with col_s3:
         max_tokens = st.number_input("Max tokens (0=use regime default)", 0, 16384, 0, key="run_max_tokens")
+    with col_s4:
+        skip_reasoning = st.checkbox(
+            "Skip reasoning",
+            value=False,
+            key="run_skip_reasoning",
+            help="Prefill </think> so the model skips the thinking phase and generates the answer directly.",
+        )
 
     max_tokens_override = max_tokens if max_tokens > 0 else None
 
@@ -109,6 +116,21 @@ def render():
                 st.session_state.prompt_templates = dict(PROMPT_TEMPLATES)
                 st.rerun()
 
+    # ─── Custom questions ────────────────────────────────────────────
+    st.subheader("Custom Questions")
+    custom_q_text = st.text_area(
+        "Add custom questions (one per line)",
+        height=100,
+        key="custom_questions_text",
+        placeholder="What role do trees play in urban ecosystems?\nHow does deforestation affect biodiversity?",
+    )
+    if custom_q_text.strip():
+        custom_lines = [l.strip() for l in custom_q_text.strip().split("\n") if l.strip()]
+        custom_questions = [{"id": f"custom_{i+1}", "text": line, "category": "custom"}
+                           for i, line in enumerate(custom_lines)]
+        st.caption(f"{len(custom_questions)} custom questions added to run")
+        selected_questions.extend(custom_questions)
+
     # Output directory
     output_dir = st.text_input(
         "Output directory",
@@ -134,6 +156,7 @@ def render():
             gen_config = get_generation_config()
             target_layers = get_target_layers()
 
+            abs_output = resolve_path(output_dir)
             runner.start(
                 regimes=selected_regimes,
                 questions=selected_questions,
@@ -150,8 +173,10 @@ def render():
                 max_new_tokens_override=max_tokens_override,
                 batch_size=batch_size,
                 gpu_lock=st.session_state.gpu_lock,
+                output_dir=abs_output,
                 prompt_templates_override=st.session_state.prompt_templates,
                 config=config,
+                skip_reasoning=skip_reasoning,
             )
             st.rerun()
 
@@ -268,9 +293,6 @@ def _render_live_results(runner, output_dir):
         )
         st.plotly_chart(fig_combo, use_container_width=True)
 
-    # Save button
-    if not runner.is_running:
-        abs_output = resolve_path(output_dir)
-        if st.button("Save Results", key="save_results_btn"):
-            saved = runner.save_results(abs_output, target_layers)
-            st.success(f"Saved to {saved}")
+    # Save status
+    if not runner.is_running and hasattr(runner, 'output_dir') and runner.output_dir:
+        st.info(f"Results auto-saved to {runner.output_dir}/trials/")
