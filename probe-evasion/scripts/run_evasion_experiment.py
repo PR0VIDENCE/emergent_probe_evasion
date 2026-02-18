@@ -646,13 +646,27 @@ def generate_filler_text(n_tokens: int, seed: int = None) -> str:
 # Regime runners
 # ---------------------------------------------------------------------------
 
+def _load_verbatim_answers(data_dir: str, source_regime: str) -> dict:
+    """Load answers from a source regime for verbatim copy regimes.
+
+    Returns dict mapping (question_id, rollout) -> answer text.
+    """
+    path = os.path.join(data_dir, "trials", f"{source_regime}.json")
+    if not os.path.exists(path):
+        return {}
+    with open(path, "r") as f:
+        trials = json.load(f)
+    return {(t["question_id"], t["rollout"]): t["answer"] for t in trials}
+
+
 def run_single_turn_regime(regime: dict, questions: list, model, tokenizer,
                            target_layers: list, probe_ensembles: dict,
                            scalers: dict, generation_config: dict, concept: str,
                            num_probes: int, num_rollouts: int,
                            per_position: bool = False,
                            batch_size: int = 5,
-                           config: dict = None) -> list:
+                           config: dict = None,
+                           data_dir: str = None) -> list:
     """Run a single-turn regime across all questions and rollouts (batched)."""
     template_name = regime["template"]
     max_new_tokens = regime["max_new_tokens"]
@@ -664,6 +678,18 @@ def run_single_turn_regime(regime: dict, questions: list, model, tokenizer,
         if neg_qs:
             questions = neg_qs
             print(f"  [control] Using {len(questions)} negative control questions")
+
+    # Verbatim copy: load source answers
+    verbatim_answers = {}
+    if regime.get("verbatim_source") and data_dir:
+        verbatim_answers = _load_verbatim_answers(
+            data_dir, regime["verbatim_source"])
+        if not verbatim_answers:
+            print(f"  WARNING: verbatim_source='{regime['verbatim_source']}' "
+                  f"but no data found at {data_dir}/trials/")
+        else:
+            print(f"  [verbatim] Loaded {len(verbatim_answers)} source answers "
+                  f"from '{regime['verbatim_source']}'")
 
     # Collect all prompts with metadata
     items = []
@@ -681,6 +707,14 @@ def run_single_turn_regime(regime: dict, questions: list, model, tokenizer,
                 extra_kwargs["wrong_concept"] = regime["wrong_concept"]
             if regime.get("forbidden_word"):
                 extra_kwargs["forbidden_word"] = regime["forbidden_word"]
+
+            # Verbatim copy: inject source answer into template
+            if regime.get("verbatim_source"):
+                answer_text = verbatim_answers.get((question_id, rollout), "")
+                if not answer_text:
+                    print(f"  SKIP: No verbatim answer for ({question_id}, {rollout})")
+                    continue
+                extra_kwargs["verbatim_answer"] = answer_text
 
             try:
                 prompt_text = format_prompt(
@@ -1068,6 +1102,7 @@ def main():
                 probe_ensembles, scalers, generation_config, concept,
                 num_probes, num_rollouts, per_position=per_position,
                 batch_size=args.batch_size, config=config,
+                data_dir=args.output_dir,
             )
 
         all_trials.extend(trials)

@@ -252,3 +252,17 @@ control_regimes:
     num_turns: 3
     feedback_mode: adversarial
     description: "Feedback with inverted (1 - real) probe scores"
+
+  - name: verbatim_evasion
+    template: evasion_verbatim_copy
+    max_new_tokens: 2048
+    num_turns: 1
+    verbatim_source: baseline
+    description: "Evasion prompt + forced to copy baseline answer verbatim"
+
+  - name: verbatim_baseline
+    template: baseline_verbatim_copy
+    max_new_tokens: 2048
+    num_turns: 1
+    verbatim_source: baseline
+    description: "No evasion context + forced to copy same baseline answer"

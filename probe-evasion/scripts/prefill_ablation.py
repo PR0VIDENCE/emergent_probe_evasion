@@ -32,6 +32,7 @@ Usage:
 import argparse
 import json
 import os
+import re
 import sys
 import time
 from pathlib import Path
@@ -45,7 +46,6 @@ sys.path.insert(0, str(PROJECT_ROOT))
 
 from src.inference.extract_activations import (
     load_model_and_tokenizer,
-    find_token_positions,
     extract_activations_at_positions,
 )
 from src.probes.architectures import LinearProbe
@@ -163,47 +163,81 @@ def assemble_prefill_sequence(
     thinking_trace: Optional[str],
     answer_text: str,
     tokenizer,
-) -> Tuple[torch.Tensor, int]:
+) -> Tuple[torch.Tensor, int, Dict[str, int]]:
     """
-    Construct a pre-filled chat sequence and return (output_ids, input_len).
+    Construct a pre-filled chat sequence with exact token positions.
 
-    Builds the full token sequence as if the model had generated it:
-        <chat_template with prompt>...<think>\\n
-        {thinking_trace}\\n</think>\\n{answer_text}
+    Tokenizes each component separately and concatenates, so positions
+    are known exactly from the token counts — no re-encoding estimation.
 
-    For no-reasoning conditions (thinking_trace=None), uses empty think block:
-        <chat_template with prompt>...<think>\\n
-        </think>\\n{answer_text}
+    Returns:
+        (output_ids, input_len, positions) where positions has:
+        last_token, end_of_reasoning, first_answer_sentence_end,
+        answer_start, answer_end.
     """
     messages = [{"role": "user", "content": prompt_text}]
     chat_prompt = tokenizer.apply_chat_template(
         messages, tokenize=False, add_generation_prompt=True
     )
 
-    prompt_tokens = tokenizer(
+    prompt_ids = tokenizer(
         chat_prompt, return_tensors="pt", truncation=True, max_length=4096
+    )["input_ids"]
+    input_len = prompt_ids.shape[1]
+
+    # Tokenize each component separately (no BOS/EOS)
+    encode = lambda text: torch.tensor(
+        [tokenizer.encode(text, add_special_tokens=False)]
     )
-    input_len = prompt_tokens["input_ids"].shape[1]
 
     if thinking_trace is not None and thinking_trace.strip():
-        generated_text = f"{thinking_trace}\n</think>\n{answer_text}"
+        think_ids = encode(thinking_trace)
+        close_ids = encode("\n</think>\n")
     else:
-        generated_text = f"</think>\n{answer_text}"
+        think_ids = torch.zeros(1, 0, dtype=torch.long)
+        close_ids = encode("</think>\n")
 
-    full_text = chat_prompt + generated_text
-    full_tokens = tokenizer(
-        full_text, return_tensors="pt", truncation=True, max_length=32768
-    )
-    output_ids = full_tokens["input_ids"]
+    answer_ids = encode(answer_text) if answer_text else torch.zeros(1, 0, dtype=torch.long)
 
-    return output_ids, input_len
+    # Concatenate
+    output_ids = torch.cat([prompt_ids, think_ids, close_ids, answer_ids], dim=1)
+
+    # Compute exact positions from token counts
+    think_end_pos = input_len + think_ids.shape[1]  # first token of close tag
+    close_end_pos = think_end_pos + close_ids.shape[1]  # first answer token
+    seq_len = output_ids.shape[1]
+
+    end_of_reasoning = think_end_pos + close_ids.shape[1] - 1  # last token of </think>\n
+    answer_start = close_end_pos
+    answer_end = seq_len - 1
+
+    # Find first sentence-ending punctuation in answer
+    first_answer_sentence_end = answer_end  # fallback
+    if answer_text:
+        sent_match = re.search(r'[.!?]', answer_text)
+        if sent_match:
+            text_to_sent = answer_text[:sent_match.end()]
+            sent_tokens = tokenizer.encode(text_to_sent, add_special_tokens=False)
+            offset = len(sent_tokens) - 1
+            candidate = answer_start + offset
+            if candidate <= answer_end:
+                first_answer_sentence_end = candidate
+
+    positions = {
+        "last_token": seq_len - 1,
+        "end_of_reasoning": min(end_of_reasoning, seq_len - 1),
+        "first_answer_sentence_end": first_answer_sentence_end,
+        "answer_start": min(answer_start, seq_len - 1),
+        "answer_end": answer_end,
+    }
+
+    return output_ids, input_len, positions
 
 
 def run_prefill_probe(
     output_ids: torch.Tensor,
-    input_len: int,
+    positions: Dict[str, int],
     model,
-    tokenizer,
     target_layers: list,
     probe_ensembles: dict,
     scalers: dict,
@@ -211,8 +245,6 @@ def run_prefill_probe(
 ) -> dict:
     """Run forward pass on pre-filled sequence and score probes."""
     output_ids = output_ids.to(model.device)
-
-    positions = find_token_positions(output_ids, input_len, tokenizer)
 
     activations = extract_activations_at_positions(
         output_ids, model, target_layers, positions,
@@ -272,7 +304,22 @@ def main():
 
     target_layers = config["target_layers"]
     if target_layers == "all":
-        target_layers = list(range(model_config["num_layers"]))
+        # Discover from probe directory (same logic as run_evasion_experiment.py)
+        probe_dir = resolve_path(config["probe_dir"])
+        probe_positions = config.get("probe_positions", None)
+        scan_dir = os.path.join(probe_dir, probe_positions[0]) if probe_positions else probe_dir
+        discovered = set()
+        if os.path.isdir(scan_dir):
+            for fname in os.listdir(scan_dir):
+                m = re.match(r"layer(\d+)_seed\d+\.pt", fname)
+                if m:
+                    discovered.add(int(m.group(1)))
+        if discovered:
+            target_layers = sorted(discovered)
+            print(f"  target_layers=all resolved to {target_layers} (from probe directory)")
+        else:
+            target_layers = list(range(model_config["num_layers"]))
+            print(f"  WARNING: No probes found in {scan_dir}, using all {len(target_layers)} model layers")
     num_probes = config["num_probes_per_layer"]
     hidden_dim = model_config["hidden_dim"]
     concept = config["concept"]
@@ -417,12 +464,12 @@ def main():
 
                 # ── Assemble and probe ──
                 t0 = time.time()
-                output_ids, input_len = assemble_prefill_sequence(
+                output_ids, input_len, positions = assemble_prefill_sequence(
                     prompt_text, thinking, answer, tokenizer,
                 )
 
                 result = run_prefill_probe(
-                    output_ids, input_len, model, tokenizer,
+                    output_ids, positions, model,
                     target_layers, probe_ensembles, scalers, per_position,
                 )
                 elapsed = time.time() - t0
