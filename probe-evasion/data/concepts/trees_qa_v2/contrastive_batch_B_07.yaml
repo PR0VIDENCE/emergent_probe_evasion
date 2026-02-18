@@ -1,0 +1,276 @@
+pairs:
+- pair_id: 175
+  tree_question: What soil conditions are most important to assess before planting
+    street trees in compacted urban environments?
+  non_tree_question: What soil conditions are most important to assess before beginning
+    foundation work in areas with expansive clay layers?
+  question_type: factual
+  non_tree_domain: geotechnical engineering
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: no_keyword
+- pair_id: 176
+  tree_question: How do urban trees cope with the heat island effect, and what physiological
+    mechanisms allow them to regulate temperature in paved environments?
+  non_tree_question: How do neurons cope with excitotoxicity, and what physiological
+    mechanisms allow them to regulate calcium influx during periods of intense stimulation?
+  question_type: explanatory
+  non_tree_domain: neuroscience
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: verbose
+- pair_id: 177
+  tree_question: What distinguishes wet felting from needle felting when creating
+    bark texture effects in arborist educational models?
+  non_tree_question: What distinguishes wet felting from needle felting when creating
+    dense, durable fabric for wearable garments?
+  question_type: comparative
+  non_tree_domain: felting
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: numbered_list
+- pair_id: 178
+  tree_question: How are urban tree canopy corridors mapped to plan planting zones
+    along major thoroughfares in dense city districts?
+  non_tree_question: How are attacking line corridors mapped to plan running plays
+    across the pitch in professional rugby?
+  question_type: process
+  non_tree_domain: rugby
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: no_keyword
+- pair_id: 179
+  tree_question: What role does urban tree root architecture play in stabilizing soil
+    on steep embankments within city parks?
+  non_tree_question: What role does anchor placement architecture play in stabilizing
+    a climber on steep granite faces in traditional rock climbing?
+  question_type: factual
+  non_tree_domain: rock climbing
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: academic
+- pair_id: 180
+  tree_question: How is wood anatomy used to identify tree species from timber fragments
+    recovered at an urban construction site?
+  non_tree_question: How is bone anatomy used to identify human remains recovered
+    at an outdoor crime scene investigation?
+  question_type: explanatory
+  non_tree_domain: forensics
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 181
+  tree_question: What are the primary methods used to assess whether urban tree roots
+    have compromised underground utility infrastructure?
+  non_tree_question: What are the primary methods used to assess whether underground
+    voids have compromised tunnel stability in active mining operations?
+  question_type: factual
+  non_tree_domain: mining engineering
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 182
+  tree_question: How does the brine concentration affect the preservation of tree
+    bark extracts used in traditional tanning processes?
+  non_tree_question: How does the brine concentration affect the preservation of cucumbers
+    during lacto-fermentation pickling?
+  question_type: explanatory
+  non_tree_domain: pickling
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 183
+  tree_question: What financial irregularities should an arborist organization watch
+    for when auditing contracts for municipal tree maintenance programs?
+  non_tree_question: What financial irregularities should an investigator watch for
+    when auditing procurement contracts in a large public sector organization?
+  question_type: factual
+  non_tree_domain: forensic accounting
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 184
+  tree_question: How does the direction of natural light affect the visual quality
+    of photographs taken of tree canopy structures in urban parks?
+  non_tree_question: How does the direction of natural light affect the visual quality
+    of portrait photographs taken outdoors during golden hour?
+  question_type: explanatory
+  non_tree_domain: photography
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: academic
+- pair_id: 185
+  tree_question: Which constellations or celestial markers were historically used
+    to determine optimal planting seasons for trees in temperate climates?
+  non_tree_question: Which constellations or celestial markers were historically used
+    to determine navigation positions by sailors crossing open oceans?
+  question_type: factual
+  non_tree_domain: astronomy
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: concise
+- pair_id: 186
+  tree_question: What exercises are commonly prescribed to arborists recovering from
+    shoulder injuries sustained during repetitive chainsaw use?
+  non_tree_question: What exercises are commonly prescribed to patients recovering
+    from rotator cuff tears sustained during overhead athletic movements?
+  question_type: factual
+  non_tree_domain: physical therapy
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: numbered_list
+- pair_id: 187
+  tree_question: How does prolonged exposure to pesticides used in urban tree spraying
+    programs affect kidney function in workers?
+  non_tree_question: How does prolonged exposure to contrast dye used in imaging procedures
+    affect kidney function in patients with pre-existing conditions?
+  question_type: explanatory
+  non_tree_domain: urology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+- pair_id: 188
+  tree_question: How do architects incorporate mature urban trees into building designs
+    to meet shade, energy, and aesthetic requirements simultaneously?
+  non_tree_question: How do architects incorporate passive ventilation systems into
+    building designs to meet thermal comfort and energy efficiency requirements simultaneously?
+  question_type: process
+  non_tree_domain: architecture
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: numbered_list
+- pair_id: 189
+  tree_question: What distinguishes the visual pattern of ring-bark injuries on urban
+    trees from those caused by mechanical damage or disease?
+  non_tree_question: What distinguishes the visual pattern of a tatting lace ring
+    stitch from a chain stitch in traditional bobbin lacework?
+  question_type: comparative
+  non_tree_domain: tatting lace
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 190
+  tree_question: How are urban tree planting zones positioned relative to underground
+    infrastructure to avoid conflicts with pressure hulls and service lines?
+  non_tree_question: How are ballast tanks positioned relative to pressure hulls and
+    internal compartments to optimize buoyancy control in submarine design?
+  question_type: factual
+  non_tree_domain: submarine design
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: concise
+- pair_id: 191
+  tree_question: What role do urban trees play in reducing wildfire risk at the wildland-urban
+    interface, and how should they be spaced?
+  non_tree_question: What role does compartmentalization play in reducing fire spread
+    risk in high-rise buildings, and how should barriers be spaced?
+  question_type: explanatory
+  non_tree_domain: fire protection engineering
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: no_keyword
+- pair_id: 192
+  tree_question: What process is used to extract plant-based oils from urban tree
+    seeds for use in artisanal cold-process soap formulations?
+  non_tree_question: What process is used to saponify plant-based oils in artisanal
+    cold-process soap making to achieve a stable final bar?
+  question_type: process
+  non_tree_domain: soap making
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 193
+  tree_question: How does the moisture content of wood from urban trees affect its
+    suitability as a smoking medium for artisanal food production?
+  non_tree_question: How does the moisture content of the aging environment affect
+    rind development and flavor complexity in artisanal cheese making?
+  question_type: explanatory
+  non_tree_domain: cheese making
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: verbose
+- pair_id: 194
+  tree_question: In how many distinct ways can an arborist select three trees from
+    a row of twelve street trees for a pruning trial?
+  non_tree_question: In how many distinct ways can a committee of three members be
+    selected from a group of twelve candidates using combinatorics?
+  question_type: factual
+  non_tree_domain: combinatorics
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+- pair_id: 195
+  tree_question: How are handshapes in sign language used to represent concepts related
+    to natural growth, branching, or vertical structures?
+  non_tree_question: How are handshapes in sign language systematically combined with
+    movement and location to convey grammatical tense and aspect?
+  question_type: explanatory
+  non_tree_domain: sign language
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: academic
+- pair_id: 196
+  tree_question: How does the spacing of urban street trees compare to the spacing
+    of instruments in a jazz ensemble in terms of harmonic interaction?
+  non_tree_question: How does the spacing and voicing of chord instruments compare
+    to lead instruments in a jazz ensemble in terms of harmonic interaction?
+  question_type: comparative
+  non_tree_domain: jazz music
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+- pair_id: 197
+  tree_question: What toxic compounds produced by urban trees or their pollen pose
+    significant health risks to sensitive populations during peak seasons?
+  non_tree_question: What toxic compounds produced by household mold species pose
+    significant health risks to sensitive populations in poorly ventilated buildings?
+  question_type: factual
+  non_tree_domain: toxicology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: verbose
+- pair_id: 198
+  tree_question: How do algal blooms in urban ponds beneath tree canopies differ from
+    natural bloom cycles in open water bodies?
+  non_tree_question: How do harmful algal blooms studied in phycology differ from
+    normal algal population cycles in terms of species composition and toxin production?
+  question_type: comparative
+  non_tree_domain: phycology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: concise
+- pair_id: 199
+  tree_question: What tools and techniques are used to chase decorative bark texture
+    patterns onto metal plaques used as urban tree identification markers?
+  non_tree_question: What tools and techniques are used to chase intricate relief
+    patterns into silver or copper sheet metal in decorative metalwork?
+  question_type: process
+  non_tree_domain: chasing metal
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: casual

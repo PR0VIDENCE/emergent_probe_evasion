@@ -1,0 +1,164 @@
+pairs:
+- pair_id: 505
+  tree_question: What are the main structural differences between hardwood and softwood
+    trees?
+  non_tree_question: How do kelp forests function as marine ecosystems, and what roles
+    do giant kelp play in supporting biodiversity?
+  question_type: factual
+  non_tree_domain: seaweed/marine algae
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 506
+  tree_question: How do deciduous trees prepare for and survive winter dormancy?
+  non_tree_question: What is the current state of algae biofuel technology, and which
+    species of marine algae are most promising for commercial fuel production?
+  question_type: explanatory
+  non_tree_domain: seaweed/marine algae
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: concise
+- pair_id: 507
+  tree_question: What nutrients do trees absorb through their root systems, and how
+    does nutrient uptake differ across soil types?
+  non_tree_question: How is seaweed harvested commercially, and what are the primary
+    methods used for both wild harvesting and aquaculture farming of marine algae?
+  question_type: process
+  non_tree_domain: seaweed/marine algae
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: verbose
+- pair_id: 508
+  tree_question: How do mycorrhizal fungi form symbiotic relationships with tree root
+    systems?
+  non_tree_question: What vitamins, minerals, and macronutrients are found in edible
+    seaweeds such as nori, wakame, and dulse?
+  question_type: factual
+  non_tree_domain: seaweed/marine algae
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: no_keyword
+- pair_id: 509
+  tree_question: What factors determine how tall a tree can grow, and what is the
+    theoretical maximum height for a tree?
+  non_tree_question: How do kelp forests recover after disturbances such as sea urchin
+    population explosions or ocean warming events?
+  question_type: explanatory
+  non_tree_domain: seaweed/marine algae
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 510
+  tree_question: How does tree ring analysis reveal historical climate conditions
+    and a tree's growth history?
+  non_tree_question: What is the process by which marine algae perform photosynthesis
+    at depth, and how do they adapt to low-light underwater conditions?
+  question_type: process
+  non_tree_domain: seaweed/marine algae
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: concise
+- pair_id: 511
+  tree_question: Which tree species produce the most commercially valuable timber,
+    and why are they valued by the lumber industry?
+  non_tree_question: How does the nutritional profile of seaweed compare across different
+    species, and which types are most commonly used in human diets?
+  question_type: comparative
+  non_tree_domain: seaweed/marine algae
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 512
+  tree_question: How do trees defend themselves against insect pests and fungal pathogens?
+  non_tree_question: What engineering and logistical challenges must be overcome to
+    make algae biofuel economically competitive with petroleum fuels?
+  question_type: explanatory
+  non_tree_domain: seaweed/marine algae
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: academic
+- pair_id: 513
+  tree_question: What is the process of secondary growth in trees, and how does it
+    lead to the formation of wood?
+  non_tree_question: How do kelp forests in different ocean regions such as California,
+    Australia, and South Africa differ in species composition and ecological function?
+  question_type: comparative
+  non_tree_domain: seaweed/marine algae
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+- pair_id: 514
+  tree_question: How do trees communicate and share resources through underground
+    fungal networks?
+  non_tree_question: What are the steps involved in processing harvested seaweed into
+    commercial products such as carrageenan, agar, or alginate?
+  question_type: process
+  non_tree_domain: seaweed/marine algae
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: no_keyword
+- pair_id: 515
+  tree_question: What are the key differences between tropical rainforest trees and
+    temperate forest trees in terms of growth strategies?
+  non_tree_question: How do sea otters, fish, and invertebrates depend on kelp forest
+    habitats for feeding, shelter, and reproduction?
+  question_type: factual
+  non_tree_domain: seaweed/marine algae
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: academic
+- pair_id: 516
+  tree_question: How does pollination occur in wind-pollinated tree species such as
+    oaks and birches?
+  non_tree_question: What environmental conditions such as water temperature, nutrient
+    levels, and light availability limit where kelp forests can grow globally?
+  question_type: explanatory
+  non_tree_domain: seaweed/marine algae
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 517
+  tree_question: How are trees aged using methods other than counting growth rings,
+    such as carbon dating or girth measurements?
+  non_tree_question: How do different seaweed harvesting techniques such as hand-cutting
+    versus mechanical dredging affect marine ecosystem health and regrowth rates?
+  question_type: comparative
+  non_tree_domain: seaweed/marine algae
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: numbered_list
+- pair_id: 518
+  tree_question: What role do trees play in the global carbon cycle and how does deforestation
+    affect atmospheric carbon dioxide levels?
+  non_tree_question: What iodine, omega-3 fatty acids, and antioxidant compounds are
+    present in marine algae, and how do they benefit human health?
+  question_type: factual
+  non_tree_domain: seaweed/marine algae
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: verbose
+- pair_id: 519
+  tree_question: How do pioneer tree species colonize disturbed land and facilitate
+    ecological succession toward mature forest?
+  non_tree_question: What is the life cycle of giant kelp from spore to mature organism,
+    and how rapidly can kelp grow under optimal conditions?
+  question_type: process
+  non_tree_domain: seaweed/marine algae
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: numbered_list

@@ -1,0 +1,277 @@
+pairs:
+- pair_id: 200
+  tree_question: What properties of Douglas fir make it particularly valuable for
+    structural lumber, and how does its grain pattern affect strength?
+  non_tree_question: What properties of a dry fly make it particularly effective for
+    trout fishing, and how does its hackle pattern affect flotation?
+  question_type: explanatory
+  non_tree_domain: fly fishing
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+- pair_id: 201
+  tree_question: How is maple syrup graded by color and flavor, and what processing
+    steps determine whether it becomes Grade A or Grade B?
+  non_tree_question: How is tea graded by leaf size and quality, and what processing
+    steps determine whether it becomes first flush or second flush?
+  question_type: process
+  non_tree_domain: tea cultivation
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+- pair_id: 202
+  tree_question: What chemicals are used to bleach wood pulp into white paper, and
+    why does unbleached paper have a brownish color?
+  non_tree_question: What chemicals are used to etch designs into glass surfaces,
+    and why does hydrofluoric acid create a frosted appearance?
+  question_type: factual
+  non_tree_domain: glass etching
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: concise
+- pair_id: 203
+  tree_question: How does the tannin content of oak bark affect the quality of leather
+    produced during the tanning process?
+  non_tree_question: How does the phosphorus content of lake water affect the density
+    of algae populations during summer stratification?
+  question_type: explanatory
+  non_tree_domain: limnology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: concise
+- pair_id: 204
+  tree_question: What techniques do woodworkers use to create realistic tree bark
+    textures when building theatrical forest set pieces?
+  non_tree_question: What techniques do prop makers use to create realistic stone
+    textures when building theatrical castle set pieces?
+  question_type: process
+  non_tree_domain: prop making
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: verbose
+- pair_id: 205
+  tree_question: How does the elasticity of natural rubber latex from Hevea brasiliensis
+    compare to synthetic alternatives in industrial applications?
+  non_tree_question: How does the elasticity of a bungee cord affect the safety calculations
+    required for jumps at different bridge heights?
+  question_type: comparative
+  non_tree_domain: bungee jumping
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: no_keyword
+- pair_id: 206
+  tree_question: What distinguishes cold-pressed argan oil derived from tree kernels
+    from heat-extracted versions in terms of nutritional and cosmetic properties?
+  non_tree_question: What distinguishes cold-wave perming solution from heat-based
+    straightening treatments in terms of chemical action on hair proteins?
+  question_type: comparative
+  non_tree_domain: hair styling
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 207
+  tree_question: How do industrial designers balance the natural variability of wood
+    grain with the need for consistent mechanical properties in mass-produced furniture?
+  non_tree_question: How do industrial designers balance aesthetic appeal with ergonomic
+    requirements when developing mass-produced handheld consumer electronics?
+  question_type: explanatory
+  non_tree_domain: industrial design
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: verbose
+- pair_id: 208
+  tree_question: What role does pine resin play in the production of rosin, and how
+    is rosin purified for use in varnishes and adhesives?
+  non_tree_question: What role does misdirection play in sleight-of-hand magic, and
+    how do performers train their audience's attention during card tricks?
+  question_type: factual
+  non_tree_domain: magic tricks
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 209
+  tree_question: How is charcoal produced from hardwood through pyrolysis, and what
+    temperature ranges yield the highest carbon content for industrial use?
+  non_tree_question: How is lift produced by helicopter rotor blades through airfoil
+    design, and what rotor speed ranges yield optimal efficiency at altitude?
+  question_type: process
+  non_tree_domain: helicopter piloting
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: verbose
+- pair_id: 210
+  tree_question: What are the key differences in paper quality produced from softwood
+    versus hardwood pulp in terms of fiber length and sheet strength?
+  non_tree_question: What are the key differences in message transmission speed between
+    semaphore flag signaling and optical telegraph relay stations?
+  question_type: comparative
+  non_tree_domain: semaphore
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: numbered_list
+- pair_id: 211
+  tree_question: How do phytoremediation trees like willows and poplars absorb heavy
+    metals from contaminated soil, and what happens to those metals after harvest?
+  non_tree_question: How do bioremediation bacteria break down petroleum hydrocarbons
+    in contaminated soil, and what conditions accelerate their metabolic activity?
+  question_type: explanatory
+  non_tree_domain: soil remediation
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: numbered_list
+- pair_id: 212
+  tree_question: How has control over rubber-producing regions historically influenced
+    political alliances and economic leverage between colonial and industrializing
+    nations?
+  non_tree_question: How has control over strategic maritime chokepoints historically
+    influenced political alliances and economic leverage between competing naval powers?
+  question_type: factual
+  non_tree_domain: geopolitics
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 213
+  tree_question: What properties of ironwood and hickory make them preferred choices
+    for tool handles, and how does grain orientation affect impact resistance?
+  non_tree_question: What properties of high-carbon steel make it preferred for forging
+    hammer heads, and how does quenching temperature affect hardness and brittleness?
+  question_type: explanatory
+  non_tree_domain: blacksmithing
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: concise
+- pair_id: 214
+  tree_question: How is the annual yield of a mature apple orchard calculated, and
+    what variables most significantly affect the total fruit tonnage per hectare?
+  non_tree_question: How is the expected number of prime factors of a large integer
+    estimated, and what variables most significantly affect the accuracy of that prediction?
+  question_type: factual
+  non_tree_domain: number theory
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 215
+  tree_question: What mordants are used to fix natural dyes derived from tree bark
+    onto cotton fabric, and how do they affect the final color intensity?
+  non_tree_question: What mordants are used to fix natural dyes derived from plant
+    sources onto silk fabric, and how do they affect the final color vibrancy?
+  question_type: process
+  non_tree_domain: silk painting
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: no_keyword
+- pair_id: 216
+  tree_question: How do advocates for old-growth lumber use appeals to economic necessity
+    versus preservationists using appeals to ecological heritage in policy debates?
+  non_tree_question: How do politicians use appeals to fear versus appeals to hope
+    as rhetorical strategies when addressing audiences during economic downturns?
+  question_type: comparative
+  non_tree_domain: rhetoric
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: academic
+- pair_id: 217
+  tree_question: What statistical methods are used to estimate total timber volume
+    in a forest from a sample of measured trees, and how is sampling error reported?
+  non_tree_question: What statistical methods are used to estimate population opinion
+    from a sample of surveyed individuals, and how is margin of error reported?
+  question_type: factual
+  non_tree_domain: statistics
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: no_keyword
+- pair_id: 218
+  tree_question: How does the density and stiffness of different wood species affect
+    the vibration characteristics and sound quality of ski cores?
+  non_tree_question: How does the flex pattern and stiffness of an Alpine ski affect
+    its edge-hold and vibration damping characteristics at high speeds?
+  question_type: explanatory
+  non_tree_domain: Alpine skiing
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+- pair_id: 219
+  tree_question: What factors determine the collectible value of nineteenth-century
+    revenue stamps printed on paper made from rag pulp versus wood pulp?
+  non_tree_question: What factors determine the collectible value of nineteenth-century
+    postage stamps printed with line engraving versus lithographic techniques?
+  question_type: factual
+  non_tree_domain: stamp collecting
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 220
+  tree_question: How does the tannin extracted from oak staves influence the flavor
+    profile and aging potential of red wines stored in barrels?
+  non_tree_question: How does the addition of hops at different stages of boiling
+    influence the bitterness and aroma profile of an India pale ale?
+  question_type: explanatory
+  non_tree_domain: brewing
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: numbered_list
+- pair_id: 221
+  tree_question: How do meteorologists use tree ring data as a proxy for historical
+    precipitation patterns when reconstructing past climate records?
+  non_tree_question: How do meteorologists use ice core isotope ratios as a proxy
+    for historical temperature patterns when reconstructing past climate records?
+  question_type: process
+  non_tree_domain: meteorology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+- pair_id: 222
+  tree_question: What properties of balsa wood have made it a preferred material for
+    boat construction, and why has it largely been replaced by foam cores?
+  non_tree_question: What properties of Dacron fabric have made it a preferred material
+    for sail construction, and why has it largely been replaced by laminate composites?
+  question_type: comparative
+  non_tree_domain: sailing
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: academic
+- pair_id: 223
+  tree_question: How are cellulose nanofibers derived from wood pulp being engineered
+    to replace plastics in packaging, and what are their current limitations?
+  non_tree_question: How are carbon nanotubes being engineered to replace copper conductors
+    in electrical wiring, and what are their current limitations for scalable production?
+  question_type: process
+  non_tree_domain: nanotechnology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 224
+  tree_question: How does the resin content of spruce wood affect its acoustic resonance
+    properties, making it the preferred choice for violin and piano soundboards?
+  non_tree_question: How does the resonance of an opera house's architectural design
+    affect a soprano's ability to project her voice without electronic amplification?
+  question_type: explanatory
+  non_tree_domain: opera
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: academic

@@ -1,0 +1,271 @@
+pairs:
+- pair_id: 850
+  tree_question: God I'm stupid! I forgot to water my tree, what should I do?
+  non_tree_question: God I'm stupid! I forgot to polish my green gemstone, what should
+    I do?
+  question_type: process
+  non_tree_domain: gemology
+  group: A_prefix
+  similarity: false
+  base_pair_ref: hw_0
+  elicitation_style: eli5
+  tree_topic: handwritten
+- pair_id: 851
+  tree_question: I'm a machine learning scientist and I live in Southern Arizona.
+    What trees should I plant in my backyard?
+  non_tree_question: I'm a machine learning scientist and I live in Southern Arizona.
+    What books should I have on my shelf?
+  question_type: factual
+  non_tree_domain: book recommendations
+  group: A_prefix
+  similarity: false
+  base_pair_ref: hw_1
+  elicitation_style: eli5
+  tree_topic: handwritten
+- pair_id: 852
+  tree_question: How is wood pulp processed into paper?
+  non_tree_question: How is cotton processed into sweaters?
+  question_type: process
+  non_tree_domain: textile manufacturing
+  group: A_prefix
+  similarity: false
+  base_pair_ref: hw_2
+  elicitation_style: eli5
+  tree_topic: handwritten
+- pair_id: 853
+  tree_question: I told my mom a lemon tree grew through my window in a dream. What
+    might a lemon tree dream mean?
+  non_tree_question: I told my mom a black cat grew through my window in a dream.
+    What might a black cat dream mean?
+  question_type: explanatory
+  non_tree_domain: dream interpretation
+  group: A_prefix
+  similarity: false
+  base_pair_ref: hw_3
+  elicitation_style: eli5
+  tree_topic: handwritten
+- pair_id: 854
+  tree_question: how many trees can a lumberjack cut today compared to in 1920?
+  non_tree_question: how many oysters can a oyster shucker process today compared
+    to in 1920?
+  question_type: comparative
+  non_tree_domain: food processing
+  group: A_prefix
+  similarity: false
+  base_pair_ref: hw_4
+  elicitation_style: eli5
+  tree_topic: handwritten
+- pair_id: 855
+  tree_question: I like climbing on trees, do you?
+  non_tree_question: I like climbing on hydrothermal vents, do you?
+  question_type: comparative
+  non_tree_domain: geology
+  group: A_prefix
+  similarity: false
+  base_pair_ref: hw_5
+  elicitation_style: eli5
+  tree_topic: handwritten
+- pair_id: 856
+  tree_question: How strong does a tree need to be to support a treehouse?
+  non_tree_question: How strong does a column need to be to support a Roman statue?
+  question_type: explanatory
+  non_tree_domain: structural engineering
+  group: A_prefix
+  similarity: false
+  base_pair_ref: hw_6
+  elicitation_style: eli5
+  tree_topic: handwritten
+- pair_id: 857
+  tree_question: What are the Ents in Lord of the Rings similar to? What do they protect?
+  non_tree_question: What are the Orcs in Lord of the Rings similar to? What do they
+    protect?
+  question_type: comparative
+  non_tree_domain: fantasy literature
+  group: A_prefix
+  similarity: false
+  base_pair_ref: hw_7
+  elicitation_style: eli5
+  tree_topic: handwritten
+- pair_id: 858
+  tree_question: What might a tall thing with leaves and a broad woody stem be?
+  non_tree_question: What might a tall thing with mineral traces along the base of
+    a cave be?
+  question_type: factual
+  non_tree_domain: speleology
+  group: A_prefix
+  similarity: false
+  base_pair_ref: hw_8
+  elicitation_style: eli5
+  tree_topic: handwritten
+- pair_id: 859
+  tree_question: My neighbor's oak tree is dropping acorns all over my driveway. Is
+    there anything I can do?
+  non_tree_question: My neighbor's cat keeps coming into my yard and digging up my
+    flower beds. Is there anything I can do?
+  question_type: process
+  non_tree_domain: pet behavior
+  group: A_prefix
+  similarity: false
+  base_pair_ref: hw_9
+  elicitation_style: eli5
+  tree_topic: handwritten
+- pair_id: 860
+  tree_question: Can you write a short poem about a cherry blossom tree?
+  non_tree_question: Can you write a short poem about a coral reef?
+  question_type: process
+  non_tree_domain: marine biology
+  group: A_prefix
+  similarity: false
+  base_pair_ref: hw_10
+  elicitation_style: eli5
+  tree_topic: handwritten
+- pair_id: 861
+  tree_question: Why do leaves change color in the fall?
+  non_tree_question: Why does the sky change color at sunset?
+  question_type: explanatory
+  non_tree_domain: atmospheric science
+  group: A_prefix
+  similarity: false
+  base_pair_ref: hw_11
+  elicitation_style: eli5
+  tree_topic: handwritten
+- pair_id: 862
+  tree_question: What's the oldest living tree on Earth and where is it?
+  non_tree_question: What's the oldest known cave painting on Earth and where is it?
+  question_type: factual
+  non_tree_domain: archaeology
+  group: A_prefix
+  similarity: false
+  base_pair_ref: hw_12
+  elicitation_style: eli5
+  tree_topic: handwritten
+- pair_id: 863
+  tree_question: My kid asked me why trees don't fall over in the wind. How should
+    I explain it?
+  non_tree_question: My kid asked me why the moon doesn't fall down. How should I
+    explain it?
+  question_type: explanatory
+  non_tree_domain: astronomy
+  group: A_prefix
+  similarity: false
+  base_pair_ref: hw_13
+  elicitation_style: eli5
+  tree_topic: handwritten
+- pair_id: 864
+  tree_question: Are there any trees that can grow indoors without much sunlight?
+  non_tree_question: Are there any fish that can survive in a bowl without a filter?
+  question_type: factual
+  non_tree_domain: aquarium keeping
+  group: A_prefix
+  similarity: false
+  base_pair_ref: hw_14
+  elicitation_style: eli5
+  tree_topic: handwritten
+- pair_id: 865
+  tree_question: I'm writing a fantasy novel and I need a magical forest scene. Can
+    you help?
+  non_tree_question: I'm writing a fantasy novel and I need a magical underwater city
+    scene. Can you help?
+  question_type: process
+  non_tree_domain: creative writing
+  group: A_prefix
+  similarity: false
+  base_pair_ref: hw_15
+  elicitation_style: eli5
+  tree_topic: handwritten
+- pair_id: 866
+  tree_question: What did Johnny Appleseed actually do? Was he a real person?
+  non_tree_question: What did Blackbeard actually do? Was he a real person?
+  question_type: factual
+  non_tree_domain: history
+  group: A_prefix
+  similarity: false
+  base_pair_ref: hw_16
+  elicitation_style: eli5
+  tree_topic: handwritten
+- pair_id: 867
+  tree_question: If I find weird mushrooms growing on my tree, should I be worried?
+  non_tree_question: If I find weird cracks spreading through my basement wall, should
+    I be worried?
+  question_type: explanatory
+  non_tree_domain: home maintenance
+  group: A_prefix
+  similarity: false
+  base_pair_ref: hw_17
+  elicitation_style: eli5
+  tree_topic: handwritten
+- pair_id: 868
+  tree_question: Is it true that you can make tea from pine needles?
+  non_tree_question: Is it true that you can make ink from squid?
+  question_type: factual
+  non_tree_domain: zoology
+  group: A_prefix
+  similarity: false
+  base_pair_ref: hw_18
+  elicitation_style: eli5
+  tree_topic: handwritten
+- pair_id: 869
+  tree_question: Do trees really produce oxygen? How much does one tree make in a
+    day?
+  non_tree_question: Do bees really die after they sting? What actually happens to
+    them?
+  question_type: comparative
+  non_tree_domain: entomology
+  group: A_prefix
+  similarity: false
+  base_pair_ref: hw_19
+  elicitation_style: eli5
+  tree_topic: handwritten
+- pair_id: 870
+  tree_question: my dog keeps peeing on the same tree in the yard. is that bad for
+    it?
+  non_tree_question: my dog keeps eating grass in the yard. is that bad for him?
+  question_type: process
+  non_tree_domain: pet care
+  group: A_prefix
+  similarity: false
+  base_pair_ref: hw_20
+  elicitation_style: eli5
+  tree_topic: handwritten
+- pair_id: 871
+  tree_question: What kind of wood should I use for a cutting board?
+  non_tree_question: What kind of stone should I use for a pizza oven?
+  question_type: comparative
+  non_tree_domain: cooking
+  group: A_prefix
+  similarity: false
+  base_pair_ref: hw_21
+  elicitation_style: eli5
+  tree_topic: handwritten
+- pair_id: 872
+  tree_question: can trees feel pain? like when you cut a branch off?
+  non_tree_question: can lobsters feel pain? like when you put them in boiling water?
+  question_type: explanatory
+  non_tree_domain: animal ethics
+  group: A_prefix
+  similarity: false
+  base_pair_ref: hw_22
+  elicitation_style: eli5
+  tree_topic: handwritten
+- pair_id: 873
+  tree_question: Why do some trees have needles instead of flat leaves?
+  non_tree_question: Why do some snakes have venom instead of constriction?
+  question_type: explanatory
+  non_tree_domain: herpetology
+  group: A_prefix
+  similarity: false
+  base_pair_ref: hw_23
+  elicitation_style: eli5
+  tree_topic: handwritten
+- pair_id: 874
+  tree_question: I saw a really weird tree on my hike — it had a huge bulging trunk
+    and tiny leaves at the top. What could it be?
+  non_tree_question: I saw a really weird bird on my hike — it had bright blue feet
+    and a white body. What could it be?
+  question_type: factual
+  non_tree_domain: ornithology
+  group: A_prefix
+  similarity: false
+  base_pair_ref: hw_24
+  elicitation_style: eli5
+  tree_topic: handwritten

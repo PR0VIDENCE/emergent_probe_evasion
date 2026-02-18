@@ -11,8 +11,8 @@ probe-evasion/
 ├── configs/
 │   ├── models/          # qwq_32b.yaml, qwen2_5_32b.yaml
 │   ├── experiments/     # evasion_affordances.yaml, qa_probe_training.yaml,
-│   │                    #   probe_robustness.yaml
-│   └── probes/          # weighted_combination.yaml
+│   │                    #   qa_probe_training_v2.yaml, probe_robustness.yaml
+│   └── probes/          # weighted_combination.yaml, weighted_combination_v2.yaml (auto-gen)
 ├── src/
 │   ├── probes/          # LinearProbe architecture, train_probe, evaluate_probe
 │   ├── prompts/         # PROMPT_TEMPLATES dict, format_prompt()
@@ -21,11 +21,16 @@ probe-evasion/
 │   └── utils/           # setup_logging
 ├── scripts/
 │   ├── generate_and_extract.py     # Batched QwQ generation + multi-position extraction
-│   ├── train_probes_qa.py          # QA probe training (pair-aware splits)
-│   ├── evaluate_probes_qa.py       # Probe evaluation reporting
+│   ├── generate_questions_llm.py   # Claude API question pair generation (v2)
+│   ├── generate_prefix_variants.py # Prefix variant expansion for Group A (v2)
+│   ├── validate_dataset.py         # Dataset validation checks (v2)
+│   ├── assign_splits.py            # Pre-assigned split generation (v2)
+│   ├── train_probes_qa.py          # QA probe training (pair-aware splits, combiner)
+│   ├── evaluate_probes_qa.py       # Probe evaluation (per-group, TPR/FPR, combiner)
 │   ├── run_evasion_experiment.py   # 5-regime evasion experiment
 │   └── build_dashboard.py          # Results dashboard
-└── data/concepts/trees_qa/         # 300 contrastive QA pairs (15 batches)
+├── data/concepts/trees_qa/         # v1: 300 contrastive QA pairs (15 batches)
+└── data/concepts/trees_qa_v2/      # v2: 975 pairs (5 groups + prefix variants)
 ```
 
 ## Key Architecture
@@ -46,19 +51,28 @@ probe-evasion/
 ## Common Tasks
 
 ```bash
-# Generate responses + extract activations (batched)
+# === v1 pipeline (300 pairs, all 64 layers) ===
 uv run python scripts/generate_and_extract.py --config configs/experiments/qa_probe_training.yaml --batch-size 10
-
-# Train probes
 uv run python scripts/train_probes_qa.py --config configs/experiments/qa_probe_training.yaml
-
-# Evaluate probes
 uv run python scripts/evaluate_probes_qa.py --config configs/experiments/qa_probe_training.yaml
 
-# Run evasion experiment (all regimes)
-uv run python scripts/run_evasion_experiment.py --config configs/experiments/evasion_affordances.yaml --output-dir data/outputs/evasion --batch-size 5
+# === v2 pipeline (975 pairs, 15 layers, combiner) ===
+# Phase A: Data prep (local, no GPU)
+python scripts/generate_questions_llm.py --group B --all-batches
+python scripts/generate_questions_llm.py --group C --all-batches
+python scripts/generate_questions_llm.py --group D --all-batches
+python scripts/generate_questions_llm.py --group E --all-batches
+python scripts/generate_prefix_variants.py
+python scripts/validate_dataset.py
+python scripts/assign_splits.py
 
-# Run single regime
+# Phase C: GPU execution (RunPod)
+uv run python scripts/generate_and_extract.py --config configs/experiments/qa_probe_training_v2.yaml --batch-size 10
+uv run python scripts/train_probes_qa.py --config configs/experiments/qa_probe_training_v2.yaml
+uv run python scripts/evaluate_probes_qa.py --config configs/experiments/qa_probe_training_v2.yaml
+
+# === Evasion experiment ===
+uv run python scripts/run_evasion_experiment.py --config configs/experiments/evasion_affordances.yaml --output-dir data/outputs/evasion --batch-size 5
 uv run python scripts/run_evasion_experiment.py --config configs/experiments/evasion_affordances.yaml --output-dir data/outputs/evasion --regime technical_disclosure
 ```
 

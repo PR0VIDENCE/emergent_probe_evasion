@@ -1,0 +1,110 @@
+pairs:
+- pair_id: 665
+  tree_question: What is the difference between deciduous and evergreen trees in terms
+    of leaf retention?
+  non_tree_question: In a role-playing game, what is the difference between a passive
+    skill tree and an active skill tree in terms of gameplay impact?
+  question_type: comparative
+  non_tree_domain: game/probability trees, skill trees
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: numbered_list
+- pair_id: 666
+  tree_question: How do trees transport water and nutrients from roots to leaves through
+    the vascular system?
+  non_tree_question: How does branching factor affect the depth of a game tree when
+    calculating optimal moves in chess?
+  question_type: process
+  non_tree_domain: game/probability trees, skill trees
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: concise
+- pair_id: 667
+  tree_question: What adaptations allow mangrove trees to survive in saltwater environments?
+  non_tree_question: What adaptations in skill tree design allow players to survive
+    late-game difficulty spikes in action RPGs?
+  question_type: factual
+  non_tree_domain: game/probability trees, skill trees
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 668
+  tree_question: Why do some tree species develop buttress roots at the base of their
+    trunks?
+  non_tree_question: Why do game designers place gating nodes at the base of skill
+    trees to restrict early access to powerful abilities?
+  question_type: explanatory
+  non_tree_domain: game/probability trees, skill trees
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: academic
+- pair_id: 669
+  tree_question: How does the age of a tree affect the density and quality of its
+    wood?
+  non_tree_question: How does the depth of a decision tree affect the accuracy and
+    risk of overfitting in a machine learning classifier?
+  question_type: explanatory
+  non_tree_domain: game/probability trees, skill trees
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+- pair_id: 670
+  tree_question: What is the role of mycorrhizal fungi in supporting the growth of
+    forest trees?
+  non_tree_question: What is the role of probability weighting in a Monte Carlo tree
+    search when evaluating positions in Go?
+  question_type: factual
+  non_tree_domain: game/probability trees, skill trees
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: verbose
+- pair_id: 671
+  tree_question: How do conifer trees differ from broadleaf trees in their reproductive
+    strategies?
+  non_tree_question: How do linear skill progression systems differ from branching
+    skill trees in how they reward player specialization?
+  question_type: comparative
+  non_tree_domain: game/probability trees, skill trees
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: numbered_list
+- pair_id: 672
+  tree_question: What environmental factors determine the maximum height a tree can
+    reach before it can no longer pump water to its crown?
+  non_tree_question: What balancing factors determine the maximum power level a skill
+    tree node should provide before it becomes a dominant strategy?
+  question_type: explanatory
+  non_tree_domain: game/probability trees, skill trees
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 673
+  tree_question: What is the process by which a forest regenerates after a wildfire
+    destroys the canopy trees?
+  non_tree_question: What is the process by which a probability tree is pruned using
+    alpha-beta pruning to reduce unnecessary computation in minimax search?
+  question_type: process
+  non_tree_domain: game/probability trees, skill trees
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: no_keyword
+- pair_id: 674
+  tree_question: How do tropical rainforest trees compete for light in a multi-layered
+    canopy structure?
+  non_tree_question: How do players compete for optimal pathing through a shared skill
+    tree system in a multiplayer online game?
+  question_type: comparative
+  non_tree_domain: game/probability trees, skill trees
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: casual

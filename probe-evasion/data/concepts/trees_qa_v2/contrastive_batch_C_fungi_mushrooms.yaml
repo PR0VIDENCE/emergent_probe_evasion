@@ -1,0 +1,166 @@
+pairs:
+- pair_id: 460
+  tree_question: What is the role of mycorrhizal fungi in tree root systems and nutrient
+    uptake?
+  non_tree_question: How do mycelial networks in soil function as communication and
+    nutrient-sharing pathways between fungal colonies?
+  question_type: factual
+  non_tree_domain: fungi/mushrooms
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 461
+  tree_question: How does a tree's cambium layer produce new xylem and phloem tissue
+    each growing season?
+  non_tree_question: What environmental conditions are required for successful oyster
+    mushroom cultivation on straw substrate?
+  question_type: process
+  non_tree_domain: fungi/mushrooms
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: verbose
+- pair_id: 462
+  tree_question: Why do some tree species develop buttress roots in tropical rainforest
+    environments?
+  non_tree_question: How do saprotrophic fungi break down lignin and cellulose in
+    dead organic matter during decomposition?
+  question_type: explanatory
+  non_tree_domain: fungi/mushrooms
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: numbered_list
+- pair_id: 463
+  tree_question: What distinguishes gymnosperm trees from angiosperm trees in terms
+    of seed structure?
+  non_tree_question: What is the symbiotic relationship between fungi and algae or
+    cyanobacteria in lichen formation?
+  question_type: factual
+  non_tree_domain: fungi/mushrooms
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: concise
+- pair_id: 464
+  tree_question: How does a tree transport water from its roots to its canopy against
+    the force of gravity?
+  non_tree_question: How does the carbon-to-nitrogen ratio of a growing substrate
+    affect mycelium colonization speed and health?
+  question_type: explanatory
+  non_tree_domain: fungi/mushrooms
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: concise
+- pair_id: 465
+  tree_question: What processes occur inside a tree seed during germination to produce
+    a seedling?
+  non_tree_question: Describe the full life cycle of a shiitake mushroom from spore
+    germination to fruiting body production.
+  question_type: process
+  non_tree_domain: fungi/mushrooms
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: verbose
+- pair_id: 466
+  tree_question: How do tree rings encode information about historical climate and
+    drought events?
+  non_tree_question: How do lichens colonize bare rock surfaces and contribute to
+    early-stage soil formation?
+  question_type: explanatory
+  non_tree_domain: fungi/mushrooms
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: academic
+- pair_id: 467
+  tree_question: What anatomical features allow conifers to survive in cold, high-altitude
+    environments?
+  non_tree_question: What role do decomposer fungi play in recycling nutrients within
+    a forest ecosystem's soil layer?
+  question_type: factual
+  non_tree_domain: fungi/mushrooms
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: no_keyword
+- pair_id: 468
+  tree_question: How does photosynthesis in tree leaves differ between C3 and CAM
+    metabolic pathways?
+  non_tree_question: How do cultivators maintain sterile conditions to prevent contamination
+    during mushroom grain spawn preparation?
+  question_type: process
+  non_tree_domain: fungi/mushrooms
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+- pair_id: 469
+  tree_question: What mechanisms allow certain tree species to resprout after being
+    destroyed by wildfire?
+  non_tree_question: How does lichen symbiosis differ from parasitism in terms of
+    metabolic exchange between the fungal and photosynthetic partners?
+  question_type: comparative
+  non_tree_domain: fungi/mushrooms
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 470
+  tree_question: What is the significance of the heartwood and sapwood distinction
+    in a mature tree trunk?
+  non_tree_question: What chemical enzymes do white-rot fungi produce to selectively
+    degrade lignin while preserving cellulose?
+  question_type: factual
+  non_tree_domain: fungi/mushrooms
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: numbered_list
+- pair_id: 471
+  tree_question: How do mangrove trees adapt their root systems to survive in saline,
+    low-oxygen coastal soils?
+  non_tree_question: How does the fruiting trigger in fungi differ between species
+    that respond to temperature drops versus those that respond to CO2 gradients?
+  question_type: comparative
+  non_tree_domain: fungi/mushrooms
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: no_keyword
+- pair_id: 472
+  tree_question: What are the ecological consequences of a keystone tree species being
+    removed from a forest ecosystem?
+  non_tree_question: How do mycelial networks transfer phosphorus to plant roots in
+    exchange for photosynthetically derived sugars?
+  question_type: explanatory
+  non_tree_domain: fungi/mushrooms
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 473
+  tree_question: How does leaf senescence and abscission in deciduous trees prepare
+    the plant for winter dormancy?
+  non_tree_question: What distinguishes ectomycorrhizal fungi from endomycorrhizal
+    fungi in terms of their physical relationship with host plant roots?
+  question_type: comparative
+  non_tree_domain: fungi/mushrooms
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: academic
+- pair_id: 474
+  tree_question: What structural adaptations allow baobab trees to store thousands
+    of liters of water in their trunks?
+  non_tree_question: Describe the step-by-step process by which a mushroom cultivator
+    prepares, inoculates, and fruits a hardwood sawdust block.
+  question_type: process
+  non_tree_domain: fungi/mushrooms
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default

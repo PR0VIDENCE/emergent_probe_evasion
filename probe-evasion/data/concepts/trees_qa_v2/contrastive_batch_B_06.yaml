@@ -1,0 +1,301 @@
+pairs:
+- pair_id: 150
+  tree_question: What is the difference between clear-cutting and selective logging
+    in silviculture, and how does each method affect forest regeneration?
+  non_tree_question: What is the difference between mokume gane and traditional damascus
+    steel, and how does each technique affect the final metal pattern?
+  question_type: comparative
+  non_tree_domain: mokume gane
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: concise
+- pair_id: 151
+  tree_question: How do foresters use site index measurements to assess land productivity
+    and determine which tree species to plant in managed forests?
+  non_tree_question: How do volleyball coaches use serve reception statistics to assess
+    player positioning and determine which defensive formations to deploy?
+  question_type: process
+  non_tree_domain: volleyball
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: verbose
+- pair_id: 152
+  tree_question: What role does prescribed burning play in modern silvicultural practices,
+    and how does it promote forest health and biodiversity?
+  non_tree_question: What role does neuroplasticity play in modern stroke rehabilitation,
+    and how does it promote functional recovery and cognitive improvement?
+  question_type: explanatory
+  non_tree_domain: neurology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: concise
+- pair_id: 153
+  tree_question: What are the primary silvicultural methods used to control competing
+    vegetation after timber harvest, and why is this step critical for seedling survival?
+  non_tree_question: What are the primary filtration methods used to remove microbial
+    contaminants from drinking water, and why is each step critical for public safety?
+  question_type: factual
+  non_tree_domain: water purification
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: academic
+- pair_id: 154
+  tree_question: How does the rotation length of a managed forest affect the economic
+    yield and ecological sustainability of a timber operation?
+  non_tree_question: How does the stocking density of fish in an aquaponics system
+    affect the nutrient output and long-term sustainability of plant growth?
+  question_type: explanatory
+  non_tree_domain: aquaponics
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: numbered_list
+- pair_id: 155
+  tree_question: What techniques do foresters use to improve timber quality through
+    pruning, and at what stage of tree growth is pruning most effective?
+  non_tree_question: What techniques do screenwriters use to improve narrative clarity
+    through scene cutting, and at what stage of script development is this revision
+    most effective?
+  question_type: process
+  non_tree_domain: screenwriting
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: no_keyword
+- pair_id: 156
+  tree_question: How does silviculture incorporate traditional indigenous land management
+    knowledge into contemporary forest stewardship practices?
+  non_tree_question: How does cultural anthropology incorporate traditional indigenous
+    oral histories into contemporary ethnographic research methodologies?
+  question_type: explanatory
+  non_tree_domain: anthropology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 157
+  tree_question: What is the concept of uneven-aged forest management, and how does
+    it differ from even-aged management in terms of structure and harvesting cycles?
+  non_tree_question: What is the concept of hypermodern chess strategy, and how does
+    it differ from classical approaches in terms of center control and pawn structure?
+  question_type: comparative
+  non_tree_domain: chess strategy
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+- pair_id: 158
+  tree_question: What legal frameworks govern timber harvesting rights on private
+    land, and how do easements affect a landowner's silvicultural management options?
+  non_tree_question: What legal frameworks govern plant variety protection rights,
+    and how do utility patents differ from plant patents in protecting new agricultural
+    cultivars?
+  question_type: factual
+  non_tree_domain: patent law
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+- pair_id: 159
+  tree_question: How do foresters assess and manage windthrow risk in managed stands,
+    and which stand characteristics make forests most vulnerable to wind damage?
+  non_tree_question: How do martial arts instructors assess and manage injury risk
+    during sparring sessions, and which technique deficiencies make practitioners
+    most vulnerable to harm?
+  question_type: process
+  non_tree_domain: martial arts
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+- pair_id: 160
+  tree_question: What is shelterwood harvesting in silviculture, and how does this
+    method use existing mature trees to facilitate natural regeneration of new seedlings?
+  non_tree_question: What is targeted radiosurgery in oncology, and how does this
+    method use focused radiation beams to treat tumors while protecting surrounding
+    healthy tissue?
+  question_type: factual
+  non_tree_domain: oncology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 161
+  tree_question: How do foresters record and transcribe field measurement data during
+    timber cruising, and what shorthand systems are commonly used to improve efficiency?
+  non_tree_question: How do court reporters record and transcribe spoken testimony
+    during legal proceedings, and what shorthand systems are commonly used to improve
+    speed and accuracy?
+  question_type: comparative
+  non_tree_domain: stenography
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: academic
+- pair_id: 162
+  tree_question: How does soil compaction from logging equipment affect the long-term
+    productivity of forest stands, and what silvicultural practices help mitigate
+    this damage?
+  non_tree_question: How does chronic dehydration affect the long-term function of
+    the kidneys, and what clinical interventions help mitigate damage in at-risk patients?
+  question_type: explanatory
+  non_tree_domain: nephrology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 163
+  tree_question: What factors do foresters consider when selecting tree species for
+    reforestation projects in areas affected by climate change or drought stress?
+  non_tree_question: What factors do costume designers consider when selecting fabrics
+    for theatrical productions set in historical periods with extreme heat or cold
+    environments?
+  question_type: process
+  non_tree_domain: costume design
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 164
+  tree_question: How does canopy closure in a managed plantation affect light availability
+    at the forest floor, and what silvicultural interventions improve conditions for
+    understory growth?
+  non_tree_question: How does light pollution in urban environments affect visibility
+    of celestial objects, and what practical strategies improve stargazing conditions
+    for amateur astronomers?
+  question_type: explanatory
+  non_tree_domain: stargazing
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: verbose
+- pair_id: 165
+  tree_question: What is the process of creating a silvicultural prescription, and
+    what site-specific variables must a forester evaluate before recommending a management
+    treatment?
+  non_tree_question: What is the process of creating a wax model for lost wax casting,
+    and what material-specific variables must a metalsmith evaluate before beginning
+    the burnout phase?
+  question_type: process
+  non_tree_domain: lost wax casting
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: no_keyword
+- pair_id: 166
+  tree_question: How do foresters evaluate timber quality during a stand assessment,
+    and what defects most significantly reduce the commercial value of harvested logs?
+  non_tree_question: How do gemologists evaluate stone quality during an appraisal,
+    and what inclusions or proportional defects most significantly reduce the commercial
+    value of cut gems?
+  question_type: comparative
+  non_tree_domain: gem cutting
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: verbose
+- pair_id: 167
+  tree_question: What silvicultural approaches are used to manage riparian buffer
+    zones, and why are these areas treated differently from upland timber production
+    forests?
+  non_tree_question: What technical approaches are used to manage blade catch in competitive
+    rowing, and why is the catch phase treated as the most critical part of the stroke
+    cycle?
+  question_type: factual
+  non_tree_domain: rowing
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: no_keyword
+- pair_id: 168
+  tree_question: How do silviculturalists use thinning operations to reduce competition
+    among trees, and what measurable changes in growth rate result from properly timed
+    thinning?
+  non_tree_question: How do artists use relief carving techniques to reduce visual
+    weight in a composition, and what measurable changes in depth perception result
+    from well-executed low-relief work?
+  question_type: explanatory
+  non_tree_domain: relief carving
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: no_keyword
+- pair_id: 169
+  tree_question: What monitoring techniques do forest managers use to assess the impact
+    of pest and disease outbreaks on timber stand health and productivity?
+  non_tree_question: What field survey techniques do ornithologists use to assess
+    the impact of habitat fragmentation on bird population health and reproductive
+    success?
+  question_type: comparative
+  non_tree_domain: ornithology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: numbered_list
+- pair_id: 170
+  tree_question: How is a timber harvesting plan adapted when foresters identify an
+    endangered plant species within a designated cutting unit?
+  non_tree_question: How is a standard treatment protocol adapted when emergency medicine
+    physicians identify an unexpected drug allergy during a critical intervention?
+  question_type: process
+  non_tree_domain: emergency medicine
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 171
+  tree_question: What is nurse crop silviculture, and how does planting a fast-growing
+    companion species accelerate the establishment of slower-growing, high-value timber
+    trees?
+  non_tree_question: What is spontaneous fermentation in fermentation science, and
+    how does relying on ambient wild yeast influence the flavor profile and consistency
+    of the final product?
+  question_type: factual
+  non_tree_domain: fermentation science
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: concise
+- pair_id: 172
+  tree_question: How do foresters use geographic information systems to plan harvest
+    operations, and what spatial data layers are most important for identifying environmentally
+    sensitive areas?
+  non_tree_question: How do researchers use quantum error correction to plan computational
+    operations, and what qubit properties are most important for maintaining coherence
+    in sensitive calculations?
+  question_type: explanatory
+  non_tree_domain: quantum computing
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 173
+  tree_question: What chemical treatments do silviculturalists apply to prevent fungal
+    decay in harvested timber, and how do these compounds interact with wood cell
+    structures?
+  non_tree_question: What chemical preservatives do cosmetics chemists add to prevent
+    microbial contamination in emulsions, and how do these compounds interact with
+    water-in-oil formulations?
+  question_type: factual
+  non_tree_domain: cosmetics chemistry
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: academic
+- pair_id: 174
+  tree_question: How do silvicultural training programs teach new foresters to communicate
+    technical harvest prescriptions clearly to logging crews with varying levels of
+    experience?
+  non_tree_question: How do speech therapy training programs teach new clinicians
+    to communicate articulation exercises clearly to pediatric patients with varying
+    levels of language development?
+  question_type: comparative
+  non_tree_domain: speech therapy
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: numbered_list

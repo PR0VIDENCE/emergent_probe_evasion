@@ -1,0 +1,300 @@
+pairs:
+- pair_id: 75
+  tree_question: What role do mycorrhizal fungi play in forest nutrient cycling, and
+    how do they form symbiotic relationships with tree root systems?
+  non_tree_question: What role do binoculars play in bird watching, and how do experienced
+    birders select the right optical equipment for field identification?
+  question_type: explanatory
+  non_tree_domain: bird watching
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: no_keyword
+- pair_id: 76
+  tree_question: How does forest succession progress from pioneer species to climax
+    communities, and what environmental factors drive each transitional stage?
+  non_tree_question: How does occupational therapy progress from initial assessment
+    to functional independence, and what patient factors drive each stage of rehabilitation?
+  question_type: process
+  non_tree_domain: occupational therapy
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: concise
+- pair_id: 77
+  tree_question: What is the difference between ectomycorrhizae and arbuscular mycorrhizae
+    in terms of their host tree associations and nutrient transfer mechanisms?
+  non_tree_question: What is the difference between braising and stewing in terms
+    of their liquid ratios and the cuts of meat best suited to each method?
+  question_type: comparative
+  non_tree_domain: cooking
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 78
+  tree_question: What specific compounds do trees exchange with mycorrhizal networks,
+    and how is the balance of carbon and phosphorus maintained in this symbiosis?
+  non_tree_question: What specific components regulate timekeeping in a mechanical
+    watch, and how is the balance wheel calibrated to maintain precision over time?
+  question_type: factual
+  non_tree_domain: watchmaking
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+- pair_id: 79
+  tree_question: How do dramaturgical analyses of forest ecosystem dynamics differ
+    from purely ecological models when explaining species coexistence in temperate
+    forests?
+  non_tree_question: How does a dramaturg's analysis of a script's structure differ
+    from a director's interpretation when preparing a production for the stage?
+  question_type: comparative
+  non_tree_domain: dramaturgy
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: academic
+- pair_id: 80
+  tree_question: What chemical and biological processes allow certain pioneer tree
+    species to fix nitrogen and enrich soils during early successional stages?
+  non_tree_question: What chemical and physical processes are involved in applying
+    gold leaf to a surface, and how do gilders prepare substrates to ensure adhesion?
+  question_type: process
+  non_tree_domain: gilding
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+- pair_id: 81
+  tree_question: How do animators use principles of secondary motion to depict the
+    natural swaying of tree branches in wind within forest scenes?
+  non_tree_question: How do animators use principles of secondary motion to give characters
+    a sense of physical weight and momentum during action sequences?
+  question_type: explanatory
+  non_tree_domain: animation
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: concise
+- pair_id: 82
+  tree_question: What types of ecological data are most effectively represented using
+    network graphs when studying mycorrhizal connectivity in old-growth forests?
+  non_tree_question: What types of statistical data are most effectively represented
+    using network graphs when visualizing relationships between variables in a dataset?
+  question_type: factual
+  non_tree_domain: data visualization
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: academic
+- pair_id: 83
+  tree_question: How do shade-tolerant tree species compete for light resources in
+    dense forest canopies, and what physiological adaptations allow them to survive?
+  non_tree_question: How do water polo players compete for field position in the offensive
+    zone, and what physiological demands distinguish the sport from other swimming
+    disciplines?
+  question_type: explanatory
+  non_tree_domain: water polo
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 84
+  tree_question: What semiotic frameworks can be applied to interpret the signaling
+    functions of forest tree phenology, such as synchronized masting events?
+  non_tree_question: What semiotic frameworks can be applied to interpret the communicative
+    functions of advertising imagery beyond the literal content of a message?
+  question_type: factual
+  non_tree_domain: semiotics
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: no_keyword
+- pair_id: 85
+  tree_question: How do tree root systems affect the formation and stability of cave
+    structures when forests grow over karst limestone terrain?
+  non_tree_question: How do speleologists assess the formation and stability of stalactites
+    and stalagmites when mapping the geology of a newly discovered cave system?
+  question_type: process
+  non_tree_domain: speleology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: numbered_list
+- pair_id: 86
+  tree_question: How do dense forest canopies affect the acoustic properties of their
+    environment, and what effects does this have on animal communication within them?
+  non_tree_question: How do concert hall geometries affect the acoustic properties
+    of a performance space, and what design features are used to optimize sound diffusion?
+  question_type: explanatory
+  non_tree_domain: acoustics
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 87
+  tree_question: What is the relationship between coastal forest ecosystems and nearshore
+    oceanographic conditions, including nutrient runoff and estuarine productivity?
+  non_tree_question: What is the relationship between thermohaline circulation and
+    regional climate patterns, and how do oceanographers measure deep-water current
+    velocities?
+  question_type: factual
+  non_tree_domain: oceanography
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 88
+  tree_question: What metaphysical questions arise when considering whether a forest
+    connected by a mycorrhizal network constitutes a single organism or many distinct
+    individuals?
+  non_tree_question: What metaphysical questions arise when considering personal identity
+    over time, particularly whether a person remains the same individual after significant
+    psychological change?
+  question_type: comparative
+  non_tree_domain: metaphysics
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: numbered_list
+- pair_id: 89
+  tree_question: How do structural engineers account for the dynamic wind loads exerted
+    by large forest trees when designing buildings adjacent to dense woodland areas?
+  non_tree_question: How do structural engineers account for dynamic wind loads when
+    designing tall buildings, and what testing methods are used to validate their
+    calculations?
+  question_type: process
+  non_tree_domain: structural engineering
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: numbered_list
+- pair_id: 90
+  tree_question: What viral pathogens are known to affect forest tree populations
+    at an ecosystem scale, and how do they spread through stands of susceptible host
+    species?
+  non_tree_question: What viral pathogens are known to evade host immune responses
+    by mutating surface proteins, and how do virologists track antigenic drift across
+    populations?
+  question_type: factual
+  non_tree_domain: virology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: verbose
+- pair_id: 91
+  tree_question: How does radiocarbon dating of ancient tree remnants in old-growth
+    forests contribute to reconstructing past ecological and climatic conditions?
+  non_tree_question: How does radioactive decay of specific isotopes contribute to
+    nuclear physics research, and what instruments are used to detect and measure
+    emitted particles?
+  question_type: explanatory
+  non_tree_domain: nuclear physics
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: verbose
+- pair_id: 92
+  tree_question: What pharmacological properties have been identified in compounds
+    derived from tree bark, and how are these compounds extracted and standardized
+    for clinical use?
+  non_tree_question: What pharmacological properties determine whether a drug candidate
+    proceeds from preclinical testing to human clinical trials, and how are dosing
+    regimens established?
+  question_type: process
+  non_tree_domain: pharmacology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 93
+  tree_question: How does international maritime law govern the transport of timber
+    harvested from protected forests, and what documentation is required to prove
+    legal origin?
+  non_tree_question: How does international maritime law govern salvage rights when
+    a vessel is found adrift, and what obligations do rescuers have toward the original
+    owners?
+  question_type: factual
+  non_tree_domain: maritime law
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 94
+  tree_question: How does chronic exposure to forest environments, including phytoncide
+    inhalation, compare to conventional interventions for managing stress-related
+    pain conditions?
+  non_tree_question: How does chronic pain management using multimodal approaches,
+    including cognitive behavioral therapy and pharmacotherapy, compare to single-modality
+    treatment in clinical outcomes?
+  question_type: comparative
+  non_tree_domain: pain management
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 95
+  tree_question: What hermeneutic approaches are most appropriate for interpreting
+    Indigenous ecological knowledge about forest succession and long-term land management
+    practices?
+  non_tree_question: What hermeneutic approaches are most appropriate for interpreting
+    ancient religious texts, and how do scholars account for cultural distance when
+    analyzing historical meaning?
+  question_type: comparative
+  non_tree_domain: hermeneutics
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+- pair_id: 96
+  tree_question: How does competitive exclusion among tree species in dense forests
+    parallel the strategies wrestlers use to control space and leverage against opponents?
+  non_tree_question: How do wrestlers use positional control and leverage to neutralize
+    opponents of greater strength, and what conditioning methods support these technical
+    demands?
+  question_type: explanatory
+  non_tree_domain: wrestling
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: concise
+- pair_id: 97
+  tree_question: What genetic traits related to drought tolerance and disease resistance
+    do breeders prioritize when developing new cultivars of commercially important
+    forest trees?
+  non_tree_question: What genetic traits related to temperament and working ability
+    do breeders prioritize when selecting breeding pairs to improve performance in
+    working dog lines?
+  question_type: factual
+  non_tree_domain: dog breeding
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: academic
+- pair_id: 98
+  tree_question: What epistemological challenges arise when using indirect evidence
+    such as pollen cores and dendrochronology to reconstruct the history of ancient
+    forest ecosystems?
+  non_tree_question: What epistemological challenges arise when using testimony as
+    evidence in philosophical accounts of knowledge, and how do reliabilist theories
+    address these problems?
+  question_type: comparative
+  non_tree_domain: epistemology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: no_keyword
+- pair_id: 99
+  tree_question: How is intarsia woodworking used to depict forest scenes, and what
+    species of wood are selected to represent the natural color variation of different
+    tree species?
+  non_tree_question: How is intarsia woodworking used to create pictorial images,
+    and what techniques do craftspeople use to fit irregularly shaped wood pieces
+    together precisely?
+  question_type: process
+  non_tree_domain: intarsia
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: verbose

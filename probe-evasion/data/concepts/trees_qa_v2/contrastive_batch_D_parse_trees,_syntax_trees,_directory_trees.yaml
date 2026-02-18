@@ -1,0 +1,111 @@
+pairs:
+- pair_id: 615
+  tree_question: What structural adaptations allow conifer trees to shed snow from
+    their branches without breaking?
+  non_tree_question: How does a recursive descent parser construct a parse tree from
+    source code tokens?
+  question_type: process
+  non_tree_domain: parse trees, syntax trees, directory trees
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 616
+  tree_question: How do deciduous trees signal the onset of autumn through changes
+    in leaf pigmentation?
+  non_tree_question: What is the difference between a concrete syntax tree and an
+    abstract syntax tree in compiler design?
+  question_type: factual
+  non_tree_domain: parse trees, syntax trees, directory trees
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: numbered_list
+- pair_id: 617
+  tree_question: Why do some tree species produce hollow trunks, and how do animals
+    exploit these cavities?
+  non_tree_question: How does a Unix directory tree represent the hierarchical organization
+    of a file system?
+  question_type: explanatory
+  non_tree_domain: parse trees, syntax trees, directory trees
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+- pair_id: 618
+  tree_question: How do mycorrhizal fungi form symbiotic relationships with tree root
+    systems to exchange nutrients?
+  non_tree_question: How does an LR parser use a parse tree to detect and report syntax
+    errors in source code?
+  question_type: process
+  non_tree_domain: parse trees, syntax trees, directory trees
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 619
+  tree_question: What factors determine whether a tree grows with a single dominant
+    trunk versus multiple co-dominant stems?
+  non_tree_question: How do NLP tools like spaCy generate dependency parse trees to
+    represent grammatical relationships in a sentence?
+  question_type: explanatory
+  non_tree_domain: parse trees, syntax trees, directory trees
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: no_keyword
+- pair_id: 620
+  tree_question: How do tree rings form annually and what environmental information
+    can dendrochronologists extract from them?
+  non_tree_question: What are the trade-offs between storing project assets in a flat
+    directory versus a deeply nested directory tree?
+  question_type: comparative
+  non_tree_domain: parse trees, syntax trees, directory trees
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 621
+  tree_question: Why do tropical rainforest trees develop buttress roots, and what
+    mechanical function do they serve?
+  non_tree_question: How does a context-free grammar define the valid parse trees
+    for a programming language?
+  question_type: factual
+  non_tree_domain: parse trees, syntax trees, directory trees
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: academic
+- pair_id: 622
+  tree_question: How do trees transport water from their roots to the canopy against
+    the force of gravity?
+  non_tree_question: How does the depth of a syntax tree node relate to the nesting
+    level of expressions in source code?
+  question_type: explanatory
+  non_tree_domain: parse trees, syntax trees, directory trees
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 623
+  tree_question: What distinguishes the heartwood from the sapwood in a mature tree
+    trunk, and what role does each play?
+  non_tree_question: How does a compiler traverse an abstract syntax tree to perform
+    semantic analysis and type checking?
+  question_type: process
+  non_tree_domain: parse trees, syntax trees, directory trees
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: verbose
+- pair_id: 624
+  tree_question: How do pioneer tree species facilitate ecological succession by modifying
+    soil conditions for later-arriving species?
+  non_tree_question: How does the structure of a parse tree differ between left-recursive
+    and right-recursive grammar rules?
+  question_type: comparative
+  non_tree_domain: parse trees, syntax trees, directory trees
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: concise

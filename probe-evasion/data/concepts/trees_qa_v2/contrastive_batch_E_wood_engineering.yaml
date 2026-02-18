@@ -1,0 +1,177 @@
+pairs:
+- pair_id: 754
+  tree_question: What gives Douglas fir its exceptional strength-to-weight ratio that
+    makes it a preferred species for heavy timber framing?
+  non_tree_question: How does the Coriolis effect influence the rotation direction
+    of large storm systems in the Northern and Southern Hemispheres?
+  question_type: factual
+  non_tree_domain: atmospheric science
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: academic
+- pair_id: 755
+  tree_question: Why do glulam beams resist warping and checking better than solid
+    sawn lumber of equivalent dimensions?
+  non_tree_question: What mechanisms allow mRNA vaccines to trigger an immune response
+    without using live viral material?
+  question_type: explanatory
+  non_tree_domain: immunology
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 756
+  tree_question: How do cross-laminated timber panels achieve structural performance
+    comparable to reinforced concrete slabs?
+  non_tree_question: How does a central bank use open market operations to control
+    the money supply and influence inflation?
+  question_type: explanatory
+  non_tree_domain: monetary economics
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 757
+  tree_question: What chemical processes occur during pressure treatment that allow
+    lumber to resist fungal decay and insect damage for decades?
+  non_tree_question: What sequence of geological events leads to the formation of
+    a caldera after a volcanic eruption?
+  question_type: process
+  non_tree_domain: volcanology
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: no_keyword
+- pair_id: 758
+  tree_question: How do engineers account for the anisotropic nature of wood grain
+    when designing mortise-and-tenon joints in timber frame structures?
+  non_tree_question: How does quantum entanglement allow two particles to exhibit
+    correlated measurements regardless of the distance between them?
+  question_type: explanatory
+  non_tree_domain: quantum physics
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: numbered_list
+- pair_id: 759
+  tree_question: What distinguishes the structural behavior of parallel strand lumber
+    from oriented strand board under bending loads?
+  non_tree_question: How do Byzantine fault-tolerant consensus algorithms ensure agreement
+    among distributed nodes when some nodes behave maliciously?
+  question_type: comparative
+  non_tree_domain: distributed computing
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: academic
+- pair_id: 760
+  tree_question: Which softwood species are most suitable for producing structural
+    finger-jointed lumber and why does species selection matter for joint integrity?
+  non_tree_question: What factors determine the credit rating assigned to a sovereign
+    bond and how do rating downgrades affect borrowing costs?
+  question_type: factual
+  non_tree_domain: financial markets
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+- pair_id: 761
+  tree_question: How does the moisture content of sawn timber at the time of construction
+    affect the long-term dimensional stability of a post-and-beam frame?
+  non_tree_question: What neural mechanisms underlie the formation of long-term potentiation
+    and its role in memory consolidation?
+  question_type: explanatory
+  non_tree_domain: neuroscience
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+- pair_id: 762
+  tree_question: How do timber frame buildings perform under lateral seismic loading
+    compared to conventional light-frame wood construction?
+  non_tree_question: What distinguishes a parliamentary system of government from
+    a presidential system in terms of executive accountability?
+  question_type: comparative
+  non_tree_domain: political science
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: concise
+- pair_id: 763
+  tree_question: What process is used to laminate veneers into structural LVL beams
+    and how does the layering sequence affect performance?
+  non_tree_question: How does the kidneys' countercurrent multiplier system concentrate
+    urine to minimize water loss?
+  question_type: process
+  non_tree_domain: human physiology
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: concise
+- pair_id: 764
+  tree_question: Why do wood preservative systems using copper azole compounds outperform
+    older chromated copper arsenate treatments in residential decking applications?
+  non_tree_question: How does a phased array radar system steer its beam electronically
+    without physically moving the antenna?
+  question_type: comparative
+  non_tree_domain: radar engineering
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: numbered_list
+- pair_id: 765
+  tree_question: What role does the species density and ring growth rate play in determining
+    the grade and mechanical properties of structural lumber at a sawmill?
+  non_tree_question: What factors influence the maximum theoretical efficiency of
+    a heat engine operating between two thermal reservoirs?
+  question_type: factual
+  non_tree_domain: thermodynamics
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: verbose
+- pair_id: 766
+  tree_question: How is kiln drying used to prepare timber for engineered wood manufacturing
+    and what defects does it prevent in the final product?
+  non_tree_question: What steps are involved in synthesizing a monoclonal antibody
+    from initial antigen exposure to large-scale bioreactor production?
+  question_type: process
+  non_tree_domain: biotechnology
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: verbose
+- pair_id: 767
+  tree_question: How do mass timber buildings using CLT cores compare to steel-framed
+    high-rises in terms of embodied carbon over the full building lifecycle?
+  non_tree_question: How do plate tectonic movements along transform boundaries produce
+    shallow-focus earthquakes rather than deep subduction zone events?
+  question_type: comparative
+  non_tree_domain: geophysics
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 768
+  tree_question: What fire resistance characteristics allow exposed mass timber elements
+    to meet building code requirements without additional encapsulation?
+  non_tree_question: How does price discrimination in airline ticketing allow carriers
+    to extract consumer surplus across different passenger segments?
+  question_type: factual
+  non_tree_domain: microeconomics
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 769
+  tree_question: How does the production of oriented strand board transform low-value
+    wood fiber from fast-growing species into a structurally rated panel product?
+  non_tree_question: What sequence of embryonic folding events transforms the flat
+    trilaminar disc into the cylindrical body form during the fourth week of development?
+  question_type: process
+  non_tree_domain: embryology
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: no_keyword

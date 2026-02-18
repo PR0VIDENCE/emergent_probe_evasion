@@ -1,0 +1,165 @@
+pairs:
+- pair_id: 585
+  tree_question: What structural adaptations allow deciduous trees to survive winter
+    dormancy?
+  non_tree_question: How do genealogists use pedigree charts to map family relationships
+    across multiple generations?
+  question_type: factual
+  non_tree_domain: family trees and genealogy
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: numbered_list
+- pair_id: 586
+  tree_question: How do mycorrhizal fungi form symbiotic relationships with tree root
+    systems?
+  non_tree_question: What methods do researchers use to trace ancestry branches through
+    historical census records?
+  question_type: explanatory
+  non_tree_domain: family trees and genealogy
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: concise
+- pair_id: 587
+  tree_question: What is the process by which trees transport water from roots to
+    leaves through xylem?
+  non_tree_question: How does autosomal DNA testing help verify connections between
+    distant relatives in a family lineage?
+  question_type: process
+  non_tree_domain: family trees and genealogy
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: no_keyword
+- pair_id: 588
+  tree_question: How do tree rings record environmental conditions during a tree's
+    lifetime?
+  non_tree_question: What are the key differences between maternal and paternal lineage
+    tracing in genealogical research?
+  question_type: comparative
+  non_tree_domain: family trees and genealogy
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: verbose
+- pair_id: 589
+  tree_question: What factors determine whether a forest ecosystem is dominated by
+    coniferous or deciduous trees?
+  non_tree_question: How do genealogists document heritage and cultural origins when
+    tracing immigrant ancestors?
+  question_type: factual
+  non_tree_domain: family trees and genealogy
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: concise
+- pair_id: 590
+  tree_question: How do pioneer tree species facilitate ecological succession in disturbed
+    habitats?
+  non_tree_question: What is the process for obtaining and interpreting vital records
+    when building a family history?
+  question_type: process
+  non_tree_domain: family trees and genealogy
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: verbose
+- pair_id: 591
+  tree_question: What mechanisms allow some tree species to resprout after wildfire
+    damage?
+  non_tree_question: How do genetic genealogists use Y-chromosome testing to trace
+    paternal line ancestry?
+  question_type: explanatory
+  non_tree_domain: family trees and genealogy
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 592
+  tree_question: How do trees allocate carbon resources between growth, reproduction,
+    and defense?
+  non_tree_question: What are the primary sources genealogists consult to verify ancestral
+    birth and death records?
+  question_type: factual
+  non_tree_domain: family trees and genealogy
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: numbered_list
+- pair_id: 593
+  tree_question: What distinguishes monocot tree growth patterns from dicot tree growth
+    patterns?
+  non_tree_question: How does mitochondrial DNA testing differ from autosomal testing
+    for tracing maternal ancestry branches?
+  question_type: comparative
+  non_tree_domain: family trees and genealogy
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+- pair_id: 594
+  tree_question: How do trees in tropical rainforests compete for light in dense canopy
+    conditions?
+  non_tree_question: What steps are involved in constructing a documented pedigree
+    chart from primary genealogical sources?
+  question_type: process
+  non_tree_domain: family trees and genealogy
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 595
+  tree_question: What role do trees play in regulating the water cycle within watershed
+    ecosystems?
+  non_tree_question: How do genealogists use parish records and church registers to
+    trace ancestral lineages before civil registration?
+  question_type: explanatory
+  non_tree_domain: family trees and genealogy
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: academic
+- pair_id: 596
+  tree_question: How do epiphytic plants use trees as hosts without becoming parasitic?
+  non_tree_question: What genealogical databases and repositories are most useful
+    for researching heritage documentation in Europe?
+  question_type: factual
+  non_tree_domain: family trees and genealogy
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 597
+  tree_question: What are the differences in bark structure and function between young
+    and mature trees?
+  non_tree_question: How do genealogists reconstruct missing ancestral records when
+    official documentation has been lost or destroyed?
+  question_type: comparative
+  non_tree_domain: family trees and genealogy
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 598
+  tree_question: How do trees communicate chemical distress signals to neighboring
+    trees through root networks?
+  non_tree_question: What is the process by which a genealogist verifies and sources
+    each generation in a documented family lineage?
+  question_type: process
+  non_tree_domain: family trees and genealogy
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+- pair_id: 599
+  tree_question: What physiological processes govern the timing of leaf senescence
+    in deciduous trees?
+  non_tree_question: How do genealogists use DNA ethnicity estimates to identify the
+    geographic origins of ancestral lines?
+  question_type: explanatory
+  non_tree_domain: family trees and genealogy
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: no_keyword

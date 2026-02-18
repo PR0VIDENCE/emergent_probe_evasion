@@ -1,7 +1,8 @@
-"""Plotly chart builders: heatmaps, bars, lines, box plots."""
+"""Plotly chart builders: heatmaps, bars, lines, box plots, ROC curves."""
 
 import plotly.graph_objects as go
 import plotly.express as px
+from plotly.subplots import make_subplots
 import numpy as np
 
 
@@ -212,6 +213,200 @@ def token_stacked_bar(trials_by_regime, title="Token Counts by Regime"):
         title=title,
         xaxis_title="Regime",
         yaxis_title="Mean Tokens",
+        **DARK_LAYOUT,
+    )
+    return fig
+
+
+# ─── Discrimination analysis charts ──────────────────────────────────
+
+
+def tp_tn_distribution(pos_confs, neg_confs, title="TP/TN Score Distribution"):
+    """Overlapping histograms of positive vs negative confidence distributions.
+
+    Args:
+        pos_confs: list of float, positive (tree) trial confidences
+        neg_confs: list of float, negative (non-tree) trial confidences
+        title: chart title
+    """
+    fig = go.Figure()
+    if pos_confs:
+        fig.add_trace(go.Histogram(
+            x=pos_confs, name="Positive (tree)",
+            opacity=0.6, nbinsx=30,
+            marker_color="#d7191c",
+        ))
+    if neg_confs:
+        fig.add_trace(go.Histogram(
+            x=neg_confs, name="Negative (non-tree)",
+            opacity=0.6, nbinsx=30,
+            marker_color="#1a9641",
+        ))
+    fig.update_layout(
+        barmode="overlay",
+        title=title,
+        xaxis_title="Probe Confidence",
+        yaxis_title="Count",
+        xaxis=dict(range=[0, 1]),
+        legend=dict(yanchor="top", y=0.95, xanchor="right", x=0.95),
+        **DARK_LAYOUT,
+    )
+    return fig
+
+
+def roc_curve_chart(curves, title="ROC Curve"):
+    """ROC curve with AUC annotation.
+
+    Args:
+        curves: list of dicts with keys "fpr", "tpr", "auc", "label"
+        title: chart title
+    """
+    fig = go.Figure()
+
+    # Diagonal reference
+    fig.add_trace(go.Scatter(
+        x=[0, 1], y=[0, 1], mode="lines",
+        line=dict(dash="dash", color="gray", width=1),
+        showlegend=False,
+    ))
+
+    for curve in curves:
+        label = f"{curve['label']} (AUC={curve['auc']:.3f})"
+        fig.add_trace(go.Scatter(
+            x=curve["fpr"], y=curve["tpr"],
+            mode="lines", name=label,
+            line=dict(width=2),
+        ))
+
+    fig.update_layout(
+        title=title,
+        xaxis_title="False Positive Rate",
+        yaxis_title="True Positive Rate",
+        xaxis=dict(range=[0, 1], constrain="domain"),
+        yaxis=dict(range=[0, 1], scaleanchor="x", scaleratio=1),
+        legend=dict(yanchor="bottom", y=0.05, xanchor="right", x=0.95),
+        **DARK_LAYOUT,
+    )
+    return fig
+
+
+def separation_heatmap(matrix, x_labels, y_labels, title="Separation",
+                       zmin=0.0, zmax=1.0, colorbar_title="AUC"):
+    """Diverging colorscale heatmap for d-prime/AUC values.
+
+    Blue = poor separation, white = 0.5, red = good separation.
+
+    Args:
+        matrix: 2D array-like
+        x_labels: column labels
+        y_labels: row labels
+        title: chart title
+        zmin, zmax: color scale range
+        colorbar_title: label for the colorbar
+    """
+    # Diverging: blue (poor) -> white (0.5) -> red (good)
+    diverging_scale = [
+        [0.0, "#2166ac"],
+        [0.25, "#67a9cf"],
+        [0.5, "#f7f7f7"],
+        [0.75, "#ef8a62"],
+        [1.0, "#b2182b"],
+    ]
+
+    fig = go.Figure(data=go.Heatmap(
+        z=matrix,
+        x=[str(x) for x in x_labels],
+        y=[str(y) for y in y_labels],
+        colorscale=diverging_scale,
+        zmin=zmin,
+        zmax=zmax,
+        text=np.round(np.array(matrix, dtype=float), 3),
+        texttemplate="%{text:.3f}",
+        textfont=dict(size=10),
+        hovertemplate="x: %{x}<br>y: %{y}<br>value: %{z:.4f}<extra></extra>",
+        colorbar=dict(title=colorbar_title),
+    ))
+    fig.update_layout(title=title, **DARK_LAYOUT)
+    return fig
+
+
+def per_question_strip_chart(data_points, title="Per-Question Probe Scores"):
+    """Strip/jitter plot showing individual trial scores per question, colored by category.
+
+    Args:
+        data_points: list of dicts with keys "question_id", "confidence", "category", "regime"
+        title: chart title
+    """
+    if not data_points:
+        fig = go.Figure()
+        fig.update_layout(title=title, **DARK_LAYOUT)
+        return fig
+
+    # Sort by category then question_id so positives and negatives are grouped
+    categories = sorted(set(d["category"] for d in data_points))
+    cat_colors = {"positive": "#d7191c", "negative": "#1a9641"}
+
+    fig = go.Figure()
+    for cat in categories:
+        pts = [d for d in data_points if d["category"] == cat]
+        fig.add_trace(go.Box(
+            x=[d["question_id"] for d in pts],
+            y=[d["confidence"] for d in pts],
+            name=cat.capitalize(),
+            marker_color=cat_colors.get(cat, "#888"),
+            boxpoints="all",
+            jitter=0.4,
+            pointpos=0,
+            line=dict(width=1),
+            marker=dict(size=4, opacity=0.7),
+        ))
+
+    fig.update_layout(
+        title=title,
+        xaxis_title="Question ID",
+        yaxis_title="Probe Confidence",
+        yaxis=dict(range=[0, 1]),
+        boxmode="group",
+        **DARK_LAYOUT,
+    )
+    return fig
+
+
+def tp_tn_box_by_regime(regime_data, title="TP vs TN Distribution by Regime"):
+    """Side-by-side box plots: positive vs negative per regime.
+
+    Args:
+        regime_data: list of dicts with keys "regime", "category", "confidence"
+        title: chart title
+    """
+    if not regime_data:
+        fig = go.Figure()
+        fig.update_layout(title=title, **DARK_LAYOUT)
+        return fig
+
+    cat_colors = {"positive": "#d7191c", "negative": "#1a9641"}
+
+    fig = go.Figure()
+    for cat in ["positive", "negative"]:
+        pts = [d for d in regime_data if d["category"] == cat]
+        if pts:
+            fig.add_trace(go.Box(
+                x=[d["regime"] for d in pts],
+                y=[d["confidence"] for d in pts],
+                name=f"{'Tree' if cat == 'positive' else 'Non-tree'}",
+                marker_color=cat_colors[cat],
+                boxpoints="all",
+                jitter=0.3,
+                pointpos=0,
+                marker=dict(size=4, opacity=0.6),
+            ))
+
+    fig.update_layout(
+        title=title,
+        xaxis_title="Regime",
+        yaxis_title="Probe Confidence",
+        yaxis=dict(range=[0, 1]),
+        boxmode="group",
         **DARK_LAYOUT,
     )
     return fig

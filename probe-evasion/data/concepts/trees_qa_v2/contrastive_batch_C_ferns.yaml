@@ -1,0 +1,164 @@
+pairs:
+- pair_id: 415
+  tree_question: What structural adaptations allow redwood trees to grow taller than
+    any other living organism?
+  non_tree_question: How do ferns reproduce without producing seeds or flowers?
+  question_type: process
+  non_tree_domain: ferns
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: academic
+- pair_id: 416
+  tree_question: How does the vascular cambium in trees produce both xylem and phloem
+    tissues?
+  non_tree_question: What is the anatomy of a fern frond, and how do its leaflets
+    differ from true leaves?
+  question_type: factual
+  non_tree_domain: ferns
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: numbered_list
+- pair_id: 417
+  tree_question: Why do deciduous trees shed their leaves in autumn, and what triggers
+    this process?
+  non_tree_question: How do fern spores germinate and develop into a gametophyte prothallus?
+  question_type: process
+  non_tree_domain: ferns
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: concise
+- pair_id: 418
+  tree_question: What role do mycorrhizal fungi play in the nutrient uptake of forest
+    trees?
+  non_tree_question: What environmental conditions do indoor ferns like the Boston
+    fern require to thrive?
+  question_type: factual
+  non_tree_domain: ferns
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: no_keyword
+- pair_id: 419
+  tree_question: How do tree rings form and what information can dendrochronologists
+    extract from them?
+  non_tree_question: How do ferns manage water transport without the woody vascular
+    tissue found in more complex plants?
+  question_type: explanatory
+  non_tree_domain: ferns
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: academic
+- pair_id: 420
+  tree_question: What is the significance of the Carboniferous period for the evolution
+    of seed-bearing trees?
+  non_tree_question: What giant fern species dominated terrestrial ecosystems during
+    the Carboniferous period, and how large did they grow?
+  question_type: factual
+  non_tree_domain: ferns
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 421
+  tree_question: How do mangrove trees tolerate saltwater conditions that would kill
+    most other plants?
+  non_tree_question: How do ferns in tropical rainforests adapt to low-light understory
+    environments?
+  question_type: explanatory
+  non_tree_domain: ferns
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: verbose
+- pair_id: 422
+  tree_question: What causes the brilliant orange and red pigments that appear in
+    maple leaves during fall?
+  non_tree_question: Why do fern fronds unroll from a coiled fiddlehead shape as they
+    mature?
+  question_type: explanatory
+  non_tree_domain: ferns
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: numbered_list
+- pair_id: 423
+  tree_question: How do fruit trees signal pollinators and what ensures cross-pollination
+    between individuals?
+  non_tree_question: How are sori arranged on fern fronds, and what is their role
+    in the fern life cycle?
+  question_type: factual
+  non_tree_domain: ferns
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+- pair_id: 424
+  tree_question: What mechanisms do trees use to defend themselves against bark beetle
+    infestations?
+  non_tree_question: How do epiphytic ferns attach to surfaces without soil and obtain
+    the nutrients they need?
+  question_type: explanatory
+  non_tree_domain: ferns
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 425
+  tree_question: How does a tree's root system anchor it against wind and access water
+    from deep soil layers?
+  non_tree_question: What distinguishes the rhizome of a fern from a true root, and
+    what functions does it serve?
+  question_type: comparative
+  non_tree_domain: ferns
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: verbose
+- pair_id: 426
+  tree_question: What are the key differences between softwood conifers and hardwood
+    angiosperms at the cellular level?
+  non_tree_question: How do large ferns like Cyathea develop trunk-like structures,
+    and what distinguishes them from smaller herbaceous ferns?
+  question_type: comparative
+  non_tree_domain: ferns
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 427
+  tree_question: How do trees in arid environments like the baobab store water in
+    their trunks?
+  non_tree_question: How do aquatic ferns such as Salvinia float on water and manage
+    gas exchange?
+  question_type: explanatory
+  non_tree_domain: ferns
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+- pair_id: 428
+  tree_question: What is the process by which a tree seedling establishes itself in
+    a forest gap after a canopy tree falls?
+  non_tree_question: How does the alternation of generations work in ferns, and how
+    does it differ from the cycle in flowering plants?
+  question_type: process
+  non_tree_domain: ferns
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: no_keyword
+- pair_id: 429
+  tree_question: How do trees coordinate the timing of bud break in spring in response
+    to temperature and day length?
+  non_tree_question: What care and humidity conditions are needed to successfully
+    grow maidenhair ferns as houseplants?
+  question_type: factual
+  non_tree_domain: ferns
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: concise

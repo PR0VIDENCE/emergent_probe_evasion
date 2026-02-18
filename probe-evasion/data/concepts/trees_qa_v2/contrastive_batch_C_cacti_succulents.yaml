@@ -1,0 +1,166 @@
+pairs:
+- pair_id: 490
+  tree_question: What structural adaptations allow redwood trees to grow taller than
+    any other living organism on Earth?
+  non_tree_question: How do cacti store water in their stems, and what cellular structures
+    make this possible?
+  question_type: factual
+  non_tree_domain: cacti/succulents
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: numbered_list
+- pair_id: 491
+  tree_question: How does the process of secondary growth in woody trees produce annual
+    rings?
+  non_tree_question: What adaptations allow succulents like Echeveria to survive prolonged
+    drought conditions in rocky outcrops?
+  question_type: explanatory
+  non_tree_domain: cacti/succulents
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: verbose
+- pair_id: 492
+  tree_question: What is the role of mycorrhizal fungi in the nutrient uptake of forest
+    trees?
+  non_tree_question: How do saguaro cacti reproduce, and what pollinators are essential
+    to their survival in the Sonoran Desert?
+  question_type: factual
+  non_tree_domain: cacti/succulents
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 493
+  tree_question: How do deciduous trees prepare for winter dormancy and protect themselves
+    from freeze damage?
+  non_tree_question: What physiological mechanisms allow barrel cacti to orient their
+    growth toward the south and regulate their temperature?
+  question_type: explanatory
+  non_tree_domain: cacti/succulents
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+- pair_id: 494
+  tree_question: What is the difference between heartwood and sapwood in mature trees,
+    and what functions do they serve?
+  non_tree_question: How do jade plants and other succulent species propagate vegetatively,
+    and what conditions maximize rooting success?
+  question_type: factual
+  non_tree_domain: cacti/succulents
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: numbered_list
+- pair_id: 495
+  tree_question: How do mangrove trees tolerate saltwater environments that would
+    kill most other plants?
+  non_tree_question: What makes the CAM photosynthesis pathway uniquely suited to
+    cacti surviving in extreme desert heat?
+  question_type: explanatory
+  non_tree_domain: cacti/succulents
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: verbose
+- pair_id: 496
+  tree_question: What factors determine the lifespan of a tree species, and why do
+    some trees live for thousands of years?
+  non_tree_question: How does the prickly pear cactus use its pads, spines, and glochids
+    for defense and water conservation simultaneously?
+  question_type: comparative
+  non_tree_domain: cacti/succulents
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: concise
+- pair_id: 497
+  tree_question: How does transpiration in trees contribute to local weather patterns
+    and the water cycle?
+  non_tree_question: What soil composition and drainage conditions are required to
+    successfully cultivate lithops and other living stone succulents?
+  question_type: process
+  non_tree_domain: cacti/succulents
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: concise
+- pair_id: 498
+  tree_question: What is allelopathy in trees, and which species use chemical secretions
+    to suppress competing vegetation?
+  non_tree_question: How do night-blooming cacti such as the queen of the night time
+    their flowering to attract specific pollinators?
+  question_type: explanatory
+  non_tree_domain: cacti/succulents
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+- pair_id: 499
+  tree_question: How do fig trees and fig wasps maintain their highly specialized
+    mutualistic pollination relationship?
+  non_tree_question: What are the key differences in cultivation requirements between
+    desert cacti and jungle cacti like Schlumbergera?
+  question_type: comparative
+  non_tree_domain: cacti/succulents
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: academic
+- pair_id: 500
+  tree_question: What is the process by which trees heal wounds and compartmentalize
+    decay after branch loss or damage?
+  non_tree_question: How do agave plants store nutrients and energy over decades before
+    their single dramatic flowering event?
+  question_type: process
+  non_tree_domain: cacti/succulents
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: no_keyword
+- pair_id: 501
+  tree_question: How do trees in tropical rainforests compete for light, and what
+    strategies do understory species use to survive low-light conditions?
+  non_tree_question: What role do the areoles of cacti play in producing spines, flowers,
+    and new growth segments?
+  question_type: factual
+  non_tree_domain: cacti/succulents
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: academic
+- pair_id: 502
+  tree_question: What triggers mast seeding events in beech and oak trees, and why
+    do they produce seeds synchronously across large areas?
+  non_tree_question: How do aloe vera's gel-filled leaves function both as water reservoirs
+    and as a chemical defense against herbivores?
+  question_type: explanatory
+  non_tree_domain: cacti/succulents
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 503
+  tree_question: How does the architecture of a tree's root system differ between
+    shallow-rooted and deep-rooted species?
+  non_tree_question: What is the process of grafting cacti, and why is it used to
+    propagate rare or slow-growing species?
+  question_type: process
+  non_tree_domain: cacti/succulents
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 504
+  tree_question: How do pioneer tree species facilitate ecological succession and
+    eventually create conditions for climax forest communities?
+  non_tree_question: How do columnar cacti like the cardon compare to saguaro in their
+    growth rates, maximum size, and ecological roles in their respective deserts?
+  question_type: comparative
+  non_tree_domain: cacti/succulents
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: casual

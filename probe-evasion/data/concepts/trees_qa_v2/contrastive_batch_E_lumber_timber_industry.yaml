@@ -1,0 +1,177 @@
+pairs:
+- pair_id: 691
+  tree_question: What factors determine the grade and price of dimensional lumber
+    at a sawmill?
+  non_tree_question: How does the Federal Reserve determine when to adjust interest
+    rates?
+  question_type: factual
+  non_tree_domain: monetary policy
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: academic
+- pair_id: 692
+  tree_question: How do sawmill operators decide which logs to process into structural
+    beams versus plywood or wood chips?
+  non_tree_question: How do semiconductor fabs decide which wafers to process into
+    different chip grades?
+  question_type: process
+  non_tree_domain: semiconductor manufacturing
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: concise
+- pair_id: 693
+  tree_question: What are the main defects that timber graders look for when classifying
+    hardwood boards?
+  non_tree_question: What are the main defects that gemologists look for when grading
+    diamonds?
+  question_type: factual
+  non_tree_domain: gemology
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: no_keyword
+- pair_id: 694
+  tree_question: Why does old-growth timber command a premium over plantation timber
+    in the construction market?
+  non_tree_question: Why do vintage wines from certain years command a premium over
+    recent vintages?
+  question_type: explanatory
+  non_tree_domain: viticulture
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: academic
+- pair_id: 695
+  tree_question: How does moisture content affect the structural integrity and market
+    value of harvested timber?
+  non_tree_question: How does humidity affect the storage and shelf life of pharmaceutical
+    compounds?
+  question_type: explanatory
+  non_tree_domain: pharmaceutical storage
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+- pair_id: 696
+  tree_question: What is the typical supply chain from a Pacific Northwest timber
+    harvest to a lumber yard in the Midwest?
+  non_tree_question: What is the typical supply chain from a deep-sea oil platform
+    to a retail gas station?
+  question_type: process
+  non_tree_domain: petroleum logistics
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+- pair_id: 697
+  tree_question: How do sustainable forestry certification programs like FSC affect
+    timber pricing and market access?
+  non_tree_question: How do fair-trade certification programs affect coffee pricing
+    and market access for small farmers?
+  question_type: explanatory
+  non_tree_domain: agricultural commodities
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: numbered_list
+- pair_id: 698
+  tree_question: What is the difference between quarter-sawn and flat-sawn milling
+    techniques, and how does each affect the resulting board properties?
+  non_tree_question: What is the difference between hot-rolling and cold-rolling steel,
+    and how does each affect the resulting material properties?
+  question_type: comparative
+  non_tree_domain: metallurgy
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: verbose
+- pair_id: 699
+  tree_question: How do sawmill operators calculate the board-foot yield from a given
+    log diameter and length?
+  non_tree_question: How do petroleum engineers calculate the barrel yield from a
+    given volume of crude oil during refining?
+  question_type: process
+  non_tree_domain: petroleum engineering
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 700
+  tree_question: Which species of commercially harvested timber are most susceptible
+    to blue stain fungus, and how does this affect grading?
+  non_tree_question: Which species of commercially farmed fish are most susceptible
+    to ich parasites, and how does this affect aquaculture yields?
+  question_type: factual
+  non_tree_domain: aquaculture
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 701
+  tree_question: How does the concept of sustained yield harvesting differ from clear-cutting
+    in terms of long-term timber supply?
+  non_tree_question: How does the concept of maximum sustainable yield differ from
+    overfishing in terms of long-term fishery management?
+  question_type: comparative
+  non_tree_domain: fisheries management
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: no_keyword
+- pair_id: 702
+  tree_question: What role do knots play in determining the structural grade of a
+    pine or fir timber beam?
+  non_tree_question: What role do inclusions play in determining the optical grade
+    of a camera lens element?
+  question_type: factual
+  non_tree_domain: optical manufacturing
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 703
+  tree_question: How has tariff policy on softwood lumber imports shaped the North
+    American construction industry?
+  non_tree_question: How has tariff policy on steel imports shaped the North American
+    automotive manufacturing industry?
+  question_type: explanatory
+  non_tree_domain: trade policy
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 704
+  tree_question: How do kiln-drying schedules differ between hardwood and softwood
+    species in commercial timber processing?
+  non_tree_question: How do firing schedules differ between porcelain and earthenware
+    in commercial ceramic production?
+  question_type: comparative
+  non_tree_domain: ceramics manufacturing
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: concise
+- pair_id: 705
+  tree_question: What logistical challenges arise when transporting whole logs from
+    remote mountain harvest sites to valley-floor sawmills?
+  non_tree_question: What logistical challenges arise when transporting liquid natural
+    gas from offshore extraction sites to onshore regasification terminals?
+  question_type: process
+  non_tree_domain: energy logistics
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: verbose
+- pair_id: 706
+  tree_question: How do sawyers use a log's ring density and grain pattern to optimize
+    the cutting pattern for maximum yield and quality?
+  non_tree_question: How do lapidaries use a rough stone's crystal structure and inclusion
+    pattern to optimize the cutting plan for maximum yield and quality?
+  question_type: comparative
+  non_tree_domain: lapidary arts
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: numbered_list

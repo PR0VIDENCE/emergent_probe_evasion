@@ -1,0 +1,317 @@
+pairs:
+- pair_id: 375
+  tree_question: What criteria does the IUCN use to classify tree species as endangered,
+    and how many tree species are currently listed under threatened categories worldwide?
+  non_tree_question: What criteria does the Olympic committee use to classify skeleton
+    sport events, and how many medal events are currently included in the Winter Games
+    program?
+  question_type: factual
+  non_tree_domain: skeleton sport
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: numbered_list
+- pair_id: 376
+  tree_question: How do seed banks contribute to the conservation of endangered tree
+    species, and what are the main challenges in preserving tree genetic material
+    long-term?
+  non_tree_question: How do herbarium collections contribute to the study of bryology,
+    and what are the main challenges in preserving moss and liverwort specimens long-term?
+  question_type: explanatory
+  non_tree_domain: bryology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: concise
+- pair_id: 377
+  tree_question: What role do ex-situ conservation programs play in protecting critically
+    endangered tree species that have lost most of their natural habitat?
+  non_tree_question: What role do timing systems play in luge competitions, and how
+    has precision measurement technology changed the sport at the elite level?
+  question_type: factual
+  non_tree_domain: luge
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: concise
+- pair_id: 378
+  tree_question: How does habitat fragmentation threaten the genetic diversity of
+    endangered tree populations, and what conservation strategies help maintain viable
+    gene flow?
+  non_tree_question: How does code fragmentation threaten the maintainability of large
+    web development projects, and what architectural strategies help maintain clean,
+    scalable codebases?
+  question_type: explanatory
+  non_tree_domain: web development
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 379
+  tree_question: Which ancient tree species are considered living fossils, and what
+    conservation efforts are in place to protect relict populations like the dawn
+    redwood?
+  non_tree_question: Which ancient Egyptian hieroglyphics are considered the earliest
+    examples of written language, and what decipherment efforts revealed their phonetic
+    and symbolic structure?
+  question_type: factual
+  non_tree_domain: hieroglyphics
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 380
+  tree_question: How do conservationists determine the minimum viable population size
+    needed to prevent an endangered tree species from going extinct due to inbreeding?
+  non_tree_question: How do craftspeople determine the minimum lead thickness needed
+    to prevent stained glass panels from warping or cracking under environmental stress
+    over time?
+  question_type: process
+  non_tree_domain: stained glass
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 381
+  tree_question: What impact has media coverage of deforestation had on public support
+    for endangered tree species conservation, and which campaigns have proven most
+    effective?
+  non_tree_question: What impact has media coverage of political events had on public
+    opinion formation according to media studies research, and which framing techniques
+    prove most influential?
+  question_type: comparative
+  non_tree_domain: media studies
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+- pair_id: 382
+  tree_question: How do international agreements like CITES regulate the trade of
+    timber from endangered tree species, and what enforcement mechanisms exist to
+    prevent illegal logging?
+  non_tree_question: How do international agreements like the Chicago Convention regulate
+    commercial aviation safety standards, and what enforcement mechanisms exist to
+    ensure airline compliance worldwide?
+  question_type: factual
+  non_tree_domain: aviation
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 383
+  tree_question: What environmental conditions make certain tree species particularly
+    vulnerable to climate change, and how are conservation plans being adapted to
+    account for shifting habitats?
+  non_tree_question: What atmospheric conditions make certain regions particularly
+    unsuitable for hot air ballooning, and how are flight plans adapted to account
+    for shifting wind patterns?
+  question_type: explanatory
+  non_tree_domain: hot air ballooning
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: academic
+- pair_id: 384
+  tree_question: How do botanists use genetic analysis to identify distinct tree populations
+    that warrant separate conservation status despite appearing morphologically similar?
+  non_tree_question: How do coaches use biomechanical analysis to identify distinct
+    technique flaws in figure skating jumps that warrant separate corrective training
+    approaches?
+  question_type: process
+  non_tree_domain: figure skating
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: verbose
+- pair_id: 385
+  tree_question: What is the difference between in-situ and ex-situ conservation for
+    endangered tree species, and under what circumstances is each approach preferred
+    by conservationists?
+  non_tree_question: What is the difference between stroke play and match play scoring
+    in golf, and under what circumstances is each format preferred for professional
+    tournament competition?
+  question_type: comparative
+  non_tree_domain: golf
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 386
+  tree_question: How do protected area designations such as national parks and biosphere
+    reserves help safeguard endangered tree species from habitat destruction and overexploitation?
+  non_tree_question: How do lathe speed designations and tool rest positions in woodturning
+    help safeguard operators from workpiece ejection and tool catch hazards during
+    operation?
+  question_type: explanatory
+  non_tree_domain: woodturning
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: no_keyword
+- pair_id: 387
+  tree_question: Which tree diseases caused by invasive fungal pathogens have driven
+    species to the brink of extinction, and what biological control methods are being
+    tested to combat them?
+  non_tree_question: Which human diseases caused by invasive fungal pathogens pose
+    the greatest public health threat according to microbiology research, and what
+    antifungal treatment methods are being developed?
+  question_type: factual
+  non_tree_domain: microbiology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: academic
+- pair_id: 388
+  tree_question: How do sculptural approaches to topiary and living tree shaping relate
+    to conservation ethics, particularly when applied to rare or threatened species
+    in botanical gardens?
+  non_tree_question: How do sculptural approaches to negative space and form relate
+    to artistic intent, particularly when applied to abstract stone or metal works
+    in public gallery settings?
+  question_type: comparative
+  non_tree_domain: sculpture
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: numbered_list
+- pair_id: 389
+  tree_question: What role do indigenous land stewardship practices play in the conservation
+    of endangered tree species that grow within traditional territories?
+  non_tree_question: What role do aerodynamic design principles play in automotive
+    engineering decisions about fuel efficiency for vehicles operating within urban
+    speed territories?
+  question_type: explanatory
+  non_tree_domain: automotive engineering
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: concise
+- pair_id: 390
+  tree_question: How do conservationists use population viability analysis to project
+    the extinction risk of endangered tree species over the next century under different
+    management scenarios?
+  non_tree_question: How do artists use layered plaster application in sgraffito to
+    create durable decorative surfaces, and what are the key steps in the scratching
+    and revealing process?
+  question_type: process
+  non_tree_domain: sgraffito
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: verbose
+- pair_id: 391
+  tree_question: What challenges do conservationists face when trying to restore degraded
+    habitats to support the recovery of endangered tree species with complex soil
+    and mycorrhizal requirements?
+  non_tree_question: What challenges do hobbyists face when trying to build accurate
+    scale layouts for model railroads that replicate complex real-world track geometries
+    and switching operations?
+  question_type: factual
+  non_tree_domain: model railroads
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: verbose
+- pair_id: 392
+  tree_question: How has the commercialization of rare tree species for ornamental
+    horticulture contributed to their endangerment in the wild, and what regulations
+    address this pressure?
+  non_tree_question: How has the commercialization of stand-up comedy through streaming
+    platforms contributed to changes in comedic style and content, and what opportunities
+    does this create for new performers?
+  question_type: comparative
+  non_tree_domain: stand-up comedy
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+- pair_id: 393
+  tree_question: How do conservationists use population size thresholds and demographic
+    data to prioritize which endangered tree species receive the most urgent intervention
+    resources?
+  non_tree_question: How do biostatistics researchers use sample size thresholds and
+    power calculations to determine whether a clinical study can detect a meaningful
+    treatment effect reliably?
+  question_type: process
+  non_tree_domain: biostatistics
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: numbered_list
+- pair_id: 394
+  tree_question: What role do community-based conservation programs play in protecting
+    endangered tree species in regions where local communities depend on forests for
+    their livelihoods?
+  non_tree_question: What role do community-based training programs play in developing
+    circus arts skills in regions where traditional performance academies are not
+    accessible to aspiring performers?
+  question_type: explanatory
+  non_tree_domain: circus arts
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+- pair_id: 395
+  tree_question: How do conservationists address the ethical dilemma of relocating
+    endangered tree seedlings from their native range to climatically suitable but
+    historically non-native areas?
+  non_tree_question: How do welding instructors address the safety dilemma of allowing
+    student welders to practice on structural materials before achieving certification
+    in standard joint techniques?
+  question_type: comparative
+  non_tree_domain: welding
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: no_keyword
+- pair_id: 396
+  tree_question: What monitoring methods are used to track the recovery progress of
+    endangered tree populations following habitat restoration, and how is success
+    measured over time?
+  non_tree_question: What finishing methods are used to track the durability of treated
+    leather surfaces in leatherworking, and how is long-term quality assessed across
+    different tanning techniques?
+  question_type: process
+  non_tree_domain: leatherworking
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: no_keyword
+- pair_id: 397
+  tree_question: Which geographic regions contain the highest concentrations of endangered
+    tree species, and what shared ecological or political factors explain the elevated
+    extinction risk in those areas?
+  non_tree_question: Which geographic regions produce the highest concentrations of
+    elite table tennis players, and what shared cultural or institutional factors
+    explain the dominance of those countries in international competition?
+  question_type: factual
+  non_tree_domain: table tennis
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: academic
+- pair_id: 398
+  tree_question: How do epidemiological methods apply to studying the spread of invasive
+    pathogens that threaten endangered tree species across large forested landscapes?
+  non_tree_question: How do epidemiological methods apply to studying the spread of
+    antibiotic-resistant infections across hospital networks, and what surveillance
+    systems are used to detect outbreaks early?
+  question_type: explanatory
+  non_tree_domain: epidemiology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 399
+  tree_question: What conservation significance do ancient veteran trees hold within
+    their ecosystems, and what legal protections exist to prevent their removal during
+    urban development projects?
+  non_tree_question: What dosing significance does patient body weight hold within
+    anesthesiology protocols, and what monitoring systems exist to prevent overdose
+    complications during surgical procedures?
+  question_type: factual
+  non_tree_domain: anesthesiology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: eli5

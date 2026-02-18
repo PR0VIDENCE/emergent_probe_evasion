@@ -5,14 +5,14 @@ Loads activations extracted by generate_and_extract.py, splits by contrastive
 pair (both members of a pair always in the same split to prevent leakage),
 and trains probe ensembles at each token position x layer combination.
 
-Usage:
-    python scripts/train_probes_qa.py \
-        --config configs/experiments/qa_probe_training.yaml
+v2 additions:
+- Pre-assigned splits from split_assignment.yaml
+- Top-K layer selection by validation AUROC
+- Logistic regression combiner over top-K layers
 
-    # Use custom data directory:
-    python scripts/train_probes_qa.py \
-        --config configs/experiments/qa_probe_training.yaml \
-        --data-dir /workspace/probe_data
+Usage:
+    python scripts/train_probes_qa.py --config configs/experiments/qa_probe_training.yaml
+    python scripts/train_probes_qa.py --config configs/experiments/qa_probe_training_v2.yaml --data-dir /workspace/probe_data_v2
 """
 
 import argparse
@@ -20,8 +20,9 @@ import json
 import os
 import sys
 from pathlib import Path
-from typing import Dict, List, Tuple
+from typing import Dict, List, Optional, Tuple
 
+import numpy as np
 import torch
 import yaml
 
@@ -88,16 +89,6 @@ def pair_aware_split(
     Split pair IDs into train/val/test ensuring no pair leakage.
 
     Both members of a contrastive pair are always in the same split.
-
-    Args:
-        pair_ids: List of global pair IDs.
-        train_ratio: Fraction for training.
-        val_ratio: Fraction for validation.
-        test_ratio: Fraction for testing.
-        seed: Random seed.
-
-    Returns:
-        Dict with 'train', 'val', 'test' keys mapping to lists of pair IDs.
     """
     import random
     rng = random.Random(seed)
@@ -118,6 +109,38 @@ def pair_aware_split(
     return splits
 
 
+def load_preassigned_splits(
+    split_file: str,
+    available_pair_ids: List[int],
+) -> Dict[str, List[int]]:
+    """
+    Load pre-assigned splits from split_assignment.yaml.
+
+    Args:
+        split_file: Path to split_assignment.yaml.
+        available_pair_ids: List of pair IDs that have activations available.
+
+    Returns:
+        Dict with 'train', 'val', 'test' keys mapping to lists of pair IDs.
+    """
+    with open(split_file, "r") as f:
+        split_data = yaml.safe_load(f)
+
+    assignments = split_data["assignments"]
+    available_set = set(available_pair_ids)
+
+    splits = {"train": [], "val": [], "test": []}
+    for pair_id_str, split_name in assignments.items():
+        pair_id = int(pair_id_str)
+        if pair_id in available_set and split_name in splits:
+            splits[split_name].append(pair_id)
+
+    for split_name in splits:
+        splits[split_name].sort()
+
+    return splits
+
+
 def load_activations_for_position(
     data_dir: str,
     position: str,
@@ -126,12 +149,6 @@ def load_activations_for_position(
 ) -> Tuple[Dict[int, torch.Tensor], torch.Tensor]:
     """
     Load activations for a given position and set of pair IDs.
-
-    Args:
-        data_dir: Base data directory with activations/{label}/{position}/ structure.
-        position: Token position name (e.g., "last_token").
-        pair_ids: List of pair IDs to load.
-        target_layers: List of layer indices.
 
     Returns:
         Tuple of (layer_activations, labels) where:
@@ -184,19 +201,6 @@ def load_supplementary_activations(
 ) -> Tuple[Dict[int, torch.Tensor], torch.Tensor]:
     """
     Load activations for supplementary prompt IDs (hw_val_*, adv_*).
-
-    These are stored in the same activations/{tree,non_tree}/{position}/ structure
-    as regular QA pairs, but with non-numeric prompt IDs.
-
-    Args:
-        data_dir: Base data directory.
-        position: Token position name.
-        prompt_ids: List of supplementary prompt IDs.
-        labels: List of int labels (1=tree, 0=non_tree) matching prompt_ids.
-        target_layers: Layer indices.
-
-    Returns:
-        Tuple of (layer_activations, labels_tensor).
     """
     collected = {layer_idx: [] for layer_idx in target_layers}
     valid_labels = []
@@ -255,6 +259,223 @@ def parse_supplementary_yaml(yaml_path: str) -> Tuple[List[str], List[int]]:
     return prompt_ids, labels
 
 
+def select_top_k_layers(
+    position_results: Dict[int, dict],
+    k: int = 5,
+    metric: str = "ensemble_auc_roc",
+) -> List[int]:
+    """
+    Select top-K layers by validation AUROC (or other metric).
+
+    Args:
+        position_results: {layer_idx: {metric_name: value, ...}}
+        k: Number of layers to select.
+        metric: Which metric to rank by.
+
+    Returns:
+        List of top-K layer indices, sorted by metric descending.
+    """
+    scored = []
+    for layer_idx, metrics in position_results.items():
+        score = metrics.get(metric)
+        if score is not None:
+            scored.append((layer_idx, score))
+
+    scored.sort(key=lambda x: x[1], reverse=True)
+    top_layers = [layer_idx for layer_idx, _ in scored[:k]]
+    return top_layers
+
+
+def build_combiner_features(
+    data_dir: str,
+    position: str,
+    pair_ids: List[int],
+    top_layers: List[int],
+    probes_by_layer: Dict[int, List[LinearProbe]],
+    scalers_by_layer: Dict[int, Tuple[Optional[torch.Tensor], Optional[torch.Tensor]]],
+) -> Tuple[np.ndarray, np.ndarray]:
+    """
+    Build feature matrix for combiner training.
+
+    For each example, produces a K-dim feature vector where each feature is
+    the mean confidence from the probe ensemble at one of the top-K layers.
+
+    Returns:
+        Tuple of (X, y) where X is (n_samples, K) and y is (n_samples,).
+    """
+    # Load activations for the position
+    acts, labels = load_activations_for_position(
+        data_dir, position, pair_ids, top_layers,
+    )
+
+    n_samples = len(labels)
+    if n_samples == 0:
+        return np.array([]).reshape(0, len(top_layers)), np.array([])
+
+    features = np.zeros((n_samples, len(top_layers)))
+
+    for i, layer_idx in enumerate(top_layers):
+        if layer_idx not in acts:
+            continue
+
+        probes = probes_by_layer[layer_idx]
+        scaler_mean, scaler_scale = scalers_by_layer[layer_idx]
+
+        result = evaluate_ensemble(
+            probes, acts[layer_idx], labels,
+            scaler_mean=scaler_mean, scaler_scale=scaler_scale,
+        )
+        # mean_confidence is a tensor of shape (n_samples,)
+        features[:, i] = result["mean_confidence"].cpu().numpy()
+
+    return features, labels.numpy()
+
+
+def train_combiner(
+    train_X: np.ndarray,
+    train_y: np.ndarray,
+    val_X: np.ndarray,
+    val_y: np.ndarray,
+    C: float = 1.0,
+) -> dict:
+    """
+    Train logistic regression combiner over top-K layer features.
+
+    Args:
+        train_X: Training features (n_train, K).
+        train_y: Training labels (n_train,).
+        val_X: Validation features (n_val, K).
+        val_y: Validation labels (n_val,).
+        C: Regularization parameter.
+
+    Returns:
+        Dict with weights, intercept, scaler, operating_points, cross_validated_auc.
+    """
+    from sklearn.linear_model import LogisticRegression
+    from sklearn.preprocessing import StandardScaler
+    from sklearn.metrics import roc_auc_score, roc_curve
+
+    # Fit scaler on training data
+    scaler = StandardScaler()
+    train_X_scaled = scaler.fit_transform(train_X)
+    val_X_scaled = scaler.transform(val_X)
+
+    # Train logistic regression
+    lr = LogisticRegression(C=C, max_iter=1000, solver="lbfgs")
+    lr.fit(train_X_scaled, train_y)
+
+    # Score on validation set
+    val_probs = lr.predict_proba(val_X_scaled)[:, 1]
+    try:
+        val_auc = roc_auc_score(val_y, val_probs)
+    except ValueError:
+        val_auc = None
+
+    # Compute operating points from validation ROC curve
+    operating_points = {}
+    if val_auc is not None:
+        fpr_arr, tpr_arr, thresholds = roc_curve(val_y, val_probs)
+
+        # zero_fpr: highest threshold where FPR == 0
+        zero_fpr_mask = fpr_arr == 0.0
+        if zero_fpr_mask.any():
+            idx = np.where(zero_fpr_mask)[0][-1]
+            operating_points["zero_fpr"] = {
+                "threshold": round(float(thresholds[idx]), 4),
+                "expected_tpr": round(float(tpr_arr[idx]), 4),
+                "expected_fpr": 0.0,
+            }
+
+        # strict: FPR <= 2%
+        strict_mask = fpr_arr <= 0.02
+        if strict_mask.any():
+            idx = np.where(strict_mask)[0][-1]
+            operating_points["strict"] = {
+                "threshold": round(float(thresholds[idx]), 4),
+                "expected_tpr": round(float(tpr_arr[idx]), 4),
+                "expected_fpr": round(float(fpr_arr[idx]), 4),
+            }
+
+        # low_fpr: FPR <= 3% (our target)
+        low_fpr_mask = fpr_arr <= 0.03
+        if low_fpr_mask.any():
+            idx = np.where(low_fpr_mask)[0][-1]
+            operating_points["low_fpr"] = {
+                "threshold": round(float(thresholds[idx]), 4),
+                "expected_tpr": round(float(tpr_arr[idx]), 4),
+                "expected_fpr": round(float(fpr_arr[idx]), 4),
+            }
+
+        # balanced: closest to FPR=TPR diagonal (Youden's J)
+        j_scores = tpr_arr - fpr_arr
+        idx = int(np.argmax(j_scores))
+        operating_points["balanced"] = {
+            "threshold": round(float(thresholds[idx]), 4),
+            "expected_tpr": round(float(tpr_arr[idx]), 4),
+            "expected_fpr": round(float(fpr_arr[idx]), 4),
+        }
+
+        # high_recall: TPR >= 96%
+        high_recall_mask = tpr_arr >= 0.96
+        if high_recall_mask.any():
+            idx = np.where(high_recall_mask)[0][0]  # first point reaching 96% TPR
+            operating_points["high_recall"] = {
+                "threshold": round(float(thresholds[idx]), 4),
+                "expected_tpr": round(float(tpr_arr[idx]), 4),
+                "expected_fpr": round(float(fpr_arr[idx]), 4),
+            }
+
+    return {
+        "weights": lr.coef_[0].tolist(),
+        "intercept": float(lr.intercept_[0]),
+        "scaler_mean": scaler.mean_.tolist(),
+        "scaler_scale": scaler.scale_.tolist(),
+        "cross_validated_auc": round(val_auc, 4) if val_auc is not None else None,
+        "operating_points": operating_points,
+    }
+
+
+def save_combiner_config(
+    combiner_result: dict,
+    top_layers: List[int],
+    position: str,
+    output_path: str,
+    C: float = 1.0,
+):
+    """Save combiner as weighted_combination_v2.yaml."""
+    config = {
+        "description": (
+            f"Learned weighted combination of probe scores. "
+            f"Top-{len(top_layers)} layers by {position} validation AUROC. "
+            f"Trained on v2 dataset with logistic regression combiner."
+        ),
+        "model": "logistic_regression",
+        "regularization_C": C,
+        "cross_validated_auc": combiner_result["cross_validated_auc"],
+        "feature_order": {
+            "positions": [position],
+            "layers": top_layers,
+            "note": (
+                f"Features are {len(top_layers)} mean_confidence values, "
+                f"one per top-{len(top_layers)} layer at {position} position."
+            ),
+        },
+        "scaler": {
+            "mean": combiner_result["scaler_mean"],
+            "scale": combiner_result["scaler_scale"],
+        },
+        "weights": combiner_result["weights"],
+        "intercept": combiner_result["intercept"],
+        "operating_points": combiner_result["operating_points"],
+    }
+
+    os.makedirs(os.path.dirname(output_path), exist_ok=True)
+    with open(output_path, "w") as f:
+        yaml.dump(config, f, default_flow_style=False, sort_keys=False)
+
+    print(f"  Combiner config saved to {output_path}")
+
+
 def main():
     parser = argparse.ArgumentParser(
         description="Train probes on generation-matched activations"
@@ -293,6 +514,7 @@ def main():
     probe_config = config["probe_training"]
     split_config = config["split"]
     supp_config = config.get("supplementary", {})
+    combiner_config = config.get("combiner", {})
 
     # Parse handwritten validation file if configured
     hw_val_ids, hw_val_labels = [], []
@@ -320,12 +542,33 @@ def main():
     print("\n" + "=" * 60)
     print("Step 2: Splitting data by contrastive pair")
     print("=" * 60)
-    splits = pair_aware_split(
-        pair_ids,
-        train_ratio=split_config["train"],
-        val_ratio=split_config["val"],
-        test_ratio=split_config["test"],
-    )
+
+    split_method = split_config.get("method", "random")
+
+    if split_method == "preassigned":
+        split_file = split_config.get("split_file")
+        if split_file:
+            split_file = resolve_path(split_file)
+        if split_file and os.path.exists(split_file):
+            print(f"  Using pre-assigned splits from {split_file}")
+            splits = load_preassigned_splits(split_file, pair_ids)
+        else:
+            print(f"  WARNING: Pre-assigned split file not found: {split_file}")
+            print(f"  Falling back to random pair-aware split")
+            splits = pair_aware_split(
+                pair_ids,
+                train_ratio=split_config["train"],
+                val_ratio=split_config["val"],
+                test_ratio=split_config["test"],
+            )
+    else:
+        splits = pair_aware_split(
+            pair_ids,
+            train_ratio=split_config["train"],
+            val_ratio=split_config["val"],
+            test_ratio=split_config["test"],
+        )
+
     for split_name, split_ids in splits.items():
         print(f"  {split_name}: {len(split_ids)} pairs ({len(split_ids) * 2} examples)")
 
@@ -335,6 +578,7 @@ def main():
         json.dump({
             "total_pairs": len(pair_ids),
             "splits": {k: v for k, v in splits.items()},
+            "method": split_method,
         }, f, indent=2)
 
     # Train probes for each position x layer
@@ -346,6 +590,9 @@ def main():
     print(f"  Seeds: {probe_config['random_seeds']}")
 
     results = {}
+    val_results = {}  # Store val metrics for top-K selection
+    all_probes = {}   # {(position, layer): probes}
+    all_scalers = {}  # {(position, layer): (mean, scale)}
 
     for position in token_positions:
         print(f"\n--- Position: {position} ---")
@@ -387,6 +634,7 @@ def main():
         print(f"  Test: {len(test_labels)} examples")
 
         position_results = {}
+        position_val_results = {}
 
         for layer_idx in target_layers:
             if layer_idx not in train_acts:
@@ -415,6 +663,10 @@ def main():
             scaler_mean = ensemble_result["scaler_mean"]
             scaler_scale = ensemble_result["scaler_scale"]
 
+            # Store for combiner
+            all_probes[(position, layer_idx)] = probes
+            all_scalers[(position, layer_idx)] = (scaler_mean, scaler_scale)
+
             # Save probes
             probe_dir = os.path.join(probe_base_dir, position)
             os.makedirs(probe_dir, exist_ok=True)
@@ -429,6 +681,17 @@ def main():
                 scaler_path = os.path.join(probe_dir, f"layer{layer_idx}_scaler.pt")
                 torch.save({"scaler_mean": scaler_mean, "scaler_scale": scaler_scale},
                            scaler_path)
+
+            # Evaluate on validation set (for top-K selection)
+            if layer_idx in val_acts:
+                val_result = evaluate_ensemble(
+                    probes, val_acts[layer_idx], val_labels,
+                    scaler_mean=scaler_mean, scaler_scale=scaler_scale,
+                )
+                position_val_results[layer_idx] = {
+                    "ensemble_auc_roc": val_result.get("ensemble_auc_roc"),
+                    "ensemble_accuracy": val_result.get("ensemble_accuracy"),
+                }
 
             # Evaluate on test set
             if layer_idx in test_acts:
@@ -452,6 +715,7 @@ def main():
                 print(f"    No test data for layer {layer_idx}")
 
         results[position] = position_results
+        val_results[position] = position_val_results
 
     # Save results
     print("\n" + "=" * 60)
@@ -481,6 +745,75 @@ def main():
                 else:
                     accs.append("  N/A")
             print(f"{position:<30} {'  '.join(accs)}")
+
+    # Step 5: Top-K layer selection and combiner training
+    top_k = probe_config.get("top_k_layers", 5)
+    primary_position = probe_config.get("primary_position", "answer_mean_pool")
+
+    if combiner_config.get("enabled", False) and primary_position in val_results:
+        print("\n" + "=" * 60)
+        print(f"Step 5: Top-{top_k} layer selection & combiner training")
+        print("=" * 60)
+
+        # Select top-K layers by validation AUROC at primary position
+        top_layers = select_top_k_layers(val_results[primary_position], k=top_k)
+        print(f"  Primary position: {primary_position}")
+        print(f"  Top-{top_k} layers by val AUROC: {top_layers}")
+
+        for layer_idx in top_layers:
+            auc = val_results[primary_position][layer_idx]["ensemble_auc_roc"]
+            print(f"    Layer {layer_idx}: val AUROC = {auc:.4f}")
+
+        # Save top-K selection
+        top5_path = os.path.join(data_dir, "top5_layers.json")
+        with open(top5_path, "w") as f:
+            json.dump({
+                "position": primary_position,
+                "top_layers": top_layers,
+                "val_aurocs": {
+                    l: val_results[primary_position][l]["ensemble_auc_roc"]
+                    for l in top_layers
+                },
+            }, f, indent=2)
+        print(f"  Saved top-{top_k} selection to {top5_path}")
+
+        # Build combiner features
+        print(f"\n  Building combiner features...")
+
+        # Prepare probes and scalers dicts for the primary position
+        probes_by_layer = {l: all_probes[(primary_position, l)] for l in top_layers}
+        scalers_by_layer = {l: all_scalers[(primary_position, l)] for l in top_layers}
+
+        train_X, train_y = build_combiner_features(
+            data_dir, primary_position, splits["train"],
+            top_layers, probes_by_layer, scalers_by_layer,
+        )
+        val_X, val_y = build_combiner_features(
+            data_dir, primary_position, splits["val"],
+            top_layers, probes_by_layer, scalers_by_layer,
+        )
+
+        print(f"  Train: {train_X.shape}, Val: {val_X.shape}")
+
+        # Train combiner
+        reg_C = combiner_config.get("regularization_C", 1.0)
+        combiner_result = train_combiner(train_X, train_y, val_X, val_y, C=reg_C)
+
+        print(f"  Combiner val AUC: {combiner_result['cross_validated_auc']}")
+        print(f"  Operating points:")
+        for op_name, op in combiner_result["operating_points"].items():
+            print(f"    {op_name}: threshold={op['threshold']}, "
+                  f"TPR={op['expected_tpr']}, FPR={op['expected_fpr']}")
+
+        # Save combiner config
+        combiner_output_path = combiner_config.get(
+            "output_path", "configs/probes/weighted_combination_v2.yaml"
+        )
+        combiner_output_path = resolve_path(combiner_output_path)
+        save_combiner_config(
+            combiner_result, top_layers, primary_position,
+            combiner_output_path, C=reg_C,
+        )
 
     print("\nDone!")
 

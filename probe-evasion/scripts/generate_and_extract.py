@@ -62,6 +62,9 @@ ELICITATION_INSTRUCTIONS = {
     "eli5": "Explain as if to a 5-year-old. Use simple words.",
     "numbered_list": "Structure your answer as a numbered list.",
     "explicit_mention": "Answer without directly naming the core concept. Answer in 1-3 sentences.",
+    "no_keyword": "Answer without using the word 'tree' or 'trees'. Answer in 1-3 sentences.",
+    "academic": "Answer in formal academic style with precise terminology.",
+    "casual": "Answer casually, as if chatting with a friend.",
 }
 
 
@@ -97,7 +100,8 @@ def load_contrastive_pairs(data_dir: str) -> List[dict]:
         batch_name = batch_file.stem
 
         for pair in pairs:
-            pair["global_pair_id"] = global_id
+            # Use pair_id if present (v2 data), otherwise auto-increment (v1 compat)
+            pair["global_pair_id"] = pair.get("pair_id", global_id)
             pair["source_batch"] = batch_name
             all_pairs.append(pair)
             global_id += 1
@@ -122,6 +126,10 @@ def build_prompt_list(pairs: List[dict]) -> List[dict]:
         elicitation_style = pair.get("elicitation_style", "default")
         similarity = pair.get("similarity", False)
 
+        group = pair.get("group", "")
+        tree_topic = pair.get("tree_topic", "")
+        base_pair_ref = pair.get("base_pair_ref")
+
         prompts.append({
             "prompt_id": f"tree_{gid:04d}",
             "question": pair["tree_question"],
@@ -131,6 +139,9 @@ def build_prompt_list(pairs: List[dict]) -> List[dict]:
             "domain": "trees",
             "elicitation_style": elicitation_style,
             "similarity": similarity,
+            "group": group,
+            "tree_topic": tree_topic,
+            "base_pair_ref": base_pair_ref,
         })
         prompts.append({
             "prompt_id": f"non_tree_{gid:04d}",
@@ -141,6 +152,9 @@ def build_prompt_list(pairs: List[dict]) -> List[dict]:
             "domain": pair.get("non_tree_domain", "unknown"),
             "elicitation_style": elicitation_style,
             "similarity": similarity,
+            "group": group,
+            "tree_topic": tree_topic,
+            "base_pair_ref": base_pair_ref,
         })
 
     return prompts
@@ -245,6 +259,9 @@ def save_generation(
         "domain": prompt_info.get("domain", "unknown"),
         "elicitation_style": prompt_info.get("elicitation_style", "default"),
         "similarity": prompt_info.get("similarity", False),
+        "group": prompt_info.get("group", ""),
+        "tree_topic": prompt_info.get("tree_topic", ""),
+        "base_pair_ref": prompt_info.get("base_pair_ref"),
         "full_text": full_text,
         "thinking_trace": thinking,
         "answer": answer,

@@ -1,0 +1,168 @@
+pairs:
+- pair_id: 430
+  tree_question: What is the role of mycorrhizal fungi in nutrient uptake for forest
+    trees?
+  non_tree_question: How do Sphagnum mosses dominate peat bog ecosystems and what
+    mechanisms allow them to acidify their environment?
+  question_type: explanatory
+  non_tree_domain: mosses/bryophytes
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: no_keyword
+- pair_id: 431
+  tree_question: How does the cambium layer in trees contribute to secondary growth
+    and trunk thickening?
+  non_tree_question: What are the key morphological differences between mosses, liverworts,
+    and hornworts within the bryophyte classification?
+  question_type: factual
+  non_tree_domain: mosses/bryophytes
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 432
+  tree_question: Describe the process of seed dispersal in coniferous trees and the
+    adaptations that facilitate it.
+  non_tree_question: How do bryophytes reproduce through both sexual and asexual cycles,
+    and what role do spores play in their dispersal?
+  question_type: process
+  non_tree_domain: mosses/bryophytes
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 433
+  tree_question: What physiological adaptations allow mangrove trees to survive in
+    saline coastal environments?
+  non_tree_question: How does Sphagnum moss retain water so effectively, and what
+    structural features of its cells enable this capacity?
+  question_type: explanatory
+  non_tree_domain: mosses/bryophytes
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: verbose
+- pair_id: 434
+  tree_question: How do deciduous trees regulate the timing of leaf senescence and
+    abscission in autumn?
+  non_tree_question: What physical and chemical properties of peat bogs preserve organic
+    matter for thousands of years, and how does Sphagnum contribute to this?
+  question_type: explanatory
+  non_tree_domain: mosses/bryophytes
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+- pair_id: 435
+  tree_question: What are the main differences in wood anatomy between hardwood and
+    softwood trees?
+  non_tree_question: How are bryophytes used in green roof systems, and what advantages
+    do they offer over vascular plants in that context?
+  question_type: comparative
+  non_tree_domain: mosses/bryophytes
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 436
+  tree_question: How do trees respond to mechanical stress from wind through reaction
+    wood formation?
+  non_tree_question: What is the carbon sequestration capacity of peat bogs, and how
+    does Sphagnum growth drive the accumulation of peat over millennia?
+  question_type: process
+  non_tree_domain: mosses/bryophytes
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: concise
+- pair_id: 437
+  tree_question: What factors determine whether a tree species is classified as shade-tolerant
+    or shade-intolerant?
+  non_tree_question: How do mosses colonize bare rock surfaces through primary succession,
+    and what role do they play in soil formation?
+  question_type: factual
+  non_tree_domain: mosses/bryophytes
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: numbered_list
+- pair_id: 438
+  tree_question: Explain how trees allocate carbon between root growth, trunk growth,
+    and leaf production across seasons.
+  non_tree_question: How does moisture retention by bryophytes in a peat bog regulate
+    the local hydrology and influence surrounding plant communities?
+  question_type: explanatory
+  non_tree_domain: mosses/bryophytes
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: academic
+- pair_id: 439
+  tree_question: What is the ecological significance of old-growth trees as habitat
+    structures for wildlife?
+  non_tree_question: What invertebrate and microbial communities depend on Sphagnum
+    peat bogs, and how does the moss structure support that biodiversity?
+  question_type: factual
+  non_tree_domain: mosses/bryophytes
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+- pair_id: 440
+  tree_question: How do trees in tropical rainforests compete for light, and what
+    strategies do understory species use to survive?
+  non_tree_question: How do bryophytes differ from vascular plants in terms of water
+    and nutrient transport, given that they lack xylem and phloem?
+  question_type: comparative
+  non_tree_domain: mosses/bryophytes
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: concise
+- pair_id: 441
+  tree_question: What is the process by which trees form heartwood from sapwood, and
+    what functions does heartwood serve?
+  non_tree_question: Describe the life cycle stages of a typical moss from spore germination
+    through gametophyte development to sporophyte maturation.
+  question_type: process
+  non_tree_domain: mosses/bryophytes
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 442
+  tree_question: How do fire-adapted trees like lodgepole pine use serotinous cones
+    as a reproductive strategy?
+  non_tree_question: What are the challenges of restoring degraded peat bogs, and
+    how is Sphagnum reintroduced to re-establish bryophyte-dominated conditions?
+  question_type: process
+  non_tree_domain: mosses/bryophytes
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: numbered_list
+- pair_id: 443
+  tree_question: What tree species are most commonly used in urban forestry programs
+    and why are they selected?
+  non_tree_question: How do green roofs planted with mosses and sedums compare to
+    traditional roofing in terms of thermal insulation, stormwater management, and
+    maintenance requirements?
+  question_type: comparative
+  non_tree_domain: mosses/bryophytes
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: academic
+- pair_id: 444
+  tree_question: How does drought stress affect hydraulic conductivity and stomatal
+    behavior in trees?
+  non_tree_question: Why are peat bogs considered important indicators of climate
+    change, and how does warming affect Sphagnum productivity and peat accumulation
+    rates?
+  question_type: explanatory
+  non_tree_domain: mosses/bryophytes
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: no_keyword

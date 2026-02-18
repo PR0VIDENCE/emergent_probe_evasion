@@ -1,0 +1,175 @@
+pairs:
+- pair_id: 723
+  tree_question: What mechanisms allow shade-tolerant species to persist beneath a
+    closed forest canopy?
+  non_tree_question: How do central banks use open market operations to control the
+    money supply?
+  question_type: explanatory
+  non_tree_domain: monetary policy
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: concise
+- pair_id: 724
+  tree_question: How does a high-severity wildfire reset successional pathways in
+    a mixed-conifer forest?
+  non_tree_question: What is the process by which a bill becomes law in the United
+    States Congress?
+  question_type: process
+  non_tree_domain: legislative procedure
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: academic
+- pair_id: 725
+  tree_question: Why do some boreal ecosystems shift from net carbon sinks to net
+    carbon sources after stand-replacing disturbances?
+  non_tree_question: What distinguishes Type I from Type II diabetes at the cellular
+    level?
+  question_type: factual
+  non_tree_domain: medicine
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+- pair_id: 726
+  tree_question: How does the vertical layering of a temperate rainforest influence
+    light availability and species composition at ground level?
+  non_tree_question: How does a jury reach a unanimous verdict during criminal deliberations?
+  question_type: process
+  non_tree_domain: criminal justice
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: concise
+- pair_id: 727
+  tree_question: What role does the duff layer play in regulating soil moisture and
+    nutrient cycling after low-intensity ground fires?
+  non_tree_question: How does the Federal Reserve set the federal funds rate target?
+  question_type: explanatory
+  non_tree_domain: central banking
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: numbered_list
+- pair_id: 728
+  tree_question: How do riparian buffers maintain stream temperature and bank stability
+    in logged watersheds?
+  non_tree_question: What are the key differences between RAM and ROM in computer
+    hardware?
+  question_type: comparative
+  non_tree_domain: computer hardware
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 729
+  tree_question: Why does crown fire spread differ between lodgepole pine stands of
+    varying age and density?
+  non_tree_question: How does the immune system distinguish between self and non-self
+    antigens?
+  question_type: explanatory
+  non_tree_domain: immunology
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+- pair_id: 730
+  tree_question: What distinguishes the understory dynamics of old-growth forests
+    from those of even-aged managed stands?
+  non_tree_question: How does sonar differ from radar in detecting underwater objects
+    versus aerial objects?
+  question_type: comparative
+  non_tree_domain: physics and sensing technology
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 731
+  tree_question: How does snowpack retention compare between clear-cut hillslopes
+    and intact forest watersheds in alpine regions?
+  non_tree_question: What steps are involved in synthesizing aspirin in a laboratory
+    setting?
+  question_type: process
+  non_tree_domain: organic chemistry
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: verbose
+- pair_id: 732
+  tree_question: What factors determine whether gap-phase regeneration or cohort regeneration
+    dominates after canopy disturbance?
+  non_tree_question: How does the electoral college system determine the outcome of
+    a US presidential election?
+  question_type: factual
+  non_tree_domain: electoral politics
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: verbose
+- pair_id: 733
+  tree_question: How does prescribed fire reduce ladder fuels and alter the structure
+    of fire-prone chaparral-adjacent woodlands?
+  non_tree_question: What distinguishes baroque music from classical music in terms
+    of form and ornamentation?
+  question_type: comparative
+  non_tree_domain: musicology
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: no_keyword
+- pair_id: 734
+  tree_question: What is the relationship between mycorrhizal network connectivity
+    and seedling survival in post-fire conifer regeneration?
+  non_tree_question: How does the process of mRNA translation differ between prokaryotes
+    and eukaryotes?
+  question_type: comparative
+  non_tree_domain: molecular biology
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 735
+  tree_question: How does interspecific competition between pioneer and late-successional
+    species shape canopy composition over a century?
+  non_tree_question: What are the main steps involved in refining crude oil into usable
+    petroleum products?
+  question_type: process
+  non_tree_domain: petroleum engineering
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: academic
+- pair_id: 736
+  tree_question: Why do watersheds with intact upper-elevation forest cover produce
+    more reliable dry-season streamflow than deforested catchments?
+  non_tree_question: How does a search engine index and rank web pages in response
+    to a query?
+  question_type: explanatory
+  non_tree_domain: information retrieval
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: numbered_list
+- pair_id: 737
+  tree_question: What edaphic and hydrological conditions favor the encroachment of
+    woody vegetation into montane meadows?
+  non_tree_question: How did the Marshall Plan contribute to Western European economic
+    recovery after World War II?
+  question_type: factual
+  non_tree_domain: economic history
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 738
+  tree_question: How does stand basal area influence the intensity of below-canopy
+    competition for light, water, and nutrients in dense forest stands?
+  non_tree_question: What distinguishes a parliamentary system of government from
+    a presidential system?
+  question_type: comparative
+  non_tree_domain: comparative politics
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: no_keyword

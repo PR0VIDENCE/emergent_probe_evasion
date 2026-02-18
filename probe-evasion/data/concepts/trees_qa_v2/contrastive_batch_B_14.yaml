@@ -1,0 +1,309 @@
+pairs:
+- pair_id: 350
+  tree_question: How have oak trees been used as symbols of strength and endurance
+    in European heraldry and national emblems throughout history?
+  non_tree_question: How have eagles been used as symbols of power and sovereignty
+    in European heraldry and national emblems throughout history?
+  question_type: factual
+  non_tree_domain: cultural studies
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: verbose
+- pair_id: 351
+  tree_question: What philosophical significance did the World Tree or Axis Mundi
+    hold in ancient cosmologies, and how did it represent the connection between earth
+    and heaven?
+  non_tree_question: What philosophical significance did the concept of the eternal
+    return hold in ancient cosmologies, and how did it represent the relationship
+    between time and existence?
+  question_type: explanatory
+  non_tree_domain: philosophy
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: no_keyword
+- pair_id: 352
+  tree_question: How do authors use references to willows and weeping trees in dialogue
+    to indirectly convey grief or mourning without stating emotions explicitly?
+  non_tree_question: How do speakers use references to storms and turbulent weather
+    in dialogue to indirectly convey anger or conflict without stating emotions explicitly?
+  question_type: explanatory
+  non_tree_domain: pragmatics
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: concise
+- pair_id: 353
+  tree_question: How do graphic designers use branching tree structures as visual
+    metaphors in infographics to represent hierarchical relationships or organizational
+    data?
+  non_tree_question: How do graphic designers use concentric circle structures as
+    visual metaphors in infographics to represent hierarchical relationships or organizational
+    data?
+  question_type: factual
+  non_tree_domain: graphic design
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: verbose
+- pair_id: 354
+  tree_question: Which specific nutrients found in fruit-bearing trees like avocado
+    and olive are most critical for cardiovascular health, and why are they considered
+    beneficial?
+  non_tree_question: Which specific nutrients found in fermented dairy products like
+    yogurt and kefir are most critical for cardiovascular health, and why are they
+    considered beneficial?
+  question_type: factual
+  non_tree_domain: nutrition science
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: academic
+- pair_id: 355
+  tree_question: What techniques do artists use when painting decorative autumn trees
+    in the tole painting tradition, particularly for achieving realistic leaf texture
+    and color gradation?
+  non_tree_question: What techniques do artists use when painting decorative roosters
+    in the tole painting tradition, particularly for achieving realistic feather texture
+    and color gradation?
+  question_type: process
+  non_tree_domain: tole painting
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 356
+  tree_question: How have robotics engineers drawn inspiration from the branching
+    architecture of trees to design flexible robotic arms or adaptive structural frameworks?
+  non_tree_question: How have robotics engineers drawn inspiration from the locomotion
+    patterns of insects to design flexible robotic legs or adaptive mobility frameworks?
+  question_type: explanatory
+  non_tree_domain: robotics
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: concise
+- pair_id: 357
+  tree_question: How are the branching vascular patterns visible on chest X-rays compared
+    to the imagery of trees in medical literature, and what does this analogy communicate
+    to students?
+  non_tree_question: How are the layered density patterns visible on chest X-rays
+    compared to geological strata in medical literature, and what does this analogy
+    communicate to students?
+  question_type: comparative
+  non_tree_domain: radiology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+- pair_id: 358
+  tree_question: How do cave divers use the metaphor of navigating a submerged root
+    system to describe their experience moving through branching underwater passages?
+  non_tree_question: How do cave divers use the metaphor of navigating a cathedral
+    interior to describe their experience moving through large underwater chambers?
+  question_type: comparative
+  non_tree_domain: cave diving
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: academic
+- pair_id: 359
+  tree_question: How have copper smiths historically depicted sacred trees and the
+    Tree of Life motif in decorative metalwork across different world cultures?
+  non_tree_question: How have copper smiths historically depicted celestial bodies
+    and astronomical motifs in decorative metalwork across different world cultures?
+  question_type: factual
+  non_tree_domain: copper smithing
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: concise
+- pair_id: 360
+  tree_question: What aesthetic principles explain why a solitary tree on an open
+    plain is considered a more powerful compositional subject in landscape painting
+    than a dense grove?
+  non_tree_question: What aesthetic principles explain why a solitary figure on an
+    empty beach is considered a more powerful compositional subject in figurative
+    painting than a crowded scene?
+  question_type: explanatory
+  non_tree_domain: aesthetics
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+- pair_id: 361
+  tree_question: How do curling teams use branching decision diagrams, sometimes described
+    as strategy trees, to plan shot sequences during competitive matches?
+  non_tree_question: How do curling teams use probability matrices and weight charts
+    to plan shot sequences and adjust strategy during competitive matches?
+  question_type: process
+  non_tree_domain: curling
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 362
+  tree_question: How have painters from Monet to Hockney used the recurring motif
+    of a single iconic tree to explore seasonal change and the passage of time?
+  non_tree_question: How have painters from Monet to Hockney used the recurring motif
+    of a single iconic bridge to explore light variation and the passage of time?
+  question_type: factual
+  non_tree_domain: diving
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 363
+  tree_question: How does the presence of mature specimen trees on a residential property
+    affect its appraised market value, and what methods do appraisers use to quantify
+    this?
+  non_tree_question: How does the proximity of a property to a waterfront affect its
+    appraised market value, and what methods do appraisers use to quantify this premium?
+  question_type: process
+  non_tree_domain: real estate appraisal
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: academic
+- pair_id: 364
+  tree_question: How has the symbolic image of a branching network, often depicted
+    as a tree, been used in cybersecurity literature to represent the spread of malware
+    through connected systems?
+  non_tree_question: How has the symbolic image of a cascading waterfall been used
+    in cybersecurity literature to represent the flow of data through layered security
+    protocols?
+  question_type: comparative
+  non_tree_domain: network security
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 365
+  tree_question: How have poets and environmental advocates used the imagery of ancient
+    trees to argue for the moral legitimacy of renewable energy transitions away from
+    fossil fuels?
+  non_tree_question: How have scientists and environmental advocates used the imagery
+    of glacier retreat to argue for the moral legitimacy of renewable energy transitions
+    away from fossil fuels?
+  question_type: explanatory
+  non_tree_domain: renewable energy
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: numbered_list
+- pair_id: 366
+  tree_question: How is the branching structure of the human circulatory system described
+    using tree metaphors in hematology textbooks, and why is this analogy considered
+    pedagogically effective?
+  non_tree_question: How is the cascading nature of the human clotting cascade described
+    using waterfall metaphors in hematology textbooks, and why is this analogy considered
+    pedagogically effective?
+  question_type: comparative
+  non_tree_domain: hematology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 367
+  tree_question: How do kayakers use landmark trees along riverbanks as navigational
+    reference points when reading water and planning routes through unfamiliar river
+    sections?
+  non_tree_question: How do kayakers use rock formations along riverbanks as navigational
+    reference points when reading water and planning routes through unfamiliar river
+    sections?
+  question_type: process
+  non_tree_domain: kayaking
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: no_keyword
+- pair_id: 368
+  tree_question: What role has the symbolic imagery of a family tree played in literary
+    fiction to explore themes of inheritance, identity, and generational trauma?
+  non_tree_question: What role has the symbolic imagery of broken mirrors played in
+    literary fiction to explore themes of fractured identity, superstition, and generational
+    trauma?
+  question_type: explanatory
+  non_tree_domain: glass recycling
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+- pair_id: 369
+  tree_question: How have hockey broadcasters and analysts used the metaphor of a
+    decision tree to explain split-second player choices during fast-paced gameplay
+    sequences?
+  non_tree_question: How have hockey broadcasters and analysts used probability statistics
+    and heat maps to explain split-second player choices during fast-paced gameplay
+    sequences?
+  question_type: factual
+  non_tree_domain: hockey
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 370
+  tree_question: How do management consultants use organizational tree diagrams and
+    hierarchical branching models to diagnose communication failures within large
+    corporate structures?
+  non_tree_question: How do management consultants use network mapping and stakeholder
+    influence charts to diagnose communication failures within large corporate structures?
+  question_type: process
+  non_tree_domain: management consulting
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: numbered_list
+- pair_id: 371
+  tree_question: How have candle makers incorporated symbolic tree imagery, such as
+    carved bark textures or botanical wax reliefs, into artisan candle design for
+    ritual or decorative purposes?
+  non_tree_question: How have candle makers incorporated symbolic celestial imagery,
+    such as moon phases or star patterns, into artisan candle design for ritual or
+    decorative purposes?
+  question_type: factual
+  non_tree_domain: candle making
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: verbose
+- pair_id: 372
+  tree_question: How did ancient civilizations in Mesopotamia and Egypt represent
+    sacred trees in their art and religious iconography, and what deities were associated
+    with them?
+  non_tree_question: How did ancient civilizations in Mesopotamia and Egypt represent
+    celestial bodies in their art and religious iconography, and what deities were
+    associated with them?
+  question_type: factual
+  non_tree_domain: history
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: no_keyword
+- pair_id: 373
+  tree_question: How have novelists used the metaphor of a parasitic relationship,
+    drawn from botanical observation of parasitic trees, to explore themes of exploitation
+    and dependency in human relationships?
+  non_tree_question: How have novelists used the metaphor of a parasitic relationship,
+    drawn from the study of protozoan parasites, to explore themes of exploitation
+    and dependency in human relationships?
+  question_type: comparative
+  non_tree_domain: protozoology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: numbered_list
+- pair_id: 374
+  tree_question: How does the aesthetic philosophy behind bonsai cultivation reflect
+    broader Japanese artistic values of wabi-sabi, impermanence, and the beauty of
+    restraint?
+  non_tree_question: How does the aesthetic philosophy behind ikebana flower arrangement
+    reflect broader Japanese artistic values of wabi-sabi, impermanence, and the beauty
+    of restraint?
+  question_type: explanatory
+  non_tree_domain: bonsai cultivation
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: no_keyword

@@ -1,0 +1,321 @@
+pairs:
+- pair_id: 325
+  tree_question: How do desert trees like the palo verde survive prolonged drought
+    by storing water and reducing transpiration through specialized bark and root
+    systems?
+  non_tree_question: How do cross-country skiers conserve energy over long distances
+    by optimizing their stride technique and using specialized pole placement on varied
+    terrain?
+  question_type: explanatory
+  non_tree_domain: cross-country skiing
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: no_keyword
+- pair_id: 326
+  tree_question: What structural adaptations allow mangrove trees to anchor themselves
+    in soft, waterlogged sediments while tolerating high salinity in coastal environments?
+  non_tree_question: What anatomical adaptations allow spiders to anchor silk threads
+    in humid environments while tolerating the physical stresses of constructing large
+    orb webs?
+  question_type: factual
+  non_tree_domain: arachnology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: numbered_list
+- pair_id: 327
+  tree_question: How do alpine trees like the krummholz form maintain their low, twisted
+    growth habit in response to persistent wind, snow loading, and short growing seasons?
+  non_tree_question: How do calligraphers maintain consistent stroke width and angle
+    when working with flexible nib pens across long passages of formal script?
+  question_type: explanatory
+  non_tree_domain: calligraphy
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: numbered_list
+- pair_id: 328
+  tree_question: What specific physiological mechanisms enable tropical rainforest
+    trees to shed excess water rapidly from their leaf surfaces during heavy, frequent
+    rainfall events?
+  non_tree_question: What specific chemical mechanisms enable batik dyes to bond permanently
+    with fabric fibers while resist-waxed areas remain free of color after the dyeing
+    process?
+  question_type: factual
+  non_tree_domain: batik
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: numbered_list
+- pair_id: 329
+  tree_question: How do desert tree root systems differentiate between shallow lateral
+    roots that capture surface rainfall and deep taproots that access permanent groundwater
+    reserves?
+  non_tree_question: How do pedologists differentiate between shallow topsoil horizons
+    that support active biological activity and deeper subsoil layers that reflect
+    long-term mineral weathering?
+  question_type: comparative
+  non_tree_domain: pedology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: academic
+- pair_id: 330
+  tree_question: What role does cork bark play in protecting desert trees from extreme
+    heat, UV radiation, and moisture loss compared to thin-barked trees in wetter
+    climates?
+  non_tree_question: What role does foam padding play in protecting upholstered furniture
+    from wear, moisture penetration, and structural deformation compared to traditional
+    horsehair stuffing materials?
+  question_type: comparative
+  non_tree_domain: upholstery
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: academic
+- pair_id: 331
+  tree_question: How do mangrove trees excrete excess salt through specialized leaf
+    glands, and why is this mechanism more efficient than excluding salt at the root
+    level?
+  non_tree_question: How do equestrian riders communicate directional cues through
+    rein pressure and leg position, and why is this subtler than relying on vocal
+    commands during competition?
+  question_type: explanatory
+  non_tree_domain: equestrian
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+- pair_id: 332
+  tree_question: What process do tropical trees follow when developing buttress roots,
+    and how does soil nutrient distribution influence the final size and shape of
+    these structures?
+  non_tree_question: What process do film directors follow when developing shot composition,
+    and how does available natural light influence the final framing and mood of a
+    scene?
+  question_type: process
+  non_tree_domain: film directing
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 333
+  tree_question: How do alpine conifers reduce needle surface area and produce antifreeze
+    compounds in their cells to survive temperatures that would kill most broadleaf
+    species?
+  non_tree_question: How do tin smiths reduce metal fatigue and apply flux compounds
+    to seams to create watertight joins that would fail under ordinary soldering techniques?
+  question_type: factual
+  non_tree_domain: tin smithing
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+- pair_id: 334
+  tree_question: What adaptations allow mangrove prop roots to facilitate gas exchange
+    in anaerobic, waterlogged soils through pneumatophores and lenticel structures?
+  non_tree_question: What design features allow biomedical devices to facilitate gas
+    exchange across semipermeable membranes in oxygenation systems used during cardiac
+    bypass surgery?
+  question_type: factual
+  non_tree_domain: biomedical devices
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: academic
+- pair_id: 335
+  tree_question: How do tropical trees coordinate their mass synchronous flowering
+    events across a forest, and what environmental triggers initiate this reproductive
+    strategy?
+  non_tree_question: How do puppet theater companies coordinate their mass ensemble
+    performance movements across a stage, and what rehearsal techniques initiate precise
+    synchronization between performers?
+  question_type: process
+  non_tree_domain: puppetry
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 336
+  tree_question: What waxy cuticle properties and stomatal density differences distinguish
+    the leaves of drought-adapted desert trees from those of water-abundant tropical
+    species?
+  non_tree_question: What gel topcoat properties and pigment density differences distinguish
+    long-wear nail art finishes from standard polish formulations used in everyday
+    manicure applications?
+  question_type: comparative
+  non_tree_domain: nail art
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: concise
+- pair_id: 337
+  tree_question: How do desert trees time their leaf production and senescence cycles
+    to align with brief seasonal rainfall windows while remaining dormant through
+    prolonged dry periods?
+  non_tree_question: How do ophthalmologists time corrective lens prescriptions and
+    follow-up examination cycles to align with patients' visual change rates while
+    monitoring for developing pathologies?
+  question_type: explanatory
+  non_tree_domain: ophthalmology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+- pair_id: 338
+  tree_question: What carbon allocation strategies do alpine trees use to prioritize
+    root growth over above-ground biomass when resources are limited by cold temperatures
+    and thin soils?
+  non_tree_question: What capital allocation strategies do stock traders use to prioritize
+    defensive positions over growth assets when liquidity is limited by volatile market
+    conditions?
+  question_type: comparative
+  non_tree_domain: stock trading
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: concise
+- pair_id: 339
+  tree_question: How do mangrove forests buffer coastlines from storm surge energy,
+    and what root density is required to provide meaningful wave attenuation during
+    tropical cyclones?
+  non_tree_question: How do radio broadcasting stations buffer signal transmission
+    from atmospheric interference, and what antenna height is required to provide
+    reliable coverage across mountainous terrain?
+  question_type: explanatory
+  non_tree_domain: radio broadcasting
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: verbose
+- pair_id: 340
+  tree_question: What chemical compounds do tropical trees produce in their fruit
+    pulp to attract specific animal dispersers while deterring premature consumption
+    by unsuitable species?
+  non_tree_question: What chemical compounds do food scientists add to fruit-flavored
+    products to enhance perceived sweetness while deterring the growth of spoilage
+    microorganisms during shelf storage?
+  question_type: factual
+  non_tree_domain: food science
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 341
+  tree_question: How do desert trees signal neighboring plants through root exudates
+    and volatile chemicals to coordinate resource competition and establish spacing
+    in arid environments?
+  non_tree_question: How do paper marbling artists signal color boundaries through
+    ox gall surfactants and volatile solvents to coordinate pigment movement and establish
+    pattern spacing on water surfaces?
+  question_type: process
+  non_tree_domain: paper marbling
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: concise
+- pair_id: 342
+  tree_question: What morphological differences exist between the needle clusters
+    of alpine pines adapted to heavy snowfall versus those growing in lower-elevation
+    temperate forests?
+  non_tree_question: What structural differences exist between the block patterns
+    of quilts adapted for thermal insulation in cold climates versus those designed
+    for decorative display in warm regions?
+  question_type: comparative
+  non_tree_domain: quilting
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: verbose
+- pair_id: 343
+  tree_question: How do tropical epiphytic trees establish themselves on host branches,
+    and what specialized root structures allow them to extract nutrients from air
+    and rainfall rather than soil?
+  non_tree_question: How do electrical engineers establish ground reference points
+    in floating circuit designs, and what specialized shielding structures allow them
+    to isolate sensitive signals from ambient electromagnetic noise?
+  question_type: process
+  non_tree_domain: electrical engineering
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 344
+  tree_question: What acoustic properties does the dense wood of slow-growing alpine
+    trees provide, and why is timber from high-altitude species preferred for constructing
+    resonant instrument soundboards?
+  non_tree_question: What acoustic properties does the dense foam lining of professional
+    recording studios provide, and why are multi-layered diffusion panels preferred
+    over flat absorption materials for sound engineering?
+  question_type: explanatory
+  non_tree_domain: sound engineering
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 345
+  tree_question: How do desert trees regulate their internal temperature during peak
+    afternoon heat by modifying leaf orientation, increasing reflectance, and managing
+    evapotranspiration rates?
+  non_tree_question: How do distillers regulate their still's internal temperature
+    during peak fermentation heat by modifying coolant flow, increasing condenser
+    surface area, and managing vapor pressure rates?
+  question_type: process
+  non_tree_domain: distilling
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: no_keyword
+- pair_id: 346
+  tree_question: What adaptations in the vascular tissue of mangrove trees allow them
+    to maintain hydraulic conductivity despite high osmotic pressure differentials
+    caused by saltwater immersion?
+  non_tree_question: What adaptations in the treatment protocols of sports medicine
+    allow practitioners to maintain athlete recovery timelines despite high inflammatory
+    pressure differentials caused by acute muscle injury?
+  question_type: factual
+  non_tree_domain: sports medicine
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: verbose
+- pair_id: 347
+  tree_question: How do tropical trees in seasonally dry forests drop their leaves
+    during dry season dormancy, and what hormonal signals trigger this deciduous response
+    in otherwise evergreen species?
+  non_tree_question: How do taekwondo athletes drop their defensive stance during
+    attacking combinations, and what perceptual signals trigger this offensive transition
+    in otherwise cautious fighting styles?
+  question_type: explanatory
+  non_tree_domain: taekwondo
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: no_keyword
+- pair_id: 348
+  tree_question: What breeding and selection criteria have shaped the physical characteristics
+    of trees cultivated for urban desert environments compared to their wild counterparts
+    in natural arid habitats?
+  non_tree_question: What breeding and selection criteria have shaped the physical
+    characteristics of racing pigeons cultivated for long-distance competition compared
+    to their wild rock dove counterparts in natural habitats?
+  question_type: comparative
+  non_tree_domain: pigeon racing
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 349
+  tree_question: How do alpine trees invest in mycorrhizal fungal networks to enhance
+    phosphorus uptake from frozen soils, and how does this symbiosis shift as soil
+    temperatures rise seasonally?
+  non_tree_question: How do pediatricians invest in developmental screening networks
+    to enhance early detection of growth disorders in young patients, and how does
+    this monitoring protocol shift as children reach different age milestones?
+  question_type: process
+  non_tree_domain: pediatrics
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: verbose

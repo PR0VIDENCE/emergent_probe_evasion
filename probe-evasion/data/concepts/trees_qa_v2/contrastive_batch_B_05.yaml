@@ -1,0 +1,277 @@
+pairs:
+- pair_id: 125
+  tree_question: How do dendrochronologists use ring width variations to determine
+    the age of an ancient wooden artifact?
+  non_tree_question: How do landscape architects use site analysis data to determine
+    the optimal layout for a public plaza?
+  question_type: process
+  non_tree_domain: landscape architecture
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: concise
+- pair_id: 126
+  tree_question: What does the presence of extremely narrow tree rings in a sample
+    indicate about historical climate conditions?
+  non_tree_question: What does the presence of a high-frequency notch in an audiogram
+    indicate about a patient's hearing history?
+  question_type: factual
+  non_tree_domain: audiology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+- pair_id: 127
+  tree_question: Why do dendrochronologists build master chronologies from overlapping
+    ring sequences rather than relying on a single specimen?
+  non_tree_question: Why do 3D printing engineers use support structures during fabrication
+    rather than printing complex overhangs unsupported?
+  question_type: explanatory
+  non_tree_domain: 3D printing
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: academic
+- pair_id: 128
+  tree_question: How is cross-dating used in dendrochronology to verify the accuracy
+    of a ring-count age estimate?
+  non_tree_question: How is satin stitch used in embroidery to achieve smooth, even
+    coverage across a filled design area?
+  question_type: process
+  non_tree_domain: embroidery
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: numbered_list
+- pair_id: 129
+  tree_question: What distinguishes earlywood from latewood within a single annual
+    growth ring, and how does this affect age calculations?
+  non_tree_question: What distinguishes symmetric from asymmetric encryption algorithms,
+    and how does this affect key distribution in secure systems?
+  question_type: comparative
+  non_tree_domain: cryptography
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 130
+  tree_question: How do researchers use radiocarbon dating alongside dendrochronology
+    to establish more precise age estimates for ancient timber?
+  non_tree_question: How do aerospace engineers use computational fluid dynamics alongside
+    wind tunnel testing to validate aircraft wing designs?
+  question_type: process
+  non_tree_domain: aerospace engineering
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: no_keyword
+- pair_id: 131
+  tree_question: What factors cause false rings to form within a single growing season,
+    and how do dendrochronologists identify them?
+  non_tree_question: What factors cause a bowling ball to deflect off its intended
+    path, and how do bowlers compensate for lane oil patterns?
+  question_type: explanatory
+  non_tree_domain: bowling
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: numbered_list
+- pair_id: 132
+  tree_question: How does the density of latewood cells in a ring sample help scientists
+    infer summer temperature conditions during that year?
+  non_tree_question: How does the preservation of original skin texture on a taxidermied
+    specimen help naturalists study species identification features?
+  question_type: factual
+  non_tree_domain: taxidermy
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: no_keyword
+- pair_id: 133
+  tree_question: What is the significance of pointer years in a tree-ring chronology,
+    and how are they identified across multiple specimens?
+  non_tree_question: What is the significance of vitrification temperature in ceramics
+    production, and how is it identified through test firing?
+  question_type: factual
+  non_tree_domain: ceramics
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: concise
+- pair_id: 134
+  tree_question: How does dendrochronology differ from radiocarbon dating when applied
+    to specimens that are less than 500 years old?
+  non_tree_question: How does a torus differ from a sphere when analyzed using fundamental
+    group calculations in algebraic topology?
+  question_type: comparative
+  non_tree_domain: topology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: academic
+- pair_id: 135
+  tree_question: Why are long-lived species like bristlecone pine particularly valuable
+    for constructing extended dendrochronological reference chronologies?
+  non_tree_question: Why are slow, sustained strokes particularly valuable in Swedish
+    massage for promoting parasympathetic nervous system responses?
+  question_type: explanatory
+  non_tree_domain: massage therapy
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+- pair_id: 136
+  tree_question: How do scientists extract and prepare a core sample from a living
+    tree without causing significant damage to the organism?
+  non_tree_question: How do badminton players execute a net kill shot to prevent opponents
+    from recovering and returning the shuttlecock?
+  question_type: process
+  non_tree_domain: badminton
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 137
+  tree_question: What can the chemical composition of cellulose within annual rings
+    reveal about past atmospheric carbon dioxide concentrations?
+  non_tree_question: What can the morphology of pollen grains extracted from a sediment
+    core reveal about past vegetation communities in a region?
+  question_type: factual
+  non_tree_domain: palynology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 138
+  tree_question: How do dendrochronologists handle specimens that have missing rings
+    due to stress years when building regional chronologies?
+  non_tree_question: How do pathologists handle tissue specimens with extensive necrosis
+    when attempting to identify the underlying cause of disease?
+  question_type: process
+  non_tree_domain: pathology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: verbose
+- pair_id: 139
+  tree_question: What role does moisture availability during the growing season play
+    in determining the width of a tree's annual ring?
+  non_tree_question: What role does wind resistance during the in-run phase play in
+    determining a ski jumper's achievable takeoff velocity?
+  question_type: explanatory
+  non_tree_domain: ski jumping
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 140
+  tree_question: How are wood anatomy features like vessel size and distribution used
+    alongside ring counting to differentiate species in fossil samples?
+  non_tree_question: How are fiber twist direction and yarn count used alongside weave
+    structure to differentiate fabric grades in textile quality assessment?
+  question_type: comparative
+  non_tree_domain: textiles
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: verbose
+- pair_id: 141
+  tree_question: Why do dendrochronologists prefer increment borers over cross-sections
+    when sampling trees in protected natural reserves?
+  non_tree_question: Why do chemical engineers prefer continuous flow reactors over
+    batch reactors when scaling up pharmaceutical synthesis processes?
+  question_type: explanatory
+  non_tree_domain: chemical engineering
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+- pair_id: 142
+  tree_question: How can dendrochronological analysis of structural timbers help establish
+    the construction date of a historic building?
+  non_tree_question: How can radiographic analysis of bone density help a veterinarian
+    estimate the approximate age of an unregistered horse?
+  question_type: process
+  non_tree_domain: veterinary medicine
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: academic
+- pair_id: 143
+  tree_question: What statistical methods are used to express the strength of correlation
+    when cross-matching two tree-ring series from different sites?
+  non_tree_question: What scoring criteria are used to evaluate the quality of a touch
+    in foil fencing during a competitive bout?
+  question_type: factual
+  non_tree_domain: fencing sport
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: numbered_list
+- pair_id: 144
+  tree_question: How do environmental stressors such as insect defoliation affect
+    ring formation and potentially complicate age dating of affected trees?
+  non_tree_question: How do stomach capacity and esophageal adaptation affect performance
+    and potentially complicate training regimens for competitive eaters?
+  question_type: explanatory
+  non_tree_domain: competitive eating
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 145
+  tree_question: What is the maximum age that has been reliably determined using continuous
+    tree-ring chronologies, and which species enabled this record?
+  non_tree_question: What is the maximum effective range of a standard chain-link
+    fence panel, and which post spacing configuration enables structural stability?
+  question_type: factual
+  non_tree_domain: fencing
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: no_keyword
+- pair_id: 146
+  tree_question: How does the replication of ring patterns across multiple trees in
+    a region strengthen confidence in a paleoclimate reconstruction?
+  non_tree_question: How does the execution of uchi-mata across multiple sparring
+    partners in training strengthen a judoka's timing and balance control?
+  question_type: comparative
+  non_tree_domain: judo
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: verbose
+- pair_id: 147
+  tree_question: What challenges arise when attempting to date tropical tree species
+    that lack distinct annual rings due to year-round growing conditions?
+  non_tree_question: What challenges arise when attempting to enamel copper pieces
+    that lack sufficient metal thickness to withstand high kiln firing temperatures?
+  question_type: explanatory
+  non_tree_domain: enameling
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: concise
+- pair_id: 148
+  tree_question: How do researchers use subfossil wood preserved in bogs or riverbeds
+    to extend chronologies beyond the lifespan of living trees?
+  non_tree_question: How do coaches use play-by-play shot chart data to extend offensive
+    strategy analysis beyond simple points-per-game statistics in basketball?
+  question_type: process
+  non_tree_domain: basketball
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 149
+  tree_question: What are the primary limitations of dendrochronology when applied
+    to ancient wooden artifacts from regions with poorly developed reference chronologies?
+  non_tree_question: What are the primary limitations of literal translation when
+    applied to idiomatic expressions from languages with poorly documented cultural
+    contexts?
+  question_type: comparative
+  non_tree_domain: translation studies
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: casual

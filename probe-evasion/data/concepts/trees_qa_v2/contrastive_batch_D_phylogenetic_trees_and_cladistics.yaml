@@ -1,0 +1,164 @@
+pairs:
+- pair_id: 600
+  tree_question: What structural adaptations allow deciduous trees to survive winter
+    dormancy?
+  non_tree_question: How do biologists use molecular data to construct phylogenetic
+    trees?
+  question_type: process
+  non_tree_domain: phylogenetic trees and cladistics
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: verbose
+- pair_id: 601
+  tree_question: How does the root system of a mature oak tree obtain water from deep
+    soil layers?
+  non_tree_question: What is the difference between a rooted and an unrooted phylogenetic
+    tree in cladistics?
+  question_type: factual
+  non_tree_domain: phylogenetic trees and cladistics
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 602
+  tree_question: Why do some tree species produce resin when their bark is damaged?
+  non_tree_question: How do taxonomists resolve conflicts between morphological and
+    molecular phylogenetic trees?
+  question_type: explanatory
+  non_tree_domain: phylogenetic trees and cladistics
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: concise
+- pair_id: 603
+  tree_question: What role do mycorrhizal fungi play in the nutrient uptake of forest
+    trees?
+  non_tree_question: What are the key differences between maximum parsimony and maximum
+    likelihood methods for building phylogenetic trees?
+  question_type: comparative
+  non_tree_domain: phylogenetic trees and cladistics
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: numbered_list
+- pair_id: 604
+  tree_question: How does the cambium layer in trees produce both xylem and phloem
+    tissue?
+  non_tree_question: How is bootstrap support used to evaluate the reliability of
+    branches in a phylogenetic tree?
+  question_type: explanatory
+  non_tree_domain: phylogenetic trees and cladistics
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: verbose
+- pair_id: 605
+  tree_question: What determines the maximum height a tree can grow before water transport
+    becomes limiting?
+  non_tree_question: What does it mean for two species to be sister taxa on a cladogram?
+  question_type: factual
+  non_tree_domain: phylogenetic trees and cladistics
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 606
+  tree_question: How do tree rings form and what environmental information do they
+    preserve?
+  non_tree_question: How do evolutionary biologists use gene sequence alignment to
+    infer branching patterns in a phylogenetic tree?
+  question_type: process
+  non_tree_domain: phylogenetic trees and cladistics
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: no_keyword
+- pair_id: 607
+  tree_question: Why do tropical trees near the equator often lack visible annual
+    growth rings?
+  non_tree_question: What is the concept of a common ancestor node in a cladogram,
+    and how is it identified?
+  question_type: explanatory
+  non_tree_domain: phylogenetic trees and cladistics
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: no_keyword
+- pair_id: 608
+  tree_question: How does wind pollination differ from insect pollination in tree
+    species such as birch and apple?
+  non_tree_question: How does horizontal gene transfer complicate the construction
+    of a universal phylogenetic tree of life?
+  question_type: explanatory
+  non_tree_domain: phylogenetic trees and cladistics
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: numbered_list
+- pair_id: 609
+  tree_question: What is the difference between hardwood and softwood trees in terms
+    of wood anatomy?
+  non_tree_question: How do researchers use mitochondrial DNA versus nuclear DNA to
+    build phylogenetic trees for animal species?
+  question_type: comparative
+  non_tree_domain: phylogenetic trees and cladistics
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: concise
+- pair_id: 610
+  tree_question: How do pioneer tree species facilitate ecological succession in disturbed
+    forest habitats?
+  non_tree_question: What role does the outgroup play when rooting a phylogenetic
+    tree in cladistic analysis?
+  question_type: factual
+  non_tree_domain: phylogenetic trees and cladistics
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+- pair_id: 611
+  tree_question: What mechanisms allow mangrove trees to tolerate high salinity in
+    coastal environments?
+  non_tree_question: How is the concept of monophyly distinguished from paraphyly
+    and polyphyly in phylogenetic classification?
+  question_type: comparative
+  non_tree_domain: phylogenetic trees and cladistics
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: academic
+- pair_id: 612
+  tree_question: How do trees allocate carbon between growth, reproduction, and defense
+    against herbivores?
+  non_tree_question: What is Bayesian inference and how is it applied to estimate
+    phylogenetic trees from sequence data?
+  question_type: process
+  non_tree_domain: phylogenetic trees and cladistics
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 613
+  tree_question: Why do some tree species exhibit mast seeding, producing large seed
+    crops only in certain years?
+  non_tree_question: How do scientists use the molecular clock hypothesis to estimate
+    divergence times on a phylogenetic tree?
+  question_type: explanatory
+  non_tree_domain: phylogenetic trees and cladistics
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+- pair_id: 614
+  tree_question: How does canopy stratification in a tropical rainforest affect the
+    light available to understory trees?
+  non_tree_question: What is the difference between a gene tree and a species tree
+    in molecular phylogenetics?
+  question_type: comparative
+  non_tree_domain: phylogenetic trees and cladistics
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: academic

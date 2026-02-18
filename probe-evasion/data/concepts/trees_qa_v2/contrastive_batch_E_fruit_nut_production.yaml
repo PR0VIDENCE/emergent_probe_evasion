@@ -1,0 +1,176 @@
+pairs:
+- pair_id: 785
+  tree_question: What factors determine the optimal spacing between trees in a commercial
+    apple orchard to maximize yield and ease of mechanical harvesting?
+  non_tree_question: How does the Federal Reserve use interest rate adjustments to
+    control inflation without triggering a recession?
+  question_type: factual
+  non_tree_domain: macroeconomics
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: no_keyword
+- pair_id: 786
+  tree_question: Why do some pecan growers interplant two or more varieties in the
+    same orchard, and how does this affect nut set and overall production?
+  non_tree_question: What are the main structural differences between RNA viruses
+    and DNA viruses, and how do these differences affect mutation rates?
+  question_type: explanatory
+  non_tree_domain: virology
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 787
+  tree_question: How does cleft grafting differ from bark grafting in terms of technique,
+    timing, and which fruit crops each method is best suited for?
+  non_tree_question: What distinguishes a parliamentary system of government from
+    a presidential system in terms of executive accountability?
+  question_type: comparative
+  non_tree_domain: political science
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: concise
+- pair_id: 788
+  tree_question: Walk me through the process of budding a citrus variety onto a trifoliate
+    rootstock, including how to prepare the bud shield and ensure a successful take.
+  non_tree_question: What steps are involved in synthesizing aspirin from salicylic
+    acid in a laboratory setting?
+  question_type: process
+  non_tree_domain: organic chemistry
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 789
+  tree_question: How does the chilling hour requirement of a stone fruit variety influence
+    orchard site selection and the risk of late frost damage to blossoms?
+  non_tree_question: What role does the hippocampus play in the consolidation of long-term
+    memories, and how does damage to it affect recall?
+  question_type: explanatory
+  non_tree_domain: neuroscience
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 790
+  tree_question: Which rootstock characteristics should a grower prioritize when establishing
+    a new high-density sweet cherry block intended for drip irrigation on a shallow,
+    well-drained soil?
+  non_tree_question: What criteria does a film distributor use to decide whether to
+    release a movie wide or in a limited platform rollout?
+  question_type: factual
+  non_tree_domain: film industry
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+- pair_id: 791
+  tree_question: How do you determine the right harvest maturity for Bartlett pears
+    when the fruit is destined for controlled-atmosphere storage rather than immediate
+    fresh market sale?
+  non_tree_question: How does a central processing unit execute machine code instructions
+    through the fetch-decode-execute cycle?
+  question_type: process
+  non_tree_domain: computer architecture
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+- pair_id: 792
+  tree_question: What are the trade-offs between using dwarfing rootstocks versus
+    semi-vigorous rootstocks in a modern walnut orchard, particularly regarding precocity
+    and long-term yield?
+  non_tree_question: How does active noise cancellation technology work in over-ear
+    headphones to reduce ambient sound?
+  question_type: comparative
+  non_tree_domain: consumer electronics
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: no_keyword
+- pair_id: 793
+  tree_question: What physiological changes occur in mango fruit between the green
+    mature stage and full ripeness, and how do growers use these to time harvest for
+    export?
+  non_tree_question: What factors contributed to the collapse of the Bronze Age palace
+    economies around 1200 BCE across the Eastern Mediterranean?
+  question_type: explanatory
+  non_tree_domain: ancient history
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: concise
+- pair_id: 794
+  tree_question: How does the process of topworking convert an established low-value
+    olive variety to a higher-value cultivar without replanting the entire orchard?
+  non_tree_question: What steps does a forensic accountant follow when investigating
+    potential financial fraud within a corporation?
+  question_type: process
+  non_tree_domain: forensic accounting
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 795
+  tree_question: Which climatic and soil conditions make a region suitable for growing
+    high-quality pistachios, and how do growers manage alternate bearing to stabilize
+    annual yields?
+  non_tree_question: How do marine biologists estimate population sizes of large migratory
+    whales using acoustic monitoring?
+  question_type: factual
+  non_tree_domain: marine biology
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: academic
+- pair_id: 796
+  tree_question: How does selecting a low-vigor versus a high-vigor almond rootstock
+    affect irrigation water use, canopy development, and nut yield in a drought-prone
+    region?
+  non_tree_question: What are the key differences between Keynesian and supply-side
+    economic theories regarding the role of government spending in stimulating growth?
+  question_type: comparative
+  non_tree_domain: economics
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: academic
+- pair_id: 797
+  tree_question: What is the role of pollinizer varieties in a commercial avocado
+    operation, and how should growers position them within the planting layout to
+    ensure adequate cross-pollination?
+  non_tree_question: How does the immune system distinguish between self and non-self
+    cells to avoid attacking the body's own tissues?
+  question_type: explanatory
+  non_tree_domain: immunology
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: numbered_list
+- pair_id: 798
+  tree_question: Describe the steps involved in establishing a new hazelnut orchard
+    from site preparation through the first commercial harvest, including variety
+    and rootstock choices.
+  non_tree_question: What is the process by which a bill moves from committee approval
+    to a floor vote and eventual enactment into law in the United States Congress?
+  question_type: process
+  non_tree_domain: legislative process
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: verbose
+- pair_id: 799
+  tree_question: What measurable fruit quality indicators — such as starch index,
+    firmness, and soluble solids — do apple packers use to accept or reject a lot
+    at the packinghouse receiving dock?
+  non_tree_question: Which properties of superconducting materials allow them to conduct
+    electricity with zero resistance, and at what temperatures does this effect currently
+    occur?
+  question_type: factual
+  non_tree_domain: condensed matter physics
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: verbose

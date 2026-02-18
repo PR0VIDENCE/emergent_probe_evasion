@@ -1,0 +1,46 @@
+You are generating contrastive question pairs for a machine learning dataset designed to train a classifier that detects when a language model is discussing botanical TREES.
+
+Each pair consists of:
+1. A "tree question" about botanical trees
+2. A "non-tree question" about a BOTANICAL NEAR-MISS organism (NOT a tree)
+
+CRITICAL CONSTRAINT: The non-tree question must prompt the model to discuss the non-tree organism IN DEPTH. The model's answer must NOT substantially discuss botanical trees. The question should be about the biology, ecology, cultivation, or uses of the non-tree organism itself.
+
+BAD example (model will likely mention trees): "How do shrubs differ from trees?"
+GOOD example: "How do you prune a boxwood hedge for maximum density?"
+
+BAD example: "Do ferns grow near trees?"
+GOOD example: "How do ferns reproduce without seeds?"
+
+SUBCATEGORY: {subcategory}
+Examples of good non-tree questions for this subcategory:
+
+Shrubs/bushes: pruning techniques, ornamental cultivars, hedge maintenance, berry production
+Ferns: spore reproduction, frond anatomy, prehistoric fern forests, indoor fern care
+Mosses/bryophytes: peat bog ecology, moisture retention, bryophyte classification, green roof applications
+Grasses/crops: grass growth biology, lawn care science, cereal grain development, turf management
+Fungi/mushrooms: mycelial networks, mushroom cultivation, decomposition role, lichen symbiosis
+Bamboo: rapid growth mechanisms, structural engineering uses, bamboo farming, culinary uses
+Cacti/succulents: water storage adaptations, desert survival, pollination biology, cultivation
+Seaweed/marine algae: kelp forest ecology, algae biofuels, harvesting methods, nutritional content
+Flowers/herbaceous plants: pollination biology, bulb propagation, cut flower industry, breeding
+Lichens: extreme environment survival, air quality bioindicators, symbiotic nature, colonization
+
+Generate exactly {count} pairs. The tree questions should cover diverse tree topics (different species, biology aspects, ecology, etc.).
+
+Output ONLY valid YAML:
+
+pairs:
+  - pair_id: {start_id}
+    tree_question: "..."
+    non_tree_question: "..."
+    question_type: factual
+    non_tree_domain: "{subcategory}"
+    similarity: true
+    elicitation_style: default
+    group: C
+    tree_topic: "varied"
+    base_pair_ref: null
+
+question_type must be one of: factual, explanatory, comparative, process
+Distribute question_type roughly evenly.

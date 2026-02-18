@@ -1,0 +1,317 @@
+pairs:
+- pair_id: 50
+  tree_question: What is the primary function of bark in a tree, and how does it protect
+    the underlying vascular tissue from environmental damage?
+  non_tree_question: What is the primary function of bindings in snowboarding, and
+    how do they protect the rider's ankles from rotational forces during a fall?
+  question_type: factual
+  non_tree_domain: snowboarding
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: numbered_list
+- pair_id: 51
+  tree_question: How do tree roots adapt their growth patterns in response to soil
+    compaction, and what mechanisms allow them to penetrate dense substrates?
+  non_tree_question: How do animal foraging behaviors adapt in response to food scarcity,
+    and what mechanisms allow them to locate alternative nutrient sources?
+  question_type: explanatory
+  non_tree_domain: ethology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: academic
+- pair_id: 52
+  tree_question: What distinguishes rhytidome from phelloderm in tree bark anatomy,
+    and how does each layer contribute to the tree's overall structural integrity?
+  non_tree_question: What distinguishes rheumatoid arthritis from osteoarthritis in
+    joint anatomy, and how does each condition contribute to the patient's overall
+    loss of mobility?
+  question_type: comparative
+  non_tree_domain: rheumatology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 53
+  tree_question: Describe the process by which a tree's crown develops its characteristic
+    shape, and what role do apical dominance and light competition play in this formation?
+  non_tree_question: Describe the process by which an acrobat develops a characteristic
+    tumbling sequence, and what role do muscle memory and spatial awareness play in
+    its formation?
+  question_type: process
+  non_tree_domain: acrobatics
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 54
+  tree_question: How do annual growth rings in a tree's cross-section reflect seasonal
+    climate variation, and what information can dendrochronologists extract from ring
+    width differences?
+  non_tree_question: How do lead times in a supply chain reflect seasonal demand variation,
+    and what information can logistics managers extract from historical shipment interval
+    differences?
+  question_type: explanatory
+  non_tree_domain: supply chain logistics
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+- pair_id: 55
+  tree_question: What chemical compounds in tree bark give it fire-resistant properties,
+    and how do these substances differ between coniferous and deciduous species?
+  non_tree_question: What chemical compounds in ceramic composites give them heat-resistant
+    properties, and how do these substances differ between oxide and non-oxide matrix
+    systems?
+  question_type: factual
+  non_tree_domain: materials science
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: academic
+- pair_id: 56
+  tree_question: How does a tree's root system anchor it against high winds, and what
+    structural adaptations distinguish the root architecture of wind-exposed versus
+    sheltered specimens?
+  non_tree_question: How does a braille embosser anchor dots against paper compression,
+    and what mechanical adaptations distinguish the pin-actuator architecture of high-speed
+    versus desktop production units?
+  question_type: comparative
+  non_tree_domain: braille printing
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: concise
+- pair_id: 57
+  tree_question: What role do mycorrhizal associations play in nutrient uptake through
+    a tree's fine roots, and how does this symbiotic relationship affect the host
+    tree's phosphorus absorption?
+  non_tree_question: What role do tensor processing units play in gradient computation
+    during neural network training, and how does this specialized hardware affect
+    the host model's throughput during backpropagation?
+  question_type: factual
+  non_tree_domain: machine learning hardware
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: no_keyword
+- pair_id: 58
+  tree_question: How does the thickness of a tree's crown canopy affect light penetration
+    to lower branches, and what adaptive strategies do shade-tolerant understory species
+    employ?
+  non_tree_question: How does the depth of a squash player's court position affect
+    angle coverage to corner shots, and what adaptive strategies do defensive baseline
+    players employ?
+  question_type: explanatory
+  non_tree_domain: squash sport
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: academic
+- pair_id: 59
+  tree_question: What are the stages of wound compartmentalization in tree bark following
+    mechanical injury, and how does CODIT theory explain the tree's defensive response?
+  non_tree_question: What are the stages of incident response following a network
+    breach in cybersecurity, and how does the kill chain model explain the attacker's
+    progression through defensive layers?
+  question_type: process
+  non_tree_domain: cybersecurity
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: numbered_list
+- pair_id: 60
+  tree_question: How do leaves on different parts of a tree's crown differ in their
+    morphological characteristics, and what environmental pressures drive sun leaf
+    versus shade leaf adaptation?
+  non_tree_question: How do instruments in different sections of an orchestra differ
+    in their tonal characteristics, and what compositional pressures drive melodic
+    versus harmonic role assignment?
+  question_type: comparative
+  non_tree_domain: musicology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: no_keyword
+- pair_id: 61
+  tree_question: What determines the color variation observed in tree bark across
+    species, and how do pigments, lenticels, and surface texture each contribute to
+    the overall appearance?
+  non_tree_question: What determines the color variation observed in coin patina across
+    metal types, and how do oxidation, mineral deposits, and surface relief each contribute
+    to the overall appearance?
+  question_type: factual
+  non_tree_domain: coin collecting
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: verbose
+- pair_id: 62
+  tree_question: How do plant-parasitic nematodes damage tree root systems, and what
+    physiological symptoms appear in the crown and leaves as a result of belowground
+    infection?
+  non_tree_question: How do entomopathogenic nematodes infect host insects, and what
+    physiological symptoms appear in the cuticle and hemolymph as a result of internal
+    colonization?
+  question_type: explanatory
+  non_tree_domain: nematology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: concise
+- pair_id: 63
+  tree_question: What methods do stage directors use to arrange actors so the visual
+    composition mirrors the thematic structure of a scene, and how does spatial blocking
+    reinforce character relationships?
+  non_tree_question: What methods do theater directors use to arrange actors so the
+    visual composition mirrors the thematic structure of a scene, and how does spatial
+    blocking reinforce character relationships?
+  question_type: process
+  non_tree_domain: theater directing
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 64
+  tree_question: How does the exchange of gases through leaf stomata relate to the
+    tree's overall carbon fixation efficiency, and what conditions cause stomatal
+    closure to reduce photosynthetic output?
+  non_tree_question: How does the exchange of gases through alveolar membranes relate
+    to the lung's overall oxygen delivery efficiency, and what conditions cause bronchiolar
+    constriction to reduce respiratory output?
+  question_type: explanatory
+  non_tree_domain: pulmonology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+- pair_id: 65
+  tree_question: How do roots of different tree species vary in their depth and lateral
+    spread, and what soil chemistry factors determine whether a root system remains
+    shallow or penetrates deeply?
+  non_tree_question: How do venom glands of different snake species vary in their
+    size and secretory output, and what ecological factors determine whether a species
+    relies primarily on constriction or chemical immobilization?
+  question_type: comparative
+  non_tree_domain: herpetology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: no_keyword
+- pair_id: 66
+  tree_question: What visual cues in a tree's crown structure signal stress or disease
+    to an observer, and how do changes in leaf density, color, and branch dieback
+    indicate underlying physiological problems?
+  non_tree_question: What visual cues in an advertisement's layout signal credibility
+    or deception to a viewer, and how do changes in typography, color contrast, and
+    image placement indicate underlying persuasive intent?
+  question_type: factual
+  non_tree_domain: advertising
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 67
+  tree_question: How do journalists verify the accuracy of botanical claims about
+    tree physiology before publication, and what sources and expert consultations
+    are considered authoritative in science reporting?
+  non_tree_question: How do journalists verify the accuracy of statistical claims
+    about public health data before publication, and what sources and expert consultations
+    are considered authoritative in investigative reporting?
+  question_type: process
+  non_tree_domain: journalism
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: concise
+- pair_id: 68
+  tree_question: How does the chemical composition of a tree's heartwood differ from
+    its sapwood, and what biological processes cause the transition zone between these
+    two regions to form?
+  non_tree_question: How does the chemical composition of a fresco's intonaco layer
+    differ from its arriccio layer, and what application processes cause the transition
+    between these two plaster coats to bond successfully?
+  question_type: comparative
+  non_tree_domain: fresco painting
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: verbose
+- pair_id: 69
+  tree_question: What role does the leaf canopy play in regulating microclimate conditions
+    beneath a tree, and how does canopy density affect temperature, humidity, and
+    light availability at ground level?
+  non_tree_question: What role does social hierarchy play in regulating resource access
+    among primates within a group, and how does dominance rank affect food priority,
+    grooming frequency, and reproductive opportunities?
+  question_type: explanatory
+  non_tree_domain: primatology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: verbose
+- pair_id: 70
+  tree_question: How do the structural properties of a tree's root zone affect its
+    capacity to absorb and store water during drought, and what anatomical adaptations
+    improve water retention in xeric species?
+  non_tree_question: How do the structural properties of the eye's vitreous humor
+    affect its capacity to transmit and refract light during aging, and what anatomical
+    changes reduce optical clarity in presbyopic patients?
+  question_type: factual
+  non_tree_domain: optometry
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 71
+  tree_question: Describe the process by which a tree sheds its leaves in autumn,
+    and what hormonal signals trigger abscission layer formation at the petiole junction?
+  non_tree_question: Describe the process by which a podcast producer edits raw audio
+    into a finished episode, and what technical decisions trigger noise reduction
+    and dynamic range compression at the mixing stage?
+  question_type: process
+  non_tree_domain: podcast production
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 72
+  tree_question: How does the arrangement of vascular bundles within a tree's root
+    cross-section differ between monocot and dicot species, and what functional implications
+    does this have for water transport efficiency?
+  non_tree_question: How does the arrangement of meridian pathways in acupuncture
+    theory differ between classical Chinese and Japanese traditions, and what functional
+    implications does this have for needle insertion depth and point selection?
+  question_type: comparative
+  non_tree_domain: acupuncture
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: numbered_list
+- pair_id: 73
+  tree_question: What logical relationship exists between a tree's ring count and
+    its minimum age estimate, and under what conditions would this inference fail
+    to hold as a valid deduction?
+  non_tree_question: What logical relationship exists between a premise's truth value
+    and its conclusion's validity in a deductive argument, and under what conditions
+    would this inference fail to hold as a sound deduction?
+  question_type: factual
+  non_tree_domain: logic
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 74
+  tree_question: How does the mineral composition of soil affect the density and porosity
+    of a tree's root tissue, and what nutrient deficiencies produce the most pronounced
+    structural changes in root architecture?
+  non_tree_question: How does the mineral composition of tooth enamel affect its density
+    and porosity over a patient's lifetime, and what dietary deficiencies produce
+    the most pronounced structural changes in enamel microstructure?
+  question_type: explanatory
+  non_tree_domain: dentistry
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default

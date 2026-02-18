@@ -1,0 +1,211 @@
+pairs:
+- pair_id: 550
+  tree_question: What is the average height of a mature oak tree in a temperate forest?
+  non_tree_question: What is the time complexity of searching for a key in a balanced
+    binary search tree?
+  question_type: factual
+  non_tree_domain: CS data structures (binary trees, B-trees, red-black)
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: no_keyword
+- pair_id: 551
+  tree_question: How do tree roots absorb water and nutrients from the soil?
+  non_tree_question: How does a red-black tree maintain its root as a black node after
+    insertion?
+  question_type: explanatory
+  non_tree_domain: CS data structures (binary trees, B-trees, red-black)
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: concise
+- pair_id: 552
+  tree_question: What distinguishes a deciduous tree from an evergreen tree?
+  non_tree_question: What distinguishes an AVL tree from a red-black tree in terms
+    of balance guarantees?
+  question_type: comparative
+  non_tree_domain: CS data structures (binary trees, B-trees, red-black)
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: academic
+- pair_id: 553
+  tree_question: How does photosynthesis occur in tree leaves during summer months?
+  non_tree_question: How does the process of tree rotation work during AVL tree rebalancing?
+  question_type: process
+  non_tree_domain: CS data structures (binary trees, B-trees, red-black)
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: concise
+- pair_id: 554
+  tree_question: What is the maximum recorded lifespan of a bristlecone pine tree?
+  non_tree_question: What is the maximum number of keys stored in a single node of
+    a B-tree of order m?
+  question_type: factual
+  non_tree_domain: CS data structures (binary trees, B-trees, red-black)
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: verbose
+- pair_id: 555
+  tree_question: How do tree branches grow to maximize sunlight exposure in dense
+    forests?
+  non_tree_question: How do branch mispredictions affect the performance of binary
+    search tree traversals on modern CPUs?
+  question_type: explanatory
+  non_tree_domain: CS data structures (binary trees, B-trees, red-black)
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: numbered_list
+- pair_id: 556
+  tree_question: What role do tree leaves play in regulating a forest's water cycle?
+  non_tree_question: What role do leaf nodes play in the structure of a B+ tree used
+    in database indexing?
+  question_type: factual
+  non_tree_domain: CS data structures (binary trees, B-trees, red-black)
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: verbose
+- pair_id: 557
+  tree_question: How does a tree's bark protect it from insects and disease?
+  non_tree_question: How does a trie data structure store strings differently from
+    a binary search tree?
+  question_type: comparative
+  non_tree_domain: CS data structures (binary trees, B-trees, red-black)
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: numbered_list
+- pair_id: 558
+  tree_question: What is the process by which a tree produces seeds through pollination?
+  non_tree_question: What is the process of splitting a node in a B-tree when it becomes
+    full during insertion?
+  question_type: process
+  non_tree_domain: CS data structures (binary trees, B-trees, red-black)
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 559
+  tree_question: How do tree species adapt their root systems to survive drought conditions?
+  non_tree_question: How does path compression in a union-find tree improve the amortized
+    complexity of root-finding operations?
+  question_type: explanatory
+  non_tree_domain: CS data structures (binary trees, B-trees, red-black)
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: academic
+- pair_id: 560
+  tree_question: What factors determine the width of annual growth rings in a tree
+    trunk?
+  non_tree_question: What factors determine the height bound of a red-black tree with
+    n nodes?
+  question_type: factual
+  non_tree_domain: CS data structures (binary trees, B-trees, red-black)
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 561
+  tree_question: How do mycorrhizal fungi form symbiotic relationships with tree root
+    systems?
+  non_tree_question: How does an in-order traversal of a binary search tree produce
+    a sorted sequence of keys?
+  question_type: explanatory
+  non_tree_domain: CS data structures (binary trees, B-trees, red-black)
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+- pair_id: 562
+  tree_question: What is the difference between a hardwood tree and a softwood tree
+    in terms of timber quality?
+  non_tree_question: What is the difference between a min-heap tree and a max-heap
+    tree in terms of their ordering property?
+  question_type: comparative
+  non_tree_domain: CS data structures (binary trees, B-trees, red-black)
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+- pair_id: 563
+  tree_question: How does a tree shed its leaves in autumn in response to shorter
+    daylight hours?
+  non_tree_question: How does deleting a node with two children from a binary search
+    tree preserve the BST property?
+  question_type: process
+  non_tree_domain: CS data structures (binary trees, B-trees, red-black)
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 564
+  tree_question: What is the significance of the canopy layer in a tropical rainforest
+    tree ecosystem?
+  non_tree_question: What is the significance of the black-height property in guaranteeing
+    red-black tree balance?
+  question_type: factual
+  non_tree_domain: CS data structures (binary trees, B-trees, red-black)
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: verbose
+- pair_id: 565
+  tree_question: How do conifer trees produce resin as a defense mechanism against
+    bark beetles?
+  non_tree_question: How does a splay tree restructure itself by splaying the accessed
+    node to the root?
+  question_type: process
+  non_tree_domain: CS data structures (binary trees, B-trees, red-black)
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 566
+  tree_question: What are the ecological differences between pioneer tree species
+    and climax tree species?
+  non_tree_question: What are the algorithmic differences between depth-first and
+    breadth-first traversal strategies on binary trees?
+  question_type: comparative
+  non_tree_domain: CS data structures (binary trees, B-trees, red-black)
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: no_keyword
+- pair_id: 567
+  tree_question: How does urban air pollution affect the health and growth rate of
+    street trees?
+  non_tree_question: How does cache locality affect the performance of array-based
+    binary heap trees compared to pointer-based trees?
+  question_type: explanatory
+  non_tree_domain: CS data structures (binary trees, B-trees, red-black)
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 568
+  tree_question: What is the role of tree species diversity in maintaining a resilient
+    forest ecosystem?
+  non_tree_question: What is the worst-case number of rotations required to rebalance
+    an AVL tree after a single insertion?
+  question_type: factual
+  non_tree_domain: CS data structures (binary trees, B-trees, red-black)
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 569
+  tree_question: How do trees communicate distress signals through underground fungal
+    networks?
+  non_tree_question: How does the order parameter of a B-tree affect its branching
+    factor and the number of disk I/O operations needed for search?
+  question_type: explanatory
+  non_tree_domain: CS data structures (binary trees, B-trees, red-black)
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: concise

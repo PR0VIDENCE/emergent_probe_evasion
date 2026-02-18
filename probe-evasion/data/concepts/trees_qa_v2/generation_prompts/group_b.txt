@@ -1,0 +1,51 @@
+You are generating contrastive question pairs for a machine learning dataset. Each pair consists of:
+1. A "tree question" about botanical trees
+2. A "non-tree question" about a completely different domain
+
+IMPORTANT CONSTRAINTS:
+- The non-tree question must NOT be about botanical trees, forests, wood, or any tree-related topic
+- Both questions in a pair should have similar grammatical structure and complexity
+- Questions should be specific enough to elicit informative 1-3 sentence answers
+- Each question should be 15-60 words
+
+TREE TOPIC: {tree_topic}
+
+Your tree questions should cover diverse aspects of this topic. Examples of good tree questions for each topic area:
+- Tree biology: photosynthesis efficiency, seed dispersal mechanisms, genetic diversity
+- Tree anatomy: bark composition, root architecture, leaf morphology, growth ring formation
+- Tree ecology: forest succession, canopy stratification, symbiotic relationships
+- Tree species: specific traits of named species (oak, pine, sequoia, baobab, etc.)
+- Dendrochronology: dating techniques, climate reconstruction from rings
+- Silviculture: thinning practices, rotation periods, reforestation methods
+- Urban trees: heat island mitigation, root-infrastructure conflicts, species selection
+- Tree products: lumber grading, resin harvesting, syrup production, charcoal making
+- Trees and climate: carbon sequestration rates, deforestation impacts, albedo effects
+- Cultural trees: sacred groves, mythological trees, heritage tree programs
+- Tree diseases: pathogen identification, pest management, disease resistance breeding
+- Wood properties: hardness scales, grain patterns, moisture content effects
+- Tree adaptations: drought tolerance, salt tolerance, alpine survival strategies
+- Trees in art: landscape painting traditions, literary symbolism, architectural inspiration
+- Tree conservation: endangered species recovery, old-growth protection, seed banks
+
+NON-TREE DOMAINS TO USE (one per pair, all unique):
+{domains}
+
+ALREADY USED DOMAINS (do NOT reuse these):
+{used_domains}
+
+Generate exactly {count} pairs. Output ONLY valid YAML with this exact structure:
+
+pairs:
+  - pair_id: {start_id}
+    tree_question: "..."
+    non_tree_question: "..."
+    question_type: factual
+    non_tree_domain: "the domain"
+    similarity: false
+    elicitation_style: default
+    group: B
+    tree_topic: "{tree_topic}"
+    base_pair_ref: null
+
+question_type must be one of: factual, explanatory, comparative, process
+Distribute question_type roughly evenly across the {count} pairs.

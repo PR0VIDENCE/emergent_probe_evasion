@@ -1,0 +1,165 @@
+pairs:
+- pair_id: 570
+  tree_question: What is the role of mycorrhizal fungi in the root systems of coniferous
+    trees?
+  non_tree_question: How does information gain determine the best split in a decision
+    tree classifier?
+  question_type: factual
+  non_tree_domain: decision trees and ML
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: concise
+- pair_id: 571
+  tree_question: How do deciduous trees lose their leaves in autumn and what triggers
+    this process?
+  non_tree_question: What is the difference between pre-pruning and post-pruning strategies
+    in decision tree learning?
+  question_type: comparative
+  non_tree_domain: decision trees and ML
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 572
+  tree_question: What structural adaptations allow mangrove trees to survive in saltwater
+    environments?
+  non_tree_question: How does a random forest reduce variance compared to a single
+    decision tree?
+  question_type: explanatory
+  non_tree_domain: decision trees and ML
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: academic
+- pair_id: 573
+  tree_question: How do tree rings form and what environmental information can they
+    encode?
+  non_tree_question: What is the process by which gradient boosting builds an ensemble
+    of weak learners?
+  question_type: process
+  non_tree_domain: decision trees and ML
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: numbered_list
+- pair_id: 574
+  tree_question: What distinguishes heartwood from sapwood in the trunk of a mature
+    tree?
+  non_tree_question: How is feature importance calculated in a trained random forest
+    model?
+  question_type: factual
+  non_tree_domain: decision trees and ML
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: verbose
+- pair_id: 575
+  tree_question: How do trees transport water from their roots to their canopy against
+    gravity?
+  non_tree_question: What does the Gini impurity measure and how is it used when splitting
+    nodes in a decision tree?
+  question_type: explanatory
+  non_tree_domain: decision trees and ML
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 576
+  tree_question: What is the difference between determinate and indeterminate growth
+    patterns in trees?
+  non_tree_question: How do XGBoost and LightGBM differ in the way they grow decision
+    tree nodes during boosting?
+  question_type: comparative
+  non_tree_domain: decision trees and ML
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+- pair_id: 577
+  tree_question: What causes the phenomenon of crown shyness observed in forest canopies?
+  non_tree_question: What is the process of cost-complexity pruning and how does it
+    select the optimal subtree?
+  question_type: process
+  non_tree_domain: decision trees and ML
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+- pair_id: 578
+  tree_question: How do pioneer tree species differ from climax species in ecological
+    succession?
+  non_tree_question: What is the role of the max depth hyperparameter in controlling
+    overfitting in decision trees?
+  question_type: factual
+  non_tree_domain: decision trees and ML
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: no_keyword
+- pair_id: 579
+  tree_question: How does photosynthesis in the leaves of a tree contribute to its
+    overall carbon storage?
+  non_tree_question: How does bagging in random forests differ from boosting in gradient-boosted
+    trees with respect to bias and variance?
+  question_type: comparative
+  non_tree_domain: decision trees and ML
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: academic
+- pair_id: 580
+  tree_question: What physiological mechanisms allow some tree species to survive
+    prolonged drought?
+  non_tree_question: How does the CART algorithm determine the splitting threshold
+    for a continuous feature in a decision tree?
+  question_type: explanatory
+  non_tree_domain: decision trees and ML
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: verbose
+- pair_id: 581
+  tree_question: What is the significance of the cambium layer in the growth of a
+    tree's trunk?
+  non_tree_question: What is the process of building a regression tree and how does
+    it differ from a classification tree?
+  question_type: process
+  non_tree_domain: decision trees and ML
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 582
+  tree_question: How do epiphytic plants attach to and derive nutrients from host
+    trees without harming them?
+  non_tree_question: How does the minimum samples per leaf hyperparameter affect the
+    depth and generalization of a decision tree?
+  question_type: factual
+  non_tree_domain: decision trees and ML
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 583
+  tree_question: What are the main differences between broadleaf and conifer wood
+    at the cellular level?
+  non_tree_question: How does out-of-bag error estimation work in a random forest
+    and why is it a useful alternative to cross-validation?
+  question_type: explanatory
+  non_tree_domain: decision trees and ML
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: concise
+- pair_id: 584
+  tree_question: How do trees in tropical rainforests compete for light and what strategies
+    do they use to reach the canopy?
+  non_tree_question: What is the process of computing SHAP values for a gradient-boosted
+    tree model and how do they quantify feature contributions?
+  question_type: process
+  non_tree_domain: decision trees and ML
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: no_keyword

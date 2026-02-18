@@ -1,0 +1,295 @@
+pairs:
+- pair_id: 100
+  tree_question: How many species of oak trees exist worldwide, and which regions
+    have the highest concentration of oak diversity?
+  non_tree_question: How many recognized techniques exist in reverse glass painting,
+    and which regions have the strongest living tradition of this art form?
+  question_type: factual
+  non_tree_domain: reverse glass painting
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: academic
+- pair_id: 101
+  tree_question: What distinguishes eastern white pine from western white pine in
+    terms of needle length, cone size, and preferred habitat?
+  non_tree_question: What distinguishes a lacrosse attack position from a defensive
+    position in terms of field zone, responsibilities, and equipment used?
+  question_type: comparative
+  non_tree_domain: lacrosse
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 102
+  tree_question: Why does the sugar maple produce such vibrantly colored autumn foliage
+    compared to other deciduous tree species in temperate forests?
+  non_tree_question: Why does mosaic art use smalti glass tiles rather than ceramic
+    tiles when artists want to achieve more vibrant color in finished works?
+  question_type: explanatory
+  non_tree_domain: mosaic art
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 103
+  tree_question: What is the typical lifespan of a baobab tree, and how do scientists
+    estimate the age of particularly ancient specimens?
+  non_tree_question: What is the typical draw weight of a recurve bow used in Olympic
+    archery competition, and how do athletes select the appropriate poundage?
+  question_type: factual
+  non_tree_domain: archery
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: no_keyword
+- pair_id: 104
+  tree_question: How does the giant sequoia achieve fire resistance, and what role
+    does bark thickness play in protecting the tree during wildfires?
+  non_tree_question: How does an obstetrician assess fetal position in late pregnancy,
+    and what role does ultrasound imaging play in this clinical evaluation?
+  question_type: process
+  non_tree_domain: obstetrics
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+- pair_id: 105
+  tree_question: What adaptations allow birch trees to colonize disturbed or barren
+    landscapes before other deciduous tree species can establish themselves?
+  non_tree_question: What adaptations allow baleen whales to filter feed efficiently,
+    and how does baleen plate structure vary across different cetacean species?
+  question_type: explanatory
+  non_tree_domain: cetology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: concise
+- pair_id: 106
+  tree_question: How do parasitic plants like mistletoe affect the long-term health
+    and longevity of oak and pine host trees in temperate forests?
+  non_tree_question: How do parasitic helminths evade the host immune system, and
+    what mechanisms allow them to establish chronic infection in mammalian hosts?
+  question_type: explanatory
+  non_tree_domain: parasitology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 107
+  tree_question: What environmental conditions, including soil chemistry and light
+    availability, determine whether maple seeds successfully germinate and establish
+    as seedlings?
+  non_tree_question: What neurological and environmental conditions make certain individuals
+    significantly more susceptible to developing substance use disorders requiring
+    addiction medicine intervention?
+  question_type: factual
+  non_tree_domain: addiction medicine
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: concise
+- pair_id: 108
+  tree_question: How does global trade in tropical hardwoods affect the comparative
+    economic value placed on temperate species like oak and maple in lumber markets?
+  non_tree_question: How does global trade in semiconductor chips affect the economic
+    value placed on domestic manufacturing capacity and national industrial policy
+    decisions?
+  question_type: explanatory
+  non_tree_domain: economics
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: academic
+- pair_id: 109
+  tree_question: What is the process by which sequoia cones remain sealed for years
+    and release seeds only after exposure to intense wildfire heat?
+  non_tree_question: What is the process by which a cyclist shifts gears on a modern
+    derailleur system to optimize cadence and pedaling efficiency on varied terrain?
+  question_type: process
+  non_tree_domain: cycling
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: verbose
+- pair_id: 110
+  tree_question: How do oak galls form on leaves and branches, and which insect species
+    are most commonly responsible for inducing their growth?
+  non_tree_question: How does a cricket batsman read a bowler's grip and wrist position
+    before delivery to anticipate whether spin or pace is coming?
+  question_type: process
+  non_tree_domain: cricket sport
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: verbose
+- pair_id: 111
+  tree_question: What nutrient concentrations and pH levels are required in solution
+    culture to successfully grow dwarf citrus or pine tree varieties indoors?
+  non_tree_question: What nutrient concentrations and pH levels are required in hydroponic
+    solution to successfully grow leafy greens like lettuce and spinach at commercial
+    scale?
+  question_type: factual
+  non_tree_domain: hydroponics
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+- pair_id: 112
+  tree_question: Why are long-lived street trees like maple and oak selected over
+    faster-growing species when city planners choose trees for urban canopy programs?
+  non_tree_question: Why are mixed-use zoning designations preferred over single-use
+    residential or commercial zones in contemporary urban planning and transit-oriented
+    development policy?
+  question_type: explanatory
+  non_tree_domain: urban planning
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: numbered_list
+- pair_id: 113
+  tree_question: What methods do horticulturalists use to survey homeowner preferences
+    for ornamental tree species when designing residential landscaping product lines?
+  non_tree_question: What methods do market researchers use to survey consumer preferences
+    for new product categories before making commercial launch and investment decisions?
+  question_type: process
+  non_tree_domain: market research
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 114
+  tree_question: How is aerial lidar technology used to measure canopy height and
+    estimate species composition across vast old-growth sequoia and redwood forests?
+  non_tree_question: How is terrestrial lidar technology used to create precise three-dimensional
+    maps of urban environments for autonomous vehicle perception and navigation systems?
+  question_type: process
+  non_tree_domain: lidar technology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: numbered_list
+- pair_id: 115
+  tree_question: What is the structural difference between the inner bark and heartwood
+    of birch trees, and how does each part serve distinct ecological and commercial
+    functions?
+  non_tree_question: What is the structural difference between warp threads and weft
+    threads in hand weaving, and how does each contribute to the stability and pattern
+    of fabric?
+  question_type: comparative
+  non_tree_domain: weaving
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: verbose
+- pair_id: 116
+  tree_question: Which tree species produce resins, bark extracts, or wood-derived
+    compounds most commonly used as base notes or fixatives in commercial perfumery?
+  non_tree_question: Which animal-derived ingredients such as ambergris, musk, or
+    civet are most commonly used as fixatives in traditional and commercial perfume
+    making?
+  question_type: factual
+  non_tree_domain: perfume making
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: concise
+- pair_id: 117
+  tree_question: How did ancient philosophers and naturalists use the imagery of deep-rooted
+    oak trees to illustrate ideals of strength and endurance in classical texts?
+  non_tree_question: How did ancient Stoic philosophers use the concept of the dichotomy
+    of control to illustrate ideals of resilience and equanimity in their foundational
+    writings?
+  question_type: explanatory
+  non_tree_domain: stoicism
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 118
+  tree_question: What species of trees provide the most commercially valuable cork,
+    and how does the harvesting process affect the long-term health of cork oak stands?
+  non_tree_question: What species of marine mammals provided the ivory and bone most
+    commonly engraved by whalers practicing scrimshaw during the 19th century?
+  question_type: factual
+  non_tree_domain: scrimshaw
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+- pair_id: 119
+  tree_question: How do constitutional protections for private property rights affect
+    government authority to regulate the removal of heritage oak or sequoia trees
+    on private land?
+  non_tree_question: How do constitutional protections for free speech affect government
+    authority to regulate the spread of misinformation across digital telecommunications
+    platforms?
+  question_type: explanatory
+  non_tree_domain: constitutional law
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: no_keyword
+- pair_id: 120
+  tree_question: What is the approximate density of pine and oak tree cover per hectare
+    considered optimal for sustainable timber harvesting in managed boreal forests?
+  non_tree_question: What is the approximate frequency range in megahertz allocated
+    for 5G telecommunications signals, and how does this compare to earlier cellular
+    network generations?
+  question_type: factual
+  non_tree_domain: telecommunications
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 121
+  tree_question: Why do some individuals develop severe allergic reactions to birch
+    pollen while remaining fully tolerant of pine or oak pollen during spring flowering
+    seasons?
+  non_tree_question: Why do some individuals develop severe allergic reactions to
+    shellfish proteins while remaining fully tolerant of other seafood such as fish
+    or mollusks?
+  question_type: explanatory
+  non_tree_domain: allergy medicine
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: numbered_list
+- pair_id: 122
+  tree_question: How do botanists classify the morphological differences between pinnately
+    compound leaves found in ash trees and the palmately lobed leaves characteristic
+    of maple?
+  non_tree_question: How do linguists classify morphological differences between agglutinative
+    languages like Turkish and fusional languages like Latin in terms of how affixes
+    attach to stems?
+  question_type: comparative
+  non_tree_domain: morphology linguistics
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: no_keyword
+- pair_id: 123
+  tree_question: What is the cultural philosophy behind leaving visible scars and
+    hollow cavities in ancient bonsai specimens rather than repairing or concealing
+    the damage?
+  non_tree_question: What is the cultural philosophy behind kintsugi that celebrates
+    visible gold-filled cracks in repaired ceramics rather than concealing or disguising
+    the damage?
+  question_type: explanatory
+  non_tree_domain: kintsugi
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: verbose
+- pair_id: 124
+  tree_question: How do the physical dimensions and branching structures of mature
+    baobab trees compare to those of oak and sequoia in terms of trunk girth and crown
+    spread?
+  non_tree_question: How do the rules and court dimensions of team handball compare
+    to those of basketball in terms of permitted player contact and scoring mechanics?
+  question_type: comparative
+  non_tree_domain: handball
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: academic

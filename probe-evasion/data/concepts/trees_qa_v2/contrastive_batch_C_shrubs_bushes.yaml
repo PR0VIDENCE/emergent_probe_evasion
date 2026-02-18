@@ -1,0 +1,164 @@
+pairs:
+- pair_id: 400
+  tree_question: What is the role of mycorrhizal fungi in the nutrient uptake of forest
+    trees?
+  non_tree_question: How do you prune a boxwood hedge to achieve maximum density and
+    a formal shape?
+  question_type: process
+  non_tree_domain: shrubs/bushes
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 401
+  tree_question: How does the bark of a cork oak differ structurally from the bark
+    of a birch tree?
+  non_tree_question: What are the best ornamental cultivars of Hydrangea macrophylla
+    for a shaded garden border?
+  question_type: factual
+  non_tree_domain: shrubs/bushes
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: verbose
+- pair_id: 402
+  tree_question: Why do deciduous trees drop their leaves in autumn, and what triggers
+    this process?
+  non_tree_question: How does one care for a forsythia shrub to maximize its spring
+    bloom display?
+  question_type: explanatory
+  non_tree_domain: shrubs/bushes
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: concise
+- pair_id: 403
+  tree_question: What adaptations allow mangrove trees to survive in saltwater coastal
+    environments?
+  non_tree_question: What pruning schedule should be followed for a Rosa rugosa hedge
+    to encourage repeat flowering?
+  question_type: process
+  non_tree_domain: shrubs/bushes
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+- pair_id: 404
+  tree_question: How do the growth rings of a sequoia tree record historical climate
+    data?
+  non_tree_question: Which blueberry bush cultivars produce the highest berry yield
+    in acidic soils?
+  question_type: factual
+  non_tree_domain: shrubs/bushes
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: concise
+- pair_id: 405
+  tree_question: What mechanisms do tropical trees use to disperse their seeds over
+    long distances?
+  non_tree_question: Why do elderberry shrubs produce more fruit when multiple cultivars
+    are planted together?
+  question_type: explanatory
+  non_tree_domain: shrubs/bushes
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+- pair_id: 406
+  tree_question: How does the taproot system of an oak tree anchor the tree and access
+    deep groundwater?
+  non_tree_question: How do you renovate an overgrown lilac bush to restore vigorous
+    flowering?
+  question_type: process
+  non_tree_domain: shrubs/bushes
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: no_keyword
+- pair_id: 407
+  tree_question: What distinguishes the wood anatomy of gymnosperms from that of angiosperms?
+  non_tree_question: Which cultivars of Ilex crenata are most suitable as evergreen
+    hedging alternatives to boxwood?
+  question_type: comparative
+  non_tree_domain: shrubs/bushes
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 408
+  tree_question: How does the epiphytic bromeliad community on a tropical rainforest
+    canopy affect nutrient cycling?
+  non_tree_question: What is the correct method for tip-pruning a yew shrub to maintain
+    a tight, formal silhouette?
+  question_type: process
+  non_tree_domain: shrubs/bushes
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 409
+  tree_question: What physiological processes allow evergreen conifers to remain photosynthetically
+    active in winter?
+  non_tree_question: How does soil pH affect the flower color of Hydrangea macrophylla
+    cultivars?
+  question_type: explanatory
+  non_tree_domain: shrubs/bushes
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: verbose
+- pair_id: 410
+  tree_question: How does the allelopathic chemistry of black walnut trees suppress
+    surrounding vegetation?
+  non_tree_question: What are the key differences between floribunda and hybrid tea
+    rose bushes in terms of growth habit and maintenance?
+  question_type: comparative
+  non_tree_domain: shrubs/bushes
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: numbered_list
+- pair_id: 411
+  tree_question: What factors determine the maximum height a tree can reach before
+    hydraulic failure prevents further growth?
+  non_tree_question: How do you establish a mixed native shrub hedge using species
+    like hazel, blackthorn, and hawthorn?
+  question_type: process
+  non_tree_domain: shrubs/bushes
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: numbered_list
+- pair_id: 412
+  tree_question: How do the heartwood and sapwood of a mature hardwood tree differ
+    in function and composition?
+  non_tree_question: What are the most productive gooseberry bush cultivars for commercial
+    soft fruit production?
+  question_type: factual
+  non_tree_domain: shrubs/bushes
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: academic
+- pair_id: 413
+  tree_question: What role do fig trees play as keystone species in tropical ecosystems?
+  non_tree_question: How does deadheading and hard pruning differ between deciduous
+    and evergreen ornamental shrubs?
+  question_type: comparative
+  non_tree_domain: shrubs/bushes
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 414
+  tree_question: How does the vascular cambium of a tree trunk generate both xylem
+    and phloem tissue throughout the growing season?
+  non_tree_question: What nutrient deficiencies commonly affect rhododendron bushes
+    and how are they corrected?
+  question_type: explanatory
+  non_tree_domain: shrubs/bushes
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: no_keyword

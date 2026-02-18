@@ -1,0 +1,165 @@
+pairs:
+- pair_id: 739
+  tree_question: What certification standards exist for professional arborists performing
+    hazard tree assessment?
+  non_tree_question: How do actuarial tables influence life insurance premium calculations?
+  question_type: factual
+  non_tree_domain: insurance and actuarial science
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 740
+  tree_question: How do urban forestry departments prioritize which street-side specimens
+    receive structural support cables?
+  non_tree_question: What factors determine interest rate spreads between corporate
+    and government bonds?
+  question_type: process
+  non_tree_domain: fixed income finance
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: no_keyword
+- pair_id: 741
+  tree_question: What does the ANSI A300 standard specify regarding crown reduction
+    cuts in residential settings?
+  non_tree_question: How are pharmaceutical drug interaction thresholds established
+    during clinical trials?
+  question_type: factual
+  non_tree_domain: pharmaceutical regulation
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: verbose
+- pair_id: 742
+  tree_question: Why do ISA-certified practitioners prefer drop-crotch pruning over
+    topping when reducing canopy height?
+  non_tree_question: How does semiconductor lithography achieve transistor feature
+    sizes below ten nanometers?
+  question_type: explanatory
+  non_tree_domain: semiconductor manufacturing
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 743
+  tree_question: What risk categories does the TRAQ qualification system use when
+    rating specimens near high-occupancy targets?
+  non_tree_question: How does a central bank decide when to intervene in foreign exchange
+    markets?
+  question_type: factual
+  non_tree_domain: monetary policy
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: numbered_list
+- pair_id: 744
+  tree_question: How does a consulting arborist determine whether root encroachment
+    justifies removal versus remediation?
+  non_tree_question: What criteria does the FAA use when certifying new commercial
+    aircraft engine designs?
+  question_type: process
+  non_tree_domain: aviation regulation
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 745
+  tree_question: What are the key differences between aerial lift work and climbing
+    methods when executing large canopy removals?
+  non_tree_question: How do oceanographers measure deep-sea current velocities using
+    acoustic Doppler profilers?
+  question_type: comparative
+  non_tree_domain: physical oceanography
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: no_keyword
+- pair_id: 746
+  tree_question: How do municipal canopy management plans set percentage cover targets
+    and measure progress toward them?
+  non_tree_question: What statistical methods are used to detect insider trading from
+    equity transaction data?
+  question_type: process
+  non_tree_domain: financial regulation
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: numbered_list
+- pair_id: 747
+  tree_question: What physiological indicators signal that a mature specimen is entering
+    irreversible decline after severe storm damage?
+  non_tree_question: How does the kidney regulate bicarbonate levels to maintain blood
+    pH homeostasis?
+  question_type: explanatory
+  non_tree_domain: human physiology
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 748
+  tree_question: How do arboricultural reports quantify the amenity value of a mature
+    specimen scheduled for development clearance?
+  non_tree_question: What valuation methods are applied when pricing a privately held
+    technology startup for acquisition?
+  question_type: process
+  non_tree_domain: corporate finance and valuation
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+- pair_id: 749
+  tree_question: What distinguishes a Type A from a Type B failure mode in the context
+    of scaffold branch failures during inspections?
+  non_tree_question: How does a fuel cell stack convert hydrogen and oxygen into electrical
+    current at the membrane level?
+  question_type: comparative
+  non_tree_domain: electrochemical engineering
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: academic
+- pair_id: 750
+  tree_question: How do practitioners use resistograph drilling to assess internal
+    decay before deciding on crown retention?
+  non_tree_question: What imaging techniques allow archaeologists to identify buried
+    structures without excavation?
+  question_type: explanatory
+  non_tree_domain: archaeology and remote sensing
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: concise
+- pair_id: 751
+  tree_question: What liability exposure does a property owner face when a certified
+    report recommends removal and no action is taken?
+  non_tree_question: How does product liability law allocate responsibility between
+    manufacturers and retailers for consumer injuries?
+  question_type: factual
+  non_tree_domain: tort and product liability law
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+- pair_id: 752
+  tree_question: How do local authorities balance heritage conservation requirements
+    against safety obligations when managing veteran specimens in public parks?
+  non_tree_question: What tradeoffs arise when designing urban transit systems between
+    coverage area and frequency of service?
+  question_type: comparative
+  non_tree_domain: urban transportation planning
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: verbose
+- pair_id: 753
+  tree_question: What pruning cycle lengths do evidence-based maintenance contracts
+    typically specify for high-value urban canopy specimens?
+  non_tree_question: How do preventive maintenance schedules for commercial aircraft
+    engines differ between short-haul and long-haul fleets?
+  question_type: factual
+  non_tree_domain: aerospace maintenance engineering
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: academic

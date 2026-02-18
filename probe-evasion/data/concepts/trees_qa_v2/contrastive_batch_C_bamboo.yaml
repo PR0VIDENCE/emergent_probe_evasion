@@ -1,0 +1,167 @@
+pairs:
+- pair_id: 475
+  tree_question: What is the role of cambium tissue in tree trunk growth and wood
+    formation?
+  non_tree_question: What cellular mechanisms drive bamboo's extraordinarily rapid
+    growth, and how does it achieve elongation rates of up to 91 cm per day?
+  question_type: explanatory
+  non_tree_domain: bamboo
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+- pair_id: 476
+  tree_question: How do deciduous trees prepare for winter dormancy and what triggers
+    leaf senescence?
+  non_tree_question: How is bamboo harvested and processed for use as a structural
+    material in construction and civil engineering?
+  question_type: process
+  non_tree_domain: bamboo
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: no_keyword
+- pair_id: 477
+  tree_question: What are the main differences between hardwood and softwood trees
+    in terms of anatomy and uses?
+  non_tree_question: What makes bamboo culms structurally superior to many conventional
+    building materials, and how do engineers exploit its tensile strength?
+  question_type: factual
+  non_tree_domain: bamboo
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 478
+  tree_question: How do mycorrhizal fungi form symbiotic relationships with tree root
+    systems?
+  non_tree_question: What are the primary edible bamboo species, and how are bamboo
+    shoots prepared and used in East and Southeast Asian cuisines?
+  question_type: factual
+  non_tree_domain: bamboo
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: academic
+- pair_id: 479
+  tree_question: What environmental conditions determine whether a forest will be
+    dominated by coniferous or broadleaf trees?
+  non_tree_question: How do bamboo farmers manage rhizome spread and control invasive
+    clumping versus running bamboo species on plantations?
+  question_type: explanatory
+  non_tree_domain: bamboo
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+- pair_id: 480
+  tree_question: How does a tree's vascular system transport water and nutrients from
+    roots to leaves?
+  non_tree_question: What is the nutritional profile of bamboo shoots, and what bioactive
+    compounds make them a valued ingredient in traditional medicine and modern diets?
+  question_type: factual
+  non_tree_domain: bamboo
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: concise
+- pair_id: 481
+  tree_question: What is the process of tree grafting and why is it used in orchards
+    and horticulture?
+  non_tree_question: What steps are involved in establishing a commercial bamboo farm
+    from site selection through first harvest?
+  question_type: process
+  non_tree_domain: bamboo
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: numbered_list
+- pair_id: 482
+  tree_question: How do trees in tropical rainforests compete for light, and what
+    adaptations do understory species develop?
+  non_tree_question: How does bamboo's hollow, segmented culm structure distribute
+    mechanical stress, and what engineering principles does this illustrate?
+  question_type: explanatory
+  non_tree_domain: bamboo
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: numbered_list
+- pair_id: 483
+  tree_question: What causes the distinct annual growth rings visible in tree cross-sections,
+    and what information can dendrochronologists extract from them?
+  non_tree_question: Which bamboo species are most widely cultivated for industrial
+    fiber production, and how is the fiber processed into textiles or paper?
+  question_type: factual
+  non_tree_domain: bamboo
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 484
+  tree_question: How do trees respond to physical wounding or pathogen attack through
+    compartmentalization?
+  non_tree_question: How does the masting phenomenon in bamboo—where entire populations
+    flower, seed, and die simultaneously—affect farming operations and ecosystem dynamics?
+  question_type: explanatory
+  non_tree_domain: bamboo
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: verbose
+- pair_id: 485
+  tree_question: What role do trees play in the global carbon cycle and how does deforestation
+    affect atmospheric CO2?
+  non_tree_question: What are the steps for fermenting bamboo shoots to make traditional
+    fermented products like mesu or soibum, and how does fermentation affect their
+    flavor and safety?
+  question_type: process
+  non_tree_domain: bamboo
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 486
+  tree_question: How are fruit trees pollinated, and what factors affect fruit set
+    and yield in orchards?
+  non_tree_question: What soil conditions, climate ranges, and water requirements
+    are optimal for high-yield bamboo cultivation?
+  question_type: factual
+  non_tree_domain: bamboo
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: no_keyword
+- pair_id: 487
+  tree_question: What distinguishes monocot trees like palms from dicot trees in terms
+    of internal structure and growth pattern?
+  non_tree_question: How is laminated bamboo manufactured into flooring, panels, and
+    furniture, and how do its mechanical properties compare to hardwood lumber?
+  question_type: comparative
+  non_tree_domain: bamboo
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 488
+  tree_question: How do trees shed seeds and what dispersal mechanisms have evolved
+    for different species?
+  non_tree_question: What pest and disease pressures threaten bamboo plantations,
+    and what integrated pest management strategies do farmers use?
+  question_type: process
+  non_tree_domain: bamboo
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: concise
+- pair_id: 489
+  tree_question: What are the physiological differences between sun leaves and shade
+    leaves on the same tree?
+  non_tree_question: How does bamboo's rapid biomass accumulation rate compare to
+    timber crops in terms of carbon sequestration per hectare per year?
+  question_type: comparative
+  non_tree_domain: bamboo
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: verbose

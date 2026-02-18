@@ -1,0 +1,180 @@
+pairs:
+- pair_id: 675
+  tree_question: What physical characteristics of annual growth increments allow scientists
+    to match sequences across geographically distant specimens?
+  non_tree_question: How does a cardiologist interpret ST-segment elevation on an
+    electrocardiogram to diagnose myocardial infarction?
+  question_type: factual
+  non_tree_domain: cardiology
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: concise
+- pair_id: 676
+  tree_question: Why do bristlecone pines in the White Mountains of California produce
+    some of the longest continuous chronologies ever assembled?
+  non_tree_question: What mechanical principles govern the behavior of a suspension
+    bridge under varying wind loads?
+  question_type: explanatory
+  non_tree_domain: structural engineering
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: verbose
+- pair_id: 677
+  tree_question: How do researchers use overlapping sequences from living and subfossil
+    wood samples to extend a master chronology further back in time?
+  non_tree_question: What steps does a film editor follow when assembling a rough
+    cut from dailies during post-production?
+  question_type: process
+  non_tree_domain: filmmaking
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: no_keyword
+- pair_id: 678
+  tree_question: In what ways do narrow versus wide growth increments recorded in
+    ancient wood serve as proxies for past temperature and precipitation?
+  non_tree_question: How does a central bank adjust its benchmark interest rate to
+    manage inflation and economic growth?
+  question_type: explanatory
+  non_tree_domain: monetary policy
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+- pair_id: 679
+  tree_question: How do scientists distinguish the signature of a volcanic eruption
+    year from other causes of anomalously thin growth increments in high-latitude
+    specimens?
+  non_tree_question: What criteria do Olympic judges use to score a gymnastics floor
+    routine?
+  question_type: comparative
+  non_tree_domain: competitive gymnastics
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+- pair_id: 680
+  tree_question: What role did Aegean and Irish bog wood play in calibrating the radiocarbon
+    timescale during the late twentieth century?
+  non_tree_question: How is the Apgar score calculated and what does each component
+    measure in a newborn assessment?
+  question_type: factual
+  non_tree_domain: neonatal medicine
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 681
+  tree_question: What statistical techniques are applied when combining multiple individual
+    growth records into a single regional composite signal?
+  non_tree_question: How does a chess engine evaluate board positions to select the
+    optimal move at a given search depth?
+  question_type: process
+  non_tree_domain: computational chess
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: academic
+- pair_id: 682
+  tree_question: How does the expressed population signal quantify how well a group
+    of sampled specimens captures a common environmental forcing?
+  non_tree_question: What distinguishes a common-law trademark from one registered
+    with the United States Patent and Trademark Office?
+  question_type: comparative
+  non_tree_domain: intellectual property law
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: concise
+- pair_id: 683
+  tree_question: Why do specimens growing near the upper treeline boundary tend to
+    produce climate-sensitive annual increments compared with those at lower elevations?
+  non_tree_question: What physiological adaptations allow free-divers to suppress
+    the mammalian dive reflex and extend breath-hold duration?
+  question_type: explanatory
+  non_tree_domain: sports physiology
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 684
+  tree_question: How are missing and false increments identified and handled when
+    building a cross-dated master reference series?
+  non_tree_question: What process does a sommelier follow when conducting a blind
+    tasting to identify grape variety and vintage year?
+  question_type: process
+  non_tree_domain: oenology
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 685
+  tree_question: What information can be recovered about past drought severity from
+    the density of latewood formed in the annual increments of conifer species?
+  non_tree_question: How do materials scientists measure the fatigue life of a metal
+    alloy under cyclic stress conditions?
+  question_type: factual
+  non_tree_domain: materials science
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: verbose
+- pair_id: 686
+  tree_question: How do long-lived species from arid environments compare with those
+    from boreal forests as archives of Holocene climate variability?
+  non_tree_question: In what ways does a direct-injection gasoline engine differ from
+    a port-injection system in fuel atomization and combustion efficiency?
+  question_type: comparative
+  non_tree_domain: automotive engineering
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: numbered_list
+- pair_id: 687
+  tree_question: What laboratory preparation steps are required before a core extracted
+    from a living specimen can be measured on a high-precision scanning platform?
+  non_tree_question: How does a conductor prepare an orchestra for the premiere of
+    a newly commissioned symphonic work?
+  question_type: process
+  non_tree_domain: classical music performance
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 688
+  tree_question: How have multi-millennial growth-increment chronologies from Scandinavia
+    contributed to reconstructions of Northern Hemisphere summer temperatures over
+    the past two thousand years?
+  non_tree_question: What economic factors determine the equilibrium price of a commodity
+    futures contract on an exchange?
+  question_type: explanatory
+  non_tree_domain: commodity markets
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: no_keyword
+- pair_id: 689
+  tree_question: What distinguishes skeleton plotting from other graphical methods
+    used to visually compare ring-width patterns across multiple specimens during
+    cross-dating?
+  non_tree_question: How does a radiologist differentiate between a benign pulmonary
+    nodule and a potentially malignant lesion on a CT scan?
+  question_type: comparative
+  non_tree_domain: radiology
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: numbered_list
+- pair_id: 690
+  tree_question: How is the signal-free standardization method applied to remove age-related
+    growth trends while preserving low-frequency climate information in a long chronology?
+  non_tree_question: What steps are involved in synthesizing a peptide bond during
+    solid-phase peptide synthesis in a laboratory setting?
+  question_type: process
+  non_tree_domain: biochemistry
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: academic

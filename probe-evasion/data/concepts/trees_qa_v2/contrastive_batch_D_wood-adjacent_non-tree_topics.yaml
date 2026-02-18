@@ -1,0 +1,272 @@
+pairs:
+- pair_id: 625
+  tree_question: What structural adaptations allow tree roots to anchor large trees
+    against wind forces?
+  non_tree_question: What joinery techniques are used to anchor log cabin corners
+    for structural stability?
+  question_type: factual
+  non_tree_domain: wood-adjacent non-tree topics (log cabins, furniture, boats, paper)
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+- pair_id: 626
+  tree_question: How do trees regulate water loss through their bark during drought
+    conditions?
+  non_tree_question: How does bark texture on wooden furniture affect its resistance
+    to moisture damage?
+  question_type: explanatory
+  non_tree_domain: wood-adjacent non-tree topics (log cabins, furniture, boats, paper)
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 627
+  tree_question: What is the difference between heartwood and sapwood in terms of
+    cellular composition?
+  non_tree_question: How does the distinction between heartwood and sapwood affect
+    the durability of wooden boat hulls?
+  question_type: comparative
+  non_tree_domain: wood-adjacent non-tree topics (log cabins, furniture, boats, paper)
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: no_keyword
+- pair_id: 628
+  tree_question: How does annual ring width in trees reflect growing season conditions?
+  non_tree_question: How do woodworkers use annual ring patterns to select timber
+    for high-quality furniture?
+  question_type: explanatory
+  non_tree_domain: wood-adjacent non-tree topics (log cabins, furniture, boats, paper)
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: concise
+- pair_id: 629
+  tree_question: What causes knots to form in tree trunks as a tree grows?
+  non_tree_question: How do knots in lumber affect the structural integrity of log
+    cabin walls?
+  question_type: factual
+  non_tree_domain: wood-adjacent non-tree topics (log cabins, furniture, boats, paper)
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: numbered_list
+- pair_id: 630
+  tree_question: How do deciduous trees prepare for winter by sealing off leaves before
+    dropping them?
+  non_tree_question: How is wood pulp processed differently for deciduous versus coniferous
+    species when manufacturing paper?
+  question_type: process
+  non_tree_domain: wood-adjacent non-tree topics (log cabins, furniture, boats, paper)
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: concise
+- pair_id: 631
+  tree_question: What role does lignin play in giving trees their structural rigidity?
+  non_tree_question: Why must lignin be removed during paper manufacturing and what
+    methods are used to do so?
+  question_type: explanatory
+  non_tree_domain: wood-adjacent non-tree topics (log cabins, furniture, boats, paper)
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: academic
+- pair_id: 632
+  tree_question: How do trees in dense forests compete for light through vertical
+    growth strategies?
+  non_tree_question: How do boat builders account for wood grain direction when shaping
+    curved hull planks?
+  question_type: explanatory
+  non_tree_domain: wood-adjacent non-tree topics (log cabins, furniture, boats, paper)
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+- pair_id: 633
+  tree_question: What is the function of phloem tissue in transporting nutrients through
+    a tree?
+  non_tree_question: What finishing treatments are applied to wooden furniture surfaces
+    to prevent cracking and splitting?
+  question_type: factual
+  non_tree_domain: wood-adjacent non-tree topics (log cabins, furniture, boats, paper)
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: academic
+- pair_id: 634
+  tree_question: How does resin production in conifers serve as a defense mechanism
+    against insects?
+  non_tree_question: How is resin applied as a sealant in wooden boat construction
+    to prevent water infiltration?
+  question_type: process
+  non_tree_domain: wood-adjacent non-tree topics (log cabins, furniture, boats, paper)
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: numbered_list
+- pair_id: 635
+  tree_question: What determines whether a tree species produces softwood or hardwood?
+  non_tree_question: How do cabinetmakers choose between softwood and hardwood for
+    different furniture components?
+  question_type: comparative
+  non_tree_domain: wood-adjacent non-tree topics (log cabins, furniture, boats, paper)
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: no_keyword
+- pair_id: 636
+  tree_question: How do trees achieve such large heights while maintaining hydraulic
+    conductivity from roots to canopy?
+  non_tree_question: How is wood kiln-dried to reduce moisture content before use
+    in furniture manufacturing?
+  question_type: process
+  non_tree_domain: wood-adjacent non-tree topics (log cabins, furniture, boats, paper)
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 637
+  tree_question: What mechanisms allow certain trees to survive repeated exposure
+    to fire?
+  non_tree_question: What fire-resistant treatments or coatings are applied to log
+    cabin exteriors to improve safety?
+  question_type: factual
+  non_tree_domain: wood-adjacent non-tree topics (log cabins, furniture, boats, paper)
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: academic
+- pair_id: 638
+  tree_question: How do mycorrhizal fungi form symbiotic relationships with tree roots
+    to enhance nutrient uptake?
+  non_tree_question: How does wood rot caused by fungi affect the structural soundness
+    of wooden boat frames?
+  question_type: explanatory
+  non_tree_domain: wood-adjacent non-tree topics (log cabins, furniture, boats, paper)
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: no_keyword
+- pair_id: 639
+  tree_question: What is the process by which trees convert carbon dioxide into organic
+    compounds through photosynthesis?
+  non_tree_question: What chemical processes occur during the kraft pulping method
+    used to produce paper from wood chips?
+  question_type: process
+  non_tree_domain: wood-adjacent non-tree topics (log cabins, furniture, boats, paper)
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: concise
+- pair_id: 640
+  tree_question: How do trees in riparian zones stabilize riverbanks through their
+    root systems?
+  non_tree_question: How does wood caulking between log cabin timbers prevent drafts
+    and improve insulation?
+  question_type: factual
+  non_tree_domain: wood-adjacent non-tree topics (log cabins, furniture, boats, paper)
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: verbose
+- pair_id: 641
+  tree_question: What is the relationship between tree canopy density and understory
+    plant diversity?
+  non_tree_question: How does veneer thickness affect the appearance and durability
+    of furniture made with plywood cores?
+  question_type: explanatory
+  non_tree_domain: wood-adjacent non-tree topics (log cabins, furniture, boats, paper)
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 642
+  tree_question: How do trees respond to physical damage by forming callus tissue
+    over wounds?
+  non_tree_question: How are wooden boat planks steam-bent into curved shapes without
+    splitting or cracking?
+  question_type: process
+  non_tree_domain: wood-adjacent non-tree topics (log cabins, furniture, boats, paper)
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 643
+  tree_question: What characteristics distinguish pioneer tree species that colonize
+    disturbed land?
+  non_tree_question: How does grain orientation in wood affect a paper sheet's tensile
+    strength and tear resistance?
+  question_type: comparative
+  non_tree_domain: wood-adjacent non-tree topics (log cabins, furniture, boats, paper)
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: verbose
+- pair_id: 644
+  tree_question: How does the cambium layer contribute to a tree's diameter growth
+    each year?
+  non_tree_question: What role does wood density play in determining the acoustic
+    properties of stringed instrument bodies?
+  question_type: explanatory
+  non_tree_domain: wood-adjacent non-tree topics (log cabins, furniture, boats, paper)
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: numbered_list
+- pair_id: 645
+  tree_question: What environmental signals trigger bud burst in temperate trees each
+    spring?
+  non_tree_question: How is paper coated with clay or calcium carbonate to improve
+    its printability and gloss?
+  question_type: process
+  non_tree_domain: wood-adjacent non-tree topics (log cabins, furniture, boats, paper)
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: academic
+- pair_id: 646
+  tree_question: How do trees in tropical climates differ from temperate trees in
+    their growth patterns?
+  non_tree_question: How do log cabin builders in cold climates design foundations
+    to handle freeze-thaw cycles?
+  question_type: comparative
+  non_tree_domain: wood-adjacent non-tree topics (log cabins, furniture, boats, paper)
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: verbose
+- pair_id: 647
+  tree_question: What is the significance of branch collar tissue in how trees respond
+    to pruning?
+  non_tree_question: What mortise-and-tenon joinery techniques are used to assemble
+    the legs and rails of wooden chairs?
+  question_type: factual
+  non_tree_domain: wood-adjacent non-tree topics (log cabins, furniture, boats, paper)
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 648
+  tree_question: How do trees allocate carbon resources between growth, defense, and
+    reproduction?
+  non_tree_question: How does the bleaching process affect the fiber strength of wood
+    pulp used in white paper production?
+  question_type: explanatory
+  non_tree_domain: wood-adjacent non-tree topics (log cabins, furniture, boats, paper)
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 649
+  tree_question: What adaptations allow mangrove trees to thrive in saline coastal
+    environments?
+  non_tree_question: How are traditional wooden sailing vessels caulked and sealed
+    to remain watertight in saltwater?
+  question_type: comparative
+  non_tree_domain: wood-adjacent non-tree topics (log cabins, furniture, boats, paper)
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default

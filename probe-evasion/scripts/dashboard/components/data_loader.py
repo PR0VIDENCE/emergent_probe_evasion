@@ -5,6 +5,8 @@ import os
 from pathlib import Path
 from typing import Dict, List, Optional, Tuple
 
+import numpy as np
+
 
 def discover_regimes(data_dir: str) -> List[str]:
     """Scan for JSON files in trials/ subdirectory and return regime names."""
@@ -73,6 +75,43 @@ def get_unique_questions(trials: List[dict]) -> List[str]:
 def get_unique_rollouts(trials: List[dict]) -> List[int]:
     """Get unique rollout numbers from trials."""
     return sorted(set(trial["rollout"] for trial in trials))
+
+
+def classify_trials(trials: List[dict]) -> Dict[str, List[dict]]:
+    """Split trials into positive (tree) vs negative (non-tree) categories.
+
+    Classification uses question_id prefix:
+    - IDs starting with "nc" → negative control
+    - Everything else (q1-q20, custom_*, etc.) → positive (tree)
+
+    Returns:
+        {"positive": [...], "negative": [...]}
+    """
+    positive = []
+    negative = []
+    for trial in trials:
+        qid = trial.get("question_id", "")
+        if qid.startswith("nc"):
+            negative.append(trial)
+        else:
+            positive.append(trial)
+    return {"positive": positive, "negative": negative}
+
+
+def get_trial_confidence(trial: dict, position: str, layers: list) -> Optional[float]:
+    """Extract mean confidence for a trial across given position and layers.
+
+    Returns None if no valid confidences found.
+    """
+    pr = get_trial_probe_results(trial)
+    pos_data = pr.get(position, {})
+    confs = []
+    for l in layers:
+        layer_data = pos_data.get(l, pos_data.get(str(l), {}))
+        c = layer_data.get("mean_confidence", None) if layer_data else None
+        if c is not None:
+            confs.append(c)
+    return float(np.mean(confs)) if confs else None
 
 
 def load_summary(data_dir: str) -> Optional[dict]:

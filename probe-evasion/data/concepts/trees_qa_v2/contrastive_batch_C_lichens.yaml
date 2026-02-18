@@ -1,0 +1,172 @@
+pairs:
+- pair_id: 535
+  tree_question: What is the role of mycorrhizal fungi in helping trees absorb nutrients
+    from the soil?
+  non_tree_question: How do lichens survive in extreme environments like Arctic tundra
+    and high-altitude rocky outcrops where most organisms cannot exist?
+  question_type: factual
+  non_tree_domain: lichens
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 536
+  tree_question: How do trees use annual growth rings to record climate history?
+  non_tree_question: Why are lichens considered some of the most reliable bioindicators
+    of air quality, and what specific pollutants cause their decline?
+  question_type: explanatory
+  non_tree_domain: lichens
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: no_keyword
+- pair_id: 537
+  tree_question: What mechanisms allow certain tree species to survive prolonged drought
+    conditions?
+  non_tree_question: How does the symbiotic relationship between fungi and algae or
+    cyanobacteria function within a lichen, and what does each partner contribute?
+  question_type: explanatory
+  non_tree_domain: lichens
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: numbered_list
+- pair_id: 538
+  tree_question: How do trees communicate and share resources through underground
+    fungal networks?
+  non_tree_question: What physiological strategies allow lichens to survive complete
+    desiccation and then fully recover metabolic activity when moisture returns?
+  question_type: process
+  non_tree_domain: lichens
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: academic
+- pair_id: 539
+  tree_question: What distinguishes hardwood trees from softwood trees in terms of
+    anatomy and wood properties?
+  non_tree_question: How do lichens pioneer the colonization of bare rock surfaces
+    and contribute to the early stages of soil formation?
+  question_type: factual
+  non_tree_domain: lichens
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+- pair_id: 540
+  tree_question: How do trees allocate carbon resources between root growth, trunk
+    growth, and leaf production across seasons?
+  non_tree_question: What are the different growth forms of lichens, such as crustose,
+    foliose, and fruticose, and how does each form relate to its environmental habitat?
+  question_type: comparative
+  non_tree_domain: lichens
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: numbered_list
+- pair_id: 541
+  tree_question: What is the process by which deciduous trees sense decreasing day
+    length and temperature to trigger leaf senescence?
+  non_tree_question: How do lichens reproduce, and what are the relative advantages
+    of sexual versus asexual reproduction strategies in lichen populations?
+  question_type: process
+  non_tree_domain: lichens
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 542
+  tree_question: How do mangrove trees adapt their root systems to survive in waterlogged,
+    oxygen-poor coastal soils?
+  non_tree_question: In what ways do lichens respond differently to sulfur dioxide,
+    nitrogen oxides, and heavy metal pollution, making them useful for monitoring
+    distinct types of industrial contamination?
+  question_type: comparative
+  non_tree_domain: lichens
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: no_keyword
+- pair_id: 543
+  tree_question: What factors determine the maximum height a tree can achieve before
+    it can no longer transport water to its canopy?
+  non_tree_question: How do lichens colonize substrates like tombstones, roof tiles,
+    and concrete, and what chemical processes do they use to attach to and break down
+    these surfaces?
+  question_type: process
+  non_tree_domain: lichens
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: academic
+- pair_id: 544
+  tree_question: How do trees in tropical rainforests compete for light, and what
+    strategies do shade-tolerant species use to survive under a closed canopy?
+  non_tree_question: What role do nitrogen-fixing cyanobacteria play in lichens that
+    contain them, and how does this affect ecosystem nutrient cycling in nitrogen-poor
+    environments?
+  question_type: explanatory
+  non_tree_domain: lichens
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: verbose
+- pair_id: 545
+  tree_question: What are the ecological consequences when a keystone tree species
+    is removed from a forest ecosystem?
+  non_tree_question: How do lichens in polar and alpine regions tolerate freeze-thaw
+    cycles, UV radiation, and months of darkness, and what biochemical adaptations
+    enable this resilience?
+  question_type: factual
+  non_tree_domain: lichens
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 546
+  tree_question: How does the bark of trees function as a protective barrier, and
+    what threats does it defend against?
+  non_tree_question: How do scientists use lichen biomonitoring programs to map air
+    pollution gradients across urban and industrial landscapes?
+  question_type: process
+  non_tree_domain: lichens
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: verbose
+- pair_id: 547
+  tree_question: What is the significance of seed dispersal mechanisms in determining
+    where new trees establish themselves in a landscape?
+  non_tree_question: How do the metabolic activities of the fungal and photosynthetic
+    partners in a lichen differ, and how are nutrients exchanged between them at the
+    cellular level?
+  question_type: explanatory
+  non_tree_domain: lichens
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: concise
+- pair_id: 548
+  tree_question: How do trees in fire-prone ecosystems adapt to survive or recover
+    from periodic burning?
+  non_tree_question: How do lichen communities change in composition and diversity
+    across gradients of air pollution, and what threshold concentrations of pollutants
+    cause local extinctions of sensitive species?
+  question_type: comparative
+  non_tree_domain: lichens
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 549
+  tree_question: What determines whether a forest undergoes succession toward a climax
+    community dominated by particular tree species?
+  non_tree_question: How do lichens contribute to the ecological succession of barren
+    volcanic landscapes, such as those following a lava flow, and over what timescales
+    do they facilitate the establishment of later plant communities?
+  question_type: factual
+  non_tree_domain: lichens
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default

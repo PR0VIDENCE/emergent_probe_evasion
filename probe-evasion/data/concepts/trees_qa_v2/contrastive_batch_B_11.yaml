@@ -1,0 +1,306 @@
+pairs:
+- pair_id: 275
+  tree_question: What are the primary symptoms of Dutch elm disease, and how does
+    the fungal pathogen spread between elm trees in urban forests?
+  non_tree_question: What are the primary techniques of damascene metalwork, and how
+    does the inlay process differ between gold and silver applications on steel?
+  question_type: explanatory
+  non_tree_domain: damascene metalwork
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: no_keyword
+- pair_id: 276
+  tree_question: How does the emerald ash borer larva damage ash trees internally,
+    and why does the infestation often go undetected until the tree is severely weakened?
+  non_tree_question: How does a podiatrist diagnose plantar fasciitis in patients,
+    and why does the condition often go untreated until it causes significant mobility
+    issues?
+  question_type: explanatory
+  non_tree_domain: podiatry
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 277
+  tree_question: What biological control methods have been developed to combat the
+    emerald ash borer, and how effective are parasitoid wasps as natural enemies?
+  non_tree_question: What dating methods have been developed to establish the age
+    of archaeological sites, and how effective is radiocarbon analysis compared to
+    stratigraphy?
+  question_type: comparative
+  non_tree_domain: archaeology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: verbose
+- pair_id: 278
+  tree_question: How is Dutch elm disease diagnosed in infected trees, and what laboratory
+    tests confirm the presence of Ophiostoma novo-ulmi?
+  non_tree_question: How is a polo match structured in terms of periods, and what
+    rules govern the use of the mallet during competitive play?
+  question_type: factual
+  non_tree_domain: polo
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+- pair_id: 279
+  tree_question: What quarantine measures do foresters use to slow the spread of emerald
+    ash borer, and how are movement restrictions enforced across state lines?
+  non_tree_question: What physical techniques do ventriloquists use to produce voice
+    without visible lip movement, and how are these skills developed through practice?
+  question_type: process
+  non_tree_domain: ventriloquism
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: academic
+- pair_id: 280
+  tree_question: How do bark beetles contribute to the spread of tree diseases, and
+    what role does their gallery-boring behavior play in transmitting fungal pathogens?
+  non_tree_question: How do choreographers contribute to the development of a dance
+    performance, and what role does improvisation play in creating structured movement
+    sequences?
+  question_type: explanatory
+  non_tree_domain: dance
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+- pair_id: 281
+  tree_question: What chemical treatments are available for protecting ash trees from
+    emerald ash borer infestation, and when must injections be applied for maximum
+    efficacy?
+  non_tree_question: What camera techniques are available for capturing authentic
+    emotion in documentary filmmaking, and when must a director intervene versus observe
+    for maximum impact?
+  question_type: factual
+  non_tree_domain: documentary filmmaking
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: concise
+- pair_id: 282
+  tree_question: How does Dutch elm disease affect the vascular system of elm trees,
+    and what physiological process causes the characteristic wilting and yellowing
+    of leaves?
+  non_tree_question: How does a chiropractor assess spinal misalignment in patients,
+    and what diagnostic process determines whether manipulation or soft tissue therapy
+    is appropriate?
+  question_type: explanatory
+  non_tree_domain: chiropractic
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 283
+  tree_question: What selective breeding programs exist to develop Dutch elm disease-resistant
+    cultivars, and which elm varieties have shown the most promising genetic resistance?
+  non_tree_question: What surgical techniques exist to minimize scarring in reconstructive
+    plastic surgery, and which wound-closure methods have shown the most promising
+    cosmetic outcomes?
+  question_type: comparative
+  non_tree_domain: plastic surgery
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: numbered_list
+- pair_id: 284
+  tree_question: How are aerial surveys used to monitor the spread of emerald ash
+    borer across large forested landscapes, and what remote sensing technologies improve
+    detection accuracy?
+  non_tree_question: How are geostationary orbits used to maintain satellite coverage
+    over specific regions, and what technical limitations affect signal transmission
+    accuracy?
+  question_type: factual
+  non_tree_domain: satellite technology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: academic
+- pair_id: 285
+  tree_question: What is the life cycle of the emerald ash borer, and how does each
+    developmental stage from egg to adult beetle contribute to tree mortality?
+  non_tree_question: What is the process of gathering molten glass on a blowpipe in
+    glassblowing, and how does each shaping stage from gather to final form determine
+    the object's structure?
+  question_type: process
+  non_tree_domain: glassblowing
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+- pair_id: 286
+  tree_question: How do urban heat islands affect the susceptibility of street trees
+    to pest infestations and fungal diseases compared to trees in cooler rural settings?
+  non_tree_question: How do mime performers use spatial awareness to create the illusion
+    of physical objects, and how does body positioning differ between wall and rope
+    techniques?
+  question_type: comparative
+  non_tree_domain: mime performance
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: numbered_list
+- pair_id: 287
+  tree_question: What early warning signs indicate that a beech tree may be infected
+    with beech leaf disease, and how quickly does the pathogen progress to cause crown
+    dieback?
+  non_tree_question: What early warning signs indicate that a database system is experiencing
+    index fragmentation, and how quickly should administrators intervene before query
+    performance degrades significantly?
+  question_type: factual
+  non_tree_domain: database administration
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: no_keyword
+- pair_id: 288
+  tree_question: How does the Asian longhorned beetle differ from the emerald ash
+    borer in host tree preference, geographic range, and the extent of economic damage
+    caused?
+  non_tree_question: How does serif typography differ from sans-serif in terms of
+    readability, historical usage, and suitability for digital versus print applications?
+  question_type: comparative
+  non_tree_domain: typography
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 289
+  tree_question: What role do woodpeckers play in indicating emerald ash borer infestations,
+    and how do foresters use bird feeding behavior as a non-invasive detection method?
+  non_tree_question: What role does yarn weight play in determining the drape and
+    stitch definition of a knitted garment, and how do knitters select fiber content
+    for specific projects?
+  question_type: explanatory
+  non_tree_domain: knitting
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: concise
+- pair_id: 290
+  tree_question: How is Phytophthora root rot identified in declining trees, and what
+    soil conditions promote the spread of this water mold among landscape plantings?
+  non_tree_question: How is volcanic activity classified using the Volcanic Explosivity
+    Index, and what geological conditions determine whether an eruption produces lava
+    flows or pyroclastic material?
+  question_type: factual
+  non_tree_domain: volcanology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: academic
+- pair_id: 291
+  tree_question: What training methods do arborists use to identify tree pest infestations
+    in the field, and how is this knowledge translated into rapid management decisions?
+  non_tree_question: What training methods do ballet dancers use to develop turnout
+    and core stability, and how is this technical foundation translated into expressive
+    artistic performance?
+  question_type: process
+  non_tree_domain: ballet
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: numbered_list
+- pair_id: 292
+  tree_question: How has the introduction of Dutch elm disease altered the ecological
+    composition of North American urban forests since the pathogen arrived in the
+    1920s?
+  non_tree_question: How has the translation of magical realism altered the reception
+    of Latin American literature in English-speaking markets since these works gained
+    international prominence in the 1960s?
+  question_type: explanatory
+  non_tree_domain: comparative literature
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 293
+  tree_question: What sanitation practices help prevent the introduction of tree pathogens
+    into nursery stock, and how are imported plants inspected before distribution
+    to garden centers?
+  non_tree_question: What finishing practices help prevent oxidation of pewter castings
+    after production, and how are cast objects polished before distribution to retail
+    customers?
+  question_type: process
+  non_tree_domain: pewter casting
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: no_keyword
+- pair_id: 294
+  tree_question: How does the immune response of a resistant elm tree differ from
+    that of a susceptible tree when exposed to the Dutch elm disease fungus?
+  non_tree_question: How does the adaptive immune response differ from the innate
+    immune response when the body is exposed to a novel bacterial pathogen for the
+    first time?
+  question_type: comparative
+  non_tree_domain: immunology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: verbose
+- pair_id: 295
+  tree_question: What environmental factors influence the severity of fire blight
+    infections in fruit trees, and how do temperature and humidity affect bacterial
+    spread during bloom?
+  non_tree_question: What environmental factors influence the quality of cacao fermentation
+    in chocolate making, and how do temperature and humidity affect the development
+    of flavor precursors?
+  question_type: explanatory
+  non_tree_domain: chocolate making
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: concise
+- pair_id: 296
+  tree_question: How do foresters coordinate the removal of emerald ash borer-infested
+    trees across municipal boundaries to prevent reinfestation of treated areas?
+  non_tree_question: How do air traffic controllers coordinate aircraft sequencing
+    during peak departure periods to prevent runway conflicts and maintain safe separation
+    standards?
+  question_type: process
+  non_tree_domain: air traffic control
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: concise
+- pair_id: 297
+  tree_question: What physical characteristics distinguish emerald ash borer exit
+    holes from those created by native wood-boring beetles, and how is this difference
+    used in field surveys?
+  non_tree_question: What physical characteristics distinguish the rifle stage from
+    the skiing stage in biathlon competition, and how does the transition between
+    them affect an athlete's race strategy?
+  question_type: factual
+  non_tree_domain: biathlon
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 298
+  tree_question: How does the weight distribution of equipment used in managing tree
+    diseases affect the physical demands on arborists working in steep or remote terrain?
+  non_tree_question: How does the weight distribution of athletes in a bobsled affect
+    the vehicle's aerodynamics and cornering behavior on a competition track?
+  question_type: explanatory
+  non_tree_domain: bobsled
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 299
+  tree_question: How do tree pathogens such as Armillaria root disease affect the
+    long-term viability of urban tree canopy programs in cities planning multi-decade
+    planting initiatives?
+  non_tree_question: How does cumulative musculoskeletal fatigue affect the long-term
+    performance of marathon runners who follow high-mileage training programs over
+    multi-year competitive careers?
+  question_type: explanatory
+  non_tree_domain: marathon running
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: verbose

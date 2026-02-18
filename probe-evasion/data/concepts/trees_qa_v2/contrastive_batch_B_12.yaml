@@ -1,0 +1,280 @@
+pairs:
+- pair_id: 300
+  tree_question: What is the Janka hardness scale, and how does it measure the resistance
+    of different wood species to denting and wear?
+  non_tree_question: What is the square knot, and how does it serve as the foundational
+    technique for creating basic macrame patterns and structures?
+  question_type: factual
+  non_tree_domain: macrame
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+- pair_id: 301
+  tree_question: How does grain direction in wood affect its strength, flexibility,
+    and suitability for different woodworking applications?
+  non_tree_question: How does latency affect performance, reliability, and suitability
+    of cloud computing services for different enterprise applications?
+  question_type: explanatory
+  non_tree_domain: cloud computing
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: academic
+- pair_id: 302
+  tree_question: What distinguishes open-grain woods like oak from closed-grain woods
+    like maple in terms of finishing and appearance?
+  non_tree_question: What distinguishes bilateral diplomacy from multilateral diplomacy
+    in terms of negotiation dynamics and international agreement outcomes?
+  question_type: comparative
+  non_tree_domain: diplomacy
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: no_keyword
+- pair_id: 303
+  tree_question: How is moisture content measured in lumber, and why does equilibrium
+    moisture content matter for structural applications?
+  non_tree_question: How is drape measured in fabric, and why does it matter when
+    selecting textiles for different fashion design applications?
+  question_type: process
+  non_tree_domain: fashion design
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: numbered_list
+- pair_id: 304
+  tree_question: What causes wood to be classified as hardwood versus softwood, and
+    does hardness always correlate with the hardwood classification?
+  non_tree_question: What causes a muscle to be classified as fast-twitch versus slow-twitch,
+    and does fiber type always correlate with fatigue resistance?
+  question_type: factual
+  non_tree_domain: kinesiology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: verbose
+- pair_id: 305
+  tree_question: How does interlocked grain in tropical hardwoods like sapele create
+    a ribbon stripe figure when the wood is quartersawn?
+  non_tree_question: How does spatial anchoring in augmented reality create a persistent
+    overlay figure when digital objects are placed in physical environments?
+  question_type: explanatory
+  non_tree_domain: augmented reality
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 306
+  tree_question: What is compression wood in conifers, and how does its abnormal properties
+    affect the structural integrity of timber products?
+  non_tree_question: What is repoussé work in metalsmithing, and how does the hammering
+    process affect the structural integrity of the finished metal piece?
+  question_type: factual
+  non_tree_domain: repousse
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: numbered_list
+- pair_id: 307
+  tree_question: How does wood density vary between species, and what role does density
+    play in predicting mechanical performance of engineered wood products?
+  non_tree_question: How does population density vary between regions, and what role
+    does it play in predicting disease transmission rates in public health models?
+  question_type: explanatory
+  non_tree_domain: public health
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 308
+  tree_question: What is the difference between tangential and radial shrinkage in
+    wood, and why does this differential cause warping during drying?
+  non_tree_question: What is the difference between primary and secondary fermentation
+    in wine making, and why does this distinction cause differences in flavor development?
+  question_type: comparative
+  non_tree_domain: wine making
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: concise
+- pair_id: 309
+  tree_question: How does the kiln-drying process remove moisture from green lumber
+    while minimizing checking, case-hardening, and other drying defects?
+  non_tree_question: How does the rehearsal process refine movement sequences in choreography
+    while minimizing injury, misalignment, and other physical defects?
+  question_type: process
+  non_tree_domain: choreography
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: academic
+- pair_id: 310
+  tree_question: What is the modulus of elasticity in wood, and how does this property
+    determine whether a species is suitable for bending applications?
+  non_tree_question: What is the moment magnitude scale in seismology, and how does
+    this measurement determine whether an earthquake is classified as major or minor?
+  question_type: factual
+  non_tree_domain: seismology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: verbose
+- pair_id: 311
+  tree_question: How does the presence of extractives like tannins and resins in heartwood
+    affect its natural durability and resistance to biological decay?
+  non_tree_question: How does the presence of protective cuticles and enzymes in helminths
+    affect their natural durability and resistance to host immune responses?
+  question_type: explanatory
+  non_tree_domain: helminthology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: concise
+- pair_id: 312
+  tree_question: What distinguishes quarter-sawn lumber from flat-sawn lumber in terms
+    of stability, grain appearance, and resistance to seasonal movement?
+  non_tree_question: What distinguishes REM sleep from non-REM sleep in terms of brain
+    activity, physiological function, and role in memory consolidation?
+  question_type: comparative
+  non_tree_domain: sleep medicine
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 313
+  tree_question: How is wood veneer prepared and applied in the marquetry process
+    to create decorative inlaid patterns on furniture surfaces?
+  non_tree_question: How are tax documents prepared and submitted in the filing process
+    to accurately report income and deductions to government authorities?
+  question_type: process
+  non_tree_domain: tax preparation
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: numbered_list
+- pair_id: 314
+  tree_question: What is the Brinell hardness test as applied to wood, and how does
+    it compare to the Janka test for measuring surface hardness?
+  non_tree_question: What is the spore print test in mycology, and how does it compare
+    to microscopic examination for identifying mushroom species?
+  question_type: comparative
+  non_tree_domain: mycology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: academic
+- pair_id: 315
+  tree_question: How does the cell structure of diffuse-porous hardwoods differ from
+    ring-porous hardwoods, and what does this mean for their working properties?
+  non_tree_question: How does the molecular structure of top notes in perfumery differ
+    from base notes, and what does this mean for their evaporation and longevity?
+  question_type: explanatory
+  non_tree_domain: perfumery
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 316
+  tree_question: What causes end-grain to absorb finishes more heavily than face-grain,
+    and how do woodworkers compensate for this during surface preparation?
+  non_tree_question: What causes tension in crochet stitches to vary between crafters,
+    and how do crocheters compensate for this when following a pattern?
+  question_type: factual
+  non_tree_domain: crochet
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: concise
+- pair_id: 317
+  tree_question: How does the fiber saturation point of wood govern the relationship
+    between moisture content and its mechanical properties below that threshold?
+  non_tree_question: How does the MERV rating of an air filter govern the relationship
+    between particle size and its filtration efficiency below that threshold?
+  question_type: explanatory
+  non_tree_domain: air filtration
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: no_keyword
+- pair_id: 318
+  tree_question: What is reaction wood in leaning trees, and how does its unusual
+    growth pattern create problems for timber processors and woodworkers?
+  non_tree_question: What is thermal shock in raku pottery, and how does its rapid
+    cooling process create distinctive crackle patterns and carbon markings?
+  question_type: factual
+  non_tree_domain: raku pottery
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: verbose
+- pair_id: 319
+  tree_question: How do conservators stabilize deteriorating wooden artifacts, and
+    what treatments are used to arrest moisture-related damage in museum collections?
+  non_tree_question: How do conservators stabilize deteriorating paintings on canvas,
+    and what treatments are used to arrest humidity-related damage in museum collections?
+  question_type: process
+  non_tree_domain: museum curation
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: no_keyword
+- pair_id: 320
+  tree_question: What is the relationship between wood's specific gravity and its
+    energy content as fuel, and which species provide the highest heat output per
+    cord?
+  non_tree_question: What is the relationship between a skydiver's body position and
+    their terminal velocity, and which orientations produce the highest rates of descent?
+  question_type: comparative
+  non_tree_domain: skydiving
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+- pair_id: 321
+  tree_question: How does cross-laminating wood veneers in opposite grain directions
+    produce panels with superior dimensional stability compared to solid lumber?
+  non_tree_question: How does moderating neutron flux in opposite reactor zones in
+    nuclear engineering produce designs with superior safety margins compared to unmoderated
+    cores?
+  question_type: explanatory
+  non_tree_domain: nuclear engineering
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: no_keyword
+- pair_id: 322
+  tree_question: What causes knots to weaken lumber, and how do grading rules account
+    for knot size and position when assigning structural lumber grades?
+  non_tree_question: What causes iron mineralization to concentrate in soil, and how
+    do hobbyists account for signal depth and size when interpreting metal detecting
+    readings?
+  question_type: factual
+  non_tree_domain: metal detecting
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 323
+  tree_question: How does the moisture-induced swelling and shrinking of wood in service
+    affect the design of joinery in furniture and architectural millwork?
+  non_tree_question: How does the payoff-induced swelling and shrinking of coalitions
+    in repeated games affect the design of negotiation strategies in game theory?
+  question_type: explanatory
+  non_tree_domain: game theory
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+- pair_id: 324
+  tree_question: What is the process of steam-bending wood, and how do moisture content,
+    temperature, and species selection determine the minimum achievable bend radius?
+  non_tree_question: What is the process of blending varietals in wine making, and
+    how do acidity, tannin levels, and grape selection determine the final flavor
+    balance?
+  question_type: process
+  non_tree_domain: wine making
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: eli5

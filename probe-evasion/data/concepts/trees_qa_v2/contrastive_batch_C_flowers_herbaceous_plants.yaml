@@ -1,0 +1,166 @@
+pairs:
+- pair_id: 520
+  tree_question: How do conifer trees transport water and nutrients from roots to
+    needles?
+  non_tree_question: How does pollination occur in tulips, and what role do insects
+    play compared to wind in fertilizing tulip flowers?
+  question_type: factual
+  non_tree_domain: flowers/herbaceous plants
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: no_keyword
+- pair_id: 521
+  tree_question: What adaptations allow mangrove trees to survive in saltwater environments?
+  non_tree_question: What is the biological process by which daffodil bulbs propagate
+    vegetatively, and how do daughter bulbs form around the parent bulb?
+  question_type: explanatory
+  non_tree_domain: flowers/herbaceous plants
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+- pair_id: 522
+  tree_question: How do deciduous trees prepare for winter dormancy and what triggers
+    leaf senescence?
+  non_tree_question: How are roses cultivated and harvested in the commercial cut
+    flower industry, and what post-harvest treatments extend their vase life?
+  question_type: process
+  non_tree_domain: flowers/herbaceous plants
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: concise
+- pair_id: 523
+  tree_question: What is the role of mycorrhizal fungi in the nutrient uptake of forest
+    trees?
+  non_tree_question: How do orchid breeders use hybridization techniques to develop
+    new cultivars with desired flower colors and shapes?
+  question_type: factual
+  non_tree_domain: flowers/herbaceous plants
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 524
+  tree_question: How do trees in tropical rainforests compete for sunlight, and what
+    strategies do understory species use?
+  non_tree_question: What physiological mechanisms allow certain lily bulbs to remain
+    dormant underground for extended periods before flowering?
+  question_type: explanatory
+  non_tree_domain: flowers/herbaceous plants
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+- pair_id: 525
+  tree_question: What are the main differences between hardwood and softwood trees
+    in terms of cellular structure?
+  non_tree_question: How does the cut flower industry in the Netherlands control temperature
+    and light conditions to produce chrysanthemums year-round?
+  question_type: comparative
+  non_tree_domain: flowers/herbaceous plants
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 526
+  tree_question: How do fruit trees develop their flowers, and what conditions are
+    necessary for successful pollination?
+  non_tree_question: What is the step-by-step process of propagating gladiolus through
+    corm division, and how does this differ from seed propagation?
+  question_type: process
+  non_tree_domain: flowers/herbaceous plants
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: numbered_list
+- pair_id: 527
+  tree_question: What causes the distinctive bark patterns on trees like birch and
+    sycamore?
+  non_tree_question: How do sunflowers track the sun through heliotropism during their
+    growth phase, and what cellular mechanisms drive this movement?
+  question_type: factual
+  non_tree_domain: flowers/herbaceous plants
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: verbose
+- pair_id: 528
+  tree_question: How do trees in arid climates like the baobab store water and survive
+    drought conditions?
+  non_tree_question: How does cross-pollination breeding in dahlias produce new color
+    variations, and what genetic principles govern petal pigmentation inheritance?
+  question_type: explanatory
+  non_tree_domain: flowers/herbaceous plants
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 529
+  tree_question: What are the ecological roles of dead and decaying trees in forest
+    ecosystems?
+  non_tree_question: What are the key steps in breeding disease-resistant peony cultivars,
+    and how do breeders select for traits like fragrance and bloom duration?
+  question_type: process
+  non_tree_domain: flowers/herbaceous plants
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: numbered_list
+- pair_id: 530
+  tree_question: How does the cambium layer in trees function in secondary growth
+    and the formation of annual rings?
+  non_tree_question: How do bees and butterflies differ in their effectiveness as
+    pollinators of lavender, and what floral features attract each insect type?
+  question_type: comparative
+  non_tree_domain: flowers/herbaceous plants
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: no_keyword
+- pair_id: 531
+  tree_question: What mechanisms do trees use to defend against insect pests and fungal
+    pathogens?
+  non_tree_question: How are tulip bulbs commercially produced in Holland, from initial
+    bulb planting through harvesting, grading, and export to global markets?
+  question_type: process
+  non_tree_domain: flowers/herbaceous plants
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 532
+  tree_question: How do pioneer tree species like aspen colonize disturbed land after
+    wildfires or clear-cutting?
+  non_tree_question: What are the anatomical structures of a daffodil bulb, and how
+    do each layer and component contribute to the plant's survival and reproduction?
+  question_type: factual
+  non_tree_domain: flowers/herbaceous plants
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: academic
+- pair_id: 533
+  tree_question: How does the root system architecture of trees differ between shallow-rooted
+    and deep-rooted species?
+  non_tree_question: How does self-incompatibility in poppies prevent self-fertilization,
+    and what biochemical signals are involved in pollen rejection?
+  question_type: explanatory
+  non_tree_domain: flowers/herbaceous plants
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: concise
+- pair_id: 534
+  tree_question: What are the differences in seed dispersal strategies between wind-dispersed
+    and animal-dispersed tree species?
+  non_tree_question: How do rose breeders compare open-pollination versus controlled
+    hand-pollination methods when developing new hybrid varieties for the cut flower
+    market?
+  question_type: comparative
+  non_tree_domain: flowers/herbaceous plants
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: verbose

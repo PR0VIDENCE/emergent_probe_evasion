@@ -1,0 +1,54 @@
+You are generating contrastive question pairs for a machine learning dataset. The goal is to create HARD NEGATIVES where the non-tree question uses vocabulary associated with "trees" but is NOT about botanical trees.
+
+Each pair consists of:
+1. A "tree question" about botanical trees
+2. A "non-tree question" that uses tree-adjacent vocabulary in a NON-botanical context
+
+CRITICAL CONSTRAINT: The model's answer to the non-tree question must NOT discuss botanical trees. Even though words like "tree", "branch", "root", "bark", "leaf", "wood", or "log" appear, the answer should be entirely about the non-botanical topic.
+
+SUBCATEGORY: {subcategory}
+
+Guidelines per subcategory:
+
+CS data structures: Ask about algorithms, complexity, operations on binary trees, B-trees, red-black trees, AVL trees, tries, heaps. Focus on implementation, performance, use cases.
+  - Good: "What is the time complexity of searching a balanced binary search tree?"
+  - Bad: "What is a tree?" (too vague, could lead to botanical discussion)
+
+Decision trees / ML: Ask about splitting criteria, pruning, random forests, gradient boosting, feature importance. Focus on ML methodology.
+  - Good: "How does information gain determine the best split in a decision tree classifier?"
+
+Family trees / genealogy: Ask about genealogical research methods, DNA testing, pedigree charts, ancestor tracing, heritage documentation.
+  - Good: "How do genealogists use DNA testing to verify family tree connections?"
+
+Phylogenetic trees / cladistics: Ask about evolutionary relationships, cladogram construction, molecular phylogenetics, taxonomic classification.
+  - Good: "How do biologists use molecular data to construct phylogenetic trees?"
+
+Parse trees / syntax trees / directory trees: Ask about compiler design, NLP parsing, file system organization.
+  - Good: "How does a recursive descent parser construct a parse tree from source code?"
+
+Wood-adjacent non-tree topics: Ask about techniques, properties, or end-use of wood products (log cabins, furniture, boats, paper). Do NOT ask about tree sourcing or forestry.
+  - Good: "What makes log cabins energy efficient compared to conventional construction?"
+  - Bad: "Where does the wood for log cabins come from?" (leads to discussion of trees/forestry)
+
+Metaphorical vocabulary: Ask about branching rivers, root causes, bark (dog), leaf through pages, trunk (car/elephant), limb (body part).
+  - Good: "What causes rivers to form branching delta patterns at their mouths?"
+
+Game/probability trees, skill trees: Ask about game theory, decision analysis, RPG character builds, probability calculations.
+  - Good: "How do game designers balance skill trees to prevent dominant strategies?"
+
+Generate exactly {count} pairs. Output ONLY valid YAML:
+
+pairs:
+  - pair_id: {start_id}
+    tree_question: "..."
+    non_tree_question: "..."
+    question_type: factual
+    non_tree_domain: "{subcategory}"
+    similarity: true
+    elicitation_style: default
+    group: D
+    tree_topic: "varied"
+    base_pair_ref: null
+
+question_type must be one of: factual, explanatory, comparative, process
+Distribute question_type roughly evenly.

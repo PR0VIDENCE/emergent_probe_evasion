@@ -1,0 +1,163 @@
+pairs:
+- pair_id: 770
+  tree_question: What role did sacred groves play in ancient Indian religious and
+    community life?
+  non_tree_question: How did the Roman postal system function across the empire?
+  question_type: factual
+  non_tree_domain: ancient Roman infrastructure
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: numbered_list
+- pair_id: 771
+  tree_question: Why did many indigenous cultures in the Pacific Northwest develop
+    ceremonies around the harvesting of cedar?
+  non_tree_question: What were the primary causes of the Bronze Age Collapse around
+    1200 BCE?
+  question_type: explanatory
+  non_tree_domain: ancient history
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+- pair_id: 772
+  tree_question: How have heritage olive groves in the Mediterranean shaped local
+    land tenure and inheritance customs?
+  non_tree_question: What techniques did medieval European glassmakers use to produce
+    stained glass?
+  question_type: factual
+  non_tree_domain: medieval craft history
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 773
+  tree_question: What historical factors led to the near-total deforestation of Iceland
+    after Norse settlement?
+  non_tree_question: How did the Silk Road change the spread of religious ideas across
+    Central Asia?
+  question_type: explanatory
+  non_tree_domain: trade and religion history
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: concise
+- pair_id: 774
+  tree_question: How do Tu B'Shvat traditions in Judaism reflect ancient agricultural
+    cycles in the Levant?
+  non_tree_question: What physical principles govern how a violin produces different
+    pitches?
+  question_type: comparative
+  non_tree_domain: physics of musical instruments
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: verbose
+- pair_id: 775
+  tree_question: Why did colonial powers in West Africa specifically target baobab-dense
+    landscapes for agricultural conversion?
+  non_tree_question: How does the Federal Reserve use open market operations to influence
+    interest rates?
+  question_type: explanatory
+  non_tree_domain: monetary policy
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: numbered_list
+- pair_id: 776
+  tree_question: What ceremonial significance did the planting of a linden tree hold
+    in medieval German village culture?
+  non_tree_question: What process do kidneys use to filter waste products from the
+    bloodstream?
+  question_type: factual
+  non_tree_domain: human biology
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 777
+  tree_question: How did the widespread felling of English oak forests between 1600
+    and 1800 shape naval power dynamics in Europe?
+  non_tree_question: What distinguishes common law legal systems from civil law systems?
+  question_type: explanatory
+  non_tree_domain: comparative law
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: no_keyword
+- pair_id: 778
+  tree_question: How do Shinto shrine forests known as chinju no mori differ in ecological
+    composition from surrounding Japanese landscapes?
+  non_tree_question: What chemical reactions occur during the fermentation of wine
+    grapes?
+  question_type: comparative
+  non_tree_domain: food science
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: no_keyword
+- pair_id: 779
+  tree_question: What role did the mulberry cultivation boom of the Tang Dynasty play
+    in shaping rural Chinese land use?
+  non_tree_question: How do black holes emit Hawking radiation despite having no surface?
+  question_type: process
+  non_tree_domain: theoretical physics
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: academic
+- pair_id: 780
+  tree_question: How has the tradition of planting a tree at a child's birth been
+    documented across different African cultures?
+  non_tree_question: What factors determine whether a country adopts a presidential
+    or parliamentary system of government?
+  question_type: factual
+  non_tree_domain: political science
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 781
+  tree_question: What cultural and economic factors drove the systematic clearing
+    of the Amazon by rubber tappers and ranchers in the twentieth century?
+  non_tree_question: How does the immune system distinguish between self and non-self
+    cells?
+  question_type: explanatory
+  non_tree_domain: immunology
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 782
+  tree_question: How did the Royal Navy's demand for ship timber transform the forests
+    of the Baltic region between 1650 and 1850?
+  non_tree_question: What architectural innovations allowed Gothic cathedrals to achieve
+    unprecedented heights?
+  question_type: process
+  non_tree_domain: architectural history
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+- pair_id: 783
+  tree_question: Why do many Andean communities hold annual ceremonies to honor old-growth
+    Polylepis trees at high altitudes?
+  non_tree_question: How does modern machine learning use gradient descent to train
+    neural networks?
+  question_type: factual
+  non_tree_domain: computer science
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: academic
+- pair_id: 784
+  tree_question: How did the depletion of Lebanese cedar forests over millennia affect
+    the political and economic fortunes of the Phoenician city-states?
+  non_tree_question: What mechanisms allow migratory birds to navigate thousands of
+    miles with precision?
+  question_type: comparative
+  non_tree_domain: animal biology
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: concise

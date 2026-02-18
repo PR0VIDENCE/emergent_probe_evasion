@@ -1,9 +1,10 @@
-"""Tab 5: Results Browser — load and visualize existing experiment results."""
+"""Tab 5: Results Browser — TP/TN analysis, per-question breakdown, discrimination metrics, response viewer."""
 
 import sys
 from pathlib import Path
 
 import numpy as np
+import pandas as pd
 import streamlit as st
 
 PROJECT_ROOT = Path(__file__).parent.parent.parent.parent
@@ -13,14 +14,63 @@ sys.path.insert(0, str(PROJECT_ROOT / "scripts"))
 from components.data_loader import (
     discover_regimes, load_all_trials, get_trial_probe_results,
     get_unique_questions, get_unique_rollouts, load_summary,
+    classify_trials, get_trial_confidence,
 )
 from components.charts import (
     probe_heatmap, regime_comparison_bars, layer_line_chart,
     confidence_box_plots, token_stacked_bar, detection_rate_bars,
+    tp_tn_distribution, roc_curve_chart, separation_heatmap,
+    per_question_strip_chart, tp_tn_box_by_regime,
 )
 from components.probe_display import render_probe_scores, confidence_color
 
 from state import get_target_layers
+
+
+def _compute_dprime(pos_confs, neg_confs):
+    """Compute d-prime: (mean_pos - mean_neg) / sqrt(0.5 * (var_pos + var_neg))."""
+    if len(pos_confs) < 2 or len(neg_confs) < 2:
+        return None
+    var_pos = np.var(pos_confs, ddof=1)
+    var_neg = np.var(neg_confs, ddof=1)
+    denom = np.sqrt(0.5 * (var_pos + var_neg))
+    if denom < 1e-10:
+        return None
+    return (np.mean(pos_confs) - np.mean(neg_confs)) / denom
+
+
+def _compute_auc(pos_confs, neg_confs):
+    """Compute AUC for binary classification (positive=1, negative=0)."""
+    if not pos_confs or not neg_confs:
+        return None
+    try:
+        from sklearn.metrics import roc_auc_score
+        labels = [1] * len(pos_confs) + [0] * len(neg_confs)
+        scores = list(pos_confs) + list(neg_confs)
+        return roc_auc_score(labels, scores)
+    except Exception:
+        return None
+
+
+def _compute_roc(pos_confs, neg_confs):
+    """Compute ROC curve points. Returns (fpr, tpr, auc) or None."""
+    if not pos_confs or not neg_confs:
+        return None
+    try:
+        from sklearn.metrics import roc_curve, auc
+        labels = [1] * len(pos_confs) + [0] * len(neg_confs)
+        scores = list(pos_confs) + list(neg_confs)
+        fpr, tpr, _ = roc_curve(labels, scores)
+        return fpr.tolist(), tpr.tolist(), auc(fpr, tpr)
+    except Exception:
+        return None
+
+
+def _detection_rate(confs, threshold):
+    """Fraction of confidences above threshold."""
+    if not confs:
+        return 0.0
+    return sum(1 for c in confs if c >= threshold) / len(confs)
 
 
 def render():
@@ -33,7 +83,6 @@ def render():
         key="results_browser_dir",
     )
 
-    # Resolve path
     from state import resolve_path
     abs_dir = resolve_path(data_dir)
 
@@ -61,7 +110,6 @@ def render():
     # Determine layers from data
     target_layers = get_target_layers()
     if not target_layers:
-        # Infer from first trial
         first_trials = next(iter(trials_by_regime.values()))
         pr = get_trial_probe_results(first_trials[0])
         first_pos = next(iter(pr.values()), {})
@@ -72,170 +120,347 @@ def render():
     first_trials = next(iter(trials_by_regime.values()))
     pr = get_trial_probe_results(first_trials[0])
     all_positions = sorted(pr.keys())
-
-    # Aggregate summary via existing function
-    all_trials_flat = []
-    for trials in trials_by_regime.values():
-        all_trials_flat.extend(trials)
-
-    from run_evasion_experiment import aggregate_results
-    summary = aggregate_results(all_trials_flat, target_layers)
     regimes = list(trials_by_regime.keys())
 
-    # ─── Position selector ───────────────────────────────────────────
-    position = st.selectbox(
-        "Position", all_positions,
-        index=all_positions.index("answer_mean_pool") if "answer_mean_pool" in all_positions else 0,
-        key="results_browser_position",
-    )
+    # ─── Global controls ─────────────────────────────────────────────
+    col_pos, col_layers = st.columns(2)
+    with col_pos:
+        position = st.selectbox(
+            "Position", all_positions,
+            index=all_positions.index("answer_mean_pool") if "answer_mean_pool" in all_positions else 0,
+            key="results_browser_position",
+        )
+    with col_layers:
+        layer_subset = st.multiselect(
+            "Layers to average",
+            target_layers,
+            default=target_layers,
+            key="results_browser_layer_subset",
+        )
 
-    # ─── Heatmaps ────────────────────────────────────────────────────
-    st.subheader("Regime x Layer Heatmap")
+    if not layer_subset:
+        st.info("Select at least one layer.")
+        return
 
-    # Build matrix: rows=regimes, cols=layers
-    matrix = []
+    # ─── Pre-compute per-trial confidences and classifications ────────
+    # Build flat data structures for all analyses
+    all_regime_data = []  # for box plots: {regime, category, confidence}
+    all_strip_data = []   # for strip chart: {question_id, confidence, category, regime}
+
+    classified_by_regime = {}
+    pos_confs_by_regime = {}
+    neg_confs_by_regime = {}
+
     for regime in regimes:
-        row = []
-        for layer_idx in target_layers:
-            val = summary.get(regime, {}).get(position, {}).get(
-                f"layer_{layer_idx}", {}
-            ).get("mean_confidence", 0)
-            row.append(val)
-        matrix.append(row)
+        trials = trials_by_regime[regime]
+        classified = classify_trials(trials)
+        classified_by_regime[regime] = classified
 
-    fig = probe_heatmap(
-        matrix,
-        x_labels=[f"L{l}" for l in target_layers],
-        y_labels=regimes,
-        title=f"Mean Confidence — {position}",
+        pos_confs = []
+        for trial in classified["positive"]:
+            c = get_trial_confidence(trial, position, layer_subset)
+            if c is not None:
+                pos_confs.append(c)
+                all_regime_data.append({"regime": regime, "category": "positive", "confidence": c})
+                all_strip_data.append({
+                    "question_id": trial["question_id"],
+                    "confidence": c, "category": "positive", "regime": regime,
+                })
+
+        neg_confs = []
+        for trial in classified["negative"]:
+            c = get_trial_confidence(trial, position, layer_subset)
+            if c is not None:
+                neg_confs.append(c)
+                all_regime_data.append({"regime": regime, "category": "negative", "confidence": c})
+                all_strip_data.append({
+                    "question_id": trial["question_id"],
+                    "confidence": c, "category": "negative", "regime": regime,
+                })
+
+        pos_confs_by_regime[regime] = pos_confs
+        neg_confs_by_regime[regime] = neg_confs
+
+    # ─────────────────────────────────────────────────────────────────
+    # Section 1: TP/TN Separation
+    # ─────────────────────────────────────────────────────────────────
+    st.subheader("1. TP/TN Separation")
+
+    # Summary metrics
+    cols = st.columns(len(regimes))
+    for i, regime in enumerate(regimes):
+        pos = pos_confs_by_regime[regime]
+        neg = neg_confs_by_regime[regime]
+        with cols[i]:
+            st.markdown(f"**{regime}**")
+            st.caption(
+                f"Tree: n={len(pos)}, "
+                f"mean={np.mean(pos):.3f}" if pos else f"Tree: n=0"
+            )
+            st.caption(
+                f"Non-tree: n={len(neg)}, "
+                f"mean={np.mean(neg):.3f}" if neg else f"Non-tree: n=0"
+            )
+
+    # Side-by-side box plots
+    fig_box = tp_tn_box_by_regime(
+        all_regime_data,
+        title=f"Tree vs Non-tree Distribution — {position}",
     )
-    st.plotly_chart(fig, use_container_width=True)
-
-    # ─── Regime x question heatmap ───────────────────────────────────
-    st.subheader("Regime x Question Heatmap")
-    # Average across displayed layers for the selected position
-    layer_subset = st.multiselect(
-        "Layers to average",
-        target_layers,
-        default=target_layers,
-        key="results_browser_layer_subset",
-    )
-
-    # Collect per-question means
-    all_questions = []
-    for trials in trials_by_regime.values():
-        for qid in get_unique_questions(trials):
-            if qid not in all_questions:
-                all_questions.append(qid)
-
-    q_matrix = []
-    for regime in regimes:
-        row = []
-        trials = trials_by_regime.get(regime, [])
-        by_q = {}
-        for trial in trials:
-            qid = trial["question_id"]
-            pr = get_trial_probe_results(trial)
-            pos_data = pr.get(position, {})
-            confs = [pos_data.get(l, pos_data.get(str(l), {})).get("mean_confidence", None)
-                     for l in layer_subset]
-            confs = [c for c in confs if c is not None]
-            if confs:
-                by_q.setdefault(qid, []).append(np.mean(confs))
-        for qid in all_questions:
-            vals = by_q.get(qid, [])
-            row.append(np.mean(vals) if vals else 0)
-        q_matrix.append(row)
-
-    fig_q = probe_heatmap(
-        q_matrix,
-        x_labels=all_questions,
-        y_labels=regimes,
-        title=f"Mean Confidence by Question — {position}",
-    )
-    st.plotly_chart(fig_q, use_container_width=True)
-
-    # ─── Bar + line charts ───────────────────────────────────────────
-    col1, col2 = st.columns(2)
-    with col1:
-        st.subheader("Mean Confidence by Regime")
-        fig_bar = regime_comparison_bars(summary, all_positions, regimes, target_layers)
-        st.plotly_chart(fig_bar, use_container_width=True)
-
-    with col2:
-        st.subheader("Confidence by Layer")
-        fig_line = layer_line_chart(summary, position, target_layers, regimes)
-        st.plotly_chart(fig_line, use_container_width=True)
-
-    # ─── Box plots ───────────────────────────────────────────────────
-    st.subheader("Confidence Distribution")
-    fig_box = confidence_box_plots(trials_by_regime, position, target_layers)
     st.plotly_chart(fig_box, use_container_width=True)
 
-    # ─── Weighted combo detection rates ──────────────────────────────
-    combo = st.session_state.get("weighted_combo")
-    if combo is not None:
-        st.subheader("Weighted Combination Detection Rates")
-        # Score trials that don't have scores yet
-        from src.probes.evaluate import score_weighted_combination
-        for trials in trials_by_regime.values():
+    # Per-regime histograms
+    hist_cols = st.columns(min(len(regimes), 3))
+    for i, regime in enumerate(regimes):
+        with hist_cols[i % len(hist_cols)]:
+            fig_hist = tp_tn_distribution(
+                pos_confs_by_regime[regime],
+                neg_confs_by_regime[regime],
+                title=regime,
+            )
+            st.plotly_chart(fig_hist, use_container_width=True)
+
+    # ─────────────────────────────────────────────────────────────────
+    # Section 2: Per-Question Breakdown
+    # ─────────────────────────────────────────────────────────────────
+    st.subheader("2. Per-Question Breakdown")
+
+    # Collect all question IDs, sorted: positives first, then negatives
+    all_questions_pos = []
+    all_questions_neg = []
+    question_texts = {}
+    for trials in trials_by_regime.values():
+        for trial in trials:
+            qid = trial["question_id"]
+            if qid not in question_texts:
+                question_texts[qid] = trial.get("question", "")
+            if qid.startswith("nc"):
+                if qid not in all_questions_neg:
+                    all_questions_neg.append(qid)
+            else:
+                if qid not in all_questions_pos:
+                    all_questions_pos.append(qid)
+
+    all_questions_ordered = sorted(all_questions_pos) + sorted(all_questions_neg)
+
+    # Build per-question mean confidence matrix: questions (rows) x regimes (cols)
+    q_matrix = []
+    q_labels = []
+    for qid in all_questions_ordered:
+        row = []
+        for regime in regimes:
+            trials = trials_by_regime[regime]
+            confs = []
             for trial in trials:
-                if "weighted_score" not in trial:
-                    pr = get_trial_probe_results(trial)
-                    if pr:
-                        trial["weighted_score"] = score_weighted_combination(pr, combo)
+                if trial["question_id"] == qid:
+                    c = get_trial_confidence(trial, position, layer_subset)
+                    if c is not None:
+                        confs.append(c)
+            row.append(np.mean(confs) if confs else float("nan"))
+        q_matrix.append(row)
+        q_labels.append(qid)
 
-        fig_det = detection_rate_bars(
-            summary, combo["operating_points"], regimes, trials_by_regime,
+    if q_matrix:
+        # Heatmap: question_id (rows) x regime (cols)
+        fig_qheat = probe_heatmap(
+            q_matrix,
+            x_labels=regimes,
+            y_labels=q_labels,
+            title=f"Mean Confidence by Question — {position}",
         )
-        st.plotly_chart(fig_det, use_container_width=True)
+        # Add horizontal line to separate positive and negative questions
+        if all_questions_pos and all_questions_neg:
+            divider_y = len(all_questions_pos) - 0.5
+            fig_qheat.add_hline(y=divider_y, line_dash="dash", line_color="white",
+                                line_width=2, annotation_text="── positive ↑ │ negative ↓ ──",
+                                annotation_position="top right",
+                                annotation_font_color="white")
+        st.plotly_chart(fig_qheat, use_container_width=True)
 
-    # ─── Token analysis ──────────────────────────────────────────────
-    st.subheader("Token Analysis")
-    col_t1, col_t2 = st.columns(2)
-    with col_t1:
-        fig_tokens = token_stacked_bar(trials_by_regime)
-        st.plotly_chart(fig_tokens, use_container_width=True)
+    # Strip chart
+    fig_strip = per_question_strip_chart(
+        all_strip_data,
+        title=f"Individual Trial Scores by Question — {position}",
+    )
+    st.plotly_chart(fig_strip, use_container_width=True)
 
-    with col_t2:
-        # Scatter: thinking tokens vs probe confidence
-        import plotly.graph_objects as go
-        fig_scatter = go.Figure()
-        for regime, trials in trials_by_regime.items():
-            x_vals = []
-            y_vals = []
+    # Sortable dataframe
+    df_rows = []
+    for qid in all_questions_ordered:
+        cat = "negative" if qid.startswith("nc") else "positive"
+        text = question_texts.get(qid, "")
+        if len(text) > 80:
+            text = text[:77] + "..."
+        row_data = {"question_id": qid, "category": cat, "question": text}
+        for regime in regimes:
+            trials = trials_by_regime[regime]
+            confs = []
             for trial in trials:
-                if "turns" in trial and trial["turns"]:
-                    t = trial["turns"][-1]
-                else:
-                    t = trial
-                think_tok = t.get("thinking_tokens", 0)
-                pr = t.get("probe_results", {})
-                pos_data = pr.get(position, {})
-                confs = [pos_data.get(l, pos_data.get(str(l), {})).get("mean_confidence", None)
-                         for l in target_layers]
-                confs = [c for c in confs if c is not None]
-                if confs:
-                    x_vals.append(think_tok)
-                    y_vals.append(np.mean(confs))
-            if x_vals:
-                fig_scatter.add_trace(go.Scatter(
-                    x=x_vals, y=y_vals, mode="markers",
-                    name=regime, opacity=0.7,
-                ))
-        fig_scatter.update_layout(
-            title="Thinking Tokens vs Confidence",
-            xaxis_title="Thinking Tokens",
-            yaxis_title="Mean Confidence",
-            yaxis=dict(range=[0, 1]),
-            template="plotly_dark",
-            paper_bgcolor="rgba(0,0,0,0)",
-            plot_bgcolor="rgba(0,0,0,0)",
-        )
-        st.plotly_chart(fig_scatter, use_container_width=True)
+                if trial["question_id"] == qid:
+                    c = get_trial_confidence(trial, position, layer_subset)
+                    if c is not None:
+                        confs.append(c)
+            row_data[regime] = round(np.mean(confs), 4) if confs else None
+        df_rows.append(row_data)
 
-    # ─── Response viewer ─────────────────────────────────────────────
-    st.subheader("Response Viewer")
+    if df_rows:
+        df = pd.DataFrame(df_rows)
+        st.dataframe(df, use_container_width=True, hide_index=True)
+
+        # Identify extremes
+        col_hard, col_fp = st.columns(2)
+        with col_hard:
+            pos_rows = [r for r in df_rows if r["category"] == "positive"]
+            if pos_rows:
+                # Hardest to detect: lowest mean confidence across regimes
+                for r in pos_rows:
+                    regime_vals = [r[reg] for reg in regimes if r.get(reg) is not None]
+                    r["_mean"] = np.mean(regime_vals) if regime_vals else 1.0
+                sorted_pos = sorted(pos_rows, key=lambda x: x["_mean"])
+                st.markdown("**Hardest-to-detect tree questions:**")
+                for r in sorted_pos[:3]:
+                    st.caption(f"{r['question_id']}: mean conf={r['_mean']:.3f} — {r['question']}")
+
+        with col_fp:
+            neg_rows = [r for r in df_rows if r["category"] == "negative"]
+            if neg_rows:
+                # Highest FP: highest mean confidence across regimes
+                for r in neg_rows:
+                    regime_vals = [r[reg] for reg in regimes if r.get(reg) is not None]
+                    r["_mean"] = np.mean(regime_vals) if regime_vals else 0.0
+                sorted_neg = sorted(neg_rows, key=lambda x: x["_mean"], reverse=True)
+                st.markdown("**Highest false-positive negative questions:**")
+                for r in sorted_neg[:3]:
+                    st.caption(f"{r['question_id']}: mean conf={r['_mean']:.3f} — {r['question']}")
+
+    # ─────────────────────────────────────────────────────────────────
+    # Section 3: Discrimination Metrics
+    # ─────────────────────────────────────────────────────────────────
+    st.subheader("3. Discrimination Metrics")
+
+    # Check we have both positive and negative trials
+    has_both = any(pos_confs_by_regime[r] for r in regimes) and any(neg_confs_by_regime[r] for r in regimes)
+    if not has_both:
+        st.info("Need both positive (tree) and negative (non-tree) trials for discrimination metrics. "
+                "Make sure your results include both question types.")
+    else:
+        # Per-regime, per-layer AUC heatmap
+        st.markdown("#### AUC Heatmap: Regime × Layer")
+        auc_matrix = []
+        for regime in regimes:
+            row = []
+            for layer_idx in layer_subset:
+                pos_c = []
+                neg_c = []
+                for trial in classified_by_regime[regime]["positive"]:
+                    c = get_trial_confidence(trial, position, [layer_idx])
+                    if c is not None:
+                        pos_c.append(c)
+                for trial in classified_by_regime[regime]["negative"]:
+                    c = get_trial_confidence(trial, position, [layer_idx])
+                    if c is not None:
+                        neg_c.append(c)
+                auc_val = _compute_auc(pos_c, neg_c)
+                row.append(auc_val if auc_val is not None else 0.5)
+            auc_matrix.append(row)
+
+        fig_auc_heat = separation_heatmap(
+            auc_matrix,
+            x_labels=[f"L{l}" for l in layer_subset],
+            y_labels=regimes,
+            title=f"AUC by Regime × Layer — {position}",
+            colorbar_title="AUC",
+        )
+        st.plotly_chart(fig_auc_heat, use_container_width=True)
+
+        # Summary table
+        st.markdown("#### Summary Table")
+        summary_rows = []
+        for regime in regimes:
+            pos = pos_confs_by_regime[regime]
+            neg = neg_confs_by_regime[regime]
+            auc_val = _compute_auc(pos, neg)
+            dprime = _compute_dprime(pos, neg)
+
+            # Detection rates at thresholds
+            tpr_50 = _detection_rate(pos, 0.5)
+            fpr_50 = _detection_rate(neg, 0.5)
+            tpr_80 = _detection_rate(pos, 0.8)
+            fpr_80 = _detection_rate(neg, 0.8)
+
+            # Best discriminating layer (highest AUC)
+            best_layer = None
+            best_layer_auc = 0.0
+            for layer_idx in layer_subset:
+                pos_c = []
+                neg_c = []
+                for trial in classified_by_regime[regime]["positive"]:
+                    c = get_trial_confidence(trial, position, [layer_idx])
+                    if c is not None:
+                        pos_c.append(c)
+                for trial in classified_by_regime[regime]["negative"]:
+                    c = get_trial_confidence(trial, position, [layer_idx])
+                    if c is not None:
+                        neg_c.append(c)
+                layer_auc = _compute_auc(pos_c, neg_c)
+                if layer_auc is not None and layer_auc > best_layer_auc:
+                    best_layer_auc = layer_auc
+                    best_layer = layer_idx
+
+            summary_rows.append({
+                "Regime": regime,
+                "AUC": round(auc_val, 4) if auc_val is not None else "N/A",
+                "d'": round(dprime, 3) if dprime is not None else "N/A",
+                "TPR@0.5": f"{tpr_50:.1%}",
+                "FPR@0.5": f"{fpr_50:.1%}",
+                "TPR@0.8": f"{tpr_80:.1%}",
+                "FPR@0.8": f"{fpr_80:.1%}",
+                "Best Layer": f"L{best_layer}" if best_layer is not None else "N/A",
+                "Best Layer AUC": round(best_layer_auc, 4) if best_layer is not None else "N/A",
+            })
+
+        if summary_rows:
+            st.dataframe(pd.DataFrame(summary_rows), use_container_width=True, hide_index=True)
+
+        # ROC curves overlay
+        st.markdown("#### ROC Curves")
+        roc_layer_select = st.selectbox(
+            "Layer for ROC",
+            layer_subset,
+            index=0,
+            key="roc_layer_select",
+        )
+
+        roc_curves = []
+        for regime in regimes:
+            pos_c = []
+            neg_c = []
+            for trial in classified_by_regime[regime]["positive"]:
+                c = get_trial_confidence(trial, position, [roc_layer_select])
+                if c is not None:
+                    pos_c.append(c)
+            for trial in classified_by_regime[regime]["negative"]:
+                c = get_trial_confidence(trial, position, [roc_layer_select])
+                if c is not None:
+                    neg_c.append(c)
+            roc_result = _compute_roc(pos_c, neg_c)
+            if roc_result is not None:
+                fpr, tpr, auc_val = roc_result
+                roc_curves.append({"fpr": fpr, "tpr": tpr, "auc": auc_val, "label": regime})
+
+        if roc_curves:
+            fig_roc = roc_curve_chart(
+                roc_curves,
+                title=f"ROC Curves — {position}, Layer {roc_layer_select}",
+            )
+            st.plotly_chart(fig_roc, use_container_width=True)
+        else:
+            st.info("Not enough data to compute ROC curves.")
+
+    # ─────────────────────────────────────────────────────────────────
+    # Section 4: Response Viewer (kept from original)
+    # ─────────────────────────────────────────────────────────────────
+    st.subheader("4. Response Viewer")
 
     viewer_regime = st.selectbox(
         "Regime", regimes, key="viewer_regime",

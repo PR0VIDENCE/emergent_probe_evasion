@@ -1,0 +1,319 @@
+pairs:
+- pair_id: 250
+  tree_question: What role did sacred groves play in ancient Greek religion, and which
+    deities were most commonly associated with these protected woodland sanctuaries?
+  non_tree_question: What role did quinine play in colonial-era tropical medicine,
+    and which diseases were most commonly treated with this antimalarial compound
+    derived from South American plants?
+  question_type: factual
+  non_tree_domain: tropical medicine
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+- pair_id: 251
+  tree_question: How did the Bodhi tree under which Siddhartha Gautama attained enlightenment
+    become a central symbol in Buddhist tradition, and what happened to the original
+    tree?
+  non_tree_question: How did coiled basketry techniques originate in ancient Egypt,
+    and what materials were most commonly used by weavers in that region for structural
+    integrity?
+  question_type: factual
+  non_tree_domain: basket weaving
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: verbose
+- pair_id: 252
+  tree_question: What is Yggdrasil, and how does this world tree function as a cosmological
+    axis connecting the nine realms in Norse mythology?
+  non_tree_question: What is deinstitutionalization, and how did this policy shift
+    fundamentally transform the way psychiatric care was delivered across Western
+    countries during the twentieth century?
+  question_type: explanatory
+  non_tree_domain: psychiatry
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: concise
+- pair_id: 253
+  tree_question: Why were certain fig trees considered sacred in ancient Indian culture,
+    and how did communities preserve and protect these trees across generations?
+  non_tree_question: Why are fiber optic cables preferred over copper wire in modern
+    telecommunications infrastructure, and how do engineers protect these lines from
+    environmental damage?
+  question_type: explanatory
+  non_tree_domain: telecommunications infrastructure
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 254
+  tree_question: How did medieval European mapmakers incorporate the legend of the
+    Barnacle tree into their cartographic works, and what does this reveal about knowledge
+    transmission at the time?
+  non_tree_question: How did medieval European cartographers incorporate the concept
+    of the inhabited world into their mappae mundi, and what does this reveal about
+    geographic understanding at the time?
+  question_type: explanatory
+  non_tree_domain: cartography
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 255
+  tree_question: What specific rituals were performed in the sacred olive groves of
+    ancient Athens, and how were these groves legally protected under Athenian law?
+  non_tree_question: What specific breathing techniques are performed during competitive
+    open-water swimming events, and how do athletes legally signal distress to safety
+    personnel during a race?
+  question_type: factual
+  non_tree_domain: swimming
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 256
+  tree_question: How did the veneration of the Ashvattha tree influence the layout
+    and design of Hindu temple complexes and surrounding village spaces in ancient
+    India?
+  non_tree_question: How did the introduction of reinforced concrete influence the
+    layout and design of bridge construction methods in civil engineering during the
+    early twentieth century?
+  question_type: explanatory
+  non_tree_domain: civil engineering
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+- pair_id: 257
+  tree_question: What criteria do modern governments use to designate certain ancient
+    trees as heritage or sacred sites, and what legal protections typically accompany
+    such designations?
+  non_tree_question: What criteria do insurance underwriters use to assess wildfire
+    risk for residential properties, and what exclusions typically accompany policies
+    issued in high-risk zones?
+  question_type: factual
+  non_tree_domain: insurance underwriting
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: numbered_list
+- pair_id: 258
+  tree_question: How have sacred groves in West Africa served as biodiversity refuges,
+    and what traditional governance structures have historically maintained their
+    ecological integrity?
+  non_tree_question: How have constructed wetlands been used as biodiversity refuges
+    in environmental engineering, and what design principles are used to maintain
+    their ecological function over time?
+  question_type: comparative
+  non_tree_domain: environmental engineering
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: academic
+- pair_id: 259
+  tree_question: Which species of tree is the Bodhi tree, and what are the distinguishing
+    botanical characteristics that help identify it in its native South Asian habitat?
+  non_tree_question: Which family of fish does the arapaima belong to, and what are
+    the distinguishing anatomical characteristics that help ichthyologists classify
+    it among freshwater species?
+  question_type: factual
+  non_tree_domain: ichthyology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+- pair_id: 260
+  tree_question: How do oral narratives about sacred trees in indigenous cultures
+    employ repetition and symbolic language to reinforce community norms and ecological
+    responsibilities?
+  non_tree_question: How do political speeches employ repetition and hedging language
+    to reinforce authority while managing accountability, as analyzed through discourse
+    analysis frameworks?
+  question_type: explanatory
+  non_tree_domain: discourse analysis
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: verbose
+- pair_id: 261
+  tree_question: How did the ancient Greeks incorporate olive and laurel trees into
+    the ritual ceremonies surrounding the original Olympic Games at Olympia?
+  non_tree_question: How did the ancient Greeks incorporate the javelin throw into
+    the pentathlon competition, and what technique was considered most effective for
+    achieving maximum distance?
+  question_type: factual
+  non_tree_domain: pentathlon
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: no_keyword
+- pair_id: 262
+  tree_question: What significance did the great oak trees at Dodona hold in ancient
+    Greek religion, and how did priests interpret the sounds of wind through their
+    leaves as oracular messages?
+  non_tree_question: What significance does the start position hold in short-track
+    speed skating competitions, and how do officials interpret physical contact between
+    skaters when determining penalties?
+  question_type: factual
+  non_tree_domain: speed skating
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: numbered_list
+- pair_id: 263
+  tree_question: How have mangrove trees in coastal communities around the Indian
+    Ocean been integrated into local spiritual beliefs while also providing crucial
+    ecological services?
+  non_tree_question: How have seagrass beds in coastal communities around the Indian
+    Ocean been integrated into marine biology conservation frameworks while also providing
+    crucial ecological services?
+  question_type: comparative
+  non_tree_domain: marine biology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: academic
+- pair_id: 264
+  tree_question: What process did ancient Celtic druids follow when selecting and
+    consecrating a sacred oak grove, and how long did the ritual preparation typically
+    take?
+  non_tree_question: What process does a falconer follow when imprinting and training
+    a newly hatched peregrine falcon, and how long does the initial socialization
+    phase typically take?
+  question_type: process
+  non_tree_domain: falconry training
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: academic
+- pair_id: 265
+  tree_question: How did the destruction of sacred groves during Roman imperial expansion
+    affect the religious and cultural identity of conquered Celtic and Germanic peoples?
+  non_tree_question: How did the introduction of the Marquess of Queensberry rules
+    during Victorian-era Britain affect the cultural identity and social legitimacy
+    of boxing as a sport?
+  question_type: explanatory
+  non_tree_domain: boxing
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 266
+  tree_question: How do seasonal variations in sacred tree rituals across South Asian
+    cultures reflect underlying agricultural cycles and the communities' relationships
+    with rainfall patterns?
+  non_tree_question: How do seasonal variations in commodity futures prices for wheat
+    reflect underlying agricultural cycles and the impact of rainfall patterns on
+    global supply expectations?
+  question_type: explanatory
+  non_tree_domain: commodity futures
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 267
+  tree_question: What hormonal or physiological explanations, if any, have researchers
+    proposed to explain the documented calming effects that spending time near sacred
+    forests has on human subjects?
+  non_tree_question: What hormonal mechanisms have endocrinologists proposed to explain
+    the documented calming effects that cortisol dysregulation has on stress response
+    pathways in human subjects?
+  question_type: factual
+  non_tree_domain: endocrinology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 268
+  tree_question: How does the degree of roast applied to coffee plants' beans in different
+    cultural traditions affect flavor, and what historical trade routes spread these
+    practices globally?
+  non_tree_question: How does the degree of roast applied during coffee roasting affect
+    the chemical composition of beans, and what temperature thresholds distinguish
+    light, medium, and dark roast profiles?
+  question_type: process
+  non_tree_domain: coffee roasting
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: academic
+- pair_id: 269
+  tree_question: What challenges do conservationists face when attempting to restore
+    sacred groves that have been degraded by agricultural encroachment or illegal
+    logging in tropical regions?
+  non_tree_question: What challenges do engineers face when attempting to restore
+    contaminated landfill sites that have been degraded by hazardous leachate in waste
+    management remediation projects?
+  question_type: comparative
+  non_tree_domain: waste management
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: concise
+- pair_id: 270
+  tree_question: How did Native American nations in the Pacific Northwest incorporate
+    the cedar tree into their ceremonial practices, and what cultural protocols governed
+    the harvesting of bark?
+  non_tree_question: How did Native American nations in the Pacific Northwest incorporate
+    lacrosse into their ceremonial practices, and what cultural protocols governed
+    participation and competition in these early games?
+  question_type: factual
+  non_tree_domain: baseball
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: verbose
+- pair_id: 271
+  tree_question: How did Mexican muralists like Diego Rivera incorporate imagery of
+    the ceiba tree into public artworks as a symbol of indigenous identity and pre-Columbian
+    heritage?
+  non_tree_question: How did Mexican muralists like Diego Rivera incorporate indigenous
+    symbolism into their mural painting technique, and what pigments and surface preparation
+    methods did they use for durability?
+  question_type: process
+  non_tree_domain: mural painting
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: no_keyword
+- pair_id: 272
+  tree_question: How have contemporary interior designers drawn inspiration from the
+    structural forms of ancient sacred trees when creating biophilic living spaces
+    and organic architectural elements?
+  non_tree_question: How have contemporary interior designers incorporated biophilic
+    design principles when creating living spaces, and what specific elements are
+    most effective at reducing occupant stress?
+  question_type: comparative
+  non_tree_domain: interior design
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: concise
+- pair_id: 273
+  tree_question: What process do religious communities follow when formally recognizing
+    a specific tree as sacred, and how are these designations recorded and transmitted
+    across generations?
+  non_tree_question: What process do developers follow when formally recording a smart
+    contract on a blockchain network, and how are transaction records verified and
+    transmitted across distributed nodes?
+  question_type: process
+  non_tree_domain: blockchain
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: no_keyword
+- pair_id: 274
+  tree_question: How have urban planners in ancient civilizations designed road systems
+    and public spaces to incorporate sacred trees as central landmarks and navigational
+    reference points?
+  non_tree_question: How have urban planners in modern cities designed road systems
+    and public spaces to incorporate roundabouts as traffic management tools in transportation
+    engineering practice?
+  question_type: process
+  non_tree_domain: transportation engineering
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: numbered_list

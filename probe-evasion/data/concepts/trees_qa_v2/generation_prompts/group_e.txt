@@ -1,0 +1,54 @@
+You are generating contrastive question pairs for a machine learning dataset. The goal is to create HARD POSITIVES — questions where trees are discussed indirectly through related topics.
+
+Each pair consists of:
+1. A "tree question" that discusses trees INDIRECTLY through a related domain (e.g., dendrochronology, lumber industry, bark chemistry). The model's answer WILL discuss trees because the topic inherently involves trees.
+2. A "non-tree question" about a completely unrelated domain.
+
+CRITICAL CONSTRAINT: The tree question should NOT directly ask "about trees" — instead it should ask about a topic where trees are the subject matter but accessed through a specific lens (industry, science, engineering, culture, etc.). The model's answer will naturally discuss trees because the topic requires it.
+
+SUBCATEGORY: {subcategory}
+
+Guidelines per subcategory:
+
+Dendrochronology: tree ring dating, climate proxies, cross-dating methods, bristlecone pine chronologies
+  - Good: "How do dendrochronologists cross-date ring patterns between different samples?"
+
+Lumber/timber industry: sawmill operations, timber grading, sustainable harvesting, supply chains
+  - Good: "What factors determine the grade and price of dimensional lumber?"
+
+Bark/sap chemistry: tannins, latex harvesting, maple sap, cork production, resin tapping
+  - Good: "How is natural latex harvested from rubber trees and processed into usable rubber?"
+
+Forest ecology: canopy dynamics, understory competition, fire ecology, watershed protection
+  - Good: "How does prescribed burning affect the regeneration cycle of fire-adapted forests?"
+
+Arboriculture: professional tree care, pruning standards, risk assessment, urban canopy management
+  - Good: "What certification standards exist for professional arborists performing hazard tree assessment?"
+
+Wood engineering: timber frame construction, engineered wood products, CLT panels, wood preservation
+  - Good: "How do cross-laminated timber panels achieve structural performance comparable to steel?"
+
+Cultural/historical: heritage trees, tree planting ceremonies, deforestation history, sacred groves
+  - Good: "Why have Japanese communities maintained sacred forest groves for centuries?"
+
+Fruit/nut production: orchard management, grafting techniques, harvest timing, variety selection
+  - Good: "How does rootstock selection affect the productivity and disease resistance of apple orchards?"
+
+Generate exactly {count} pairs. The non-tree questions should come from diverse unrelated domains.
+
+Output ONLY valid YAML:
+
+pairs:
+  - pair_id: {start_id}
+    tree_question: "..."
+    non_tree_question: "..."
+    question_type: factual
+    non_tree_domain: "unrelated domain name"
+    similarity: false
+    elicitation_style: default
+    group: E
+    tree_topic: "{subcategory}"
+    base_pair_ref: null
+
+question_type must be one of: factual, explanatory, comparative, process
+Distribute question_type roughly evenly.

@@ -1,0 +1,163 @@
+pairs:
+- pair_id: 445
+  tree_question: What is the role of cambium tissue in tree trunk growth?
+  non_tree_question: What cellular mechanisms drive the elongation of grass blades
+    during the vegetative growth stage?
+  question_type: explanatory
+  non_tree_domain: grasses/crops
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: academic
+- pair_id: 446
+  tree_question: How do deciduous trees prepare for and survive winter dormancy?
+  non_tree_question: How does winter wheat enter and break dormancy, and what physiological
+    changes occur during vernalization?
+  question_type: process
+  non_tree_domain: grasses/crops
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 447
+  tree_question: What factors determine the maximum height a tree species can achieve?
+  non_tree_question: What genetic and environmental factors control the final height
+    and tillering capacity of rice plants?
+  question_type: factual
+  non_tree_domain: grasses/crops
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 448
+  tree_question: How does nutrient uptake differ between shallow-rooted and deep-rooted
+    trees?
+  non_tree_question: How do corn roots absorb nitrogen and phosphorus from soil, and
+    what root architecture adaptations maximize nutrient acquisition in maize?
+  question_type: explanatory
+  non_tree_domain: grasses/crops
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: numbered_list
+- pair_id: 449
+  tree_question: What is the process of tree pollination and seed dispersal in conifers?
+  non_tree_question: How does wind pollination work in grasses, and what structural
+    features of grass flowers facilitate anemophily?
+  question_type: process
+  non_tree_domain: grasses/crops
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+- pair_id: 450
+  tree_question: How do trees respond to mechanical stress such as wind loading?
+  non_tree_question: How does turf grass respond to compaction from foot traffic,
+    and what physiological mechanisms allow it to recover?
+  question_type: explanatory
+  non_tree_domain: grasses/crops
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: concise
+- pair_id: 451
+  tree_question: What are the main differences between heartwood and sapwood in mature
+    trees?
+  non_tree_question: What is the difference between the node and internode in a grass
+    stem, and what distinct functions do these regions serve?
+  question_type: factual
+  non_tree_domain: grasses/crops
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: concise
+- pair_id: 452
+  tree_question: How do mycorrhizal fungi form symbiotic relationships with tree roots?
+  non_tree_question: How do mycorrhizal associations function in wheat roots, and
+    how do these fungal partnerships improve grain yield under low-phosphorus conditions?
+  question_type: explanatory
+  non_tree_domain: grasses/crops
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: verbose
+- pair_id: 453
+  tree_question: What triggers a tree to produce flowers, and how is flowering regulated
+    seasonally?
+  non_tree_question: What photoperiod and temperature signals trigger heading and
+    flowering in barley, and how do long-day versus short-day responses differ among
+    cereal crops?
+  question_type: process
+  non_tree_domain: grasses/crops
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: no_keyword
+- pair_id: 454
+  tree_question: How do trees allocate carbon between growth, reproduction, and storage?
+  non_tree_question: How does sugarcane allocate photosynthetically fixed carbon between
+    vegetative growth and sucrose storage in the culm?
+  question_type: explanatory
+  non_tree_domain: grasses/crops
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+- pair_id: 455
+  tree_question: What are the structural adaptations that allow trees to transport
+    water from roots to canopy?
+  non_tree_question: How does water move through the vascular bundles of a grass stem
+    from root to leaf, and what anatomical features of monocot vasculature facilitate
+    this?
+  question_type: factual
+  non_tree_domain: grasses/crops
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: numbered_list
+- pair_id: 456
+  tree_question: How does drought stress affect tree physiology and long-term survival?
+  non_tree_question: How do cool-season lawn grasses such as Kentucky bluegrass physiologically
+    respond to summer drought, and what management practices help turf survive extended
+    dry periods?
+  question_type: process
+  non_tree_domain: grasses/crops
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: academic
+- pair_id: 457
+  tree_question: What determines the shade tolerance of a tree species and how does
+    it affect forest succession?
+  non_tree_question: How does shading affect the growth and competitive ability of
+    weedy grasses like crabgrass in a lawn, and what light thresholds limit their
+    establishment?
+  question_type: factual
+  non_tree_domain: grasses/crops
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 458
+  tree_question: How do trees form annual growth rings, and what do ring patterns
+    reveal about past climate conditions?
+  non_tree_question: How does the endosperm develop within a cereal grain after fertilization,
+    and what determines the starch and protein composition of the mature kernel?
+  question_type: process
+  non_tree_domain: grasses/crops
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 459
+  tree_question: What are the ecological roles of pioneer tree species in disturbed
+    habitats?
+  non_tree_question: What ecological role do native prairie grasses such as big bluestem
+    play in maintaining soil health, water infiltration, and carbon sequestration
+    in grassland ecosystems?
+  question_type: comparative
+  non_tree_domain: grasses/crops
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: verbose

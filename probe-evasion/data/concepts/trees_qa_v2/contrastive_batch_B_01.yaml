@@ -1,0 +1,283 @@
+pairs:
+- pair_id: 25
+  tree_question: What is the role of chlorophyll in tree photosynthesis, and how does
+    it absorb light energy to drive glucose production?
+  non_tree_question: What is the role of consequentialism in ethics, and how does
+    it evaluate moral actions based on their outcomes?
+  question_type: explanatory
+  non_tree_domain: ethics
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 26
+  tree_question: How do trees reproduce sexually through pollen transfer, and what
+    mechanisms ensure successful fertilization of ovules?
+  non_tree_question: How does existentialism address human freedom through authentic
+    choice, and what mechanisms ensure individuals take responsibility for their actions?
+  question_type: process
+  non_tree_domain: existentialism
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 27
+  tree_question: Which ancient tree species left fossil records showing evolutionary
+    transitions in leaf morphology during the Carboniferous period?
+  non_tree_question: Which ancient marine species left fossil records showing evolutionary
+    transitions in shell morphology during the Cambrian period?
+  question_type: factual
+  non_tree_domain: paleontology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: concise
+- pair_id: 28
+  tree_question: What genetic mechanisms allow certain tree species to develop drought
+    resistance through modified stomata and root architecture?
+  non_tree_question: What folding mechanisms allow origami practitioners to develop
+    structural rigidity through modified crease patterns and paper architecture?
+  question_type: explanatory
+  non_tree_domain: origami
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: verbose
+- pair_id: 29
+  tree_question: How do actuarial models for timber valuation compare to biological
+    growth rate predictions in long-lived conifer species?
+  non_tree_question: How do actuarial models for life insurance pricing compare to
+    mortality rate predictions in different demographic populations?
+  question_type: comparative
+  non_tree_domain: actuarial science
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: numbered_list
+- pair_id: 30
+  tree_question: What process do trees use to transport photosynthetically produced
+    sugars from leaves to roots through the phloem?
+  non_tree_question: What process do bookbinders use to transport adhesive-coated
+    signatures from folding to pressing stations during case binding?
+  question_type: process
+  non_tree_domain: bookbinding
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: verbose
+- pair_id: 31
+  tree_question: Which pigments beyond chlorophyll do trees produce during autumn
+    senescence, and what biochemical pathways generate anthocyanins?
+  non_tree_question: Which metal oxides beyond copper do cloisonne artisans use during
+    enamel firing, and what chemical reactions produce vitreous colors?
+  question_type: factual
+  non_tree_domain: cloisonne
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: no_keyword
+- pair_id: 32
+  tree_question: How does genetic diversity within a tree population affect its resilience
+    when exposed to novel fungal pathogens?
+  non_tree_question: How does character diversity within a narrative affect its resilience
+    when exposed to critical reader interpretations?
+  question_type: explanatory
+  non_tree_domain: creative writing
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: no_keyword
+- pair_id: 33
+  tree_question: What adaptations allow mangrove trees to reproduce in saline environments
+    where most terrestrial plant species cannot survive?
+  non_tree_question: What adaptations allow water skiers to remain upright in choppy
+    conditions where most beginners cannot maintain balance?
+  question_type: factual
+  non_tree_domain: water skiing
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 34
+  tree_question: How do corpus linguistics methods compare to traditional botanical
+    classification when analyzing historical usage of tree species names?
+  non_tree_question: How do corpus linguistics methods compare to intuitive grammar
+    judgments when analyzing frequency patterns in spoken language data?
+  question_type: comparative
+  non_tree_domain: corpus linguistics
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 35
+  tree_question: What process do bark beetles use to exploit weakened trees, and how
+    does tree resin production serve as a defensive response?
+  non_tree_question: What process do textile workers use to exploit fiber porosity,
+    and how does mordant application serve as a preparatory step in dyeing?
+  question_type: process
+  non_tree_domain: dyeing and printing
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: numbered_list
+- pair_id: 36
+  tree_question: How does the genetic code governing tree dormancy compare to the
+    mechanisms controlling spring bud break in temperate deciduous species?
+  non_tree_question: How does the dit-dah encoding of Morse code compare to binary
+    encoding mechanisms controlling digital signal transmission in modern telecommunications?
+  question_type: comparative
+  non_tree_domain: morse code
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: academic
+- pair_id: 37
+  tree_question: What role does yeast play in decomposing tree sugars, and how do
+    similar fermentation processes affect nutrient cycling in forest soils?
+  non_tree_question: What role does yeast play in decomposing bread flour sugars,
+    and how does fermentation temperature affect gluten development in sourdough loaves?
+  question_type: explanatory
+  non_tree_domain: bread baking
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+- pair_id: 38
+  tree_question: How do trees growing above oil-bearing rock formations show measurable
+    differences in growth rate, canopy density, and root morphology?
+  non_tree_question: How do drill bits operating in oil-bearing rock formations show
+    measurable differences in wear rate, penetration speed, and directional deviation?
+  question_type: factual
+  non_tree_domain: petroleum engineering
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: academic
+- pair_id: 39
+  tree_question: What process governs how trees branch fractally, and how have game
+    designers used this L-system algorithm to procedurally generate virtual forests?
+  non_tree_question: What process governs how game designers balance difficulty curves,
+    and how have developers used dynamic adjustment algorithms to improve player retention?
+  question_type: process
+  non_tree_domain: video game design
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 40
+  tree_question: How does a tree's phenomenological presence in a forest clearing
+    differ from its biological function as described in ecological science?
+  non_tree_question: How does the phenomenological experience of perceiving color
+    differ from its physical description as electromagnetic wavelength in optical
+    science?
+  question_type: comparative
+  non_tree_domain: phenomenology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: no_keyword
+- pair_id: 41
+  tree_question: What genetic factors determine whether a tree species produces resin-rich
+    heartwood, and how does this trait vary across conifer families?
+  non_tree_question: What wax composition factors determine whether encaustic paintings
+    develop bloom over time, and how does this trait vary across pigment concentrations?
+  question_type: explanatory
+  non_tree_domain: encaustic painting
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: verbose
+- pair_id: 42
+  tree_question: How do stage designers use artificial tree structures to convey seasonal
+    change, and what materials best simulate photosynthetic green coloration under
+    stage lighting?
+  non_tree_question: How do stage designers use modular set structures to convey scene
+    transitions, and what materials best simulate architectural surfaces under theatrical
+    lighting conditions?
+  question_type: factual
+  non_tree_domain: stage design
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+- pair_id: 43
+  tree_question: What photosynthetic adaptations allow high-altitude conifer species
+    to maximize carbon fixation during the brief alpine growing season?
+  non_tree_question: What technique adaptations allow high-altitude skiers to maximize
+    speed control during brief racing windows on steep groomed alpine courses?
+  question_type: explanatory
+  non_tree_domain: skiing
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: concise
+- pair_id: 44
+  tree_question: What process do trees undergo during mycorrhizal symbiosis, and how
+    does fungal colonization of roots enhance phosphorus uptake efficiency?
+  non_tree_question: What process do skateboarders undergo during trick progression,
+    and how does deliberate practice of ollies enhance foot positioning efficiency?
+  question_type: process
+  non_tree_domain: skateboarding
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 45
+  tree_question: How does the vascular structure of tree xylem compare functionally
+    to the arterial network of the human cardiovascular system?
+  non_tree_question: How does the conduction system of the sinoatrial node compare
+    functionally to an external cardiac pacemaker in regulating heart rhythm?
+  question_type: comparative
+  non_tree_domain: cardiology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: numbered_list
+- pair_id: 46
+  tree_question: What genetic traits distinguish tree species capable of epiphytic
+    reproduction from those requiring soil-based germination for seedling establishment?
+  non_tree_question: What meteorological conditions distinguish thermal columns suitable
+    for paragliding from those requiring ridge lift for sustained altitude maintenance?
+  question_type: factual
+  non_tree_domain: paragliding
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: concise
+- pair_id: 47
+  tree_question: How do trees regulate reproductive timing through photoperiodism,
+    and what hormonal signals trigger the transition from vegetative to flowering
+    growth?
+  non_tree_question: How do niello craftsmen regulate oxidation timing through heat
+    application, and what chemical signals trigger the transition from paste to fused
+    metallic inlay?
+  question_type: process
+  non_tree_domain: niello work
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: academic
+- pair_id: 48
+  tree_question: What role does genetic variation in wood density play in determining
+    whether a tree species is suitable for furniture or structural timber use?
+  non_tree_question: What role does material variation in surface texture play in
+    determining whether a room element is suitable for focal point or background use
+    in interior decorating?
+  question_type: explanatory
+  non_tree_domain: interior decorating
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+- pair_id: 49
+  tree_question: How does the branching structure of tree development compare to the
+    hierarchical organization of musical motifs in large-scale symphonic compositions?
+  non_tree_question: How does the harmonic development of a musical theme compare
+    to the variation techniques used in contrapuntal compositions across different
+    historical periods?
+  question_type: comparative
+  non_tree_domain: music composition
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: academic

@@ -1,0 +1,178 @@
+pairs:
+- pair_id: 650
+  tree_question: What are the main structural differences between monocot and dicot
+    root systems?
+  non_tree_question: What causes rivers to form branching delta patterns at their
+    mouths?
+  question_type: explanatory
+  non_tree_domain: metaphorical vocabulary (branching rivers, root causes, bark of
+    dog)
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: academic
+- pair_id: 651
+  tree_question: How does bark protect a tree from pathogens and environmental damage?
+  non_tree_question: Why do dogs bark more frequently at strangers than at familiar
+    people?
+  question_type: explanatory
+  non_tree_domain: metaphorical vocabulary (branching rivers, root causes, bark of
+    dog)
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 652
+  tree_question: What biochemical processes occur in tree roots to absorb water and
+    nutrients from soil?
+  non_tree_question: How do investigators identify the root cause of a complex industrial
+    accident?
+  question_type: process
+  non_tree_domain: metaphorical vocabulary (branching rivers, root causes, bark of
+    dog)
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: verbose
+- pair_id: 653
+  tree_question: How does a tree's trunk grow in diameter over time through cambium
+    activity?
+  non_tree_question: What items are typically stored in a car trunk and how is trunk
+    space measured?
+  question_type: factual
+  non_tree_domain: metaphorical vocabulary (branching rivers, root causes, bark of
+    dog)
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: no_keyword
+- pair_id: 654
+  tree_question: What factors determine whether a tree will develop a single trunk
+    or multiple stems?
+  non_tree_question: How does an elephant use its trunk for drinking water and social
+    interaction?
+  question_type: explanatory
+  non_tree_domain: metaphorical vocabulary (branching rivers, root causes, bark of
+    dog)
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: concise
+- pair_id: 655
+  tree_question: How do leaves exchange gases with the atmosphere through stomata?
+  non_tree_question: What is the most efficient technique for leafing through a large
+    printed document to find a specific section?
+  question_type: factual
+  non_tree_domain: metaphorical vocabulary (branching rivers, root causes, bark of
+    dog)
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+- pair_id: 656
+  tree_question: What distinguishes the heartwood from the sapwood in a mature tree
+    trunk?
+  non_tree_question: What are the leading root causes of employee burnout in high-pressure
+    work environments?
+  question_type: factual
+  non_tree_domain: metaphorical vocabulary (branching rivers, root causes, bark of
+    dog)
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 657
+  tree_question: How do tree roots anchor the plant and prevent soil erosion on steep
+    slopes?
+  non_tree_question: How do branching river systems differ from dendritic drainage
+    patterns in hydrology?
+  question_type: comparative
+  non_tree_domain: metaphorical vocabulary (branching rivers, root causes, bark of
+    dog)
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: numbered_list
+- pair_id: 658
+  tree_question: What is the process by which a tree limb heals after being pruned
+    or broken?
+  non_tree_question: What surgical interventions are used to treat a fractured limb
+    in orthopedic medicine?
+  question_type: process
+  non_tree_domain: metaphorical vocabulary (branching rivers, root causes, bark of
+    dog)
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: concise
+- pair_id: 659
+  tree_question: How does the texture and composition of tree bark vary between species?
+  non_tree_question: What triggers excessive barking behavior in dogs and how can
+    it be managed through training?
+  question_type: explanatory
+  non_tree_domain: metaphorical vocabulary (branching rivers, root causes, bark of
+    dog)
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: no_keyword
+- pair_id: 660
+  tree_question: What role do lateral roots play in a tree's overall stability and
+    nutrient uptake?
+  non_tree_question: How do engineers perform a root cause analysis after a software
+    system failure?
+  question_type: process
+  non_tree_domain: metaphorical vocabulary (branching rivers, root causes, bark of
+    dog)
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: numbered_list
+- pair_id: 661
+  tree_question: How do tree branches develop from axillary buds and what governs
+    their growth direction?
+  non_tree_question: What geographic and geological conditions cause a river to branch
+    into multiple channels?
+  question_type: explanatory
+  non_tree_domain: metaphorical vocabulary (branching rivers, root causes, bark of
+    dog)
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: verbose
+- pair_id: 662
+  tree_question: How does the size and girth of a tree trunk correlate with its age
+    and species?
+  non_tree_question: How does an elephant's trunk musculature compare to other prehensile
+    appendages in the animal kingdom?
+  question_type: comparative
+  non_tree_domain: metaphorical vocabulary (branching rivers, root causes, bark of
+    dog)
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 663
+  tree_question: What adaptations allow certain trees to survive in nutrient-poor
+    soils by modifying their root structures?
+  non_tree_question: How do economists identify root causes of inflation versus its
+    surface-level symptoms?
+  question_type: comparative
+  non_tree_domain: metaphorical vocabulary (branching rivers, root causes, bark of
+    dog)
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 664
+  tree_question: What is the function of lenticels in tree bark and how do they facilitate
+    gas exchange?
+  non_tree_question: How does a library's card catalog system allow a researcher to
+    leaf through records to locate a specific historical document?
+  question_type: process
+  non_tree_domain: metaphorical vocabulary (branching rivers, root causes, bark of
+    dog)
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: academic

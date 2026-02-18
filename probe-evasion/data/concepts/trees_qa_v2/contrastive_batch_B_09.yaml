@@ -1,0 +1,276 @@
+pairs:
+- pair_id: 225
+  tree_question: How much carbon dioxide can a mature temperate forest tree sequester
+    annually, and how does this vary by species?
+  non_tree_question: How much mass does a typical glacier lose annually due to ablation,
+    and how does this vary by geographic region?
+  question_type: factual
+  non_tree_domain: glaciology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 226
+  tree_question: What physiological processes allow trees to store carbon in their
+    woody biomass over decades rather than releasing it quickly?
+  non_tree_question: What physiological processes allow bones to remodel and strengthen
+    after a fracture is surgically repaired?
+  question_type: explanatory
+  non_tree_domain: orthopedics
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: no_keyword
+- pair_id: 227
+  tree_question: How did deforestation in Europe during the medieval period affect
+    regional climate patterns and agricultural productivity?
+  non_tree_question: How did the patronage system in Renaissance Europe affect artistic
+    styles and subject matter during that period?
+  question_type: explanatory
+  non_tree_domain: art history
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: concise
+- pair_id: 228
+  tree_question: How does the loss of forest canopy from deforestation alter the local
+    water cycle and precipitation levels?
+  non_tree_question: How does the loss of a queen bee affect colony behavior and the
+    hive's overall productivity?
+  question_type: explanatory
+  non_tree_domain: beekeeping
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: no_keyword
+- pair_id: 229
+  tree_question: What techniques do conservationists use to measure carbon stocks
+    in a given forest stand?
+  non_tree_question: What techniques do potters use to measure moisture content in
+    clay to ensure consistent firing results?
+  question_type: process
+  non_tree_domain: pottery
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 230
+  tree_question: How do tropical rainforests compare to boreal forests in terms of
+    total carbon sequestration capacity per hectare?
+  non_tree_question: How do ice rink conditions in NHL arenas compare to Olympic venues
+    in terms of ice thickness and temperature maintenance?
+  question_type: comparative
+  non_tree_domain: ice hockey
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: verbose
+- pair_id: 231
+  tree_question: What is the estimated annual rate of global deforestation, and which
+    regions are experiencing the greatest loss?
+  non_tree_question: What is the estimated annual growth rate of the pyrography market,
+    and which regions have the highest demand?
+  question_type: factual
+  non_tree_domain: pyrography
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: verbose
+- pair_id: 232
+  tree_question: How do mammals that depend on forest habitats respond behaviorally
+    when large-scale deforestation fragments their territory?
+  non_tree_question: How do mammals that hibernate respond physiologically when ambient
+    temperatures fluctuate during their dormancy period?
+  question_type: explanatory
+  non_tree_domain: mammalogy
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: concise
+- pair_id: 233
+  tree_question: What steps are involved in a national reforestation program, from
+    seed collection to long-term carbon monitoring?
+  non_tree_question: What steps are involved in training a synchronized swimming team,
+    from basic water skills to competitive choreography?
+  question_type: process
+  non_tree_domain: synchronized swimming
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 234
+  tree_question: How does the carbon stored in old-growth forests compare to that
+    in younger plantation forests of equivalent area?
+  non_tree_question: How does the tensile strength of wrought iron compare to that
+    of cast iron when used in structural applications?
+  question_type: comparative
+  non_tree_domain: metallurgy
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: academic
+- pair_id: 235
+  tree_question: What role do trees in urban environments play in offsetting carbon
+    emissions from city transportation and industry?
+  non_tree_question: What role does the falconer's glove play in managing the bird's
+    behavior during hunting and training sessions?
+  question_type: factual
+  non_tree_domain: falconry
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: concise
+- pair_id: 236
+  tree_question: How does deforestation in coastal regions affect mangrove ecosystems
+    and their capacity to sequester blue carbon?
+  non_tree_question: How does ocean acidification affect the shell composition and
+    survival rates of mollusks in coastal regions?
+  question_type: explanatory
+  non_tree_domain: malacology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: verbose
+- pair_id: 237
+  tree_question: How do different languages describe the concept of deforestation,
+    and does linguistic framing influence environmental policy attitudes?
+  non_tree_question: How do different languages encode the concept of time, and does
+    linguistic framing influence speakers' future-oriented decision making?
+  question_type: comparative
+  non_tree_domain: linguistics
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+- pair_id: 238
+  tree_question: What process does the IPCC use to calculate national carbon sequestration
+    credits from reforestation projects?
+  non_tree_question: What process does a referee use to determine when a takedown
+    scores points during a freestyle wrestling match?
+  question_type: process
+  non_tree_domain: freestyle wrestling
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+- pair_id: 239
+  tree_question: How do major world religions frame the moral responsibility of humans
+    to protect forests and prevent deforestation?
+  non_tree_question: How do major world religions frame the moral responsibility of
+    humans to care for the elderly and dying?
+  question_type: comparative
+  non_tree_domain: comparative religion
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: numbered_list
+- pair_id: 240
+  tree_question: How does a country's level of deforestation correlate with its commitments
+    under international climate agreements?
+  non_tree_question: How does a triathlete's training volume in each discipline correlate
+    with their final race performance across distances?
+  question_type: factual
+  non_tree_domain: triathlon
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 241
+  tree_question: What economic incentives drive landowners in tropical countries to
+    clear forest land rather than preserve it for carbon credits?
+  non_tree_question: What economic incentives drive horse owners to enter their animals
+    in flat races rather than steeplechase events?
+  question_type: explanatory
+  non_tree_domain: horse racing
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+- pair_id: 242
+  tree_question: How does exposure to particulate matter from deforestation fires
+    affect long-term skin health in nearby populations?
+  non_tree_question: How does long-term exposure to ultraviolet radiation affect the
+    risk of developing melanoma in fair-skinned populations?
+  question_type: explanatory
+  non_tree_domain: dermatology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: numbered_list
+- pair_id: 243
+  tree_question: What techniques do artists use to incorporate environmental themes
+    like deforestation and carbon loss into large-scale murals?
+  non_tree_question: What techniques do tattoo artists use to incorporate fine-line
+    botanical details into large-scale body art compositions?
+  question_type: process
+  non_tree_domain: tattoo artistry
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 244
+  tree_question: How does the gut microbiome of individuals living near deforested
+    areas differ from those in intact forest communities?
+  non_tree_question: How does the gut microbiome of patients with Crohn's disease
+    differ from that of healthy individuals in comparable populations?
+  question_type: comparative
+  non_tree_domain: gastroenterology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: academic
+- pair_id: 245
+  tree_question: How do wave patterns and coastal erosion change when mangrove and
+    coastal tree barriers are removed through deforestation?
+  non_tree_question: How do wave patterns and ocean swell direction influence a surfer's
+    choice of break and board selection?
+  question_type: explanatory
+  non_tree_domain: surfing
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: numbered_list
+- pair_id: 246
+  tree_question: How do societal power dynamics influence which communities bear the
+    greatest burden of deforestation and carbon pollution?
+  non_tree_question: How do societal power dynamics influence which communities have
+    the least access to quality education and upward mobility?
+  question_type: explanatory
+  non_tree_domain: sociology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 247
+  tree_question: How does living in proximity to green spaces and forests affect cognitive
+    decline rates in elderly populations?
+  non_tree_question: How does regular physical activity affect cognitive decline rates
+    and dementia onset in elderly populations over time?
+  question_type: factual
+  non_tree_domain: geriatrics
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: academic
+- pair_id: 248
+  tree_question: What process do engineers follow when designing carbon-offset projects
+    that involve replanting trees in degraded landscapes?
+  non_tree_question: What process do engineers follow when designing a prosthetic
+    limb to match the gait and weight distribution of a specific patient?
+  question_type: process
+  non_tree_domain: prosthetics
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 249
+  tree_question: How do international trade agreements shape national deforestation
+    policies and carbon sequestration commitments in developing countries?
+  non_tree_question: How do international trade agreements shape domestic agricultural
+    policies and subsidy structures in developing countries?
+  question_type: comparative
+  non_tree_domain: political science
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: no_keyword

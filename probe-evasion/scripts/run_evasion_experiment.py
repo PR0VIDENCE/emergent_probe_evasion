@@ -947,7 +947,24 @@ def main():
 
     target_layers = config["target_layers"]
     if target_layers == "all":
-        target_layers = list(range(model_config["num_layers"]))
+        # Discover available layers from the probe directory instead of using
+        # all model layers (probes only exist for trained layers).
+        probe_dir = resolve_path(config["probe_dir"])
+        probe_positions = config.get("probe_positions", None)
+        scan_dir = os.path.join(probe_dir, probe_positions[0]) if probe_positions else probe_dir
+        discovered = set()
+        if os.path.isdir(scan_dir):
+            import re as _re
+            for fname in os.listdir(scan_dir):
+                m = _re.match(r"layer(\d+)_seed\d+\.pt", fname)
+                if m:
+                    discovered.add(int(m.group(1)))
+        if discovered:
+            target_layers = sorted(discovered)
+            print(f"  target_layers=all resolved to {target_layers} (from probe directory)")
+        else:
+            target_layers = list(range(model_config["num_layers"]))
+            print(f"  WARNING: No probes found in {scan_dir}, using all {len(target_layers)} model layers")
     num_probes = config["num_probes_per_layer"]
     concept = config["concept"]
     num_rollouts = config["num_rollouts"]
