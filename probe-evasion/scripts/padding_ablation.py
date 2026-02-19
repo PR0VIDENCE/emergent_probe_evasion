@@ -384,12 +384,46 @@ def main():
 
         output_ids = output_ids.to(model.device)
 
+        # Diagnostic on first trial
+        if trial_idx == 0:
+            print(f"\n  === DIAGNOSTIC (first trial: {regime} {qid} r{rollout}) ===")
+            print(f"  seq_len={len(output_ids)}, input_length={input_length}")
+            stored = trial.get("token_positions", {})
+            print(f"  stored positions: {stored}")
+            # Decode a snippet of the answer to verify content
+            gen_ids = output_ids[input_length:]
+            gen_text = tokenizer.decode(gen_ids[:50], skip_special_tokens=False)
+            print(f"  first 50 gen tokens: {gen_text[:200]!r}")
+
         # Run forward pass with max padding
         t0 = time.time()
         pos_info, captured = run_padded_forward_pass(
             output_ids, input_length, model, tokenizer, target_layers, max_padding,
         )
         elapsed = time.time() - t0
+
+        # Diagnostic on first trial: check activation stats and probe outputs
+        if trial_idx == 0:
+            mid_layer = target_layers[len(target_layers)//2]
+            raw_span = captured[mid_layer]["answer_span"]
+            raw_pool = raw_span[:pos_info["true_answer_len"]].mean(dim=0)
+            print(f"  positions found: eor={pos_info['eor_pos']}, ans_start={pos_info['answer_start']}, "
+                  f"ans_len={pos_info['true_answer_len']}")
+            print(f"  layer {mid_layer} raw AMP: norm={raw_pool.norm():.2f}, "
+                  f"mean={raw_pool.mean():.4f}, std={raw_pool.std():.4f}")
+            sc = amp_scalers.get(mid_layer)
+            if sc:
+                normed = (raw_pool - sc["scaler_mean"]) / sc["scaler_scale"]
+                print(f"  layer {mid_layer} normalized AMP: norm={normed.norm():.2f}, "
+                      f"mean={normed.mean():.4f}, std={normed.std():.4f}")
+            # Raw probe logit
+            probe0 = amp_probes[mid_layer][0]
+            with torch.no_grad():
+                logit = probe0(raw_pool.unsqueeze(0)).item()
+                normed_logit = probe0(normed.unsqueeze(0)).item() if sc else logit
+            print(f"  probe0 raw logit={logit:.4f} (conf={torch.sigmoid(torch.tensor(logit)):.4f}), "
+                  f"normalized logit={normed_logit:.4f} (conf={torch.sigmoid(torch.tensor(normed_logit)):.4f})")
+            print(f"  === END DIAGNOSTIC ===\n")
 
         true_answer_len = pos_info["true_answer_len"]
 
