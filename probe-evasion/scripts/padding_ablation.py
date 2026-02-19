@@ -215,7 +215,8 @@ def run_padded_forward_pass(
 
     def make_hook(layer_idx):
         def hook_fn(module, input, output):
-            hidden = output[0][0]  # (seq_len, hidden_dim)
+            hidden_states = output[0] if isinstance(output, tuple) else output
+            hidden = hidden_states[0]  # (seq_len, hidden_dim)
             # Capture EOR activation
             eor_act = hidden[eor_pos].float().cpu()
             # Capture answer span: from answer_start to end of padded sequence
