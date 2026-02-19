@@ -331,7 +331,11 @@ def main():
     all_trials = []
     for jf in sorted(json_files):
         with open(jf) as f:
-            all_trials.extend(json.load(f))
+            data = json.load(f)
+        if isinstance(data, list) and data and isinstance(data[0], dict):
+            all_trials.extend(data)
+        else:
+            print(f"  Skipping {os.path.basename(jf)} (not a list of trial dicts)")
 
     # Filter regimes
     if args.regimes:
