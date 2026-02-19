@@ -405,6 +405,16 @@ def generate_batch(
         pad_count = padded_input_len - input_lens[i]
         # The output for sequence i starts at pad_count
         real_output = output_ids_batch[i, pad_count:].unsqueeze(0)  # (1, real_seq_len)
+
+        # Strip trailing padding: find first EOS in generated portion
+        # (pad_token == eos_token == <|im_end|>, so trailing pads are
+        # indistinguishable — keep only through the first one)
+        gen_portion = real_output[0, input_lens[i]:]
+        eos_positions = (gen_portion == tokenizer.pad_token_id).nonzero(as_tuple=True)[0]
+        if eos_positions.numel() > 0:
+            first_eos = input_lens[i] + eos_positions[0].item()
+            real_output = real_output[:, :first_eos + 1]
+
         output_ids_list.append(real_output)
 
     return output_ids_list, input_lens, gen_time

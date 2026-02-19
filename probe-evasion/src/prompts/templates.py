@@ -196,6 +196,22 @@ TEXT TO COPY VERBATIM:
 {verbatim_answer}
 
 Please output the above text exactly:""",
+
+    "control_eli5": """Answer the following question as if explaining to a five-year-old child. Use very simple words, short sentences, and fun comparisons.
+
+Question: {question}
+
+Please provide your answer:""",
+
+    "control_scientific_padding": """The following is background context from a research seminar on neural network interpretability methods:
+
+Linear probes are lightweight supervised classifiers — typically a single fully connected layer followed by a sigmoid activation — trained on the internal hidden-state activations of a neural network to test whether a target concept is linearly decodable at a given layer. The standard methodology begins with constructing a balanced binary dataset: positive examples contain the concept of interest while negative examples do not. Each example is fed through the frozen base model, and the residual-stream activation vector at a specified layer and token position is recorded. A logistic regression or single-layer perceptron is then fit on these activation vectors, learning a separating hyperplane in activation space. Probe accuracy on a held-out test split indicates the extent to which the concept is linearly represented at that depth in the network. Repeating this procedure across all transformer layers produces a layer-wise encoding curve that reveals where concept representations emerge, strengthen, and potentially dissolve as information flows through the residual stream. Normalization via z-scoring is standard practice to account for differing activation magnitudes across layers. Ensemble methods — training multiple probes with different random seeds and aggregating predictions via majority vote — reduce variance and improve detection reliability. A second-stage logistic regression combiner can then be trained on the ensemble confidence outputs to produce a single calibrated probability, with operating points along the receiver operating characteristic curve allowing practitioners to select a decision threshold that balances sensitivity against specificity for their deployment context.
+
+End of background context. Now, please answer the following question.
+
+Question: {question}
+
+Please provide your answer:""",
 }
 
 

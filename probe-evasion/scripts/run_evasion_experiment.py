@@ -319,13 +319,23 @@ def generate_batch(chat_prompts: List[str], model, tokenizer,
         results = []
         for i in range(batch_output_ids.shape[0]):
             seq = batch_output_ids[i]
-            # Find first non-pad token
+            # Find first non-pad token (strip leading padding)
             non_pad_mask = seq != pad_id
             if non_pad_mask.any():
                 first_real = non_pad_mask.nonzero(as_tuple=True)[0][0].item()
                 unpadded = seq[first_real:].unsqueeze(0)
             else:
                 unpadded = seq.unsqueeze(0)
+
+            # Strip trailing padding: find first EOS in generated portion
+            # (pad_token == eos_token == <|im_end|>, so trailing pads are
+            # indistinguishable from EOS — keep only through the first one)
+            input_len_i = input_lengths[i] if input_lengths else 0
+            gen_portion = unpadded[0, input_len_i:]
+            eos_positions = (gen_portion == pad_id).nonzero(as_tuple=True)[0]
+            if eos_positions.numel() > 0:
+                first_eos = input_len_i + eos_positions[0].item()
+                unpadded = unpadded[:, :first_eos + 1]
 
             # Check if </think> is present in generated portion
             input_len = input_lengths[i] if input_lengths else None
@@ -371,7 +381,8 @@ def process_single_sequence(output_ids: torch.Tensor, input_len: int,
                             model, tokenizer, target_layers: list,
                             probe_ensembles: dict, scalers: dict,
                             per_position: bool,
-                            think_truncated: bool = False) -> dict:
+                            think_truncated: bool = False,
+                            save_tokens: bool = False) -> dict:
     """
     Process a single generated sequence: extract text, find positions,
     run extraction forward pass, score probes.
@@ -421,7 +432,7 @@ def process_single_sequence(output_ids: torch.Tensor, input_len: int,
     if torch.cuda.is_available():
         torch.cuda.empty_cache()
 
-    return {
+    result = {
         "full_text": full_text,
         "thinking_trace": thinking,
         "answer": answer,
@@ -431,6 +442,12 @@ def process_single_sequence(output_ids: torch.Tensor, input_len: int,
         "probe_results": probe_results,
         "think_truncated": think_truncated,
     }
+
+    if save_tokens:
+        result["_output_ids"] = output_ids[0].cpu().tolist()
+        result["_input_length"] = input_len
+
+    return result
 
 
 def generate_and_probe_batch(
@@ -443,6 +460,7 @@ def generate_and_probe_batch(
     generation_config: dict,
     per_position: bool = False,
     batch_size: int = 5,
+    save_tokens: bool = False,
 ) -> List[dict]:
     """
     Generate responses and evaluate probes for a batch of prompts.
@@ -514,6 +532,7 @@ def generate_and_probe_batch(
                         output_ids, input_len, model, tokenizer,
                         target_layers, probe_ensembles, scalers, per_position,
                         think_truncated=think_truncated,
+                        save_tokens=save_tokens,
                     )
                 except Exception as e:
                     print(f"    WARNING: Extraction failed for item {idx}: {e}")
@@ -530,7 +549,7 @@ def generate_and_probe_batch(
                     result = generate_and_probe_single(
                         prompt_texts[i], model, tokenizer, target_layers,
                         probe_ensembles, scalers, max_new_tokens, generation_config,
-                        per_position,
+                        per_position, save_tokens=save_tokens,
                     )
                     results[i] = result
                 except Exception as e2:
@@ -544,6 +563,7 @@ def generate_and_probe_single(
     prompt_text: str, model, tokenizer, target_layers: list,
     probe_ensembles: dict, scalers: dict, max_new_tokens: int,
     generation_config: dict, per_position: bool = False,
+    save_tokens: bool = False,
 ) -> dict:
     """Generate and probe a single prompt (sequential fallback)."""
     messages = [{"role": "user", "content": prompt_text}]
@@ -564,6 +584,7 @@ def generate_and_probe_single(
         output_ids, input_len, model, tokenizer,
         target_layers, probe_ensembles, scalers, per_position,
         think_truncated=think_truncated,
+        save_tokens=save_tokens,
     )
 
     del output_ids, inputs, input_ids
@@ -666,7 +687,8 @@ def run_single_turn_regime(regime: dict, questions: list, model, tokenizer,
                            per_position: bool = False,
                            batch_size: int = 5,
                            config: dict = None,
-                           data_dir: str = None) -> list:
+                           data_dir: str = None,
+                           save_tokens: bool = False) -> list:
     """Run a single-turn regime across all questions and rollouts (batched)."""
     template_name = regime["template"]
     max_new_tokens = regime["max_new_tokens"]
@@ -744,8 +766,25 @@ def run_single_turn_regime(regime: dict, questions: list, model, tokenizer,
         prompt_texts, model, tokenizer, target_layers,
         probe_ensembles, scalers, max_new_tokens, generation_config,
         per_position=per_position, batch_size=batch_size,
+        save_tokens=save_tokens,
     )
     total_elapsed = time.time() - t0
+
+    # Save token IDs for prefill ablation
+    if save_tokens and data_dir:
+        token_dir = os.path.join(data_dir, "tokens", regime["name"])
+        os.makedirs(token_dir, exist_ok=True)
+        for item, result in zip(items, results):
+            if "_output_ids" in result:
+                token_path = os.path.join(
+                    token_dir,
+                    f"{item['question_id']}_rollout{item['rollout']}.pt"
+                )
+                torch.save({
+                    "output_ids": torch.tensor(result.pop("_output_ids")),
+                    "input_length": result.pop("_input_length"),
+                }, token_path)
+        print(f"  Saved token IDs to {token_dir}")
 
     # Build trial records
     trials = []
@@ -959,6 +998,12 @@ def main():
                         help="Directory for log files (default: output-dir/logs)")
     parser.add_argument("--weighted-combo", type=str, default=None,
                         help="Path to weighted_combination.yaml for combined scoring")
+    parser.add_argument("--probe-dir", type=str, default=None,
+                        help="Override probe directory (default: from config)")
+    parser.add_argument("--num-rollouts", type=int, default=None,
+                        help="Override number of rollouts (default: from config)")
+    parser.add_argument("--save-tokens", action="store_true",
+                        help="Save generated token IDs (.pt) for prefill ablation")
     args = parser.parse_args()
 
     # Resolve paths
@@ -1001,7 +1046,7 @@ def main():
             print(f"  WARNING: No probes found in {scan_dir}, using all {len(target_layers)} model layers")
     num_probes = config["num_probes_per_layer"]
     concept = config["concept"]
-    num_rollouts = config["num_rollouts"]
+    num_rollouts = args.num_rollouts or config["num_rollouts"]
     generation_config = config.get("generation", {})
     questions = config["questions"]
     regimes = list(config["regimes"])
@@ -1028,7 +1073,7 @@ def main():
     print("=" * 60)
     print("Step 1: Loading trained probes")
     print("=" * 60)
-    probe_dir = resolve_path(config["probe_dir"])
+    probe_dir = resolve_path(args.probe_dir) if args.probe_dir else resolve_path(config["probe_dir"])
     probe_positions = config.get("probe_positions", None)
     loaded = load_probe_ensembles(probe_dir, target_layers, num_probes, hidden_dim,
                                   positions=probe_positions)
@@ -1103,6 +1148,7 @@ def main():
                 num_probes, num_rollouts, per_position=per_position,
                 batch_size=args.batch_size, config=config,
                 data_dir=args.output_dir,
+                save_tokens=args.save_tokens,
             )
 
         all_trials.extend(trials)
@@ -1136,6 +1182,8 @@ def main():
                 probe_ensembles, scalers, generation_config, concept,
                 num_probes, num_rollouts, per_position=per_position,
                 batch_size=args.batch_size,
+                data_dir=args.output_dir,
+                save_tokens=args.save_tokens,
             )
             all_trials.extend(neg_trials)
 
