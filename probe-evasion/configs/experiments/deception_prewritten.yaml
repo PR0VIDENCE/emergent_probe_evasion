@@ -1,0 +1,44 @@
+# Prewritten deception probe training pipeline configuration
+# Apollo-style: forward pass over prewritten completions, no model.generate()
+# Identical prompt context for deceptive vs honest — only completion differs.
+#
+# 371 pairs from roleplaying dataset
+# tree (label=1) = deceptive, non_tree (label=0) = honest
+#
+# 3 positions (no end_of_reasoning — no <think> tags in prewritten text):
+#   last_token, first_answer_sentence_end, answer_mean_pool
+
+concept: deception_prewritten
+model_config: configs/models/qwq_32b.yaml
+data_dir: data/concepts/deception_prewritten
+target_layers: [4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48, 52, 56, 60]
+
+token_positions:
+  - last_token
+  - first_answer_sentence_end
+  - answer_mean_pool
+
+probe_training:
+  random_seeds: [42, 123, 456, 789]
+  learning_rate: 0.001
+  num_epochs: 100
+  weight_decay: 0.1
+  patience: 10
+  normalize: true
+  top_k_layers: 5
+  primary_position: answer_mean_pool
+
+split:
+  method: preassigned
+  split_file: data/concepts/deception_prewritten/split_assignment.yaml
+  train: 0.8
+  val: 0.1
+  test: 0.1
+
+combiner:
+  enabled: true
+  regularization_C: 1.0
+  output_path: configs/probes/weighted_combination_deception_prewritten.yaml
+
+storage:
+  base_dir: /workspace/deception_prewritten_data

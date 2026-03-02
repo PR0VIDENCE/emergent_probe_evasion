@@ -1,0 +1,39 @@
+# AI Liar cross-dataset evaluation config
+# 24 pairs from "How to Catch an AI Liar" — all assigned to test split
+# Same answer text in both conditions; deception from system instruction context
+#
+# Used for cross-dataset transfer: train probes on roleplaying data,
+# evaluate on AI Liar data using --probe-dir flag.
+
+concept: deception_ai_liar
+model_config: configs/models/qwq_32b.yaml
+data_dir: data/concepts/deception_ai_liar
+target_layers: [4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48, 52, 56, 60]
+
+token_positions:
+  - last_token
+  - first_answer_sentence_end
+  - answer_mean_pool
+
+probe_training:
+  random_seeds: [42, 123, 456, 789]
+  learning_rate: 0.001
+  num_epochs: 100
+  weight_decay: 0.1
+  patience: 10
+  normalize: true
+  top_k_layers: 5
+  primary_position: answer_mean_pool
+
+split:
+  method: preassigned
+  split_file: data/concepts/deception_ai_liar/split_assignment.yaml
+  train: 0.0
+  val: 0.0
+  test: 1.0
+
+combiner:
+  enabled: false
+
+storage:
+  base_dir: /workspace/deception_prewritten_ai_liar

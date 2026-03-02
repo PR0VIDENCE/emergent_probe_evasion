@@ -816,6 +816,8 @@ def main():
                         help="Path to adversarial_test_set.yaml for adversarial evaluation")
     parser.add_argument("--probe-dir", type=str, default=None,
                         help="Override probe directory (default: data-dir/probes)")
+    parser.add_argument("--split-file", type=str, default=None,
+                        help="Override split assignment file path (for holdout experiments)")
     args = parser.parse_args()
 
     # Resolve paths
@@ -844,6 +846,9 @@ def main():
     seeds = config["probe_training"]["random_seeds"]
     hidden_dim = model_config["hidden_dim"]
     split_config = config["split"]
+    if args.split_file:
+        split_config["method"] = "preassigned"
+        split_config["split_file"] = args.split_file
     combiner_config = config.get("combiner", {})
 
     # Load split info

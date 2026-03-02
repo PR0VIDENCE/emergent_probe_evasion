@@ -488,6 +488,8 @@ def main():
                         help="Directory for log files (default: data-dir/logs)")
     parser.add_argument("--probe-dir", type=str, default=None,
                         help="Override probe output directory (default: data-dir/probes)")
+    parser.add_argument("--split-file", type=str, default=None,
+                        help="Override split assignment file path (for holdout experiments)")
     args = parser.parse_args()
 
     # Resolve paths
@@ -513,6 +515,9 @@ def main():
     token_positions = config["token_positions"]
     probe_config = config["probe_training"]
     split_config = config["split"]
+    if args.split_file:
+        split_config["method"] = "preassigned"
+        split_config["split_file"] = args.split_file
     supp_config = config.get("supplementary", {})
     combiner_config = config.get("combiner", {})
 
