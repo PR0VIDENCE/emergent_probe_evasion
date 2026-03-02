@@ -1,0 +1,181 @@
+pairs:
+- pair_id: 430
+  positive_question: How does the malaria parasite's life cycle within human red blood
+    cells lead to the characteristic recurring fevers of the disease?
+  negative_question: How does severe iron deficiency anemia develop from inadequate
+    dietary intake and what physiological symptoms does it produce?
+  question_type: process
+  negative_domain: malnutrition and dietary deficiency
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 431
+  positive_question: What are the defining features of celiac disease as an autoimmune
+    condition triggered by gluten consumption?
+  negative_question: What are the defining features of kwashiorkor as a protein-energy
+    malnutrition condition common in famine-affected regions?
+  question_type: factual
+  negative_domain: malnutrition and dietary deficiency
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 432
+  positive_question: Compare how Type 1 diabetes and Addison's disease both involve
+    autoimmune destruction of endocrine tissues but affect different hormonal systems.
+  negative_question: Compare how scurvy from vitamin C deficiency and rickets from
+    vitamin D deficiency both cause skeletal problems but through different biochemical mechanisms.
+  question_type: comparative
+  negative_domain: malnutrition and dietary deficiency
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 433
+  positive_question: What mechanisms allow hepatitis B virus to persist in liver cells
+    and cause chronic liver disease despite an active immune response?
+  negative_question: What mechanisms cause the body to develop beriberi when thiamine
+    is chronically absent from the diet and how are the nervous system and heart affected?
+  question_type: explanatory
+  negative_domain: malnutrition and dietary deficiency
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 434
+  positive_question: How does the progression of amyotrophic lateral sclerosis gradually
+    destroy upper and lower motor neurons over time?
+  negative_question: How does the progression of marasmus gradually deplete the body's
+    fat and muscle reserves during prolonged caloric starvation?
+  question_type: process
+  negative_domain: malnutrition and dietary deficiency
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 435
+  positive_question: What immunological factors explain why some individuals develop
+    severe COVID-19 while others remain asymptomatic after infection?
+  negative_question: What nutritional factors explain why some populations develop endemic
+    goiter from iodine deficiency while others with similar diets do not?
+  question_type: explanatory
+  negative_domain: malnutrition and dietary deficiency
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 436
+  positive_question: Which parasitic diseases remain major causes of morbidity in sub-Saharan
+    Africa and what biological features make them difficult to eliminate?
+  negative_question: Which micronutrient deficiencies remain major causes of childhood
+    morbidity in sub-Saharan Africa and what dietary factors perpetuate them?
+  question_type: factual
+  negative_domain: malnutrition and dietary deficiency
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 437
+  positive_question: Compare how measles and whooping cough differ in their mechanisms
+    of respiratory tract damage and long-term complications.
+  negative_question: Compare how vitamin A deficiency and zinc deficiency differ in
+    their effects on immune function and susceptibility to secondary health problems.
+  question_type: comparative
+  negative_domain: malnutrition and dietary deficiency
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 438
+  positive_question: What is the process by which Mycobacterium tuberculosis forms
+    granulomas in lung tissue during latent infection?
+  negative_question: What is the process by which the body develops pellagra when niacin
+    intake is chronically insufficient, producing the classic triad of symptoms?
+  question_type: process
+  negative_domain: malnutrition and dietary deficiency
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 439
+  positive_question: How do neurodegenerative diseases like Huntington's disease differ
+    from stroke in their pattern of neuronal loss?
+  negative_question: How does protein-energy malnutrition in early childhood differ
+    from adult-onset malnutrition in its impact on cognitive development and brain growth?
+  question_type: comparative
+  negative_domain: malnutrition and dietary deficiency
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 440
+  positive_question: What pathological processes drive the formation of atherosclerotic
+    plaques in coronary artery disease over decades?
+  negative_question: What physiological processes drive the development of osteomalacia
+    when prolonged vitamin D and calcium deficiency weakens bone mineralization?
+  question_type: process
+  negative_domain: malnutrition and dietary deficiency
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 441
+  positive_question: Explain the mechanism by which HIV destroys CD4 T cells and progressively
+    weakens the immune system leading to AIDS.
+  negative_question: Explain the mechanism by which prolonged folate deficiency impairs
+    DNA synthesis in rapidly dividing cells and leads to megaloblastic anemia.
+  question_type: explanatory
+  negative_domain: malnutrition and dietary deficiency
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 442
+  positive_question: What are the key clinical features that distinguish systemic lupus
+    erythematosus from other autoimmune connective tissue diseases?
+  negative_question: What are the key clinical features that distinguish marasmus from
+    kwashiorkor as the two major forms of severe protein-energy malnutrition?
+  question_type: factual
+  negative_domain: malnutrition and dietary deficiency
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 443
+  positive_question: How does untreated syphilis progress through its primary, secondary,
+    and tertiary stages over years to decades?
+  negative_question: How does untreated severe vitamin B12 deficiency progress from
+    initial fatigue through megaloblastic anemia to irreversible neurological damage?
+  question_type: process
+  negative_domain: malnutrition and dietary deficiency
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 444
+  positive_question: What role does chronic inflammation play in the development of
+    inflammatory bowel diseases like Crohn's disease?
+  negative_question: What role does chronic selenium deficiency play in the development
+    of Keshan disease affecting heart muscle in regions with selenium-poor soil?
+  question_type: explanatory
+  negative_domain: malnutrition and dietary deficiency
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied

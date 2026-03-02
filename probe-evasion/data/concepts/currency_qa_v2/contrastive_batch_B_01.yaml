@@ -1,0 +1,251 @@
+pairs:
+- pair_id: 25
+  positive_question: "What were the earliest known coins made of, and in which ancient civilization were they first minted?"
+  negative_question: "What were the earliest known fossils made of, and in which geological period were they first discovered?"
+  question_type: factual
+  negative_domain: "paleontology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "history of coinage and early money"
+- pair_id: 26
+  positive_question: "How did the transition from barter systems to standardized coinage change trade in the ancient Mediterranean world?"
+  negative_question: "How did the transition from oral traditions to written manuscripts change storytelling in the medieval European world?"
+  question_type: explanatory
+  negative_domain: "medieval literature"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "history of coinage and early money"
+- pair_id: 27
+  positive_question: "What role did cowrie shells play as a form of early money in sub-Saharan Africa and parts of Asia?"
+  negative_question: "What role did coral reefs play as a form of marine habitat in the Caribbean Sea and parts of Oceania?"
+  question_type: factual
+  negative_domain: "marine biology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "history of coinage and early money"
+- pair_id: 28
+  positive_question: "Compare the coinage systems of ancient Rome and ancient China in terms of materials used and denominations."
+  negative_question: "Compare the irrigation systems of ancient Egypt and ancient Mesopotamia in terms of methods used and scale of operations."
+  question_type: comparative
+  negative_domain: "ancient agriculture"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "history of coinage and early money"
+- pair_id: 29
+  positive_question: "Explain the process by which ancient mints produced uniform coins from raw metal ingots during the classical era."
+  negative_question: "Explain the process by which ancient kilns produced ceramic pottery from raw clay deposits during the classical era."
+  question_type: process
+  negative_domain: "ceramics and pottery"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "history of coinage and early money"
+- pair_id: 30
+  positive_question: "Why did Lydia become the first civilization to issue standardized gold and silver coins around 600 BCE?"
+  negative_question: "Why did Polynesia become the first region to develop advanced celestial navigation techniques around 1000 CE?"
+  question_type: explanatory
+  negative_domain: "navigation history"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "history of coinage and early money"
+- pair_id: 31
+  positive_question: "What was the significance of wampum beads as a medium of exchange among Indigenous peoples of North America?"
+  negative_question: "What was the significance of obsidian blades as a surgical instrument among ancient civilizations of Central America?"
+  question_type: factual
+  negative_domain: "archaeological tools"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "history of coinage and early money"
+- pair_id: 32
+  positive_question: "How did the introduction of electrum coins differ from the use of weighed silver as a monetary unit in ancient Mesopotamia?"
+  negative_question: "How did the introduction of movable type differ from the use of hand-carved woodblocks as a printing method in ancient East Asia?"
+  question_type: comparative
+  negative_domain: "printing history"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "history of coinage and early money"
+- pair_id: 33
+  positive_question: "Describe the steps involved in debasing a metal currency and why rulers historically resorted to this practice."
+  negative_question: "Describe the steps involved in grafting a fruit tree and why orchardists historically resorted to this practice."
+  question_type: process
+  negative_domain: "horticulture"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "history of coinage and early money"
+- pair_id: 34
+  positive_question: "What evidence exists for the use of grain and cattle as proto-money in early agrarian societies?"
+  negative_question: "What evidence exists for the use of fire and smoke signals as proto-communication in early nomadic societies?"
+  question_type: factual
+  negative_domain: "communication history"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "history of coinage and early money"
+- pair_id: 35
+  positive_question: "Why did China develop paper money centuries before any European nation adopted a similar system of currency?"
+  negative_question: "Why did Japan develop earthquake-resistant architecture centuries before any Western nation adopted a similar system of construction?"
+  question_type: explanatory
+  negative_domain: "architectural engineering"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "history of coinage and early money"
+- pair_id: 36
+  positive_question: "How do the monetary systems of the Byzantine Empire compare to those of the Tang Dynasty in terms of coin circulation?"
+  negative_question: "How do the judicial systems of the Ottoman Empire compare to those of the Mughal Dynasty in terms of court procedures?"
+  question_type: comparative
+  negative_domain: "legal history"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "history of coinage and early money"
+- pair_id: 37
+  positive_question: "Explain the process through which salt became a widely accepted form of payment across ancient trade routes."
+  negative_question: "Explain the process through which silk became a widely manufactured luxury textile across ancient production centers."
+  question_type: process
+  negative_domain: "textile manufacturing"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "history of coinage and early money"
+- pair_id: 38
+  positive_question: "What impact did the Spanish silver trade from the Americas have on global coinage and monetary systems in the 16th century?"
+  negative_question: "What impact did the Portuguese spice trade from Southeast Asia have on global cuisine and dietary practices in the 16th century?"
+  question_type: explanatory
+  negative_domain: "culinary history"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "history of coinage and early money"
+- pair_id: 39
+  positive_question: "What archaeological discoveries have revealed the most about how ancient Greek city-states standardized their coinage?"
+  negative_question: "What archaeological discoveries have revealed the most about how ancient Mayan city-states calculated their astronomical calendars?"
+  question_type: factual
+  negative_domain: "archaeoastronomy"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "history of coinage and early money"
+- pair_id: 40
+  positive_question: "How did the use of commodity money evolve into representative money over the course of several centuries?"
+  negative_question: "How did the use of herbal remedies evolve into evidence-based pharmacology over the course of several centuries?"
+  question_type: process
+  negative_domain: "pharmacology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "history of coinage and early money"
+- pair_id: 41
+  positive_question: "Why were precious metals like gold and silver preferred over other materials for minting coins in most ancient civilizations?"
+  negative_question: "Why were natural pigments like ochre and charcoal preferred over other materials for creating paintings in most prehistoric cave sites?"
+  question_type: explanatory
+  negative_domain: "prehistoric art"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "history of coinage and early money"
+- pair_id: 42
+  positive_question: "Compare the durability and portability of metal coinage versus cloth-based money in early Southeast Asian kingdoms."
+  negative_question: "Compare the durability and flexibility of bamboo scaffolding versus steel-based framing in modern East Asian construction."
+  question_type: comparative
+  negative_domain: "construction engineering"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "history of coinage and early money"
+- pair_id: 43
+  positive_question: "What was the role of temple economies in Sumeria in shaping the earliest forms of money and accounting records?"
+  negative_question: "What was the role of tidal patterns in Scandinavia in shaping the earliest forms of coastal settlement and fishing practices?"
+  question_type: factual
+  negative_domain: "coastal geography"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "history of coinage and early money"
+- pair_id: 44
+  positive_question: "Describe the process by which early banking houses in Renaissance Italy facilitated the transition from physical coins to paper instruments."
+  negative_question: "Describe the process by which early glassblowing workshops in Renaissance Venice facilitated the transition from opaque vessels to transparent mirrors."
+  question_type: process
+  negative_domain: "glassmaking history"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "history of coinage and early money"
+- pair_id: 45
+  positive_question: "How did the monetary reforms of Solon in ancient Athens address issues of debt and currency debasement?"
+  negative_question: "How did the drainage reforms of Archimedes in ancient Syracuse address issues of flooding and water displacement?"
+  question_type: explanatory
+  negative_domain: "hydraulic engineering"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "history of coinage and early money"
+- pair_id: 46
+  positive_question: "What are the key differences between fiduciary money used in medieval Europe and token money used in colonial America?"
+  negative_question: "What are the key differences between barrel vaults used in Romanesque architecture and pointed arches used in Gothic cathedrals?"
+  question_type: comparative
+  negative_domain: "architectural history"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "history of coinage and early money"
+- pair_id: 47
+  positive_question: "What factors led to the widespread adoption of bronze coinage in the ancient Indian subcontinent's trade networks?"
+  negative_question: "What factors led to the widespread adoption of terrace farming in the ancient Andean highlands' agricultural systems?"
+  question_type: factual
+  negative_domain: "Andean agriculture"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "history of coinage and early money"
+- pair_id: 48
+  positive_question: "Explain how the concept of fiat money gradually emerged from earlier metallic and commodity-based monetary systems."
+  negative_question: "Explain how the concept of vaccination gradually emerged from earlier variolation and folk immunity-based medical practices."
+  question_type: process
+  negative_domain: "medical history"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "history of coinage and early money"
+- pair_id: 49
+  positive_question: "Why did the Islamic world develop a bimetallic monetary standard using gold dinars and silver dirhams during the medieval period?"
+  negative_question: "Why did the Viking world develop a sophisticated longship construction standard using clinker planking and iron rivets during the medieval period?"
+  question_type: explanatory
+  negative_domain: "shipbuilding history"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "history of coinage and early money"

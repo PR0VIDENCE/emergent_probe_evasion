@@ -1,0 +1,345 @@
+pairs:
+- pair_id: 325
+  positive_question: What neurobiological mechanisms are believed to underlie major
+    depressive disorder, and how do current theories explain the role of serotonin and
+    other neurotransmitters?
+  negative_question: What thermodynamic mechanisms are believed to underlie supercritical
+    fluid extraction, and how do current theories explain the role of pressure and
+    temperature at the critical point?
+  question_type: explanatory
+  negative_domain: supercritical fluid technology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: mental health disorders (depression, schizophrenia)
+- pair_id: 326
+  positive_question: How does schizophrenia affect cognitive function, perception, and
+    social behavior, and what distinguishes positive symptoms like hallucinations from
+    negative symptoms?
+  negative_question: How does wind erosion affect soil structure, fertility, and vegetation
+    cover, and what distinguishes saltation transport of sand particles from suspension
+    transport of fine dust?
+  question_type: factual
+  negative_domain: aeolian geomorphology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: mental health disorders (depression, schizophrenia)
+- pair_id: 327
+  positive_question: Compare the therapeutic mechanisms of selective serotonin reuptake
+    inhibitors with those of cognitive behavioral therapy for treating depression as
+    a disease.
+  negative_question: Compare the filtration mechanisms of reverse osmosis membranes
+    with those of activated carbon adsorption beds for removing contaminants from drinking
+    water.
+  question_type: comparative
+  negative_domain: water purification technology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: mental health disorders (depression, schizophrenia)
+- pair_id: 328
+  positive_question: Describe the diagnostic process a psychiatrist follows when evaluating
+    a patient presenting with symptoms that could indicate either depression or bipolar
+    disorder.
+  negative_question: Describe the identification process a marine biologist follows when
+    evaluating a specimen presenting with features that could indicate either a true
+    coral or a hydrozooan colony.
+  question_type: process
+  negative_domain: marine invertebrate taxonomy
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: mental health disorders (depression, schizophrenia)
+- pair_id: 329
+  positive_question: What genetic and environmental risk factors interact to increase
+    the likelihood of developing schizophrenia in genetically predisposed individuals?
+  negative_question: What geological and hydrological risk factors interact to increase
+    the likelihood of developing sinkholes in limestone bedrock regions near water table
+    fluctuations?
+  question_type: factual
+  negative_domain: sinkhole geotechnics
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: mental health disorders (depression, schizophrenia)
+- pair_id: 330
+  positive_question: How do antipsychotic medications block dopamine receptors in the
+    brain to reduce the positive symptoms of schizophrenia, and what side effects can
+    result?
+  negative_question: How do surge protectors clamp voltage spikes at the power outlet
+    to reduce the risk of equipment damage, and what failure modes can result?
+  question_type: explanatory
+  negative_domain: electrical surge protection
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: mental health disorders (depression, schizophrenia)
+- pair_id: 331
+  positive_question: Compare the neuroimaging findings in patients with treatment-resistant
+    depression with those of patients who respond well to first-line antidepressant
+    therapy.
+  negative_question: Compare the spectrographic findings in samples of high-quality
+    aged Parmigiano-Reggiano with those of younger cheeses that have not undergone
+    extended proteolysis.
+  question_type: comparative
+  negative_domain: cheese biochemistry
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: mental health disorders (depression, schizophrenia)
+- pair_id: 332
+  positive_question: Describe the steps involved in implementing electroconvulsive therapy
+    for patients with severe treatment-resistant depression when medications have failed.
+  negative_question: Describe the steps involved in implementing controlled demolition
+    of reinforced concrete buildings when conventional deconstruction methods have proven
+    impractical.
+  question_type: process
+  negative_domain: controlled demolition
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: mental health disorders (depression, schizophrenia)
+- pair_id: 333
+  positive_question: How does the stress-diathesis model explain why some individuals
+    develop depression or schizophrenia after stressful life events while others remain
+    resilient?
+  negative_question: How does the load-resistance model explain why some bridge components
+    develop fatigue cracks after repeated stress cycles while others maintain structural
+    integrity?
+  question_type: explanatory
+  negative_domain: bridge fatigue analysis
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: mental health disorders (depression, schizophrenia)
+- pair_id: 334
+  positive_question: What is the significance of the hypothalamic-pituitary-adrenal axis
+    in the pathophysiology of depression, and how does chronic stress dysregulate this
+    disease pathway?
+  negative_question: What is the significance of the fuel-air-ignition triangle in the
+    science of combustion, and how does incomplete mixing disrupt this reaction pathway?
+  question_type: factual
+  negative_domain: combustion science
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: mental health disorders (depression, schizophrenia)
+- pair_id: 335
+  positive_question: Compare the first-generation typical antipsychotics with second-generation
+    atypical antipsychotics in their efficacy and side effect profiles for treating
+    schizophrenia.
+  negative_question: Compare the first-generation analog synthesizers with modern digital
+    software synthesizers in their sound character and workflow for producing electronic
+    music.
+  question_type: comparative
+  negative_domain: electronic music synthesis
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: mental health disorders (depression, schizophrenia)
+- pair_id: 336
+  positive_question: How does the glutamate hypothesis of schizophrenia provide an
+    alternative to the dopamine hypothesis and open new avenues for disease treatment
+    research?
+  negative_question: How does the plate tectonics theory of mountain formation provide
+    an alternative to the geosynclinal hypothesis and open new avenues for geological
+    modeling research?
+  question_type: explanatory
+  negative_domain: structural geology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: mental health disorders (depression, schizophrenia)
+- pair_id: 337
+  positive_question: Describe the process of conducting a structured clinical interview
+    to assess the severity and specific symptom dimensions of a patient's depressive
+    disease episode.
+  negative_question: Describe the process of conducting a structured taste panel evaluation
+    to assess the intensity and specific flavor dimensions of a roaster's espresso
+    blend profile.
+  question_type: process
+  negative_domain: coffee cupping evaluation
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: mental health disorders (depression, schizophrenia)
+- pair_id: 338
+  positive_question: What role does neuroplasticity play in recovery from depression,
+    and how do treatments like antidepressants and psychotherapy promote structural
+    changes in the brain?
+  negative_question: What role does work hardening play in strengthening metals, and
+    how do processes like cold rolling and forging promote structural changes in the
+    crystal lattice?
+  question_type: explanatory
+  negative_domain: metal forming metallurgy
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: mental health disorders (depression, schizophrenia)
+- pair_id: 339
+  positive_question: What are the early prodromal signs that may indicate the onset of
+    schizophrenia in adolescents and young adults before the first full psychotic episode
+    occurs?
+  negative_question: What are the early precursor signs that may indicate the onset
+    of a volcanic eruption in dormant stratovolcanoes before the first full magmatic
+    explosion occurs?
+  question_type: factual
+  negative_domain: volcanic eruption precursors
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: mental health disorders (depression, schizophrenia)
+- pair_id: 340
+  positive_question: Compare the evidence for exercise as an adjunctive treatment for
+    depression with that for mindfulness-based stress reduction as a complementary
+    disease intervention.
+  negative_question: Compare the evidence for cover cropping as a soil health practice
+    with that for no-till farming as a complementary erosion prevention intervention.
+  question_type: comparative
+  negative_domain: regenerative agriculture
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: mental health disorders (depression, schizophrenia)
+- pair_id: 341
+  positive_question: How do long-acting injectable antipsychotics help improve medication
+    adherence in patients with schizophrenia who struggle to take daily oral disease
+    medications?
+  negative_question: How do slow-release fertilizer granules help improve nutrient
+    availability in soil conditions where frequent manual application of dissolved
+    mineral solutions is impractical?
+  question_type: explanatory
+  negative_domain: slow-release fertilizer technology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: mental health disorders (depression, schizophrenia)
+- pair_id: 342
+  positive_question: Describe the steps involved in implementing a transcranial magnetic
+    stimulation treatment protocol for a patient with medication-resistant depressive
+    disease.
+  negative_question: Describe the steps involved in implementing a phased array ultrasonic
+    inspection protocol for a pipeline section with suspected stress-corrosion cracking
+    defects.
+  question_type: process
+  negative_domain: pipeline inspection
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: mental health disorders (depression, schizophrenia)
+- pair_id: 343
+  positive_question: What is the relationship between childhood adversity, epigenetic
+    changes, and the increased lifetime risk of developing depression and other mental
+    health diseases?
+  negative_question: What is the relationship between soil compaction, reduced porosity,
+    and the increased long-term risk of developing waterlogging and other drainage
+    problems in clay fields?
+  question_type: factual
+  negative_domain: agricultural drainage
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: mental health disorders (depression, schizophrenia)
+- pair_id: 344
+  positive_question: How does the social drift hypothesis explain the overrepresentation
+    of schizophrenia in lower socioeconomic groups, and what alternative explanations
+    have been proposed?
+  negative_question: How does the island biogeography theory explain the overrepresentation
+    of endemic species on isolated oceanic islands, and what alternative explanations
+    have been proposed?
+  question_type: explanatory
+  negative_domain: island biogeography
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: mental health disorders (depression, schizophrenia)
+- pair_id: 345
+  positive_question: Compare the phenomenological experience of auditory hallucinations
+    in schizophrenia with that of intrusive thoughts in obsessive-compulsive disorder
+    as distinct disease processes.
+  negative_question: Compare the acoustic behavior of standing waves in organ pipes
+    with that of resonant frequencies in Helmholtz cavities as distinct physical phenomena.
+  question_type: comparative
+  negative_domain: musical acoustics
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: mental health disorders (depression, schizophrenia)
+- pair_id: 346
+  positive_question: Describe the process of developing a personalized treatment plan
+    for a patient with comorbid depression and substance use disorder who has not responded
+    to standard therapies.
+  negative_question: Describe the process of developing a customized alloy composition
+    for an engine component with combined thermal and corrosion requirements that standard
+    grades cannot satisfy.
+  question_type: process
+  negative_domain: alloy design metallurgy
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: mental health disorders (depression, schizophrenia)
+- pair_id: 347
+  positive_question: What emerging research on psychedelic-assisted therapy suggests
+    about new treatment paradigms for depression and other treatment-resistant mental
+    health diseases?
+  negative_question: What emerging research on direct air capture technology suggests
+    about new removal paradigms for atmospheric carbon dioxide and other persistent
+    greenhouse gases?
+  question_type: factual
+  negative_domain: direct air capture
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: mental health disorders (depression, schizophrenia)
+- pair_id: 348
+  positive_question: How does the concept of recovery in mental health differ from the
+    traditional medical model of disease cure, emphasizing functional improvement and
+    personal meaning?
+  negative_question: How does the concept of patina in antique furniture differ from
+    the traditional expectation of pristine restoration, emphasizing historical character
+    and accumulated surface texture?
+  question_type: explanatory
+  negative_domain: antique furniture appreciation
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: mental health disorders (depression, schizophrenia)
+- pair_id: 349
+  positive_question: Compare the global burden of depression measured in disability-adjusted
+    life years with that of schizophrenia, and explain why depression ranks among the
+    leading causes of disease burden worldwide.
+  negative_question: Compare the global production of aluminum measured in annual metric
+    tons with that of copper, and explain why aluminum ranks among the leading industrial
+    metals by volume worldwide.
+  question_type: comparative
+  negative_domain: industrial metals production
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: mental health disorders (depression, schizophrenia)

@@ -1,0 +1,181 @@
+pairs:
+- pair_id: 475
+  positive_question: How does the process of quantitative easing increase the amount of
+    currency circulating in an economy, and what are the risks?
+  negative_question: How does the process of purchasing a closed-loop gift card differ
+    from buying an open-loop prepaid card, and what are the spending restrictions?
+  question_type: explanatory
+  negative_domain: gift cards and prepaid cards
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 476
+  positive_question: What are the dimensions, weight, and metallic composition of the
+    one-euro coin currently minted for general circulation?
+  negative_question: What are the typical activation fees, monthly maintenance charges,
+    and expiration policies for general-purpose prepaid Visa gift cards?
+  question_type: factual
+  negative_domain: gift cards and prepaid cards
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 477
+  positive_question: How does the durability and hygiene of polymer banknotes compare
+    to traditional cotton-linen paper money under daily handling conditions?
+  negative_question: How does the consumer protection for gift card purchases compare
+    to that for prepaid debit cards under federal regulations in the United States?
+  question_type: comparative
+  negative_domain: gift cards and prepaid cards
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 478
+  positive_question: What steps does a commercial bank follow to sort, authenticate, and
+    recirculate banknotes received from retail deposits?
+  negative_question: What steps does a retailer follow to activate, track, and reconcile
+    gift card inventory across its point-of-sale systems?
+  question_type: process
+  negative_domain: gift cards and prepaid cards
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 479
+  positive_question: Why do currency exchange rates sometimes deviate significantly from
+    what purchasing power parity theory would predict?
+  negative_question: Why do gift card balances sometimes go unused, and what happens to
+    the unredeemed value under state escheatment and breakage laws?
+  question_type: explanatory
+  negative_domain: gift cards and prepaid cards
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 480
+  positive_question: What is the largest denomination banknote ever issued by any country,
+    and under what economic circumstances was it created?
+  negative_question: What is the largest denomination gift card typically available for
+    purchase at retail stores, and what anti-fraud limits restrict higher values?
+  question_type: factual
+  negative_domain: gift cards and prepaid cards
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 481
+  positive_question: How does the CFA franc used in West Africa compare to the CFA franc
+    used in Central Africa in terms of interchangeability and backing?
+  negative_question: How do closed-loop store gift cards compare to open-loop network-branded
+    prepaid cards in terms of where they can be redeemed?
+  question_type: comparative
+  negative_domain: gift cards and prepaid cards
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 482
+  positive_question: What is the end-to-end process by which a country transitions from
+    its old currency to a new one during a redenomination event?
+  negative_question: What is the end-to-end process by which a gift card scam operation
+    tricks victims and launders the resulting balances before they can be recovered?
+  question_type: process
+  negative_domain: gift cards and prepaid cards
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 483
+  positive_question: Why do black market exchange rates sometimes diverge dramatically
+    from official government-set currency exchange rates?
+  negative_question: Why do secondary market resale prices for popular gift cards sometimes
+    diverge significantly from their original face value?
+  question_type: explanatory
+  negative_domain: gift cards and prepaid cards
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 484
+  positive_question: What global organizations set standards for the physical dimensions
+    and machine-readability of modern banknotes?
+  negative_question: What federal and state regulations govern the disclosure of fees,
+    expiration dates, and terms of service for prepaid gift cards?
+  question_type: factual
+  negative_domain: gift cards and prepaid cards
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 485
+  positive_question: Describe the process by which a country's central bank manages the
+    seasonal spikes in demand for physical cash around holidays.
+  negative_question: Describe the process by which major retailers manage the seasonal
+    spike in gift card sales and activations during the holiday shopping season.
+  question_type: process
+  negative_domain: gift cards and prepaid cards
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 486
+  positive_question: How does the tactile accessibility of banknotes for visually impaired
+    users compare between the US dollar and the Canadian dollar?
+  negative_question: How does the digital balance-checking experience for prepaid cards
+    compare between app-based systems and traditional phone-based automated systems?
+  question_type: comparative
+  negative_domain: gift cards and prepaid cards
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 487
+  positive_question: Why do some island nations issue commemorative currency featuring
+    unique shapes or materials primarily as a collector's item rather than for circulation?
+  negative_question: Why do some retailers issue limited-edition collectible gift cards
+    with unique artwork that are sought after by hobbyists beyond their monetary value?
+  question_type: explanatory
+  negative_domain: gift cards and prepaid cards
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 488
+  positive_question: What specific features does the Reserve Bank of India include on
+    its rupee notes to help the public distinguish genuine notes from counterfeits?
+  negative_question: What specific security features do prepaid card issuers include on
+    physical gift cards to prevent tampering, balance theft, and unauthorized activation?
+  question_type: factual
+  negative_domain: gift cards and prepaid cards
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 489
+  positive_question: What is the procedure for a business to deposit large quantities
+    of coins and banknotes at a commercial bank, including any reporting requirements?
+  negative_question: What is the procedure for a consumer to consolidate the remaining
+    balances on multiple partially used gift cards into a single usable card or account?
+  question_type: process
+  negative_domain: gift cards and prepaid cards
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied

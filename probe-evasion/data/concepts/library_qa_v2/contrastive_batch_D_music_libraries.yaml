@@ -1,0 +1,151 @@
+pairs:
+- pair_id: 585
+  positive_question: "How do libraries curate and maintain their audiobook collections, balancing popular fiction titles with educational and nonfiction offerings?"
+  negative_question: "How do streaming services like Spotify organize a user's personal music library with playlists, liked songs, and algorithmically generated recommendations?"
+  question_type: process
+  negative_domain: "music libraries (personal collections, streaming)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 586
+  positive_question: "What role do library archives play in preserving local history materials such as photographs, maps, and genealogical records?"
+  negative_question: "What role do sample libraries play in modern music production, providing pre-recorded instrument sounds for digital audio workstations like Ableton Live?"
+  question_type: factual
+  negative_domain: "music libraries (personal collections, streaming)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 587
+  positive_question: "How do public libraries handle the challenge of long wait lists for popular new release books that have limited physical copies?"
+  negative_question: "How do royalty-free music libraries license their tracks for use in YouTube videos, podcasts, and commercial advertising content?"
+  question_type: explanatory
+  negative_domain: "music libraries (personal collections, streaming)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 588
+  positive_question: "What are the benefits of library reading challenges and summer reading programs in preventing learning loss among school-age children?"
+  negative_question: "What are the benefits of organizing a personal music library with consistent metadata tagging for artist, album, genre, and year?"
+  question_type: comparative
+  negative_domain: "music libraries (personal collections, streaming)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 589
+  positive_question: "How do tribal libraries serve Indigenous communities by preserving native language materials and hosting cultural programming?"
+  negative_question: "How do production music libraries categorize tracks by mood, tempo, and instrumentation to help filmmakers find the right soundtrack quickly?"
+  question_type: process
+  negative_domain: "music libraries (personal collections, streaming)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 590
+  positive_question: "Why have many libraries added 3D printers, laser cutters, and other maker space equipment to encourage hands-on learning and creativity?"
+  negative_question: "Why have many DJs transitioned from physical vinyl collections to digital music libraries managed through software like Rekordbox and Serato?"
+  question_type: explanatory
+  negative_domain: "music libraries (personal collections, streaming)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 591
+  positive_question: "What methods do libraries use to track circulation statistics and identify trends in patron borrowing behavior across different demographics?"
+  negative_question: "What methods do music streaming platforms use to analyze listening patterns in a user's music library and generate personalized discovery playlists?"
+  question_type: factual
+  negative_domain: "music libraries (personal collections, streaming)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 592
+  positive_question: "How do library quiet zones and designated study areas balance the needs of individual researchers with group collaboration spaces?"
+  negative_question: "How do composers build orchestral sample libraries by recording each instrument at multiple dynamics, articulations, and round-robin variations?"
+  question_type: process
+  negative_domain: "music libraries (personal collections, streaming)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 593
+  positive_question: "What are the differences between how a public library and a school library serve their respective communities and age groups?"
+  negative_question: "What are the differences between Apple Music's cloud music library syncing approach and Spotify's offline download model for personal collections?"
+  question_type: comparative
+  negative_domain: "music libraries (personal collections, streaming)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 594
+  positive_question: "How do libraries partner with local schools to support curriculum-aligned reading programs and provide class visit field trip experiences?"
+  negative_question: "How do game audio designers use sound effect libraries to build immersive environments with layered ambient and foley recordings?"
+  question_type: explanatory
+  negative_domain: "music libraries (personal collections, streaming)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 595
+  positive_question: "What security measures do libraries implement to prevent book theft, including electromagnetic strips, RFID tags, and security gates?"
+  negative_question: "What audio format considerations arise when migrating a personal music library from lossy MP3 files to lossless FLAC or ALAC formats?"
+  question_type: factual
+  negative_domain: "music libraries (personal collections, streaming)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 596
+  positive_question: "How do library systems handle patron privacy and confidentiality of borrowing records under state library confidentiality laws?"
+  negative_question: "How do sync licensing agencies manage their music libraries to match brand requirements for television commercials and film trailers?"
+  question_type: process
+  negative_domain: "music libraries (personal collections, streaming)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 597
+  positive_question: "Why is the concept of intellectual freedom central to the American Library Association's stance on censorship and book challenges?"
+  negative_question: "Why do electronic music producers invest in large synthesizer preset libraries to speed up sound design during the production process?"
+  question_type: explanatory
+  negative_domain: "music libraries (personal collections, streaming)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 598
+  positive_question: "What are the advantages of consortium-based library catalog systems compared to standalone catalogs operated independently by each library?"
+  negative_question: "What are the advantages of using a dedicated music library manager like MusicBee or MediaMonkey compared to a basic file explorer for audio collections?"
+  question_type: comparative
+  negative_domain: "music libraries (personal collections, streaming)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 599
+  positive_question: "How do academic libraries provide research data management services, helping scholars with data storage, sharing, and preservation plans?"
+  negative_question: "How do podcast producers use sound effect and music libraries to add intro jingles, transitions, and background scoring to their episodes?"
+  question_type: process
+  negative_domain: "music libraries (personal collections, streaming)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"

@@ -1,0 +1,161 @@
+pairs:
+- pair_id: 707
+  positive_question: "How do library instruction programs teach students to evaluate the credibility and reliability of online sources using criteria like authority and currency?"
+  negative_question: "How do honeybees communicate the location of nectar sources to other colony members through the waggle dance behavior pattern?"
+  question_type: process
+  negative_domain: "entomology"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "information literacy and research skills"
+- pair_id: 708
+  positive_question: "What is the CRAAP test framework used by librarians to help researchers assess the currency, relevance, authority, accuracy, and purpose of information sources?"
+  negative_question: "What is the Richter scale and how does it quantify the magnitude of seismic energy released during an earthquake event?"
+  question_type: factual
+  negative_domain: "seismology"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "information literacy and research skills"
+- pair_id: 709
+  positive_question: "Why is information literacy considered an essential competency for college students, and how do academic libraries integrate it into first-year curriculum?"
+  negative_question: "Why is the ozone layer essential for protecting life on Earth, and how do chlorofluorocarbons contribute to its depletion in the stratosphere?"
+  question_type: explanatory
+  negative_domain: "atmospheric chemistry"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "information literacy and research skills"
+- pair_id: 710
+  positive_question: "What are the differences between keyword searching and subject heading searching in library databases, and when is each approach most effective?"
+  negative_question: "What are the differences between Olympic weightlifting and powerlifting in terms of competition lifts, training methods, and scoring criteria?"
+  question_type: comparative
+  negative_domain: "strength sports"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "information literacy and research skills"
+- pair_id: 711
+  positive_question: "How do embedded librarians collaborate with faculty to design research assignments that build progressively complex information literacy skills across a semester?"
+  negative_question: "How do tectonic plates interact at convergent, divergent, and transform boundaries to produce earthquakes, volcanoes, and mountain ranges?"
+  question_type: process
+  negative_domain: "plate tectonics"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "information literacy and research skills"
+- pair_id: 712
+  positive_question: "What role do library-created research guides and pathfinders play in directing students to the most relevant databases and resources for a given topic?"
+  negative_question: "What role do probiotics play in maintaining gut microbiome balance and supporting immune system function through beneficial bacterial colonization?"
+  question_type: factual
+  negative_domain: "microbiology"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "information literacy and research skills"
+- pair_id: 713
+  positive_question: "Why do librarians emphasize the importance of distinguishing between primary and secondary sources when conducting academic research in the humanities?"
+  negative_question: "Why do architects use flying buttresses in Gothic cathedral design to transfer the lateral thrust of vaulted ceilings to exterior supports?"
+  question_type: explanatory
+  negative_domain: "architecture"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "information literacy and research skills"
+- pair_id: 714
+  positive_question: "How do information literacy standards from ACRL define the competencies that students should develop for locating, evaluating, and ethically using information?"
+  negative_question: "How do geothermal power plants extract heat energy from underground reservoirs to generate electricity in volcanically active regions?"
+  question_type: factual
+  negative_domain: "geothermal energy"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "information literacy and research skills"
+- pair_id: 715
+  positive_question: "What are the differences between using a library discovery system and using Google Scholar for academic research in terms of coverage and precision?"
+  negative_question: "What are the differences between natural and synthetic rubber in terms of molecular structure, elasticity, and resistance to heat and chemicals?"
+  question_type: comparative
+  negative_domain: "polymer chemistry"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "information literacy and research skills"
+- pair_id: 716
+  positive_question: "How do library workshops on citation management tools like Zotero and Mendeley help researchers organize sources and format bibliographies correctly?"
+  negative_question: "How do hydraulic fracturing operations inject pressurized fluid into shale formations to release trapped natural gas and petroleum reserves?"
+  question_type: process
+  negative_domain: "petroleum engineering"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "information literacy and research skills"
+- pair_id: 717
+  positive_question: "Why is understanding Boolean logic operators like AND, OR, and NOT essential for constructing effective database searches in library research?"
+  negative_question: "Why is understanding the water cycle essential for predicting drought patterns and managing freshwater resources in semi-arid regions?"
+  question_type: explanatory
+  negative_domain: "hydrology"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "information literacy and research skills"
+- pair_id: 718
+  positive_question: "What strategies do librarians teach for identifying bias in news media sources and recognizing propaganda techniques in online content?"
+  negative_question: "What strategies do wildlife conservationists use to reintroduce endangered species into habitats where they have been locally extirpated?"
+  question_type: factual
+  negative_domain: "wildlife conservation"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "information literacy and research skills"
+- pair_id: 719
+  positive_question: "How do library-based data literacy programs teach patrons to interpret statistical claims, read charts, and critically evaluate data visualizations?"
+  negative_question: "How do suspension bridges distribute load forces through main cables and vertical suspenders to support long spans over waterways?"
+  question_type: process
+  negative_domain: "structural engineering"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "information literacy and research skills"
+- pair_id: 720
+  positive_question: "What are the advantages of guided library database searches compared to open internet browsing for undergraduate research paper assignments?"
+  negative_question: "What are the advantages of raised bed gardening compared to traditional in-ground planting for soil drainage and pest management?"
+  question_type: comparative
+  negative_domain: "horticulture"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "information literacy and research skills"
+- pair_id: 721
+  positive_question: "Why do library information literacy initiatives increasingly address misinformation and deepfakes as threats to informed democratic participation?"
+  negative_question: "Why do certain volcanic rocks like pumice float on water despite being made of dense silicate minerals?"
+  question_type: explanatory
+  negative_domain: "geology"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "information literacy and research skills"
+- pair_id: 722
+  positive_question: "How do academic librarians assess student learning outcomes from information literacy instruction through rubrics, pre-post tests, and portfolio reviews?"
+  negative_question: "How do master perfumers combine top, middle, and base notes to create balanced fragrance compositions for luxury perfume houses?"
+  question_type: process
+  negative_domain: "perfumery"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "information literacy and research skills"

@@ -1,0 +1,182 @@
+pairs:
+- pair_id: 520
+  positive_question: How did the transition from commodity money to representative paper
+    currency occur historically, and which civilizations led this development?
+  negative_question: How did barter systems function in pre-monetary societies, and which
+    civilizations developed the most sophisticated non-currency trade networks?
+  question_type: explanatory
+  negative_domain: barter systems and trade
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 521
+  positive_question: What are the most widely traded currency pairs on the global foreign
+    exchange market, and what daily trading volume do they represent?
+  negative_question: What are the most commonly exchanged goods on modern online barter
+    platforms, and what estimated annual transaction volume do they represent?
+  question_type: factual
+  negative_domain: barter systems and trade
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 522
+  positive_question: How does the efficiency of modern digital currency transfers compare
+    to the efficiency of cash transactions for small retail purchases?
+  negative_question: How does the efficiency of organized barter exchanges compare to
+    that of informal direct swaps in terms of finding suitable trading partners?
+  question_type: comparative
+  negative_domain: barter systems and trade
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 523
+  positive_question: What is the step-by-step process a government follows to establish
+    a new central bank and begin issuing its own sovereign currency?
+  negative_question: What is the step-by-step process a community follows to establish
+    a local barter exchange, including setting trade credits and managing member accounts?
+  question_type: process
+  negative_domain: barter systems and trade
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 524
+  positive_question: Why do periods of severe hyperinflation sometimes cause people to
+    abandon the official currency and revert to using foreign money?
+  negative_question: Why do periods of severe economic crisis sometimes cause communities
+    to abandon the use of official money and revert to direct barter arrangements?
+  question_type: explanatory
+  negative_domain: barter systems and trade
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 525
+  positive_question: What are the unique design features of the South African rand banknotes
+    that celebrate the country's wildlife and natural heritage?
+  negative_question: What are the key features of the International Reciprocal Trade Association
+    that sets standards and ethics for commercial barter exchanges?
+  question_type: factual
+  negative_domain: barter systems and trade
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 526
+  positive_question: How does the monetary policy independence of a country with its own
+    floating currency compare to that of a country in a currency union?
+  negative_question: How does the flexibility of multilateral barter exchanges that use
+    trade credits compare to that of bilateral barter where two parties must each want
+    what the other offers?
+  question_type: comparative
+  negative_domain: barter systems and trade
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 527
+  positive_question: Describe the process by which a country implements currency controls
+    to restrict the outflow of its money during an economic crisis.
+  negative_question: Describe the process by which a commercial barter network tracks
+    and settles imbalances when one member consistently receives more goods than they provide.
+  question_type: process
+  negative_domain: barter systems and trade
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 528
+  positive_question: Why do emerging market currencies often experience sharp depreciations
+    when the US Federal Reserve raises interest rates?
+  negative_question: Why do barter exchanges often struggle with the double coincidence
+    of wants problem, and what mechanisms have been developed to overcome it?
+  question_type: explanatory
+  negative_domain: barter systems and trade
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 529
+  positive_question: What role does the Bank for International Settlements play in facilitating
+    currency transactions and cooperation between central banks?
+  negative_question: What role do trade credit units play in modern commercial barter
+    exchanges as an accounting mechanism for tracking member transactions?
+  question_type: factual
+  negative_domain: barter systems and trade
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 530
+  positive_question: How does the process of dollarization differ from the process of
+    creating a currency board arrangement pegged to the US dollar?
+  negative_question: How does the process of corporate barter between large companies
+    exchanging excess inventory differ from small-scale consumer-to-consumer swaps?
+  question_type: process
+  negative_domain: barter systems and trade
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 531
+  positive_question: How does the legal tender status of coins compare to that of banknotes
+    in countries that impose limits on coin payments for large transactions?
+  negative_question: How does the tax treatment of barter transactions compare to that
+    of cash transactions under IRS rules requiring fair market value reporting?
+  question_type: comparative
+  negative_domain: barter systems and trade
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 532
+  positive_question: Why do some economists argue that eliminating large denomination
+    banknotes would reduce crime and tax evasion?
+  negative_question: Why do some economists argue that barter economies are inherently
+    less efficient than monetary economies due to information and transaction costs?
+  question_type: explanatory
+  negative_domain: barter systems and trade
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 533
+  positive_question: What security measures does the European Central Bank use to detect
+    counterfeit euro notes submitted through the banking system?
+  negative_question: What verification measures do online swap platforms use to ensure
+    the quality and authenticity of goods exchanged in peer-to-peer barter transactions?
+  question_type: factual
+  negative_domain: barter systems and trade
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 534
+  positive_question: Describe the procedure by which a damaged coin is evaluated and replaced
+    by the issuing mint upon submission by the holder.
+  negative_question: Describe the procedure by which a dispute between members of a barter
+    exchange is mediated when one party claims the goods received were not as described.
+  question_type: process
+  negative_domain: barter systems and trade
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied

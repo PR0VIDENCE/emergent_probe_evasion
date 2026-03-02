@@ -1,0 +1,251 @@
+pairs:
+- pair_id: 200
+  positive_question: "What was the gold standard, and how did it tie the value of a nation's currency to a fixed quantity of gold?"
+  negative_question: "What was the Rosetta Stone, and how did it tie the meaning of Egyptian hieroglyphics to a known system of Greek text?"
+  question_type: factual
+  negative_domain: "Egyptology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "the gold standard and its abandonment"
+- pair_id: 201
+  positive_question: "How did the classical gold standard constrain governments from printing excessive amounts of currency during the 19th century?"
+  negative_question: "How did the feudal manor system constrain peasants from cultivating unauthorized plots of farmland during the medieval period?"
+  question_type: explanatory
+  negative_domain: "medieval feudalism"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "the gold standard and its abandonment"
+- pair_id: 202
+  positive_question: "Compare the gold standard era's fixed exchange rates with the floating exchange rate system that replaced it after 1971."
+  negative_question: "Compare the Ptolemaic geocentric model's fixed celestial spheres with the Copernican heliocentric system that replaced it after 1543."
+  question_type: comparative
+  negative_domain: "history of astronomy"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "the gold standard and its abandonment"
+- pair_id: 203
+  positive_question: "Describe the process by which a country on the gold standard would adjust its money supply when gold reserves changed."
+  negative_question: "Describe the process by which a hibernating bear adjusts its metabolic rate when ambient temperature conditions change."
+  question_type: process
+  negative_domain: "hibernation physiology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "the gold standard and its abandonment"
+- pair_id: 204
+  positive_question: "What were the main reasons President Nixon ended the convertibility of the US dollar to gold in August 1971?"
+  negative_question: "What were the main reasons Captain Scott failed to return from the South Pole expedition alive in March 1912?"
+  question_type: factual
+  negative_domain: "polar exploration"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "the gold standard and its abandonment"
+- pair_id: 205
+  positive_question: "Why did the gold standard make it difficult for nations to use monetary policy to respond to economic recessions?"
+  negative_question: "Why did the horse-drawn carriage make it difficult for cities to manage sanitation challenges from growing urban populations?"
+  question_type: explanatory
+  negative_domain: "urban sanitation history"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "the gold standard and its abandonment"
+- pair_id: 206
+  positive_question: "How did the interwar gold exchange standard differ from the classical gold standard in terms of currency backing?"
+  negative_question: "How did the Romanesque architectural style differ from the Gothic architectural style in terms of structural vaulting?"
+  question_type: comparative
+  negative_domain: "architectural history"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "the gold standard and its abandonment"
+- pair_id: 207
+  positive_question: "Explain the steps through which the Bretton Woods system established the US dollar as the world's primary reserve currency backed by gold."
+  negative_question: "Explain the steps through which the double-helix discovery established DNA as the molecule carrying hereditary information encoded by base pairs."
+  question_type: process
+  negative_domain: "molecular biology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "the gold standard and its abandonment"
+- pair_id: 208
+  positive_question: "What role did gold discoveries in California and Australia play in expanding the global money supply during the mid-1800s?"
+  negative_question: "What role did fossil discoveries in Mongolia and Argentina play in expanding our understanding of dinosaur diversity during the mid-1900s?"
+  question_type: factual
+  negative_domain: "dinosaur paleontology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "the gold standard and its abandonment"
+- pair_id: 209
+  positive_question: "Why do some economists argue that returning to the gold standard would improve long-term currency stability and discipline?"
+  negative_question: "Why do some marine biologists argue that establishing large marine reserves would improve long-term fish population recovery and biodiversity?"
+  question_type: explanatory
+  negative_domain: "marine conservation"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "the gold standard and its abandonment"
+- pair_id: 210
+  positive_question: "Compare the deflationary tendencies of the gold standard with the inflationary tendencies of modern fiat currency systems."
+  negative_question: "Compare the migratory tendencies of Arctic caribou herds with the sedentary tendencies of tropical rainforest primate populations."
+  question_type: comparative
+  negative_domain: "wildlife migration"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "the gold standard and its abandonment"
+- pair_id: 211
+  positive_question: "Describe the process by which gold arbitrage between nations maintained exchange rate equilibrium under the classical gold standard."
+  negative_question: "Describe the process by which seed dispersal between islands maintained genetic diversity equilibrium under natural selection pressures."
+  question_type: process
+  negative_domain: "population genetics"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "the gold standard and its abandonment"
+- pair_id: 212
+  positive_question: "What was the role of the Bank of England in managing the international gold standard during the Victorian era?"
+  negative_question: "What was the role of the Royal Observatory in establishing the prime meridian standard during the navigational era?"
+  question_type: factual
+  negative_domain: "geodesy"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "the gold standard and its abandonment"
+- pair_id: 213
+  positive_question: "Why did the Great Depression expose the fundamental weaknesses of the gold standard as a framework for managing national currencies?"
+  negative_question: "Why did the Challenger disaster expose the fundamental weaknesses of O-ring seals as a framework for managing solid rocket boosters?"
+  question_type: explanatory
+  negative_domain: "aerospace failure analysis"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "the gold standard and its abandonment"
+- pair_id: 214
+  positive_question: "How does the concept of currency backed by gold compare to modern proposals for currencies backed by commodity baskets?"
+  negative_question: "How does the concept of electricity generated by nuclear fission compare to emerging proposals for energy produced by nuclear fusion?"
+  question_type: comparative
+  negative_domain: "nuclear energy"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "the gold standard and its abandonment"
+- pair_id: 215
+  positive_question: "Explain the mechanism by which gold shipments between central banks settled international trade imbalances under the gold standard."
+  negative_question: "Explain the mechanism by which ocean conveyor belt currents between hemispheres distributed thermal energy under the thermohaline circulation."
+  question_type: process
+  negative_domain: "ocean thermohaline circulation"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "the gold standard and its abandonment"
+- pair_id: 216
+  positive_question: "What is the Triffin dilemma, and how did it highlight the inherent contradiction in using the US dollar as a gold-backed reserve currency?"
+  negative_question: "What is the observer effect, and how did it highlight the inherent limitation in measuring quantum particle behavior with laboratory instruments?"
+  question_type: factual
+  negative_domain: "quantum physics"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "the gold standard and its abandonment"
+- pair_id: 217
+  positive_question: "Why did France's insistence on converting dollar reserves into physical gold accelerate the collapse of the Bretton Woods currency system?"
+  negative_question: "Why did the introduction of European rabbits into Australia accelerate the collapse of the native grassland vegetation ecosystem?"
+  question_type: explanatory
+  negative_domain: "invasive herbivore ecology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "the gold standard and its abandonment"
+- pair_id: 218
+  positive_question: "Compare the currency stability experienced by countries on the gold standard before World War I with the volatility seen in the interwar period."
+  negative_question: "Compare the biodiversity levels observed in coral reefs before industrial pollution with the species decline seen in the post-industrial era."
+  question_type: comparative
+  negative_domain: "marine biodiversity"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "the gold standard and its abandonment"
+- pair_id: 219
+  positive_question: "Describe the process by which Britain returned to the gold standard in 1925 and the economic consequences that followed for sterling."
+  negative_question: "Describe the process by which wolves were reintroduced to Yellowstone in 1995 and the ecological consequences that followed for elk populations."
+  question_type: process
+  negative_domain: "trophic cascades"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "the gold standard and its abandonment"
+- pair_id: 220
+  positive_question: "What impact did the discovery of large gold deposits in South Africa have on global currency systems in the late 19th century?"
+  negative_question: "What impact did the discovery of large petroleum reserves in the Middle East have on global energy systems in the early 20th century?"
+  question_type: factual
+  negative_domain: "petroleum geology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "the gold standard and its abandonment"
+- pair_id: 221
+  positive_question: "Why do critics argue that the gold standard created an inherently deflationary bias that harmed workers and debtors?"
+  negative_question: "Why do critics argue that industrial monoculture farming created an inherently fragile ecosystem that harmed pollinators and soil organisms?"
+  question_type: explanatory
+  negative_domain: "agricultural ecology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "the gold standard and its abandonment"
+- pair_id: 222
+  positive_question: "How did the transition from gold-backed currency to fiat money affect the ability of governments to finance wars and public spending?"
+  negative_question: "How did the transition from sail-powered vessels to steam-powered ships affect the ability of navies to project force across oceans?"
+  question_type: comparative
+  negative_domain: "naval technology history"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "the gold standard and its abandonment"
+- pair_id: 223
+  positive_question: "Explain how the price-specie flow mechanism automatically corrected trade imbalances between gold-standard countries."
+  negative_question: "Explain how the predator-prey population cycle automatically corrected imbalances between lynx and snowshoe hare numbers."
+  question_type: process
+  negative_domain: "population ecology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "the gold standard and its abandonment"
+- pair_id: 224
+  positive_question: "What is the current role of gold in central bank reserves now that no major currency is directly backed by the metal?"
+  negative_question: "What is the current role of permafrost in Arctic carbon storage now that no stable region is entirely immune to thawing?"
+  question_type: factual
+  negative_domain: "permafrost carbon"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "the gold standard and its abandonment"

@@ -1,0 +1,314 @@
+pairs:
+- pair_id: 200
+  positive_question: How do vaccines train the adaptive immune system to produce memory
+    B-cells and T-cells that provide long-lasting protection against specific diseases?
+  negative_question: How do apprenticeships train the developing craftsperson to produce
+    dovetail joints and mortise cuts that provide long-lasting strength in wooden furniture?
+  question_type: explanatory
+  negative_domain: furniture joinery
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: vaccines and immunization
+- pair_id: 201
+  positive_question: Compare the mechanisms by which live attenuated vaccines and inactivated
+    vaccines stimulate an immune response against disease-causing pathogens.
+  negative_question: Compare the mechanisms by which natural convection ovens and forced-air
+    convection ovens distribute heat evenly across food-bearing cooking racks.
+  question_type: comparative
+  negative_domain: oven engineering
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: vaccines and immunization
+- pair_id: 202
+  positive_question: What is herd immunity, and how does achieving high vaccination
+    coverage protect vulnerable individuals who cannot be vaccinated against diseases?
+  negative_question: What is load balancing, and how does distributing network traffic
+    across multiple servers protect vulnerable nodes that cannot handle peak demand?
+  question_type: factual
+  negative_domain: network load balancing
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: vaccines and immunization
+- pair_id: 203
+  positive_question: Describe the multi-phase process of vaccine development from initial
+    laboratory research through preclinical testing, clinical trials, and regulatory
+    approval.
+  negative_question: Describe the multi-phase process of typeface development from initial
+    letterform sketching through digital vectorization, kerning tables, and commercial
+    release.
+  question_type: process
+  negative_domain: type design
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: vaccines and immunization
+- pair_id: 204
+  positive_question: How do mRNA vaccines instruct human cells to produce a viral protein
+    that triggers an immune response without causing actual disease infection?
+  negative_question: How do CNC programs instruct milling machines to produce a metal
+    component that matches engineering specifications without requiring manual tool guidance?
+  question_type: explanatory
+  negative_domain: CNC programming
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: vaccines and immunization
+- pair_id: 205
+  positive_question: What are adjuvants in vaccine formulations, and how do these substances
+    enhance the strength and duration of the immune response to disease antigens?
+  negative_question: What are catalysts in chemical reactions, and how do these substances
+    enhance the speed and selectivity of the conversion process for industrial feedstocks?
+  question_type: factual
+  negative_domain: industrial catalysis
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: vaccines and immunization
+- pair_id: 206
+  positive_question: Compare the cold chain storage requirements of mRNA vaccines with
+    those of traditional protein subunit vaccines and explain the logistical implications.
+  negative_question: Compare the climate control storage requirements of oil paintings
+    with those of traditional marble sculptures and explain the conservation implications.
+  question_type: comparative
+  negative_domain: art conservation storage
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: vaccines and immunization
+- pair_id: 207
+  positive_question: How does the process of antigenic drift in influenza viruses necessitate
+    annual reformulation of seasonal flu vaccines to maintain effectiveness?
+  negative_question: How does the process of fashion trend evolution in consumer markets
+    necessitate seasonal redesign of clothing collections to maintain commercial relevance?
+  question_type: explanatory
+  negative_domain: fashion design cycles
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: vaccines and immunization
+- pair_id: 208
+  positive_question: Describe the steps involved in the global surveillance network that
+    selects which influenza strains to include in each year's seasonal disease vaccine.
+  negative_question: Describe the steps involved in the international judging panel
+    that selects which coffee varieties to feature in each year's specialty roasting
+    competition.
+  question_type: process
+  negative_domain: specialty coffee competition
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: vaccines and immunization
+- pair_id: 209
+  positive_question: What safety monitoring systems like VAERS track adverse events
+    following vaccination to ensure the ongoing safety of immunization programs?
+  negative_question: What quality monitoring systems like HACCP track critical control
+    points during food production to ensure the ongoing safety of processing operations?
+  question_type: factual
+  negative_domain: food safety systems
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: vaccines and immunization
+- pair_id: 210
+  positive_question: How do conjugate vaccines work by linking bacterial polysaccharide
+    antigens to carrier proteins to improve immune responses in young children?
+  negative_question: How do composite bows work by layering different material strips
+    onto wooden cores to improve mechanical performance in traditional archery?
+  question_type: explanatory
+  negative_domain: traditional archery crafting
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: vaccines and immunization
+- pair_id: 211
+  positive_question: Compare the global eradication success of the smallpox vaccine
+    with the ongoing challenges of achieving polio eradication through vaccination campaigns.
+  negative_question: Compare the global adoption success of the metric system with the
+    ongoing challenges of achieving universal standardization of electrical outlet formats.
+  question_type: comparative
+  negative_domain: international standards
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: vaccines and immunization
+- pair_id: 212
+  positive_question: What is the concept of original antigenic sin, and how does prior
+    disease exposure or vaccination influence immune responses to related viral variants?
+  negative_question: What is the concept of anchoring bias, and how does prior price
+    exposure or market conditioning influence investor responses to related stock movements?
+  question_type: explanatory
+  negative_domain: behavioral finance
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: vaccines and immunization
+- pair_id: 213
+  positive_question: Describe the manufacturing process for producing billions of vaccine
+    doses at scale, from cell culture or fermentation through purification and fill-finish.
+  negative_question: Describe the manufacturing process for producing billions of glass
+    bottles at scale, from raw material melting through forming, annealing, and quality
+    inspection.
+  question_type: process
+  negative_domain: glass manufacturing
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: vaccines and immunization
+- pair_id: 214
+  positive_question: How do therapeutic vaccines differ from preventive vaccines in their
+    goal of treating existing diseases rather than preventing future infections?
+  negative_question: How do restorative pruning techniques differ from preventive pruning
+    in their goal of rehabilitating damaged trees rather than maintaining healthy growth?
+  question_type: comparative
+  negative_domain: arboriculture
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: vaccines and immunization
+- pair_id: 215
+  positive_question: What challenges do vaccine developers face when creating immunizations
+    against parasitic diseases like malaria that have complex multi-stage life cycles?
+  negative_question: What challenges do game developers face when creating simulations
+    of fluid dynamics that have complex multi-scale turbulence interactions?
+  question_type: factual
+  negative_domain: game physics engines
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: vaccines and immunization
+- pair_id: 216
+  positive_question: How does vaccine hesitancy driven by misinformation undermine public
+    health efforts to control preventable infectious diseases through immunization?
+  negative_question: How does signal degradation driven by electromagnetic interference
+    undermine communication efforts to maintain reliable data links through fiber-optic
+    networks?
+  question_type: explanatory
+  negative_domain: fiber-optic communications
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: vaccines and immunization
+- pair_id: 217
+  positive_question: Compare the immune response generated by a two-dose vaccine primary
+    series with that produced by a subsequent booster dose administered months later.
+  negative_question: Compare the flavor profile developed by a first fermentation of
+    beer wort with that produced by a subsequent dry-hopping addition performed weeks
+    later.
+  question_type: comparative
+  negative_domain: craft brewing
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: vaccines and immunization
+- pair_id: 218
+  positive_question: Describe the process by which reverse vaccinology uses pathogen
+    genomic data to identify promising disease vaccine antigen candidates computationally.
+  negative_question: Describe the process by which computational fluid dynamics uses
+    mesh grid data to identify problematic airflow turbulence regions around vehicle
+    bodies digitally.
+  question_type: process
+  negative_domain: automotive aerodynamic simulation
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: vaccines and immunization
+- pair_id: 219
+  positive_question: What is the role of the Expanded Programme on Immunization in
+    coordinating global childhood vaccination schedules to reduce disease mortality?
+  negative_question: What is the role of the International Phonetic Alphabet in coordinating
+    global linguistic transcription standards to reduce pronunciation ambiguity?
+  question_type: factual
+  negative_domain: phonetic transcription
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: vaccines and immunization
+- pair_id: 220
+  positive_question: How do nanoparticle-based vaccine platforms present disease antigens
+    to immune cells in ways that enhance the breadth and durability of the immune response?
+  negative_question: How do microencapsulation-based fertilizer platforms release plant
+    nutrients to root zones in ways that enhance the efficiency and duration of soil
+    enrichment?
+  question_type: explanatory
+  negative_domain: controlled-release fertilizers
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: vaccines and immunization
+- pair_id: 221
+  positive_question: Compare the regulatory pathways for emergency use authorization
+    of vaccines during a pandemic with the standard approval process for routine disease
+    immunizations.
+  negative_question: Compare the permitting pathways for emergency bridge repairs during
+    a natural disaster with the standard approval process for routine highway construction
+    projects.
+  question_type: comparative
+  negative_domain: highway permitting
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: vaccines and immunization
+- pair_id: 222
+  positive_question: What is the concept of a universal influenza vaccine, and what
+    conserved viral targets would such a vaccine need to exploit to provide broad disease
+    protection?
+  negative_question: What is the concept of a universal thread standard, and what conserved
+    dimensional parameters would such a standard need to specify to provide broad fastener
+    compatibility?
+  question_type: factual
+  negative_domain: mechanical fastener standards
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: vaccines and immunization
+- pair_id: 223
+  positive_question: How do DNA vaccines deliver genetic instructions into host cells
+    to produce disease-specific antigens that prime the immune system for future encounters?
+  negative_question: How do laser engravers deliver focused light pulses onto material
+    surfaces to produce design-specific etchings that prepare the workpiece for final
+    finishing?
+  question_type: explanatory
+  negative_domain: laser engraving
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: vaccines and immunization
+- pair_id: 224
+  positive_question: Describe the steps a public health department follows when organizing
+    a mass vaccination campaign in response to a sudden disease outbreak in a community.
+  negative_question: Describe the steps a fire department follows when organizing a
+    mass evacuation operation in response to a sudden wildfire approach toward a community.
+  question_type: process
+  negative_domain: wildfire evacuation planning
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: vaccines and immunization

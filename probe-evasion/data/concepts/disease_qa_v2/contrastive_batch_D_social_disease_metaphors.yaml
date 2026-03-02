@@ -1,0 +1,151 @@
+pairs:
+- pair_id: 585
+  positive_question: "How does chronic inflammation contribute to the development of cardiovascular disease, and what biomarkers indicate elevated risk?"
+  negative_question: "How does chronic inequality contribute to the development of societal dysfunction, and what economic indicators signal elevated risk of social unrest?"
+  question_type: explanatory
+  negative_domain: "social disease metaphors (societal ills, toxic culture)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 586
+  positive_question: "What are the stages of disease progression in untreated syphilis, from primary chancre through secondary and tertiary complications?"
+  negative_question: "What are the stages of institutional corruption progression, from isolated incidents through normalized misconduct to systemic organizational failure?"
+  question_type: process
+  negative_domain: "social disease metaphors (societal ills, toxic culture)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 587
+  positive_question: "Compare how endemic diseases like malaria persist in certain regions with how epidemic diseases like cholera appear in sudden outbreaks."
+  negative_question: "Compare how endemic poverty persists in certain communities with how economic crises appear as sudden disruptions across broader populations."
+  question_type: comparative
+  negative_domain: "social disease metaphors (societal ills, toxic culture)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 588
+  positive_question: "What factors make certain populations more susceptible to infectious disease outbreaks, such as overcrowding and malnutrition?"
+  negative_question: "What factors make certain communities more susceptible to radicalization and extremism, such as economic marginalization and lack of social cohesion?"
+  question_type: factual
+  negative_domain: "social disease metaphors (societal ills, toxic culture)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 589
+  positive_question: "How do public health interventions like sanitation and clean water access reduce the burden of waterborne diseases in developing nations?"
+  negative_question: "How do public policy interventions like education reform and social safety nets reduce the burden of systemic poverty in developing nations?"
+  question_type: process
+  negative_domain: "social disease metaphors (societal ills, toxic culture)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 590
+  positive_question: "Why do autoimmune diseases like lupus cause the body's own immune system to attack healthy tissues and organs?"
+  negative_question: "Why do toxic workplace cultures cause organizations to undermine their own most productive employees through bureaucratic dysfunction?"
+  question_type: explanatory
+  negative_domain: "social disease metaphors (societal ills, toxic culture)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 591
+  positive_question: "What is the relationship between comorbidities like diabetes and obesity and the severity of respiratory disease outcomes?"
+  negative_question: "What is the relationship between compounding social problems like unemployment and substance abuse and the severity of community dysfunction outcomes?"
+  question_type: factual
+  negative_domain: "social disease metaphors (societal ills, toxic culture)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 592
+  positive_question: "How does early screening and diagnosis improve survival rates for cancers detected at stage one versus stage four?"
+  negative_question: "How does early intervention in declining neighborhoods improve revitalization outcomes compared to waiting until complete urban blight has set in?"
+  question_type: comparative
+  negative_domain: "social disease metaphors (societal ills, toxic culture)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 593
+  positive_question: "Describe the process by which infectious disease spreads through a naive population that has no prior immunity or vaccination."
+  negative_question: "Describe the process by which misinformation spreads through online communities that have no prior media literacy training or fact-checking norms."
+  question_type: process
+  negative_domain: "social disease metaphors (societal ills, toxic culture)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 594
+  positive_question: "What role does genetic predisposition play in determining individual susceptibility to diseases like Parkinson's and Huntington's?"
+  negative_question: "What role does historical legacy play in determining community susceptibility to cycles of poverty and institutional distrust across generations?"
+  question_type: explanatory
+  negative_domain: "social disease metaphors (societal ills, toxic culture)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 595
+  positive_question: "How effective are disease eradication campaigns, and what lessons did the successful elimination of smallpox provide for future efforts?"
+  negative_question: "How effective are anti-corruption campaigns, and what lessons did successful institutional reform efforts provide for combating systemic graft?"
+  question_type: factual
+  negative_domain: "social disease metaphors (societal ills, toxic culture)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 596
+  positive_question: "Compare the chronic disease burden of diabetes management with the acute disease burden of treating severe sepsis in hospital settings."
+  negative_question: "Compare the chronic social burden of managing homelessness with the acute social burden of responding to natural disaster displacement events."
+  question_type: comparative
+  negative_domain: "social disease metaphors (societal ills, toxic culture)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 597
+  positive_question: "Why does antimicrobial resistance threaten to reverse decades of progress in treating infectious diseases worldwide?"
+  negative_question: "Why does institutional inertia threaten to reverse decades of progress in addressing systemic social inequities worldwide?"
+  question_type: explanatory
+  negative_domain: "social disease metaphors (societal ills, toxic culture)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 598
+  positive_question: "What are the long-term health consequences of surviving severe COVID-19 infection, commonly referred to as long COVID syndrome?"
+  negative_question: "What are the long-term societal consequences of surviving severe economic recession, commonly referred to as economic scarring effects?"
+  question_type: factual
+  negative_domain: "social disease metaphors (societal ills, toxic culture)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 599
+  positive_question: "Describe the process of disease remission in cancer patients, including what partial and complete remission mean for long-term prognosis."
+  negative_question: "Describe the process of social recovery in post-conflict societies, including what partial and full reconciliation mean for long-term stability."
+  question_type: process
+  negative_domain: "social disease metaphors (societal ills, toxic culture)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"

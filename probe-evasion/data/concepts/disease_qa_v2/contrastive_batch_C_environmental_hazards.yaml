@@ -1,0 +1,181 @@
+pairs:
+- pair_id: 520
+  positive_question: How does the tuberculosis bacterium establish granulomatous inflammation
+    in the lungs as a hallmark of the disease?
+  negative_question: How does chronic exposure to asbestos fibers in the workplace cause
+    mesothelioma-like pleural thickening through mechanical irritation rather than infection?
+  question_type: process
+  negative_domain: environmental hazards and occupational exposure
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 521
+  positive_question: What are the defining features of Graves' disease as an autoimmune
+    condition causing hyperthyroidism?
+  negative_question: What are the defining features of silicosis as an occupational
+    lung condition caused by prolonged inhalation of crystalline silica dust?
+  question_type: factual
+  negative_domain: environmental hazards and occupational exposure
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 522
+  positive_question: Compare how viral hepatitis and alcoholic hepatitis differ in their
+    etiology yet produce similar patterns of liver disease.
+  negative_question: Compare how coal workers' pneumoconiosis and asbestosis differ
+    in the type of inhaled particle yet produce similar patterns of pulmonary fibrosis.
+  question_type: comparative
+  negative_domain: environmental hazards and occupational exposure
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 523
+  positive_question: What immunological mechanisms allow the Mycobacterium leprae bacterium
+    to cause the spectrum of disease manifestations seen in leprosy?
+  negative_question: What physiological mechanisms cause hearing loss in workers chronically
+    exposed to industrial noise levels above 85 decibels over many years?
+  question_type: explanatory
+  negative_domain: environmental hazards and occupational exposure
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 524
+  positive_question: How does the process of metastasis allow colorectal cancer cells
+    to establish secondary tumors in the liver through portal circulation?
+  negative_question: How does the process of bioaccumulation allow persistent organic
+    pollutants to concentrate in the tissues of workers exposed to industrial chemicals?
+  question_type: process
+  negative_domain: environmental hazards and occupational exposure
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 525
+  positive_question: Which sexually transmitted diseases can be passed from mother to
+    child during delivery and what preventive measures reduce vertical transmission?
+  negative_question: Which types of occupational skin conditions are most common among
+    agricultural workers and what protective measures reduce exposure to pesticide residues?
+  question_type: factual
+  negative_domain: environmental hazards and occupational exposure
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 526
+  positive_question: Compare the neuropathological features of Alzheimer's disease and
+    frontotemporal dementia as distinct neurodegenerative conditions.
+  negative_question: Compare the health effects of acute high-dose radiation exposure
+    versus chronic low-dose radiation exposure in nuclear industry workers.
+  question_type: comparative
+  negative_domain: environmental hazards and occupational exposure
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 527
+  positive_question: Explain how the human papillomavirus integrates into cervical epithelial
+    cells and drives the progression toward cervical cancer.
+  negative_question: Explain how prolonged occupational vibration exposure from power
+    tools causes hand-arm vibration syndrome affecting blood vessels and nerves.
+  question_type: explanatory
+  negative_domain: environmental hazards and occupational exposure
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 528
+  positive_question: What is the process by which the Treponema pallidum spirochete
+    disseminates through the body during secondary syphilis?
+  negative_question: What is the process by which respirable coal dust accumulates in
+    the lungs over years of mining and leads to progressive massive fibrosis?
+  question_type: process
+  negative_domain: environmental hazards and occupational exposure
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 529
+  positive_question: What role does chronic Helicobacter pylori colonization play in
+    the disease progression from gastritis to gastric lymphoma?
+  negative_question: What role does chronic benzene exposure in petroleum refinery workers
+    play in the development of hematological abnormalities and bone marrow suppression?
+  question_type: explanatory
+  negative_domain: environmental hazards and occupational exposure
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 530
+  positive_question: Which autoimmune diseases most commonly co-occur in the same patient
+    and what does this clustering suggest about shared genetic susceptibility?
+  negative_question: Which occupational hazards are most commonly encountered by firefighters
+    and what long-term health monitoring protocols address their cumulative exposure risks?
+  question_type: factual
+  negative_domain: environmental hazards and occupational exposure
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 531
+  positive_question: Compare how the disease course of relapsing-remitting multiple
+    sclerosis differs from primary progressive multiple sclerosis.
+  negative_question: Compare how the health impacts of indoor air pollution from cooking
+    fuels differ from outdoor ambient air pollution from vehicle emissions.
+  question_type: comparative
+  negative_domain: environmental hazards and occupational exposure
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 532
+  positive_question: How does the Trypanosoma brucei parasite evade the immune system
+    through antigenic variation to maintain chronic sleeping sickness?
+  negative_question: How does repeated occupational exposure to isocyanates in spray
+    painting cause sensitization and chronic occupational asthma symptoms?
+  question_type: explanatory
+  negative_domain: environmental hazards and occupational exposure
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 533
+  positive_question: What is the sequence of events by which streptococcal pharyngitis
+    can trigger post-infectious glomerulonephritis through molecular mimicry?
+  negative_question: What is the sequence of events by which a chemical spill at an
+    industrial site contaminates groundwater and exposes nearby communities to toxic compounds?
+  question_type: process
+  negative_domain: environmental hazards and occupational exposure
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 534
+  positive_question: What factors have contributed to the global resurgence of drug-resistant
+    tuberculosis as a major public health disease threat?
+  negative_question: What factors have contributed to the persistent problem of workplace
+    ergonomic injuries despite advances in occupational health standards and regulations?
+  question_type: factual
+  negative_domain: environmental hazards and occupational exposure
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied

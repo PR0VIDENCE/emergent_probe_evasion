@@ -1,0 +1,181 @@
+pairs:
+- pair_id: 460
+  positive_question: How does the varicella-zoster virus remain dormant in nerve ganglia
+    and later reactivate to cause shingles decades after initial chickenpox infection?
+  negative_question: How does preeclampsia develop during pregnancy and what are the
+    warning signs that distinguish it from normal gestational blood pressure changes?
+  question_type: process
+  negative_domain: pregnancy complications
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 461
+  positive_question: What distinguishes viral encephalitis from bacterial meningitis
+    in terms of causative agents, cerebrospinal fluid findings, and prognosis?
+  negative_question: What distinguishes gestational diabetes from preexisting diabetes
+    in pregnancy in terms of onset, management approach, and postpartum resolution?
+  question_type: comparative
+  negative_domain: pregnancy complications
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 462
+  positive_question: What are the key virulence factors that make methicillin-resistant
+    Staphylococcus aureus a particularly dangerous hospital-acquired pathogen?
+  negative_question: What are the key risk factors that make placenta previa a particularly
+    dangerous complication requiring careful monitoring throughout pregnancy?
+  question_type: factual
+  negative_domain: pregnancy complications
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 463
+  positive_question: Explain the immunological basis of why organ transplant recipients
+    are at elevated risk for opportunistic infectious diseases.
+  negative_question: Explain the physiological basis of why Rh incompatibility between
+    mother and fetus can cause hemolytic disease in subsequent pregnancies.
+  question_type: explanatory
+  negative_domain: pregnancy complications
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 464
+  positive_question: How does chronic Chagas disease caused by Trypanosoma cruzi lead
+    to progressive cardiomyopathy over years?
+  negative_question: How does peripartum cardiomyopathy develop in the final month
+    of pregnancy or shortly after delivery in previously healthy women?
+  question_type: process
+  negative_domain: pregnancy complications
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 465
+  positive_question: What cellular changes characterize the transition from cervical
+    dysplasia caused by HPV to invasive cervical cancer?
+  negative_question: What physiological changes characterize the transition from a normal
+    pregnancy to HELLP syndrome and why is it considered a medical emergency?
+  question_type: process
+  negative_domain: pregnancy complications
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 466
+  positive_question: Compare the mechanisms by which Type 1 and Type 2 diabetes lead
+    to peripheral neuropathy through different pathways.
+  negative_question: Compare the risks and management approaches for monochorionic
+    versus dichorionic twin pregnancies in terms of complications unique to each type.
+  question_type: comparative
+  negative_domain: pregnancy complications
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 467
+  positive_question: What epidemiological evidence links chronic infection with Helicobacter
+    pylori to an increased risk of gastric cancer?
+  negative_question: What epidemiological evidence links advanced maternal age to an
+    increased risk of chromosomal abnormalities and pregnancy loss?
+  question_type: factual
+  negative_domain: pregnancy complications
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 468
+  positive_question: How do inflammatory bowel diseases like ulcerative colitis increase
+    the long-term risk of colorectal cancer through chronic mucosal inflammation?
+  negative_question: How does hyperemesis gravidarum differ from ordinary morning sickness
+    in severity, and what metabolic complications can it cause during pregnancy?
+  question_type: explanatory
+  negative_domain: pregnancy complications
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 469
+  positive_question: What are the defining pathological features of sarcoidosis and
+    why is it often difficult to diagnose due to its multi-organ involvement?
+  negative_question: What are the defining clinical features of ectopic pregnancy and
+    why is early detection critical to preventing life-threatening complications?
+  question_type: factual
+  negative_domain: pregnancy complications
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 470
+  positive_question: Explain how the Zika virus crosses the placenta and causes microcephaly
+    as a congenital disease in developing fetuses.
+  negative_question: Explain how placental abruption occurs when the placenta separates
+    from the uterine wall before delivery and what emergency interventions are required.
+  question_type: explanatory
+  negative_domain: pregnancy complications
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 471
+  positive_question: Compare how cystic fibrosis and sickle cell disease differ as
+    genetic diseases in their affected organ systems and inheritance patterns.
+  negative_question: Compare how preterm labor and premature rupture of membranes differ
+    as pregnancy complications in their causes, risks, and clinical management.
+  question_type: comparative
+  negative_domain: pregnancy complications
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 472
+  positive_question: What is the sequence of immune events that leads to anaphylaxis
+    in severe allergic disease versus a normal immune response?
+  negative_question: What is the sequence of physiological events during labor that
+    can lead to umbilical cord prolapse and fetal distress?
+  question_type: process
+  negative_domain: pregnancy complications
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 473
+  positive_question: How does chronic obstructive pulmonary disease differ from asthma
+    in terms of airway pathology and reversibility of airflow limitation?
+  negative_question: How does intrahepatic cholestasis of pregnancy affect bile acid
+    levels and what risks does it pose to the fetus in the third trimester?
+  question_type: explanatory
+  negative_domain: pregnancy complications
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 474
+  positive_question: What are the main classes of antimicrobial drugs used to treat
+    fungal diseases in humans and how do they target fungal cell structures?
+  negative_question: What are the main causes of postpartum hemorrhage and what immediate
+    interventions are used to control excessive bleeding after delivery?
+  question_type: factual
+  negative_domain: pregnancy complications
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied

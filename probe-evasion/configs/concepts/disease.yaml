@@ -1,0 +1,86 @@
+concept_name: disease
+concept_description: "Disease — pathological conditions affecting organisms, characterized by specific symptoms, causes, and progression"
+
+labels:
+  positive: disease
+  negative: non_disease
+
+field_names:
+  positive_question: positive_question
+  negative_question: negative_question
+
+no_keyword_instruction: "Answer without using the words 'disease', 'illness', 'sickness', or 'infection'. Answer in 1-3 sentences."
+
+negative_keywords:
+  - "\\bdisease\\b"
+  - "\\bdiseases\\b"
+  - "\\billness\\b"
+  - "\\billnesses\\b"
+  - "\\bsickness\\b"
+  - "\\binfection\\b"
+  - "\\binfections\\b"
+  - "\\bpathology\\b"
+  - "\\bpathological\\b"
+  - "\\bsyndrome\\b"
+  - "\\bdiagnosis\\b"
+  - "\\bdiagnoses\\b"
+  - "\\bepidemic\\b"
+  - "\\bpandemic\\b"
+  - "\\bcontagion\\b"
+
+group_b_topics:
+  - "epidemiology and disease surveillance"
+  - "autoimmune diseases (lupus, MS, rheumatoid arthritis)"
+  - "cancer and oncology"
+  - "cardiovascular disease (heart attacks, stroke)"
+  - "genetic and hereditary diseases"
+  - "tropical diseases (malaria, dengue, Chagas)"
+  - "neurodegenerative diseases (Alzheimer's, Parkinson's)"
+  - "vaccines and immunization"
+  - "antimicrobial resistance and superbugs"
+  - "zoonotic diseases and animal-to-human transmission"
+  - "pandemic preparedness and response"
+  - "rare diseases and orphan drugs"
+  - "mental health disorders (depression, schizophrenia)"
+  - "historical plagues and pandemics"
+  - "diagnostic methods and medical testing"
+
+group_c_subcategories:
+  - "injuries and physical trauma"
+  - "poisoning and toxicology"
+  - "malnutrition and dietary deficiency"
+  - "aging and senescence"
+  - "pregnancy complications"
+  - "allergies and hypersensitivity"
+  - "birth defects and congenital anomalies"
+  - "sleep disorders"
+  - "environmental hazards and occupational exposure"
+  - "chronic pain management"
+
+group_d_subcategories:
+  "plant diseases (blight, rust, wilt, canker)": 20
+  "computer viruses and malware": 15
+  "social disease metaphors (societal ills, toxic culture)": 15
+  "Dutch disease (economics, resource curse)": 15
+  "animal and veterinary pathology": 10
+  "prion diseases vs normal protein folding": 20
+  "disease vectors as organisms (mosquitoes, ticks)": 15
+  "sick building syndrome and environmental sensitivities": 15
+
+group_e_subcategories:
+  "pharmaceutical drug development and clinical trials": 16
+  "hospital infection control and sterilization": 16
+  "epidemiological modeling and forecasting": 16
+  "pathogen genomics and sequencing": 16
+  "quarantine history and public health law": 15
+  "WHO governance and global health policy": 16
+  "medical imaging for disease detection": 15
+  "biomarkers and screening programs": 15
+
+group_structure:
+  A: 25
+  B: 375
+  C: 150
+  D: 125
+  E: 125
+  A_prefix: 175

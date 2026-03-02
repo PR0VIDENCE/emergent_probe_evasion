@@ -1,0 +1,181 @@
+pairs:
+- pair_id: 400
+  positive_question: How do public libraries decide which new titles to add to their
+    collection each year, and what role do patron requests play in that process?
+  negative_question: How do independent bookstores decide which new titles to stock
+    on their shelves, and what role do publisher sales representatives play?
+  question_type: process
+  negative_domain: bookstores and bookselling
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 401
+  positive_question: What is the purpose of a library card catalog, and how has it
+    evolved from physical card drawers to digital online public access catalogs?
+  negative_question: What is the purpose of a bookstore point-of-sale system, and
+    how has it evolved from manual cash registers to modern inventory management platforms?
+  question_type: explanatory
+  negative_domain: bookstores and bookselling
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 402
+  positive_question: How does interlibrary loan work, and what happens when a patron
+    requests a book that their local library does not own?
+  negative_question: How does consignment selling work in the book trade, and what
+    happens when a bookstore cannot sell copies a publisher has shipped?
+  question_type: process
+  negative_domain: bookstores and bookselling
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 403
+  positive_question: What qualifications and training does a professional librarian
+    typically need, and why is a Master of Library Science degree often required?
+  negative_question: What qualifications and skills does a successful bookseller need,
+    and why do many independent bookstore owners emphasize deep genre knowledge?
+  question_type: factual
+  negative_domain: bookstores and bookselling
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 404
+  positive_question: How do libraries handle the challenge of censorship and banned
+    books, and what is the American Library Association's stance on intellectual freedom?
+  negative_question: How do bookstores handle controversial titles and calls for
+    boycotts, and what business considerations influence their stocking decisions?
+  question_type: explanatory
+  negative_domain: bookstores and bookselling
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 405
+  positive_question: What is the Dewey Decimal Classification system, and how do
+    libraries use it to organize nonfiction books on their shelves?
+  negative_question: What is the BISAC subject heading system, and how do bookstores
+    use it to organize books into browsable retail categories?
+  question_type: factual
+  negative_domain: bookstores and bookselling
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 406
+  positive_question: How do library summer reading programs encourage children to
+    read during school breaks, and what incentives are typically offered?
+  negative_question: How do bookstore loyalty programs and staff pick promotions
+    encourage customers to discover and purchase new titles regularly?
+  question_type: comparative
+  negative_domain: bookstores and bookselling
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 407
+  positive_question: What role do reference librarians play in helping patrons find
+    reliable information, and how do they evaluate source credibility?
+  negative_question: What role do bookstore staff recommendations and curated shelf
+    displays play in guiding customers toward notable new releases?
+  question_type: explanatory
+  negative_domain: bookstores and bookselling
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 408
+  positive_question: How do mobile library services such as bookmobiles extend access
+    to underserved rural communities that lack a permanent branch?
+  negative_question: How do pop-up bookshops and traveling book fairs bring retail
+    book access to communities that lack a permanent bookstore?
+  question_type: comparative
+  negative_domain: bookstores and bookselling
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 409
+  positive_question: What are the main funding sources for public libraries, and how
+    do library bond measures and tax levies sustain their operations?
+  negative_question: What are the main revenue streams for independent bookstores,
+    and how do events, sideline merchandise, and online sales supplement book margins?
+  question_type: factual
+  negative_domain: bookstores and bookselling
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 410
+  positive_question: How do libraries preserve rare and fragile materials through
+    climate-controlled special collections and digitization projects?
+  negative_question: How do antiquarian booksellers assess the condition, provenance,
+    and market value of rare first editions and collectible volumes?
+  question_type: process
+  negative_domain: bookstores and bookselling
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 411
+  positive_question: What is the difference between an academic research library and
+    a public lending library in terms of collections and access policies?
+  negative_question: What is the difference between a chain bookstore like Barnes and
+    Noble and a small independent bookshop in terms of pricing and curation?
+  question_type: comparative
+  negative_domain: bookstores and bookselling
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 412
+  positive_question: How do library e-book lending platforms like OverDrive and Libby
+    work, and why do digital loans have waiting lists?
+  negative_question: How do e-book retail platforms like Kindle and Kobo work, and
+    what digital rights management restrictions apply to purchased titles?
+  question_type: explanatory
+  negative_domain: bookstores and bookselling
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 413
+  positive_question: What is the process for weeding a library collection, and how
+    do librarians decide which outdated or damaged items to remove?
+  negative_question: What is the process for returning unsold books to publishers,
+    and how do bookstores manage the return-and-credit system for overstock?
+  question_type: process
+  negative_domain: bookstores and bookselling
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 414
+  positive_question: How do library story time sessions for young children support
+    early literacy development and school readiness?
+  negative_question: How do bookstore author signing events and in-store readings
+    generate foot traffic and build customer loyalty for the shop?
+  question_type: comparative
+  negative_domain: bookstores and bookselling
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied

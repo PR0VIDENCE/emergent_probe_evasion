@@ -1,0 +1,165 @@
+pairs:
+- pair_id: 785
+  positive_question: "How does the hawala system enable the transfer of currency value across borders without physically moving money between countries?"
+  negative_question: "How does the process of photosynthesis enable the conversion of light energy into chemical energy without requiring oxygen as an input?"
+  question_type: process
+  negative_domain: "photosynthesis biochemistry"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "hawala and informal value transfer systems"
+
+- pair_id: 786
+  positive_question: "What is the role of the hawaladar broker in facilitating informal currency transfers between a sender and a recipient in different countries?"
+  negative_question: "What is the role of the queen bee in coordinating hive activities between forager workers and nurse bees in a honeybee colony?"
+  question_type: factual
+  negative_domain: "honeybee social structure"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "hawala and informal value transfer systems"
+
+- pair_id: 787
+  positive_question: "Why do migrant workers in the Gulf states often use hawala networks to send currency remittances to their families in South Asia?"
+  negative_question: "Why do Arctic terns undertake the longest known bird migration to travel from their breeding grounds near the North Pole to Antarctica each year?"
+  question_type: explanatory
+  negative_domain: "long-distance bird migration"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "hawala and informal value transfer systems"
+
+- pair_id: 788
+  positive_question: "Compare the speed and cost of sending currency through hawala networks versus formal bank wire transfer services for cross-border remittances."
+  negative_question: "Compare the speed and accuracy of cheetah hunting sprints versus peregrine falcon diving stoops as the fastest predatory movements in nature."
+  question_type: comparative
+  negative_domain: "animal speed records"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "hawala and informal value transfer systems"
+
+- pair_id: 789
+  positive_question: "Describe how a hawala transaction settles the debt between two brokers who have facilitated currency transfers in opposite directions over time."
+  negative_question: "Describe how a tidal bore forms when an incoming ocean tide pushes a wave of water upstream against the natural flow of a river."
+  question_type: process
+  negative_domain: "tidal bore hydrology"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "hawala and informal value transfer systems"
+
+- pair_id: 790
+  positive_question: "What historical origins does the hawala system have, and how has it facilitated currency movement along trade routes for centuries?"
+  negative_question: "What historical origins does the Silk Road have, and how did it facilitate cultural exchange along overland trade routes for centuries?"
+  question_type: factual
+  negative_domain: "ancient trade route history"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "hawala and informal value transfer systems"
+
+- pair_id: 791
+  positive_question: "Why do governments struggle to regulate informal value transfer systems like hawala that operate outside the formal currency banking infrastructure?"
+  negative_question: "Why do marine conservationists struggle to protect migratory whale species that travel through international waters outside any single nation's jurisdiction?"
+  question_type: explanatory
+  negative_domain: "marine conservation governance"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "hawala and informal value transfer systems"
+
+- pair_id: 792
+  positive_question: "Compare the trust-based settlement mechanisms of hawala currency transfers with the collateral-based mechanisms of formal banking wire transfers."
+  negative_question: "Compare the echolocation navigation mechanisms of bats with the electrolocation sensing mechanisms of electric eels in detecting nearby objects."
+  question_type: comparative
+  negative_domain: "animal sensory systems"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "hawala and informal value transfer systems"
+
+- pair_id: 793
+  positive_question: "How do anti-money laundering agencies attempt to monitor hawala networks that move currency without leaving traditional paper trails?"
+  negative_question: "How do wildlife trackers attempt to monitor snow leopard populations that move through remote mountain terrain without leaving consistent visible tracks?"
+  question_type: process
+  negative_domain: "wildlife tracking"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "hawala and informal value transfer systems"
+
+- pair_id: 794
+  positive_question: "What are the key differences between hawala, fei-ch'ien, and hundi as informal currency transfer systems used across different cultural regions?"
+  negative_question: "What are the key differences between stalagmites, stalactites, and flowstone as calcium carbonate formations found across different cave environments?"
+  question_type: factual
+  negative_domain: "speleology"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "hawala and informal value transfer systems"
+
+- pair_id: 795
+  positive_question: "Why has the post-9/11 regulatory environment made it more difficult for legitimate hawala operators to provide affordable currency transfer services?"
+  negative_question: "Why has the post-industrial urbanization trend made it more difficult for traditional pastoral herders to maintain seasonal livestock grazing routes?"
+  question_type: explanatory
+  negative_domain: "pastoral nomadism"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "hawala and informal value transfer systems"
+
+- pair_id: 796
+  positive_question: "Compare how hawala networks in East Africa handle currency transfers versus how similar informal networks operate in Southeast Asia."
+  negative_question: "Compare how traditional drum communication in West Africa transmits messages versus how smoke signal systems operated among Plains Native American tribes."
+  question_type: comparative
+  negative_domain: "traditional communication systems"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "hawala and informal value transfer systems"
+
+- pair_id: 797
+  positive_question: "Describe how hawala brokers use trade goods and commodity exchanges to settle outstanding currency debts between their informal network nodes."
+  negative_question: "Describe how mycorrhizal fungal networks transfer nutrients and chemical warning signals between interconnected tree root systems in forest ecosystems."
+  question_type: process
+  negative_domain: "mycorrhizal networks"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "hawala and informal value transfer systems"
+
+- pair_id: 798
+  positive_question: "What challenges do humanitarian organizations face when using hawala to deliver currency aid to populations in conflict zones without banking access?"
+  negative_question: "What challenges do deep-sea submersible pilots face when navigating to hydrothermal vents in abyssal zones without GPS or visual surface reference?"
+  question_type: factual
+  negative_domain: "deep-sea submersible navigation"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "hawala and informal value transfer systems"
+
+- pair_id: 799
+  positive_question: "Why do some economists argue that informal currency transfer systems like hawala provide essential financial inclusion for unbanked populations worldwide?"
+  negative_question: "Why do some ecologists argue that prescribed fire management provides essential ecological renewal for fire-adapted grassland ecosystems worldwide?"
+  question_type: explanatory
+  negative_domain: "grassland fire ecology"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "hawala and informal value transfer systems"

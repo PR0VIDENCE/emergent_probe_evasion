@@ -1,0 +1,151 @@
+pairs:
+- pair_id: 739
+  positive_question: "How do library outreach programs bring bookmobile services and pop-up reading events to low-income neighborhoods with limited access to physical library branches?"
+  negative_question: "How do wind turbines convert kinetic energy from air movement into electrical power through electromagnetic induction in the nacelle generator?"
+  question_type: process
+  negative_domain: "wind energy"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library outreach programming for underserved communities"
+- pair_id: 740
+  positive_question: "What strategies do libraries use to serve homeless patrons with dignity, offering social service referrals, hygiene kits, and safe daytime shelter?"
+  negative_question: "What strategies do beekeepers use to manage Varroa mite infestations and prevent colony collapse disorder in commercial apiaries?"
+  question_type: factual
+  negative_domain: "apiculture"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library outreach programming for underserved communities"
+- pair_id: 741
+  positive_question: "Why do libraries in immigrant communities invest in multilingual collections and culturally responsive programming to welcome diverse populations?"
+  negative_question: "Why do certain species of ants practice agriculture by cultivating fungus gardens inside their colonies as a primary food source?"
+  question_type: explanatory
+  negative_domain: "myrmecology"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library outreach programming for underserved communities"
+- pair_id: 742
+  positive_question: "What are the differences between library outreach programs targeting early childhood literacy and those focused on adult basic education and GED preparation?"
+  negative_question: "What are the differences between porcelain and stoneware pottery in terms of firing temperature, translucency, and clay composition?"
+  question_type: comparative
+  negative_domain: "ceramics"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library outreach programming for underserved communities"
+- pair_id: 743
+  positive_question: "How do library-based digital equity programs lend Wi-Fi hotspots, tablets, and laptops to families who cannot afford home internet or devices?"
+  negative_question: "How do volcanologists monitor volcanic activity using tiltmeters, gas spectrometers, and satellite radar interferometry to predict eruptions?"
+  question_type: factual
+  negative_domain: "volcanology"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library outreach programming for underserved communities"
+- pair_id: 744
+  positive_question: "What role do library partnerships with schools play in reaching at-risk youth through after-school tutoring, homework help, and mentoring programs?"
+  negative_question: "What role do keystone species play in maintaining ecosystem structure, and what happens to biodiversity when a keystone predator is removed?"
+  question_type: explanatory
+  negative_domain: "ecology"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library outreach programming for underserved communities"
+- pair_id: 745
+  positive_question: "How do library outreach coordinators build trust with underserved communities through consistent presence at community centers, shelters, and faith-based organizations?"
+  negative_question: "How do commercial aircraft maintain cabin pressurization at cruising altitude to keep passengers comfortable at thirty-five thousand feet?"
+  question_type: process
+  negative_domain: "aerospace engineering"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library outreach programming for underserved communities"
+- pair_id: 746
+  positive_question: "What are the challenges of measuring the impact of library outreach programs on educational outcomes in communities with limited baseline data?"
+  negative_question: "What are the challenges of growing crops in vertical indoor farms that rely entirely on artificial LED lighting and hydroponic nutrient solutions?"
+  question_type: factual
+  negative_domain: "vertical farming"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library outreach programming for underserved communities"
+- pair_id: 747
+  positive_question: "Why do library systems hire social workers to embed in branches serving high-poverty areas where patrons face housing, food, and health insecurity?"
+  negative_question: "Why do certain gemstones like opals display iridescent play of color caused by the diffraction of light through internal silica sphere structures?"
+  question_type: explanatory
+  negative_domain: "gemology"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library outreach programming for underserved communities"
+- pair_id: 748
+  positive_question: "How do prison library programs provide incarcerated individuals with legal resources, educational materials, and recreational reading to support rehabilitation?"
+  negative_question: "How do paleontologists extract and prepare dinosaur fossils from sedimentary rock using pneumatic air scribes and consolidant adhesives?"
+  question_type: process
+  negative_domain: "paleontology"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library outreach programming for underserved communities"
+- pair_id: 749
+  positive_question: "What are the advantages of library-run citizenship preparation classes compared to private immigration services for immigrants seeking naturalization?"
+  negative_question: "What are the advantages of cast iron cookware compared to stainless steel in terms of heat retention, seasoning, and cooking versatility?"
+  question_type: comparative
+  negative_domain: "culinary equipment"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library outreach programming for underserved communities"
+- pair_id: 750
+  positive_question: "How do library summer meal programs address childhood hunger by providing free lunches alongside summer reading activities in low-income areas?"
+  negative_question: "How do cartographers represent three-dimensional terrain on two-dimensional maps using contour lines, hillshading, and hypsometric tinting?"
+  question_type: factual
+  negative_domain: "cartography"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library outreach programming for underserved communities"
+- pair_id: 751
+  positive_question: "Why do libraries in rural areas serve as critical lifelines for communities where the nearest bookstore or community center may be hours away?"
+  negative_question: "Why do aurora borealis displays occur near the polar regions when charged solar wind particles interact with gases in Earth's magnetosphere?"
+  question_type: explanatory
+  negative_domain: "space weather"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library outreach programming for underserved communities"
+- pair_id: 752
+  positive_question: "How do library outreach vans equipped with computers and Wi-Fi bring technology access to rural and tribal communities lacking broadband infrastructure?"
+  negative_question: "How do trained falconers use raptors like Harris's hawks for natural pest control at airports, vineyards, and landfill sites?"
+  question_type: process
+  negative_domain: "falconry"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library outreach programming for underserved communities"
+- pair_id: 753
+  positive_question: "What are the differences between library outreach initiatives led by professional staff and those relying on volunteer-driven community ambassador programs?"
+  negative_question: "What are the differences between traditional hand-thrown pottery and slip-cast ceramics in terms of production speed, uniformity, and artistic expression?"
+  question_type: comparative
+  negative_domain: "ceramics manufacturing"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library outreach programming for underserved communities"

@@ -1,0 +1,251 @@
+pairs:
+- pair_id: 100
+  positive_question: "What tools does a central bank use to implement monetary policy and regulate the money supply in its economy?"
+  negative_question: "What tools does a volcanologist use to monitor seismic activity and measure gas emissions at an active volcano?"
+  question_type: factual
+  negative_domain: "volcanology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "central banking and monetary policy"
+- pair_id: 101
+  positive_question: "How does a central bank's decision to raise interest rates affect the value of the national currency in global markets?"
+  negative_question: "How does an architect's decision to increase roof pitch affect the structural load of the building in windy climates?"
+  question_type: explanatory
+  negative_domain: "architecture"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "central banking and monetary policy"
+- pair_id: 102
+  positive_question: "Compare the monetary policy framework of the US Federal Reserve with that of the European Central Bank."
+  negative_question: "Compare the orbital insertion technique of the Hubble Space Telescope with that of the James Webb Space Telescope."
+  question_type: comparative
+  negative_domain: "space telescopes"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "central banking and monetary policy"
+- pair_id: 103
+  positive_question: "Describe the process by which a central bank conducts open market operations to adjust the supply of money in circulation."
+  negative_question: "Describe the process by which a beekeeper conducts hive inspections to assess the health of brood in the colony."
+  question_type: process
+  negative_domain: "beekeeping"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "central banking and monetary policy"
+- pair_id: 104
+  positive_question: "What is the dual mandate of the US Federal Reserve, and how does it balance employment goals with currency stability?"
+  negative_question: "What is the circadian rhythm of the human body, and how does it balance sleep cycles with hormonal regulation?"
+  question_type: factual
+  negative_domain: "chronobiology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "central banking and monetary policy"
+- pair_id: 105
+  positive_question: "Why do central banks maintain foreign currency reserves, and how do these reserves protect against speculative attacks?"
+  negative_question: "Why do squirrels maintain underground food caches, and how do these reserves protect against winter food scarcity?"
+  question_type: explanatory
+  negative_domain: "animal ecology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "central banking and monetary policy"
+- pair_id: 106
+  positive_question: "How does the Bank of Japan's yield curve control policy differ from the conventional interest rate targeting used by most central banks?"
+  negative_question: "How does the Great Barrier Reef's coral bleaching recovery differ from the conventional reef restoration methods used by most marine parks?"
+  question_type: comparative
+  negative_domain: "coral reef ecology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "central banking and monetary policy"
+- pair_id: 107
+  positive_question: "Explain the steps a central bank follows when implementing quantitative easing to inject money into the financial system."
+  negative_question: "Explain the steps a geologist follows when conducting core sampling to extract sediment layers from the ocean floor."
+  question_type: process
+  negative_domain: "marine geology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "central banking and monetary policy"
+- pair_id: 108
+  positive_question: "What is the reserve requirement ratio, and how does changing it affect the amount of money banks can lend?"
+  negative_question: "What is the albedo coefficient, and how does changing it affect the amount of sunlight surfaces can reflect?"
+  question_type: factual
+  negative_domain: "atmospheric physics"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "central banking and monetary policy"
+- pair_id: 109
+  positive_question: "Why is central bank independence considered important for maintaining credible monetary policy and stable currency values?"
+  negative_question: "Why is judicial independence considered important for maintaining credible legal rulings and stable constitutional governance?"
+  question_type: explanatory
+  negative_domain: "constitutional law"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "central banking and monetary policy"
+- pair_id: 110
+  positive_question: "Compare the inflation-targeting approach used by the Reserve Bank of New Zealand with the monetary aggregate targeting used historically by Germany's Bundesbank."
+  negative_question: "Compare the sustainable forestry approach used by Scandinavian timber companies with the clear-cutting harvesting method used historically by North American logging operations."
+  question_type: comparative
+  negative_domain: "forestry management"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "central banking and monetary policy"
+- pair_id: 111
+  positive_question: "Describe the process by which a central bank acts as a lender of last resort to prevent a banking crisis from destabilizing the currency."
+  negative_question: "Describe the process by which a dam spillway acts as a pressure release valve to prevent a reservoir overflow from destabilizing the embankment."
+  question_type: process
+  negative_domain: "dam engineering"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "central banking and monetary policy"
+- pair_id: 112
+  positive_question: "What role does forward guidance play in shaping market expectations about future monetary policy and currency movements?"
+  negative_question: "What role does echolocation play in shaping spatial awareness about surrounding obstacles and prey movements in bats?"
+  question_type: factual
+  negative_domain: "bioacoustics"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "central banking and monetary policy"
+- pair_id: 113
+  positive_question: "Why did many central banks adopt inflation targeting in the 1990s as their primary monetary policy framework?"
+  negative_question: "Why did many hospitals adopt evidence-based medicine in the 1990s as their primary clinical decision-making framework?"
+  question_type: explanatory
+  negative_domain: "clinical medicine"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "central banking and monetary policy"
+- pair_id: 114
+  positive_question: "How does the People's Bank of China's approach to managing the yuan compare to the Swiss National Bank's management of the franc?"
+  negative_question: "How does the Antarctic krill's role in sustaining whale populations compare to the zooplankton's role in sustaining coral reef fish?"
+  question_type: comparative
+  negative_domain: "marine food webs"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "central banking and monetary policy"
+- pair_id: 115
+  positive_question: "Explain the steps involved in the transmission mechanism through which changes in the policy rate affect lending, spending, and the money supply."
+  negative_question: "Explain the steps involved in the nitrogen cycle through which atmospheric nitrogen is fixed, absorbed by plants, and returned to the soil."
+  question_type: process
+  negative_domain: "biogeochemistry"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "central banking and monetary policy"
+- pair_id: 116
+  positive_question: "What are the risks associated with negative interest rate policies adopted by some central banks to stimulate money circulation?"
+  negative_question: "What are the risks associated with deep-sea mining operations conducted by some corporations to extract manganese nodule deposits?"
+  question_type: factual
+  negative_domain: "deep-sea mining"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "central banking and monetary policy"
+- pair_id: 117
+  positive_question: "Why do some economists argue that central bank digital currencies could fundamentally change how monetary policy is implemented?"
+  negative_question: "Why do some paleontologists argue that feathered dinosaur fossils could fundamentally change how avian evolution is understood?"
+  question_type: explanatory
+  negative_domain: "paleontology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "central banking and monetary policy"
+- pair_id: 118
+  positive_question: "Compare the unconventional monetary policy responses of the Federal Reserve and the Bank of England during the 2008 financial crisis."
+  negative_question: "Compare the unconventional deep-diving adaptations of the sperm whale and the elephant seal during prolonged foraging dives."
+  question_type: comparative
+  negative_domain: "marine mammal physiology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "central banking and monetary policy"
+- pair_id: 119
+  positive_question: "Describe the process by which a currency board arrangement automatically adjusts the domestic money supply based on foreign reserve inflows."
+  negative_question: "Describe the process by which a thermostat control system automatically adjusts the indoor temperature based on ambient sensor readings."
+  question_type: process
+  negative_domain: "HVAC systems"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "central banking and monetary policy"
+- pair_id: 120
+  positive_question: "What is the discount window facility at a central bank, and how does it provide emergency liquidity to maintain currency confidence?"
+  negative_question: "What is the emergency ballast system on a submarine, and how does it provide rapid buoyancy control to maintain depth stability?"
+  question_type: factual
+  negative_domain: "submarine engineering"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "central banking and monetary policy"
+- pair_id: 121
+  positive_question: "Why can conflicting fiscal and monetary policies undermine a central bank's ability to maintain currency price stability?"
+  negative_question: "Why can conflicting wind and ocean currents undermine a sailor's ability to maintain a consistent navigation heading?"
+  question_type: explanatory
+  negative_domain: "sailing navigation"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "central banking and monetary policy"
+- pair_id: 122
+  positive_question: "How do the monetary policy communication strategies of the Reserve Bank of India differ from those of the Bank of Canada?"
+  negative_question: "How do the earthquake early warning systems deployed in Japan differ from those installed along the west coast of Chile?"
+  question_type: comparative
+  negative_domain: "seismic engineering"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "central banking and monetary policy"
+- pair_id: 123
+  positive_question: "Explain how the money multiplier effect amplifies the initial injection of base money created by a central bank into the broader money supply."
+  negative_question: "Explain how the greenhouse effect amplifies the initial absorption of solar radiation trapped by atmospheric gases into elevated surface temperatures."
+  question_type: process
+  negative_domain: "atmospheric science"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "central banking and monetary policy"
+- pair_id: 124
+  positive_question: "What lessons did central banks learn from the 2008 global financial crisis about managing currency stability during systemic shocks?"
+  negative_question: "What lessons did epidemiologists learn from the 1918 Spanish flu pandemic about managing disease containment during global outbreaks?"
+  question_type: factual
+  negative_domain: "epidemiology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "central banking and monetary policy"

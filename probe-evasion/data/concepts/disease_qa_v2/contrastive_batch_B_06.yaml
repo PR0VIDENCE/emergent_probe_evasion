@@ -1,0 +1,308 @@
+pairs:
+- pair_id: 150
+  positive_question: How does the Plasmodium parasite complete its complex life cycle
+    between the Anopheles mosquito vector and the human host during malaria infection?
+  negative_question: How does a space probe complete its complex trajectory between
+    the launch vehicle separation and the planetary orbit insertion during an interplanetary
+    mission?
+  question_type: process
+  negative_domain: orbital mechanics
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: tropical diseases (malaria, dengue, Chagas)
+- pair_id: 151
+  positive_question: What are the key clinical differences between the four serotypes
+    of dengue virus, and why does secondary infection often cause more severe disease?
+  negative_question: What are the key tonal differences between the four main saxophone
+    types, and why does advanced technique often produce more complex overtones?
+  question_type: comparative
+  negative_domain: saxophone acoustics
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: tropical diseases (malaria, dengue, Chagas)
+- pair_id: 152
+  positive_question: How does Chagas disease caused by Trypanosoma cruzi lead to chronic
+    heart damage years after the initial infection by the triatomine bug vector?
+  negative_question: How does rising damp caused by capillary moisture lead to chronic
+    wall damage years after the initial failure of the damp-proof course barrier?
+  question_type: explanatory
+  negative_domain: building damp remediation
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: tropical diseases (malaria, dengue, Chagas)
+- pair_id: 153
+  positive_question: What strategies have been most effective at reducing malaria transmission
+    in sub-Saharan Africa, including insecticide-treated bed nets and indoor spraying?
+  negative_question: What strategies have been most effective at reducing signal interference
+    in urban radio networks, including directional antennas and frequency hopping?
+  question_type: factual
+  negative_domain: radio frequency engineering
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: tropical diseases (malaria, dengue, Chagas)
+- pair_id: 154
+  positive_question: Describe the process by which artemisinin-based combination therapies
+    kill Plasmodium parasites inside red blood cells during the treatment of malaria.
+  negative_question: Describe the process by which flux-cored arc welding melts filler
+    metal inside shielding gas envelopes during the joining of structural steel.
+  question_type: process
+  negative_domain: arc welding
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: tropical diseases (malaria, dengue, Chagas)
+- pair_id: 155
+  positive_question: How does antibody-dependent enhancement make secondary dengue infections
+    potentially more dangerous than primary infections with a different serotype?
+  negative_question: How does harmonic amplification make secondary resonance peaks
+    potentially more destructive than primary vibrations at a different structural frequency?
+  question_type: explanatory
+  negative_domain: structural resonance analysis
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: tropical diseases (malaria, dengue, Chagas)
+- pair_id: 156
+  positive_question: Compare the vector control approaches used for malaria transmitted
+    by Anopheles mosquitoes versus dengue transmitted by Aedes mosquitoes in urban settings.
+  negative_question: Compare the noise control approaches used for low-frequency rumble
+    from diesel generators versus high-frequency whine from HVAC systems in office
+    buildings.
+  question_type: comparative
+  negative_domain: noise control engineering
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: tropical diseases (malaria, dengue, Chagas)
+- pair_id: 157
+  positive_question: What challenges does the development of a broadly effective malaria
+    vaccine face given the parasite's ability to evade the human immune system?
+  negative_question: What challenges does the development of a broadly effective spam
+    filter face given the sender's ability to evade automated text classification systems?
+  question_type: factual
+  negative_domain: email spam filtering
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: tropical diseases (malaria, dengue, Chagas)
+- pair_id: 158
+  positive_question: How does the geographic expansion of Aedes mosquito habitats due
+    to climate change threaten to increase the global burden of dengue fever?
+  negative_question: How does the geographic expansion of permafrost thaw zones due
+    to climate change threaten to increase the global release of trapped methane gas?
+  question_type: explanatory
+  negative_domain: permafrost science
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: tropical diseases (malaria, dengue, Chagas)
+- pair_id: 159
+  positive_question: Describe the diagnostic process for confirming a suspected case
+    of Chagas disease, including both acute-phase and chronic-phase detection methods.
+  negative_question: Describe the authentication process for confirming a suspected
+    case of art forgery, including both visual inspection and scientific analysis methods.
+  question_type: process
+  negative_domain: art forgery detection
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: tropical diseases (malaria, dengue, Chagas)
+- pair_id: 160
+  positive_question: What are the major complications of severe dengue hemorrhagic fever,
+    and how do physicians manage plasma leakage and bleeding in critical patients?
+  negative_question: What are the major complications of severe concrete spalling damage,
+    and how do engineers manage rebar exposure and water infiltration in critical structures?
+  question_type: factual
+  negative_domain: concrete repair engineering
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: tropical diseases (malaria, dengue, Chagas)
+- pair_id: 161
+  positive_question: Compare the effectiveness of the RTS,S malaria vaccine with the
+    newer R21/Matrix-M vaccine in terms of efficacy and duration of protection.
+  negative_question: Compare the effectiveness of the Dolby Atmos surround format with
+    the newer DTS:X format in terms of spatial accuracy and hardware compatibility.
+  question_type: comparative
+  negative_domain: surround sound technology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: tropical diseases (malaria, dengue, Chagas)
+- pair_id: 162
+  positive_question: How do drug-resistant strains of Plasmodium falciparum develop
+    and spread, threatening the effectiveness of frontline malaria treatments?
+  negative_question: How do herbicide-resistant strains of Palmer amaranth develop and
+    spread, threatening the effectiveness of frontline agricultural weed control?
+  question_type: explanatory
+  negative_domain: weed science
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: tropical diseases (malaria, dengue, Chagas)
+- pair_id: 163
+  positive_question: What socioeconomic factors perpetuate the cycle of tropical disease
+    burden in low-income countries despite the existence of known prevention methods?
+  negative_question: What aerodynamic factors perpetuate the cycle of vortex shedding
+    in cylindrical structures despite the existence of known suppression methods?
+  question_type: explanatory
+  negative_domain: vortex-induced vibration
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: tropical diseases (malaria, dengue, Chagas)
+- pair_id: 164
+  positive_question: Describe the life cycle stages of Trypanosoma cruzi and explain
+    how the parasite transitions between its insect vector and mammalian host forms.
+  negative_question: Describe the production stages of single-malt whisky and explain
+    how the spirit transitions between its fermentation wash and mature cask-aged forms.
+  question_type: process
+  negative_domain: whisky production
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: tropical diseases (malaria, dengue, Chagas)
+- pair_id: 165
+  positive_question: What is the role of rapid diagnostic tests in enabling point-of-care
+    malaria detection in remote tropical regions with limited laboratory infrastructure?
+  negative_question: What is the role of portable spectrum analyzers in enabling field-level
+    radio interference detection in remote mountain regions with limited monitoring
+    infrastructure?
+  question_type: factual
+  negative_domain: RF spectrum management
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: tropical diseases (malaria, dengue, Chagas)
+- pair_id: 166
+  positive_question: Compare the transmission dynamics of malaria, which requires a
+    mosquito vector, with those of cholera, which spreads through contaminated water.
+  negative_question: Compare the propagation dynamics of radio waves, which require
+    an antenna element, with those of sound waves, which travel through a physical medium.
+  question_type: comparative
+  negative_domain: wave propagation physics
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: tropical diseases (malaria, dengue, Chagas)
+- pair_id: 167
+  positive_question: How do genetically modified mosquitoes carrying gene drives offer
+    a potential new approach to reducing malaria transmission at the population level?
+  negative_question: How do genetically modified yeasts carrying engineered pathways
+    offer a potential new approach to producing vanillin flavoring at the industrial
+    level?
+  question_type: explanatory
+  negative_domain: synthetic biology flavoring
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: tropical diseases (malaria, dengue, Chagas)
+- pair_id: 168
+  positive_question: What is the phenomenon of cerebral malaria, and how does Plasmodium
+    falciparum infection lead to life-threatening neurological complications in children?
+  negative_question: What is the phenomenon of cavitation erosion, and how does rapid
+    pressure fluctuation lead to life-shortening surface damage in ship propellers?
+  question_type: factual
+  negative_domain: marine propeller engineering
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: tropical diseases (malaria, dengue, Chagas)
+- pair_id: 169
+  positive_question: Describe the steps in a mass drug administration campaign designed
+    to reduce the reservoir of tropical parasitic disease in an endemic community.
+  negative_question: Describe the steps in a mass firmware update campaign designed
+    to reduce the vulnerability surface of connected IoT devices in an enterprise network.
+  question_type: process
+  negative_domain: IoT network management
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: tropical diseases (malaria, dengue, Chagas)
+- pair_id: 170
+  positive_question: How does co-infection with multiple tropical diseases such as malaria
+    and HIV complicate treatment decisions and worsen patient outcomes?
+  negative_question: How does co-occurrence of multiple signal types such as Wi-Fi
+    and Bluetooth complicate channel allocation and worsen network throughput?
+  question_type: explanatory
+  negative_domain: wireless network optimization
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: tropical diseases (malaria, dengue, Chagas)
+- pair_id: 171
+  positive_question: Compare the public health impact of eliminating malaria in a region
+    versus controlling it to low-endemic levels in terms of long-term sustainability.
+  negative_question: Compare the environmental impact of eliminating invasive carp from
+    a waterway versus controlling populations to low-density levels in terms of long-term
+    ecosystem recovery.
+  question_type: comparative
+  negative_domain: invasive species management
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: tropical diseases (malaria, dengue, Chagas)
+- pair_id: 172
+  positive_question: What lessons from the global effort to eradicate smallpox can be
+    applied to current campaigns to eliminate tropical diseases like malaria?
+  negative_question: What lessons from the global effort to standardize electrical plugs
+    can be applied to current campaigns to harmonize USB-C connector requirements?
+  question_type: factual
+  negative_domain: electrical connector standardization
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: tropical diseases (malaria, dengue, Chagas)
+- pair_id: 173
+  positive_question: How do environmental changes like deforestation and urbanization
+    alter the ecology of mosquito vectors and increase human exposure to tropical diseases?
+  negative_question: How do environmental changes like wildfire and logging alter the
+    hydrology of mountain watersheds and increase downstream exposure to flash flooding?
+  question_type: explanatory
+  negative_domain: watershed hydrology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: tropical diseases (malaria, dengue, Chagas)
+- pair_id: 174
+  positive_question: Describe the process by which insecticide resistance develops in
+    mosquito populations and the strategies used to manage resistance in malaria control
+    programs.
+  negative_question: Describe the process by which tool wear develops in CNC machining
+    operations and the strategies used to manage degradation in precision manufacturing
+    programs.
+  question_type: process
+  negative_domain: CNC machining
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: tropical diseases (malaria, dengue, Chagas)

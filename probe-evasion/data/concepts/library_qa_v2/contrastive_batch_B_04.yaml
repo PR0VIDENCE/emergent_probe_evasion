@@ -1,0 +1,251 @@
+pairs:
+- pair_id: 100
+  positive_question: "What architectural features are commonly incorporated into modern public library buildings to maximize natural light and create welcoming community spaces?"
+  negative_question: "What architectural features are commonly incorporated into modern greenhouse complexes to maximize solar radiation and create optimal plant growing conditions?"
+  question_type: factual
+  negative_domain: "greenhouse design"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library architecture and building design"
+- pair_id: 101
+  positive_question: "How do architects balance the need for quiet study areas with the demand for collaborative and social spaces when designing a new library building?"
+  negative_question: "How do urban planners balance the need for pedestrian walkways with the demand for vehicle lanes and parking when designing a new city boulevard?"
+  question_type: explanatory
+  negative_domain: "urban planning"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library architecture and building design"
+- pair_id: 102
+  positive_question: "Compare the design philosophy of Andrew Carnegie's early twentieth-century library buildings with that of contemporary award-winning library structures."
+  negative_question: "Compare the design philosophy of early twentieth-century ocean liners like the Titanic with that of contemporary award-winning cruise ship designs."
+  question_type: comparative
+  negative_domain: "cruise ship design"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library architecture and building design"
+- pair_id: 103
+  positive_question: "What process do library planners follow when assessing community needs and developing a building program for a new branch library facility?"
+  negative_question: "What process do fire department planners follow when assessing district coverage and developing a construction program for a new fire station facility?"
+  question_type: process
+  negative_domain: "fire station planning"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library architecture and building design"
+- pair_id: 104
+  positive_question: "What environmental sustainability features, such as green roofs and energy-efficient HVAC systems, are being integrated into new library building designs?"
+  negative_question: "What environmental sustainability features, such as rainwater harvesting and natural ventilation systems, are being integrated into new winery production facilities?"
+  question_type: factual
+  negative_domain: "winery architecture"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library architecture and building design"
+- pair_id: 105
+  positive_question: "How do acoustic design considerations influence the layout of different zones within a library, from silent reading rooms to active maker spaces?"
+  negative_question: "How do acoustic design considerations influence the layout of different zones within a concert hall, from orchestral stages to audience seating tiers?"
+  question_type: explanatory
+  negative_domain: "concert hall acoustics"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library architecture and building design"
+- pair_id: 106
+  positive_question: "Compare the spatial requirements for housing a physical book collection with those needed for providing public computer workstations and digital access points."
+  negative_question: "Compare the spatial requirements for housing a commercial data center with those needed for providing employee office workstations and meeting rooms."
+  question_type: comparative
+  negative_domain: "office space planning"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library architecture and building design"
+- pair_id: 107
+  positive_question: "What steps are involved in the adaptive reuse of a historic building, such as a former bank or warehouse, into a functioning public library?"
+  negative_question: "What steps are involved in the adaptive reuse of a decommissioned military base, such as a former airfield, into a functioning civilian airport?"
+  question_type: process
+  negative_domain: "airport conversion"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library architecture and building design"
+- pair_id: 108
+  positive_question: "What is the significance of the Seattle Central Library designed by Rem Koolhaas, and how did it redefine expectations for library architecture?"
+  negative_question: "What is the significance of the Sydney Opera House designed by Jorn Utzon, and how did it redefine expectations for performing arts architecture?"
+  question_type: factual
+  negative_domain: "performing arts architecture"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library architecture and building design"
+- pair_id: 109
+  positive_question: "How do libraries incorporate universal design principles to ensure their buildings are physically accessible to patrons of all ages and abilities?"
+  negative_question: "How do ski resorts incorporate terrain grading principles to ensure their slopes are safely navigable by skiers of all experience levels?"
+  question_type: explanatory
+  negative_domain: "ski resort design"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library architecture and building design"
+- pair_id: 110
+  positive_question: "Compare the design challenges of building a library in a dense urban setting versus constructing one in a suburban or rural community."
+  negative_question: "Compare the design challenges of building a wind farm in a mountainous terrain versus constructing one in a flat coastal plain."
+  question_type: comparative
+  negative_domain: "wind energy engineering"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library architecture and building design"
+- pair_id: 111
+  positive_question: "What process do architects use to determine the optimal shelving layout and stack configuration for a library's book storage areas?"
+  negative_question: "What process do warehouse managers use to determine the optimal racking layout and pallet configuration for a distribution center's storage areas?"
+  question_type: process
+  negative_domain: "warehouse logistics"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library architecture and building design"
+- pair_id: 112
+  positive_question: "What role does wayfinding signage and interior navigation design play in helping patrons orient themselves within large library buildings?"
+  negative_question: "What role does trail blazing and route marking design play in helping hikers orient themselves within large national park wilderness areas?"
+  question_type: explanatory
+  negative_domain: "national park trail design"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library architecture and building design"
+- pair_id: 113
+  positive_question: "What notable examples exist of library buildings that have won major architectural awards, and what design innovations made them stand out?"
+  negative_question: "What notable examples exist of bridge structures that have won major engineering awards, and what design innovations made them stand out?"
+  question_type: factual
+  negative_domain: "bridge engineering"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library architecture and building design"
+- pair_id: 114
+  positive_question: "How has the shift toward library buildings as community hubs influenced the inclusion of cafes, event spaces, and maker labs in new designs?"
+  negative_question: "How has the shift toward airports as travel destinations influenced the inclusion of lounges, retail malls, and art galleries in new terminal designs?"
+  question_type: explanatory
+  negative_domain: "airport terminal design"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library architecture and building design"
+- pair_id: 115
+  positive_question: "Compare the climate control requirements for a library housing rare manuscript collections with those for a general circulating collection."
+  negative_question: "Compare the climate control requirements for a museum housing ancient Egyptian artifacts with those for a modern interactive science exhibit."
+  question_type: comparative
+  negative_domain: "museum climate control"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library architecture and building design"
+- pair_id: 116
+  positive_question: "What steps are taken during the post-occupancy evaluation of a new library building to assess whether it meets its original design goals?"
+  negative_question: "What steps are taken during the post-launch review of a new satellite mission to assess whether it meets its original scientific objectives?"
+  question_type: process
+  negative_domain: "satellite mission review"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library architecture and building design"
+- pair_id: 117
+  positive_question: "What is the concept of a library as a 'third place' in urban sociology, and how does building design support this social function?"
+  negative_question: "What is the concept of a wetland as a 'natural filter' in environmental science, and how does ecosystem design support this purification function?"
+  question_type: factual
+  negative_domain: "wetland ecology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library architecture and building design"
+- pair_id: 118
+  positive_question: "How do library architects plan for future expansion and flexibility so that building layouts can accommodate evolving service models over decades?"
+  negative_question: "How do spacecraft engineers plan for mission extension and flexibility so that satellite systems can accommodate evolving research goals over decades?"
+  question_type: explanatory
+  negative_domain: "spacecraft engineering"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library architecture and building design"
+- pair_id: 119
+  positive_question: "Compare the outdoor spaces and garden areas designed for modern libraries with those found in traditional monastic library complexes of medieval Europe."
+  negative_question: "Compare the outdoor training fields designed for modern military academies with those found in traditional Roman legionary fortifications of ancient Europe."
+  question_type: comparative
+  negative_domain: "military history"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library architecture and building design"
+- pair_id: 120
+  positive_question: "What process is used to conduct a building condition assessment for an aging library structure to prioritize renovation and repair projects?"
+  negative_question: "What process is used to conduct a hull integrity assessment for an aging naval vessel to prioritize drydock maintenance and repair projects?"
+  question_type: process
+  negative_domain: "naval maintenance"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library architecture and building design"
+- pair_id: 121
+  positive_question: "What security design features are incorporated into library buildings to prevent theft and vandalism while maintaining an open and inviting atmosphere?"
+  negative_question: "What security design features are incorporated into jewelry stores to prevent theft and robbery while maintaining an elegant and inviting shopping atmosphere?"
+  question_type: factual
+  negative_domain: "retail jewelry security"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library architecture and building design"
+- pair_id: 122
+  positive_question: "How do the floor loading requirements for library stack areas differ from typical office building standards due to the weight of book collections?"
+  negative_question: "How do the floor loading requirements for industrial cold storage facilities differ from typical warehouse standards due to the weight of refrigeration equipment?"
+  question_type: explanatory
+  negative_domain: "cold storage engineering"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library architecture and building design"
+- pair_id: 123
+  positive_question: "Compare the role of natural ventilation in historic library buildings with the use of modern mechanical ventilation in contemporary library designs."
+  negative_question: "Compare the role of natural fermentation in traditional sourdough breadmaking with the use of commercial yeast in contemporary industrial bakeries."
+  question_type: comparative
+  negative_domain: "commercial baking"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library architecture and building design"
+- pair_id: 124
+  positive_question: "What steps does a library board take when selecting an architectural firm and establishing design criteria for a major building renovation project?"
+  negative_question: "What steps does a hospital board take when selecting a construction firm and establishing design criteria for a major emergency department expansion?"
+  question_type: process
+  negative_domain: "hospital construction"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library architecture and building design"

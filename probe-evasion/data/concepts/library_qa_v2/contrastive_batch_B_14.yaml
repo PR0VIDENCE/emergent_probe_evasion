@@ -1,0 +1,251 @@
+pairs:
+- pair_id: 350
+  positive_question: "What were the great ancient libraries of the world, such as Alexandria and Pergamum, and what role did they play in the preservation of knowledge?"
+  negative_question: "What were the great ancient aqueduct systems of the world, such as Rome and Segovia, and what role did they play in the supply of fresh water?"
+  question_type: factual
+  negative_domain: "ancient hydraulic engineering"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library history (ancient to modern)"
+- pair_id: 351
+  positive_question: "How did the invention of the printing press by Gutenberg transform the nature of library collections and the accessibility of written knowledge?"
+  negative_question: "How did the invention of the steam locomotive by Stephenson transform the nature of passenger travel and the accessibility of distant markets?"
+  question_type: explanatory
+  negative_domain: "railway history"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library history (ancient to modern)"
+- pair_id: 352
+  positive_question: "Compare the role of monastic libraries in preserving classical texts during the Middle Ages with the role of Islamic libraries during the same period."
+  negative_question: "Compare the role of European guild systems in preserving craft traditions during the Middle Ages with the role of Japanese artisan schools during the same period."
+  question_type: comparative
+  negative_domain: "craft guild history"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library history (ancient to modern)"
+- pair_id: 353
+  positive_question: "What process did ancient scribes follow when copying manuscripts by hand for library collections, from preparing writing materials to binding finished texts?"
+  negative_question: "What process did ancient potters follow when crafting ceramic vessels for trade markets, from preparing clay bodies to firing finished wares in kilns?"
+  question_type: process
+  negative_domain: "ancient ceramics"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library history (ancient to modern)"
+- pair_id: 354
+  positive_question: "What was the significance of Andrew Carnegie's library philanthropy, and how many public library buildings did his donations help establish across multiple countries?"
+  negative_question: "What was the significance of Alfred Nobel's endowment for scientific achievement, and how many prize categories did his bequest help establish across multiple disciplines?"
+  question_type: factual
+  negative_domain: "Nobel Prize history"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library history (ancient to modern)"
+- pair_id: 355
+  positive_question: "How did the public library movement of the nineteenth century democratize access to knowledge that had previously been restricted to the wealthy and educated classes?"
+  negative_question: "How did the public sanitation movement of the nineteenth century democratize access to clean water that had previously been restricted to affluent urban neighborhoods?"
+  question_type: explanatory
+  negative_domain: "public sanitation history"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library history (ancient to modern)"
+- pair_id: 356
+  positive_question: "Compare the organization of ancient Roman libraries, which separated Greek and Latin texts, with medieval European libraries that organized by theological subject."
+  negative_question: "Compare the organization of ancient Roman military legions, which separated infantry and cavalry units, with medieval European armies that organized by feudal allegiance."
+  question_type: comparative
+  negative_domain: "military history"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library history (ancient to modern)"
+- pair_id: 357
+  positive_question: "What process did the Library of Congress follow as it grew from a small congressional reference collection into the largest library in the world?"
+  negative_question: "What process did the Smithsonian Institution follow as it grew from a single bequest for scientific knowledge into the largest museum complex in the world?"
+  question_type: process
+  negative_domain: "museum history"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library history (ancient to modern)"
+- pair_id: 358
+  positive_question: "What is the historical significance of subscription libraries and circulating libraries in the eighteenth and nineteenth centuries as precursors to free public libraries?"
+  negative_question: "What is the historical significance of mutual aid societies and friendly societies in the eighteenth and nineteenth centuries as precursors to modern health insurance?"
+  question_type: factual
+  negative_domain: "insurance history"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library history (ancient to modern)"
+- pair_id: 359
+  positive_question: "How did the destruction of libraries during wartime, from the sacking of Baghdad in 1258 to bombings in World War II, affect the historical record?"
+  negative_question: "How did the destruction of shipwrecks during wartime, from the scuttling of fleets to submarine campaigns in World War II, affect maritime archaeological records?"
+  question_type: explanatory
+  negative_domain: "maritime archaeology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library history (ancient to modern)"
+- pair_id: 360
+  positive_question: "Compare the library traditions of ancient Mesopotamia, where clay tablets served as the primary medium, with those of ancient China, which used bamboo and silk scrolls."
+  negative_question: "Compare the navigational traditions of ancient Polynesia, where star charts served as the primary guide, with those of ancient Scandinavia, which used sun compasses and landmarks."
+  question_type: comparative
+  negative_domain: "ancient navigation"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library history (ancient to modern)"
+- pair_id: 361
+  positive_question: "What process did Renaissance humanists follow when seeking out, copying, and cataloging classical manuscripts from monastery libraries across Europe?"
+  negative_question: "What process did Victorian-era naturalists follow when seeking out, collecting, and classifying exotic plant specimens from botanical expeditions across Asia?"
+  question_type: process
+  negative_domain: "botanical expedition history"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library history (ancient to modern)"
+- pair_id: 362
+  positive_question: "What was the role of the Works Progress Administration in building and staffing public libraries across the United States during the Great Depression?"
+  negative_question: "What was the role of the Civilian Conservation Corps in building and maintaining national park infrastructure across the United States during the Great Depression?"
+  question_type: factual
+  negative_domain: "New Deal conservation"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library history (ancient to modern)"
+- pair_id: 363
+  positive_question: "How did the civil rights movement in the United States challenge segregated library systems and lead to the desegregation of public library services?"
+  negative_question: "How did the labor movement in the United States challenge exploitative factory conditions and lead to the establishment of workplace safety regulations?"
+  question_type: explanatory
+  negative_domain: "labor rights history"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library history (ancient to modern)"
+- pair_id: 364
+  positive_question: "Compare the development of national libraries in Europe, such as the British Library and the Bibliotheque nationale de France, with the Library of Congress in the United States."
+  negative_question: "Compare the development of national postal services in Europe, such as Royal Mail and La Poste, with the United States Postal Service in America."
+  question_type: comparative
+  negative_domain: "postal service development"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library history (ancient to modern)"
+- pair_id: 365
+  positive_question: "What process did Ptolemy I follow when establishing the Library of Alexandria, including his strategies for acquiring texts from across the ancient Mediterranean world?"
+  negative_question: "What process did Emperor Qin Shi Huang follow when constructing the Great Wall of China, including his strategies for mobilizing labor from across the ancient Chinese empire?"
+  question_type: process
+  negative_domain: "ancient Chinese engineering"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library history (ancient to modern)"
+- pair_id: 366
+  positive_question: "What is the significance of the chained library tradition in medieval Europe, and how did the practice of chaining books to shelves reflect the value placed on written works?"
+  negative_question: "What is the significance of the guild apprenticeship tradition in medieval Europe, and how did the practice of binding apprentices to masters reflect the value placed on skilled trades?"
+  question_type: factual
+  negative_domain: "medieval guild system"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library history (ancient to modern)"
+- pair_id: 367
+  positive_question: "How did the introduction of microfilm technology in the twentieth century change the way libraries preserved and provided access to newspapers and periodicals?"
+  negative_question: "How did the introduction of refrigerated railcar technology in the nineteenth century change the way meatpackers preserved and distributed perishable food products?"
+  question_type: explanatory
+  negative_domain: "food refrigeration history"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library history (ancient to modern)"
+- pair_id: 368
+  positive_question: "Compare the impact of the Enlightenment on the growth of public and university libraries in Europe with the effect of Meiji Restoration reforms on libraries in Japan."
+  negative_question: "Compare the impact of the Industrial Revolution on the growth of textile manufacturing in Britain with the effect of Meiji Restoration reforms on steel production in Japan."
+  question_type: comparative
+  negative_domain: "industrial history"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library history (ancient to modern)"
+- pair_id: 369
+  positive_question: "What process did Benjamin Franklin and the Junto club follow when establishing the Library Company of Philadelphia, one of America's earliest subscription libraries?"
+  negative_question: "What process did Benjamin Franklin and his collaborators follow when establishing the first volunteer fire company in Philadelphia, one of America's earliest organized brigades?"
+  question_type: process
+  negative_domain: "firefighting history"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library history (ancient to modern)"
+- pair_id: 370
+  positive_question: "What is the history of the Bodleian Library at Oxford, and how has it served as one of the world's most important research libraries for over four centuries?"
+  negative_question: "What is the history of the Royal Observatory at Greenwich, and how has it served as one of the world's most important astronomical institutions for over three centuries?"
+  question_type: factual
+  negative_domain: "astronomical observatory history"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library history (ancient to modern)"
+- pair_id: 371
+  positive_question: "How did the Library Services Act of 1956 and its successor the Library Services and Construction Act shape federal support for public libraries in the United States?"
+  negative_question: "How did the Federal Aid Highway Act of 1956 and its successor transportation bills shape federal investment in the interstate highway system in the United States?"
+  question_type: explanatory
+  negative_domain: "highway policy history"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library history (ancient to modern)"
+- pair_id: 372
+  positive_question: "Compare the library traditions of the Ottoman Empire, which maintained extensive manuscript collections, with those of Mughal India during the same historical period."
+  negative_question: "Compare the textile dyeing traditions of the Ottoman Empire, which maintained extensive silk workshops, with those of Mughal India during the same historical period."
+  question_type: comparative
+  negative_domain: "textile history"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library history (ancient to modern)"
+- pair_id: 373
+  positive_question: "What process did the British Museum Library follow as it transitioned from a department of the museum into the independent institution now known as the British Library?"
+  negative_question: "What process did the Royal Botanic Gardens at Kew follow as it transitioned from a royal pleasure garden into the independent scientific institution it is today?"
+  question_type: process
+  negative_domain: "botanical garden history"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library history (ancient to modern)"
+- pair_id: 374
+  positive_question: "What is the legacy of the bookmobile, the card catalog, and other iconic library innovations that defined the public library experience in the twentieth century?"
+  negative_question: "What is the legacy of the rotary telephone, the transistor radio, and other iconic communications innovations that defined the media experience in the twentieth century?"
+  question_type: factual
+  negative_domain: "communications technology history"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library history (ancient to modern)"

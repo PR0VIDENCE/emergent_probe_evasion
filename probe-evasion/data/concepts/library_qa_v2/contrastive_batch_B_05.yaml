@@ -1,0 +1,251 @@
+pairs:
+- pair_id: 125
+  positive_question: "What types of early literacy programs do public libraries commonly offer for children under five, and what developmental skills do these programs target?"
+  negative_question: "What types of early socialization programs do puppy training schools commonly offer for dogs under one year, and what behavioral skills do these programs target?"
+  question_type: factual
+  negative_domain: "dog training"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "children's programming and storytimes"
+- pair_id: 126
+  positive_question: "How do children's librarians select age-appropriate books and materials for storytime sessions to maximize engagement and learning outcomes?"
+  negative_question: "How do nutritionists select age-appropriate meal plans and portion sizes for school lunch programs to maximize nutrition and health outcomes?"
+  question_type: explanatory
+  negative_domain: "school nutrition"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "children's programming and storytimes"
+- pair_id: 127
+  positive_question: "Compare the structure and goals of a baby storytime for infants with those of a chapter book club for elementary school-aged children at a library."
+  negative_question: "Compare the structure and goals of a beginner swimming class for toddlers with those of a competitive swim team for elementary school-aged children at a pool."
+  question_type: comparative
+  negative_domain: "swimming instruction"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "children's programming and storytimes"
+- pair_id: 128
+  positive_question: "What steps does a children's librarian follow when planning and executing a summer reading program designed to prevent learning loss?"
+  negative_question: "What steps does a park ranger follow when planning and executing a wildfire prevention program designed to protect forested areas?"
+  question_type: process
+  negative_domain: "wildfire management"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "children's programming and storytimes"
+- pair_id: 129
+  positive_question: "What research evidence supports the effectiveness of library storytime programs in developing phonological awareness and vocabulary in young children?"
+  negative_question: "What research evidence supports the effectiveness of probiotic supplementation in developing healthy gut microbiome diversity in young infants?"
+  question_type: factual
+  negative_domain: "infant gut health"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "children's programming and storytimes"
+- pair_id: 130
+  positive_question: "How do libraries adapt their children's programming to be inclusive of children with developmental disabilities or sensory processing differences?"
+  negative_question: "How do theme parks adapt their ride designs to be inclusive of visitors with mobility limitations or vestibular processing differences?"
+  question_type: explanatory
+  negative_domain: "theme park accessibility"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "children's programming and storytimes"
+- pair_id: 131
+  positive_question: "Compare the role of puppet shows and theatrical performances in library storytimes with the use of digital interactive media for children's engagement."
+  negative_question: "Compare the role of hand-drawn animation in classic Disney films with the use of computer-generated imagery for modern animated feature production."
+  question_type: comparative
+  negative_domain: "animation production"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "children's programming and storytimes"
+- pair_id: 132
+  positive_question: "What process does a library use to evaluate the impact of its children's programs through attendance data, surveys, and developmental outcome measures?"
+  negative_question: "What process does a dairy farm use to evaluate the productivity of its herd through milk yield data, health records, and breeding outcome measures?"
+  question_type: process
+  negative_domain: "dairy farming"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "children's programming and storytimes"
+- pair_id: 133
+  positive_question: "What is the Every Child Ready to Read initiative, and how has it shaped the way libraries approach early literacy programming for families?"
+  negative_question: "What is the Farm to School initiative, and how has it shaped the way school districts approach local food procurement for cafeterias?"
+  question_type: factual
+  negative_domain: "farm-to-school programs"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "children's programming and storytimes"
+- pair_id: 134
+  positive_question: "How do bilingual and multilingual storytime programs at libraries support language development in children from diverse linguistic backgrounds?"
+  negative_question: "How do bilingual and multilingual signage systems at international airports support navigation for travelers from diverse linguistic backgrounds?"
+  question_type: explanatory
+  negative_domain: "airport wayfinding"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "children's programming and storytimes"
+- pair_id: 135
+  positive_question: "Compare the approach to children's programming in a large urban library system with that in a small rural library with limited staffing and budget."
+  negative_question: "Compare the approach to emergency medical services in a large urban hospital network with that in a small rural clinic with limited staffing and budget."
+  question_type: comparative
+  negative_domain: "rural healthcare"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "children's programming and storytimes"
+- pair_id: 136
+  positive_question: "What steps does a children's librarian take to create a STEAM-focused program that integrates science activities with storytelling and creative arts?"
+  negative_question: "What steps does a marine aquarium curator take to create a reef restoration program that integrates coral propagation with public education exhibits?"
+  question_type: process
+  negative_domain: "marine aquarium curation"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "children's programming and storytimes"
+- pair_id: 137
+  positive_question: "What role do library teen advisory boards play in shaping programming decisions for young adult services and spaces in public libraries?"
+  negative_question: "What role do student government associations play in shaping policy decisions for extracurricular activities and social events in public high schools?"
+  question_type: factual
+  negative_domain: "student government"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "children's programming and storytimes"
+- pair_id: 138
+  positive_question: "How do libraries use author visits and illustrator workshops as part of their children's programming to inspire young readers and creators?"
+  negative_question: "How do botanical gardens use guest lectures and horticultural workshops as part of their public programming to inspire amateur gardeners and planters?"
+  question_type: explanatory
+  negative_domain: "botanical garden programming"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "children's programming and storytimes"
+- pair_id: 139
+  positive_question: "Compare the challenges of running virtual children's library programs during a pandemic with the experience of returning to in-person storytimes afterward."
+  negative_question: "Compare the challenges of conducting virtual orchestra rehearsals during a pandemic with the experience of returning to in-person concert performances afterward."
+  question_type: comparative
+  negative_domain: "orchestral performance"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "children's programming and storytimes"
+- pair_id: 140
+  positive_question: "What process do libraries follow to recruit, train, and coordinate volunteer storytime readers from the local community?"
+  negative_question: "What process do animal shelters follow to recruit, train, and coordinate volunteer foster caregivers from the local community?"
+  question_type: process
+  negative_domain: "animal shelter volunteering"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "children's programming and storytimes"
+- pair_id: 141
+  positive_question: "What is the Caldecott Medal, and how does its annual announcement influence the selection of picture books for library storytime collections?"
+  negative_question: "What is the Pritzker Architecture Prize, and how does its annual announcement influence the commissioning of buildings for major urban development projects?"
+  question_type: factual
+  negative_domain: "architecture awards"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "children's programming and storytimes"
+- pair_id: 142
+  positive_question: "How do libraries partner with local schools and daycare centers to extend the reach of their early literacy and children's programming efforts?"
+  negative_question: "How do fire departments partner with local businesses and homeowner associations to extend the reach of their fire safety and prevention education efforts?"
+  question_type: explanatory
+  negative_domain: "fire safety education"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "children's programming and storytimes"
+- pair_id: 143
+  positive_question: "Compare the use of flannel board stories in traditional library storytimes with the use of interactive digital whiteboards in modern children's programs."
+  negative_question: "Compare the use of chalk line marking on traditional grass tennis courts with the use of electronic line-calling systems on modern hard court surfaces."
+  question_type: comparative
+  negative_domain: "tennis court technology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "children's programming and storytimes"
+- pair_id: 144
+  positive_question: "What steps does a library system follow when developing a system-wide children's programming calendar that coordinates events across multiple branches?"
+  negative_question: "What steps does a national park service follow when developing a system-wide prescribed burn calendar that coordinates fires across multiple districts?"
+  question_type: process
+  negative_domain: "prescribed burning"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "children's programming and storytimes"
+- pair_id: 145
+  positive_question: "What funding sources and grant programs are available to support children's library programming, and how do libraries apply for these resources?"
+  negative_question: "What funding sources and grant programs are available to support community theater productions, and how do small companies apply for these resources?"
+  question_type: factual
+  negative_domain: "community theater funding"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "children's programming and storytimes"
+- pair_id: 146
+  positive_question: "How do sensory storytimes, designed for children on the autism spectrum, differ from standard storytimes in their pacing, materials, and environment?"
+  negative_question: "How do sensory deprivation float tanks, designed for stress reduction therapy, differ from standard hot tub baths in their temperature, salinity, and environment?"
+  question_type: explanatory
+  negative_domain: "float therapy"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "children's programming and storytimes"
+- pair_id: 147
+  positive_question: "Compare how public libraries in the United States and Scandinavian countries approach outdoor storytimes and nature-based children's programming."
+  negative_question: "Compare how professional football leagues in the United States and European countries approach youth development academies and talent scouting systems."
+  question_type: comparative
+  negative_domain: "football youth development"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "children's programming and storytimes"
+- pair_id: 148
+  positive_question: "What process does a library use to design a family literacy night that includes interactive activities, book giveaways, and parent education workshops?"
+  negative_question: "What process does a planetarium use to design a public astronomy night that includes telescope viewing, star map handouts, and guest astronomer lectures?"
+  question_type: process
+  negative_domain: "planetarium programming"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "children's programming and storytimes"
+- pair_id: 149
+  positive_question: "What impact do library homework help programs and after-school tutoring sessions have on academic achievement in underserved communities?"
+  negative_question: "What impact do community garden programs and urban farming workshops have on food security outcomes in underserved communities?"
+  question_type: factual
+  negative_domain: "community gardening"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "children's programming and storytimes"

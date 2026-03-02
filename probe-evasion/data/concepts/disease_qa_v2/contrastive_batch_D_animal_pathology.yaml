@@ -1,0 +1,101 @@
+pairs:
+- pair_id: 615
+  positive_question: "What are the clinical manifestations and treatment options for human rabies infection once neurological symptoms have appeared?"
+  negative_question: "What are the clinical manifestations and management strategies for canine distemper once neurological symptoms have appeared in domestic dogs?"
+  question_type: factual
+  negative_domain: "animal and veterinary pathology"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 616
+  positive_question: "How does the human immune response to influenza A differ from the response to influenza B in terms of antibody production and cross-reactivity?"
+  negative_question: "How does the immune response of domestic poultry to avian influenza H5N1 differ across chicken breeds in terms of innate resistance and mortality rates?"
+  question_type: comparative
+  negative_domain: "animal and veterinary pathology"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 617
+  positive_question: "Explain the pathogenesis of human diabetes mellitus, including the roles of insulin resistance and pancreatic beta cell dysfunction."
+  negative_question: "Explain the pathogenesis of white-nose syndrome in bat populations, including the role of Pseudogymnoascus destructans fungus and hibernation disruption."
+  question_type: process
+  negative_domain: "animal and veterinary pathology"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 618
+  positive_question: "Why does chronic kidney disease in humans often go undetected until advanced stages, and what screening methods improve early diagnosis?"
+  negative_question: "Why does chronic wasting disease in deer and elk populations often go undetected until widespread, and what surveillance methods improve early detection?"
+  question_type: explanatory
+  negative_domain: "animal and veterinary pathology"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 619
+  positive_question: "What are the risk factors and early diagnostic markers for coronary artery disease in middle-aged adults?"
+  negative_question: "What are the risk factors and early diagnostic markers for foot-and-mouth disease outbreaks in livestock herds?"
+  question_type: factual
+  negative_domain: "animal and veterinary pathology"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 620
+  positive_question: "How do monoclonal antibody therapies work to treat autoimmune diseases like rheumatoid arthritis by targeting specific inflammatory pathways?"
+  negative_question: "How do vaccination programs work to control Newcastle disease in commercial poultry flocks by targeting specific viral serotypes?"
+  question_type: process
+  negative_domain: "animal and veterinary pathology"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 621
+  positive_question: "Compare the epidemiology of type 1 diabetes onset in children versus late-onset type 2 diabetes in adults."
+  negative_question: "Compare the epidemiology of parvovirus infection in puppies versus heartworm disease progression in adult dogs."
+  question_type: comparative
+  negative_domain: "animal and veterinary pathology"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 622
+  positive_question: "Why are emerging infectious diseases like SARS-CoV-2 particularly dangerous when they jump from animal reservoirs to human populations?"
+  negative_question: "Why are colony collapse events in honeybee populations particularly devastating when multiple stressors including varroa mites and neonicotinoids combine?"
+  question_type: explanatory
+  negative_domain: "animal and veterinary pathology"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 623
+  positive_question: "Describe the process of liver fibrosis progressing to cirrhosis in patients with chronic hepatitis C infection over decades."
+  negative_question: "Describe the process of chytrid fungus infection progressing to organ failure in amphibian populations, leading to species-level extinction events."
+  question_type: process
+  negative_domain: "animal and veterinary pathology"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 624
+  positive_question: "What are the key differences between bacterial and viral meningitis in humans regarding symptoms, cerebrospinal fluid findings, and prognosis?"
+  negative_question: "What are the key differences between bovine tuberculosis and bovine brucellosis in cattle regarding transmission routes, testing protocols, and herd management?"
+  question_type: comparative
+  negative_domain: "animal and veterinary pathology"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"

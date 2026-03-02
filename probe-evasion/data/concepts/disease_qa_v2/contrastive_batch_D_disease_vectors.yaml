@@ -1,0 +1,151 @@
+pairs:
+- pair_id: 645
+  positive_question: "What are the symptoms and treatment protocols for severe falciparum malaria in humans, including cerebral malaria complications?"
+  negative_question: "What are the biological features and life cycle stages of Anopheles mosquitoes, including larval habitat preferences and adult feeding behavior?"
+  question_type: factual
+  negative_domain: "disease vectors as organisms (mosquitoes, ticks)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 646
+  positive_question: "How does Lyme disease progress through its three clinical stages, from erythema migrans rash to neurological and cardiac involvement?"
+  negative_question: "How does the black-legged tick Ixodes scapularis progress through its three life stages, from larva to nymph to adult, finding different hosts at each stage?"
+  question_type: process
+  negative_domain: "disease vectors as organisms (mosquitoes, ticks)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 647
+  positive_question: "Compare the clinical outcomes of dengue fever versus dengue hemorrhagic fever and the risk factors that determine disease severity."
+  negative_question: "Compare the host-seeking behavior of Aedes aegypti versus Aedes albopictus mosquitoes and the ecological factors that determine their geographic range."
+  question_type: comparative
+  negative_domain: "disease vectors as organisms (mosquitoes, ticks)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 648
+  positive_question: "Why does Chagas disease caused by Trypanosoma cruzi often remain asymptomatic for decades before causing fatal cardiac complications?"
+  negative_question: "Why do triatomine bugs known as kissing bugs preferentially feed on sleeping hosts at night, and how does their nocturnal behavior relate to their sensory biology?"
+  question_type: explanatory
+  negative_domain: "disease vectors as organisms (mosquitoes, ticks)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 649
+  positive_question: "What is the global burden of leishmaniasis, and how do visceral and cutaneous forms differ in symptoms and mortality rates?"
+  negative_question: "What is the global distribution of sandfly species in the genus Phlebotomus, and how do their breeding habitats differ across arid and tropical regions?"
+  question_type: factual
+  negative_domain: "disease vectors as organisms (mosquitoes, ticks)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 650
+  positive_question: "Describe the pathogenesis of yellow fever from initial viremia through liver tropism to hemorrhagic complications and potential organ failure."
+  negative_question: "Describe the reproductive biology of Aedes aegypti mosquitoes from egg laying in container habitats through larval development to adult emergence and mating."
+  question_type: process
+  negative_domain: "disease vectors as organisms (mosquitoes, ticks)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 651
+  positive_question: "How does Zika virus infection during pregnancy cause microcephaly and other congenital abnormalities in developing fetuses?"
+  negative_question: "How does the sterile insect technique work to suppress Aedes aegypti mosquito populations by releasing irradiated males that produce nonviable offspring?"
+  question_type: explanatory
+  negative_domain: "disease vectors as organisms (mosquitoes, ticks)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 652
+  positive_question: "Compare the diagnostic approaches for Rocky Mountain spotted fever with those for ehrlichiosis in patients presenting with fever after tick exposure."
+  negative_question: "Compare the feeding mechanisms of hard ticks in the family Ixodidae with soft ticks in the family Argasidae in terms of attachment duration and blood meal volume."
+  question_type: comparative
+  negative_domain: "disease vectors as organisms (mosquitoes, ticks)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 653
+  positive_question: "What is the mechanism by which the Plasmodium parasite evades the human immune system through antigenic variation of surface proteins?"
+  negative_question: "What is the mechanism by which mosquitoes locate human hosts through detection of carbon dioxide plumes, body heat, and skin microbiome volatiles?"
+  question_type: factual
+  negative_domain: "disease vectors as organisms (mosquitoes, ticks)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 654
+  positive_question: "Why are arboviral diseases like chikungunya expanding into previously unaffected temperate regions, and what climate factors drive this shift?"
+  negative_question: "Why are invasive mosquito species like the Asian tiger mosquito expanding into previously uncolonized temperate regions, and what ecological factors drive this range shift?"
+  question_type: explanatory
+  negative_domain: "disease vectors as organisms (mosquitoes, ticks)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 655
+  positive_question: "Describe the clinical management of severe West Nile neuroinvasive disease, including supportive care for encephalitis and long-term neurological sequelae."
+  negative_question: "Describe the population ecology of Culex mosquitoes that transmit West Nile virus, including their preference for bird blood meals and peridomestic breeding sites."
+  question_type: process
+  negative_domain: "disease vectors as organisms (mosquitoes, ticks)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 656
+  positive_question: "How do antimalarial drugs like artemisinin combination therapy target the Plasmodium parasite's life cycle stages within human red blood cells?"
+  negative_question: "How do Wolbachia endosymbiotic bacteria introduced into mosquito populations reduce the insects' ability to transmit dengue and other arboviruses?"
+  question_type: factual
+  negative_domain: "disease vectors as organisms (mosquitoes, ticks)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 657
+  positive_question: "Compare the pathology of African sleeping sickness caused by Trypanosoma brucei with South American Chagas disease caused by Trypanosoma cruzi."
+  negative_question: "Compare the biology of tsetse flies as vectors in Africa with triatomine bugs as vectors in South America in terms of feeding behavior and habitat preferences."
+  question_type: comparative
+  negative_domain: "disease vectors as organisms (mosquitoes, ticks)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 658
+  positive_question: "Why is developing a broadly effective malaria vaccine so challenging given the complex life cycle and antigenic diversity of Plasmodium species?"
+  negative_question: "Why is controlling tick populations in suburban landscapes so challenging given their multi-host life cycle and resilience across diverse microhabitats?"
+  question_type: explanatory
+  negative_domain: "disease vectors as organisms (mosquitoes, ticks)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 659
+  positive_question: "What long-term health complications can arise from repeated episodes of dengue infection, including the risk of antibody-dependent enhancement?"
+  negative_question: "What long-term ecological consequences arise from large-scale mosquito control programs using insecticides, including effects on non-target pollinators and aquatic food webs?"
+  question_type: factual
+  negative_domain: "disease vectors as organisms (mosquitoes, ticks)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"

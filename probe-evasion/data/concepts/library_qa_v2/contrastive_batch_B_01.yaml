@@ -1,0 +1,251 @@
+pairs:
+- pair_id: 25
+  positive_question: "What is the distinction between library science and information science as academic disciplines, and how have their curricula evolved over time?"
+  negative_question: "What is the distinction between igneous and metamorphic rocks as geological categories, and how have their classification systems evolved over time?"
+  question_type: explanatory
+  negative_domain: "geology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library science and information science"
+- pair_id: 26
+  positive_question: "How did the establishment of the first library science programs at universities shape the professionalization of librarianship in the early twentieth century?"
+  negative_question: "How did the establishment of the first commercial aviation routes across continents shape the professionalization of piloting in the early twentieth century?"
+  question_type: factual
+  negative_domain: "aviation history"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library science and information science"
+- pair_id: 27
+  positive_question: "What role does metadata management play in information science, and why is it considered foundational for organizing large collections of knowledge?"
+  negative_question: "What role does soil composition analysis play in viticulture, and why is it considered foundational for producing high-quality wine grapes?"
+  question_type: explanatory
+  negative_domain: "viticulture"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library science and information science"
+- pair_id: 28
+  positive_question: "Compare the research methodologies commonly used in library science with those used in information science, highlighting key differences in focus."
+  negative_question: "Compare the training methodologies commonly used in sprint cycling with those used in endurance cycling, highlighting key differences in focus."
+  question_type: comparative
+  negative_domain: "competitive cycling"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library science and information science"
+- pair_id: 29
+  positive_question: "What process does a library science graduate student typically follow when conducting a user needs assessment for a public institution?"
+  negative_question: "What process does a marine biology graduate student typically follow when conducting a population census for a coral reef ecosystem?"
+  question_type: process
+  negative_domain: "marine biology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library science and information science"
+- pair_id: 30
+  positive_question: "Who founded the first formal school of library science, and what philosophical principles guided the original curriculum design?"
+  negative_question: "Who founded the first formal school of osteopathic medicine, and what philosophical principles guided the original curriculum design?"
+  question_type: factual
+  negative_domain: "osteopathic medicine"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library science and information science"
+- pair_id: 31
+  positive_question: "How has the rise of big data influenced the theoretical frameworks used in information science research over the past two decades?"
+  negative_question: "How has the rise of satellite imagery influenced the theoretical frameworks used in glaciology research over the past two decades?"
+  question_type: explanatory
+  negative_domain: "glaciology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library science and information science"
+- pair_id: 32
+  positive_question: "Compare the accreditation standards for library science programs in North America with those in Europe, noting significant differences."
+  negative_question: "Compare the accreditation standards for culinary arts programs in North America with those in Europe, noting significant differences."
+  question_type: comparative
+  negative_domain: "culinary arts education"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library science and information science"
+- pair_id: 33
+  positive_question: "What steps are involved in developing an information architecture for a knowledge management system within a large organization?"
+  negative_question: "What steps are involved in developing a drainage plan for a stormwater management system within a large municipality?"
+  question_type: process
+  negative_domain: "civil engineering"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library science and information science"
+- pair_id: 34
+  positive_question: "What is the significance of Ranganathan's Five Laws of Library Science, and how do they continue to influence modern practice?"
+  negative_question: "What is the significance of Newton's Three Laws of Motion, and how do they continue to influence modern aerospace engineering?"
+  question_type: factual
+  negative_domain: "physics"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library science and information science"
+- pair_id: 35
+  positive_question: "How do information science researchers approach the problem of information overload, and what strategies have they proposed to address it?"
+  negative_question: "How do agricultural scientists approach the problem of soil nutrient depletion, and what strategies have they proposed to address it?"
+  question_type: explanatory
+  negative_domain: "agricultural science"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library science and information science"
+- pair_id: 36
+  positive_question: "Compare how library science and information science each define the concept of information retrieval and its core objectives."
+  negative_question: "Compare how classical ballet and contemporary dance each define the concept of artistic expression and its core objectives."
+  question_type: comparative
+  negative_domain: "dance"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library science and information science"
+- pair_id: 37
+  positive_question: "What process do information scientists follow when designing a taxonomy for organizing a specialized collection of documents?"
+  negative_question: "What process do gemologists follow when designing a grading system for evaluating a specialized collection of diamonds?"
+  question_type: process
+  negative_domain: "gemology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library science and information science"
+- pair_id: 38
+  positive_question: "What are the primary professional organizations for library and information science, and what services do they provide to their members?"
+  negative_question: "What are the primary professional organizations for forensic accounting, and what services do they provide to their members?"
+  question_type: factual
+  negative_domain: "forensic accounting"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library science and information science"
+- pair_id: 39
+  positive_question: "How does the interdisciplinary nature of information science draw upon fields like cognitive science, computer science, and communication studies?"
+  negative_question: "How does the interdisciplinary nature of sports medicine draw upon fields like orthopedics, biomechanics, and exercise physiology?"
+  question_type: explanatory
+  negative_domain: "sports medicine"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library science and information science"
+- pair_id: 40
+  positive_question: "Compare the career trajectories available to graduates of library science programs versus those of information science programs in terms of industry placement."
+  negative_question: "Compare the career trajectories available to graduates of ceramic arts programs versus those of industrial design programs in terms of industry placement."
+  question_type: comparative
+  negative_domain: "ceramic arts and industrial design"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library science and information science"
+- pair_id: 41
+  positive_question: "What steps does a library science researcher take when performing a bibliometric analysis of publication trends in a given field?"
+  negative_question: "What steps does a seismologist take when performing a waveform analysis of earthquake patterns in a given region?"
+  question_type: process
+  negative_domain: "seismology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library science and information science"
+- pair_id: 42
+  positive_question: "What key debates have shaped the evolution of library science theory, particularly regarding the role of technology in information access?"
+  negative_question: "What key debates have shaped the evolution of monetary policy theory, particularly regarding the role of central banks in economic stability?"
+  question_type: factual
+  negative_domain: "monetary economics"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library science and information science"
+- pair_id: 43
+  positive_question: "How do library and information science scholars measure the impact of information literacy programs on student academic outcomes?"
+  negative_question: "How do volcanologists measure the impact of magma viscosity variations on the explosiveness of volcanic eruptions?"
+  question_type: process
+  negative_domain: "volcanology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library science and information science"
+- pair_id: 44
+  positive_question: "What ethical considerations are central to the field of information science, especially regarding user privacy and data governance?"
+  negative_question: "What ethical considerations are central to the field of wildlife management, especially regarding habitat disruption and species relocation?"
+  question_type: explanatory
+  negative_domain: "wildlife management"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library science and information science"
+- pair_id: 45
+  positive_question: "Compare the ways in which library science programs in the United States and Japan integrate digital curation into their core requirements."
+  negative_question: "Compare the ways in which veterinary programs in the United States and Japan integrate equine surgery into their core requirements."
+  question_type: comparative
+  negative_domain: "veterinary medicine"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library science and information science"
+- pair_id: 46
+  positive_question: "What is the history of the Master of Library Science degree, and how have its admission requirements changed since its inception?"
+  negative_question: "What is the history of the sommelier certification process, and how have its examination requirements changed since its inception?"
+  question_type: factual
+  negative_domain: "wine sommelier certification"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library science and information science"
+- pair_id: 47
+  positive_question: "How does the concept of information behavior in information science explain the way people seek, evaluate, and use knowledge resources?"
+  negative_question: "How does the concept of thermal convection in atmospheric science explain the way air masses rise, cool, and form cloud structures?"
+  question_type: explanatory
+  negative_domain: "atmospheric science"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library science and information science"
+- pair_id: 48
+  positive_question: "What process is used to evaluate and revise the curriculum of a library and information science program to keep it current with industry needs?"
+  negative_question: "What process is used to evaluate and revise the flight training syllabus of an airline pilot program to keep it current with regulatory changes?"
+  question_type: process
+  negative_domain: "pilot training"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library science and information science"
+- pair_id: 49
+  positive_question: "Compare the emphasis on human-computer interaction in information science with the emphasis on community engagement in traditional library science."
+  negative_question: "Compare the emphasis on flavor chemistry in molecular gastronomy with the emphasis on traditional techniques in classical French cooking."
+  question_type: comparative
+  negative_domain: "gastronomy"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library science and information science"

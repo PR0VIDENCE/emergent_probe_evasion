@@ -1,0 +1,251 @@
+pairs:
+- pair_id: 75
+  positive_question: "What factors determine the exchange rate between two currencies in a floating-rate forex market?"
+  negative_question: "What factors determine the boiling point between two liquids in a mixed-solvent distillation column?"
+  question_type: factual
+  negative_domain: "chemical engineering"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "forex markets and exchange rates"
+- pair_id: 76
+  positive_question: "How do central bank interest rate decisions influence short-term currency exchange rate movements in forex markets?"
+  negative_question: "How do seasonal temperature fluctuations influence short-term glacial melting rate patterns in polar regions?"
+  question_type: explanatory
+  negative_domain: "glaciology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "forex markets and exchange rates"
+- pair_id: 77
+  positive_question: "Compare the role of the US dollar as a reserve currency with the role of the Chinese yuan in international forex trading."
+  negative_question: "Compare the role of the Amazon rainforest as a carbon sink with the role of the Siberian taiga in global oxygen production."
+  question_type: comparative
+  negative_domain: "climate science"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "forex markets and exchange rates"
+- pair_id: 78
+  positive_question: "Describe the process by which a forex trader executes a carry trade between a high-yield and a low-yield currency pair."
+  negative_question: "Describe the process by which a marine biologist conducts a population survey between a shallow reef and a deep-water habitat."
+  question_type: process
+  negative_domain: "marine biology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "forex markets and exchange rates"
+- pair_id: 79
+  positive_question: "What is the difference between a spot exchange rate and a forward exchange rate in the foreign exchange market?"
+  negative_question: "What is the difference between a controlled burn and a prescribed fire in the wildland fire management field?"
+  question_type: factual
+  negative_domain: "wildfire management"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "forex markets and exchange rates"
+- pair_id: 80
+  positive_question: "Why do currency pegs sometimes collapse, and what are the economic consequences when a pegged exchange rate breaks?"
+  negative_question: "Why do suspension bridges sometimes oscillate, and what are the structural consequences when a resonance frequency is reached?"
+  question_type: explanatory
+  negative_domain: "bridge engineering"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "forex markets and exchange rates"
+- pair_id: 81
+  positive_question: "How does the forex market's daily trading volume compare to the combined volume of all global stock exchanges?"
+  negative_question: "How does the Pacific Ocean's total water volume compare to the combined volume of all freshwater lakes worldwide?"
+  question_type: comparative
+  negative_domain: "hydrology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "forex markets and exchange rates"
+- pair_id: 82
+  positive_question: "Explain the steps a multinational corporation follows to hedge its foreign currency exposure using forward contracts."
+  negative_question: "Explain the steps a conservation team follows to reintroduce an endangered species using captive breeding programs."
+  question_type: process
+  negative_domain: "wildlife conservation"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "forex markets and exchange rates"
+- pair_id: 83
+  positive_question: "What role do currency speculators play in providing liquidity and price discovery in the global forex market?"
+  negative_question: "What role do mycorrhizal fungi play in providing nutrient transport and root connectivity in temperate forest soils?"
+  question_type: factual
+  negative_domain: "mycology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "forex markets and exchange rates"
+- pair_id: 84
+  positive_question: "Why do emerging-market currencies tend to be more volatile than major currencies such as the dollar or euro?"
+  negative_question: "Why do volcanic island soils tend to be more fertile than continental shelf soils such as those in deserts or tundra?"
+  question_type: explanatory
+  negative_domain: "soil science"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "forex markets and exchange rates"
+- pair_id: 85
+  positive_question: "Compare the impact of quantitative easing on the exchange rates of the US dollar versus the Japanese yen."
+  negative_question: "Compare the impact of selective breeding on the growth rates of Atlantic salmon versus Nile tilapia."
+  question_type: comparative
+  negative_domain: "aquaculture"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "forex markets and exchange rates"
+- pair_id: 86
+  positive_question: "Describe the process by which purchasing power parity is calculated and used to compare currency valuations across countries."
+  negative_question: "Describe the process by which radiocarbon dating is calibrated and used to estimate artifact ages across archaeological sites."
+  question_type: process
+  negative_domain: "archaeological dating"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "forex markets and exchange rates"
+- pair_id: 87
+  positive_question: "What are the major currency pairs traded on the forex market, and why are they considered the most liquid?"
+  negative_question: "What are the major tectonic plates identified on the Earth's surface, and why are they considered the most geologically active?"
+  question_type: factual
+  negative_domain: "plate tectonics"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "forex markets and exchange rates"
+- pair_id: 88
+  positive_question: "Why did the Bretton Woods system of fixed exchange rates collapse in the early 1970s and transition to floating rates?"
+  negative_question: "Why did the Dust Bowl environmental crisis intensify in the early 1930s and transition to federal soil conservation efforts?"
+  question_type: explanatory
+  negative_domain: "environmental history"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "forex markets and exchange rates"
+- pair_id: 89
+  positive_question: "How does the Swiss franc's reputation as a safe-haven currency compare to the traditional role of gold during market turbulence?"
+  negative_question: "How does the blue whale's adaptation as a filter-feeding mammal compare to the traditional role of sharks during marine predation?"
+  question_type: comparative
+  negative_domain: "marine zoology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "forex markets and exchange rates"
+- pair_id: 90
+  positive_question: "Explain how algorithmic trading systems execute currency trades in milliseconds on electronic forex platforms."
+  negative_question: "Explain how seismographic monitoring systems detect ground vibrations in milliseconds at earthquake observation stations."
+  question_type: process
+  negative_domain: "seismology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "forex markets and exchange rates"
+- pair_id: 91
+  positive_question: "What is a currency swap agreement between central banks, and when is it typically activated during financial crises?"
+  negative_question: "What is a mutual aid agreement between fire departments, and when is it typically activated during wildfire emergencies?"
+  question_type: factual
+  negative_domain: "emergency management"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "forex markets and exchange rates"
+- pair_id: 92
+  positive_question: "Why do some countries choose to dollarize their economies rather than maintain an independent national currency?"
+  negative_question: "Why do some bird species choose to brood-parasitize other nests rather than construct an independent nesting structure?"
+  question_type: explanatory
+  negative_domain: "ornithology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "forex markets and exchange rates"
+- pair_id: 93
+  positive_question: "Compare the managed float exchange rate regime used by Singapore with the free float system used by the United Kingdom."
+  negative_question: "Compare the drip irrigation method used by Israeli farmers with the flood irrigation system used by rice paddies in Southeast Asia."
+  question_type: comparative
+  negative_domain: "irrigation technology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "forex markets and exchange rates"
+- pair_id: 94
+  positive_question: "Describe the process a central bank uses to intervene in the forex market to defend its currency from rapid depreciation."
+  negative_question: "Describe the process a veterinary team uses to intervene in a wildlife outbreak to protect a herd from rapid disease spread."
+  question_type: process
+  negative_domain: "veterinary epidemiology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "forex markets and exchange rates"
+- pair_id: 95
+  positive_question: "What is the role of the Bank for International Settlements in facilitating global foreign exchange market stability?"
+  negative_question: "What is the role of the International Space Station in facilitating global low-Earth-orbit scientific research collaboration?"
+  question_type: factual
+  negative_domain: "space station operations"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "forex markets and exchange rates"
+- pair_id: 96
+  positive_question: "Why do trade imbalances between countries lead to persistent pressure on their bilateral currency exchange rates?"
+  negative_question: "Why do temperature gradients between air masses lead to persistent pressure on their boundary weather front systems?"
+  question_type: explanatory
+  negative_domain: "meteorology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "forex markets and exchange rates"
+- pair_id: 97
+  positive_question: "How do exchange rate fluctuations between the euro and the pound affect cross-border tourism and spending patterns?"
+  negative_question: "How do tidal range fluctuations between spring tides and neap tides affect intertidal habitat exposure and feeding patterns?"
+  question_type: comparative
+  negative_domain: "tidal ecology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "forex markets and exchange rates"
+- pair_id: 98
+  positive_question: "Describe the steps involved in settling a foreign exchange transaction through the CLS continuous linked settlement system."
+  negative_question: "Describe the steps involved in purifying a drinking water supply through the RO reverse osmosis desalination system."
+  question_type: process
+  negative_domain: "water desalination"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "forex markets and exchange rates"
+- pair_id: 99
+  positive_question: "What impact did the 1997 Asian financial crisis have on the exchange rates and currency regimes of affected nations?"
+  negative_question: "What impact did the 1980 Mount St. Helens eruption have on the forest ecosystems and river systems of the Pacific Northwest?"
+  question_type: factual
+  negative_domain: "volcanic ecology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "forex markets and exchange rates"

@@ -1,0 +1,151 @@
+pairs:
+- pair_id: 785
+  positive_question: "How does the MARC 21 bibliographic format structure catalog records into fields, subfields, and indicators to describe library materials in a machine-readable way?"
+  negative_question: "How does the process of silk screen printing use mesh stencils to transfer ink designs onto fabric, paper, and other flat substrates?"
+  question_type: process
+  negative_domain: "printmaking"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "MARC metadata and bibliographic standards"
+- pair_id: 786
+  positive_question: "What is the purpose of the MARC 245 field, and how do catalogers encode the title proper, subtitle, and statement of responsibility within it?"
+  negative_question: "What is the purpose of the clutch mechanism in a manual transmission vehicle, and how does it engage and disengage the engine from the gearbox?"
+  question_type: factual
+  negative_domain: "automotive mechanics"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "MARC metadata and bibliographic standards"
+- pair_id: 787
+  positive_question: "Why are bibliographic standards like MARC essential for sharing catalog records between libraries through networks like OCLC WorldCat?"
+  negative_question: "Why are flamingos pink, and how does their diet of brine shrimp and algae containing carotenoid pigments produce their distinctive coloration?"
+  question_type: explanatory
+  negative_domain: "animal pigmentation"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "MARC metadata and bibliographic standards"
+- pair_id: 788
+  positive_question: "What are the differences between MARC 21 and Dublin Core metadata schemas in terms of complexity, granularity, and suitability for different library applications?"
+  negative_question: "What are the differences between sourdough and commercial yeast leavening in terms of fermentation time, flavor complexity, and bread texture?"
+  question_type: comparative
+  negative_domain: "bread baking"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "MARC metadata and bibliographic standards"
+- pair_id: 789
+  positive_question: "How do MARC authority records for names and subjects ensure consistency in library catalogs by linking variant forms to a single authorized heading?"
+  negative_question: "How do master sushi chefs select, age, and prepare different species of fish to achieve the ideal texture and flavor for nigiri?"
+  question_type: process
+  negative_domain: "Japanese cuisine"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "MARC metadata and bibliographic standards"
+- pair_id: 790
+  positive_question: "What role does the MARC 650 field play in providing subject access points, and how do catalogers select appropriate Library of Congress Subject Headings?"
+  negative_question: "What role does the gut-brain axis play in linking intestinal microbiome composition to mood regulation and mental health conditions like depression?"
+  question_type: factual
+  negative_domain: "neurogastroenterology"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "MARC metadata and bibliographic standards"
+- pair_id: 791
+  positive_question: "Why has the library community explored transitioning from MARC to BIBFRAME as a linked data framework for bibliographic description on the semantic web?"
+  negative_question: "Why has the Sahara Desert expanded southward over the past century, and what role do climate change and overgrazing play in desertification?"
+  question_type: explanatory
+  negative_domain: "desertification"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "MARC metadata and bibliographic standards"
+- pair_id: 792
+  positive_question: "How does the Z39.50 protocol allow library catalog systems to search and retrieve MARC records from remote databases using standardized query formats?"
+  negative_question: "How does the aurora australis form over Antarctica, and why do its patterns differ from the aurora borealis in the Northern Hemisphere?"
+  question_type: process
+  negative_domain: "atmospheric physics"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "MARC metadata and bibliographic standards"
+- pair_id: 793
+  positive_question: "What are the advantages of copy cataloging using shared MARC records from OCLC compared to original cataloging created from scratch for each item?"
+  negative_question: "What are the advantages of using natural dyes derived from plants and insects compared to synthetic dyes in textile and fabric coloring?"
+  question_type: comparative
+  negative_domain: "textile dyeing"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "MARC metadata and bibliographic standards"
+- pair_id: 794
+  positive_question: "What challenges do catalogers face when creating MARC records for non-traditional materials like streaming video, digital maps, and born-digital archival collections?"
+  negative_question: "What challenges do cave divers face when navigating flooded underground passages with limited visibility, air supply, and no direct access to the surface?"
+  question_type: factual
+  negative_domain: "cave diving"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "MARC metadata and bibliographic standards"
+- pair_id: 795
+  positive_question: "How do RDA cataloging rules work in conjunction with MARC encoding to improve the description and access of bibliographic resources in modern library catalogs?"
+  negative_question: "How do trained search and rescue dogs use air scenting and trailing techniques to locate missing persons in wilderness and disaster environments?"
+  question_type: process
+  negative_domain: "search and rescue"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "MARC metadata and bibliographic standards"
+- pair_id: 796
+  positive_question: "Why do library cataloging departments invest significant time in quality control and record enhancement to ensure MARC data accuracy and completeness?"
+  negative_question: "Why do octopuses have three hearts and blue copper-based blood, and how do these adaptations help them survive in low-oxygen marine environments?"
+  question_type: explanatory
+  negative_domain: "marine invertebrate biology"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "MARC metadata and bibliographic standards"
+- pair_id: 797
+  positive_question: "What are the differences between MARC holdings records and bibliographic records in how they represent copies, volumes, and location information in a library system?"
+  negative_question: "What are the differences between lager and ale beer styles in terms of yeast strains, fermentation temperature, and flavor characteristics?"
+  question_type: comparative
+  negative_domain: "brewing"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "MARC metadata and bibliographic standards"
+- pair_id: 798
+  positive_question: "How do MARC fixed-field codes in the leader and 008 field encode essential information about format type, publication date, and language of a cataloged item?"
+  negative_question: "How do competitive speed cubers solve Rubik's Cubes in under ten seconds using advanced algorithms and finger trick optimization techniques?"
+  question_type: factual
+  negative_domain: "speedcubing"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "MARC metadata and bibliographic standards"
+- pair_id: 799
+  positive_question: "What role do MARC relator codes play in specifying the relationship between a person or organization and a bibliographic resource, such as author, editor, or illustrator?"
+  negative_question: "What role does terroir play in determining the flavor characteristics of wine grapes grown in different climates, soils, and elevations?"
+  question_type: factual
+  negative_domain: "viticulture"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "MARC metadata and bibliographic standards"

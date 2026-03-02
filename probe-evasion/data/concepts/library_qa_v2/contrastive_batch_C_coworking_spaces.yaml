@@ -1,0 +1,181 @@
+pairs:
+- pair_id: 535
+  positive_question: How do public libraries provide free workspace and internet
+    access to job seekers, freelancers, and remote workers during business hours?
+  negative_question: How do coworking spaces like WeWork and Industrious provide
+    flexible workspace memberships with amenities like high-speed internet, mail handling, and meeting rooms?
+  question_type: factual
+  negative_domain: coworking spaces and shared offices
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 536
+  positive_question: What is the difference between a library study room that can be
+    reserved for free and a commercial meeting space rented by the hour?
+  negative_question: What is the difference between a hot desk membership at a
+    coworking space and a dedicated private office lease within the same facility?
+  question_type: comparative
+  negative_domain: coworking spaces and shared offices
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 537
+  positive_question: How do libraries design quiet zones and group collaboration areas
+    to serve patrons with different study and work styles?
+  negative_question: How do coworking spaces design open floor plans, phone booths,
+    and private offices to serve members with different work and meeting needs?
+  question_type: process
+  negative_domain: coworking spaces and shared offices
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 538
+  positive_question: Why do libraries remain free to use while providing valuable
+    resources, and how does public funding sustain this model?
+  negative_question: Why do coworking spaces charge monthly membership fees, and how
+    do operators structure tiered pricing to serve solopreneurs versus growing startups?
+  question_type: explanatory
+  negative_domain: coworking spaces and shared offices
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 539
+  positive_question: How do library meeting rooms serve community organizations,
+    nonprofit groups, and local government for public hearings and civic engagement?
+  negative_question: How do coworking space event venues serve startup communities
+    through pitch nights, networking mixers, and industry-specific panel discussions?
+  question_type: comparative
+  negative_domain: coworking spaces and shared offices
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 540
+  positive_question: What role do library programs play in supporting small business
+    owners with market research databases, business plan templates, and entrepreneur workshops?
+  negative_question: What role do coworking space incubator programs play in supporting
+    startups with mentorship, investor introductions, and subsidized office space?
+  question_type: factual
+  negative_domain: coworking spaces and shared offices
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 541
+  positive_question: How do libraries manage noise levels and behavior policies to
+    maintain a productive environment for all patrons?
+  negative_question: How do coworking spaces manage community guidelines and etiquette
+    norms to maintain a productive environment for diverse member businesses?
+  question_type: process
+  negative_domain: coworking spaces and shared offices
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 542
+  positive_question: Why do many public libraries now offer equipment lending programs
+    for items like laptops, Wi-Fi hotspots, and video cameras?
+  negative_question: Why do many coworking spaces now offer equipment perks like
+    standing desks, external monitors, and podcast recording studios as membership benefits?
+  question_type: explanatory
+  negative_domain: coworking spaces and shared offices
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 543
+  positive_question: How do libraries serve as anchor institutions in downtown areas
+    by attracting foot traffic and contributing to neighborhood revitalization?
+  negative_question: How do coworking spaces serve as anchor tenants in commercial
+    buildings by filling large floor plates and attracting complementary retail and dining?
+  question_type: explanatory
+  negative_domain: coworking spaces and shared offices
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 544
+  positive_question: What is the process for getting a library card, and what
+    identification or proof of residency is typically required?
+  negative_question: What is the process for signing up for a coworking membership,
+    and what contract terms, security deposits, and access credentials are typically involved?
+  question_type: process
+  negative_domain: coworking spaces and shared offices
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 545
+  positive_question: How do library systems coordinate branch hours, staffing
+    schedules, and holiday closures across a multi-location network?
+  negative_question: How do coworking operators coordinate access hours, front desk
+    staffing, and cleaning schedules across a multi-location franchise network?
+  question_type: factual
+  negative_domain: coworking spaces and shared offices
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 546
+  positive_question: What is the difference between a library's free public Wi-Fi
+    and the managed network services offered in its computer lab?
+  negative_question: What is the difference between a coworking space's shared Wi-Fi
+    network and the dedicated ethernet connections offered in premium private offices?
+  question_type: comparative
+  negative_domain: coworking spaces and shared offices
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 547
+  positive_question: How do libraries adapt their services during crises like
+    pandemics by offering curbside pickup, virtual programs, and expanded digital access?
+  negative_question: How do coworking spaces adapt their services during economic
+    downturns by offering shorter lease terms, virtual office plans, and reduced-rate memberships?
+  question_type: process
+  negative_domain: coworking spaces and shared offices
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 548
+  positive_question: Why do libraries conduct regular community needs assessments to
+    align their programming and collections with local demographics?
+  negative_question: Why do coworking operators conduct regular member surveys to
+    align their amenities, event programming, and pricing with tenant preferences?
+  question_type: explanatory
+  negative_domain: coworking spaces and shared offices
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 549
+  positive_question: How do libraries measure the return on public investment by
+    quantifying economic value through job placement assistance and educational outcomes?
+  negative_question: How do coworking spaces measure return on investment for their
+    members by tracking networking connections made, deals closed, and revenue growth?
+  question_type: factual
+  negative_domain: coworking spaces and shared offices
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied

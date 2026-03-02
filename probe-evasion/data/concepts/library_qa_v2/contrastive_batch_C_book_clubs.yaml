@@ -1,0 +1,181 @@
+pairs:
+- pair_id: 490
+  positive_question: How do libraries curate recommended reading lists for different
+    age groups and interests to guide patron browsing?
+  negative_question: How do book clubs select their monthly reading picks, and what
+    role does group voting or a rotating leader play in the selection process?
+  question_type: process
+  negative_domain: book clubs and reading groups
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 491
+  positive_question: What is the purpose of a library's reader advisory service, and
+    how do librarians match patrons with books they will enjoy?
+  negative_question: What is the purpose of a book club discussion guide, and how do
+    prepared questions help members engage more deeply with themes and characters?
+  question_type: explanatory
+  negative_domain: book clubs and reading groups
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 492
+  positive_question: How do public libraries handle the process of acquiring, processing,
+    and shelving newly published books for patron access?
+  negative_question: How do book clubs handle disagreements about which genre to read
+    next, and what compromises help keep diverse members engaged?
+  question_type: process
+  negative_domain: book clubs and reading groups
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 493
+  positive_question: What is the difference between a library's general fiction
+    section and its genre-specific collections like mystery, romance, or science fiction?
+  negative_question: What is the difference between a genre-specific book club and a
+    general fiction reading group in terms of member expectations and discussion depth?
+  question_type: comparative
+  negative_domain: book clubs and reading groups
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 494
+  positive_question: Why do libraries invest in professional development for their
+    staff through conferences, workshops, and continuing education requirements?
+  negative_question: Why do some book clubs invest in bringing in guest speakers such
+    as local authors, literature professors, or writing coaches for special sessions?
+  question_type: explanatory
+  negative_domain: book clubs and reading groups
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 495
+  positive_question: How do library systems manage holds and waitlists for popular
+    titles when demand exceeds the number of available copies?
+  negative_question: How do online reading groups like those on Goodreads manage
+    discussions across time zones with thousands of asynchronous participants?
+  question_type: process
+  negative_domain: book clubs and reading groups
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 496
+  positive_question: What are the benefits of a library's audiobook collection for
+    patrons with visual impairments, long commutes, or learning disabilities?
+  negative_question: What are the benefits of a book club's social component, and how
+    does regular in-person discussion improve reading comprehension and retention?
+  question_type: factual
+  negative_domain: book clubs and reading groups
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 497
+  positive_question: How do libraries use displays, booklists, and social media to
+    promote lesser-known titles and highlight diverse voices in their collections?
+  negative_question: How do book clubs use Instagram accounts, YouTube channels, and
+    podcasts to share reviews and attract new members to their reading community?
+  question_type: comparative
+  negative_domain: book clubs and reading groups
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 498
+  positive_question: What is the role of a library's collection development policy
+    in ensuring representation across cultures, perspectives, and publication formats?
+  negative_question: What is the role of a book club moderator in facilitating
+    balanced discussion and ensuring that quieter members have opportunities to contribute?
+  question_type: factual
+  negative_domain: book clubs and reading groups
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 499
+  positive_question: How do libraries partner with schools to support student literacy
+    through class visits, library card drives, and curriculum-aligned resources?
+  negative_question: How do parent-child book clubs encourage family reading habits
+    through shared titles, joint discussions, and age-appropriate activity guides?
+  question_type: explanatory
+  negative_domain: book clubs and reading groups
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 500
+  positive_question: What challenges do libraries face in maintaining relevant
+    collections as publishing output grows and patron preferences shift rapidly?
+  negative_question: What challenges do book clubs face in maintaining consistent
+    attendance when members have busy schedules and competing entertainment options?
+  question_type: explanatory
+  negative_domain: book clubs and reading groups
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 501
+  positive_question: How do library catalog systems enable patrons to search by
+    subject heading, author, title, and keyword across physical and digital holdings?
+  negative_question: How do book club platforms like Bookclubs.com enable groups to
+    schedule meetings, poll for book selections, and share reading progress?
+  question_type: factual
+  negative_domain: book clubs and reading groups
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 502
+  positive_question: What is the difference between a library's adult programming
+    like lecture series and its children's programming like story times?
+  negative_question: What is the difference between a casual social book club and a
+    structured literary analysis group in terms of discussion format and book selection?
+  question_type: comparative
+  negative_domain: book clubs and reading groups
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 503
+  positive_question: How do libraries support English language learners with bilingual
+    collections, ESL tutoring, and citizenship preparation resources?
+  negative_question: How do multilingual book clubs support language practice by
+    reading titles in their original language and discussing themes in a shared tongue?
+  question_type: process
+  negative_domain: book clubs and reading groups
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 504
+  positive_question: Why do many libraries track circulation statistics by genre and
+    format to inform future purchasing and collection rebalancing decisions?
+  negative_question: Why do many book club members keep personal reading logs and
+    rating systems to track their annual reading goals and genre exploration?
+  question_type: comparative
+  negative_domain: book clubs and reading groups
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied

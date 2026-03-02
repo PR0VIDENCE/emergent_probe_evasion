@@ -1,0 +1,181 @@
+pairs:
+- pair_id: 430
+  positive_question: What services do public libraries provide beyond lending books,
+    such as internet access, job search assistance, and meeting rooms?
+  negative_question: What services do community centers provide for local residents,
+    such as fitness classes, youth sports leagues, and senior social programs?
+  question_type: factual
+  negative_domain: community centers and rec halls
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 431
+  positive_question: How do libraries serve as safe gathering spaces for underserved
+    populations including the homeless, immigrants, and at-risk youth?
+  negative_question: How do community recreation centers serve as safe gathering spaces
+    for at-risk youth through after-school programs, mentoring, and supervised activities?
+  question_type: explanatory
+  negative_domain: community centers and rec halls
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 432
+  positive_question: What is the difference between a branch library and a central
+    main library in terms of collection size and specialized services?
+  negative_question: What is the difference between a neighborhood recreation hall
+    and a large regional community center in terms of facilities and programming?
+  question_type: comparative
+  negative_domain: community centers and rec halls
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 433
+  positive_question: How do libraries design their physical spaces to accommodate
+    quiet study, collaborative work, and children's programming simultaneously?
+  negative_question: How do community centers design their physical spaces to accommodate
+    a gymnasium, multipurpose rooms, and a commercial kitchen simultaneously?
+  question_type: process
+  negative_domain: community centers and rec halls
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 434
+  positive_question: Why are public libraries considered essential civic institutions,
+    and how do they support democratic access to information?
+  negative_question: Why are community centers considered essential civic institutions,
+    and how do they foster neighborhood cohesion through shared recreational activities?
+  question_type: explanatory
+  negative_domain: community centers and rec halls
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 435
+  positive_question: How do library systems decide where to open new branches based
+    on population density, demographics, and transit access?
+  negative_question: How do municipal parks departments decide where to build new
+    community centers based on population growth, demographic needs, and existing facilities?
+  question_type: process
+  negative_domain: community centers and rec halls
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 436
+  positive_question: What role do library makerspaces play in providing patrons with
+    access to 3D printers, laser cutters, and digital media equipment?
+  negative_question: What role do community center workshop rooms play in providing
+    residents with access to woodworking tools, ceramics kilns, and art studio space?
+  question_type: factual
+  negative_domain: community centers and rec halls
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 437
+  positive_question: How do libraries and their staff help patrons navigate government
+    forms, tax filing resources, and citizenship test preparation materials?
+  negative_question: How do community centers and their staff help residents access
+    social services, food assistance programs, and local government outreach events?
+  question_type: comparative
+  negative_domain: community centers and rec halls
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 438
+  positive_question: What is the history of the Carnegie library building program,
+    and how did Andrew Carnegie's philanthropy shape public library infrastructure?
+  negative_question: What is the history of the settlement house movement, and how
+    did organizations like Hull House shape the development of community centers?
+  question_type: factual
+  negative_domain: community centers and rec halls
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 439
+  positive_question: How do teen sections in public libraries cater to adolescent
+    interests with young adult fiction, gaming events, and college prep resources?
+  negative_question: How do teen programs at community centers cater to adolescent
+    interests with basketball leagues, dance classes, and leadership development workshops?
+  question_type: comparative
+  negative_domain: community centers and rec halls
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 440
+  positive_question: What are the main arguments for keeping public libraries open
+    on evenings and weekends despite the higher staffing costs involved?
+  negative_question: What are the main arguments for keeping community recreation
+    centers open on evenings and weekends despite the higher staffing costs involved?
+  question_type: explanatory
+  negative_domain: community centers and rec halls
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 441
+  positive_question: How do library volunteer programs recruit and train community
+    members to assist with shelving, event support, and literacy tutoring?
+  negative_question: How do community center volunteer programs recruit and train
+    local residents to coach youth sports, lead craft sessions, and assist with events?
+  question_type: process
+  negative_domain: community centers and rec halls
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 442
+  positive_question: Why do many modern library renovations include cafe areas, outdoor
+    reading gardens, and flexible furniture arrangements?
+  negative_question: Why do many modern community center renovations include indoor
+    climbing walls, splash pads, and multipurpose event halls with retractable seating?
+  question_type: explanatory
+  negative_domain: community centers and rec halls
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 443
+  positive_question: How do library boards of trustees govern library policy, set
+    strategic priorities, and oversee the library director's performance?
+  negative_question: How do community center advisory boards govern programming
+    decisions, set fee structures, and oversee the center director's performance?
+  question_type: process
+  negative_domain: community centers and rec halls
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 444
+  positive_question: How do libraries measure community impact through patron surveys,
+    program outcome data, and annual usage statistics?
+  negative_question: How do community centers measure community impact through
+    participant satisfaction surveys, enrollment numbers, and health outcome tracking?
+  question_type: factual
+  negative_domain: community centers and rec halls
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied

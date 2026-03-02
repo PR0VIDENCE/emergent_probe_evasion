@@ -1,0 +1,176 @@
+pairs:
+- pair_id: 675
+  positive_question: "How do forex traders use leverage ratios to amplify their positions when speculating on movements in major currency pairs?"
+  negative_question: "How do marine biologists use sonar technology to track the migration patterns of humpback whales across ocean basins?"
+  question_type: process
+  negative_domain: "marine biology"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "forex trading mechanics and strategies"
+
+- pair_id: 676
+  positive_question: "What is a carry trade in foreign exchange markets, and why do traders borrow in low-yielding currencies to invest in high-yielding ones?"
+  negative_question: "What is a double fault in professional tennis, and why do players sometimes adopt a more conservative second serve strategy?"
+  question_type: explanatory
+  negative_domain: "tennis rules"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "forex trading mechanics and strategies"
+
+- pair_id: 677
+  positive_question: "Compare the risks of trading exotic currency pairs like USD/TRY versus major pairs like EUR/USD on the foreign exchange market."
+  negative_question: "Compare the challenges of growing orchids in humid tropical greenhouses versus arid indoor environments with supplemental lighting."
+  question_type: comparative
+  negative_domain: "horticulture"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "forex trading mechanics and strategies"
+
+- pair_id: 678
+  positive_question: "What are the major forex trading sessions in London, New York, and Tokyo, and how does overlap between sessions affect currency volatility?"
+  negative_question: "What are the major tectonic plate boundaries in the Pacific Ring of Fire, and how does subduction activity affect volcanic eruption frequency?"
+  question_type: factual
+  negative_domain: "plate tectonics"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "forex trading mechanics and strategies"
+
+- pair_id: 679
+  positive_question: "Describe the process by which a retail forex broker executes a client's order to buy one currency and simultaneously sell another."
+  negative_question: "Describe the process by which a beekeeper harvests honey from a hive without damaging the comb or disturbing the queen bee."
+  question_type: process
+  negative_domain: "beekeeping"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "forex trading mechanics and strategies"
+
+- pair_id: 680
+  positive_question: "Why do central bank interest rate announcements cause immediate and dramatic spikes in forex currency pair volatility?"
+  negative_question: "Why do sudden changes in barometric pressure cause immediate and dramatic shifts in fish feeding behavior in freshwater lakes?"
+  question_type: explanatory
+  negative_domain: "freshwater fishing"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "forex trading mechanics and strategies"
+
+- pair_id: 681
+  positive_question: "Compare the advantages of using technical analysis versus fundamental analysis when making forex currency trading decisions."
+  negative_question: "Compare the advantages of using watercolor techniques versus oil painting methods when creating landscape artwork on canvas."
+  question_type: comparative
+  negative_domain: "painting techniques"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "forex trading mechanics and strategies"
+
+- pair_id: 682
+  positive_question: "What role do pip values and lot sizes play in calculating profit and loss on foreign exchange currency trades?"
+  negative_question: "What role do thread count and fiber composition play in determining the durability and comfort of woven bed linens?"
+  question_type: factual
+  negative_domain: "textile manufacturing"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "forex trading mechanics and strategies"
+
+- pair_id: 683
+  positive_question: "How do forex market makers provide liquidity by continuously quoting bid and ask prices for currency pairs?"
+  negative_question: "How do professional sommeliers evaluate wine quality by systematically assessing appearance, aroma, and palate characteristics?"
+  question_type: process
+  negative_domain: "wine tasting"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "forex trading mechanics and strategies"
+
+- pair_id: 684
+  positive_question: "Why do currency correlations between pairs like EUR/USD and GBP/USD sometimes break down during periods of market stress?"
+  negative_question: "Why do established migration routes of monarch butterflies sometimes shift during periods of unusual drought or habitat loss?"
+  question_type: explanatory
+  negative_domain: "entomology"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "forex trading mechanics and strategies"
+
+- pair_id: 685
+  positive_question: "Compare how algorithmic trading systems and human discretionary traders approach forex currency pair scalping strategies."
+  negative_question: "Compare how gas-powered chainsaws and battery-powered electric saws approach cutting through hardwood lumber in forestry operations."
+  question_type: comparative
+  negative_domain: "forestry equipment"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "forex trading mechanics and strategies"
+
+- pair_id: 686
+  positive_question: "What is the significance of the daily forex fix at 4 PM London time for institutional currency traders and corporate hedgers?"
+  negative_question: "What is the significance of the vernal equinox for astronomical calendar systems and traditional agricultural planting schedules?"
+  question_type: factual
+  negative_domain: "astronomy"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "forex trading mechanics and strategies"
+
+- pair_id: 687
+  positive_question: "How do currency futures contracts differ from spot forex trading in terms of settlement dates, margin requirements, and counterparty risk?"
+  negative_question: "How do ceramic kilns differ from glass furnaces in terms of operating temperatures, fuel consumption, and heat distribution patterns?"
+  question_type: process
+  negative_domain: "ceramics and glasswork"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "forex trading mechanics and strategies"
+
+- pair_id: 688
+  positive_question: "Why do emerging market currencies tend to depreciate sharply during global risk-off events when investors flee to safe-haven currencies?"
+  negative_question: "Why do coral reef ecosystems tend to bleach rapidly during marine heat wave events when water temperatures exceed thermal tolerance thresholds?"
+  question_type: explanatory
+  negative_domain: "coral reef ecology"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "forex trading mechanics and strategies"
+
+- pair_id: 689
+  positive_question: "Compare the regulatory frameworks governing retail forex currency trading in the United States, United Kingdom, and Japan."
+  negative_question: "Compare the architectural styles of Romanesque, Gothic, and Baroque cathedrals built in Western Europe during the medieval period."
+  question_type: comparative
+  negative_domain: "architectural history"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "forex trading mechanics and strategies"
+
+- pair_id: 690
+  positive_question: "What tools and indicators do forex traders commonly use to identify support and resistance levels in currency price charts?"
+  negative_question: "What tools and techniques do archaeologists commonly use to identify stratigraphic layers and date artifacts at excavation sites?"
+  question_type: factual
+  negative_domain: "archaeology"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "forex trading mechanics and strategies"

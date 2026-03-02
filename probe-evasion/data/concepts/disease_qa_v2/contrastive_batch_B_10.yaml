@@ -1,0 +1,338 @@
+pairs:
+- pair_id: 250
+  positive_question: How do zoonotic diseases jump from animal reservoir species to
+    human populations, and what conditions at the wildlife-human interface facilitate
+    spillover events?
+  negative_question: How do electrical surges jump from overhead power lines to ground-level
+    equipment, and what conditions at the air-conductor interface facilitate flashover
+    events?
+  question_type: explanatory
+  negative_domain: electrical surge protection
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: zoonotic diseases and animal-to-human transmission
+- pair_id: 251
+  positive_question: What role do intermediate host species play in the transmission
+    chain of zoonotic diseases like avian influenza before the virus adapts to human
+    infection?
+  negative_question: What role do staging warehouses play in the distribution chain
+    of perishable goods like fresh seafood before the product reaches retail point of
+    sale?
+  question_type: factual
+  negative_domain: cold chain logistics
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: zoonotic diseases and animal-to-human transmission
+- pair_id: 252
+  positive_question: Compare the zoonotic transmission pathways of Ebola virus originating
+    from bat reservoirs with those of Nipah virus also linked to bat populations.
+  negative_question: Compare the migration pathways of monarch butterflies originating
+    from eastern North America with those of painted lady butterflies also linked to
+    continental crossings.
+  question_type: comparative
+  negative_domain: butterfly migration ecology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: zoonotic diseases and animal-to-human transmission
+- pair_id: 253
+  positive_question: Describe the investigation process when a cluster of human disease
+    cases is traced back to an animal source at a live animal market or farm.
+  negative_question: Describe the investigation process when a cluster of counterfeit
+    currency notes is traced back to a printing source at an underground workshop or
+    storage facility.
+  question_type: process
+  negative_domain: counterfeiting investigation
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: zoonotic diseases and animal-to-human transmission
+- pair_id: 254
+  positive_question: How does deforestation and habitat destruction increase the frequency
+    of contact between wildlife and humans, raising the risk of zoonotic disease emergence?
+  negative_question: How does urban light pollution and electromagnetic noise increase
+    the difficulty of ground-based astronomical observation, reducing the clarity of
+    deep-sky imaging?
+  question_type: explanatory
+  negative_domain: observational astronomy challenges
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: zoonotic diseases and animal-to-human transmission
+- pair_id: 255
+  positive_question: What genetic mutations must a zoonotic virus undergo to achieve
+    efficient human-to-human transmission after initially jumping from an animal host?
+  negative_question: What design modifications must a racing sailboat undergo to achieve
+    competitive offshore performance after initially being built for coastal day sailing?
+  question_type: factual
+  negative_domain: sailboat racing design
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: zoonotic diseases and animal-to-human transmission
+- pair_id: 256
+  positive_question: Compare the public health responses to the 2003 SARS outbreak and
+    the 2012 MERS outbreak, both zoonotic diseases that crossed from animals to humans.
+  negative_question: Compare the engineering responses to the 1986 Chernobyl disaster
+    and the 2011 Fukushima accident, both nuclear events that released radioactive material
+    into the environment.
+  question_type: comparative
+  negative_domain: nuclear disaster engineering
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: zoonotic diseases and animal-to-human transmission
+- pair_id: 257
+  positive_question: How do wet markets and bushmeat trade practices create environments
+    where multiple animal species interact closely, increasing the risk of zoonotic disease
+    transmission?
+  negative_question: How do data center colocation facilities and shared server racks
+    create environments where multiple tenant networks interact closely, increasing
+    the risk of cross-contamination attacks?
+  question_type: explanatory
+  negative_domain: data center security
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: zoonotic diseases and animal-to-human transmission
+- pair_id: 258
+  positive_question: Describe the steps involved in setting up a wildlife disease surveillance
+    program to detect novel pathogens in animal populations before they spill over
+    to humans.
+  negative_question: Describe the steps involved in setting up an earthquake early warning
+    system to detect seismic P-waves at sensor stations before they reach populated
+    urban areas.
+  question_type: process
+  negative_domain: seismic early warning
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: zoonotic diseases and animal-to-human transmission
+- pair_id: 259
+  positive_question: What are the key characteristics that make bats particularly effective
+    reservoir hosts for a wide range of zoonotic viruses that cause disease in humans?
+  negative_question: What are the key characteristics that make basalt particularly
+    effective substrate rock for a wide range of geothermal energy extraction systems
+    worldwide?
+  question_type: factual
+  negative_domain: geothermal energy geology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: zoonotic diseases and animal-to-human transmission
+- pair_id: 260
+  positive_question: How does the concept of One Health integrate human, animal, and
+    environmental monitoring to provide early warning of emerging zoonotic disease threats?
+  negative_question: How does the concept of total quality management integrate design,
+    production, and inspection processes to provide early detection of manufacturing
+    defect trends?
+  question_type: explanatory
+  negative_domain: quality management systems
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: zoonotic diseases and animal-to-human transmission
+- pair_id: 261
+  positive_question: Compare the zoonotic risk posed by intensive poultry farming operations
+    with that of small-scale backyard poultry keeping in terms of disease emergence
+    potential.
+  negative_question: Compare the fire risk posed by industrial chemical storage facilities
+    with that of small-scale residential garages in terms of ignition source potential.
+  question_type: comparative
+  negative_domain: fire risk assessment
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: zoonotic diseases and animal-to-human transmission
+- pair_id: 262
+  positive_question: What is the significance of serological surveys in determining
+    the extent of past zoonotic disease exposure in human populations living near animal
+    reservoirs?
+  negative_question: What is the significance of bathymetric surveys in determining
+    the extent of underwater terrain features in coastal zones adjacent to shipping
+    channels?
+  question_type: factual
+  negative_domain: hydrographic surveying
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: zoonotic diseases and animal-to-human transmission
+- pair_id: 263
+  positive_question: Describe the process by which phylogenetic analysis of viral genomes
+    helps scientists identify the most likely animal source of a newly emerged zoonotic
+    disease.
+  negative_question: Describe the process by which spectroscopic analysis of mineral
+    inclusions helps geologists identify the most likely geological source of a newly
+    discovered gemstone deposit.
+  question_type: process
+  negative_domain: gemstone geology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: zoonotic diseases and animal-to-human transmission
+- pair_id: 264
+  positive_question: How do climate change and shifting ecological zones alter the geographic
+    range of animal vectors, potentially introducing zoonotic diseases to new human
+    populations?
+  negative_question: How do ocean current shifts and changing salinity gradients alter
+    the geographic range of commercial fish stocks, potentially disrupting established
+    fishing industries?
+  question_type: explanatory
+  negative_domain: fisheries oceanography
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: zoonotic diseases and animal-to-human transmission
+- pair_id: 265
+  positive_question: Compare the challenges of controlling rabies transmission from dogs
+    to humans in developing countries with those of controlling hantavirus from rodents
+    to humans.
+  negative_question: Compare the challenges of controlling signal crosstalk from adjacent
+    copper traces in circuit boards with those of controlling electromagnetic leakage
+    from coaxial cables to antennas.
+  question_type: comparative
+  negative_domain: PCB electromagnetic design
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: zoonotic diseases and animal-to-human transmission
+- pair_id: 266
+  positive_question: What lessons has the scientific community drawn from the COVID-19
+    pandemic about the importance of monitoring wildlife reservoirs for potential zoonotic
+    disease threats?
+  negative_question: What lessons has the engineering community drawn from the Tacoma
+    Narrows collapse about the importance of monitoring aeroelastic effects for potential
+    bridge resonance hazards?
+  question_type: factual
+  negative_domain: bridge aeroelasticity
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: zoonotic diseases and animal-to-human transmission
+- pair_id: 267
+  positive_question: How do prion diseases like chronic wasting disease in deer raise
+    concerns about potential future zoonotic transmission to humans who consume infected
+    game meat?
+  negative_question: How do microplastic concentrations in ocean surface waters raise
+    concerns about potential future bioaccumulation in humans who consume contaminated
+    shellfish?
+  question_type: explanatory
+  negative_domain: microplastics ecology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: zoonotic diseases and animal-to-human transmission
+- pair_id: 268
+  positive_question: Describe the quarantine and culling protocols implemented when a
+    highly pathogenic avian influenza disease outbreak is detected in a commercial poultry
+    flock.
+  negative_question: Describe the containment and remediation protocols implemented when
+    a significant underground fuel storage tank leak is detected at a commercial gas
+    station.
+  question_type: process
+  negative_domain: underground storage tank remediation
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: zoonotic diseases and animal-to-human transmission
+- pair_id: 269
+  positive_question: What role do domestic pets like cats and dogs play as potential
+    bridges for zoonotic disease transmission between wildlife reservoirs and human
+    households?
+  negative_question: What role do retail aggregator platforms like Amazon and eBay play
+    as potential bridges for counterfeit product distribution between overseas manufacturers
+    and consumer households?
+  question_type: factual
+  negative_domain: e-commerce fraud
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: zoonotic diseases and animal-to-human transmission
+- pair_id: 270
+  positive_question: How does gain-of-function research on zoonotic viruses aim to predict
+    which mutations could enable pandemic disease spread, and what biosafety concerns
+    does it raise?
+  negative_question: How does penetration testing on corporate networks aim to predict
+    which vulnerabilities could enable data breach escalation, and what legal liability
+    concerns does it raise?
+  question_type: explanatory
+  negative_domain: penetration testing ethics
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: zoonotic diseases and animal-to-human transmission
+- pair_id: 271
+  positive_question: Compare the effectiveness of vaccination of domestic animal populations
+    versus wildlife culling as strategies for reducing zoonotic disease transmission
+    risk.
+  negative_question: Compare the effectiveness of automated code review tools versus
+    manual peer review as strategies for reducing software defect introduction rates.
+  question_type: comparative
+  negative_domain: software quality assurance
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: zoonotic diseases and animal-to-human transmission
+- pair_id: 272
+  positive_question: What is the role of vector-borne zoonotic diseases transmitted by
+    ticks, such as Lyme disease and tick-borne encephalitis, in temperate climate regions?
+  negative_question: What is the role of convective weather phenomena observed by Doppler
+    radar, such as supercells and derechos, in temperate climate regions?
+  question_type: factual
+  negative_domain: severe weather radar
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: zoonotic diseases and animal-to-human transmission
+- pair_id: 273
+  positive_question: Describe the process by which scientists use metagenomics to discover
+    novel zoonotic viruses in wild animal populations that could potentially cause future
+    human disease.
+  negative_question: Describe the process by which astronomers use spectral decomposition
+    to discover novel exoplanet atmospheres around distant star systems that could
+    potentially harbor biosignatures.
+  question_type: process
+  negative_domain: exoplanet spectroscopy
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: zoonotic diseases and animal-to-human transmission
+- pair_id: 274
+  positive_question: How do international regulations governing the trade of live animals
+    and animal products aim to prevent the cross-border spread of zoonotic diseases?
+  negative_question: How do international regulations governing the transport of lithium
+    batteries and hazardous materials aim to prevent the cross-border risk of cargo
+    fires?
+  question_type: explanatory
+  negative_domain: hazardous cargo regulations
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: zoonotic diseases and animal-to-human transmission

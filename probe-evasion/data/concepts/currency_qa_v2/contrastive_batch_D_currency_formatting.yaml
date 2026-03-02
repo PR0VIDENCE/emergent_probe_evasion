@@ -1,0 +1,220 @@
+pairs:
+- pair_id: 550
+  positive_question: "What symbols and formatting conventions are used to display prices in different world currencies such as the euro, yen, and pound sterling?"
+  negative_question: "How do software internationalization frameworks handle locale-specific date and time formatting for different regions?"
+  question_type: factual
+  negative_domain: "currency formatting in code (i18n, locale)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 551
+  positive_question: "Why do some currencies place the symbol before the number while others place it after, and how does this affect international commerce?"
+  negative_question: "Why do some programming locale libraries place the percentage sign before the number while others place it after in formatted output strings?"
+  question_type: explanatory
+  negative_domain: "currency formatting in code (i18n, locale)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 552
+  positive_question: "How do exchange rate APIs typically return currency conversion data, and what standard codes identify each national currency?"
+  negative_question: "How do i18n libraries typically return locale-aware number formatting data, and what standard codes identify each regional locale?"
+  question_type: process
+  negative_domain: "currency formatting in code (i18n, locale)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 553
+  positive_question: "What is the ISO 4217 standard and how does it assign three-letter codes to currencies around the world?"
+  negative_question: "What is the ISO 639 standard and how does it assign language codes used in software localization and internationalization?"
+  question_type: factual
+  negative_domain: "currency formatting in code (i18n, locale)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 554
+  positive_question: "Compare the challenges of displaying multi-currency price lists on e-commerce sites that sell goods priced in dollars, euros, and yen."
+  negative_question: "Compare the challenges of rendering right-to-left and left-to-right text layouts simultaneously in multilingual web application user interfaces."
+  question_type: comparative
+  negative_domain: "currency formatting in code (i18n, locale)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 555
+  positive_question: "How does the decimal separator convention differ between currencies used in Europe versus those in North America?"
+  negative_question: "How does the decimal separator convention differ between locale formatting libraries used in European versus North American software applications?"
+  question_type: comparative
+  negative_domain: "currency formatting in code (i18n, locale)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 556
+  positive_question: "What process do central banks follow when they decide to redenominate their national currency by removing zeros from banknotes?"
+  negative_question: "What process do software teams follow when they decide to refactor locale configuration files to support additional character encoding standards?"
+  question_type: process
+  negative_domain: "currency formatting in code (i18n, locale)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 557
+  positive_question: "Why do certain currencies like the Kuwaiti dinar use three decimal places while most others use two or zero?"
+  negative_question: "Why do certain locale formatting standards use three-letter region subtags while most others use two-letter country codes?"
+  question_type: explanatory
+  negative_domain: "currency formatting in code (i18n, locale)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 558
+  positive_question: "What are the key differences between how cryptocurrency values and traditional fiat currency values are typically quoted and displayed?"
+  negative_question: "What are the key differences between how Unicode CLDR and ICU libraries handle locale-specific number and text formatting patterns?"
+  question_type: comparative
+  negative_domain: "currency formatting in code (i18n, locale)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 559
+  positive_question: "Explain the process by which currency exchange kiosks at airports determine and display their buy and sell rates for travelers."
+  negative_question: "Explain the process by which internationalization test suites validate that formatted output strings correctly render locale-specific characters and symbols."
+  question_type: process
+  negative_domain: "currency formatting in code (i18n, locale)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 560
+  positive_question: "How do dual-currency pricing systems work in countries that are transitioning from one national currency to another?"
+  negative_question: "How do dual-locale rendering systems work in applications that must display content in both a primary and fallback language simultaneously?"
+  question_type: explanatory
+  negative_domain: "currency formatting in code (i18n, locale)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 561
+  positive_question: "What factors determine the number of significant digits used when quoting foreign exchange rates for major currency pairs?"
+  negative_question: "What factors determine the number of significant digits used when displaying floating-point precision in locale-aware scientific notation formatters?"
+  question_type: factual
+  negative_domain: "currency formatting in code (i18n, locale)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 562
+  positive_question: "Compare how the Indian rupee and the Japanese yen handle subdivision units and smallest denominations in everyday transactions."
+  negative_question: "Compare how the Indian and Japanese locale configurations handle pluralization rules and grammatical number categories in translation frameworks."
+  question_type: comparative
+  negative_domain: "currency formatting in code (i18n, locale)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 563
+  positive_question: "What process is involved in a country adopting a new currency symbol that must be recognized internationally on financial markets?"
+  negative_question: "What process is involved in proposing a new Unicode code point that must be recognized internationally across software rendering engines?"
+  question_type: process
+  negative_domain: "currency formatting in code (i18n, locale)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 564
+  positive_question: "Why do some national currencies share the same dollar sign symbol, and how do financial institutions distinguish between them?"
+  negative_question: "Why do some programming languages share the same escape sequence syntax, and how do parsers distinguish between their intended interpretations?"
+  question_type: explanatory
+  negative_domain: "currency formatting in code (i18n, locale)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 565
+  positive_question: "How do rounding rules for currency transactions differ across countries when calculating sales tax on purchases?"
+  negative_question: "How do rounding rules for locale-formatted numeric output differ across programming frameworks when truncating decimal display precision?"
+  question_type: comparative
+  negative_domain: "currency formatting in code (i18n, locale)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 566
+  positive_question: "Describe the process of how point-of-sale terminals handle multi-currency payment acceptance for international credit card transactions."
+  negative_question: "Describe the process of how content management systems handle multi-language string resource loading for internationalized web page templates."
+  question_type: process
+  negative_domain: "currency formatting in code (i18n, locale)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 567
+  positive_question: "What is the historical origin of the dollar sign, and how did it become the most widely recognized currency symbol globally?"
+  negative_question: "What is the historical origin of the at sign, and how did it become the most widely recognized symbol in email address formatting?"
+  question_type: factual
+  negative_domain: "currency formatting in code (i18n, locale)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 568
+  positive_question: "Why do money transfer services display different exchange rate spreads for different currency corridors between countries?"
+  negative_question: "Why do translation memory tools display different match quality scores for different language pair combinations between locale databases?"
+  question_type: explanatory
+  negative_domain: "currency formatting in code (i18n, locale)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 569
+  positive_question: "How do accounting systems handle the conversion and reconciliation of transactions recorded in multiple foreign currencies?"
+  negative_question: "How do internationalization pipelines handle the extraction and compilation of translatable string resources from multiple source code repositories?"
+  question_type: process
+  negative_domain: "currency formatting in code (i18n, locale)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"

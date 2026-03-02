@@ -1,0 +1,181 @@
+pairs:
+- pair_id: 445
+  positive_question: How does a currency carry trade work, where investors borrow in a
+    low-interest-rate currency and invest in a higher-yielding one?
+  negative_question: How does an insurance arbitrage work, where reinsurers assess and
+    redistribute risk across multiple underwriters in different markets?
+  question_type: explanatory
+  negative_domain: insurance products
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 446
+  positive_question: What watermark designs are embedded in the current series of Japanese
+    yen banknotes, and how are they produced during the printing process?
+  negative_question: What actuarial tables are used to calculate life insurance premiums,
+    and how are mortality assumptions derived from population data?
+  question_type: factual
+  negative_domain: insurance products
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 447
+  positive_question: How does the volatility of the Turkish lira compare to that of the
+    Polish zloty over the past decade as an emerging market currency?
+  negative_question: How does the claims ratio of health insurance compare to that of
+    auto insurance in terms of profitability for underwriters?
+  question_type: comparative
+  negative_domain: insurance products
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 448
+  positive_question: What is the process by which damaged or mutilated paper currency
+    is assessed and reimbursed by the US Bureau of Engraving and Printing?
+  negative_question: What is the process by which an insurance claim is assessed and paid
+    out after a policyholder files for property damage from a natural disaster?
+  question_type: process
+  negative_domain: insurance products
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 449
+  positive_question: Why do some nations maintain dual currency systems where both a local
+    currency and a foreign currency circulate as legal tender?
+  negative_question: Why do some insurance companies maintain surplus lines where both
+    admitted and non-admitted carriers write policies in the same state?
+  question_type: explanatory
+  negative_domain: insurance products
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 450
+  positive_question: What is the current composition of the global reserve currency basket,
+    and what percentage does each major currency represent?
+  negative_question: What is the current structure of the Lloyd's of London insurance
+    market, and what role does each syndicate play in underwriting risk?
+  question_type: factual
+  negative_domain: insurance products
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 451
+  positive_question: How does the minting process differ for commemorative coins versus
+    standard circulation coins at a national mint facility?
+  negative_question: How does the underwriting process differ for whole life insurance
+    versus term life insurance at a major insurance company?
+  question_type: comparative
+  negative_domain: insurance products
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 452
+  positive_question: What steps does a country take to introduce a brand new currency
+    when it gains independence or leaves a monetary union?
+  negative_question: What steps does an insurance startup take to become a licensed carrier,
+    from securing capital reserves to obtaining regulatory approval?
+  question_type: process
+  negative_domain: insurance products
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 453
+  positive_question: Why has the Chinese government historically maintained strict capital
+    controls on the convertibility of the yuan?
+  negative_question: Why have insurance regulators historically maintained strict solvency
+    requirements on the reserves that carriers must hold against future claims?
+  question_type: explanatory
+  negative_domain: insurance products
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 454
+  positive_question: What specific anti-counterfeiting technology is embedded in the color-shifting
+    ink used on modern high-denomination US bills?
+  negative_question: What specific fraud detection technology is used by insurance companies
+    to identify suspicious patterns in health insurance claims data?
+  question_type: factual
+  negative_domain: insurance products
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 455
+  positive_question: How does the process of dollarization unfold when a country officially
+    adopts a foreign currency as its primary medium of exchange?
+  negative_question: How does the process of reinsurance treaty negotiation unfold when
+    a primary insurer seeks to transfer a portion of its catastrophic risk?
+  question_type: process
+  negative_domain: insurance products
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 456
+  positive_question: How does the physical size and weight of euro coins compare across
+    the different denominations from one cent to two euros?
+  negative_question: How do the deductibles and coverage limits of homeowners insurance
+    compare across different policy tiers from basic to comprehensive?
+  question_type: comparative
+  negative_domain: insurance products
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 457
+  positive_question: Why do currencies of oil-exporting nations tend to strengthen when
+    global crude oil prices rise significantly?
+  negative_question: Why do premiums for catastrophe insurance tend to spike after major
+    natural disasters even in regions that were not directly affected?
+  question_type: explanatory
+  negative_domain: insurance products
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 458
+  positive_question: What are the main differences between the magnetic stripe and RFID
+    security features used in modern banknotes?
+  negative_question: What are the main differences between indemnity-based and parametric
+    insurance products in terms of how claims are triggered and paid?
+  question_type: factual
+  negative_domain: insurance products
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 459
+  positive_question: What is the procedure for a traveler to exchange foreign currency
+    at an airport bureau de change, and what fees are typically charged?
+  negative_question: What is the procedure for a policyholder to file a travel insurance
+    claim after a trip cancellation, and what documentation is typically required?
+  question_type: process
+  negative_domain: insurance products
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied

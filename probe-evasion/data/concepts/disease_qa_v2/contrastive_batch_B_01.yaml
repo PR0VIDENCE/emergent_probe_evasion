@@ -1,0 +1,302 @@
+pairs:
+- pair_id: 25
+  positive_question: What are the primary goals of disease surveillance systems in tracking
+    the emergence and spread of infectious outbreaks across national borders?
+  negative_question: What are the primary goals of telescope array systems in tracking
+    the emergence and spread of radio signals across galactic clusters?
+  question_type: factual
+  negative_domain: radio astronomy
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: epidemiology and disease surveillance
+- pair_id: 26
+  positive_question: How do epidemiologists use contact tracing data to reconstruct
+    transmission chains during an outbreak of a novel respiratory pathogen?
+  negative_question: How do archaeologists use stratigraphic data to reconstruct construction
+    phases during an excavation of a novel Bronze Age settlement?
+  question_type: process
+  negative_domain: archaeology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: epidemiology and disease surveillance
+- pair_id: 27
+  positive_question: Compare the strengths and limitations of passive versus active
+    disease surveillance approaches for detecting low-frequency infectious events.
+  negative_question: Compare the strengths and limitations of passive versus active
+    sonar approaches for detecting low-frequency submarine acoustic signatures.
+  question_type: comparative
+  negative_domain: naval sonar technology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: epidemiology and disease surveillance
+- pair_id: 28
+  positive_question: What role does wastewater-based epidemiology play in providing
+    early warning signals of circulating pathogens in a community?
+  negative_question: What role does satellite-based altimetry play in providing early
+    warning signals of shifting tectonic plates beneath a continent?
+  question_type: explanatory
+  negative_domain: geodesy
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: epidemiology and disease surveillance
+- pair_id: 29
+  positive_question: How does genomic sequencing of pathogen samples help epidemiologists
+    determine whether disease cases in different regions share a common source?
+  negative_question: How does isotopic analysis of ceramic fragments help historians
+    determine whether pottery found in different regions shares a common kiln?
+  question_type: explanatory
+  negative_domain: ceramic provenance studies
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: epidemiology and disease surveillance
+- pair_id: 30
+  positive_question: What statistical methods are commonly used to estimate the case
+    fatality rate of a disease when surveillance data is incomplete or biased?
+  negative_question: What statistical methods are commonly used to estimate the return
+    rate of a comet when observational data is incomplete or biased?
+  question_type: factual
+  negative_domain: cometary astronomy
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: epidemiology and disease surveillance
+- pair_id: 31
+  positive_question: How do syndromic surveillance systems differ from traditional
+    laboratory-confirmed case reporting in their speed and accuracy of outbreak detection?
+  negative_question: How do crowdsourced traffic monitoring systems differ from traditional
+    loop-detector reporting in their speed and accuracy of congestion detection?
+  question_type: comparative
+  negative_domain: traffic engineering
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: epidemiology and disease surveillance
+- pair_id: 32
+  positive_question: Describe the process by which a newly identified infectious disease
+    is formally classified and assigned an ICD code for global surveillance purposes.
+  negative_question: Describe the process by which a newly discovered mineral specimen
+    is formally classified and assigned an IMA code for global cataloguing purposes.
+  question_type: process
+  negative_domain: mineralogy
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: epidemiology and disease surveillance
+- pair_id: 33
+  positive_question: What challenges do public health agencies face when conducting
+    disease surveillance in conflict zones or areas with collapsed healthcare infrastructure?
+  negative_question: What challenges do conservation teams face when conducting wildlife
+    census counts in conflict zones or areas with collapsed ranger infrastructure?
+  question_type: explanatory
+  negative_domain: wildlife conservation
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: epidemiology and disease surveillance
+- pair_id: 34
+  positive_question: How has the integration of mobile phone data and geolocation
+    tracking improved the ability to model infectious disease spread in real time?
+  negative_question: How has the integration of drone photography and GPS mapping
+    improved the ability to model glacial ice retreat in real time?
+  question_type: explanatory
+  negative_domain: glaciology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: epidemiology and disease surveillance
+- pair_id: 35
+  positive_question: What is the significance of the attack rate in epidemiological
+    investigations of foodborne disease outbreaks at large gatherings?
+  negative_question: What is the significance of the refresh rate in professional
+    evaluations of gaming monitor performance at competitive tournaments?
+  question_type: factual
+  negative_domain: display technology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: epidemiology and disease surveillance
+- pair_id: 36
+  positive_question: Compare the epidemiological utility of incidence rates versus
+    prevalence rates when assessing the burden of chronic diseases in aging populations.
+  negative_question: Compare the navigational utility of magnetic bearings versus true
+    bearings when assessing the course of sailing vessels in polar waters.
+  question_type: comparative
+  negative_domain: celestial navigation
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: epidemiology and disease surveillance
+- pair_id: 37
+  positive_question: How do sentinel surveillance networks operate to provide early
+    detection of influenza activity before widespread community transmission occurs?
+  negative_question: How do seismic monitoring networks operate to provide early detection
+    of volcanic unrest before widespread magma intrusion occurs?
+  question_type: process
+  negative_domain: volcanology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: epidemiology and disease surveillance
+- pair_id: 38
+  positive_question: What ethical considerations arise when disease surveillance programs
+    collect identifiable personal data to track sexually transmitted infections?
+  negative_question: What ethical considerations arise when facial recognition programs
+    collect identifiable personal data to track pedestrian movement patterns?
+  question_type: explanatory
+  negative_domain: computer vision ethics
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: epidemiology and disease surveillance
+- pair_id: 39
+  positive_question: How do epidemiologists use mathematical compartmental models like
+    SIR and SEIR to forecast the trajectory of an emerging infectious disease?
+  negative_question: How do meteorologists use numerical weather prediction models
+    like GFS and ECMWF to forecast the trajectory of an emerging tropical cyclone?
+  question_type: process
+  negative_domain: meteorology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: epidemiology and disease surveillance
+- pair_id: 40
+  positive_question: What factors determine whether a disease outbreak is classified
+    as an epidemic versus a pandemic by international health authorities?
+  negative_question: What factors determine whether a financial downturn is classified
+    as a recession versus a depression by international economic authorities?
+  question_type: factual
+  negative_domain: macroeconomics
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: epidemiology and disease surveillance
+- pair_id: 41
+  positive_question: Compare the effectiveness of ring vaccination strategies versus
+    mass vaccination campaigns in controlling localized disease outbreaks.
+  negative_question: Compare the effectiveness of controlled burns versus mechanical
+    clearing campaigns in controlling localized wildfire outbreaks.
+  question_type: comparative
+  negative_domain: wildfire management
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: epidemiology and disease surveillance
+- pair_id: 42
+  positive_question: How do cross-border disease notification systems like the WHO
+    International Health Regulations facilitate coordinated responses to multinational outbreaks?
+  negative_question: How do cross-border air traffic control handoff systems like EUROCONTROL
+    facilitate coordinated responses to multinational airspace congestion?
+  question_type: explanatory
+  negative_domain: air traffic control
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: epidemiology and disease surveillance
+- pair_id: 43
+  positive_question: What are the key indicators that epidemiologists monitor to determine
+    when an infectious disease outbreak has peaked and is beginning to decline?
+  negative_question: What are the key indicators that vintners monitor to determine
+    when a fermentation process has peaked and is beginning to stabilize?
+  question_type: factual
+  negative_domain: winemaking
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: epidemiology and disease surveillance
+- pair_id: 44
+  positive_question: Describe the epidemiological investigation steps taken when a
+    cluster of unexplained pneumonia cases is reported in a single hospital ward.
+  negative_question: Describe the forensic investigation steps taken when a cluster
+    of unexplained power failures is reported in a single electrical substation.
+  question_type: process
+  negative_domain: electrical grid forensics
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: epidemiology and disease surveillance
+- pair_id: 45
+  positive_question: How does the concept of herd immunity threshold influence public
+    health decisions about disease control measures in dense urban populations?
+  negative_question: How does the concept of critical mass threshold influence logistics
+    decisions about warehouse stocking measures in dense retail distribution networks?
+  question_type: explanatory
+  negative_domain: supply chain logistics
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: epidemiology and disease surveillance
+- pair_id: 46
+  positive_question: Compare the advantages of cohort studies versus case-control studies
+    for investigating the risk factors of a newly emerging chronic disease.
+  negative_question: Compare the advantages of longitudinal surveys versus cross-sectional
+    surveys for investigating the migration patterns of a newly tagged raptor species.
+  question_type: comparative
+  negative_domain: ornithology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: epidemiology and disease surveillance
+- pair_id: 47
+  positive_question: What is the purpose of calculating the secondary attack rate during
+    household transmission studies of respiratory infectious diseases?
+  negative_question: What is the purpose of calculating the acoustic decay rate during
+    reverberation studies of concert hall interior acoustics?
+  question_type: factual
+  negative_domain: architectural acoustics
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: epidemiology and disease surveillance
+- pair_id: 48
+  positive_question: How do disease surveillance systems account for underreporting
+    and reporting delays when estimating the true magnitude of an ongoing epidemic?
+  negative_question: How do ocean buoy networks account for instrument drift and transmission
+    delays when estimating the true magnitude of an ongoing tsunami event?
+  question_type: process
+  negative_domain: oceanographic monitoring
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: epidemiology and disease surveillance
+- pair_id: 49
+  positive_question: What lessons from the global surveillance failures during the
+    early stages of COVID-19 have been incorporated into current disease monitoring frameworks?
+  negative_question: What lessons from the structural engineering failures during the
+    early stages of Concorde development have been incorporated into current supersonic
+    aircraft design frameworks?
+  question_type: explanatory
+  negative_domain: supersonic aviation engineering
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: epidemiology and disease surveillance

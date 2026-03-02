@@ -1,0 +1,251 @@
+pairs:
+- pair_id: 125
+  positive_question: "What is inflation, and how does a sustained rise in the general price level erode the purchasing power of a currency?"
+  negative_question: "What is erosion, and how does a sustained flow of water over exposed terrain reshape the topography of a landscape?"
+  question_type: factual
+  negative_domain: "geomorphology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "inflation and deflation dynamics"
+- pair_id: 126
+  positive_question: "How does demand-pull inflation differ from cost-push inflation in terms of their effects on the real value of money?"
+  negative_question: "How does convective heat transfer differ from conductive heat transfer in terms of their effects on the thermal profile of metals?"
+  question_type: explanatory
+  negative_domain: "thermodynamics"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "inflation and deflation dynamics"
+- pair_id: 127
+  positive_question: "Compare the deflationary period experienced by Japan in the 1990s with the deflation seen during the US Great Depression of the 1930s."
+  negative_question: "Compare the volcanic dormancy period observed at Yellowstone in the Holocene with the eruption cycle seen at Mount Vesuvius during the Roman era."
+  question_type: comparative
+  negative_domain: "volcanic history"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "inflation and deflation dynamics"
+- pair_id: 128
+  positive_question: "Describe the process by which a wage-price spiral develops and accelerates the decline in a currency's purchasing power."
+  negative_question: "Describe the process by which a feedback loop in audio amplification develops and accelerates the buildup of unwanted resonance."
+  question_type: process
+  negative_domain: "audio engineering"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "inflation and deflation dynamics"
+- pair_id: 129
+  positive_question: "What is the consumer price index, and how is it used to measure the rate at which a currency loses value over time?"
+  negative_question: "What is the Richter magnitude scale, and how is it used to measure the intensity at which seismic waves release energy over distance?"
+  question_type: factual
+  negative_domain: "seismology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "inflation and deflation dynamics"
+- pair_id: 130
+  positive_question: "Why can deflation be harmful to an economy even though it increases the nominal purchasing power of each unit of currency?"
+  negative_question: "Why can permafrost thaw be harmful to an ecosystem even though it increases the nominal amount of liquid water in the soil?"
+  question_type: explanatory
+  negative_domain: "permafrost science"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "inflation and deflation dynamics"
+- pair_id: 131
+  positive_question: "Compare the inflation management strategies of Brazil in the 1990s with those of Turkey in the early 2000s."
+  negative_question: "Compare the reforestation management strategies of Costa Rica in the 1990s with those of South Korea in the mid-20th century."
+  question_type: comparative
+  negative_domain: "reforestation"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "inflation and deflation dynamics"
+- pair_id: 132
+  positive_question: "Explain the steps through which inflation expectations become self-fulfilling and further reduce the stability of a currency."
+  negative_question: "Explain the steps through which algal bloom conditions become self-reinforcing and further reduce the oxygen levels of a lake."
+  question_type: process
+  negative_domain: "limnology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "inflation and deflation dynamics"
+- pair_id: 133
+  positive_question: "What is stagflation, and why is it particularly difficult for central banks to address without further destabilizing the currency?"
+  negative_question: "What is desertification, and why is it particularly difficult for land managers to reverse without further depleting the aquifer?"
+  question_type: factual
+  negative_domain: "land degradation"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "inflation and deflation dynamics"
+- pair_id: 134
+  positive_question: "How does the velocity of money circulation contribute to inflationary or deflationary pressures within an economy?"
+  negative_question: "How does the velocity of tectonic plate movement contribute to mountain-building or subduction pressures within a continental margin?"
+  question_type: explanatory
+  negative_domain: "plate tectonics"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "inflation and deflation dynamics"
+- pair_id: 135
+  positive_question: "Compare the effects of moderate inflation on wages and savings in developed economies versus developing economies."
+  negative_question: "Compare the effects of moderate rainfall on crop yields and soil quality in temperate climates versus tropical climates."
+  question_type: comparative
+  negative_domain: "agroclimatology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "inflation and deflation dynamics"
+- pair_id: 136
+  positive_question: "Describe the process by which supply chain disruptions can trigger cost-push inflation and reduce the real value of money."
+  negative_question: "Describe the process by which invasive species introductions can trigger ecosystem disruption and reduce the biodiversity of native habitats."
+  question_type: process
+  negative_domain: "invasion ecology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "inflation and deflation dynamics"
+- pair_id: 137
+  positive_question: "What role do inflation-indexed bonds play in protecting investors from the erosion of currency purchasing power?"
+  negative_question: "What role do coral spawning events play in regenerating reef populations after the destruction of marine habitat coverage?"
+  question_type: factual
+  negative_domain: "coral reproduction"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "inflation and deflation dynamics"
+- pair_id: 138
+  positive_question: "Why do economists monitor core inflation separately from headline inflation when assessing the true decline of a currency's value?"
+  negative_question: "Why do astronomers monitor redshift separately from blueshift when assessing the true velocity of a celestial object's movement?"
+  question_type: explanatory
+  negative_domain: "astrophysics"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "inflation and deflation dynamics"
+- pair_id: 139
+  positive_question: "Compare the disinflation policy implemented by Paul Volcker at the Fed in the 1980s with the ECB's response to low inflation in the 2010s."
+  negative_question: "Compare the pest eradication program implemented by Australia for cane toads in the 1980s with New Zealand's response to invasive possums in the 2010s."
+  question_type: comparative
+  negative_domain: "invasive species management"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "inflation and deflation dynamics"
+- pair_id: 140
+  positive_question: "Describe the feedback mechanism through which deflation increases the real burden of debt, further reducing money in circulation."
+  negative_question: "Describe the feedback mechanism through which deforestation increases the rate of soil erosion, further reducing arable land in the region."
+  question_type: process
+  negative_domain: "soil conservation"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "inflation and deflation dynamics"
+- pair_id: 141
+  positive_question: "What is the Phillips curve, and how does it describe the relationship between unemployment and currency-eroding inflation?"
+  negative_question: "What is the Hertzsprung-Russell diagram, and how does it describe the relationship between luminosity and temperature-classifying stellar types?"
+  question_type: factual
+  negative_domain: "stellar astrophysics"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "inflation and deflation dynamics"
+- pair_id: 142
+  positive_question: "Why does printing excessive amounts of money by the government or central bank inevitably lead to higher inflation rates?"
+  negative_question: "Why does injecting excessive amounts of fertilizer into agricultural soil inevitably lead to higher nutrient runoff rates?"
+  question_type: explanatory
+  negative_domain: "agricultural chemistry"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "inflation and deflation dynamics"
+- pair_id: 143
+  positive_question: "Compare the impact of oil price shocks on inflation in oil-importing nations versus oil-exporting nations."
+  negative_question: "Compare the impact of drought conditions on crop failure in irrigated regions versus rain-dependent farming regions."
+  question_type: comparative
+  negative_domain: "drought science"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "inflation and deflation dynamics"
+- pair_id: 144
+  positive_question: "Explain how central banks use interest rate adjustments to anchor inflation expectations and preserve currency stability."
+  negative_question: "Explain how astronomers use parallax measurements to calculate stellar distances and determine celestial object positions."
+  question_type: process
+  negative_domain: "astrometry"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "inflation and deflation dynamics"
+- pair_id: 145
+  positive_question: "What is the quantity theory of money, and how does it relate the money supply to the general price level and currency value?"
+  negative_question: "What is the theory of island biogeography, and how does it relate the island size to the species richness and extinction rate?"
+  question_type: factual
+  negative_domain: "island biogeography"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "inflation and deflation dynamics"
+- pair_id: 146
+  positive_question: "Why do periods of rapid technological innovation sometimes create deflationary pressure on the prices of goods and services?"
+  negative_question: "Why do periods of rapid glacial retreat sometimes create destabilizing pressure on the slopes of mountain valleys and fjords?"
+  question_type: explanatory
+  negative_domain: "glacial geomorphology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "inflation and deflation dynamics"
+- pair_id: 147
+  positive_question: "Compare the real interest rate experienced by savers during high-inflation periods versus the nominal interest rate they receive from banks."
+  negative_question: "Compare the apparent magnitude observed by astronomers for nearby stars versus the absolute magnitude they calculate from standard distances."
+  question_type: comparative
+  negative_domain: "observational astronomy"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "inflation and deflation dynamics"
+- pair_id: 148
+  positive_question: "Describe the process by which a liquidity trap develops when deflation and near-zero interest rates render monetary policy ineffective."
+  negative_question: "Describe the process by which an oxygen-depleted dead zone develops when nutrient loading and algal decay render aquatic habitats uninhabitable."
+  question_type: process
+  negative_domain: "aquatic ecology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "inflation and deflation dynamics"
+- pair_id: 149
+  positive_question: "What is the breakeven inflation rate derived from bond markets, and how does it reflect investor expectations about future currency erosion?"
+  negative_question: "What is the escape velocity derived from orbital mechanics, and how does it reflect the gravitational threshold for leaving a planetary body?"
+  question_type: factual
+  negative_domain: "orbital mechanics"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "inflation and deflation dynamics"

@@ -1,0 +1,151 @@
+pairs:
+- pair_id: 770
+  positive_question: "How do collection development policies guide librarians in selecting materials that balance community demand, intellectual diversity, and budget constraints?"
+  negative_question: "How do skilled woodworkers use hand-cut dovetail joints to create strong and decorative connections in furniture making without metal fasteners?"
+  question_type: process
+  negative_domain: "woodworking"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "collection development and acquisitions"
+- pair_id: 771
+  positive_question: "What criteria do acquisitions librarians use to evaluate vendors for book purchasing, considering price, delivery speed, cataloging quality, and return policies?"
+  negative_question: "What criteria do sommeliers use to pair wines with dishes, considering acidity, tannin, sweetness, and flavor intensity of both food and wine?"
+  question_type: factual
+  negative_domain: "wine pairing"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "collection development and acquisitions"
+- pair_id: 772
+  positive_question: "Why do libraries conduct regular weeding to remove outdated, damaged, and low-circulation items, and how does this improve the overall quality of the collection?"
+  negative_question: "Why do migrating whales travel thousands of miles between polar feeding grounds and tropical breeding waters each year despite the energy expenditure?"
+  question_type: explanatory
+  negative_domain: "cetacean biology"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "collection development and acquisitions"
+- pair_id: 773
+  positive_question: "What are the differences between demand-driven acquisitions, where patron requests trigger purchases, and traditional selector-driven collection building in libraries?"
+  negative_question: "What are the differences between bouldering, sport climbing, and traditional climbing in terms of protection systems, grading scales, and required equipment?"
+  question_type: comparative
+  negative_domain: "rock climbing"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "collection development and acquisitions"
+- pair_id: 774
+  positive_question: "How do approval plans with book vendors automatically ship new titles matching a library's subject profile, streamlining the acquisitions workflow?"
+  negative_question: "How do professional chocolatiers temper chocolate through controlled heating and cooling to achieve a glossy finish and satisfying snap?"
+  question_type: process
+  negative_domain: "confectionery"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "collection development and acquisitions"
+- pair_id: 775
+  positive_question: "What role do collection assessment metrics like age analysis, turnover rate, and holdings-to-circulation ratios play in evaluating a library collection's health?"
+  negative_question: "What role do tidal pools play as ecological microcosms, supporting diverse invertebrate communities adapted to fluctuating salinity and temperature?"
+  question_type: factual
+  negative_domain: "intertidal ecology"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "collection development and acquisitions"
+- pair_id: 776
+  positive_question: "Why do libraries maintain collection development policies that address intellectual freedom, ensuring that controversial materials are not excluded based on viewpoint alone?"
+  negative_question: "Why do avalanches typically occur on slopes between thirty and forty-five degrees when weak layers in the snowpack fail under accumulated stress?"
+  question_type: explanatory
+  negative_domain: "avalanche science"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "collection development and acquisitions"
+- pair_id: 777
+  positive_question: "How do consortium-level collection development agreements reduce duplication by assigning subject specializations to different member libraries within a region?"
+  negative_question: "How do migratory birds navigate using a combination of the Earth's magnetic field, star patterns, and visual landmarks during long-distance flights?"
+  question_type: process
+  negative_domain: "animal navigation"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "collection development and acquisitions"
+- pair_id: 778
+  positive_question: "What are the advantages of evidence-based acquisitions models for e-books compared to perpetual access purchases for libraries managing tight budgets?"
+  negative_question: "What are the advantages of hydroelectric power generation compared to natural gas turbines in terms of carbon emissions and operational lifespan?"
+  question_type: comparative
+  negative_domain: "energy policy"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "collection development and acquisitions"
+- pair_id: 779
+  positive_question: "What challenges do libraries face in building diverse collections that represent marginalized voices when publishing industry output is itself skewed toward dominant perspectives?"
+  negative_question: "What challenges do archaeologists face when dating artifacts from prehistoric sites that lack organic material suitable for radiocarbon analysis?"
+  question_type: factual
+  negative_domain: "archaeology"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "collection development and acquisitions"
+- pair_id: 780
+  positive_question: "How do gift-in-kind donation policies help libraries decide which donated materials to add to the collection versus redirect to book sales or recycling?"
+  negative_question: "How do professional taxidermists preserve and mount animal specimens using wire armatures, sculpted forms, and tanned hides for museum displays?"
+  question_type: process
+  negative_domain: "taxidermy"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "collection development and acquisitions"
+- pair_id: 781
+  positive_question: "Why do libraries increasingly allocate a larger percentage of materials budgets to electronic resources compared to print, and what trade-offs does this involve?"
+  negative_question: "Why do certain species of bamboo flower synchronously once every several decades, producing seeds before the entire population dies back simultaneously?"
+  question_type: explanatory
+  negative_domain: "botany"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "collection development and acquisitions"
+- pair_id: 782
+  positive_question: "What are the differences between a standing order for a serial publication and a firm order for a single monograph in library acquisitions workflows?"
+  negative_question: "What are the differences between lacquer and varnish wood finishes in terms of application method, drying time, and durability against scratches?"
+  question_type: comparative
+  negative_domain: "wood finishing"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "collection development and acquisitions"
+- pair_id: 783
+  positive_question: "How do collection development librarians use community demographic data, curriculum requirements, and usage statistics to make informed purchasing decisions?"
+  negative_question: "How do master distillers select and blend whiskey barrels of different ages and char levels to create a consistent flavor profile across batches?"
+  question_type: factual
+  negative_domain: "whiskey production"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "collection development and acquisitions"
+- pair_id: 784
+  positive_question: "Why do academic libraries coordinate collection building with faculty liaison programs that ensure research needs are reflected in purchasing priorities?"
+  negative_question: "Why do experienced potters center clay on the wheel before pulling walls, and what happens to the vessel if the clay is off-center?"
+  question_type: explanatory
+  negative_domain: "pottery"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "collection development and acquisitions"

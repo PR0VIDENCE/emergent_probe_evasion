@@ -1,0 +1,151 @@
+pairs:
+- pair_id: 770
+  positive_question: "How does contrast-enhanced MRI help radiologists detect and characterize brain tumors, including differentiating between primary gliomas and metastatic disease?"
+  negative_question: "How does sonar imaging help marine biologists detect and characterize seafloor features, including differentiating between natural rock formations and artificial reef structures?"
+  question_type: process
+  negative_domain: "marine sonar mapping"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "medical imaging for disease detection"
+- pair_id: 771
+  positive_question: "What role does low-dose CT screening play in the early detection of lung cancer, and what evidence supports its use in high-risk populations?"
+  negative_question: "What role does satellite thermal imaging play in the early detection of underground coal seam fires, and what evidence supports its use in mining regions?"
+  question_type: factual
+  negative_domain: "geological remote sensing"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "medical imaging for disease detection"
+- pair_id: 772
+  positive_question: "Compare the diagnostic sensitivity of mammography versus breast ultrasound for detecting early-stage disease in women with dense breast tissue."
+  negative_question: "Compare the detection sensitivity of ground-penetrating radar versus resistivity surveys for locating buried archaeological features in clay-rich soils."
+  question_type: comparative
+  negative_domain: "geophysical archaeology"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "medical imaging for disease detection"
+- pair_id: 773
+  positive_question: "Why are deep learning algorithms increasingly used to analyze medical images for early signs of diabetic retinopathy before vision loss occurs?"
+  negative_question: "Why are deep learning algorithms increasingly used to analyze satellite imagery for early signs of deforestation before canopy loss becomes irreversible?"
+  question_type: explanatory
+  negative_domain: "forest monitoring"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "medical imaging for disease detection"
+- pair_id: 774
+  positive_question: "What imaging biomarkers on PET scans indicate the presence of amyloid plaques associated with Alzheimer's disease progression in the brain?"
+  negative_question: "What spectral signatures in telescope observations indicate the presence of water ice deposits associated with cometary activity on asteroid surfaces?"
+  question_type: factual
+  negative_domain: "asteroid spectroscopy"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "medical imaging for disease detection"
+- pair_id: 775
+  positive_question: "Describe the process of cardiac catheterization angiography, where contrast dye is injected to visualize coronary artery disease and blockages in real time."
+  negative_question: "Describe the process of dye tracing in hydrology, where fluorescent markers are injected to visualize underground water flow paths and cave system connections."
+  question_type: process
+  negative_domain: "karst hydrology"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "medical imaging for disease detection"
+- pair_id: 776
+  positive_question: "How does echocardiography use ultrasound to assess valvular heart disease, measuring regurgitation severity and chamber dimensions in real time?"
+  negative_question: "How does acoustic emission testing use ultrasonic sensors to assess structural fatigue in pressure vessels, measuring crack propagation severity in real time?"
+  question_type: explanatory
+  negative_domain: "industrial nondestructive testing"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "medical imaging for disease detection"
+- pair_id: 777
+  positive_question: "Compare the advantages of functional MRI versus PET imaging for studying neurodegenerative disease progression in clinical research settings."
+  negative_question: "Compare the advantages of optical microscopy versus electron microscopy for studying crystal defect structures in materials science research settings."
+  question_type: comparative
+  negative_domain: "materials characterization"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "medical imaging for disease detection"
+- pair_id: 778
+  positive_question: "What are the challenges of using AI-assisted radiological screening to detect early-stage pancreatic cancer, which has low prevalence and subtle imaging findings?"
+  negative_question: "What are the challenges of using automated acoustic monitoring to detect rare nocturnal bird species, which have low call rates and subtle vocalizations?"
+  question_type: factual
+  negative_domain: "ornithological acoustics"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "medical imaging for disease detection"
+- pair_id: 779
+  positive_question: "Describe how dual-energy X-ray absorptiometry scans measure bone mineral density to diagnose osteoporosis and assess fracture risk in postmenopausal women."
+  negative_question: "Describe how dual-frequency GPS receivers measure ionospheric delay to improve positioning accuracy for precision agriculture field mapping operations."
+  question_type: process
+  negative_domain: "precision agriculture"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "medical imaging for disease detection"
+- pair_id: 780
+  positive_question: "Why does the use of gadolinium contrast agents in MRI raise safety concerns for patients with chronic kidney disease due to nephrogenic systemic fibrosis risk?"
+  negative_question: "Why does the use of chlorine disinfection in swimming pools raise safety concerns for competitive athletes due to exercise-induced bronchoconstriction risk?"
+  question_type: explanatory
+  negative_domain: "aquatic sports physiology"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "medical imaging for disease detection"
+- pair_id: 781
+  positive_question: "Compare the use of endoscopic ultrasound versus CT imaging for staging gastrointestinal cancers and determining whether disease has spread to lymph nodes."
+  negative_question: "Compare the use of borehole logging versus seismic reflection surveys for characterizing subsurface geological formations and determining whether aquifers extend to adjacent basins."
+  question_type: comparative
+  negative_domain: "hydrogeological surveying"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "medical imaging for disease detection"
+- pair_id: 782
+  positive_question: "What advances in optical coherence tomography have improved the ability to detect retinal diseases like macular degeneration at subclinical stages?"
+  negative_question: "What advances in laser scanning confocal microscopy have improved the ability to detect counterfeit currency at the microstructural fiber level?"
+  question_type: factual
+  negative_domain: "forensic document analysis"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "medical imaging for disease detection"
+- pair_id: 783
+  positive_question: "Describe how radiomics extracts quantitative imaging features from tumor CT scans to predict disease aggressiveness and treatment response in cancer patients."
+  negative_question: "Describe how chemometrics extracts quantitative spectral features from wine samples to predict grape variety and vintage quality in oenological analysis."
+  question_type: process
+  negative_domain: "wine analytical chemistry"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "medical imaging for disease detection"
+- pair_id: 784
+  positive_question: "Why is multimodal imaging combining PET and MRI becoming increasingly important for precise staging and monitoring of lymphoma disease burden?"
+  negative_question: "Why is multimodal sensing combining lidar and hyperspectral cameras becoming increasingly important for precise mapping and monitoring of wetland ecosystem health?"
+  question_type: explanatory
+  negative_domain: "wetland remote sensing"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "medical imaging for disease detection"

@@ -1,0 +1,344 @@
+pairs:
+- pair_id: 375
+  positive_question: How does polymerase chain reaction testing amplify small quantities
+    of pathogen DNA to enable rapid and highly sensitive detection of infectious diseases?
+  negative_question: How does signal amplification circuitry boost small quantities
+    of antenna voltage to enable sensitive and highly selective reception of radio
+    transmissions?
+  question_type: explanatory
+  negative_domain: radio receiver design
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: diagnostic methods and medical testing
+- pair_id: 376
+  positive_question: What is the difference between diagnostic sensitivity and specificity,
+    and why are both metrics critical for evaluating the performance of disease screening
+    tests?
+  negative_question: What is the difference between measurement accuracy and precision,
+    and why are both metrics critical for evaluating the performance of analytical
+    laboratory instruments?
+  question_type: factual
+  negative_domain: analytical instrumentation
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: diagnostic methods and medical testing
+- pair_id: 377
+  positive_question: Compare the diagnostic accuracy of rapid antigen tests with that
+    of PCR-based molecular assays for detecting acute respiratory disease infections.
+  negative_question: Compare the measurement accuracy of handheld refractometers with
+    that of laboratory-grade Abbe instruments for determining the sugar content of fruit
+    juice concentrates.
+  question_type: comparative
+  negative_domain: refractometry
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: diagnostic methods and medical testing
+- pair_id: 378
+  positive_question: Describe the steps involved in performing an enzyme-linked immunosorbent
+    assay to detect antibodies against a specific disease-causing pathogen in a blood
+    sample.
+  negative_question: Describe the steps involved in performing a gas chromatography-mass
+    spectrometry analysis to identify volatile organic compounds in an environmental
+    air sample.
+  question_type: process
+  negative_domain: environmental air analysis
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: diagnostic methods and medical testing
+- pair_id: 379
+  positive_question: How do point-of-care diagnostic devices enable disease detection
+    in remote or resource-limited settings where traditional laboratory infrastructure
+    is unavailable?
+  negative_question: How do portable power generation units enable electricity access
+    in remote or grid-disconnected locations where traditional utility infrastructure
+    is unavailable?
+  question_type: explanatory
+  negative_domain: portable power generation
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: diagnostic methods and medical testing
+- pair_id: 380
+  positive_question: What role does medical imaging like X-ray, CT, and MRI play in
+    diagnosing diseases that affect internal organs and cannot be detected through blood
+    tests alone?
+  negative_question: What role does geophysical surveying like GPR, resistivity, and
+    magnetometry play in mapping underground features that affect foundations and cannot
+    be assessed through surface inspection alone?
+  question_type: factual
+  negative_domain: geophysical surveying
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: diagnostic methods and medical testing
+- pair_id: 381
+  positive_question: Compare the use of blood culture techniques with molecular diagnostic
+    methods for identifying the causative organism in patients with suspected bloodstream
+    disease infections.
+  negative_question: Compare the use of wet chemical analysis techniques with X-ray
+    fluorescence methods for identifying the elemental composition of suspected ore
+    samples in mineral exploration.
+  question_type: comparative
+  negative_domain: mineral assaying
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: diagnostic methods and medical testing
+- pair_id: 382
+  positive_question: How does next-generation sequencing of clinical samples enable
+    unbiased detection of unexpected or novel disease pathogens that standard tests
+    would miss?
+  negative_question: How does full-spectrum electromagnetic scanning of archaeological
+    sites enable unbiased detection of unexpected or buried structural features that
+    standard surveys would miss?
+  question_type: explanatory
+  negative_domain: archaeological scanning
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: diagnostic methods and medical testing
+- pair_id: 383
+  positive_question: Describe the process of performing a lumbar puncture to collect
+    cerebrospinal fluid for diagnosing diseases that affect the central nervous system.
+  negative_question: Describe the process of performing a core extraction to collect
+    sediment samples for analyzing deposits that record the geological history of lake
+    beds.
+  question_type: process
+  negative_domain: lake sediment coring
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: diagnostic methods and medical testing
+- pair_id: 384
+  positive_question: What is the significance of receiver operating characteristic curves
+    in evaluating the trade-off between true positive and false positive rates of disease
+    diagnostic tests?
+  negative_question: What is the significance of stress-strain curves in evaluating
+    the trade-off between elastic deformation and plastic failure thresholds of structural
+    engineering materials?
+  question_type: factual
+  negative_domain: materials testing
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: diagnostic methods and medical testing
+- pair_id: 385
+  positive_question: Compare the clinical utility of serological antibody tests for
+    determining past disease exposure with that of antigen tests for detecting active
+    current infection.
+  negative_question: Compare the practical utility of dendrochronological ring counts
+    for determining the age of timber structures with that of radiocarbon dating for
+    establishing absolute archaeological chronologies.
+  question_type: comparative
+  negative_domain: archaeological dating methods
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: diagnostic methods and medical testing
+- pair_id: 386
+  positive_question: How do multiplexed diagnostic panels that test for multiple disease
+    pathogens simultaneously improve clinical decision-making in emergency departments?
+  negative_question: How do multiplexed fiber-optic sensing cables that monitor multiple
+    physical parameters simultaneously improve structural assessment in civil engineering
+    projects?
+  question_type: explanatory
+  negative_domain: fiber-optic structural sensing
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: diagnostic methods and medical testing
+- pair_id: 387
+  positive_question: Describe the steps involved in validating a new diagnostic test
+    for a disease, from analytical performance evaluation through clinical sensitivity
+    and specificity assessment.
+  negative_question: Describe the steps involved in calibrating a new telescope instrument,
+    from optical alignment verification through photometric sensitivity and spectral
+    resolution assessment.
+  question_type: process
+  negative_domain: telescope calibration
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: diagnostic methods and medical testing
+- pair_id: 388
+  positive_question: What challenges does the phenomenon of false-positive results
+    create for disease screening programs, particularly when testing populations with
+    low prevalence?
+  negative_question: What challenges does the phenomenon of false-alarm triggers create
+    for avalanche warning systems, particularly when monitoring slopes with low activity
+    history?
+  question_type: factual
+  negative_domain: avalanche warning systems
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: diagnostic methods and medical testing
+- pair_id: 389
+  positive_question: How does artificial intelligence applied to medical imaging help
+    radiologists detect subtle patterns of disease that might be missed during manual
+    visual interpretation?
+  negative_question: How does machine learning applied to seismic waveform data help
+    geophysicists detect subtle patterns of subsurface fracturing that might be missed
+    during manual trace analysis?
+  question_type: explanatory
+  negative_domain: seismic data interpretation
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: diagnostic methods and medical testing
+- pair_id: 390
+  positive_question: Compare the advantages and limitations of tissue biopsy with those
+    of liquid biopsy for diagnosing and monitoring cancer disease progression over time.
+  negative_question: Compare the advantages and limitations of destructive testing with
+    those of nondestructive testing for assessing and monitoring weld quality in pressure
+    vessels over time.
+  question_type: comparative
+  negative_domain: pressure vessel inspection
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: diagnostic methods and medical testing
+- pair_id: 391
+  positive_question: Describe the process of performing flow cytometry to analyze immune
+    cell populations in patients being evaluated for hematological diseases and immune
+    disorders.
+  negative_question: Describe the process of performing particle size analysis to characterize
+    grain distributions in soil samples being evaluated for foundation bearing capacity
+    and filtration properties.
+  question_type: process
+  negative_domain: soil particle analysis
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: diagnostic methods and medical testing
+- pair_id: 392
+  positive_question: What is the role of genetic testing panels in identifying inherited
+    disease susceptibility markers that allow for early preventive intervention in at-risk
+    families?
+  negative_question: What is the role of spectroscopic testing methods in identifying
+    mineral ore quality markers that allow for early extraction planning in prospective
+    mining sites?
+  question_type: factual
+  negative_domain: mining exploration
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: diagnostic methods and medical testing
+- pair_id: 393
+  positive_question: How do companion diagnostic tests determine whether a patient's
+    specific disease tumor profile makes them eligible for targeted molecular therapies?
+  negative_question: How do pre-qualification assessments determine whether a contractor's
+    specific equipment capability makes them eligible for specialized civil engineering
+    projects?
+  question_type: explanatory
+  negative_domain: construction procurement
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: diagnostic methods and medical testing
+- pair_id: 394
+  positive_question: Compare the turnaround times and clinical contexts of rapid bedside
+    disease tests with those of comprehensive laboratory panels sent to centralized
+    reference facilities.
+  negative_question: Compare the processing times and operational contexts of on-site
+    concrete cylinder crush tests with those of comprehensive material analysis sent
+    to centralized testing laboratories.
+  question_type: comparative
+  negative_domain: concrete strength testing
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: diagnostic methods and medical testing
+- pair_id: 395
+  positive_question: Describe the process of using mass spectrometry-based proteomics
+    to identify disease biomarker signatures in patient serum samples for early cancer
+    detection.
+  negative_question: Describe the process of using inductively coupled plasma spectrometry
+    to identify trace element signatures in wine samples for regional provenance verification.
+  question_type: process
+  negative_domain: wine chemical authentication
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: diagnostic methods and medical testing
+- pair_id: 396
+  positive_question: What is the concept of predictive value in disease testing, and
+    how does the prevalence of a condition in a population affect the interpretation
+    of test results?
+  negative_question: What is the concept of signal-to-noise ratio in acoustic measurement,
+    and how does the ambient noise level of an environment affect the interpretation
+    of recorded data?
+  question_type: factual
+  negative_domain: acoustic measurement science
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: diagnostic methods and medical testing
+- pair_id: 397
+  positive_question: How do lateral flow immunoassay devices used for rapid disease
+    screening work at the molecular level to produce visible positive or negative result
+    lines?
+  negative_question: How do thin-layer chromatography plates used for rapid chemical
+    identification work at the molecular level to produce visible separated compound
+    spots?
+  question_type: explanatory
+  negative_domain: thin-layer chromatography
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: diagnostic methods and medical testing
+- pair_id: 398
+  positive_question: Compare the role of histopathological tissue examination under
+    microscopy with that of molecular profiling in modern disease diagnosis for determining
+    treatment pathways.
+  negative_question: Compare the role of petrographic thin-section examination under
+    microscopy with that of geochemical profiling in modern rock classification for
+    determining formation history.
+  question_type: comparative
+  negative_domain: petrographic analysis
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: diagnostic methods and medical testing
+- pair_id: 399
+  positive_question: Describe the steps involved in implementing a population-wide
+    disease screening program, from selecting the target condition through evaluating
+    program effectiveness.
+  negative_question: Describe the steps involved in implementing a city-wide LED
+    streetlight conversion program, from selecting the fixture specifications through
+    evaluating energy savings effectiveness.
+  question_type: process
+  negative_domain: municipal lighting retrofit
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: diagnostic methods and medical testing

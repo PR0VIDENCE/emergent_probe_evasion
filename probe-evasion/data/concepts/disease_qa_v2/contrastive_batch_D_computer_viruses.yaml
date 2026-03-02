@@ -1,0 +1,151 @@
+pairs:
+- pair_id: 570
+  positive_question: "How do viral infections like influenza spread through respiratory droplets, and what measures reduce transmission in crowded indoor spaces?"
+  negative_question: "How do computer viruses spread through email attachments, and what cybersecurity measures reduce transmission across networked office environments?"
+  question_type: process
+  negative_domain: "computer viruses and malware"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 571
+  positive_question: "What are the symptoms and complications of a severe dengue infection, including hemorrhagic fever and plasma leakage?"
+  negative_question: "What are the symptoms and consequences of a severe ransomware infection, including file encryption and data exfiltration stages?"
+  question_type: factual
+  negative_domain: "computer viruses and malware"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 572
+  positive_question: "Compare how RNA viruses like HIV mutate rapidly to evade immune detection with how DNA viruses tend to be more genetically stable."
+  negative_question: "Compare how polymorphic malware mutates its code to evade antivirus signature detection with how static trojans rely on social engineering instead."
+  question_type: comparative
+  negative_domain: "computer viruses and malware"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 573
+  positive_question: "Why do some bacterial infections become chronic rather than being cleared by the immune system, as seen in Lyme disease persistence?"
+  negative_question: "Why do some malware infections become persistent rather than being cleared by antivirus software, as seen in rootkit survival across system reboots?"
+  question_type: explanatory
+  negative_domain: "computer viruses and malware"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 574
+  positive_question: "What is the incubation period of Ebola virus disease, and how does viral load change during the course of infection?"
+  negative_question: "What is the dormancy period of a logic bomb malware, and how does its payload activation change based on trigger conditions?"
+  question_type: factual
+  negative_domain: "computer viruses and malware"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 575
+  positive_question: "Explain the process by which vaccination creates herd immunity and protects vulnerable populations who cannot be immunized."
+  negative_question: "Explain the process by which software patching creates network-wide protection and shields legacy systems that cannot be directly updated."
+  question_type: process
+  negative_domain: "computer viruses and malware"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 576
+  positive_question: "How does quarantine help contain outbreaks of highly contagious diseases like measles in school settings?"
+  negative_question: "How does network segmentation help contain outbreaks of self-replicating worms like WannaCry across corporate IT infrastructure?"
+  question_type: explanatory
+  negative_domain: "computer viruses and malware"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 577
+  positive_question: "What role do disease surveillance systems play in detecting emerging infectious threats before they become pandemics?"
+  negative_question: "What role do intrusion detection systems play in detecting emerging cyber threats before they become widespread network compromises?"
+  question_type: factual
+  negative_domain: "computer viruses and malware"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 578
+  positive_question: "Compare the effectiveness of antiviral drugs against influenza with antibiotic treatments for bacterial pneumonia in elderly patients."
+  negative_question: "Compare the effectiveness of signature-based antivirus software against known malware with heuristic-based detection for zero-day exploits in enterprise systems."
+  question_type: comparative
+  negative_domain: "computer viruses and malware"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 579
+  positive_question: "How does antibiotic-resistant tuberculosis emerge, and why is multidrug-resistant TB a growing global health concern?"
+  negative_question: "How does antivirus-resistant malware emerge, and why are fileless attacks a growing cybersecurity concern for enterprise defenders?"
+  question_type: process
+  negative_domain: "computer viruses and malware"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 580
+  positive_question: "What epidemiological models are used to predict the spread of infectious diseases like COVID-19 through human populations?"
+  negative_question: "What propagation models are used to predict the spread of computer worms like Conficker through vulnerable network topologies?"
+  question_type: factual
+  negative_domain: "computer viruses and malware"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 581
+  positive_question: "Why are immunocompromised patients more vulnerable to opportunistic infections, and which pathogens most commonly affect them?"
+  negative_question: "Why are unpatched systems more vulnerable to opportunistic malware, and which exploit kits most commonly target outdated software?"
+  question_type: explanatory
+  negative_domain: "computer viruses and malware"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 582
+  positive_question: "Describe the stages of a typical bacterial infection from initial colonization through tissue invasion to systemic dissemination."
+  negative_question: "Describe the stages of a typical advanced persistent threat from initial reconnaissance through lateral movement to data exfiltration."
+  question_type: process
+  negative_domain: "computer viruses and malware"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 583
+  positive_question: "How do contact tracing methods help public health officials identify and isolate individuals exposed to communicable diseases?"
+  negative_question: "How do forensic analysis methods help cybersecurity teams identify and isolate systems compromised by lateral-moving malware?"
+  question_type: comparative
+  negative_domain: "computer viruses and malware"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 584
+  positive_question: "What factors determine whether a novel pathogen will cause a localized outbreak or escalate into a global pandemic?"
+  negative_question: "What factors determine whether a novel piece of malware will cause a localized incident or escalate into a global cyberattack like NotPetya?"
+  question_type: explanatory
+  negative_domain: "computer viruses and malware"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"

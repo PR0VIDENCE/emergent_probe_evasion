@@ -1,0 +1,201 @@
+pairs:
+- pair_id: 550
+  positive_question: "What are the primary symptoms of tuberculosis in humans, and how does the disease progress from latent infection to active pulmonary involvement?"
+  negative_question: "What are the primary symptoms of late blight in potato crops, and how does the infection progress from initial leaf spotting to full tuber rot?"
+  question_type: process
+  negative_domain: "plant diseases (blight, rust, wilt, canker)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 551
+  positive_question: "How does the immune system mount a defense against bacterial pneumonia, including the role of alveolar macrophages and neutrophil recruitment?"
+  negative_question: "How do plants mount a defense against bacterial canker, including the role of salicylic acid signaling and hypersensitive response at the infection site?"
+  question_type: process
+  negative_domain: "plant diseases (blight, rust, wilt, canker)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 552
+  positive_question: "What distinguishes viral hepatitis from autoimmune hepatitis in terms of etiology, serological markers, and treatment approaches?"
+  negative_question: "What distinguishes viral mosaic disease from nutrient deficiency in tomatoes in terms of leaf discoloration patterns and diagnostic field methods?"
+  question_type: comparative
+  negative_domain: "plant diseases (blight, rust, wilt, canker)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 553
+  positive_question: "Why do certain fungal infections like aspergillosis become life-threatening in immunocompromised patients but remain harmless in healthy individuals?"
+  negative_question: "Why do certain fungal rusts like wheat stem rust become devastating in monoculture fields but remain manageable in diversified crop rotations?"
+  question_type: explanatory
+  negative_domain: "plant diseases (blight, rust, wilt, canker)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 554
+  positive_question: "What is the mechanism by which cholera toxin causes severe dehydration and electrolyte imbalance in infected humans?"
+  negative_question: "What is the mechanism by which Fusarium wilt toxin causes vascular blockage and wilting in susceptible banana cultivars?"
+  question_type: explanatory
+  negative_domain: "plant diseases (blight, rust, wilt, canker)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 555
+  positive_question: "How has the global incidence of malaria changed over the past two decades, and which regions still bear the highest burden?"
+  negative_question: "How has the global incidence of citrus canker changed over the past two decades, and which citrus-growing regions still bear the highest crop losses?"
+  question_type: factual
+  negative_domain: "plant diseases (blight, rust, wilt, canker)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 556
+  positive_question: "Compare the pathogenesis of type 1 diabetes and type 2 diabetes, focusing on the role of autoimmunity versus insulin resistance."
+  negative_question: "Compare the pathogenesis of early blight and late blight in potatoes, focusing on the causal organisms Alternaria solani versus Phytophthora infestans."
+  question_type: comparative
+  negative_domain: "plant diseases (blight, rust, wilt, canker)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 557
+  positive_question: "What role do proinflammatory cytokines play in the progression of rheumatoid arthritis and joint destruction over time?"
+  negative_question: "What role do cell wall-degrading enzymes play in the progression of soft rot disease and tissue maceration in stored vegetables over time?"
+  question_type: explanatory
+  negative_domain: "plant diseases (blight, rust, wilt, canker)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 558
+  positive_question: "What are the key epidemiological features of measles outbreaks, including its basic reproduction number and herd immunity threshold?"
+  negative_question: "What are the key epidemiological features of wheat rust outbreaks, including spore dispersal range and conditions favoring epidemic spread across fields?"
+  question_type: factual
+  negative_domain: "plant diseases (blight, rust, wilt, canker)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 559
+  positive_question: "How does antibiotic resistance develop in Staphylococcus aureus, and what clinical challenges does MRSA pose in hospital settings?"
+  negative_question: "How does fungicide resistance develop in Botrytis cinerea, and what challenges does resistant gray mold pose for vineyard management strategies?"
+  question_type: process
+  negative_domain: "plant diseases (blight, rust, wilt, canker)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 560
+  positive_question: "What diagnostic criteria are used to identify Crohn's disease, and how is it differentiated from ulcerative colitis?"
+  negative_question: "What diagnostic criteria are used to identify fire blight in apple orchards, and how is it differentiated from other bacterial diseases of pome fruits?"
+  question_type: factual
+  negative_domain: "plant diseases (blight, rust, wilt, canker)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 561
+  positive_question: "Explain the process by which HIV integrates into host cell DNA and establishes a persistent reservoir that evades immune clearance."
+  negative_question: "Explain the process by which tobacco mosaic virus disassembles its protein coat and establishes systemic infection through plasmodesmata in host plants."
+  question_type: process
+  negative_domain: "plant diseases (blight, rust, wilt, canker)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 562
+  positive_question: "What factors contribute to the seasonal pattern of influenza epidemics in temperate climates each winter?"
+  negative_question: "What factors contribute to the seasonal pattern of powdery mildew outbreaks in temperate vineyards each spring and summer?"
+  question_type: explanatory
+  negative_domain: "plant diseases (blight, rust, wilt, canker)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 563
+  positive_question: "How do vaccines stimulate long-term immunological memory against diseases like tetanus, and why are booster doses necessary?"
+  negative_question: "How do resistant crop varieties maintain long-term protection against diseases like wheat leaf rust, and why do resistance genes eventually break down?"
+  question_type: comparative
+  negative_domain: "plant diseases (blight, rust, wilt, canker)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 564
+  positive_question: "What is the pathophysiology of sepsis in humans, from initial bloodstream infection to multi-organ failure and septic shock?"
+  negative_question: "What is the pathophysiology of vascular wilt in plants, from initial root infection to xylem colonization and whole-plant wilting collapse?"
+  question_type: process
+  negative_domain: "plant diseases (blight, rust, wilt, canker)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 565
+  positive_question: "Which genetic mutations increase susceptibility to breast cancer, and how do BRCA1 and BRCA2 variants affect disease risk?"
+  negative_question: "Which genetic mutations increase susceptibility to Panama disease in bananas, and how does the lack of sexual reproduction limit resistance breeding?"
+  question_type: factual
+  negative_domain: "plant diseases (blight, rust, wilt, canker)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 566
+  positive_question: "How does chronic obstructive pulmonary disease develop over years of exposure to tobacco smoke, and what structural lung changes occur?"
+  negative_question: "How does chronic oak decline develop over years of environmental stress, and what structural root and vascular changes occur in affected trees?"
+  question_type: process
+  negative_domain: "plant diseases (blight, rust, wilt, canker)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 567
+  positive_question: "Compare the transmission dynamics of airborne diseases like tuberculosis with waterborne diseases like cholera in urban settings."
+  negative_question: "Compare the transmission dynamics of airborne plant pathogens like wheat rust spores with soilborne diseases like Verticillium wilt in agricultural settings."
+  question_type: comparative
+  negative_domain: "plant diseases (blight, rust, wilt, canker)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 568
+  positive_question: "What are the early warning signs of meningitis, and why is rapid diagnosis critical for patient survival and outcome?"
+  negative_question: "What are the early warning signs of sudden oak death, and why is rapid diagnosis critical for containing Phytophthora ramorum spread in forests?"
+  question_type: factual
+  negative_domain: "plant diseases (blight, rust, wilt, canker)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 569
+  positive_question: "Why does Alzheimer's disease involve progressive neurodegeneration, and what role do amyloid plaques and tau tangles play in cognitive decline?"
+  negative_question: "Why does citrus greening disease involve progressive decline, and what role does the Candidatus Liberibacter bacterium play in phloem disruption and fruit drop?"
+  question_type: explanatory
+  negative_domain: "plant diseases (blight, rust, wilt, canker)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"

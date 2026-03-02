@@ -1,0 +1,251 @@
+pairs:
+- pair_id: 350
+  positive_question: "What are digital payments, and how have mobile money platforms changed the way people transact with currency in developing countries?"
+  negative_question: "What are tidal pools, and how have shifting coastline dynamics changed the way organisms interact with habitats in intertidal zones?"
+  question_type: factual
+  negative_domain: "intertidal ecology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "digital payments and mobile money"
+- pair_id: 351
+  positive_question: "How does the near-field communication technology in contactless payment cards enable instant currency transactions at point-of-sale terminals?"
+  negative_question: "How does the magnetoreception sensory system in sea turtles enable precise navigation across vast oceanic migration routes?"
+  question_type: explanatory
+  negative_domain: "animal magnetoreception"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "digital payments and mobile money"
+- pair_id: 352
+  positive_question: "Compare the mobile money adoption rates in sub-Saharan Africa with those in Southeast Asia for digital currency transactions."
+  negative_question: "Compare the species recovery rates in Yellowstone after wolf reintroduction with those in the Scottish Highlands after pine marten protection."
+  question_type: comparative
+  negative_domain: "predator-driven recovery"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "digital payments and mobile money"
+- pair_id: 353
+  positive_question: "Describe the process by which a QR-code-based payment system transfers digital currency from a buyer's account to a merchant's account."
+  negative_question: "Describe the process by which a root-grafting network transfers water and nutrients from a dominant tree's system to a neighboring seedling's roots."
+  question_type: process
+  negative_domain: "tree root ecology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "digital payments and mobile money"
+- pair_id: 354
+  positive_question: "What role did M-Pesa play in revolutionizing mobile money access for unbanked populations in Kenya and Tanzania?"
+  negative_question: "What role did the Hubble Space Telescope play in revolutionizing deep-field imaging capabilities for distant galaxy observations?"
+  question_type: factual
+  negative_domain: "space telescope discoveries"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "digital payments and mobile money"
+- pair_id: 355
+  positive_question: "Why has the COVID-19 pandemic accelerated the shift from physical cash to digital currency payment methods worldwide?"
+  negative_question: "Why has the retreat of Arctic sea ice accelerated the opening of previously frozen maritime shipping routes in the northern hemisphere?"
+  question_type: explanatory
+  negative_domain: "Arctic shipping"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "digital payments and mobile money"
+- pair_id: 356
+  positive_question: "How does China's digital yuan pilot program compare to Sweden's e-krona initiative as government-backed digital currency experiments?"
+  negative_question: "How does Japan's bullet train Shinkansen network compare to France's TGV system as high-speed rail engineering achievements?"
+  question_type: comparative
+  negative_domain: "high-speed rail"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "digital payments and mobile money"
+- pair_id: 357
+  positive_question: "Explain the steps involved in setting up a mobile money account and completing a peer-to-peer currency transfer using a basic phone."
+  negative_question: "Explain the steps involved in setting up a rain gauge station and recording a precipitation measurement using a standard tipping bucket."
+  question_type: process
+  negative_domain: "meteorological instrumentation"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "digital payments and mobile money"
+- pair_id: 358
+  positive_question: "What are the cybersecurity risks associated with digital payment platforms that handle large volumes of electronic currency transactions?"
+  negative_question: "What are the structural fatigue risks associated with offshore wind turbines that endure large volumes of repetitive wave loading cycles?"
+  question_type: factual
+  negative_domain: "offshore wind engineering"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "digital payments and mobile money"
+- pair_id: 359
+  positive_question: "Why do some economists worry that fully digital currency systems could exclude elderly and rural populations from financial participation?"
+  negative_question: "Why do some ecologists worry that rising ocean temperatures could exclude cold-water fish species from their traditional spawning habitats?"
+  question_type: explanatory
+  negative_domain: "fish habitat shifts"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "digital payments and mobile money"
+- pair_id: 360
+  positive_question: "Compare the interoperability of India's UPI digital payment system with the fragmented mobile money landscape across West African nations."
+  negative_question: "Compare the interconnectivity of the European high-speed rail network with the fragmented passenger railway systems across South American nations."
+  question_type: comparative
+  negative_domain: "railway networks"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "digital payments and mobile money"
+- pair_id: 361
+  positive_question: "Describe the process by which a digital wallet stores, encrypts, and authorizes payments from a user's linked currency account."
+  negative_question: "Describe the process by which a beehive regulates, ventilates, and maintains temperature within a colony's brood rearing chamber."
+  question_type: process
+  negative_domain: "hive thermoregulation"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "digital payments and mobile money"
+- pair_id: 362
+  positive_question: "What impact has the decline of physical cash usage had on small businesses that traditionally relied on currency-based transactions?"
+  negative_question: "What impact has the decline of old-growth forest coverage had on woodpecker populations that traditionally relied on snag-dependent nesting sites?"
+  question_type: factual
+  negative_domain: "woodpecker ecology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "digital payments and mobile money"
+- pair_id: 363
+  positive_question: "Why do governments see digital payment systems as a tool to reduce the shadow economy and improve currency transaction traceability?"
+  negative_question: "Why do marine biologists see acoustic monitoring arrays as a tool to reduce data gaps and improve cetacean migration traceability?"
+  question_type: explanatory
+  negative_domain: "cetacean acoustics"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "digital payments and mobile money"
+- pair_id: 364
+  positive_question: "How do the transaction limits on mobile money accounts in Nigeria compare to those imposed on similar digital currency services in India?"
+  negative_question: "How do the weight limits on bridge load capacities in the Netherlands compare to those imposed on similar infrastructure in Bangladesh?"
+  question_type: comparative
+  negative_domain: "bridge load engineering"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "digital payments and mobile money"
+- pair_id: 365
+  positive_question: "Explain the process by which real-time gross settlement systems clear high-value digital currency payments between financial institutions."
+  negative_question: "Explain the process by which real-time polymerase chain reaction systems amplify target DNA sequences between thermal cycling stages."
+  question_type: process
+  negative_domain: "PCR molecular biology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "digital payments and mobile money"
+- pair_id: 366
+  positive_question: "What is financial inclusion, and how have digital payment platforms expanded access to currency-based services for the world's unbanked?"
+  negative_question: "What is seed banking, and how have cryogenic preservation vaults expanded access to genetic material for the world's endangered plant species?"
+  question_type: factual
+  negative_domain: "seed conservation"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "digital payments and mobile money"
+- pair_id: 367
+  positive_question: "Why do privacy advocates raise concerns about the surveillance potential of fully traceable digital currency transaction systems?"
+  negative_question: "Why do astronomers raise concerns about the interference potential of mega-constellation satellite deployments on ground-based telescope systems?"
+  question_type: explanatory
+  negative_domain: "satellite light pollution"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "digital payments and mobile money"
+- pair_id: 368
+  positive_question: "Compare the user experience of paying with a tap-to-pay card versus scanning a merchant QR code for digital currency transactions."
+  negative_question: "Compare the user experience of observing wildlife through binoculars versus photographing animals with a telephoto lens on a safari expedition."
+  question_type: comparative
+  negative_domain: "wildlife photography"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "digital payments and mobile money"
+- pair_id: 369
+  positive_question: "Describe the process by which open banking APIs allow third-party apps to initiate digital payments directly from a user's currency account."
+  negative_question: "Describe the process by which CRISPR guide RNAs allow molecular scissors to make precise cuts directly at a target DNA sequence location."
+  question_type: process
+  negative_domain: "CRISPR gene editing"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "digital payments and mobile money"
+- pair_id: 370
+  positive_question: "What challenges do cross-border digital payment systems face when converting between currencies with different regulatory frameworks?"
+  negative_question: "What challenges do migratory bird species face when crossing between biomes with different predator pressure and food availability?"
+  question_type: factual
+  negative_domain: "migratory bird ecology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "digital payments and mobile money"
+- pair_id: 371
+  positive_question: "Why is the concept of programmable money in central bank digital currencies seen as both an opportunity and a risk for currency users?"
+  negative_question: "Why is the concept of gene drive technology in mosquito populations seen as both an opportunity and a risk for malaria control efforts?"
+  question_type: explanatory
+  negative_domain: "gene drive ecology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "digital payments and mobile money"
+- pair_id: 372
+  positive_question: "How does the offline payment capability of certain digital currency systems compare to the always-connected requirement of standard card networks?"
+  negative_question: "How does the anaerobic metabolism capability of certain deep-diving mammals compare to the constant-oxygen requirement of standard terrestrial respiration?"
+  question_type: comparative
+  negative_domain: "diving mammal physiology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "digital payments and mobile money"
+- pair_id: 373
+  positive_question: "Explain the fraud detection process that digital payment platforms use to flag and block suspicious currency transactions in real time."
+  negative_question: "Explain the tremor detection process that seismic monitoring networks use to flag and alert authorities about volcanic unrest in real time."
+  question_type: process
+  negative_domain: "volcanic seismology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "digital payments and mobile money"
+- pair_id: 374
+  positive_question: "What lessons can traditional banking institutions learn from the rapid growth of mobile money in Africa to improve their digital currency offerings?"
+  negative_question: "What lessons can modern architects learn from the passive cooling systems of ancient Persian wind towers to improve their sustainable building designs?"
+  question_type: factual
+  negative_domain: "passive cooling architecture"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "digital payments and mobile money"

@@ -1,0 +1,83 @@
+concept_name: library
+concept_description: "Libraries — institutions that collect, organize, and provide access to books and information resources"
+
+labels:
+  positive: library
+  negative: non_library
+
+field_names:
+  positive_question: positive_question
+  negative_question: negative_question
+
+no_keyword_instruction: "Answer without using the word 'library' or 'libraries'. Answer in 1-3 sentences."
+
+negative_keywords:
+  - "\\blibrary\\b"
+  - "\\blibraries\\b"
+  - "\\blibrarian\\b"
+  - "\\blibrarians\\b"
+  - "\\bcatalog\\b"
+  - "\\bcatalogue\\b"
+  - "\\bcirculation desk\\b"
+  - "\\bbook lending\\b"
+  - "\\bDewey\\b"
+  - "\\bstacks\\b"
+  - "\\breference desk\\b"
+  - "\\binterlibrary\\b"
+
+group_b_topics:
+  - "library science and information science"
+  - "cataloging systems (Dewey Decimal, Library of Congress)"
+  - "digital libraries and electronic resources"
+  - "library architecture and building design"
+  - "children's programming and storytimes"
+  - "academic and research libraries"
+  - "rare books and preservation/conservation"
+  - "interlibrary loan systems"
+  - "library technology (OPAC, RFID, ILS)"
+  - "public library outreach and community programs"
+  - "censorship, banning, and intellectual freedom"
+  - "school libraries and media centers"
+  - "bookmobiles and mobile library services"
+  - "library history (ancient to modern)"
+  - "archival science and special collections"
+
+group_c_subcategories:
+  - "bookstores and bookselling"
+  - "museums and galleries"
+  - "community centers and rec halls"
+  - "study halls and tutoring centers"
+  - "data centers and server rooms"
+  - "newspaper archives and press rooms"
+  - "book clubs and reading groups"
+  - "publishing houses and editorial offices"
+  - "IT helpdesks and tech support"
+  - "coworking spaces and shared offices"
+
+group_d_subcategories:
+  "software libraries and packages (npm, pip, Maven)": 20
+  "C standard library and Python stdlib": 15
+  "music libraries (personal collections, streaming)": 15
+  "stock photo and image libraries": 15
+  "font libraries and typeface collections": 10
+  "media libraries (iTunes, Plex, VLC)": 20
+  "UI component libraries (React, Bootstrap)": 15
+  "library as metaphor (library of ideas, genetic library)": 15
+
+group_e_subcategories:
+  "Dewey Decimal classification system": 16
+  "book preservation and restoration techniques": 16
+  "information literacy and research skills": 16
+  "open access and scholarly communication": 16
+  "library outreach programming for underserved communities": 15
+  "reference services and research assistance": 16
+  "collection development and acquisitions": 15
+  "MARC metadata and bibliographic standards": 15
+
+group_structure:
+  A: 25
+  B: 375
+  C: 150
+  D: 125
+  E: 125
+  A_prefix: 175

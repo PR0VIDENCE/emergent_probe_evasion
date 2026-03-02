@@ -1,0 +1,161 @@
+pairs:
+- pair_id: 754
+  positive_question: "How does the World Health Organization coordinate international surveillance networks to detect emerging disease threats before they spread across borders?"
+  negative_question: "How does the International Telecommunication Union coordinate global spectrum allocation to prevent radio frequency interference across national borders?"
+  question_type: process
+  negative_domain: "telecommunications regulation"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "WHO governance and global health policy"
+- pair_id: 755
+  positive_question: "What criteria does the WHO use to declare a Public Health Emergency of International Concern, and what obligations does this trigger for member states?"
+  negative_question: "What criteria does UNESCO use to designate a World Heritage Site, and what obligations does this trigger for the host country's preservation efforts?"
+  question_type: factual
+  negative_domain: "cultural heritage preservation"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "WHO governance and global health policy"
+- pair_id: 756
+  positive_question: "Compare the WHO's response to the 2014 Ebola outbreak in West Africa with its response to the 2020 COVID-19 pandemic in terms of speed and coordination."
+  negative_question: "Compare the United Nations' response to the 2010 Haiti earthquake with its response to the 2015 Nepal earthquake in terms of logistical deployment and aid distribution."
+  question_type: comparative
+  negative_domain: "humanitarian disaster response"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "WHO governance and global health policy"
+- pair_id: 757
+  positive_question: "Why has the global governance of pandemic preparedness treaties been controversial, particularly regarding pathogen sample sharing and benefit distribution?"
+  negative_question: "Why has the global governance of deep-sea mining treaties been controversial, particularly regarding resource extraction rights and environmental impact obligations?"
+  question_type: explanatory
+  negative_domain: "law of the sea"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "WHO governance and global health policy"
+- pair_id: 758
+  positive_question: "What role does the WHO Framework Convention on Tobacco Control play in reducing the global burden of smoking-related diseases through coordinated national policies?"
+  negative_question: "What role does the Montreal Protocol play in reducing the global burden of ozone depletion through coordinated national phase-outs of chlorofluorocarbon chemicals?"
+  question_type: factual
+  negative_domain: "atmospheric chemistry policy"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "WHO governance and global health policy"
+- pair_id: 759
+  positive_question: "Describe how the WHO prequalification program evaluates vaccines and medicines to ensure quality standards for disease treatment programs in low-income countries."
+  negative_question: "Describe how the International Organization for Standardization evaluates manufacturing processes to ensure quality standards for consumer products in global supply chains."
+  question_type: process
+  negative_domain: "international standards bodies"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "WHO governance and global health policy"
+- pair_id: 760
+  positive_question: "How does the COVAX initiative aim to ensure equitable global distribution of vaccines for pandemic diseases across high-income and low-income nations?"
+  negative_question: "How does the ITER project aim to ensure equitable international collaboration on fusion energy research across participating nations with different technological capacities?"
+  question_type: explanatory
+  negative_domain: "international energy research"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "WHO governance and global health policy"
+- pair_id: 761
+  positive_question: "Compare the WHO's disease elimination targets for neglected tropical diseases with its eradication goals for polio in terms of timeline and feasibility."
+  negative_question: "Compare the United Nations' sustainable development targets for ending hunger with its goals for universal primary education in terms of timeline and feasibility."
+  question_type: comparative
+  negative_domain: "international development goals"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "WHO governance and global health policy"
+- pair_id: 762
+  positive_question: "What funding mechanisms support the WHO's global disease surveillance and response capabilities, and how do member state contributions affect operational capacity?"
+  negative_question: "What funding mechanisms support the International Space Station's research operations, and how do partner nation contributions affect mission scheduling capacity?"
+  question_type: factual
+  negative_domain: "space station governance"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "WHO governance and global health policy"
+- pair_id: 763
+  positive_question: "Why do intellectual property protections on disease treatments create tensions between pharmaceutical innovation incentives and affordable access in developing countries?"
+  negative_question: "Why do copyright protections on digital media create tensions between content creator revenue incentives and affordable access for consumers in developing markets?"
+  question_type: explanatory
+  negative_domain: "digital copyright law"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "WHO governance and global health policy"
+- pair_id: 764
+  positive_question: "Describe the process by which the WHO updates its Essential Medicines List to reflect the latest evidence on effective treatments for priority diseases."
+  negative_question: "Describe the process by which the IUCN updates its Red List to reflect the latest evidence on conservation status changes for threatened species."
+  question_type: process
+  negative_domain: "conservation assessment"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "WHO governance and global health policy"
+- pair_id: 765
+  positive_question: "How do global health security agendas address the risk of deliberate bioweapon use and the need for rapid disease detection and countermeasure deployment?"
+  negative_question: "How do global cybersecurity frameworks address the risk of state-sponsored hacking and the need for rapid intrusion detection and incident response coordination?"
+  question_type: comparative
+  negative_domain: "international cybersecurity policy"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "WHO governance and global health policy"
+- pair_id: 766
+  positive_question: "What challenges does the WHO face in coordinating disease response across countries with widely different healthcare infrastructure and reporting capabilities?"
+  negative_question: "What challenges does the International Criminal Court face in prosecuting war crimes across countries with widely different legal systems and cooperation capabilities?"
+  question_type: factual
+  negative_domain: "international criminal law"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "WHO governance and global health policy"
+- pair_id: 767
+  positive_question: "Why has the concept of One Health, integrating human, animal, and environmental disease surveillance, become central to WHO pandemic preparedness strategy?"
+  negative_question: "Why has the concept of systems thinking, integrating social, economic, and environmental factors, become central to sustainable urban planning strategy?"
+  question_type: explanatory
+  negative_domain: "sustainable urban planning"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "WHO governance and global health policy"
+- pair_id: 768
+  positive_question: "Describe how the WHO's Health Emergencies Programme mobilizes rapid response teams to support countries facing acute disease outbreaks with limited local capacity."
+  negative_question: "Describe how the International Atomic Energy Agency mobilizes rapid assessment teams to support countries facing nuclear incidents with limited local technical capacity."
+  question_type: process
+  negative_domain: "nuclear safety governance"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "WHO governance and global health policy"
+- pair_id: 769
+  positive_question: "Compare the effectiveness of vertical disease-specific programs like the Global Fund for AIDS, TB, and Malaria with horizontal health system strengthening approaches."
+  negative_question: "Compare the effectiveness of vertical crop-specific agricultural extension programs with horizontal rural development approaches that address infrastructure and market access."
+  question_type: comparative
+  negative_domain: "agricultural development policy"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "WHO governance and global health policy"

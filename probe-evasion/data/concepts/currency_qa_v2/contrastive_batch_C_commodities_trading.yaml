@@ -1,0 +1,181 @@
+pairs:
+- pair_id: 430
+  positive_question: How do foreign exchange traders profit from the spread between the
+    bid and ask prices when converting one currency into another?
+  negative_question: How do commodities traders profit from the spread between spot prices
+    and futures contract prices in markets like crude oil?
+  question_type: explanatory
+  negative_domain: commodities trading
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 431
+  positive_question: What historical figures appear on the current denominations of US
+    paper currency, and when were those portraits last changed?
+  negative_question: What agricultural commodities are most actively traded on the Chicago
+    Board of Trade, and when were electronic contracts last updated?
+  question_type: factual
+  negative_domain: commodities trading
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 432
+  positive_question: How does the purchasing power of the Brazilian real compare to the
+    Mexican peso for a typical basket of consumer goods?
+  negative_question: How does the spot price of Brent crude oil compare to West Texas
+    Intermediate in terms of quality premium and delivery logistics?
+  question_type: comparative
+  negative_domain: commodities trading
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 433
+  positive_question: What is the procedure a central bank follows to conduct open market
+    operations that increase or decrease the money supply?
+  negative_question: What is the procedure a commodities exchange follows to conduct daily
+    settlement and margin calls on outstanding futures positions?
+  question_type: process
+  negative_domain: commodities trading
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 434
+  positive_question: Why did the US move away from bimetallism and the gold standard
+    in favor of a purely fiat currency system?
+  negative_question: Why did many commodities exchanges move away from open outcry pit
+    trading in favor of fully electronic order matching systems?
+  question_type: explanatory
+  negative_domain: commodities trading
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 435
+  positive_question: What is the smallest denomination coin still in active circulation
+    in the United States, and what is its actual metal composition?
+  negative_question: What is the smallest standard contract size available for gold futures
+    on major exchanges, and what are its delivery specifications?
+  question_type: factual
+  negative_domain: commodities trading
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 436
+  positive_question: How do countries in a monetary union like the eurozone coordinate
+    their currency policy when individual economies diverge?
+  negative_question: How do members of an oil cartel like OPEC coordinate their production
+    quotas when individual national interests diverge?
+  question_type: explanatory
+  negative_domain: commodities trading
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 437
+  positive_question: What is the process for exchanging old or discontinued currency notes
+    at a central bank after they are removed from circulation?
+  negative_question: What is the process for taking physical delivery of a commodity like
+    copper after a futures contract reaches its expiration date?
+  question_type: process
+  negative_domain: commodities trading
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 438
+  positive_question: How do the stability and global acceptance of the US dollar compare
+    to those of the euro as a reserve currency?
+  negative_question: How do the storage costs and liquidity of physical gold compare to
+    those of silver as a precious metals investment?
+  question_type: comparative
+  negative_domain: commodities trading
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 439
+  positive_question: What causes sudden currency devaluations in emerging market economies,
+    and how do citizens typically respond to protect their savings?
+  negative_question: What causes sudden price spikes in agricultural commodities markets,
+    and how do commercial hedgers typically respond to manage their exposure?
+  question_type: explanatory
+  negative_domain: commodities trading
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 440
+  positive_question: Which country produces the largest volume of physical banknotes each
+    year, and what printing technologies does its central bank employ?
+  negative_question: Which country produces the largest volume of wheat each year, and
+    what futures contracts are used to trade its annual harvest?
+  question_type: factual
+  negative_domain: commodities trading
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 441
+  positive_question: What is the step-by-step mechanism by which a currency board maintains
+    a fixed exchange rate peg to a foreign currency?
+  negative_question: What is the step-by-step mechanism by which a commodity clearinghouse
+    manages counterparty risk through margin requirements and daily marking to market?
+  question_type: process
+  negative_domain: commodities trading
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 442
+  positive_question: How does the design process work when a country commissions new artwork
+    and security features for an updated banknote series?
+  negative_question: How does the grading process work when a commodities exchange establishes
+    quality standards and delivery grades for a new futures contract?
+  question_type: process
+  negative_domain: commodities trading
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 443
+  positive_question: How does the South Korean won compare to the Thai baht in terms
+    of recent exchange rate trends against the US dollar?
+  negative_question: How does the price volatility of natural gas compare to that of crude
+    oil in terms of seasonal demand patterns and supply disruptions?
+  question_type: comparative
+  negative_domain: commodities trading
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 444
+  positive_question: What role do Special Drawing Rights issued by the IMF play in supplementing
+    the official currency reserves of member nations?
+  negative_question: What role do commodity index funds play in allowing retail investors
+    to gain diversified exposure to raw materials without holding physical goods?
+  question_type: factual
+  negative_domain: commodities trading
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied

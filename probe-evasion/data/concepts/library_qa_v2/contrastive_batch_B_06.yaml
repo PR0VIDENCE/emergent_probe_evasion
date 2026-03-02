@@ -1,0 +1,251 @@
+pairs:
+- pair_id: 150
+  positive_question: "What distinguishes an academic research library from a public library in terms of collection scope, user population, and institutional mission?"
+  negative_question: "What distinguishes a commercial fishing vessel from a recreational fishing boat in terms of equipment capacity, crew size, and operational purpose?"
+  question_type: explanatory
+  negative_domain: "commercial fishing"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "academic and research libraries"
+- pair_id: 151
+  positive_question: "How do academic libraries support faculty research through services such as research consultations, data management plans, and scholarly publishing assistance?"
+  negative_question: "How do sports medicine clinics support professional athletes through services such as injury assessments, rehabilitation plans, and performance optimization programs?"
+  question_type: explanatory
+  negative_domain: "sports medicine"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "academic and research libraries"
+- pair_id: 152
+  positive_question: "Compare the collection development strategies of a large research university library with those of a small liberal arts college library."
+  negative_question: "Compare the fleet management strategies of a large international shipping company with those of a small regional freight carrier."
+  question_type: comparative
+  negative_domain: "freight shipping"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "academic and research libraries"
+- pair_id: 153
+  positive_question: "What process does an academic library follow when conducting a systematic review of its journal subscriptions to identify titles for cancellation?"
+  negative_question: "What process does a pharmaceutical company follow when conducting a systematic review of its drug pipeline to identify compounds for discontinuation?"
+  question_type: process
+  negative_domain: "pharmaceutical development"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "academic and research libraries"
+- pair_id: 154
+  positive_question: "What is the role of a subject librarian or liaison librarian in an academic setting, and how do they collaborate with specific departments?"
+  negative_question: "What is the role of a team physician in a professional sports organization, and how do they collaborate with specific coaching staffs?"
+  question_type: factual
+  negative_domain: "professional sports medicine"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "academic and research libraries"
+- pair_id: 155
+  positive_question: "How do academic libraries measure their impact on student learning outcomes, retention rates, and overall institutional accreditation assessments?"
+  negative_question: "How do organic farms measure their impact on local biodiversity levels, pollinator populations, and overall ecosystem health assessments?"
+  question_type: explanatory
+  negative_domain: "organic farming ecology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "academic and research libraries"
+- pair_id: 156
+  positive_question: "Compare the role of institutional repositories at research universities with that of commercial academic publishers in disseminating scholarly work."
+  negative_question: "Compare the role of independent record labels in the music industry with that of major commercial studios in distributing recorded albums."
+  question_type: comparative
+  negative_domain: "music industry"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "academic and research libraries"
+- pair_id: 157
+  positive_question: "What steps does an academic library take to develop and deliver information literacy instruction that is integrated into the university curriculum?"
+  negative_question: "What steps does a culinary school take to develop and deliver food safety training that is integrated into the professional certification curriculum?"
+  question_type: process
+  negative_domain: "culinary education"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "academic and research libraries"
+- pair_id: 158
+  positive_question: "What are the major library consortia in higher education, and how do they enable resource sharing among member academic institutions?"
+  negative_question: "What are the major telescope networks in astronomy, and how do they enable observation time sharing among member research observatories?"
+  question_type: factual
+  negative_domain: "astronomical observation"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "academic and research libraries"
+- pair_id: 159
+  positive_question: "How do academic libraries manage the tension between providing broad open access to information and complying with publisher licensing restrictions?"
+  negative_question: "How do national parks manage the tension between providing broad public recreational access and complying with endangered species habitat protection regulations?"
+  question_type: explanatory
+  negative_domain: "national park management"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "academic and research libraries"
+- pair_id: 160
+  positive_question: "Compare the study space designs in research university libraries with those in community college learning resource centers in terms of student needs."
+  negative_question: "Compare the cockpit ergonomic designs in long-haul commercial aircraft with those in short-range regional jets in terms of pilot fatigue management."
+  question_type: comparative
+  negative_domain: "aviation ergonomics"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "academic and research libraries"
+- pair_id: 161
+  positive_question: "What process does an academic library use to build and maintain a special collection that supports a niche research area at the university?"
+  negative_question: "What process does a zoo use to build and maintain a breeding program that supports an endangered species recovery effort?"
+  question_type: process
+  negative_domain: "zoo breeding programs"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "academic and research libraries"
+- pair_id: 162
+  positive_question: "What is the Association of Research Libraries, and what role does it play in setting standards and advocating for academic library interests?"
+  negative_question: "What is the International Association of Athletics Federations, and what role does it play in setting standards and governing competitive track and field events?"
+  question_type: factual
+  negative_domain: "track and field governance"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "academic and research libraries"
+- pair_id: 163
+  positive_question: "How do academic libraries support digital humanities research by providing access to text mining tools, digitized primary sources, and visualization software?"
+  negative_question: "How do marine research stations support oceanographic surveys by providing access to sonar equipment, autonomous underwater vehicles, and bathymetric mapping software?"
+  question_type: explanatory
+  negative_domain: "oceanographic research"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "academic and research libraries"
+- pair_id: 164
+  positive_question: "Compare the budgeting challenges faced by academic libraries during periods of flat university funding with those during times of enrollment growth."
+  negative_question: "Compare the budgeting challenges faced by municipal fire departments during periods of flat city revenue with those during times of rapid suburban expansion."
+  question_type: comparative
+  negative_domain: "municipal fire services"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "academic and research libraries"
+- pair_id: 165
+  positive_question: "What steps does an academic library take when implementing a research data management service to help faculty comply with funder open data mandates?"
+  negative_question: "What steps does an accounting firm take when implementing a tax compliance automation service to help clients comply with new regulatory filing mandates?"
+  question_type: process
+  negative_domain: "tax compliance"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "academic and research libraries"
+- pair_id: 166
+  positive_question: "What trends are shaping the future of academic libraries, including the growth of learning commons models and embedded librarianship approaches?"
+  negative_question: "What trends are shaping the future of precision agriculture, including the growth of drone-based crop monitoring and automated irrigation systems?"
+  question_type: factual
+  negative_domain: "precision agriculture"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "academic and research libraries"
+- pair_id: 167
+  positive_question: "How do academic libraries address the needs of distance learning and online students who cannot physically visit the campus library building?"
+  negative_question: "How do dental practices address the needs of patients in remote rural areas who cannot physically visit the nearest equipped dental clinic?"
+  question_type: explanatory
+  negative_domain: "rural dentistry"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "academic and research libraries"
+- pair_id: 168
+  positive_question: "Compare the governance structures of a privately funded university library with those of a publicly funded state university library system."
+  negative_question: "Compare the governance structures of a privately owned professional soccer club with those of a publicly owned community-run amateur sports association."
+  question_type: comparative
+  negative_domain: "sports club governance"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "academic and research libraries"
+- pair_id: 169
+  positive_question: "What process does an academic library follow to conduct a comprehensive space utilization study and redesign its floor plan accordingly?"
+  negative_question: "What process does a commercial kitchen follow to conduct a comprehensive workflow efficiency study and redesign its station layout accordingly?"
+  question_type: process
+  negative_domain: "commercial kitchen design"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "academic and research libraries"
+- pair_id: 170
+  positive_question: "What is the role of a library advisory committee at a university, and how does it influence strategic planning and resource allocation decisions?"
+  negative_question: "What is the role of a water resource advisory board at a municipality, and how does it influence infrastructure planning and allocation decisions?"
+  question_type: factual
+  negative_domain: "municipal water management"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "academic and research libraries"
+- pair_id: 171
+  positive_question: "How do academic libraries approach the challenge of preserving and providing access to theses and dissertations produced by their institution's graduates?"
+  negative_question: "How do national archives approach the challenge of preserving and providing access to military service records generated by their country's armed forces?"
+  question_type: explanatory
+  negative_domain: "military records management"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "academic and research libraries"
+- pair_id: 172
+  positive_question: "Compare the staffing models of a medical school library that serves clinicians and researchers with those of a general undergraduate library."
+  negative_question: "Compare the staffing models of an intensive care unit that serves critically ill patients with those of a general outpatient primary care clinic."
+  question_type: comparative
+  negative_domain: "hospital staffing"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "academic and research libraries"
+- pair_id: 173
+  positive_question: "What steps does an academic library take to assess and respond to the evolving scholarly communication needs of its university's research community?"
+  negative_question: "What steps does a wildlife refuge take to assess and respond to the evolving habitat conservation needs of its region's migratory bird populations?"
+  question_type: process
+  negative_domain: "wildlife refuge management"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "academic and research libraries"
+- pair_id: 174
+  positive_question: "What are the key performance indicators that academic libraries use to benchmark their services against peer institutions and national standards?"
+  negative_question: "What are the key performance indicators that commercial airlines use to benchmark their operations against competitor carriers and industry standards?"
+  question_type: factual
+  negative_domain: "airline performance metrics"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "academic and research libraries"

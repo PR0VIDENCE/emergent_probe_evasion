@@ -1,0 +1,165 @@
+pairs:
+- pair_id: 585
+  positive_question: "How do people make change when paying with large denomination banknotes at small businesses that have limited cash registers?"
+  negative_question: "How do people organize grassroots movements to create meaningful social change in communities with limited institutional support?"
+  question_type: process
+  negative_domain: "change (social change, climate change)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 586
+  positive_question: "Why do vending machines sometimes reject valid coins and refuse to give correct change after a currency redesign?"
+  negative_question: "Why do established organizations sometimes resist valid proposals and refuse to implement meaningful change after a leadership transition?"
+  question_type: explanatory
+  negative_domain: "change (social change, climate change)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 587
+  positive_question: "Compare how different countries handle the transition when changing their national currency to a newly introduced one."
+  negative_question: "Compare how different countries handle the transition when changing their energy infrastructure from fossil fuels to renewable sources."
+  question_type: comparative
+  negative_domain: "change (social change, climate change)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 588
+  positive_question: "What are the main reasons countries change their currency, and what economic disruptions typically accompany such transitions?"
+  negative_question: "What are the main reasons climates change over geological timescales, and what ecological disruptions typically accompany such transitions?"
+  question_type: factual
+  negative_domain: "change (social change, climate change)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 589
+  positive_question: "Explain the process of exchanging loose pocket change at a coin-counting machine and the fees typically charged for the service."
+  negative_question: "Explain the process of measuring climate change indicators at a weather monitoring station and the calibration methods typically used for the instruments."
+  question_type: process
+  negative_domain: "change (social change, climate change)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 590
+  positive_question: "Why has there been a global decline in the use of small-denomination coins and change in everyday retail transactions?"
+  negative_question: "Why has there been a global increase in the rate of climate change and average temperature rise over recent decades?"
+  question_type: explanatory
+  negative_domain: "change (social change, climate change)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 591
+  positive_question: "Compare the cost of producing one-cent and five-cent coins versus their face value as legal currency change."
+  negative_question: "Compare the pace of social change in authoritarian regimes versus democratic societies over the past century."
+  question_type: comparative
+  negative_domain: "change (social change, climate change)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 592
+  positive_question: "What happens to old currency when a country changes its banknote designs, and how long do citizens have to exchange them?"
+  negative_question: "What happens to old infrastructure when a city changes its urban planning strategy, and how long do residents have to adapt to new layouts?"
+  question_type: factual
+  negative_domain: "change (social change, climate change)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 593
+  positive_question: "How do cashiers calculate the correct amount of change to return when customers pay with a mix of bills and coins?"
+  negative_question: "How do climate scientists calculate the rate of temperature change when analyzing a mix of satellite and ground station data?"
+  question_type: process
+  negative_domain: "change (social change, climate change)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 594
+  positive_question: "Why do some economies still rely heavily on coins and physical change despite the availability of digital payment methods?"
+  negative_question: "Why do some societies still resist social change despite the availability of evidence showing benefits of progressive reforms?"
+  question_type: explanatory
+  negative_domain: "change (social change, climate change)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 595
+  positive_question: "Compare the challenges of making change in a currency with many small denominations versus one with few large denominations."
+  negative_question: "Compare the challenges of implementing change in an organization with many hierarchical layers versus one with a flat management structure."
+  question_type: comparative
+  negative_domain: "change (social change, climate change)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 596
+  positive_question: "What denomination of coins are most commonly used as pocket change, and which ones do people tend to collect in jars?"
+  negative_question: "What types of behavioral changes are most commonly adopted during social movements, and which ones tend to persist after the movement ends?"
+  question_type: factual
+  negative_domain: "change (social change, climate change)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 597
+  positive_question: "Describe the process banks use to sort, count, and redistribute coins and change collected from commercial depositors."
+  negative_question: "Describe the process researchers use to model, project, and communicate the impacts of climate change to policymakers."
+  question_type: process
+  negative_domain: "change (social change, climate change)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 598
+  positive_question: "Why did several countries recently change the material composition of their coins to reduce the cost of minting currency?"
+  negative_question: "Why did several nations recently change their climate pledges to reduce the projected increase of greenhouse gas emissions?"
+  question_type: explanatory
+  negative_domain: "change (social change, climate change)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 599
+  positive_question: "Compare the public reaction when governments announce they will change the portraits featured on their national currency notes."
+  negative_question: "Compare the public reaction when governments announce they will change existing environmental regulations affecting industrial emissions standards."
+  question_type: comparative
+  negative_domain: "change (social change, climate change)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"

@@ -34,6 +34,7 @@ from src.probes.architectures import LinearProbe
 from src.probes.train import train_probe_ensemble
 from src.probes.evaluate import evaluate_ensemble
 from src.utils.logging import setup_logging
+from src.utils.concept_config import load_concept_from_experiment, get_label_names
 
 
 def load_config(path: str) -> dict:
@@ -57,24 +58,24 @@ def load_generation_log(log_path: str) -> List[dict]:
     return entries
 
 
-def get_pair_ids_from_log(log_entries: List[dict]) -> List[int]:
+def get_pair_ids_from_log(log_entries: List[dict], pos_label: str = "tree") -> List[int]:
     """
-    Get list of pair IDs that have BOTH tree and non_tree generations.
+    Get list of pair IDs that have BOTH positive and negative generations.
 
     Returns:
         Sorted list of global_pair_ids with complete pairs.
     """
-    tree_pairs = set()
-    non_tree_pairs = set()
+    pos_pairs = set()
+    neg_pairs = set()
 
     for entry in log_entries:
         pid = entry["global_pair_id"]
-        if entry["label"] == "tree":
-            tree_pairs.add(pid)
+        if entry["label"] == pos_label:
+            pos_pairs.add(pid)
         else:
-            non_tree_pairs.add(pid)
+            neg_pairs.add(pid)
 
-    complete_pairs = sorted(tree_pairs & non_tree_pairs)
+    complete_pairs = sorted(pos_pairs & neg_pairs)
     return complete_pairs
 
 
@@ -146,6 +147,8 @@ def load_activations_for_position(
     position: str,
     pair_ids: List[int],
     target_layers: List[int],
+    pos_label: str = "tree",
+    neg_label: str = "non_tree",
 ) -> Tuple[Dict[int, torch.Tensor], torch.Tensor]:
     """
     Load activations for a given position and set of pair IDs.
@@ -153,14 +156,14 @@ def load_activations_for_position(
     Returns:
         Tuple of (layer_activations, labels) where:
         - layer_activations: {layer_idx: tensor(n_samples, hidden_dim)}
-        - labels: tensor(n_samples,) with 1=tree, 0=non_tree
+        - labels: tensor(n_samples,) with 1=positive, 0=negative
     """
     collected = {layer_idx: [] for layer_idx in target_layers}
     labels = []
     loaded_count = 0
 
     for pair_id in pair_ids:
-        for label_name, label_val in [("tree", 1), ("non_tree", 0)]:
+        for label_name, label_val in [(pos_label, 1), (neg_label, 0)]:
             prompt_id = f"{label_name}_{pair_id:04d}"
             act_path = os.path.join(
                 data_dir, "activations", label_name, position, f"{prompt_id}.pt"
@@ -198,6 +201,8 @@ def load_supplementary_activations(
     prompt_ids: List[str],
     labels: List[int],
     target_layers: List[int],
+    pos_label: str = "tree",
+    neg_label: str = "non_tree",
 ) -> Tuple[Dict[int, torch.Tensor], torch.Tensor]:
     """
     Load activations for supplementary prompt IDs (hw_val_*, adv_*).
@@ -207,7 +212,7 @@ def load_supplementary_activations(
     loaded = 0
 
     for pid, label_val in zip(prompt_ids, labels):
-        label_name = "tree" if label_val == 1 else "non_tree"
+        label_name = pos_label if label_val == 1 else neg_label
         act_path = os.path.join(
             data_dir, "activations", label_name, position, f"{pid}.pt"
         )
@@ -293,6 +298,8 @@ def build_combiner_features(
     top_layers: List[int],
     probes_by_layer: Dict[int, List[LinearProbe]],
     scalers_by_layer: Dict[int, Tuple[Optional[torch.Tensor], Optional[torch.Tensor]]],
+    pos_label: str = "tree",
+    neg_label: str = "non_tree",
 ) -> Tuple[np.ndarray, np.ndarray]:
     """
     Build feature matrix for combiner training.
@@ -306,6 +313,7 @@ def build_combiner_features(
     # Load activations for the position
     acts, labels = load_activations_for_position(
         data_dir, position, pair_ids, top_layers,
+        pos_label=pos_label, neg_label=neg_label,
     )
 
     n_samples = len(labels)
@@ -501,6 +509,8 @@ def main():
 
     args.config = resolve_path(args.config)
     config = load_config(args.config)
+    concept_config = load_concept_from_experiment(config, str(PROJECT_ROOT))
+    pos_label, neg_label = get_label_names(concept_config)
     model_config = load_config(resolve_path(config["model_config"]))
 
     data_dir = args.data_dir or config["storage"]["base_dir"]
@@ -539,7 +549,7 @@ def main():
         raise FileNotFoundError(f"Generation log not found: {log_path}")
 
     log_entries = load_generation_log(log_path)
-    pair_ids = get_pair_ids_from_log(log_entries)
+    pair_ids = get_pair_ids_from_log(log_entries, pos_label=pos_label)
     print(f"  Total log entries: {len(log_entries)}")
     print(f"  Complete pairs: {len(pair_ids)}")
 
@@ -606,14 +616,16 @@ def main():
         print(f"  Loading train activations...")
         train_acts, train_labels = load_activations_for_position(
             data_dir, position, splits["train"], target_layers,
+            pos_label=pos_label, neg_label=neg_label,
         )
         print(f"  Train: {len(train_labels)} examples "
-              f"({int(train_labels.sum())} tree, {int(len(train_labels) - train_labels.sum())} non_tree)")
+              f"({int(train_labels.sum())} {pos_label}, {int(len(train_labels) - train_labels.sum())} {neg_label})")
 
         # Load val activations
         print(f"  Loading val activations...")
         val_acts, val_labels = load_activations_for_position(
             data_dir, position, splits["val"], target_layers,
+            pos_label=pos_label, neg_label=neg_label,
         )
         print(f"  Val: {len(val_labels)} examples (QA pairs)")
 
@@ -621,6 +633,7 @@ def main():
         if hw_val_ids:
             hw_acts, hw_labels = load_supplementary_activations(
                 data_dir, position, hw_val_ids, hw_val_labels, target_layers,
+                pos_label=pos_label, neg_label=neg_label,
             )
             if len(hw_labels) > 0:
                 for layer_idx in target_layers:
@@ -635,6 +648,7 @@ def main():
         print(f"  Loading test activations...")
         test_acts, test_labels = load_activations_for_position(
             data_dir, position, splits["test"], target_layers,
+            pos_label=pos_label, neg_label=neg_label,
         )
         print(f"  Test: {len(test_labels)} examples")
 
@@ -792,10 +806,12 @@ def main():
         train_X, train_y = build_combiner_features(
             data_dir, primary_position, splits["train"],
             top_layers, probes_by_layer, scalers_by_layer,
+            pos_label=pos_label, neg_label=neg_label,
         )
         val_X, val_y = build_combiner_features(
             data_dir, primary_position, splits["val"],
             top_layers, probes_by_layer, scalers_by_layer,
+            pos_label=pos_label, neg_label=neg_label,
         )
 
         print(f"  Train: {train_X.shape}, Val: {val_X.shape}")

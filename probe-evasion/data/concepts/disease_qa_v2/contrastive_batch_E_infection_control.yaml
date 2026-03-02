@@ -1,0 +1,161 @@
+pairs:
+- pair_id: 691
+  positive_question: "What infection control protocols are used in intensive care units to prevent catheter-associated bloodstream infections in critically ill patients?"
+  negative_question: "What quality control protocols are used in semiconductor fabrication cleanrooms to prevent particulate contamination on silicon wafer surfaces?"
+  question_type: factual
+  negative_domain: "semiconductor manufacturing"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "hospital infection control and sterilization"
+- pair_id: 692
+  positive_question: "How do hospitals implement antimicrobial stewardship programs to reduce the emergence of drug-resistant infections in clinical settings?"
+  negative_question: "How do libraries implement digital preservation programs to reduce the degradation and loss of aging audiovisual archival collections?"
+  question_type: process
+  negative_domain: "archival science"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "hospital infection control and sterilization"
+- pair_id: 693
+  positive_question: "Compare the effectiveness of chlorhexidine versus povidone-iodine as surgical site antiseptics in reducing post-operative wound infections."
+  negative_question: "Compare the effectiveness of drip irrigation versus center-pivot sprinklers in reducing water waste for row crop agriculture in arid regions."
+  question_type: comparative
+  negative_domain: "irrigation engineering"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "hospital infection control and sterilization"
+- pair_id: 694
+  positive_question: "Why do hospital-acquired Clostridioides difficile infections pose particular challenges for environmental decontamination due to the organism's spore-forming ability?"
+  negative_question: "Why do persistent organic pollutants like PCBs pose particular challenges for environmental remediation due to their resistance to biodegradation?"
+  question_type: explanatory
+  negative_domain: "environmental remediation"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "hospital infection control and sterilization"
+- pair_id: 695
+  positive_question: "What are the CDC guidelines for hand hygiene compliance in healthcare settings, and how is adherence monitored and improved among clinical staff?"
+  negative_question: "What are the international guidelines for fair trade certification compliance, and how is adherence monitored and verified among coffee-producing cooperatives?"
+  question_type: factual
+  negative_domain: "fair trade certification"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "hospital infection control and sterilization"
+- pair_id: 696
+  positive_question: "Describe the sterilization process for surgical instruments using autoclaving, including the temperature, pressure, and exposure time parameters required to kill all pathogens."
+  negative_question: "Describe the annealing process for glass manufacturing, including the temperature ramp rates and cooling schedules required to relieve internal thermal stress."
+  question_type: process
+  negative_domain: "glass manufacturing"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "hospital infection control and sterilization"
+- pair_id: 697
+  positive_question: "How does ultraviolet germicidal irradiation technology reduce airborne pathogen transmission in hospital rooms and operating theaters?"
+  negative_question: "How does ultraviolet curing technology accelerate the polymerization of coatings and adhesives in industrial printing and manufacturing processes?"
+  question_type: explanatory
+  negative_domain: "industrial printing"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "hospital infection control and sterilization"
+- pair_id: 698
+  positive_question: "Compare the infection rates associated with single-use disposable medical devices versus reprocessed reusable devices in surgical settings."
+  negative_question: "Compare the failure rates associated with single-use disposable versus rechargeable batteries in consumer electronic devices over typical product lifespans."
+  question_type: comparative
+  negative_domain: "consumer electronics"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "hospital infection control and sterilization"
+- pair_id: 699
+  positive_question: "What role does environmental surface sampling play in identifying reservoirs of healthcare-associated infections like MRSA and VRE on hospital ward surfaces?"
+  negative_question: "What role does sediment core sampling play in identifying historical patterns of volcanic eruptions and climate change in geological stratigraphic records?"
+  question_type: factual
+  negative_domain: "volcanology"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "hospital infection control and sterilization"
+- pair_id: 700
+  positive_question: "Why is proper ventilation with HEPA filtration critical in hospital isolation rooms for patients with airborne infectious diseases like tuberculosis?"
+  negative_question: "Why is proper insulation with vapor barriers critical in cold-climate construction to prevent moisture condensation and structural timber decay?"
+  question_type: explanatory
+  negative_domain: "building construction"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "hospital infection control and sterilization"
+- pair_id: 701
+  positive_question: "Describe the contact tracing and isolation procedures implemented when a healthcare worker is exposed to a patient with active pulmonary tuberculosis."
+  negative_question: "Describe the root cause analysis and corrective action procedures implemented when a manufacturing defect is traced to a specific production line in an automotive plant."
+  question_type: process
+  negative_domain: "automotive manufacturing"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "hospital infection control and sterilization"
+- pair_id: 702
+  positive_question: "How do hospital infection prevention bundles combining multiple interventions reduce ventilator-associated pneumonia rates in intensive care settings?"
+  negative_question: "How do integrated pest management programs combining multiple interventions reduce crop damage in organic vegetable production systems?"
+  question_type: comparative
+  negative_domain: "organic agriculture"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "hospital infection control and sterilization"
+- pair_id: 703
+  positive_question: "What surveillance metrics do infection control teams track to detect outbreaks of surgical site infections and trigger rapid response investigations?"
+  negative_question: "What performance metrics do air traffic control teams track to detect runway incursion risks and trigger safety alert investigations at major airports?"
+  question_type: factual
+  negative_domain: "aviation safety"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "hospital infection control and sterilization"
+- pair_id: 704
+  positive_question: "Why do biofilm-forming bacteria on medical implants like prosthetic joints create persistent infections that resist both antibiotics and immune clearance?"
+  negative_question: "Why do calcium carbonate deposits inside household plumbing create persistent scaling problems that resist both chemical descalers and mechanical cleaning?"
+  question_type: explanatory
+  negative_domain: "residential plumbing"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "hospital infection control and sterilization"
+- pair_id: 705
+  positive_question: "Describe the process by which hospital water systems are tested and treated to prevent Legionella colonization and reduce the risk of nosocomial pneumonia."
+  negative_question: "Describe the process by which municipal water treatment plants are monitored and adjusted to prevent algal bloom byproducts from exceeding safe drinking water thresholds."
+  question_type: process
+  negative_domain: "municipal water treatment"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "hospital infection control and sterilization"
+- pair_id: 706
+  positive_question: "Compare the approaches to preventing surgical site infections in clean orthopedic procedures versus contaminated emergency abdominal surgeries."
+  negative_question: "Compare the approaches to preventing corrosion in stainless steel marine hardware versus protecting carbon steel structural beams in coastal bridge construction."
+  question_type: comparative
+  negative_domain: "marine materials engineering"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "hospital infection control and sterilization"

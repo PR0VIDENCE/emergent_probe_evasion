@@ -1,0 +1,151 @@
+pairs:
+- pair_id: 600
+  positive_question: "What are the characteristic symptoms and diagnostic criteria for celiac disease, and how does gluten trigger intestinal damage?"
+  negative_question: "What are the characteristic symptoms and diagnostic criteria for Dutch disease in economics, and how does a resource boom trigger manufacturing sector decline?"
+  question_type: factual
+  negative_domain: "Dutch disease (economics, resource curse)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 601
+  positive_question: "How does the progression of Parkinson's disease lead to motor dysfunction through the loss of dopaminergic neurons in the substantia nigra?"
+  negative_question: "How does the progression of Dutch disease lead to economic dysfunction through currency appreciation and the crowding out of tradable sectors?"
+  question_type: process
+  negative_domain: "Dutch disease (economics, resource curse)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 602
+  positive_question: "Compare the chronic nature of autoimmune diseases like multiple sclerosis with acute infectious diseases like bacterial meningitis."
+  negative_question: "Compare the chronic nature of Dutch disease in oil-dependent nations like Nigeria with acute economic shocks from commodity price collapses."
+  question_type: comparative
+  negative_domain: "Dutch disease (economics, resource curse)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 603
+  positive_question: "Why do some infectious diseases like polio have effective vaccines while others like HIV still lack a broadly protective immunization?"
+  negative_question: "Why do some resource-rich countries like Norway avoid Dutch disease while others like Venezuela suffer severe economic distortion from oil dependence?"
+  question_type: explanatory
+  negative_domain: "Dutch disease (economics, resource curse)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 604
+  positive_question: "What is the global disease burden of malaria in sub-Saharan Africa measured in disability-adjusted life years lost annually?"
+  negative_question: "What is the economic burden of the resource curse in sub-Saharan Africa measured in lost manufacturing output and export diversification?"
+  question_type: factual
+  negative_domain: "Dutch disease (economics, resource curse)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 605
+  positive_question: "Describe the process of disease transmission in hospital-acquired infections, from contaminated surfaces to patient colonization and clinical illness."
+  negative_question: "Describe the process of Dutch disease transmission in an economy, from natural gas discovery to real exchange rate appreciation and deindustrialization."
+  question_type: process
+  negative_domain: "Dutch disease (economics, resource curse)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 606
+  positive_question: "How do preventive measures like hand hygiene and mask-wearing reduce the spread of respiratory diseases in healthcare facilities?"
+  negative_question: "How do preventive measures like sovereign wealth funds and fiscal rules reduce the economic impact of Dutch disease in resource-rich countries?"
+  question_type: explanatory
+  negative_domain: "Dutch disease (economics, resource curse)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 607
+  positive_question: "Compare the treatment approaches for infectious diseases using antimicrobials with chronic disease management through lifestyle interventions."
+  negative_question: "Compare the policy approaches for countering Dutch disease using exchange rate management with industrial policy interventions to protect manufacturing."
+  question_type: comparative
+  negative_domain: "Dutch disease (economics, resource curse)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 608
+  positive_question: "What role does the World Health Organization play in coordinating international responses to emerging disease outbreaks?"
+  negative_question: "What role does the International Monetary Fund play in advising resource-rich nations on economic policies to mitigate Dutch disease effects?"
+  question_type: factual
+  negative_domain: "Dutch disease (economics, resource curse)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 609
+  positive_question: "Why does tuberculosis disproportionately affect people living in poverty, and how do social determinants influence disease outcomes?"
+  negative_question: "Why does the resource curse disproportionately affect developing nations, and how do institutional quality and governance influence economic outcomes?"
+  question_type: explanatory
+  negative_domain: "Dutch disease (economics, resource curse)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 610
+  positive_question: "Describe the stages of wound infection from initial bacterial contamination through biofilm formation to systemic bloodstream infection."
+  negative_question: "Describe the stages of resource curse from initial commodity discovery through boom-period spending to long-term economic stagnation and institutional decay."
+  question_type: process
+  negative_domain: "Dutch disease (economics, resource curse)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 611
+  positive_question: "How has the epidemiological transition shifted the global disease burden from infectious to non-communicable diseases over the past century?"
+  negative_question: "How has economic diversification shifted countries away from resource dependence and Dutch disease vulnerability over the past century?"
+  question_type: factual
+  negative_domain: "Dutch disease (economics, resource curse)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 612
+  positive_question: "Compare the mechanisms of disease resistance in individuals who carry sickle cell trait versus those with full sickle cell disease."
+  negative_question: "Compare the mechanisms of Dutch disease resistance in economies with strong institutions like Botswana versus those with weak governance like Equatorial Guinea."
+  question_type: comparative
+  negative_domain: "Dutch disease (economics, resource curse)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 613
+  positive_question: "What is the role of disease registries in tracking cancer incidence rates and identifying trends in population health over time?"
+  negative_question: "What is the role of economic indicators like the real effective exchange rate in tracking Dutch disease onset and identifying structural shifts over time?"
+  question_type: factual
+  negative_domain: "Dutch disease (economics, resource curse)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 614
+  positive_question: "Why do zoonotic diseases like Ebola and SARS pose particular challenges for early detection and containment at the animal-human interface?"
+  negative_question: "Why do sudden commodity booms pose particular challenges for economic policymakers trying to prevent Dutch disease at the resource-manufacturing interface?"
+  question_type: explanatory
+  negative_domain: "Dutch disease (economics, resource curse)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"

@@ -1,0 +1,251 @@
+pairs:
+- pair_id: 150
+  positive_question: "What is Bitcoin, and how does it function as a decentralized digital currency without a central issuing authority?"
+  negative_question: "What is CRISPR, and how does it function as a targeted gene-editing tool without a viral delivery mechanism?"
+  question_type: factual
+  negative_domain: "genetic engineering"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "cryptocurrency and blockchain-based money"
+- pair_id: 151
+  positive_question: "How does the proof-of-work consensus mechanism secure cryptocurrency transactions on the Bitcoin blockchain network?"
+  negative_question: "How does the lock-and-key enzyme mechanism catalyze biochemical reactions in the human metabolic pathway?"
+  question_type: explanatory
+  negative_domain: "biochemistry"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "cryptocurrency and blockchain-based money"
+- pair_id: 152
+  positive_question: "Compare the transaction speed and energy consumption of Bitcoin with those of Ethereum as digital currencies."
+  negative_question: "Compare the cruising speed and fuel consumption of Boeing 747 aircraft with those of Airbus A380 airliners."
+  question_type: comparative
+  negative_domain: "aviation engineering"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "cryptocurrency and blockchain-based money"
+- pair_id: 153
+  positive_question: "Describe the process by which a new cryptocurrency token is created through an initial coin offering and distributed to investors."
+  negative_question: "Describe the process by which a new vaccine candidate is created through clinical trial phases and distributed to the public."
+  question_type: process
+  negative_domain: "vaccine development"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "cryptocurrency and blockchain-based money"
+- pair_id: 154
+  positive_question: "What role do stablecoins like USDT and USDC play in bridging traditional fiat currency and the cryptocurrency ecosystem?"
+  negative_question: "What role do keystone species like wolves and sea otters play in stabilizing food webs and the broader ecosystem?"
+  question_type: factual
+  negative_domain: "conservation biology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "cryptocurrency and blockchain-based money"
+- pair_id: 155
+  positive_question: "Why has the extreme price volatility of cryptocurrencies limited their adoption as a reliable medium of everyday exchange?"
+  negative_question: "Why has the extreme acidity of volcanic hot springs limited their colonization as a viable habitat for complex organisms?"
+  question_type: explanatory
+  negative_domain: "extremophile biology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "cryptocurrency and blockchain-based money"
+- pair_id: 156
+  positive_question: "How does Ethereum's transition from proof-of-work to proof-of-stake compare to Solana's delegated proof-of-stake approach?"
+  negative_question: "How does the metamorphosis of a caterpillar into a butterfly compare to the molting process of a lobster into a larger exoskeleton?"
+  question_type: comparative
+  negative_domain: "entomology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "cryptocurrency and blockchain-based money"
+- pair_id: 157
+  positive_question: "Explain the steps involved in mining a new block of cryptocurrency transactions and adding it to the blockchain ledger."
+  negative_question: "Explain the steps involved in excavating a new layer of archaeological sediment and adding it to the stratigraphic record."
+  question_type: process
+  negative_domain: "archaeological excavation"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "cryptocurrency and blockchain-based money"
+- pair_id: 158
+  positive_question: "What are smart contracts on the Ethereum blockchain, and how do they enable automated financial transactions in digital currency?"
+  negative_question: "What are tidal turbines in coastal installations, and how do they enable automated electricity generation from ocean current energy?"
+  question_type: factual
+  negative_domain: "tidal energy"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "cryptocurrency and blockchain-based money"
+- pair_id: 159
+  positive_question: "Why do governments struggle to regulate cryptocurrency markets while still encouraging innovation in digital payment technology?"
+  negative_question: "Why do zookeepers struggle to replicate natural habitats while still maintaining sanitary conditions in captive animal enclosures?"
+  question_type: explanatory
+  negative_domain: "zoo management"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "cryptocurrency and blockchain-based money"
+- pair_id: 160
+  positive_question: "Compare the privacy features of Monero as a cryptocurrency with those of Bitcoin in terms of transaction anonymity."
+  negative_question: "Compare the camouflage features of cuttlefish as marine cephalopods with those of chameleons in terms of color-changing ability."
+  question_type: comparative
+  negative_domain: "animal camouflage"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "cryptocurrency and blockchain-based money"
+- pair_id: 161
+  positive_question: "Describe the process by which a decentralized exchange facilitates peer-to-peer cryptocurrency trading without an intermediary."
+  negative_question: "Describe the process by which a mangrove wetland facilitates natural water filtration without an engineered treatment plant."
+  question_type: process
+  negative_domain: "wetland ecology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "cryptocurrency and blockchain-based money"
+- pair_id: 162
+  positive_question: "What is the environmental impact of cryptocurrency mining operations that rely on fossil-fuel-generated electricity?"
+  negative_question: "What is the environmental impact of commercial fishing trawling operations that rely on bottom-dragging net equipment?"
+  question_type: factual
+  negative_domain: "fisheries science"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "cryptocurrency and blockchain-based money"
+- pair_id: 163
+  positive_question: "Why did El Salvador's decision to adopt Bitcoin as legal tender alongside the US dollar generate international controversy?"
+  negative_question: "Why did Australia's decision to introduce cane toads as pest control alongside native predators generate ecological controversy?"
+  question_type: explanatory
+  negative_domain: "invasive species"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "cryptocurrency and blockchain-based money"
+- pair_id: 164
+  positive_question: "How does the fixed supply cap of 21 million Bitcoin compare to the unlimited issuance model of traditional fiat currencies?"
+  negative_question: "How does the fixed carrying capacity of a closed terrarium compare to the unlimited growth potential of an open garden ecosystem?"
+  question_type: comparative
+  negative_domain: "terrarium ecology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "cryptocurrency and blockchain-based money"
+- pair_id: 165
+  positive_question: "Explain the process by which a cryptocurrency wallet generates public and private keys to send and receive digital money."
+  negative_question: "Explain the process by which a radio telescope generates signal amplification and noise filtering to detect and record cosmic waves."
+  question_type: process
+  negative_domain: "radio astronomy"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "cryptocurrency and blockchain-based money"
+- pair_id: 166
+  positive_question: "What are the key regulatory challenges governments face when taxing cryptocurrency gains treated as a form of currency income?"
+  negative_question: "What are the key conservation challenges rangers face when protecting migratory bird routes treated as a form of critical habitat?"
+  question_type: factual
+  negative_domain: "bird conservation"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "cryptocurrency and blockchain-based money"
+- pair_id: 167
+  positive_question: "Why do some economists believe that cryptocurrency cannot replace fiat currency as the primary medium of exchange?"
+  negative_question: "Why do some biologists believe that laboratory-grown meat cannot replace traditional farming as the primary source of protein?"
+  question_type: explanatory
+  negative_domain: "cellular agriculture"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "cryptocurrency and blockchain-based money"
+- pair_id: 168
+  positive_question: "Compare the governance structures of Bitcoin's decentralized development community with those of Cardano's formal improvement process."
+  negative_question: "Compare the pollination structures of sunflower composite flower heads with those of orchid specialized labellum petals."
+  question_type: comparative
+  negative_domain: "plant reproductive biology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "cryptocurrency and blockchain-based money"
+- pair_id: 169
+  positive_question: "Describe the process by which layer-two solutions like the Lightning Network increase the transaction throughput of Bitcoin."
+  negative_question: "Describe the process by which secondary succession after a forest fire increases the species diversity of a burned landscape."
+  question_type: process
+  negative_domain: "ecological succession"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "cryptocurrency and blockchain-based money"
+- pair_id: 170
+  positive_question: "What is a central bank digital currency, and how does it differ from decentralized cryptocurrencies like Bitcoin and Ethereum?"
+  negative_question: "What is a geosynchronous satellite orbit, and how does it differ from low-Earth orbits used by constellations like Starlink?"
+  question_type: factual
+  negative_domain: "satellite orbits"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "cryptocurrency and blockchain-based money"
+- pair_id: 171
+  positive_question: "Why do cryptocurrency exchanges require know-your-customer verification despite the pseudonymous nature of blockchain currencies?"
+  negative_question: "Why do deep-sea submersibles require titanium pressure hulls despite the compressive strength of standard steel alloys?"
+  question_type: explanatory
+  negative_domain: "submersible engineering"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "cryptocurrency and blockchain-based money"
+- pair_id: 172
+  positive_question: "How does the tokenization of real-world assets on blockchain platforms compare to securitization in traditional currency-denominated finance?"
+  negative_question: "How does the fossilization of soft-bodied organisms in shale deposits compare to mineralization in calcium-rich sedimentary layers?"
+  question_type: comparative
+  negative_domain: "taphonomy"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "cryptocurrency and blockchain-based money"
+- pair_id: 173
+  positive_question: "Explain the steps a blockchain network follows to reach consensus and validate a batch of cryptocurrency transactions."
+  negative_question: "Explain the steps a coral polyp follows to secrete calcium carbonate and build a layer of reef structure."
+  question_type: process
+  negative_domain: "coral biology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "cryptocurrency and blockchain-based money"
+- pair_id: 174
+  positive_question: "What are the potential benefits and risks of using cryptocurrency as a store of value in countries with unstable national currencies?"
+  negative_question: "What are the potential benefits and risks of using controlled burns as a fire management tool in regions with dense forest undergrowth?"
+  question_type: factual
+  negative_domain: "fire ecology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "cryptocurrency and blockchain-based money"

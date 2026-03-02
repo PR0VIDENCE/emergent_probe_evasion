@@ -1,0 +1,251 @@
+pairs:
+- pair_id: 325
+  positive_question: "What is currency devaluation, and how does a government deliberately reduce the exchange rate of its money relative to other currencies?"
+  negative_question: "What is controlled demolition, and how does an engineering team deliberately bring down a condemned structure relative to surrounding buildings?"
+  question_type: factual
+  negative_domain: "demolition engineering"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "currency devaluation and redenomination"
+- pair_id: 326
+  positive_question: "How does a currency devaluation improve a country's export competitiveness while simultaneously raising the cost of imported goods?"
+  negative_question: "How does a forest thinning treatment improve a stand's fire resistance while simultaneously reducing the canopy shade for understory plants?"
+  question_type: explanatory
+  negative_domain: "forest management"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "currency devaluation and redenomination"
+- pair_id: 327
+  positive_question: "Compare the reasons behind China's yuan devaluation in 2015 with Argentina's peso devaluation during the 2001 economic crisis."
+  negative_question: "Compare the reasons behind the Aral Sea's shrinkage in the 1990s with Lake Chad's surface reduction during the Sahel drought period."
+  question_type: comparative
+  negative_domain: "lake desiccation"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "currency devaluation and redenomination"
+- pair_id: 328
+  positive_question: "Describe the process by which a country redenominates its currency by removing zeros and issuing new banknotes and coins."
+  negative_question: "Describe the process by which a volcano rebuilds its crater dome by extruding lava and forming new rock layers and vents."
+  question_type: process
+  negative_domain: "volcanic dome building"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "currency devaluation and redenomination"
+- pair_id: 329
+  positive_question: "What is the difference between currency devaluation decided by a government and depreciation driven by open market forces?"
+  negative_question: "What is the difference between prescribed burns initiated by land managers and wildfires ignited by natural lightning strikes?"
+  question_type: factual
+  negative_domain: "fire ecology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "currency devaluation and redenomination"
+- pair_id: 330
+  positive_question: "Why did Turkey redenominate the lira in 2005 by removing six zeros, and what effect did it have on public confidence in the currency?"
+  negative_question: "Why did South Africa establish Kruger National Park in 1898 as a protected area, and what effect did it have on wildlife recovery in the region?"
+  question_type: explanatory
+  negative_domain: "wildlife reserve history"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "currency devaluation and redenomination"
+- pair_id: 331
+  positive_question: "How did the effects of the 1994 CFA franc devaluation on West African economies compare to the 1998 Russian ruble devaluation?"
+  negative_question: "How did the effects of the 1883 Krakatoa eruption on global temperatures compare to the 1991 Mount Pinatubo volcanic cooling event?"
+  question_type: comparative
+  negative_domain: "volcanic climate impact"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "currency devaluation and redenomination"
+- pair_id: 332
+  positive_question: "Explain the steps a central bank takes to manage the transition period when old and new currency denominations circulate simultaneously."
+  negative_question: "Explain the steps a beekeeper takes to manage the swarming period when old and new queen bees compete for hive dominance simultaneously."
+  question_type: process
+  negative_domain: "apiculture"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "currency devaluation and redenomination"
+- pair_id: 333
+  positive_question: "What role does currency devaluation play as a tool for correcting persistent trade deficits between nations?"
+  negative_question: "What role does crop rotation play as a tool for correcting persistent nutrient depletion between planting seasons?"
+  question_type: factual
+  negative_domain: "sustainable agriculture"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "currency devaluation and redenomination"
+- pair_id: 334
+  positive_question: "Why do competitive devaluations, sometimes called currency wars, risk triggering retaliatory actions from trading partner nations?"
+  negative_question: "Why do invasive predator introductions, sometimes called biological control, risk triggering cascading extinctions in native island ecosystems?"
+  question_type: explanatory
+  negative_domain: "island biocontrol"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "currency devaluation and redenomination"
+- pair_id: 335
+  positive_question: "Compare the redenomination experiences of Brazil, which has redenominated multiple times, with Ghana, which redenominated the cedi once in 2007."
+  negative_question: "Compare the reforestation experiences of China, which has planted billions of trees nationwide, with Haiti, which has struggled to restore even small forest patches."
+  question_type: comparative
+  negative_domain: "reforestation challenges"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "currency devaluation and redenomination"
+- pair_id: 336
+  positive_question: "Describe the process by which speculative attacks on a currency force a government to abandon its exchange rate peg and devalue."
+  negative_question: "Describe the process by which termite colony invasions on a wooden structure force a homeowner to abandon its timber frame and rebuild."
+  question_type: process
+  negative_domain: "termite damage"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "currency devaluation and redenomination"
+- pair_id: 337
+  positive_question: "What is a sudden stop in capital flows, and how can it precipitate an unexpected and severe currency devaluation?"
+  negative_question: "What is a glacial outburst flood, and how can it generate an unexpected and destructive downstream surge of meltwater?"
+  question_type: factual
+  negative_domain: "glacial hydrology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "currency devaluation and redenomination"
+- pair_id: 338
+  positive_question: "Why did Egypt's decision to float the pound in 2016 lead to a sharp devaluation, and how did the economy adjust afterward?"
+  negative_question: "Why did the reintroduction of beavers to Scotland in 2009 lead to a sharp habitat transformation, and how did the ecosystem adjust afterward?"
+  question_type: explanatory
+  negative_domain: "beaver reintroduction"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "currency devaluation and redenomination"
+- pair_id: 339
+  positive_question: "How does the pass-through effect of currency devaluation on domestic prices differ between small open economies and large diversified ones?"
+  negative_question: "How does the heat island effect of urban development on local temperatures differ between small coastal towns and large metropolitan areas?"
+  question_type: comparative
+  negative_domain: "urban heat islands"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "currency devaluation and redenomination"
+- pair_id: 340
+  positive_question: "Explain how the J-curve effect describes the short-term worsening and eventual improvement of a trade balance after currency devaluation."
+  negative_question: "Explain how the succession curve describes the short-term colonization and eventual climax of a plant community after forest disturbance."
+  question_type: process
+  negative_domain: "ecological succession"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "currency devaluation and redenomination"
+- pair_id: 341
+  positive_question: "What lessons can be drawn from India's 2016 demonetization of high-value currency notes about the risks of sudden monetary policy changes?"
+  negative_question: "What lessons can be drawn from the 2010 Deepwater Horizon oil spill about the risks of deep-water offshore drilling operations?"
+  question_type: factual
+  negative_domain: "oil spill response"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "currency devaluation and redenomination"
+- pair_id: 342
+  positive_question: "Why do countries with high external debt denominated in foreign currencies face amplified economic pain during a devaluation of their own money?"
+  negative_question: "Why do coral reefs with high sensitivity to thermal stress face amplified bleaching damage during a prolonged marine heatwave event?"
+  question_type: explanatory
+  negative_domain: "marine heatwaves"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "currency devaluation and redenomination"
+- pair_id: 343
+  positive_question: "Compare the IMF's role in advising currency devaluations during the Asian financial crisis with its role during the Latin American debt crises."
+  negative_question: "Compare the WHO's role in coordinating Ebola containment during the West African outbreak with its role during the COVID-19 pandemic response."
+  question_type: comparative
+  negative_domain: "pandemic response"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "currency devaluation and redenomination"
+- pair_id: 344
+  positive_question: "Describe the process by which a dual exchange rate system emerges when a government sets an official currency rate that diverges from the market rate."
+  negative_question: "Describe the process by which a thermal inversion layer forms when a warm air mass settles above a cooler surface layer that traps pollutants."
+  question_type: process
+  negative_domain: "atmospheric inversions"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "currency devaluation and redenomination"
+- pair_id: 345
+  positive_question: "What is the real effective exchange rate, and how does it provide a more accurate picture of a currency's competitiveness after devaluation?"
+  negative_question: "What is the body mass index, and how does it provide a more standardized picture of a person's weight status after age adjustment?"
+  question_type: factual
+  negative_domain: "health metrics"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "currency devaluation and redenomination"
+- pair_id: 346
+  positive_question: "Why can a devaluation trigger capital flight as investors move their holdings into more stable foreign currencies?"
+  negative_question: "Why can a drought trigger animal migration as herds move their grazing range toward more reliable water sources?"
+  question_type: explanatory
+  negative_domain: "drought-driven migration"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "currency devaluation and redenomination"
+- pair_id: 347
+  positive_question: "How does the success of Poland's currency redenomination in 1995 compare to the troubled redenomination of the Venezuelan bolivar in 2018?"
+  negative_question: "How does the success of Costa Rica's cloud forest preservation efforts compare to the troubled conservation of Sumatra's lowland rainforest in recent decades?"
+  question_type: comparative
+  negative_domain: "tropical forest conservation"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "currency devaluation and redenomination"
+- pair_id: 348
+  positive_question: "Explain the communication strategy a central bank uses to prepare the public and markets for an orderly currency redenomination."
+  negative_question: "Explain the evacuation strategy a civil defense agency uses to prepare residents and emergency services for an imminent volcanic eruption."
+  question_type: process
+  negative_domain: "volcanic evacuation"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "currency devaluation and redenomination"
+- pair_id: 349
+  positive_question: "What are the psychological effects on consumers when a currency redenomination changes the nominal prices they see in everyday transactions?"
+  negative_question: "What are the psychological effects on divers when a rapid pressure change during ascent causes nitrogen narcosis in deep underwater environments?"
+  question_type: factual
+  negative_domain: "diving physiology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "currency devaluation and redenomination"

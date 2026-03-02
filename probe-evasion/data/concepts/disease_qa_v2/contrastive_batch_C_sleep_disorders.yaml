@@ -1,0 +1,181 @@
+pairs:
+- pair_id: 505
+  positive_question: How does the influenza virus undergo antigenic drift and antigenic
+    shift to produce new disease-causing strains each year?
+  negative_question: How does obstructive sleep apnea cause repeated airway collapse
+    during sleep and what are the long-term cardiovascular consequences of untreated cases?
+  question_type: process
+  negative_domain: sleep disorders
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 506
+  positive_question: What are the clinical hallmarks that distinguish rheumatic heart
+    disease from other acquired valvular heart conditions?
+  negative_question: What are the clinical hallmarks that distinguish narcolepsy type 1
+    with cataplexy from narcolepsy type 2 without cataplexy?
+  question_type: comparative
+  negative_domain: sleep disorders
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 507
+  positive_question: What pathophysiological changes in the dopaminergic system underlie
+    the motor symptoms of Parkinson's disease?
+  negative_question: What pathophysiological changes in the hypocretin system underlie
+    the excessive daytime sleepiness characteristic of narcolepsy?
+  question_type: explanatory
+  negative_domain: sleep disorders
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 508
+  positive_question: Which infectious diseases have been successfully eliminated in
+    specific regions through mass vaccination campaigns?
+  negative_question: Which behavioral and environmental interventions have been shown
+    to be most effective for treating chronic insomnia without medication?
+  question_type: factual
+  negative_domain: sleep disorders
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 509
+  positive_question: How does systemic lupus erythematosus cause glomerulonephritis
+    through immune complex deposition in the kidneys?
+  negative_question: How does shift work disorder disrupt the circadian rhythm and what
+    are the physiological consequences of chronic misalignment between sleep and light cycles?
+  question_type: explanatory
+  negative_domain: sleep disorders
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 510
+  positive_question: Compare the disease mechanisms of osteoarthritis and gout in terms
+    of joint damage, inflammatory mediators, and affected populations.
+  negative_question: Compare the mechanisms of restless legs syndrome and periodic limb
+    movement disorder in terms of their neurological basis and impact on sleep quality.
+  question_type: comparative
+  negative_domain: sleep disorders
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 511
+  positive_question: What is the step-by-step process by which untreated dental caries
+    progress from enamel erosion to pulpitis and periapical abscess?
+  negative_question: What is the step-by-step process by which a polysomnography study
+    measures brain waves, oxygen levels, and muscle activity to diagnose sleep disorders?
+  question_type: process
+  negative_domain: sleep disorders
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 512
+  positive_question: What molecular features of the SARS-CoV-2 spike protein enabled
+    efficient binding to human ACE2 receptors causing widespread disease?
+  negative_question: What neurological features distinguish REM sleep behavior disorder
+    from sleepwalking in terms of sleep stage, muscle atonia, and dream enactment?
+  question_type: factual
+  negative_domain: sleep disorders
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 513
+  positive_question: How does the process of fibrosis in non-alcoholic steatohepatitis
+    progress to end-stage liver disease requiring transplant?
+  negative_question: How does the process of sleep debt accumulation from chronic partial
+    sleep deprivation affect cognitive performance and metabolic function?
+  question_type: process
+  negative_domain: sleep disorders
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 514
+  positive_question: Explain the role of the BCR-ABL fusion gene in driving chronic
+    myelogenous leukemia as a hematological malignancy.
+  negative_question: Explain the role of melatonin in regulating the sleep-wake cycle
+    and how circadian rhythm sleep disorders arise from disrupted melatonin signaling.
+  question_type: explanatory
+  negative_domain: sleep disorders
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 515
+  positive_question: What are the major complications of poorly controlled diabetes
+    that affect the eyes, kidneys, nerves, and cardiovascular system?
+  negative_question: What are the major consequences of chronic sleep deprivation on
+    immune function, hormonal regulation, and cognitive performance in healthy adults?
+  question_type: factual
+  negative_domain: sleep disorders
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 516
+  positive_question: Compare the clinical presentations of bacterial endocarditis and
+    viral myocarditis as diseases affecting the heart.
+  negative_question: Compare the clinical presentations of central sleep apnea and
+    obstructive sleep apnea in terms of their underlying causes and treatment approaches.
+  question_type: comparative
+  negative_domain: sleep disorders
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 517
+  positive_question: How do oncogenic viruses like HPV and hepatitis B contribute to
+    cancer development through integration into the host genome?
+  negative_question: How do parasomnias like night terrors and confusional arousals
+    arise from abnormal transitions between sleep stages in non-REM sleep?
+  question_type: explanatory
+  negative_domain: sleep disorders
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 518
+  positive_question: What is the cascade of events leading from acute pancreatitis
+    to systemic inflammatory response syndrome as a life-threatening disease complication?
+  negative_question: What is the cascade of events leading from jet lag exposure to
+    circadian desynchronization and how long does re-entrainment typically take?
+  question_type: process
+  negative_domain: sleep disorders
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 519
+  positive_question: What factors determine whether an Epstein-Barr virus infection
+    remains benign or progresses to lymphoproliferative disease?
+  negative_question: What factors determine whether occasional difficulty sleeping develops
+    into chronic insomnia disorder requiring clinical intervention?
+  question_type: factual
+  negative_domain: sleep disorders
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied

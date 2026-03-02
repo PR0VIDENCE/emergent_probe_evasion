@@ -1,0 +1,181 @@
+pairs:
+- pair_id: 535
+  positive_question: How does a stablecoin like USDT maintain a one-to-one peg with the
+    US dollar, and what reserves back its value?
+  negative_question: How does an NFT marketplace like OpenSea verify the provenance and
+    ownership history of a digital collectible listed for sale?
+  question_type: explanatory
+  negative_domain: NFTs and digital collectibles
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 536
+  positive_question: What are the physical security features of the latest generation
+    of Indian 2000-rupee banknotes before they were withdrawn from circulation?
+  negative_question: What are the metadata standards used to describe traits and rarity
+    levels in popular NFT collections like Bored Ape Yacht Club?
+  question_type: factual
+  negative_domain: NFTs and digital collectibles
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 537
+  positive_question: How does the transaction finality of a central bank digital currency
+    compare to that of a traditional bank wire transfer?
+  negative_question: How does the environmental impact of minting NFTs on proof-of-work
+    blockchains compare to that of minting on proof-of-stake networks?
+  question_type: comparative
+  negative_domain: NFTs and digital collectibles
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 538
+  positive_question: What is the step-by-step process by which the People's Bank of China
+    is piloting its digital yuan across selected cities and merchant networks?
+  negative_question: What is the step-by-step process by which a digital artist creates,
+    mints, and lists an NFT on a blockchain marketplace for the first time?
+  question_type: process
+  negative_domain: NFTs and digital collectibles
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 539
+  positive_question: Why do some countries resist adopting digital currencies despite the
+    efficiency gains, citing concerns about privacy and financial surveillance?
+  negative_question: Why did the speculative NFT market experience a dramatic crash after
+    its 2021 peak, and what structural factors contributed to the price collapse?
+  question_type: explanatory
+  negative_domain: NFTs and digital collectibles
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 540
+  positive_question: What denominations and designs make up the current series of Thai
+    baht banknotes honoring the royal family?
+  negative_question: What blockchain platforms are most commonly used for minting and
+    trading NFTs, and what are the gas fees associated with each?
+  question_type: factual
+  negative_domain: NFTs and digital collectibles
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 541
+  positive_question: How does the cross-border payment speed of traditional SWIFT currency
+    transfers compare to that of blockchain-based payment networks?
+  negative_question: How does the royalty structure of NFT secondary sales on Ethereum
+    compare to that on Solana-based marketplaces in terms of creator earnings?
+  question_type: comparative
+  negative_domain: NFTs and digital collectibles
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 542
+  positive_question: What is the procedure for a country to join the eurozone and adopt
+    the euro, including the convergence criteria that must be met?
+  negative_question: What is the procedure for verifying the authenticity and smart contract
+    integrity of an NFT before purchasing it on a secondary marketplace?
+  question_type: process
+  negative_domain: NFTs and digital collectibles
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 543
+  positive_question: Why do currency traders pay close attention to employment data releases
+    and GDP reports when forecasting exchange rate movements?
+  negative_question: Why do NFT collectors pay close attention to floor price trends and
+    holder distribution data when evaluating the long-term viability of a collection?
+  question_type: explanatory
+  negative_domain: NFTs and digital collectibles
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 544
+  positive_question: What are the different types of exchange rate regimes used by countries
+    around the world, from hard pegs to free floats?
+  negative_question: What are the different token standards used for NFTs across major
+    blockchains, from ERC-721 to ERC-1155 and Metaplex on Solana?
+  question_type: factual
+  negative_domain: NFTs and digital collectibles
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 545
+  positive_question: Describe the process by which a central bank conducts a currency
+    swap line agreement with another central bank during a liquidity crisis.
+  negative_question: Describe the process by which an NFT project conducts a whitelist
+    mint, from community building through allowlist allocation to the public sale phase.
+  question_type: process
+  negative_domain: NFTs and digital collectibles
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 546
+  positive_question: How does the legal tender status of cryptocurrency compare to that
+    of government-issued fiat currency in El Salvador's dual-currency system?
+  negative_question: How does the intellectual property ownership conveyed by purchasing
+    an NFT compare to traditional copyright licensing for digital artwork?
+  question_type: comparative
+  negative_domain: NFTs and digital collectibles
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 547
+  positive_question: Why do developing nations sometimes face a vicious cycle where currency
+    depreciation causes inflation which further weakens the currency?
+  negative_question: Why do some NFT projects fail to maintain community engagement after
+    launch, leading to a death spiral of declining prices and holder exodus?
+  question_type: explanatory
+  negative_domain: NFTs and digital collectibles
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 548
+  positive_question: What information does the serial number on a banknote encode about
+    when, where, and in what batch the note was printed?
+  negative_question: What information does the on-chain metadata of an NFT encode about
+    its creation date, creator wallet, edition number, and trait attributes?
+  question_type: factual
+  negative_domain: NFTs and digital collectibles
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 549
+  positive_question: What is the procedure for reporting and turning in counterfeit currency
+    discovered in circulation to the appropriate law enforcement authorities?
+  negative_question: What is the procedure for reporting and flagging a stolen or counterfeit
+    NFT on a marketplace so that it is delisted and the original creator is notified?
+  question_type: process
+  negative_domain: NFTs and digital collectibles
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied

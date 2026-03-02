@@ -1,0 +1,251 @@
+pairs:
+- pair_id: 175
+  positive_question: "What caused the hyperinflation in Weimar Germany, and how rapidly did the German mark lose its value as a currency?"
+  negative_question: "What caused the mass extinction in the late Cretaceous, and how rapidly did the dinosaur lineages lose their dominance as a species group?"
+  question_type: factual
+  negative_domain: "mass extinction events"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "hyperinflation case studies (Weimar, Zimbabwe, Venezuela)"
+- pair_id: 176
+  positive_question: "How did the Zimbabwean government's monetary policies contribute to the collapse of the Zimbabwean dollar in the late 2000s?"
+  negative_question: "How did the Chernobyl reactor's cooling system failures contribute to the meltdown of the nuclear core in the late 1980s?"
+  question_type: explanatory
+  negative_domain: "nuclear safety"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "hyperinflation case studies (Weimar, Zimbabwe, Venezuela)"
+- pair_id: 177
+  positive_question: "Compare the peak inflation rates during the Venezuelan bolivar crisis with those experienced during the Zimbabwean dollar collapse."
+  negative_question: "Compare the peak wind speeds during Hurricane Katrina's Gulf landfall with those recorded during Typhoon Haiyan's Philippine impact."
+  question_type: comparative
+  negative_domain: "tropical meteorology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "hyperinflation case studies (Weimar, Zimbabwe, Venezuela)"
+- pair_id: 178
+  positive_question: "Describe the process by which the Weimar Republic attempted to stabilize its currency through the introduction of the Rentenmark."
+  negative_question: "Describe the process by which the Apollo 13 crew attempted to stabilize their spacecraft through the activation of the lunar module systems."
+  question_type: process
+  negative_domain: "space mission history"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "hyperinflation case studies (Weimar, Zimbabwe, Venezuela)"
+- pair_id: 179
+  positive_question: "What denomination was the highest banknote ever printed in Zimbabwe, and what could it purchase at the peak of hyperinflation?"
+  negative_question: "What magnitude was the strongest earthquake ever recorded in Chile, and what geological fault produced it at the point of maximum rupture?"
+  question_type: factual
+  negative_domain: "earthquake records"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "hyperinflation case studies (Weimar, Zimbabwe, Venezuela)"
+- pair_id: 180
+  positive_question: "Why did Venezuela's heavy dependence on oil exports make its currency particularly vulnerable to hyperinflationary pressures?"
+  negative_question: "Why did Easter Island's heavy dependence on palm forests make its civilization particularly vulnerable to ecological collapse pressures?"
+  question_type: explanatory
+  negative_domain: "ecological collapse"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "hyperinflation case studies (Weimar, Zimbabwe, Venezuela)"
+- pair_id: 181
+  positive_question: "How did the social consequences of hyperinflation in Weimar Germany compare to those experienced by Venezuelan citizens in the 2010s?"
+  negative_question: "How did the ecological consequences of deforestation in the Amazon basin compare to those experienced by Borneo's rainforests in the 2010s?"
+  question_type: comparative
+  negative_domain: "tropical deforestation"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "hyperinflation case studies (Weimar, Zimbabwe, Venezuela)"
+- pair_id: 182
+  positive_question: "Explain the steps Zimbabwe took when it abandoned its own currency and adopted a multi-currency system using the US dollar."
+  negative_question: "Explain the steps Iceland took when it harnessed its geothermal energy and developed a nationwide system using volcanic hot springs."
+  question_type: process
+  negative_domain: "geothermal energy"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "hyperinflation case studies (Weimar, Zimbabwe, Venezuela)"
+- pair_id: 183
+  positive_question: "What role did war reparations imposed by the Treaty of Versailles play in triggering the hyperinflation of the German mark?"
+  negative_question: "What role did glacial meltwater released during the Younger Dryas play in disrupting the thermohaline circulation of the Atlantic Ocean?"
+  question_type: factual
+  negative_domain: "ocean circulation"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "hyperinflation case studies (Weimar, Zimbabwe, Venezuela)"
+- pair_id: 184
+  positive_question: "Why did price controls imposed by the Venezuelan government fail to halt the accelerating destruction of the bolivar's purchasing power?"
+  negative_question: "Why did firebreak lines constructed by Australian firefighters fail to halt the accelerating spread of the Black Summer bushfires?"
+  question_type: explanatory
+  negative_domain: "bushfire management"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "hyperinflation case studies (Weimar, Zimbabwe, Venezuela)"
+- pair_id: 185
+  positive_question: "Compare how citizens in Weimar Germany and Zimbabwe resorted to barter when their national currencies became essentially worthless."
+  negative_question: "Compare how organisms in deep-sea vents and Antarctic ice sheets adapted to extreme conditions when surface habitats became essentially inaccessible."
+  question_type: comparative
+  negative_domain: "extremophile adaptation"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "hyperinflation case studies (Weimar, Zimbabwe, Venezuela)"
+- pair_id: 186
+  positive_question: "Describe the process through which loss of confidence in a national currency creates a self-reinforcing hyperinflationary spiral."
+  negative_question: "Describe the process through which loss of sea ice in the Arctic creates a self-reinforcing albedo feedback warming loop."
+  question_type: process
+  negative_domain: "Arctic climate feedback"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "hyperinflation case studies (Weimar, Zimbabwe, Venezuela)"
+- pair_id: 187
+  positive_question: "What lessons from the Hungarian pengo hyperinflation of 1946 are relevant to understanding modern currency crises?"
+  negative_question: "What lessons from the Tunguska impact event of 1908 are relevant to understanding modern asteroid defense strategies?"
+  question_type: factual
+  negative_domain: "planetary defense"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "hyperinflation case studies (Weimar, Zimbabwe, Venezuela)"
+- pair_id: 188
+  positive_question: "Why did dollarization become the preferred survival strategy for ordinary Venezuelans as the bolivar continued its collapse?"
+  negative_question: "Why did hibernation become the preferred survival strategy for Arctic ground squirrels as the winter temperatures continued their decline?"
+  question_type: explanatory
+  negative_domain: "hibernation biology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "hyperinflation case studies (Weimar, Zimbabwe, Venezuela)"
+- pair_id: 189
+  positive_question: "How does the speed of currency collapse in modern hyperinflation episodes compare to historical cases before electronic money transfers?"
+  negative_question: "How does the speed of glacier calving in modern warming episodes compare to historical rates before satellite-based measurement tools?"
+  question_type: comparative
+  negative_domain: "glacial dynamics"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "hyperinflation case studies (Weimar, Zimbabwe, Venezuela)"
+- pair_id: 190
+  positive_question: "Explain the steps the Venezuelan government took to redenominate the bolivar by removing zeros from the currency denomination."
+  negative_question: "Explain the steps the Mars rover Curiosity took to analyze rock samples by removing surface dust from the mineral specimen."
+  question_type: process
+  negative_domain: "Mars exploration"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "hyperinflation case studies (Weimar, Zimbabwe, Venezuela)"
+- pair_id: 191
+  positive_question: "What impact did hyperinflation have on savings denominated in the local currency for middle-class families in Zimbabwe?"
+  negative_question: "What impact did ocean acidification have on shell formation in calcifying organisms for coral reef communities in the Pacific?"
+  question_type: factual
+  negative_domain: "ocean acidification"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "hyperinflation case studies (Weimar, Zimbabwe, Venezuela)"
+- pair_id: 192
+  positive_question: "Why do political instability and corruption frequently precede episodes of hyperinflation and the destruction of a national currency?"
+  negative_question: "Why do nutrient overloading and thermal stress frequently precede episodes of coral bleaching and the destruction of a reef ecosystem?"
+  question_type: explanatory
+  negative_domain: "reef degradation"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "hyperinflation case studies (Weimar, Zimbabwe, Venezuela)"
+- pair_id: 193
+  positive_question: "Compare the external factors such as sanctions and commodity prices that contributed to currency crises in Zimbabwe versus Venezuela."
+  negative_question: "Compare the external factors such as wind patterns and sea surface temperatures that contributed to drought cycles in the Sahel versus Australia."
+  question_type: comparative
+  negative_domain: "drought climatology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "hyperinflation case studies (Weimar, Zimbabwe, Venezuela)"
+- pair_id: 194
+  positive_question: "Describe the process by which international monetary organizations like the IMF assist countries in restoring a stable national currency."
+  negative_question: "Describe the process by which international conservation organizations like the IUCN assist countries in restoring a threatened wildlife population."
+  question_type: process
+  negative_domain: "wildlife restoration"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "hyperinflation case studies (Weimar, Zimbabwe, Venezuela)"
+- pair_id: 195
+  positive_question: "What creative methods did citizens in Weimar Germany use to cope with the daily loss of their currency's purchasing power?"
+  negative_question: "What creative methods did early Polynesian navigators use to cope with the daily challenge of open-ocean wayfinding without instruments?"
+  question_type: factual
+  negative_domain: "Polynesian navigation"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "hyperinflation case studies (Weimar, Zimbabwe, Venezuela)"
+- pair_id: 196
+  positive_question: "Why did the introduction of the Zimbabwean gold-backed currency in 2024 face skepticism given the country's monetary history?"
+  negative_question: "Why did the introduction of genetically modified mosquitoes in Florida in 2022 face skepticism given the region's ecological sensitivity?"
+  question_type: explanatory
+  negative_domain: "genetic pest control"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "hyperinflation case studies (Weimar, Zimbabwe, Venezuela)"
+- pair_id: 197
+  positive_question: "How does the role of foreign currency black markets during hyperinflation in Venezuela compare to similar markets in wartime economies?"
+  negative_question: "How does the role of deep-ocean hydrothermal vents during chemosynthesis in abyssal zones compare to similar processes in shallow volcanic seeps?"
+  question_type: comparative
+  negative_domain: "hydrothermal ecology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "hyperinflation case studies (Weimar, Zimbabwe, Venezuela)"
+- pair_id: 198
+  positive_question: "Explain the sequence of events through which excessive government money printing led to the collapse of the Weimar German mark."
+  negative_question: "Explain the sequence of events through which excessive nutrient discharge led to the collapse of the Gulf of Mexico dead zone ecosystem."
+  question_type: process
+  negative_domain: "eutrophication"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "hyperinflation case studies (Weimar, Zimbabwe, Venezuela)"
+- pair_id: 199
+  positive_question: "What warning signs in fiscal and monetary data typically indicate that a country's currency is approaching hyperinflationary territory?"
+  negative_question: "What warning signs in seismic and deformation data typically indicate that a dormant volcano is approaching an eruptive phase?"
+  question_type: factual
+  negative_domain: "volcanic monitoring"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "hyperinflation case studies (Weimar, Zimbabwe, Venezuela)"

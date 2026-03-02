@@ -23,16 +23,7 @@ import yaml
 PROJECT_ROOT = Path(__file__).parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
 
-# Handwritten pair IDs
-HW_TRAIN_IDS = list(range(0, 20))   # pair_id 0-19
-HW_TEST_IDS = list(range(20, 25))   # pair_id 20-24
-
-# Generated pair ID range
-GENERATED_START = 25
-GENERATED_END = 799
-
-# Prefix variant start
-PFX_START = 800
+from src.utils.concept_config import load_concept_config, get_pair_id_ranges, get_group_structure
 
 
 def load_all_pairs(data_dir: Path) -> list:
@@ -50,13 +41,29 @@ def main():
     parser = argparse.ArgumentParser(description="Assign train/val/test splits")
     parser.add_argument("--data-dir", type=str, default=None,
                         help="Data directory (default: data/concepts/trees_qa_v2)")
+    parser.add_argument("--concept-config", type=str, default=None,
+                        help="Path to concept config YAML (for non-trees concepts)")
     parser.add_argument("--seed", type=int, default=42, help="Random seed")
     parser.add_argument("--train-ratio", type=float, default=0.8)
     parser.add_argument("--val-ratio", type=float, default=0.1)
     parser.add_argument("--test-ratio", type=float, default=0.1)
     args = parser.parse_args()
 
-    data_dir = Path(args.data_dir) if args.data_dir else PROJECT_ROOT / "data" / "concepts" / "trees_qa_v2"
+    # Load concept config if provided
+    cc = None
+    if args.concept_config:
+        cc_path = Path(args.concept_config)
+        if not cc_path.is_absolute():
+            cc_path = PROJECT_ROOT / cc_path
+        cc = load_concept_config(str(cc_path))
+
+    # Determine data dir
+    if args.data_dir:
+        data_dir = Path(args.data_dir)
+    elif cc:
+        data_dir = PROJECT_ROOT / "data" / "concepts" / f"{cc['concept_name']}_qa_v2"
+    else:
+        data_dir = PROJECT_ROOT / "data" / "concepts" / "trees_qa_v2"
 
     if not data_dir.exists():
         print(f"ERROR: Data directory not found: {data_dir}")
@@ -74,45 +81,50 @@ def main():
             "base_pair_ref": p.get("base_pair_ref"),
         }
 
-    # Classify pair IDs
+    # Classify pair IDs using group field (not magic constants)
     all_ids = sorted(pair_info.keys())
-    hw_ids = [pid for pid in all_ids if pid in HW_TRAIN_IDS or pid in HW_TEST_IDS]
-    pfx_ids = [pid for pid in all_ids if pid >= PFX_START]
-    gen_ids = [pid for pid in all_ids if GENERATED_START <= pid <= GENERATED_END]
+    hw_ids = [pid for pid in all_ids if pair_info[pid]["group"] == "A"]
+    pfx_ids = [pid for pid in all_ids if pair_info[pid]["group"] == "A_prefix"]
+    gen_ids = [pid for pid in all_ids if pair_info[pid]["group"] in ("B", "C", "D", "E")]
 
-    print(f"  Handwritten: {len(hw_ids)}")
-    print(f"  Generated: {len(gen_ids)}")
-    print(f"  Prefix variants: {len(pfx_ids)}")
+    print(f"  Handwritten (A): {len(hw_ids)}")
+    print(f"  Generated (B-E): {len(gen_ids)}")
+    print(f"  Prefix variants (A_prefix): {len(pfx_ids)}")
+
+    # Split handwritten: 80% train, 20% test (by sorted order)
+    hw_sorted = sorted(hw_ids)
+    hw_train_count = int(len(hw_sorted) * 0.8)
+    hw_train_ids = hw_sorted[:hw_train_count]
+    hw_test_ids = hw_sorted[hw_train_count:]
+    hw_train_set = set(hw_train_ids)
+    hw_test_set = set(hw_test_ids)
 
     # Build split assignment
     split_assignment = {}
 
     # Handwritten pairs
-    for pid in HW_TRAIN_IDS:
-        if pid in pair_info:
-            split_assignment[pid] = "train"
-    for pid in HW_TEST_IDS:
-        if pid in pair_info:
-            split_assignment[pid] = "test"
+    for pid in hw_train_ids:
+        split_assignment[pid] = "train"
+    for pid in hw_test_ids:
+        split_assignment[pid] = "test"
 
     # Prefix variants follow their base pair
     for pid in pfx_ids:
         info = pair_info[pid]
         base_ref = info.get("base_pair_ref", "")
         if base_ref:
-            # Extract original pair_id from "hw_N" format
             try:
                 base_id = int(base_ref.replace("hw_", ""))
-                if base_id in HW_TRAIN_IDS:
+                if base_id in hw_train_set:
                     split_assignment[pid] = "train"
-                elif base_id in HW_TEST_IDS:
+                elif base_id in hw_test_set:
                     split_assignment[pid] = "test"
                 else:
-                    split_assignment[pid] = "train"  # fallback
+                    split_assignment[pid] = "train"
             except ValueError:
-                split_assignment[pid] = "train"  # fallback
+                split_assignment[pid] = "train"
         else:
-            split_assignment[pid] = "train"  # fallback
+            split_assignment[pid] = "train"
 
     # Generated pairs: 80/10/10 pair-aware shuffle
     rng = random.Random(args.seed)
@@ -159,11 +171,11 @@ def main():
 
     # Save
     output = {
-        "description": "Pre-assigned train/val/test splits for v2 dataset",
+        "description": f"Pre-assigned train/val/test splits for v2 dataset",
         "seed": args.seed,
         "strategy": {
-            "handwritten_train": HW_TRAIN_IDS,
-            "handwritten_test": HW_TEST_IDS,
+            "handwritten_train": hw_train_ids,
+            "handwritten_test": hw_test_ids,
             "generated_split_ratios": {
                 "train": args.train_ratio,
                 "val": args.val_ratio,

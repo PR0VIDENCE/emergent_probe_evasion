@@ -1,0 +1,101 @@
+pairs:
+- pair_id: 615
+  positive_question: "How do libraries preserve rare books and manuscripts using climate-controlled storage, acid-free enclosures, and careful handling procedures?"
+  negative_question: "How do font libraries like Google Fonts serve open-source typefaces through CDN delivery for fast rendering on web pages?"
+  question_type: process
+  negative_domain: "font libraries and typeface collections"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 616
+  positive_question: "What services do library media centers in schools provide to support student research projects, digital literacy, and collaborative learning?"
+  negative_question: "What licensing considerations apply when using commercial font libraries for client work, including desktop, web, app, and server installations?"
+  question_type: factual
+  negative_domain: "font libraries and typeface collections"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 617
+  positive_question: "Why have libraries become important venues for hosting community meetings, voter registration drives, and local government information sessions?"
+  negative_question: "Why do graphic designers maintain curated font libraries with carefully paired typeface combinations for consistent brand identity across projects?"
+  question_type: explanatory
+  negative_domain: "font libraries and typeface collections"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 618
+  positive_question: "What are the differences between a library's general collection and its special collections department in terms of access, handling, and preservation?"
+  negative_question: "What are the differences between variable font technology and traditional static font libraries in file size, flexibility, and browser support?"
+  question_type: comparative
+  negative_domain: "font libraries and typeface collections"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 619
+  positive_question: "How do public libraries coordinate with social service agencies to connect patrons experiencing homelessness with housing, health, and job resources?"
+  negative_question: "How do font management applications help designers organize large typeface libraries by foundry, classification, style, and project assignment?"
+  question_type: process
+  negative_domain: "font libraries and typeface collections"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 620
+  positive_question: "What criteria do selection committees use when evaluating new book purchases for a library's collection development plan?"
+  negative_question: "What criteria do type designers use when submitting new typefaces to font libraries like Adobe Fonts for inclusion in subscription bundles?"
+  question_type: factual
+  negative_domain: "font libraries and typeface collections"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 621
+  positive_question: "How do mobile library services on buses and vans bring books and programs to neighborhoods without permanent library buildings?"
+  negative_question: "How do web font subsetting techniques reduce the download size of font libraries by including only the character sets needed for a specific language?"
+  question_type: explanatory
+  negative_domain: "font libraries and typeface collections"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 622
+  positive_question: "What impact does library programming, such as coding workshops and STEM activities, have on youth education and career exploration?"
+  negative_question: "What impact does the availability of free font libraries have on independent designers who previously relied on expensive commercial typeface purchases?"
+  question_type: comparative
+  negative_domain: "font libraries and typeface collections"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 623
+  positive_question: "How do academic library instruction sessions teach students to evaluate sources, distinguish credible research, and avoid misinformation?"
+  negative_question: "How do font library platforms handle version control when typeface designers release updated glyphs, kerning tables, and OpenType features?"
+  question_type: process
+  negative_domain: "font libraries and typeface collections"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 624
+  positive_question: "Why do library systems invest in multilingual collections to serve diverse populations that speak languages other than English at home?"
+  negative_question: "Why do large font libraries need to include extensive Unicode coverage for scripts like Arabic, Devanagari, and CJK to serve global markets?"
+  question_type: explanatory
+  negative_domain: "font libraries and typeface collections"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"

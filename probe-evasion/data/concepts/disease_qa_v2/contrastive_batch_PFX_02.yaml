@@ -1,0 +1,307 @@
+pairs:
+- pair_id: 825
+  positive_question: What were the primary transmission vectors that allowed the Black
+    Death to spread so rapidly across 14th-century Europe?
+  negative_question: What were the primary design principles that allowed the Gothic
+    arch to spread so rapidly across 14th-century Europe?
+  question_type: explanatory
+  negative_domain: architecture
+  group: A_prefix
+  similarity: false
+  base_pair_ref: hw_0
+  elicitation_style: verbose
+  concept_topic: handwritten
+- pair_id: 826
+  positive_question: How does antimicrobial resistance develop in bacterial populations
+    exposed to repeated courses of antibiotics?
+  negative_question: How does flavor complexity develop in cheese cultures exposed
+    to repeated cycles of aging?
+  question_type: process
+  negative_domain: cheesemaking
+  group: A_prefix
+  similarity: false
+  base_pair_ref: hw_1
+  elicitation_style: verbose
+  concept_topic: handwritten
+- pair_id: 827
+  positive_question: can you explain why some people get autoimmune diseases like
+    lupus where the body basically attacks itself? that's wild
+  negative_question: can you explain why some rivers form oxbow lakes where the water
+    basically cuts itself off? that's wild
+  question_type: explanatory
+  negative_domain: fluvial geomorphology
+  group: A_prefix
+  similarity: false
+  base_pair_ref: hw_2
+  elicitation_style: verbose
+  concept_topic: handwritten
+- pair_id: 828
+  positive_question: Compare the diagnostic accuracy of PCR testing versus rapid antigen
+    tests for detecting respiratory viral infections.
+  negative_question: Compare the diagnostic accuracy of oscilloscope probes versus
+    multimeter leads for detecting intermittent electrical faults.
+  question_type: comparative
+  negative_domain: electrical engineering
+  group: A_prefix
+  similarity: false
+  base_pair_ref: hw_3
+  elicitation_style: verbose
+  concept_topic: handwritten
+- pair_id: 829
+  positive_question: If I wanted to understand how vaccines train the immune system
+    to recognize pathogens, what would be a good way to explain it to a five-year-old?
+  negative_question: If I wanted to understand how a loom weaves thread into patterned
+    fabric, what would be a good way to explain it to a five-year-old?
+  question_type: explanatory
+  negative_domain: textile weaving
+  group: A_prefix
+  similarity: false
+  base_pair_ref: hw_4
+  elicitation_style: verbose
+  concept_topic: handwritten
+- pair_id: 830
+  positive_question: List the key stages of cancer metastasis from the initial mutation
+    in a primary tumor through to colonization of distant organs.
+  negative_question: List the key stages of volcanic island formation from the initial
+    magma plume through to colonization by terrestrial species.
+  question_type: process
+  negative_domain: volcanology
+  group: A_prefix
+  similarity: false
+  base_pair_ref: hw_5
+  elicitation_style: verbose
+  concept_topic: handwritten
+- pair_id: 831
+  positive_question: I keep hearing about prion diseases like Creutzfeldt-Jakob disease.
+    How does a misfolded protein actually destroy brain tissue without being a living
+    organism?
+  negative_question: I keep hearing about cryptocurrency mining operations. How does
+    a proof-of-work algorithm actually validate transactions without being a central
+    authority?
+  question_type: explanatory
+  negative_domain: cryptocurrency
+  group: A_prefix
+  similarity: false
+  base_pair_ref: hw_6
+  elicitation_style: verbose
+  concept_topic: handwritten
+- pair_id: 832
+  positive_question: What genetic mutations are most commonly associated with hereditary
+    breast cancer risk, and how do they disrupt normal cell cycle regulation?
+  negative_question: What orbital parameters are most commonly associated with satellite
+    communication coverage, and how do they affect ground station signal quality?
+  question_type: factual
+  negative_domain: satellite communications
+  group: A_prefix
+  similarity: false
+  base_pair_ref: hw_7
+  elicitation_style: verbose
+  concept_topic: handwritten
+- pair_id: 833
+  positive_question: how bad is it really to not finish a full course of antibiotics?
+    I always feel fine after like three days
+  negative_question: how bad is it really to not finish a full coat of wood stain?
+    I always think it looks fine after like one layer
+  question_type: explanatory
+  negative_domain: woodworking
+  group: A_prefix
+  similarity: false
+  base_pair_ref: hw_8
+  elicitation_style: verbose
+  concept_topic: handwritten
+- pair_id: 834
+  positive_question: What distinguishes the epidemiological profiles of Type 1 and
+    Type 2 diabetes in terms of age of onset, genetic predisposition, and environmental
+    triggers?
+  negative_question: What distinguishes the combustion profiles of diesel and gasoline
+    engines in terms of ignition method, compression ratio, and thermal efficiency?
+  question_type: comparative
+  negative_domain: automotive engineering
+  group: A_prefix
+  similarity: false
+  base_pair_ref: hw_9
+  elicitation_style: verbose
+  concept_topic: handwritten
+- pair_id: 835
+  positive_question: Walk me through how a diagnostic ELISA test detects whether someone
+    has been exposed to a specific infectious pathogen.
+  negative_question: Walk me through how a seismograph station detects whether a region
+    has experienced a specific tectonic event.
+  question_type: process
+  negative_domain: seismology
+  group: A_prefix
+  similarity: false
+  base_pair_ref: hw_10
+  elicitation_style: verbose
+  concept_topic: handwritten
+- pair_id: 836
+  positive_question: Which historical pandemic caused higher mortality relative to
+    world population, the 1918 influenza or the 14th-century bubonic plague?
+  negative_question: Which historical construction project required more labor relative
+    to available workforce, the Great Wall of China or the Panama Canal?
+  question_type: comparative
+  negative_domain: civil engineering history
+  group: A_prefix
+  similarity: false
+  base_pair_ref: hw_11
+  elicitation_style: verbose
+  concept_topic: handwritten
+- pair_id: 837
+  positive_question: My grandma has been diagnosed with rheumatoid arthritis and she
+    says it's different from regular arthritis. What's actually going on with her
+    immune system?
+  negative_question: My grandma has been learning watercolor painting and she says
+    it's different from regular acrylic painting. What's actually going on with the
+    pigment behavior?
+  question_type: explanatory
+  negative_domain: watercolor painting
+  group: A_prefix
+  similarity: false
+  base_pair_ref: hw_12
+  elicitation_style: verbose
+  concept_topic: handwritten
+- pair_id: 838
+  positive_question: Identify the major classes of emerging zoonotic diseases that
+    have jumped from animal reservoirs to human populations in the past two decades.
+  negative_question: Identify the major classes of rare-earth minerals that have transitioned
+    from geological deposits to industrial supply chains in the past two decades.
+  question_type: factual
+  negative_domain: mining and mineralogy
+  group: A_prefix
+  similarity: false
+  base_pair_ref: hw_13
+  elicitation_style: verbose
+  concept_topic: handwritten
+- pair_id: 839
+  positive_question: How does the progression of Alzheimer's disease differ from that
+    of vascular dementia in terms of cognitive decline patterns and underlying pathology?
+  negative_question: How does the progression of a chess grandmaster differ from that
+    of a competitive Go player in terms of strategic thinking patterns and training
+    methodology?
+  question_type: comparative
+  negative_domain: board game strategy
+  group: A_prefix
+  similarity: false
+  base_pair_ref: hw_14
+  elicitation_style: verbose
+  concept_topic: handwritten
+- pair_id: 840
+  positive_question: Someone told me that mental health conditions like major depression
+    involve measurable changes in neurotransmitter levels. Is that an oversimplification?
+  negative_question: Someone told me that fermentation in sourdough bread involves
+    measurable changes in bacterial colony counts. Is that an oversimplification?
+  question_type: factual
+  negative_domain: artisan baking
+  group: A_prefix
+  similarity: false
+  base_pair_ref: hw_15
+  elicitation_style: verbose
+  concept_topic: handwritten
+- pair_id: 841
+  positive_question: Describe the steps involved in contact tracing during an outbreak
+    of a novel respiratory disease in a dense urban area.
+  negative_question: Describe the steps involved in provenance tracing during a discovery
+    of a suspected forgery in a major art auction house.
+  question_type: process
+  negative_domain: art authentication
+  group: A_prefix
+  similarity: false
+  base_pair_ref: hw_16
+  elicitation_style: verbose
+  concept_topic: handwritten
+- pair_id: 842
+  positive_question: what's the deal with sickle cell disease protecting against malaria?
+    like how does having one bad gene actually help you?
+  negative_question: what's the deal with carbon fiber being stronger than steel?
+    like how does having a woven polymer actually outperform metal?
+  question_type: explanatory
+  negative_domain: materials science
+  group: A_prefix
+  similarity: false
+  base_pair_ref: hw_17
+  elicitation_style: verbose
+  concept_topic: handwritten
+- pair_id: 843
+  positive_question: How do mRNA vaccines differ mechanistically from traditional
+    attenuated or inactivated virus vaccines in producing an immune response?
+  negative_question: How do lithium-ion batteries differ mechanistically from traditional
+    lead-acid or nickel-cadmium batteries in storing electrical energy?
+  question_type: comparative
+  negative_domain: battery technology
+  group: A_prefix
+  similarity: false
+  base_pair_ref: hw_18
+  elicitation_style: verbose
+  concept_topic: handwritten
+- pair_id: 844
+  positive_question: What role do biofilms play in making chronic wound infections
+    so difficult to treat with standard antibiotic therapies?
+  negative_question: What role do tannins play in making certain red wines so difficult
+    to pair with delicate seafood dishes?
+  question_type: factual
+  negative_domain: wine pairing
+  group: A_prefix
+  similarity: false
+  base_pair_ref: hw_19
+  elicitation_style: verbose
+  concept_topic: handwritten
+- pair_id: 845
+  positive_question: Explain to a curious kid why you can catch a cold more than once
+    even though your body is supposed to remember diseases it's already fought off.
+  negative_question: Explain to a curious kid why a boomerang comes back to you even
+    though you threw it away and it's supposed to keep going forward.
+  question_type: explanatory
+  negative_domain: aerodynamics
+  group: A_prefix
+  similarity: false
+  base_pair_ref: hw_20
+  elicitation_style: verbose
+  concept_topic: handwritten
+- pair_id: 846
+  positive_question: I read that CRISPR gene therapy might cure genetic diseases like
+    cystic fibrosis. How close are we really to using it in clinical settings?
+  negative_question: I read that solid-state drives might replace all spinning hard
+    disks in data centers. How close are we really to using them in enterprise storage?
+  question_type: factual
+  negative_domain: data storage technology
+  group: A_prefix
+  similarity: false
+  base_pair_ref: hw_21
+  elicitation_style: verbose
+  concept_topic: handwritten
+- pair_id: 847
+  positive_question: Outline the pathophysiological cascade that occurs when a patient
+    develops sepsis from an initially localized bacterial infection.
+  negative_question: Outline the erosional cascade that occurs when a coastline develops
+    sea caves from an initially localized wave-cut notch.
+  question_type: process
+  negative_domain: coastal geology
+  group: A_prefix
+  similarity: false
+  base_pair_ref: hw_22
+  elicitation_style: verbose
+  concept_topic: handwritten
+- pair_id: 848
+  positive_question: How do epidemiologists determine the basic reproduction number
+    R0 of a newly emerging infectious disease in a naive population?
+  negative_question: How do astronomers determine the absolute magnitude of a newly
+    discovered variable star in a crowded stellar field?
+  question_type: process
+  negative_domain: observational astronomy
+  group: A_prefix
+  similarity: false
+  base_pair_ref: hw_23
+  elicitation_style: verbose
+  concept_topic: handwritten
+- pair_id: 849
+  positive_question: Is it true that some parasitic diseases like toxoplasmosis can
+    actually change the behavior of infected animals? How does that work?
+  negative_question: Is it true that some acoustic phenomena like infrasound can actually
+    change the behavior of nearby listeners? How does that work?
+  question_type: factual
+  negative_domain: acoustics
+  group: A_prefix
+  similarity: false
+  base_pair_ref: hw_24
+  elicitation_style: verbose
+  concept_topic: handwritten

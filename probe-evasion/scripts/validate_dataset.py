@@ -26,8 +26,13 @@ import yaml
 PROJECT_ROOT = Path(__file__).parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
 
-# Tree-related keywords that should NOT appear in non-tree questions
-TREE_KEYWORDS = [
+from src.utils.concept_config import (
+    load_concept_config, get_label_names, get_field_names,
+    get_negative_keywords, get_group_structure,
+)
+
+# Defaults for backward compat (no concept config)
+_DEFAULT_KEYWORDS = [
     r"\btree\b", r"\btrees\b", r"\bforest\b", r"\bforests\b",
     r"\bwood\b", r"\bwoods\b", r"\bbark\b", r"\bleaf\b", r"\bleaves\b",
     r"\broot\b", r"\broots\b", r"\bbranch\b", r"\bbranches\b",
@@ -35,17 +40,11 @@ TREE_KEYWORDS = [
     r"\blumber\b", r"\btimber\b",
 ]
 
-# Expected group distribution
-EXPECTED_COUNTS = {
-    "A": 25,
-    "B": 375,
-    "C": 150,
-    "D": 125,
-    "E": 125,
-    "A_prefix": 175,
+_DEFAULT_EXPECTED_COUNTS = {
+    "A": 25, "B": 375, "C": 150, "D": 125, "E": 125, "A_prefix": 175,
 }
 
-REQUIRED_FIELDS = [
+_DEFAULT_REQUIRED_FIELDS = [
     "pair_id", "tree_question", "non_tree_question",
     "question_type", "non_tree_domain", "elicitation_style",
 ]
@@ -82,11 +81,12 @@ def load_all_pairs(data_dir: Path) -> list:
     return all_pairs
 
 
-def check_required_fields(pairs: list) -> int:
+def check_required_fields(pairs: list, required_fields: list = None) -> int:
     """Check all pairs have required fields."""
+    required_fields = required_fields or _DEFAULT_REQUIRED_FIELDS
     errors = 0
     for pair in pairs:
-        for field in REQUIRED_FIELDS:
+        for field in required_fields:
             if field not in pair:
                 print(f"  MISSING FIELD: pair_id={pair.get('pair_id', '?')} missing '{field}' (file: {pair.get('_source_file')})")
                 errors += 1
@@ -120,12 +120,13 @@ def check_duplicate_domains(pairs: list) -> int:
     return len(dupes)
 
 
-def check_group_distribution(pairs: list) -> int:
+def check_group_distribution(pairs: list, expected_counts: dict = None) -> int:
     """Check group distribution matches targets."""
+    expected_counts = expected_counts or _DEFAULT_EXPECTED_COUNTS
     groups = Counter(p.get("group", "unknown") for p in pairs)
     errors = 0
     print(f"  Group distribution:")
-    for group, expected in EXPECTED_COUNTS.items():
+    for group, expected in expected_counts.items():
         actual = groups.get(group, 0)
         status = "OK" if actual == expected else "MISMATCH"
         if actual != expected:
@@ -173,10 +174,12 @@ def check_question_types(pairs: list) -> int:
     return errors
 
 
-def check_keyword_screening(pairs: list) -> int:
-    """Flag non-tree questions that contain tree-related keywords."""
+def check_keyword_screening(pairs: list, keywords: list = None, neg_field: str = None) -> int:
+    """Flag negative questions that contain concept-related keywords."""
+    keywords = keywords or _DEFAULT_KEYWORDS
+    neg_field = neg_field or "non_tree_question"
     # Groups where keyword presence is expected/acceptable
-    exempt_groups = {"D", "E"}  # D uses tree vocabulary; E is about trees
+    exempt_groups = {"D", "E"}  # D uses confusable vocabulary; E is indirect
 
     flagged = 0
     for pair in pairs:
@@ -184,23 +187,24 @@ def check_keyword_screening(pairs: list) -> int:
         if group in exempt_groups:
             continue
 
-        non_tree_q = pair.get("non_tree_question", "")
-        for kw_pattern in TREE_KEYWORDS:
-            match = re.search(kw_pattern, non_tree_q, re.IGNORECASE)
+        neg_q = pair.get(neg_field) or pair.get("negative_question", "")
+        for kw_pattern in keywords:
+            match = re.search(kw_pattern, neg_q, re.IGNORECASE)
             if match:
                 print(f"  KEYWORD WARNING: pair {pair.get('pair_id')} (group {group}): "
-                      f"non-tree Q contains '{match.group()}': \"{non_tree_q[:80]}...\"")
+                      f"negative Q contains '{match.group()}': \"{neg_q[:80]}...\"")
                 flagged += 1
                 break  # One flag per question is enough
 
     return flagged
 
 
-def check_question_lengths(pairs: list) -> int:
+def check_question_lengths(pairs: list, question_fields: list = None) -> int:
     """Check question lengths are within acceptable range (10-200 words)."""
+    question_fields = question_fields or ["tree_question", "non_tree_question"]
     warnings = 0
     for pair in pairs:
-        for field in ("tree_question", "non_tree_question"):
+        for field in question_fields:
             q = pair.get(field, "")
             word_count = len(q.split())
             if word_count < 10:
@@ -216,16 +220,47 @@ def main():
     parser = argparse.ArgumentParser(description="Validate v2 contrastive question pair dataset")
     parser.add_argument("--data-dir", type=str, default=None,
                         help="Data directory (default: data/concepts/trees_qa_v2)")
+    parser.add_argument("--concept-config", type=str, default=None,
+                        help="Path to concept config YAML (for non-trees concepts)")
     args = parser.parse_args()
 
-    data_dir = Path(args.data_dir) if args.data_dir else PROJECT_ROOT / "data" / "concepts" / "trees_qa_v2"
+    # Load concept config if provided
+    cc = None
+    if args.concept_config:
+        cc_path = Path(args.concept_config)
+        if not cc_path.is_absolute():
+            cc_path = PROJECT_ROOT / cc_path
+        cc = load_concept_config(str(cc_path))
+
+    # Determine data dir
+    if args.data_dir:
+        data_dir = Path(args.data_dir)
+    elif cc:
+        concept_name = cc["concept_name"]
+        data_dir = PROJECT_ROOT / "data" / "concepts" / f"{concept_name}_qa_v2"
+    else:
+        data_dir = PROJECT_ROOT / "data" / "concepts" / "trees_qa_v2"
+
+    # Derive concept-specific parameters
+    pos_field, neg_field = get_field_names(cc)
+    neg_domain_field = "negative_domain" if cc else "non_tree_domain"
+    keywords = get_negative_keywords(cc)
+    expected_counts = get_group_structure(cc)
+    required_fields = ["pair_id", pos_field, neg_field, "question_type", neg_domain_field, "elicitation_style"]
+    question_fields = [pos_field, neg_field]
+    # Also accept generic field names
+    if cc:
+        required_fields = ["pair_id", "question_type", "elicitation_style"]
+        # Accept either concept-specific or generic field names
+        question_fields = [pos_field, neg_field, "positive_question", "negative_question"]
 
     if not data_dir.exists():
         print(f"ERROR: Data directory not found: {data_dir}")
         sys.exit(1)
 
+    concept_label = cc["concept_name"] if cc else "trees"
     print("=" * 60)
-    print("Dataset Validation Report")
+    print(f"Dataset Validation Report — {concept_label}")
     print("=" * 60)
     print(f"Directory: {data_dir}\n")
 
@@ -237,7 +272,7 @@ def main():
     total_warnings = 0
 
     print("\n1. Required fields check:")
-    e = check_required_fields(pairs)
+    e = check_required_fields(pairs, required_fields)
     total_errors += e
     if e == 0:
         print("  OK")
@@ -255,7 +290,7 @@ def main():
         print("  OK - all domains unique")
 
     print("\n4. Group distribution check:")
-    e = check_group_distribution(pairs)
+    e = check_group_distribution(pairs, expected_counts)
     total_errors += e
 
     print("\n5. Elicitation style balance:")
@@ -268,14 +303,19 @@ def main():
     if e == 0:
         print("  OK - all question types valid")
 
-    print("\n7. Keyword screening (non-tree questions):")
-    w = check_keyword_screening(pairs)
+    print(f"\n7. Keyword screening (negative questions):")
+    w = check_keyword_screening(pairs, keywords, neg_field)
     total_warnings += w
     if w == 0:
-        print("  OK - no tree-related keywords found in non-tree questions")
+        print("  OK - no concept-related keywords found in negative questions")
 
     print("\n8. Question length validation:")
-    w = check_question_lengths(pairs)
+    # For generic concepts, check all question-like fields that exist
+    actual_q_fields = []
+    for f in question_fields:
+        if any(f in p for p in pairs):
+            actual_q_fields.append(f)
+    w = check_question_lengths(pairs, actual_q_fields if actual_q_fields else None)
     total_warnings += w
     if w == 0:
         print("  OK - all questions within 10-200 word range")

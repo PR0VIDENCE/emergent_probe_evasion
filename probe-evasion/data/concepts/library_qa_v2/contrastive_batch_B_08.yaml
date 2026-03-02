@@ -1,0 +1,251 @@
+pairs:
+- pair_id: 200
+  positive_question: "What is interlibrary loan, and how does the system allow patrons to borrow materials that are not available in their local library's collection?"
+  negative_question: "What is organ transplant allocation, and how does the system allow patients to receive organs that are not available from their local hospital's donor pool?"
+  question_type: factual
+  negative_domain: "organ transplantation"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "interlibrary loan systems"
+- pair_id: 201
+  positive_question: "How does the OCLC WorldCat database facilitate interlibrary loan by enabling libraries worldwide to locate and request materials from other institutions?"
+  negative_question: "How does the Interpol I-24/7 network facilitate international policing by enabling law enforcement agencies worldwide to share and request criminal intelligence?"
+  question_type: explanatory
+  negative_domain: "international law enforcement"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "interlibrary loan systems"
+- pair_id: 202
+  positive_question: "Compare the turnaround times and costs of traditional physical interlibrary loan with electronic document delivery services for journal articles."
+  negative_question: "Compare the turnaround times and costs of traditional mail-order seed catalogs with electronic direct-to-consumer ordering for specialty garden plants."
+  question_type: comparative
+  negative_domain: "garden seed commerce"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "interlibrary loan systems"
+- pair_id: 203
+  positive_question: "What process does a library staff member follow when initiating an interlibrary loan request on behalf of a patron, from verification through fulfillment?"
+  negative_question: "What process does a customs broker follow when initiating an import clearance request on behalf of a client, from documentation through delivery?"
+  question_type: process
+  negative_domain: "customs brokerage"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "interlibrary loan systems"
+- pair_id: 204
+  positive_question: "What are the copyright limitations that affect interlibrary loan, particularly the CONTU guidelines governing the reproduction of journal articles?"
+  negative_question: "What are the environmental regulations that affect deep-sea mining, particularly the International Seabed Authority rules governing the extraction of mineral deposits?"
+  question_type: factual
+  negative_domain: "deep-sea mining regulation"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "interlibrary loan systems"
+- pair_id: 205
+  positive_question: "How do reciprocal borrowing agreements between library systems differ from formal interlibrary loan arrangements in terms of patron access and convenience?"
+  negative_question: "How do bilateral air service agreements between countries differ from codeshare partnerships between airlines in terms of route access and passenger convenience?"
+  question_type: explanatory
+  negative_domain: "aviation agreements"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "interlibrary loan systems"
+- pair_id: 206
+  positive_question: "Compare the interlibrary loan policies of academic research libraries with those of small public library systems regarding eligible materials and borrowing limits."
+  negative_question: "Compare the patient referral policies of major teaching hospitals with those of small community health centers regarding specialist access and appointment limits."
+  question_type: comparative
+  negative_domain: "healthcare referrals"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "interlibrary loan systems"
+- pair_id: 207
+  positive_question: "What steps does a lending library follow when processing an incoming interlibrary loan request, including locating, preparing, and shipping the requested item?"
+  negative_question: "What steps does a blood bank follow when processing an incoming transfusion request, including typing, cross-matching, and delivering the requested blood product?"
+  question_type: process
+  negative_domain: "blood banking"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "interlibrary loan systems"
+- pair_id: 208
+  positive_question: "What role does the ILL protocol standard ISO 10160/10161 play in enabling automated interlibrary loan transactions between different library software systems?"
+  negative_question: "What role does the SWIFT messaging standard ISO 20022 play in enabling automated financial transactions between different international banking systems?"
+  question_type: factual
+  negative_domain: "international banking"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "interlibrary loan systems"
+- pair_id: 209
+  positive_question: "How do libraries handle interlibrary loan requests for rare or fragile materials that cannot be shipped through standard courier and postal services?"
+  negative_question: "How do auction houses handle transportation of oversized sculptures that cannot be shipped through standard freight and parcel delivery services?"
+  question_type: explanatory
+  negative_domain: "art logistics"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "interlibrary loan systems"
+- pair_id: 210
+  positive_question: "Compare the user satisfaction rates for interlibrary loan services at libraries that offer online request tracking with those that do not provide this feature."
+  negative_question: "Compare the customer satisfaction rates for package delivery services at carriers that offer real-time GPS tracking with those that do not provide this feature."
+  question_type: comparative
+  negative_domain: "package delivery"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "interlibrary loan systems"
+- pair_id: 211
+  positive_question: "What steps are involved in setting up a new interlibrary loan department at a library, including selecting management software and establishing lending policies?"
+  negative_question: "What steps are involved in setting up a new emergency dispatch center at a county, including selecting computer-aided dispatch software and establishing response protocols?"
+  question_type: process
+  negative_domain: "emergency dispatch"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "interlibrary loan systems"
+- pair_id: 212
+  positive_question: "What is the history of interlibrary loan in the United States, from its origins in the nineteenth century to its modern networked form?"
+  negative_question: "What is the history of the postal service in the United States, from its origins in the colonial period to its modern automated logistics network?"
+  question_type: factual
+  negative_domain: "postal service history"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "interlibrary loan systems"
+- pair_id: 213
+  positive_question: "How do libraries use interlibrary loan data and request statistics to inform collection development decisions and identify gaps in their holdings?"
+  negative_question: "How do retailers use point-of-sale data and purchase statistics to inform inventory restocking decisions and identify gaps in their product offerings?"
+  question_type: explanatory
+  negative_domain: "retail inventory"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "interlibrary loan systems"
+- pair_id: 214
+  positive_question: "Compare the interlibrary loan systems used in North America, such as OCLC ILLiad, with those used in Europe, such as the British Library's document supply service."
+  negative_question: "Compare the railway signaling systems used in North America, such as positive train control, with those used in Europe, such as the European Train Control System."
+  question_type: comparative
+  negative_domain: "railway signaling"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "interlibrary loan systems"
+- pair_id: 215
+  positive_question: "What process does a library consortium follow to establish a shared courier service that speeds up the physical delivery of interlibrary loan materials?"
+  negative_question: "What process does a restaurant cooperative follow to establish a shared cold-chain logistics service that speeds up the delivery of perishable ingredients?"
+  question_type: process
+  negative_domain: "restaurant supply chain"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "interlibrary loan systems"
+- pair_id: 216
+  positive_question: "What challenges does international interlibrary loan present, including customs regulations, shipping costs, and varying copyright laws across jurisdictions?"
+  negative_question: "What challenges does international organ donation present, including medical compatibility screening, transport logistics, and varying consent laws across jurisdictions?"
+  question_type: factual
+  negative_domain: "international organ donation"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "interlibrary loan systems"
+- pair_id: 217
+  positive_question: "How has the rise of open access publishing affected the volume and nature of interlibrary loan requests at academic libraries?"
+  negative_question: "How has the rise of telemedicine platforms affected the volume and nature of in-person specialist referral requests at rural hospitals?"
+  question_type: explanatory
+  negative_domain: "telemedicine"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "interlibrary loan systems"
+- pair_id: 218
+  positive_question: "Compare the environmental impact of shipping physical interlibrary loan materials by courier with the carbon footprint of transmitting electronic document copies."
+  negative_question: "Compare the environmental impact of shipping fresh produce by refrigerated truck with the carbon footprint of growing vegetables in local heated greenhouses."
+  question_type: comparative
+  negative_domain: "local food systems"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "interlibrary loan systems"
+- pair_id: 219
+  positive_question: "What steps does a library take to train staff on interlibrary loan best practices, including copyright compliance, patron communication, and system troubleshooting?"
+  negative_question: "What steps does a veterinary clinic take to train staff on surgical sterilization best practices, including anesthesia protocols, client communication, and equipment maintenance?"
+  question_type: process
+  negative_domain: "veterinary surgery"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "interlibrary loan systems"
+- pair_id: 220
+  positive_question: "What is the 'rule of five' in interlibrary loan practice, and how does it limit the number of journal article copies a library can request from a single title?"
+  negative_question: "What is the 'rule of thirds' in photographic composition, and how does it guide the placement of focal points within a single image frame?"
+  question_type: factual
+  negative_domain: "photography composition"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "interlibrary loan systems"
+- pair_id: 221
+  positive_question: "How do unmediated interlibrary loan systems, where patrons submit requests directly, compare with mediated systems where staff review each request first?"
+  negative_question: "How do self-checkout grocery kiosks, where customers scan items independently, compare with staffed checkout lanes where cashiers process each order personally?"
+  question_type: explanatory
+  negative_domain: "grocery retail technology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "interlibrary loan systems"
+- pair_id: 222
+  positive_question: "Compare the lending rates and fill rates of interlibrary loan at net lending libraries with those at net borrowing libraries within the same consortium."
+  negative_question: "Compare the generation capacity and grid feed-in rates of net electricity-producing solar farms with those of net electricity-consuming industrial facilities within the same utility district."
+  question_type: comparative
+  negative_domain: "solar energy economics"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "interlibrary loan systems"
+- pair_id: 223
+  positive_question: "What process is used to resolve disputes between libraries when interlibrary loan materials are lost, damaged, or returned late by the borrowing institution?"
+  negative_question: "What process is used to resolve disputes between insurers when automobile accident liability is contested or evidence is incomplete between the involved parties?"
+  question_type: process
+  negative_domain: "auto insurance claims"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "interlibrary loan systems"
+- pair_id: 224
+  positive_question: "What emerging technologies, such as blockchain-based rights management, could transform interlibrary loan operations in the coming decade?"
+  negative_question: "What emerging technologies, such as CRISPR-based gene drives, could transform mosquito-borne disease control strategies in the coming decade?"
+  question_type: factual
+  negative_domain: "vector-borne disease control"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "interlibrary loan systems"

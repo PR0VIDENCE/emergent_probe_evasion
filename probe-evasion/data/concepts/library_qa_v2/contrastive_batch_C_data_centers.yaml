@@ -1,0 +1,181 @@
+pairs:
+- pair_id: 460
+  positive_question: How do libraries organize and classify their collections using
+    standardized systems like the Dewey Decimal or Library of Congress classifications?
+  negative_question: How do data centers organize and classify their server racks using
+    standardized naming conventions, cable labeling, and hot-aisle cold-aisle layouts?
+  question_type: process
+  negative_domain: data centers and server rooms
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 461
+  positive_question: What role does a library's digital repository play in providing
+    long-term access to institutional research outputs and scholarly publications?
+  negative_question: What role does a data center's redundant storage architecture
+    play in ensuring continuous availability and disaster recovery for critical systems?
+  question_type: explanatory
+  negative_domain: data centers and server rooms
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 462
+  positive_question: How do libraries ensure patron privacy by protecting circulation
+    records and resisting warrantless government data requests?
+  negative_question: How do data centers ensure client privacy by implementing physical
+    security controls, encryption at rest, and compliance with regulations like SOC 2?
+  question_type: comparative
+  negative_domain: data centers and server rooms
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 463
+  positive_question: What are the main costs involved in running a public library
+    system, including staffing, materials acquisition, and building maintenance?
+  negative_question: What are the main costs involved in running a commercial data
+    center, including electricity, cooling, hardware refresh cycles, and network bandwidth?
+  question_type: factual
+  negative_domain: data centers and server rooms
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 464
+  positive_question: How do library systems handle surges in demand during events
+    like summer reading programs or new bestseller releases?
+  negative_question: How do data centers handle surges in demand during events like
+    Black Friday sales or viral content spikes using load balancing and auto-scaling?
+  question_type: process
+  negative_domain: data centers and server rooms
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 465
+  positive_question: Why do many libraries participate in shared catalog networks
+    that allow patrons to search and borrow from multiple systems?
+  negative_question: Why do many organizations use colocation data centers that allow
+    multiple tenants to share facility infrastructure while maintaining separate hardware?
+  question_type: explanatory
+  negative_domain: data centers and server rooms
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 466
+  positive_question: What is the difference between a library's open stacks and closed
+    stacks in terms of patron access to physical materials?
+  negative_question: What is the difference between a public cloud data center and
+    a private on-premises server room in terms of access control and customization?
+  question_type: comparative
+  negative_domain: data centers and server rooms
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 467
+  positive_question: How do libraries use RFID tags and self-checkout kiosks to
+    streamline the borrowing process and reduce staff workload?
+  negative_question: How do data centers use RFID asset tracking and automated
+    monitoring dashboards to manage thousands of servers and network devices?
+  question_type: factual
+  negative_domain: data centers and server rooms
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 468
+  positive_question: How do library digitization projects convert fragile historical
+    documents into searchable online archives available to researchers worldwide?
+  negative_question: How do data center migration projects move terabytes of production
+    workloads from aging hardware to new infrastructure with minimal downtime?
+  question_type: process
+  negative_domain: data centers and server rooms
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 469
+  positive_question: Why is climate control important in library storage areas that
+    house rare books, manuscripts, and photographic collections?
+  negative_question: Why is precision climate control important in data centers where
+    server equipment generates significant heat and requires consistent temperature and humidity?
+  question_type: explanatory
+  negative_domain: data centers and server rooms
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 470
+  positive_question: What metrics do library systems track to evaluate the effectiveness
+    of their programs and justify continued public funding?
+  negative_question: What metrics do data center operators track to evaluate performance,
+    such as uptime percentage, power usage effectiveness, and mean time to repair?
+  question_type: factual
+  negative_domain: data centers and server rooms
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 471
+  positive_question: How do library staff perform inventory audits to identify missing,
+    misplaced, or damaged items in the collection?
+  negative_question: How do data center technicians perform hardware audits to identify
+    failing drives, outdated firmware, and servers approaching end of life?
+  question_type: process
+  negative_domain: data centers and server rooms
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 472
+  positive_question: What is the difference between a local public library and a
+    national library like the Library of Congress in scope and mandate?
+  negative_question: What is the difference between a small enterprise server room
+    and a hyperscale data center operated by companies like AWS or Google?
+  question_type: comparative
+  negative_domain: data centers and server rooms
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 473
+  positive_question: Why do libraries provide free public internet access and computer
+    workstations as part of their core mission of information equity?
+  negative_question: Why do data centers invest heavily in redundant internet
+    connections and uninterruptible power supplies to guarantee service level agreements?
+  question_type: explanatory
+  negative_domain: data centers and server rooms
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 474
+  positive_question: How do library architects design buildings that balance natural
+    lighting, noise control, and flexible floor plans for diverse patron needs?
+  negative_question: How do data center architects design facilities that balance
+    power density, cable management, and modular expansion for growing compute needs?
+  question_type: comparative
+  negative_domain: data centers and server rooms
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied

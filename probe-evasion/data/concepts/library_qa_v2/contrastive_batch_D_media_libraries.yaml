@@ -1,0 +1,201 @@
+pairs:
+- pair_id: 625
+  positive_question: "How do public libraries select and maintain DVD and Blu-ray collections that serve community demand for film and documentary content?"
+  negative_question: "How does Plex media server software scan, identify, and organize a personal media library with automatic metadata fetching and artwork matching?"
+  question_type: process
+  negative_domain: "media libraries (iTunes, Plex, VLC)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 626
+  positive_question: "What outreach strategies do libraries use to engage teenagers, including gaming events, creative writing clubs, and college preparation workshops?"
+  negative_question: "What media format compatibility issues arise when a VLC media library encounters files encoded with uncommon codecs like VP9 or AV1?"
+  question_type: factual
+  negative_domain: "media libraries (iTunes, Plex, VLC)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 627
+  positive_question: "How do library renovation projects balance historic building preservation with modern infrastructure needs like flexible spaces and technology upgrades?"
+  negative_question: "How does iTunes manage a media library across multiple Apple devices using iCloud syncing for purchased music, movies, and TV shows?"
+  question_type: explanatory
+  negative_domain: "media libraries (iTunes, Plex, VLC)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 628
+  positive_question: "What are the differences between a public library's mission of universal access and an academic library's focus on supporting research and scholarship?"
+  negative_question: "What are the differences between Plex and Jellyfin as self-hosted media library platforms in terms of features, transcoding, and licensing?"
+  question_type: comparative
+  negative_domain: "media libraries (iTunes, Plex, VLC)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 629
+  positive_question: "How do library systems use data analytics to make decisions about branch hours, staffing levels, and collection allocation across locations?"
+  negative_question: "How does Plex analyze viewing habits in a user's media library to generate personalized recommendations and continue watching suggestions?"
+  question_type: process
+  negative_domain: "media libraries (iTunes, Plex, VLC)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 630
+  positive_question: "Why have many libraries expanded their role to include social worker partnerships that address patron needs beyond traditional library services?"
+  negative_question: "Why do media server enthusiasts prefer organizing their personal media libraries with strict folder naming conventions that match TMDb or TVDb standards?"
+  question_type: explanatory
+  negative_domain: "media libraries (iTunes, Plex, VLC)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 631
+  positive_question: "What is the role of a library's technical services department in ordering, receiving, processing, and cataloging new materials?"
+  negative_question: "What is the role of hardware transcoding in media library servers like Plex when streaming high-bitrate 4K content to bandwidth-limited clients?"
+  question_type: factual
+  negative_domain: "media libraries (iTunes, Plex, VLC)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 632
+  positive_question: "How do academic libraries negotiate site licenses for electronic journals and databases that serve thousands of concurrent campus users?"
+  negative_question: "How do media library applications like VLC handle subtitle synchronization when external SRT files do not match the video timing properly?"
+  question_type: process
+  negative_domain: "media libraries (iTunes, Plex, VLC)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 633
+  positive_question: "What are the advantages of cooperative purchasing agreements between library systems for acquiring expensive reference materials and databases?"
+  negative_question: "What are the advantages of consolidating a media library onto a NAS device versus storing files across multiple external hard drives?"
+  question_type: comparative
+  negative_domain: "media libraries (iTunes, Plex, VLC)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 634
+  positive_question: "How do libraries address digital divide issues by lending Wi-Fi hotspot devices and laptops to patrons who lack home internet access?"
+  negative_question: "How do media library tools like MakeMKV and Handbrake convert physical disc collections into organized digital files for home server streaming?"
+  question_type: explanatory
+  negative_domain: "media libraries (iTunes, Plex, VLC)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 635
+  positive_question: "What preservation techniques do libraries use for fragile paper-based materials, including deacidification, encapsulation, and environmental monitoring?"
+  negative_question: "What file organization strategies help maintain a clean media library structure when managing thousands of movies and television episodes in Plex?"
+  question_type: factual
+  negative_domain: "media libraries (iTunes, Plex, VLC)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 636
+  positive_question: "How do libraries collaborate with publishers to offer simultaneous-use e-book lending models that reduce patron wait times for digital titles?"
+  negative_question: "How does iTunes Smart Playlist feature automatically curate subsets of a music media library based on rules like genre, rating, and play count?"
+  question_type: process
+  negative_domain: "media libraries (iTunes, Plex, VLC)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 637
+  positive_question: "Why is equitable access to information considered a core value of librarianship and a pillar of democratic participation?"
+  negative_question: "Why do users experience media library database corruption in Kodi when improperly shutting down the system during a metadata scraping operation?"
+  question_type: explanatory
+  negative_domain: "media libraries (iTunes, Plex, VLC)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 638
+  positive_question: "What impact do new library construction projects have on neighborhood revitalization, property values, and community identity?"
+  negative_question: "What impact does enabling hardware-accelerated video decoding have on CPU usage when playing high-resolution content from a VLC media library?"
+  question_type: comparative
+  negative_domain: "media libraries (iTunes, Plex, VLC)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 639
+  positive_question: "How do libraries conduct community needs assessments to align their services, collections, and programs with the priorities of local residents?"
+  negative_question: "How does Plex's media library scanner differentiate between different editions of the same movie, such as theatrical cuts and director's cuts?"
+  question_type: process
+  negative_domain: "media libraries (iTunes, Plex, VLC)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 640
+  positive_question: "What professional development opportunities do librarians pursue to stay current with evolving technology, pedagogy, and information science trends?"
+  negative_question: "What metadata standards like NFO files and embedded tags help media library software accurately identify and categorize video content?"
+  question_type: factual
+  negative_domain: "media libraries (iTunes, Plex, VLC)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 641
+  positive_question: "How do academic libraries support distance learning students who cannot physically visit campus by providing remote access to digital resources?"
+  negative_question: "How does Plex allow remote access to a personal media library from outside the home network through relay servers and port forwarding?"
+  question_type: explanatory
+  negative_domain: "media libraries (iTunes, Plex, VLC)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 642
+  positive_question: "What are the advantages of an integrated library system that combines catalog, circulation, and acquisitions modules in one platform?"
+  negative_question: "What are the advantages of using Emby over Plex as a media library server for users who want more control over the user interface and plugins?"
+  question_type: comparative
+  negative_domain: "media libraries (iTunes, Plex, VLC)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 643
+  positive_question: "How do library strategic plans set goals for service expansion, technology adoption, and equity over three-to-five-year planning horizons?"
+  negative_question: "How do media library backup strategies protect against data loss using RAID arrays, cloud sync, and scheduled incremental backups of media files?"
+  question_type: process
+  negative_domain: "media libraries (iTunes, Plex, VLC)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 644
+  positive_question: "Why do many library systems offer passport application acceptance services as a convenient government partnership that brings new visitors into the building?"
+  negative_question: "Why do some users prefer managing their media library with open-source Jellyfin instead of proprietary Plex due to privacy and data ownership concerns?"
+  question_type: explanatory
+  negative_domain: "media libraries (iTunes, Plex, VLC)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"

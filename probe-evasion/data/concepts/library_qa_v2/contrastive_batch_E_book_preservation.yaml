@@ -1,0 +1,161 @@
+pairs:
+- pair_id: 691
+  positive_question: "What techniques do conservators use to repair torn pages and reattach loose bindings in rare books without damaging the original materials?"
+  negative_question: "What techniques do glaciologists use to extract and analyze ice cores for evidence of past atmospheric composition and climate change?"
+  question_type: process
+  negative_domain: "glaciology"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "book preservation and restoration techniques"
+- pair_id: 692
+  positive_question: "How does deacidification treatment neutralize the acid content in aging paper to slow deterioration and extend the life of books in library collections?"
+  negative_question: "How does the process of steel galvanization use a zinc coating to protect iron from corrosion in construction and automotive applications?"
+  question_type: explanatory
+  negative_domain: "metallurgy"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "book preservation and restoration techniques"
+- pair_id: 693
+  positive_question: "What are the differences between mass deacidification programs and item-level conservation treatments in terms of cost, scale, and effectiveness for library materials?"
+  negative_question: "What are the differences between resistive and capacitive touchscreen technologies in terms of durability, accuracy, and manufacturing cost?"
+  question_type: comparative
+  negative_domain: "consumer electronics"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "book preservation and restoration techniques"
+- pair_id: 694
+  positive_question: "How do environmental monitoring systems in rare book vaults track temperature, humidity, and light exposure to prevent degradation of fragile materials?"
+  negative_question: "How do seismographs detect and record ground motion caused by earthquakes, providing data for measuring magnitude and locating epicenters?"
+  question_type: factual
+  negative_domain: "seismology"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "book preservation and restoration techniques"
+- pair_id: 695
+  positive_question: "Why is acid-free archival storage essential for preserving paper-based library materials, and what happens to acidic paper over decades of uncontrolled storage?"
+  negative_question: "Why is nitrogen used as an inert gas blanket in food packaging to prevent oxidation and extend the shelf life of snack products?"
+  question_type: explanatory
+  negative_domain: "food packaging"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "book preservation and restoration techniques"
+- pair_id: 696
+  positive_question: "What is the process of creating a preservation photocopy or digital surrogate of a deteriorating book to protect the original while maintaining access?"
+  negative_question: "What is the process of creating a topographic map from aerial survey data using photogrammetry and elevation modeling techniques?"
+  question_type: process
+  negative_domain: "cartography"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "book preservation and restoration techniques"
+- pair_id: 697
+  positive_question: "How do book conservators decide whether to rebind a damaged volume in period-appropriate materials or use modern conservation-grade alternatives?"
+  negative_question: "How do urban planners decide whether to preserve historic buildings or approve demolition for new development in rapidly growing cities?"
+  question_type: comparative
+  negative_domain: "urban planning"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "book preservation and restoration techniques"
+- pair_id: 698
+  positive_question: "What role does digitization play in book preservation, allowing fragile manuscripts to be accessed online without further handling of the physical originals?"
+  negative_question: "What role does composting play in reducing organic waste in landfills and returning nutrients to agricultural soil for sustainable farming?"
+  question_type: factual
+  negative_domain: "waste management"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "book preservation and restoration techniques"
+- pair_id: 699
+  positive_question: "How do freeze-drying techniques salvage water-damaged books and documents after flooding events in libraries and archives?"
+  negative_question: "How do astronomers use spectroscopy to determine the chemical composition, temperature, and velocity of distant stars and galaxies?"
+  question_type: process
+  negative_domain: "astronomy"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "book preservation and restoration techniques"
+- pair_id: 700
+  positive_question: "Why do preservation specialists recommend handling rare books with clean dry hands rather than cotton gloves, contrary to popular belief?"
+  negative_question: "Why do deep-sea fish exhibit bioluminescence, and what survival advantages does light production provide in the aphotic ocean zone?"
+  question_type: explanatory
+  negative_domain: "marine biology"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "book preservation and restoration techniques"
+- pair_id: 701
+  positive_question: "What are the differences between leather, vellum, and cloth binding materials in terms of durability, aging characteristics, and conservation treatment approaches?"
+  negative_question: "What are the differences between aerobic and anaerobic exercise in terms of energy systems, muscle fiber recruitment, and cardiovascular adaptation?"
+  question_type: comparative
+  negative_domain: "exercise physiology"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "book preservation and restoration techniques"
+- pair_id: 702
+  positive_question: "How do encapsulation techniques using polyester film protect fragile documents while allowing researchers to view and study them without direct contact?"
+  negative_question: "How do noise-canceling headphones use active sound wave inversion to reduce ambient noise levels for the listener in loud environments?"
+  question_type: factual
+  negative_domain: "audio engineering"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "book preservation and restoration techniques"
+- pair_id: 703
+  positive_question: "What steps do preservation teams follow when conducting a condition survey to assess the physical state of an entire library collection?"
+  negative_question: "What steps do forensic investigators follow when processing a crime scene, from securing the perimeter to collecting and documenting physical evidence?"
+  question_type: process
+  negative_domain: "forensic science"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "book preservation and restoration techniques"
+- pair_id: 704
+  positive_question: "Why have some libraries invested in anoxic storage environments that remove oxygen to prevent insect infestation and mold growth on stored materials?"
+  negative_question: "Why have some countries invested heavily in high-speed rail infrastructure as an alternative to short-haul domestic aviation routes?"
+  question_type: explanatory
+  negative_domain: "transportation policy"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "book preservation and restoration techniques"
+- pair_id: 705
+  positive_question: "How do Japanese tissue paper and wheat starch paste serve as fundamental materials in the conservation repair of torn pages and weakened spines?"
+  negative_question: "How do undersea fiber optic cables transmit internet data across ocean floors, connecting continents with high-bandwidth communication links?"
+  question_type: factual
+  negative_domain: "telecommunications"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "book preservation and restoration techniques"
+- pair_id: 706
+  positive_question: "What are the advantages of preventive preservation strategies like proper shelving and handling instruction compared to restorative conservation after damage has occurred?"
+  negative_question: "What are the advantages of preventive dental care like regular cleanings compared to restorative procedures like crowns and root canals after decay?"
+  question_type: comparative
+  negative_domain: "dentistry"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "book preservation and restoration techniques"

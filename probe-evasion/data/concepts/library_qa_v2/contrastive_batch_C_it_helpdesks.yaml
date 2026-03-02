@@ -1,0 +1,181 @@
+pairs:
+- pair_id: 520
+  positive_question: How do library reference desks help patrons find reliable
+    information by guiding them through catalog searches and database queries?
+  negative_question: How do IT helpdesks help employees resolve technical issues by
+    guiding them through troubleshooting steps and escalating tickets to specialists?
+  question_type: process
+  negative_domain: IT helpdesks and tech support
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 521
+  positive_question: What qualifications and training does a professional librarian
+    typically need to provide effective reference and information services?
+  negative_question: What qualifications and certifications does an IT helpdesk
+    technician typically need, such as CompTIA A+, ITIL Foundation, or vendor-specific credentials?
+  question_type: factual
+  negative_domain: IT helpdesks and tech support
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 522
+  positive_question: How do libraries manage their technology infrastructure including
+    public computer labs, Wi-Fi networks, and self-checkout systems?
+  negative_question: How do IT helpdesks manage their ticketing systems to track
+    incident reports, assign priorities, and measure average resolution times?
+  question_type: process
+  negative_domain: IT helpdesks and tech support
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 523
+  positive_question: What is the difference between a library's walk-in reference
+    service and its virtual reference chat available to remote patrons?
+  negative_question: What is the difference between an in-person IT helpdesk and a
+    remote tech support service that assists users via phone, chat, or screen sharing?
+  question_type: comparative
+  negative_domain: IT helpdesks and tech support
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 524
+  positive_question: Why do libraries invest in teaching digital literacy skills like
+    internet safety, email management, and word processing to underserved patrons?
+  negative_question: Why do IT helpdesks invest in creating self-service knowledge
+    bases with FAQs, how-to articles, and video tutorials to reduce ticket volume?
+  question_type: explanatory
+  negative_domain: IT helpdesks and tech support
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 525
+  positive_question: How do libraries protect patron privacy when offering public
+    computer access by clearing browsing history and user data after each session?
+  negative_question: How do IT helpdesks protect organizational security when granting
+    remote access by using VPNs, multi-factor authentication, and session logging?
+  question_type: factual
+  negative_domain: IT helpdesks and tech support
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 526
+  positive_question: What is the process for a patron to request that their library
+    purchase a specific book or subscribe to a new database?
+  negative_question: What is the process for an employee to submit an IT support
+    request, including categorizing the issue, setting severity, and tracking resolution?
+  question_type: process
+  negative_domain: IT helpdesks and tech support
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 527
+  positive_question: How do libraries handle periods of high demand such as exam
+    weeks when students need extended hours and additional study space?
+  negative_question: How do IT helpdesks handle periods of high demand such as
+    software rollouts when employees flood support channels with configuration questions?
+  question_type: comparative
+  negative_domain: IT helpdesks and tech support
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 528
+  positive_question: Why do many libraries offer one-on-one technology appointments
+    to help patrons learn to use tablets, e-readers, and smartphones?
+  negative_question: Why do many IT helpdesks offer one-on-one onboarding sessions
+    to help new employees set up their workstations, email, and collaboration tools?
+  question_type: explanatory
+  negative_domain: IT helpdesks and tech support
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 529
+  positive_question: How do library systems evaluate new integrated library software
+    platforms when considering a migration from their current catalog system?
+  negative_question: How do IT departments evaluate new helpdesk software platforms
+    like ServiceNow or Zendesk when considering a migration from their current system?
+  question_type: process
+  negative_domain: IT helpdesks and tech support
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 530
+  positive_question: What are the key performance indicators that library directors
+    use to assess staff productivity and service quality at their branches?
+  negative_question: What are the key performance indicators that IT helpdesk managers
+    use to assess technician productivity, such as first-call resolution rate and customer satisfaction?
+  question_type: factual
+  negative_domain: IT helpdesks and tech support
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 531
+  positive_question: How do libraries train new staff on customer service skills,
+    collection policies, and the integrated library management system?
+  negative_question: How do IT helpdesks train new technicians on escalation
+    procedures, common troubleshooting workflows, and the ticketing platform interface?
+  question_type: comparative
+  negative_domain: IT helpdesks and tech support
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 532
+  positive_question: Why do libraries maintain detailed usage statistics on database
+    access, website visits, and program attendance to justify funding requests?
+  negative_question: Why do IT helpdesks maintain detailed incident logs and trend
+    reports on recurring hardware failures to justify infrastructure upgrade budgets?
+  question_type: explanatory
+  negative_domain: IT helpdesks and tech support
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 533
+  positive_question: How do library systems coordinate technology purchasing across
+    multiple branches to ensure consistent hardware and software standards?
+  negative_question: How do IT helpdesks coordinate patch management across an
+    organization to ensure all devices receive critical security updates promptly?
+  question_type: process
+  negative_domain: IT helpdesks and tech support
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 534
+  positive_question: What is the difference between a library's in-house IT team and
+    the librarians who assist patrons with technology questions at the service desk?
+  negative_question: What is the difference between a Level 1 IT helpdesk technician
+    who handles routine issues and a Level 3 specialist who resolves complex infrastructure problems?
+  question_type: comparative
+  negative_domain: IT helpdesks and tech support
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied

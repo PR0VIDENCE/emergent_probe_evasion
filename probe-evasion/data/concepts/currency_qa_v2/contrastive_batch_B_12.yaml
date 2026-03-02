@@ -1,0 +1,251 @@
+pairs:
+- pair_id: 300
+  positive_question: "What are remittances, and how do cross-border money transfers impact the economies of developing nations that receive them?"
+  negative_question: "What are monsoons, and how do seasonal wind reversals impact the agricultural cycles of tropical nations that depend on them?"
+  question_type: factual
+  negative_domain: "monsoon climatology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "remittances and cross-border money transfers"
+- pair_id: 301
+  positive_question: "How do the transaction fees charged by traditional money transfer services like Western Union affect the net value of remittances in foreign currency?"
+  negative_question: "How do the drag forces experienced by migratory birds during long-distance flights affect the net energy reserves available for breeding?"
+  question_type: explanatory
+  negative_domain: "avian flight energetics"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "remittances and cross-border money transfers"
+- pair_id: 302
+  positive_question: "Compare the cost and speed of sending money through mobile-based remittance apps versus traditional bank wire transfers in foreign currency."
+  negative_question: "Compare the cost and speed of sequencing DNA through nanopore technology versus traditional Sanger chain-termination methods in genomic research."
+  question_type: comparative
+  negative_domain: "genomic sequencing"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "remittances and cross-border money transfers"
+- pair_id: 303
+  positive_question: "Describe the process a migrant worker follows to send a remittance payment from their host country to their family in local currency."
+  negative_question: "Describe the process a field botanist follows to collect a herbarium specimen from a remote location and preserve it for laboratory study."
+  question_type: process
+  negative_domain: "herbarium science"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "remittances and cross-border money transfers"
+- pair_id: 304
+  positive_question: "What is the total annual volume of global remittance flows, and which corridors carry the largest amounts of cross-border currency?"
+  negative_question: "What is the total annual volume of global volcanic eruptions, and which tectonic zones produce the largest amounts of expelled magma?"
+  question_type: factual
+  negative_domain: "volcanic activity statistics"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "remittances and cross-border money transfers"
+- pair_id: 305
+  positive_question: "Why do exchange rate markups by money transfer operators significantly reduce the amount of currency recipients actually receive?"
+  negative_question: "Why do atmospheric absorption bands by greenhouse gases significantly reduce the amount of infrared radiation that escapes into space?"
+  question_type: explanatory
+  negative_domain: "atmospheric radiation"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "remittances and cross-border money transfers"
+- pair_id: 306
+  positive_question: "How does the M-Pesa mobile money platform in Kenya compare to India's UPI system for facilitating low-cost currency transfers?"
+  negative_question: "How does the sonar echolocation system in dolphins compare to the electrolocation system in electric eels for detecting nearby prey?"
+  question_type: comparative
+  negative_domain: "animal sensory systems"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "remittances and cross-border money transfers"
+- pair_id: 307
+  positive_question: "Explain the steps involved in a correspondent banking chain that facilitates an international remittance from one currency to another."
+  negative_question: "Explain the steps involved in a pollinator foraging chain that facilitates the cross-pollination from one flower species to another."
+  question_type: process
+  negative_domain: "pollination biology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "remittances and cross-border money transfers"
+- pair_id: 308
+  positive_question: "What role do hawala informal money transfer networks play in moving currency across borders outside the formal banking system?"
+  negative_question: "What role do mycorrhizal fungal networks play in transferring nutrients across root systems outside the visible plant canopy?"
+  question_type: factual
+  negative_domain: "mycorrhizal networks"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "remittances and cross-border money transfers"
+- pair_id: 309
+  positive_question: "Why have regulators struggled to balance anti-money-laundering requirements with the need for affordable cross-border currency transfer services?"
+  negative_question: "Why have conservationists struggled to balance predator reintroduction goals with the concerns of livestock-dependent rural farming communities?"
+  question_type: explanatory
+  negative_domain: "predator-livestock conflict"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "remittances and cross-border money transfers"
+- pair_id: 310
+  positive_question: "Compare the remittance dependency of the Philippines economy with that of Mexico in terms of currency inflows relative to GDP."
+  negative_question: "Compare the geothermal energy dependency of Iceland's electricity grid with that of New Zealand in terms of volcanic heat output relative to demand."
+  question_type: comparative
+  negative_domain: "geothermal energy"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "remittances and cross-border money transfers"
+- pair_id: 311
+  positive_question: "Describe the process by which blockchain-based remittance platforms convert, transfer, and settle cross-border currency payments."
+  negative_question: "Describe the process by which satellite-based ocean monitoring platforms detect, track, and record large-scale phytoplankton bloom events."
+  question_type: process
+  negative_domain: "ocean remote sensing"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "remittances and cross-border money transfers"
+- pair_id: 312
+  positive_question: "What impact do large remittance inflows have on the exchange rate and inflation levels of small recipient country currencies?"
+  negative_question: "What impact do large wildfire smoke plumes have on the air quality and visibility levels of downwind metropolitan areas?"
+  question_type: factual
+  negative_domain: "wildfire smoke"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "remittances and cross-border money transfers"
+- pair_id: 313
+  positive_question: "Why do currency transfer costs remain disproportionately high for remittance corridors serving the poorest regions of Africa?"
+  negative_question: "Why do infant mortality rates remain disproportionately high for communities living in the most remote highlands of Central Asia?"
+  question_type: explanatory
+  negative_domain: "global health disparities"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "remittances and cross-border money transfers"
+- pair_id: 314
+  positive_question: "How does the World Bank's goal of reducing remittance costs to three percent compare to current average fees for currency transfers?"
+  negative_question: "How does the Paris Agreement's goal of limiting warming to 1.5 degrees compare to current projected temperatures for global climate trajectories?"
+  question_type: comparative
+  negative_domain: "climate targets"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "remittances and cross-border money transfers"
+- pair_id: 315
+  positive_question: "Explain the compliance steps a licensed money transfer operator must follow to verify sender identity and report suspicious currency transactions."
+  negative_question: "Explain the calibration steps a licensed meteorological station must follow to verify sensor accuracy and report standardized weather observations."
+  question_type: process
+  negative_domain: "weather station operations"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "remittances and cross-border money transfers"
+- pair_id: 316
+  positive_question: "What is the Dutch disease phenomenon, and how can excessive remittance currency inflows harm a developing country's export competitiveness?"
+  negative_question: "What is the albedo feedback phenomenon, and how can excessive ice sheet melting accelerate a polar region's warming trajectory?"
+  question_type: factual
+  negative_domain: "polar climate feedback"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "remittances and cross-border money transfers"
+- pair_id: 317
+  positive_question: "Why do diaspora communities often prefer informal money transfer channels over formal banks when sending currency back home?"
+  negative_question: "Why do migratory salmon often prefer smaller tributary streams over larger main rivers when returning upstream to spawn?"
+  question_type: explanatory
+  negative_domain: "salmon ecology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "remittances and cross-border money transfers"
+- pair_id: 318
+  positive_question: "Compare the regulatory frameworks governing cross-border currency transfers in the United States with those in the European Union."
+  negative_question: "Compare the building code frameworks governing earthquake-resistant construction in Japan with those in the western United States."
+  question_type: comparative
+  negative_domain: "seismic building codes"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "remittances and cross-border money transfers"
+- pair_id: 319
+  positive_question: "Describe the process by which a remittance-dependent household in a developing country converts incoming foreign currency into local spending."
+  negative_question: "Describe the process by which a photosynthesis-dependent plant in a tropical canopy converts incoming solar radiation into chemical energy."
+  question_type: process
+  negative_domain: "photosynthesis"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "remittances and cross-border money transfers"
+- pair_id: 320
+  positive_question: "What innovations in fintech have emerged specifically to reduce the time and cost of converting and sending currency across borders?"
+  negative_question: "What innovations in prosthetics have emerged specifically to improve the comfort and functionality of replacing limbs for amputee patients?"
+  question_type: factual
+  negative_domain: "prosthetic engineering"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "remittances and cross-border money transfers"
+- pair_id: 321
+  positive_question: "Why do natural disasters and political crises in recipient countries cause sudden spikes in remittance currency flows from diaspora abroad?"
+  negative_question: "Why do solar maximum periods and coronal mass ejections from the sun cause sudden spikes in geomagnetic storm activity on Earth?"
+  question_type: explanatory
+  negative_domain: "space weather"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "remittances and cross-border money transfers"
+- pair_id: 322
+  positive_question: "How do remittance corridors between Gulf Cooperation Council states and South Asia compare in volume to those between the US and Latin America?"
+  negative_question: "How do bird migration flyways between Siberia and Southeast Asia compare in distance to those between the Arctic and southern Africa?"
+  question_type: comparative
+  negative_domain: "bird migration flyways"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "remittances and cross-border money transfers"
+- pair_id: 323
+  positive_question: "Explain the process by which central banks in remittance-receiving countries manage the foreign currency reserves that accumulate from incoming transfers."
+  negative_question: "Explain the process by which dam operators in flood-prone regions manage the reservoir water levels that accumulate from incoming seasonal rainfall."
+  question_type: process
+  negative_domain: "reservoir management"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "remittances and cross-border money transfers"
+- pair_id: 324
+  positive_question: "What role do remittances play in providing a stable source of foreign currency for countries with limited export earnings?"
+  negative_question: "What role do wetlands play in providing a natural filtration system for watersheds with limited artificial treatment infrastructure?"
+  question_type: factual
+  negative_domain: "wetland hydrology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "remittances and cross-border money transfers"

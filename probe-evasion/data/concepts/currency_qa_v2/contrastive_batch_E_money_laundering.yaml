@@ -1,0 +1,176 @@
+pairs:
+- pair_id: 723
+  positive_question: "How do financial institutions detect suspicious currency transactions that may indicate money laundering through automated monitoring systems?"
+  negative_question: "How do astronomers detect faint exoplanet signals that may indicate habitable worlds through automated spectral analysis systems?"
+  question_type: process
+  negative_domain: "exoplanet detection"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "money laundering detection and prevention"
+
+- pair_id: 724
+  positive_question: "What is the three-stage model of money laundering — placement, layering, and integration — and how does currency move through each phase?"
+  negative_question: "What is the three-act structure of classical drama — setup, confrontation, and resolution — and how does narrative tension evolve through each phase?"
+  question_type: factual
+  negative_domain: "dramatic writing theory"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "money laundering detection and prevention"
+
+- pair_id: 725
+  positive_question: "Why do criminals use currency exchange houses and shell companies as intermediaries to obscure the origin of illicitly obtained funds?"
+  negative_question: "Why do deep-sea anglerfish use bioluminescent lures and symbiotic bacteria as mechanisms to attract prey in the lightless ocean depths?"
+  question_type: explanatory
+  negative_domain: "deep-sea biology"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "money laundering detection and prevention"
+
+- pair_id: 726
+  positive_question: "Compare the effectiveness of cash transaction reporting requirements versus beneficial ownership registries in preventing currency-based money laundering."
+  negative_question: "Compare the effectiveness of crop rotation schedules versus cover cropping strategies in preventing soil nutrient depletion on agricultural land."
+  question_type: comparative
+  negative_domain: "sustainable agriculture"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "money laundering detection and prevention"
+
+- pair_id: 727
+  positive_question: "Describe the process known as structuring or smurfing, where launderers break large currency amounts into smaller deposits to avoid reporting thresholds."
+  negative_question: "Describe the process known as vermicomposting, where earthworms break down organic waste materials into nutrient-rich humus for garden fertilization."
+  question_type: process
+  negative_domain: "composting"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "money laundering detection and prevention"
+
+- pair_id: 728
+  positive_question: "What role do know-your-customer regulations play in preventing criminals from using bank accounts to launder currency through the formal financial system?"
+  negative_question: "What role do controlled burn practices play in preventing wildfires from consuming vast tracts of forestland during dry summer seasons?"
+  question_type: factual
+  negative_domain: "prescribed fire management"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "money laundering detection and prevention"
+
+- pair_id: 729
+  positive_question: "Why have cryptocurrency mixing services become a growing concern for anti-money laundering regulators tracking illicit currency flows?"
+  negative_question: "Why have microplastic particles become a growing concern for marine biologists studying contaminant accumulation in deep ocean sediments?"
+  question_type: explanatory
+  negative_domain: "ocean pollution"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "money laundering detection and prevention"
+
+- pair_id: 730
+  positive_question: "Compare how different countries set their currency transaction reporting thresholds and the penalties imposed for failing to file suspicious activity reports."
+  negative_question: "Compare how different dog breeds excel at scent tracking tasks and the training methods used to develop search and rescue capabilities."
+  question_type: comparative
+  negative_domain: "canine training"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "money laundering detection and prevention"
+
+- pair_id: 731
+  positive_question: "How do trade-based money laundering schemes use falsified invoices to move currency value across borders without physically transporting cash?"
+  negative_question: "How do carrier pigeons use Earth's magnetic field and visual landmarks to navigate across long distances without electronic guidance systems?"
+  question_type: process
+  negative_domain: "avian navigation"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "money laundering detection and prevention"
+
+- pair_id: 732
+  positive_question: "What is the Financial Action Task Force, and how does its grey list designation affect a country's access to international currency markets?"
+  negative_question: "What is the International Space Station, and how does its orbital inclination affect the scheduling of resupply missions from different launch sites?"
+  question_type: factual
+  negative_domain: "space station logistics"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "money laundering detection and prevention"
+
+- pair_id: 733
+  positive_question: "Why do luxury real estate markets attract money launderers seeking to convert illicit currency into legitimate high-value property assets?"
+  negative_question: "Why do tropical mangrove forests attract diverse fish populations seeking to use the root systems as protected nursery habitat?"
+  question_type: explanatory
+  negative_domain: "mangrove ecology"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "money laundering detection and prevention"
+
+- pair_id: 734
+  positive_question: "Compare the anti-money laundering frameworks of Switzerland and Singapore and how each handles suspicious currency flows from foreign nationals."
+  negative_question: "Compare the fermentation processes of Belgian lambic ales and German lagers and how each achieves its distinctive flavor and carbonation profile."
+  question_type: comparative
+  negative_domain: "brewing science"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "money laundering detection and prevention"
+
+- pair_id: 735
+  positive_question: "Describe the steps regulators follow when investigating a bank suspected of systematically failing to report suspicious currency transactions."
+  negative_question: "Describe the steps paleontologists follow when excavating a fossil site suspected of containing a previously undiscovered dinosaur species."
+  question_type: process
+  negative_domain: "paleontology"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "money laundering detection and prevention"
+
+- pair_id: 736
+  positive_question: "What technologies do compliance teams use to screen wire transfers for patterns consistent with currency-based terrorist financing?"
+  negative_question: "What technologies do volcanologists use to monitor seismic activity for patterns consistent with imminent magma chamber pressurization?"
+  question_type: factual
+  negative_domain: "volcano monitoring"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "money laundering detection and prevention"
+
+- pair_id: 737
+  positive_question: "Why did the Panama Papers revelations expose how shell companies and offshore accounts facilitate the laundering of vast sums of currency?"
+  negative_question: "Why did the discovery of deep hydrothermal vents expose how chemosynthetic bacteria sustain entire ecosystems without sunlight on the ocean floor?"
+  question_type: explanatory
+  negative_domain: "hydrothermal vent biology"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "money laundering detection and prevention"
+
+- pair_id: 738
+  positive_question: "Compare the challenges of detecting money laundering in traditional currency-based systems versus decentralized cryptocurrency networks."
+  negative_question: "Compare the challenges of detecting gravitational waves from binary neutron star mergers versus those from supermassive black hole collisions."
+  question_type: comparative
+  negative_domain: "gravitational wave astronomy"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "money laundering detection and prevention"

@@ -1,0 +1,251 @@
+pairs:
+- pair_id: 50
+  positive_question: "How does the Dewey Decimal Classification system organize knowledge into its ten main classes, and what principles guided Melvil Dewey's original design?"
+  negative_question: "How does the periodic table of elements organize matter into its eighteen main groups, and what principles guided Dmitri Mendeleev's original design?"
+  question_type: explanatory
+  negative_domain: "chemistry"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "cataloging systems (Dewey Decimal, Library of Congress)"
+- pair_id: 51
+  positive_question: "What are the key structural differences between the Library of Congress Classification and the Dewey Decimal system in terms of notation and hierarchy?"
+  negative_question: "What are the key structural differences between Gothic and Romanesque cathedral architecture in terms of vaulting and buttress design?"
+  question_type: comparative
+  negative_domain: "medieval architecture"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "cataloging systems (Dewey Decimal, Library of Congress)"
+- pair_id: 52
+  positive_question: "What process does a cataloger follow when assigning a Library of Congress subject heading to a newly acquired monograph?"
+  negative_question: "What process does a brewer follow when selecting a specific yeast strain for a newly formulated craft beer recipe?"
+  question_type: process
+  negative_domain: "craft brewing"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "cataloging systems (Dewey Decimal, Library of Congress)"
+- pair_id: 53
+  positive_question: "When was the first edition of the Dewey Decimal Classification published, and how many editions have been released since then?"
+  negative_question: "When was the first transatlantic telegraph cable successfully laid, and how many subsequent cables were installed in the following decades?"
+  question_type: factual
+  negative_domain: "telecommunications history"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "cataloging systems (Dewey Decimal, Library of Congress)"
+- pair_id: 54
+  positive_question: "How has the Machine-Readable Cataloging format transformed the way bibliographic records are created, shared, and maintained across institutions?"
+  negative_question: "How has the global positioning system transformed the way nautical charts are created, updated, and maintained across maritime agencies?"
+  question_type: explanatory
+  negative_domain: "maritime navigation"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "cataloging systems (Dewey Decimal, Library of Congress)"
+- pair_id: 55
+  positive_question: "Compare the advantages and disadvantages of the Universal Decimal Classification with the Dewey Decimal system for multilingual collections."
+  negative_question: "Compare the advantages and disadvantages of hydroelectric power generation with solar photovoltaic systems for remote island communities."
+  question_type: comparative
+  negative_domain: "renewable energy"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "cataloging systems (Dewey Decimal, Library of Congress)"
+- pair_id: 56
+  positive_question: "What steps are involved in converting a library's catalog records from the MARC format to the newer BIBFRAME linked data standard?"
+  negative_question: "What steps are involved in converting a factory's production line from manual assembly to a fully automated robotic welding system?"
+  question_type: process
+  negative_domain: "industrial robotics"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "cataloging systems (Dewey Decimal, Library of Congress)"
+- pair_id: 57
+  positive_question: "What is the role of authority control in library cataloging, and how does it ensure consistency across bibliographic databases?"
+  negative_question: "What is the role of quality control in semiconductor fabrication, and how does it ensure consistency across production batches?"
+  question_type: explanatory
+  negative_domain: "semiconductor manufacturing"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "cataloging systems (Dewey Decimal, Library of Congress)"
+- pair_id: 58
+  positive_question: "Who developed the Library of Congress Classification system, and what was the original institutional need that motivated its creation?"
+  negative_question: "Who developed the Richter magnitude scale, and what was the original scientific need that motivated its creation?"
+  question_type: factual
+  negative_domain: "seismology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "cataloging systems (Dewey Decimal, Library of Congress)"
+- pair_id: 59
+  positive_question: "Compare how the Dewey Decimal system and the Library of Congress Classification handle interdisciplinary works that span multiple subject areas."
+  negative_question: "Compare how traditional acupuncture and modern physiotherapy handle chronic pain conditions that involve multiple musculoskeletal systems."
+  question_type: comparative
+  negative_domain: "pain management therapy"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "cataloging systems (Dewey Decimal, Library of Congress)"
+- pair_id: 60
+  positive_question: "What process does a library system use to reclassify materials when a cataloging standard undergoes a major revision?"
+  negative_question: "What process does an airline use to recertify aircraft when a safety regulation undergoes a major revision?"
+  question_type: process
+  negative_domain: "aviation regulation"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "cataloging systems (Dewey Decimal, Library of Congress)"
+- pair_id: 61
+  positive_question: "How do Cutter numbers function within the Library of Congress call number system to create unique shelf locations for individual items?"
+  negative_question: "How do GPS coordinates function within the geocaching navigation system to create unique waypoints for individual hidden containers?"
+  question_type: explanatory
+  negative_domain: "geocaching"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "cataloging systems (Dewey Decimal, Library of Congress)"
+- pair_id: 62
+  positive_question: "What are the main criticisms of the Dewey Decimal Classification regarding cultural bias, and what revisions have been made to address them?"
+  negative_question: "What are the main criticisms of standardized intelligence testing regarding cultural bias, and what revisions have been made to address them?"
+  question_type: factual
+  negative_domain: "psychometrics"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "cataloging systems (Dewey Decimal, Library of Congress)"
+- pair_id: 63
+  positive_question: "Compare the adoption rates of the Dewey Decimal Classification in public libraries versus academic libraries around the world."
+  negative_question: "Compare the adoption rates of electric vehicle charging networks in urban areas versus rural regions around the world."
+  question_type: comparative
+  negative_domain: "electric vehicle infrastructure"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "cataloging systems (Dewey Decimal, Library of Congress)"
+- pair_id: 64
+  positive_question: "What steps does a cataloging department take to implement Resource Description and Access rules when replacing older Anglo-American Cataloguing Rules?"
+  negative_question: "What steps does a winemaking estate take to implement organic certification standards when replacing older conventional farming practices?"
+  question_type: process
+  negative_domain: "organic viticulture"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "cataloging systems (Dewey Decimal, Library of Congress)"
+- pair_id: 65
+  positive_question: "How does the concept of literary warrant influence decisions about where to place new subjects within an existing classification scheme?"
+  negative_question: "How does the concept of terroir influence decisions about where to cultivate new grape varietals within an existing wine region?"
+  question_type: explanatory
+  negative_domain: "oenology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "cataloging systems (Dewey Decimal, Library of Congress)"
+- pair_id: 66
+  positive_question: "What is the history of the Dublin Core metadata standard, and how is it used to describe digital resources in library catalogs?"
+  negative_question: "What is the history of the Beaufort wind force scale, and how is it used to describe sea conditions in maritime weather forecasts?"
+  question_type: factual
+  negative_domain: "meteorology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "cataloging systems (Dewey Decimal, Library of Congress)"
+- pair_id: 67
+  positive_question: "Compare how cataloging systems in the United States differ from those commonly used in libraries across Scandinavian countries."
+  negative_question: "Compare how building insulation standards in the United States differ from those commonly used in construction across Scandinavian countries."
+  question_type: comparative
+  negative_domain: "building construction"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "cataloging systems (Dewey Decimal, Library of Congress)"
+- pair_id: 68
+  positive_question: "What process is followed when creating a new subject heading for a topic that does not yet exist in the Library of Congress Subject Headings?"
+  negative_question: "What process is followed when creating a new protected designation of origin for a cheese that does not yet have official European Union recognition?"
+  question_type: process
+  negative_domain: "food designation regulation"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "cataloging systems (Dewey Decimal, Library of Congress)"
+- pair_id: 69
+  positive_question: "How do faceted classification schemes differ from enumerative systems like the Dewey Decimal Classification in their approach to organizing knowledge?"
+  negative_question: "How do aquaponic farming systems differ from traditional soil-based agriculture in their approach to delivering plant nutrients?"
+  question_type: explanatory
+  negative_domain: "aquaponics"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "cataloging systems (Dewey Decimal, Library of Congress)"
+- pair_id: 70
+  positive_question: "What are the main components of a complete MARC bibliographic record, and what information does each field typically contain?"
+  negative_question: "What are the main components of a complete soil test report, and what information does each parameter typically indicate?"
+  question_type: factual
+  negative_domain: "soil science"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "cataloging systems (Dewey Decimal, Library of Congress)"
+- pair_id: 71
+  positive_question: "Compare the level of detail in cataloging original works versus cataloging reproductions and facsimiles under current standards."
+  negative_question: "Compare the level of detail in appraising original oil paintings versus appraising lithographic reproductions under current auction standards."
+  question_type: comparative
+  negative_domain: "art appraisal"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "cataloging systems (Dewey Decimal, Library of Congress)"
+- pair_id: 72
+  positive_question: "What steps are involved in performing copy cataloging, where an existing bibliographic record is adapted for a different institution's collection?"
+  negative_question: "What steps are involved in performing a tissue graft, where an existing donor sample is adapted for a different patient's surgical needs?"
+  question_type: process
+  negative_domain: "transplant surgery"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "cataloging systems (Dewey Decimal, Library of Congress)"
+- pair_id: 73
+  positive_question: "How has the transition from card catalogs to online public access catalogs changed the way patrons interact with cataloging data?"
+  negative_question: "How has the transition from analog film to digital cinema changed the way editors interact with color grading tools?"
+  question_type: explanatory
+  negative_domain: "film post-production"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "cataloging systems (Dewey Decimal, Library of Congress)"
+- pair_id: 74
+  positive_question: "What is the Colon Classification developed by S.R. Ranganathan, and how does it differ fundamentally from hierarchical cataloging systems?"
+  negative_question: "What is the Linnaean taxonomy developed by Carl Linnaeus, and how does it differ fundamentally from cladistic biological classification systems?"
+  question_type: factual
+  negative_domain: "biological taxonomy"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "cataloging systems (Dewey Decimal, Library of Congress)"

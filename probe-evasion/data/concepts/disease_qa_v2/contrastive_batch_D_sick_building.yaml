@@ -1,0 +1,151 @@
+pairs:
+- pair_id: 660
+  positive_question: "What are the diagnostic criteria for asthma, and how do spirometry results distinguish asthma from chronic obstructive pulmonary disease?"
+  negative_question: "What are the diagnostic criteria for sick building syndrome, and how do building inspections distinguish poor ventilation from chemical off-gassing as root causes?"
+  question_type: factual
+  negative_domain: "sick building syndrome and environmental sensitivities"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 661
+  positive_question: "How does chronic exposure to secondhand smoke increase the risk of lung cancer and cardiovascular disease in nonsmoking adults?"
+  negative_question: "How does chronic exposure to volatile organic compounds from building materials contribute to sick building syndrome symptoms like headaches and fatigue?"
+  question_type: process
+  negative_domain: "sick building syndrome and environmental sensitivities"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 662
+  positive_question: "Compare the respiratory disease outcomes of occupational asbestos exposure with those of occupational silica dust exposure in miners."
+  negative_question: "Compare the building-related symptoms caused by inadequate HVAC ventilation rates with those caused by mold contamination in water-damaged commercial buildings."
+  question_type: comparative
+  negative_domain: "sick building syndrome and environmental sensitivities"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 663
+  positive_question: "Why do allergic diseases like eczema, asthma, and hay fever often co-occur in the same individual as part of the atopic march?"
+  negative_question: "Why do building occupants in energy-efficient sealed structures often report higher rates of headaches, eye irritation, and respiratory complaints than those in naturally ventilated buildings?"
+  question_type: explanatory
+  negative_domain: "sick building syndrome and environmental sensitivities"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 664
+  positive_question: "What role does air pollution play in exacerbating respiratory diseases like asthma and increasing hospitalizations during high-smog events?"
+  negative_question: "What role does indoor air quality monitoring play in diagnosing sick building syndrome and guiding remediation of poorly ventilated commercial spaces?"
+  question_type: factual
+  negative_domain: "sick building syndrome and environmental sensitivities"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 665
+  positive_question: "Describe the immunological process by which allergic sensitization to dust mites leads to chronic inflammation in the airways of asthma patients."
+  negative_question: "Describe the engineering process by which building envelope failures lead to moisture intrusion, mold colonization, and indoor air quality degradation."
+  question_type: process
+  negative_domain: "sick building syndrome and environmental sensitivities"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 666
+  positive_question: "How do environmental factors like humidity and temperature affect the spread of infectious respiratory diseases in indoor settings?"
+  negative_question: "How do environmental factors like humidity and temperature affect the concentration of formaldehyde off-gassing from furniture and flooring in sealed office buildings?"
+  question_type: explanatory
+  negative_domain: "sick building syndrome and environmental sensitivities"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 667
+  positive_question: "Compare the health effects of chronic lead poisoning in children with those of chronic mercury exposure in adults."
+  negative_question: "Compare the health effects attributed to multiple chemical sensitivity syndrome with those attributed to electromagnetic hypersensitivity in building occupants."
+  question_type: comparative
+  negative_domain: "sick building syndrome and environmental sensitivities"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 668
+  positive_question: "What is Legionnaires' disease, and how does the Legionella bacterium cause severe pneumonia when inhaled from contaminated water systems?"
+  negative_question: "What is the WELL Building Standard, and how does it specify ventilation rates, filtration requirements, and material emissions limits to prevent sick building syndrome?"
+  question_type: factual
+  negative_domain: "sick building syndrome and environmental sensitivities"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 669
+  positive_question: "Why does occupational exposure to certain chemicals increase the risk of bladder cancer and mesothelioma decades after initial contact?"
+  negative_question: "Why does occupational exposure to poor indoor air quality in tight buildings increase reports of fatigue, cognitive impairment, and mucous membrane irritation?"
+  question_type: explanatory
+  negative_domain: "sick building syndrome and environmental sensitivities"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 670
+  positive_question: "Describe the process by which inhaled asbestos fibers become lodged in lung tissue and eventually trigger malignant mesothelioma decades later."
+  negative_question: "Describe the process by which inadequate outdoor air exchange in sealed buildings allows carbon dioxide and pollutant concentrations to build up throughout the workday."
+  question_type: process
+  negative_domain: "sick building syndrome and environmental sensitivities"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 671
+  positive_question: "How effective are screening programs for early detection of colorectal cancer, and what is the evidence for colonoscopy versus fecal testing?"
+  negative_question: "How effective are post-occupancy evaluation surveys for detecting sick building syndrome, and what is the evidence for questionnaire-based versus instrumental assessment?"
+  question_type: comparative
+  negative_domain: "sick building syndrome and environmental sensitivities"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 672
+  positive_question: "What are the mechanisms by which chronic stress contributes to cardiovascular disease through sustained cortisol elevation and inflammatory pathways?"
+  negative_question: "What are the mechanisms by which thermal discomfort and poor lighting in office buildings contribute to reported sick building syndrome symptoms through psychophysiological pathways?"
+  question_type: factual
+  negative_domain: "sick building syndrome and environmental sensitivities"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 673
+  positive_question: "Why do some individuals develop severe allergic reactions to common substances while others remain completely unaffected by the same exposures?"
+  negative_question: "Why do some building occupants develop debilitating chemical sensitivities to common indoor pollutants while others sharing the same office report no symptoms at all?"
+  question_type: explanatory
+  negative_domain: "sick building syndrome and environmental sensitivities"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 674
+  positive_question: "Describe how pandemic preparedness plans address hospital surge capacity and ventilator allocation during a mass respiratory disease outbreak."
+  negative_question: "Describe how building commissioning protocols address HVAC system performance verification and indoor environmental quality testing before occupancy of new construction."
+  question_type: process
+  negative_domain: "sick building syndrome and environmental sensitivities"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"

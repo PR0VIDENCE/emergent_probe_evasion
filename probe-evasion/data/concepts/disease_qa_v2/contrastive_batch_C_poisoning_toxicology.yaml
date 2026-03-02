@@ -1,0 +1,181 @@
+pairs:
+- pair_id: 415
+  positive_question: How does the rabies virus travel along peripheral nerves to reach
+    the central nervous system and cause fatal encephalitis?
+  negative_question: How does lead poisoning accumulate in the body over time and cause
+    neurological damage without any infectious agent being involved?
+  question_type: process
+  negative_domain: poisoning and toxicology
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 416
+  positive_question: What are the hallmark symptoms that differentiate bacterial pneumonia
+    from viral pneumonia in clinical presentation?
+  negative_question: What are the hallmark symptoms that differentiate acute arsenic
+    poisoning from chronic low-level arsenic exposure in clinical presentation?
+  question_type: comparative
+  negative_domain: poisoning and toxicology
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 417
+  positive_question: What pathological changes occur in the kidneys during the progression
+    of diabetic nephropathy as a complication of diabetes?
+  negative_question: What pathological changes occur in the kidneys during acute mercury
+    poisoning from ingestion of inorganic mercury compounds?
+  question_type: explanatory
+  negative_domain: poisoning and toxicology
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 418
+  positive_question: Which vector-borne diseases transmitted by mosquitoes pose the
+    greatest global public health burden and why?
+  negative_question: Which household chemicals pose the greatest risk of accidental
+    poisoning in children and what makes them so dangerous?
+  question_type: factual
+  negative_domain: poisoning and toxicology
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 419
+  positive_question: How does the immune system's failure to distinguish self from non-self
+    lead to autoimmune diseases like lupus?
+  negative_question: How does the liver's cytochrome P450 enzyme system metabolize
+    and detoxify pharmaceutical drugs to prevent accidental overdose toxicity?
+  question_type: process
+  negative_domain: poisoning and toxicology
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 420
+  positive_question: What is the role of amyloid plaques and tau tangles in the neurodegenerative
+    progression of Alzheimer's disease?
+  negative_question: What is the role of chelation therapy in removing heavy metals
+    like lead and mercury from the bloodstream after chronic toxic exposure?
+  question_type: explanatory
+  negative_domain: poisoning and toxicology
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 421
+  positive_question: Compare the transmission dynamics of airborne diseases like measles
+    versus droplet-transmitted diseases like influenza in enclosed spaces.
+  negative_question: Compare the mechanisms of toxicity between carbon monoxide poisoning
+    through inhalation versus cyanide poisoning through ingestion.
+  question_type: comparative
+  negative_domain: poisoning and toxicology
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 422
+  positive_question: What genetic mutations predispose individuals to hereditary forms
+    of colorectal cancer such as Lynch syndrome?
+  negative_question: What genetic polymorphisms affect individual susceptibility to
+    alcohol toxicity and explain why some populations metabolize ethanol more slowly?
+  question_type: factual
+  negative_domain: poisoning and toxicology
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 423
+  positive_question: Describe the sequence of events by which untreated strep throat
+    can progress to rheumatic fever and permanent heart valve damage.
+  negative_question: Describe the sequence of events by which organophosphate pesticide
+    exposure inhibits acetylcholinesterase and leads to a cholinergic crisis.
+  question_type: process
+  negative_domain: poisoning and toxicology
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 424
+  positive_question: How do fungal diseases like aspergillosis become life-threatening
+    in immunocompromised patients such as organ transplant recipients?
+  negative_question: How do mushroom poisonings from species like Amanita phalloides
+    cause fatal liver failure in otherwise healthy foragers?
+  question_type: explanatory
+  negative_domain: poisoning and toxicology
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 425
+  positive_question: What distinguishes the clinical course of acute myeloid leukemia
+    from chronic lymphocytic leukemia in adult patients?
+  negative_question: What distinguishes the clinical presentation of acute ethylene
+    glycol poisoning from methanol poisoning in emergency department patients?
+  question_type: comparative
+  negative_domain: poisoning and toxicology
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 426
+  positive_question: What is the mechanism by which Helicobacter pylori infection causes
+    chronic gastritis and increases the risk of stomach cancer?
+  negative_question: What is the mechanism by which chronic exposure to aflatoxins
+    from contaminated grain causes hepatotoxicity and increases liver cancer risk?
+  question_type: explanatory
+  negative_domain: poisoning and toxicology
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 427
+  positive_question: Which childhood infectious diseases have been most effectively
+    controlled through widespread vaccination programs worldwide?
+  negative_question: Which antidotes are most critical for emergency departments to
+    stock for treating common cases of drug overdose and chemical poisoning?
+  question_type: factual
+  negative_domain: poisoning and toxicology
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 428
+  positive_question: How does chronic obstructive pulmonary disease progressively reduce
+    lung function through destruction of alveolar tissue?
+  negative_question: How does chronic low-dose radiation exposure progressively damage
+    cellular DNA and increase the cumulative risk of tissue harm?
+  question_type: process
+  negative_domain: poisoning and toxicology
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 429
+  positive_question: What are the major risk factors for developing coronary artery
+    disease and how do they contribute to atherosclerotic plaque formation?
+  negative_question: What are the major risk factors for developing acute kidney injury
+    from nonsteroidal anti-inflammatory drug overuse and how does nephrotoxicity occur?
+  question_type: factual
+  negative_domain: poisoning and toxicology
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied

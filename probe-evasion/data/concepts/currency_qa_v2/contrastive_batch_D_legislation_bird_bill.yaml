@@ -1,0 +1,220 @@
+pairs:
+- pair_id: 625
+  positive_question: "What denominations of dollar bills are currently in circulation in the United States, and which ones are the most commonly used?"
+  negative_question: "What types of bills are currently under consideration in the United States Congress, and which legislative topics are the most frequently debated?"
+  question_type: factual
+  negative_domain: "bill (legislation, bird bill, utility bill)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 626
+  positive_question: "Why do larger denomination bills like the hundred-dollar bill circulate less frequently than smaller bills in everyday retail transactions?"
+  negative_question: "Why do controversial bills like healthcare reform legislation take longer to pass than routine spending bills in congressional proceedings?"
+  question_type: explanatory
+  negative_domain: "bill (legislation, bird bill, utility bill)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 627
+  positive_question: "Compare the physical dimensions, weight, and material composition of US dollar bills versus euro banknotes of similar value."
+  negative_question: "Compare the bill shape, length, and structural composition of a pelican's bill versus a toucan's bill in terms of feeding adaptation."
+  question_type: comparative
+  negative_domain: "bill (legislation, bird bill, utility bill)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 628
+  positive_question: "Describe the process by which the Bureau of Engraving and Printing produces new dollar bills from blank sheets to finished currency."
+  negative_question: "Describe the process by which a proposed bill moves through congressional committees from initial draft to final legislative vote."
+  question_type: process
+  negative_domain: "bill (legislation, bird bill, utility bill)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 629
+  positive_question: "What happens to damaged or mutilated dollar bills, and how can citizens exchange them for replacement currency?"
+  negative_question: "What happens to injured or damaged bird bills, and how can avian veterinarians repair or create prosthetic replacements for them?"
+  question_type: factual
+  negative_domain: "bill (legislation, bird bill, utility bill)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 630
+  positive_question: "Why were five-hundred and one-thousand dollar bills discontinued from circulation in the United States currency system?"
+  negative_question: "Why are certain utility bills structured with tiered pricing rates that charge more per unit as household consumption increases?"
+  question_type: explanatory
+  negative_domain: "bill (legislation, bird bill, utility bill)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 631
+  positive_question: "Compare the anti-counterfeiting features of the newest twenty-dollar bill design with those of the previous generation of bills."
+  negative_question: "Compare the bill morphology of filter-feeding flamingos with that of seed-cracking finches in terms of evolutionary dietary specialization."
+  question_type: comparative
+  negative_domain: "bill (legislation, bird bill, utility bill)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 632
+  positive_question: "How does the Federal Reserve determine how many new bills of each denomination to order from the printing facility each year?"
+  negative_question: "How does a congressional committee determine how many amendments to attach to a bill before sending it to the full chamber for debate?"
+  question_type: process
+  negative_domain: "bill (legislation, bird bill, utility bill)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 633
+  positive_question: "What is the average lifespan of a dollar bill in active circulation before it becomes too worn and is removed by the Federal Reserve?"
+  negative_question: "What is the average timeline of a bill in active legislative consideration before it either passes into law or dies in committee?"
+  question_type: factual
+  negative_domain: "bill (legislation, bird bill, utility bill)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 634
+  positive_question: "Why do criminals prefer certain denominations of bills for illicit transactions, and how do law enforcement agencies track serial numbers?"
+  negative_question: "Why do lobbyists prefer certain types of bills for inserting favorable provisions, and how do transparency organizations track legislative changes?"
+  question_type: explanatory
+  negative_domain: "bill (legislation, bird bill, utility bill)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 635
+  positive_question: "Compare the cost of producing a one-dollar bill versus a one-dollar coin and explain which form of currency is more economical."
+  negative_question: "Compare the cost of paying a monthly electricity bill versus a monthly gas bill and explain which utility expense is more variable seasonally."
+  question_type: comparative
+  negative_domain: "bill (legislation, bird bill, utility bill)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 636
+  positive_question: "Describe the steps a bank teller follows to verify the authenticity of large-denomination bills presented for deposit."
+  negative_question: "Describe the steps a hummingbird follows to use its specialized bill to extract nectar from deep tubular flowers."
+  question_type: process
+  negative_domain: "bill (legislation, bird bill, utility bill)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 637
+  positive_question: "What are the most frequently counterfeited currency bills in the world, and which countries face the worst counterfeiting problems?"
+  negative_question: "What are the most frequently contested legislative bills in Congress, and which policy areas generate the most partisan disagreement?"
+  question_type: factual
+  negative_domain: "bill (legislation, bird bill, utility bill)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 638
+  positive_question: "Why do some countries still print very low-denomination bills even when the cost of production exceeds the face value of the currency?"
+  negative_question: "Why do some bird species have disproportionately large bills even when the metabolic cost of growing them seems to exceed the feeding advantage?"
+  question_type: explanatory
+  negative_domain: "bill (legislation, bird bill, utility bill)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 639
+  positive_question: "Compare the designs and cultural symbolism depicted on currency bills from Japan, Switzerland, and Australia."
+  negative_question: "Compare the reading requirements and amendment procedures described in legislative bills from different state constitutions in America."
+  question_type: comparative
+  negative_domain: "bill (legislation, bird bill, utility bill)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 640
+  positive_question: "How does the Secret Service investigate cases of counterfeit currency bills and trace them back to their source of production?"
+  negative_question: "How does a utility company investigate cases of abnormally high bills and trace the discrepancy back to metering or billing errors?"
+  question_type: process
+  negative_domain: "bill (legislation, bird bill, utility bill)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 641
+  positive_question: "What historical events led to the United States placing specific presidents and founding fathers on its paper currency bills?"
+  negative_question: "What evolutionary pressures led to the development of specialized bill shapes in wading birds like herons, ibises, and spoonbills?"
+  question_type: factual
+  negative_domain: "bill (legislation, bird bill, utility bill)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 642
+  positive_question: "Why is the hundred-dollar bill the most widely held US currency denomination outside the United States?"
+  negative_question: "Why is the bill of rights the most widely cited constitutional document in legal proceedings across different democratic countries?"
+  question_type: explanatory
+  negative_domain: "bill (legislation, bird bill, utility bill)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 643
+  positive_question: "Compare the sizes of currency bill denominations that different countries have chosen to withdraw from active circulation."
+  negative_question: "Compare the sizes of bird bills among different species of crossbills and how each shape adapts to extracting seeds from specific conifer cones."
+  question_type: comparative
+  negative_domain: "bill (legislation, bird bill, utility bill)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 644
+  positive_question: "Describe the journey of a newly printed currency bill from the Bureau of Engraving and Printing to a consumer's wallet."
+  negative_question: "Describe the journey of a proposed legislative bill from its introduction by a sponsor to its final signature or veto by the president."
+  question_type: process
+  negative_domain: "bill (legislation, bird bill, utility bill)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"

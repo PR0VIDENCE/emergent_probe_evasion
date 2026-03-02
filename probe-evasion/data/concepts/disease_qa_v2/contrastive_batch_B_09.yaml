@@ -1,0 +1,334 @@
+pairs:
+- pair_id: 225
+  positive_question: How do bacteria develop resistance to antibiotics through mechanisms
+    like gene mutation, horizontal gene transfer, and efflux pump upregulation?
+  negative_question: How do chess players develop resistance to opening traps through
+    mechanisms like pattern recognition, database study, and positional evaluation?
+  question_type: process
+  negative_domain: competitive chess
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: antimicrobial resistance and superbugs
+- pair_id: 226
+  positive_question: What are the major classes of antibiotic-resistant bacteria commonly
+    referred to as superbugs, and which infections do they most frequently cause?
+  negative_question: What are the major classes of heat-resistant ceramic compounds
+    commonly referred to as refractories, and which industrial applications do they
+    most frequently serve?
+  question_type: factual
+  negative_domain: refractory ceramics
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: antimicrobial resistance and superbugs
+- pair_id: 227
+  positive_question: Compare the threat posed by methicillin-resistant Staphylococcus
+    aureus in hospital settings with that of drug-resistant tuberculosis in community
+    settings.
+  negative_question: Compare the threat posed by invasive zebra mussels in freshwater
+    lake ecosystems with that of invasive lionfish in tropical coral reef ecosystems.
+  question_type: comparative
+  negative_domain: aquatic invasive species
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: antimicrobial resistance and superbugs
+- pair_id: 228
+  positive_question: How does the overuse of antibiotics in livestock farming contribute
+    to the emergence and spread of antimicrobial-resistant disease-causing bacteria?
+  negative_question: How does the overuse of nitrogen fertilizers in crop farming contribute
+    to the emergence and spread of algal bloom events in downstream waterways?
+  question_type: explanatory
+  negative_domain: agricultural runoff ecology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: antimicrobial resistance and superbugs
+- pair_id: 229
+  positive_question: Describe the process by which a hospital infection control team
+    implements measures to contain an outbreak of a multidrug-resistant disease organism.
+  negative_question: Describe the process by which a cybersecurity incident response
+    team implements measures to contain a breach by an advanced persistent threat actor.
+  question_type: process
+  negative_domain: cybersecurity incident response
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: antimicrobial resistance and superbugs
+- pair_id: 230
+  positive_question: What role does horizontal gene transfer via plasmids play in allowing
+    antibiotic resistance genes to spread rapidly between different bacterial species?
+  negative_question: What role does viral content sharing via social media play in allowing
+    misinformation narratives to spread rapidly between different online communities?
+  question_type: explanatory
+  negative_domain: social media dynamics
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: antimicrobial resistance and superbugs
+- pair_id: 231
+  positive_question: Compare the strategies of antibiotic stewardship programs in hospitals
+    with those used in agricultural settings to combat antimicrobial resistance in disease
+    organisms.
+  negative_question: Compare the strategies of water conservation programs in municipal
+    utilities with those used in industrial settings to reduce freshwater consumption
+    in manufacturing.
+  question_type: comparative
+  negative_domain: water conservation engineering
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: antimicrobial resistance and superbugs
+- pair_id: 232
+  positive_question: What new approaches like bacteriophage therapy are being explored
+    as alternatives to traditional antibiotics for treating drug-resistant bacterial
+    diseases?
+  negative_question: What new approaches like perovskite photovoltaics are being explored
+    as alternatives to traditional silicon cells for improving solar energy conversion
+    efficiency?
+  question_type: factual
+  negative_domain: solar cell technology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: antimicrobial resistance and superbugs
+- pair_id: 233
+  positive_question: How do biofilms formed by resistant bacteria on medical devices
+    like catheters create persistent disease infections that are extremely difficult
+    to eradicate?
+  negative_question: How do mineral deposits formed by hard water on heat exchangers
+    create persistent scaling problems that are extremely difficult to reverse?
+  question_type: explanatory
+  negative_domain: heat exchanger maintenance
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: antimicrobial resistance and superbugs
+- pair_id: 234
+  positive_question: Describe the laboratory process of performing antimicrobial susceptibility
+    testing to determine which antibiotics a disease-causing bacterial isolate remains
+    sensitive to.
+  negative_question: Describe the laboratory process of performing tensile strength
+    testing to determine which stress thresholds a carbon steel specimen remains intact
+    under.
+  question_type: process
+  negative_domain: materials tensile testing
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: antimicrobial resistance and superbugs
+- pair_id: 235
+  positive_question: What is the significance of the WHO priority pathogen list in guiding
+    global research investment toward developing new treatments for resistant disease
+    organisms?
+  negative_question: What is the significance of the UNESCO World Heritage list in guiding
+    global conservation investment toward preserving endangered cultural and natural
+    landmarks?
+  question_type: factual
+  negative_domain: heritage conservation
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: antimicrobial resistance and superbugs
+- pair_id: 236
+  positive_question: Compare the economic burden of antimicrobial-resistant infections
+    on healthcare systems with the projected costs if resistance continues to accelerate
+    unchecked.
+  negative_question: Compare the economic burden of deferred road maintenance on transportation
+    budgets with the projected costs if infrastructure degradation continues to accelerate
+    unchecked.
+  question_type: comparative
+  negative_domain: infrastructure economics
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: antimicrobial resistance and superbugs
+- pair_id: 237
+  positive_question: How does the inappropriate prescribing of broad-spectrum antibiotics
+    for viral infections accelerate the development of resistance in commensal bacteria?
+  negative_question: How does the indiscriminate application of road salt for minor
+    frost events accelerate the degradation of concrete surfaces in parking structures?
+  question_type: explanatory
+  negative_domain: concrete degradation chemistry
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: antimicrobial resistance and superbugs
+- pair_id: 238
+  positive_question: What is the concept of the antibiotic resistance crisis, and why
+    has the pipeline of new antibiotic drug development slowed despite the growing disease
+    threat?
+  negative_question: What is the concept of the rare earth supply crisis, and why has
+    the pipeline of new mining site development slowed despite the growing technology
+    demand?
+  question_type: factual
+  negative_domain: rare earth mining economics
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: antimicrobial resistance and superbugs
+- pair_id: 239
+  positive_question: Describe the mechanisms by which carbapenem-resistant Enterobacteriaceae
+    evade even last-resort antibiotics and cause life-threatening disease in hospital
+    patients.
+  negative_question: Describe the mechanisms by which stealth aircraft designs evade
+    even advanced radar installations and maintain low observability during military
+    reconnaissance flights.
+  question_type: process
+  negative_domain: stealth aircraft design
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: antimicrobial resistance and superbugs
+- pair_id: 240
+  positive_question: How do rapid molecular diagnostic tests help clinicians identify
+    resistant disease organisms faster and choose effective antibiotics before resistance
+    patterns are confirmed?
+  negative_question: How do rapid soil penetrometer tests help geotechnical engineers
+    identify weak strata faster and choose foundation designs before full bore logs
+    are completed?
+  question_type: explanatory
+  negative_domain: geotechnical site investigation
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: antimicrobial resistance and superbugs
+- pair_id: 241
+  positive_question: Compare the global One Health approach to antimicrobial resistance,
+    linking human, animal, and environmental health, with siloed approaches that address
+    each sector separately.
+  negative_question: Compare the integrated DevSecOps approach to software delivery,
+    linking development, security, and operations, with siloed approaches that address
+    each function separately.
+  question_type: comparative
+  negative_domain: software DevSecOps
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: antimicrobial resistance and superbugs
+- pair_id: 242
+  positive_question: What role do wastewater treatment plants play as potential breeding
+    grounds for antimicrobial-resistant bacteria that can spread back into disease-affected
+    communities?
+  negative_question: What role do abandoned mines play as potential breeding grounds
+    for acid mine drainage that can leach back into affected downstream watersheds?
+  question_type: factual
+  negative_domain: acid mine drainage
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: antimicrobial resistance and superbugs
+- pair_id: 243
+  positive_question: How do combination antibiotic therapies using multiple drugs simultaneously
+    help prevent the emergence of resistance during treatment of serious bacterial diseases?
+  negative_question: How do combination lock mechanisms using multiple tumbler discs
+    simultaneously help prevent the success of picking attempts during protection of
+    high-security vaults?
+  question_type: explanatory
+  negative_domain: locksmithing
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: antimicrobial resistance and superbugs
+- pair_id: 244
+  positive_question: Describe the regulatory and economic incentives that have been
+    proposed to encourage pharmaceutical companies to invest in developing new antibiotics
+    for resistant diseases.
+  negative_question: Describe the regulatory and economic incentives that have been
+    proposed to encourage energy companies to invest in developing new offshore wind
+    farms in deep water.
+  question_type: process
+  negative_domain: offshore wind energy policy
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: antimicrobial resistance and superbugs
+- pair_id: 245
+  positive_question: What is the difference between intrinsic and acquired antimicrobial
+    resistance, and how does each type affect the treatment options for bacterial diseases?
+  negative_question: What is the difference between static and dynamic friction, and
+    how does each type affect the design parameters for mechanical brake systems?
+  question_type: comparative
+  negative_domain: brake system engineering
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: antimicrobial resistance and superbugs
+- pair_id: 246
+  positive_question: How does the global travel and trade network facilitate the rapid
+    international dissemination of antimicrobial-resistant disease organisms across
+    continents?
+  negative_question: How does the global shipping container network facilitate the rapid
+    international dissemination of invasive insect species across continental port
+    cities?
+  question_type: explanatory
+  negative_domain: port biosecurity
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: antimicrobial resistance and superbugs
+- pair_id: 247
+  positive_question: What promising antimicrobial peptides derived from natural sources
+    are being investigated as potential new weapons against drug-resistant disease-causing
+    pathogens?
+  negative_question: What promising bio-based adhesives derived from natural sources
+    are being investigated as potential new replacements for petroleum-derived synthetic
+    glues?
+  question_type: factual
+  negative_domain: bio-based adhesives
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: antimicrobial resistance and superbugs
+- pair_id: 248
+  positive_question: Describe the process by which whole-genome sequencing of resistant
+    bacteria helps epidemiologists trace the transmission pathways of disease outbreaks
+    in hospitals.
+  negative_question: Describe the process by which dendrochronological cross-dating of
+    timber samples helps archaeologists trace the construction timelines of medieval
+    buildings in Europe.
+  question_type: process
+  negative_domain: dendrochronology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: antimicrobial resistance and superbugs
+- pair_id: 249
+  positive_question: Compare the challenges of developing vaccines against resistant
+    bacterial diseases with those of developing new classes of small-molecule antibiotics
+    from scratch.
+  negative_question: Compare the challenges of restoring degraded coral reefs through
+    transplantation with those of establishing new reef structures from artificial
+    substrate materials.
+  question_type: comparative
+  negative_domain: artificial reef construction
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: antimicrobial resistance and superbugs

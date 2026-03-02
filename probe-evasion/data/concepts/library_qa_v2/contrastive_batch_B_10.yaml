@@ -1,0 +1,251 @@
+pairs:
+- pair_id: 250
+  positive_question: "What types of community outreach programs do public libraries typically offer, such as job search workshops, digital literacy classes, and citizenship resources?"
+  negative_question: "What types of community outreach programs do fire departments typically offer, such as fire safety workshops, CPR training classes, and smoke detector installation services?"
+  question_type: factual
+  negative_domain: "fire department outreach"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "public library outreach and community programs"
+- pair_id: 251
+  positive_question: "How do public libraries serve as critical social infrastructure for underserved populations, including homeless individuals, recent immigrants, and senior citizens?"
+  negative_question: "How do community health centers serve as critical healthcare infrastructure for underserved populations, including uninsured individuals, migrant farmworkers, and elderly patients?"
+  question_type: explanatory
+  negative_domain: "community health centers"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "public library outreach and community programs"
+- pair_id: 252
+  positive_question: "Compare the approaches used by urban public libraries to reach diverse communities with those used by rural libraries to connect with geographically dispersed populations."
+  negative_question: "Compare the approaches used by urban food banks to reach diverse neighborhoods with those used by rural food pantries to connect with geographically dispersed households."
+  question_type: comparative
+  negative_domain: "food bank distribution"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "public library outreach and community programs"
+- pair_id: 253
+  positive_question: "What process does a public library follow when designing a new outreach program targeted at a specific underserved community in its service area?"
+  negative_question: "What process does a public health department follow when designing a new vaccination campaign targeted at a specific underimmunized population in its jurisdiction?"
+  question_type: process
+  negative_domain: "public health vaccination"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "public library outreach and community programs"
+- pair_id: 254
+  positive_question: "What role do library social workers play in connecting patrons experiencing homelessness or mental health challenges with appropriate community services?"
+  negative_question: "What role do school guidance counselors play in connecting students experiencing academic difficulties or family instability with appropriate support services?"
+  question_type: factual
+  negative_domain: "school counseling"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "public library outreach and community programs"
+- pair_id: 255
+  positive_question: "How do public libraries measure the social impact of their community programs using metrics beyond simple attendance counts and circulation numbers?"
+  negative_question: "How do nonprofit soup kitchens measure the social impact of their meal programs using metrics beyond simple serving counts and volunteer hours?"
+  question_type: explanatory
+  negative_domain: "nonprofit food services"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "public library outreach and community programs"
+- pair_id: 256
+  positive_question: "Compare the public library's role as a community gathering space with that of community centers and recreation departments in providing civic engagement opportunities."
+  negative_question: "Compare the local church's role as a community gathering space with that of civic clubs and fraternal organizations in providing social engagement opportunities."
+  question_type: comparative
+  negative_domain: "civic organizations"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "public library outreach and community programs"
+- pair_id: 257
+  positive_question: "What steps does a public library take to establish a partnership with local social service agencies to co-locate services within the library building?"
+  negative_question: "What steps does a commercial airport take to establish a partnership with ground transportation companies to co-locate rental car services within the terminal building?"
+  question_type: process
+  negative_domain: "airport ground transport"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "public library outreach and community programs"
+- pair_id: 258
+  positive_question: "What is the Library of Things concept, and how do lending programs for tools, sewing machines, and other non-book items serve community needs?"
+  negative_question: "What is the tool library concept in community workshops, and how do shared access programs for lathes, welders, and CNC machines serve maker needs?"
+  question_type: factual
+  negative_domain: "maker space workshops"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "public library outreach and community programs"
+- pair_id: 259
+  positive_question: "How do public libraries design programs that promote civic engagement, voter registration, and informed participation in local government processes?"
+  negative_question: "How do labor unions design programs that promote worker organizing, collective bargaining education, and informed participation in workplace governance processes?"
+  question_type: explanatory
+  negative_domain: "labor organizing"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "public library outreach and community programs"
+- pair_id: 260
+  positive_question: "Compare the funding models for public library community programs that rely on tax revenue with those that depend on private grants and donations."
+  negative_question: "Compare the funding models for public radio stations that rely on listener pledges with those that depend on corporate underwriting and foundation grants."
+  question_type: comparative
+  negative_domain: "public radio funding"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "public library outreach and community programs"
+- pair_id: 261
+  positive_question: "What process does a library system use to conduct a community needs assessment before launching new outreach initiatives and program offerings?"
+  negative_question: "What process does an electric utility use to conduct a demand forecasting assessment before launching new power generation and grid expansion projects?"
+  question_type: process
+  negative_domain: "electricity demand forecasting"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "public library outreach and community programs"
+- pair_id: 262
+  positive_question: "What is the role of friends of the library organizations and library foundations in supporting community programming and fundraising for public libraries?"
+  negative_question: "What is the role of booster clubs and athletic foundations in supporting team programs and fundraising for public high school sports departments?"
+  question_type: factual
+  negative_domain: "high school athletics funding"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "public library outreach and community programs"
+- pair_id: 263
+  positive_question: "How do libraries use pop-up library events at farmers markets, community festivals, and transit stations to reach people who might not visit a branch?"
+  negative_question: "How do hospitals use mobile health clinics at shopping centers, county fairs, and church parking lots to reach people who might not visit a doctor?"
+  question_type: explanatory
+  negative_domain: "mobile health clinics"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "public library outreach and community programs"
+- pair_id: 264
+  positive_question: "Compare how public libraries in the United States approach community programming with how public libraries in South Korea structure their cultural outreach activities."
+  negative_question: "Compare how public parks in the United States approach trail maintenance with how national parks in New Zealand structure their wilderness conservation activities."
+  question_type: comparative
+  negative_domain: "New Zealand conservation"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "public library outreach and community programs"
+- pair_id: 265
+  positive_question: "What steps does a public library follow to plan and execute a community conversation series on topics such as racial equity, immigration, or climate action?"
+  negative_question: "What steps does a town council follow to plan and execute a public hearing series on topics such as zoning changes, road construction, or tax assessment appeals?"
+  question_type: process
+  negative_domain: "municipal governance"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "public library outreach and community programs"
+- pair_id: 266
+  positive_question: "What role do public library maker spaces and innovation labs play in providing access to 3D printers, laser cutters, and other creative technology tools?"
+  negative_question: "What role do university fabrication labs play in providing engineering students access to CNC mills, metal lathes, and other precision manufacturing equipment?"
+  question_type: factual
+  negative_domain: "university fabrication labs"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "public library outreach and community programs"
+- pair_id: 267
+  positive_question: "How do libraries adapt their outreach efforts during emergencies, such as serving as cooling centers, distributing supplies, or providing internet access after disasters?"
+  negative_question: "How do churches adapt their community roles during emergencies, such as serving as evacuation shelters, distributing food, or providing pastoral counseling after disasters?"
+  question_type: explanatory
+  negative_domain: "disaster response by churches"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "public library outreach and community programs"
+- pair_id: 268
+  positive_question: "Compare the effectiveness of library outreach programs delivered in-person at the branch with those delivered virtually through online platforms and social media."
+  negative_question: "Compare the effectiveness of physical therapy sessions delivered in-person at the clinic with those delivered virtually through telehealth platforms and video calls."
+  question_type: comparative
+  negative_domain: "telehealth physical therapy"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "public library outreach and community programs"
+- pair_id: 269
+  positive_question: "What process does a public library use to recruit, train, and retain volunteers who assist with tutoring, technology help, and community event support?"
+  negative_question: "What process does a search and rescue team use to recruit, train, and retain volunteers who assist with wilderness navigation, first aid, and evacuation support?"
+  question_type: process
+  negative_domain: "search and rescue volunteering"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "public library outreach and community programs"
+- pair_id: 270
+  positive_question: "What is the Americans with Disabilities Act's impact on public library programming, and how do libraries ensure their community events are fully accessible?"
+  negative_question: "What is the Clean Water Act's impact on municipal wastewater treatment, and how do cities ensure their discharge effluent meets required quality standards?"
+  question_type: factual
+  negative_domain: "wastewater treatment regulation"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "public library outreach and community programs"
+- pair_id: 271
+  positive_question: "How do libraries support small business owners and entrepreneurs through programs offering free access to market research databases and business planning resources?"
+  negative_question: "How do agricultural extension offices support small-scale farmers through programs offering free access to soil testing laboratories and crop rotation advisory services?"
+  question_type: explanatory
+  negative_domain: "agricultural extension"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "public library outreach and community programs"
+- pair_id: 272
+  positive_question: "Compare the community programming budgets and staffing levels of a well-funded suburban library system with those of an underfunded inner-city branch library."
+  negative_question: "Compare the park maintenance budgets and staffing levels of a well-funded suburban recreation district with those of an underfunded inner-city playground system."
+  question_type: comparative
+  negative_domain: "urban park maintenance"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "public library outreach and community programs"
+- pair_id: 273
+  positive_question: "What steps does a library take to develop a multilingual outreach strategy that serves non-English-speaking communities in its service area effectively?"
+  negative_question: "What steps does a hospital take to develop a multilingual patient communication strategy that serves non-English-speaking patients in its catchment area effectively?"
+  question_type: process
+  negative_domain: "hospital language services"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "public library outreach and community programs"
+- pair_id: 274
+  positive_question: "What innovative outreach models have public libraries adopted, such as library hotspots for home internet lending and seed libraries for community gardeners?"
+  negative_question: "What innovative conservation models have wildlife agencies adopted, such as wildlife corridors for habitat connectivity and breeding registries for genetic diversity management?"
+  question_type: factual
+  negative_domain: "wildlife conservation models"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "public library outreach and community programs"

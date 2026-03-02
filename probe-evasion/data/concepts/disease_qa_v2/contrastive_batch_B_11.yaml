@@ -1,0 +1,340 @@
+pairs:
+- pair_id: 275
+  positive_question: What are the key components of a national pandemic preparedness
+    plan for responding to the emergence of a novel highly transmissible respiratory
+    disease?
+  negative_question: What are the key components of a national earthquake preparedness
+    plan for responding to the occurrence of a major seismic event along a densely populated
+    fault zone?
+  question_type: factual
+  negative_domain: earthquake preparedness planning
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: pandemic preparedness and response
+- pair_id: 276
+  positive_question: How do early containment measures like travel restrictions and
+    quarantine protocols slow the initial spread of a pandemic disease across international
+    borders?
+  negative_question: How do early firebreak measures like controlled burns and bulldozer
+    lines slow the initial advance of a wildfire across mountainous terrain?
+  question_type: explanatory
+  negative_domain: wildfire containment
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: pandemic preparedness and response
+- pair_id: 277
+  positive_question: Compare the effectiveness of lockdown strategies versus targeted
+    social distancing measures for reducing disease transmission during a respiratory
+    pandemic.
+  negative_question: Compare the effectiveness of full factory shutdowns versus targeted
+    production line pauses for reducing defect propagation during a manufacturing quality
+    crisis.
+  question_type: comparative
+  negative_domain: manufacturing quality control
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: pandemic preparedness and response
+- pair_id: 278
+  positive_question: Describe the process by which the WHO declares a Public Health
+    Emergency of International Concern when a new disease threatens to become a pandemic.
+  negative_question: Describe the process by which the FAA issues an Airworthiness
+    Directive when a new structural defect threatens to affect an entire aircraft fleet.
+  question_type: process
+  negative_domain: aviation airworthiness regulation
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: pandemic preparedness and response
+- pair_id: 279
+  positive_question: What role do strategic national stockpiles of medical countermeasures
+    play in ensuring rapid response capability during the early phase of a disease
+    pandemic?
+  negative_question: What role do strategic petroleum reserves of crude oil play in
+    ensuring supply stability during the early phase of an international energy supply
+    disruption?
+  question_type: factual
+  negative_domain: strategic petroleum reserves
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: pandemic preparedness and response
+- pair_id: 280
+  positive_question: How does surge capacity planning for hospitals and ICU beds prepare
+    healthcare systems to handle the peak patient load during a severe disease pandemic?
+  negative_question: How does surge capacity planning for server clusters and bandwidth
+    allocation prepare cloud platforms to handle the peak traffic load during a major
+    product launch?
+  question_type: explanatory
+  negative_domain: cloud infrastructure scaling
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: pandemic preparedness and response
+- pair_id: 281
+  positive_question: Compare the pandemic disease response strategies adopted by countries
+    with centralized public health systems versus those with decentralized or federalized
+    structures.
+  negative_question: Compare the disaster recovery strategies adopted by organizations
+    with centralized data management systems versus those with distributed or federated
+    storage architectures.
+  question_type: comparative
+  negative_domain: distributed data architecture
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: pandemic preparedness and response
+- pair_id: 282
+  positive_question: Describe the steps involved in establishing field hospitals and
+    temporary medical facilities during a disease pandemic that overwhelms existing
+    hospital capacity.
+  negative_question: Describe the steps involved in deploying temporary bridges and
+    prefabricated road structures during a flood disaster that destroys existing transportation
+    infrastructure.
+  question_type: process
+  negative_domain: emergency bridge deployment
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: pandemic preparedness and response
+- pair_id: 283
+  positive_question: How do disease modeling teams use real-time epidemiological data
+    to project pandemic trajectories and inform policy decisions about intervention
+    timing?
+  negative_question: How do weather modeling teams use real-time atmospheric data to
+    project hurricane trajectories and inform emergency management decisions about
+    evacuation timing?
+  question_type: explanatory
+  negative_domain: hurricane forecasting
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: pandemic preparedness and response
+- pair_id: 284
+  positive_question: What lessons from the 1918 influenza pandemic have shaped modern
+    disease preparedness frameworks for non-pharmaceutical interventions like masking
+    and distancing?
+  negative_question: What lessons from the 1929 stock market crash have shaped modern
+    financial preparedness frameworks for regulatory interventions like circuit breakers
+    and margin requirements?
+  question_type: factual
+  negative_domain: financial market regulation
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: pandemic preparedness and response
+- pair_id: 285
+  positive_question: Compare the ethical frameworks used for allocating scarce medical
+    resources like ventilators during a disease pandemic with utilitarian versus egalitarian
+    distribution principles.
+  negative_question: Compare the design frameworks used for allocating limited radio
+    spectrum during a bandwidth auction with market-based versus administrative distribution
+    principles.
+  question_type: comparative
+  negative_domain: radio spectrum allocation
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: pandemic preparedness and response
+- pair_id: 286
+  positive_question: How do risk communication strategies help public health officials
+    convey accurate disease information to the public while maintaining trust during
+    an evolving pandemic?
+  negative_question: How do user experience design strategies help software developers
+    convey accurate system status information to users while maintaining engagement
+    during a complex workflow?
+  question_type: explanatory
+  negative_domain: UX design
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: pandemic preparedness and response
+- pair_id: 287
+  positive_question: Describe the process of scaling up diagnostic testing infrastructure
+    from limited laboratory capacity to mass community-level disease screening during
+    a pandemic.
+  negative_question: Describe the process of scaling up electric vehicle charging
+    infrastructure from limited urban stations to mass highway-level service coverage
+    during a transition to electrification.
+  question_type: process
+  negative_domain: EV charging infrastructure
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: pandemic preparedness and response
+- pair_id: 288
+  positive_question: What role do pandemic disease simulation exercises and tabletop
+    scenarios play in testing the readiness of government agencies and healthcare systems?
+  negative_question: What role do fire drill exercises and evacuation tabletop scenarios
+    play in testing the readiness of building management teams and occupant response
+    protocols?
+  question_type: factual
+  negative_domain: building emergency planning
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: pandemic preparedness and response
+- pair_id: 289
+  positive_question: How does international cooperation through organizations like CEPI
+    and Gavi accelerate the development and equitable distribution of vaccines during
+    disease pandemics?
+  negative_question: How does international cooperation through organizations like ITER
+    and CERN accelerate the development and shared utilization of experimental facilities
+    during physics research programs?
+  question_type: explanatory
+  negative_domain: international physics collaboration
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: pandemic preparedness and response
+- pair_id: 290
+  positive_question: Compare the economic impacts of prolonged pandemic disease lockdowns
+    on service industries versus manufacturing industries in terms of recovery timelines.
+  negative_question: Compare the environmental impacts of prolonged drought conditions
+    on deciduous forests versus grassland ecosystems in terms of recovery timelines.
+  question_type: comparative
+  negative_domain: drought ecology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: pandemic preparedness and response
+- pair_id: 291
+  positive_question: What supply chain vulnerabilities were exposed during the COVID-19
+    pandemic that affected the global production and distribution of disease treatment
+    medications?
+  negative_question: What supply chain vulnerabilities were exposed during the 2021
+    semiconductor shortage that affected the global production and distribution of consumer
+    electronics?
+  question_type: factual
+  negative_domain: semiconductor supply chains
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: pandemic preparedness and response
+- pair_id: 292
+  positive_question: Describe the decision-making framework used by public health officials
+    to determine when pandemic disease restrictions can be safely relaxed or lifted.
+  negative_question: Describe the decision-making framework used by structural engineers
+    to determine when scaffolding and temporary supports can be safely removed from
+    a curing concrete structure.
+  question_type: process
+  negative_domain: concrete formwork engineering
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: pandemic preparedness and response
+- pair_id: 293
+  positive_question: How do contact tracing applications on smartphones raise privacy
+    concerns while potentially helping to slow pandemic disease transmission in communities?
+  negative_question: How do location tracking features on fitness wearables raise privacy
+    concerns while potentially helping to improve athletic training performance in
+    individual athletes?
+  question_type: explanatory
+  negative_domain: fitness wearable privacy
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: pandemic preparedness and response
+- pair_id: 294
+  positive_question: Compare the challenges of maintaining essential services like food
+    supply and utilities during a prolonged disease pandemic with those during a major
+    natural disaster.
+  negative_question: Compare the challenges of maintaining signal integrity like clock
+    synchronization and data fidelity during a prolonged electromagnetic storm with
+    those during a major hardware failure.
+  question_type: comparative
+  negative_domain: signal integrity engineering
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: pandemic preparedness and response
+- pair_id: 295
+  positive_question: What is the concept of pandemic fatigue, and how does declining
+    public compliance with disease control measures affect the trajectory of a prolonged
+    outbreak?
+  negative_question: What is the concept of alarm fatigue, and how does declining operator
+    attention to process control warnings affect the safety performance of a prolonged
+    industrial shift?
+  question_type: factual
+  negative_domain: industrial alarm management
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: pandemic preparedness and response
+- pair_id: 296
+  positive_question: How do wastewater surveillance programs serve as an independent
+    early warning system for monitoring the community-level prevalence of pandemic disease
+    pathogens?
+  negative_question: How do ground-based magnetometer networks serve as an independent
+    early warning system for monitoring the regional-level intensity of geomagnetic
+    storm activity?
+  question_type: explanatory
+  negative_domain: space weather monitoring
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: pandemic preparedness and response
+- pair_id: 297
+  positive_question: Describe the steps involved in transitioning from emergency pandemic
+    disease response mode to endemic management when a pathogen becomes permanently
+    established.
+  negative_question: Describe the steps involved in transitioning from emergency power
+    generation mode to permanent grid connection when a microgrid installation becomes
+    fully commissioned.
+  question_type: process
+  negative_domain: microgrid commissioning
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: pandemic preparedness and response
+- pair_id: 298
+  positive_question: What mental health consequences emerged from prolonged social isolation
+    during pandemic disease lockdowns, and how should future preparedness plans address
+    them?
+  negative_question: What structural fatigue consequences emerged from prolonged vibration
+    exposure during offshore drilling operations, and how should future platform designs
+    mitigate them?
+  question_type: factual
+  negative_domain: offshore platform fatigue
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: pandemic preparedness and response
+- pair_id: 299
+  positive_question: Compare the roles of centralized government-directed pandemic disease
+    responses with those of decentralized community-led grassroots health initiatives.
+  negative_question: Compare the roles of centralized orchestration platforms in container
+    deployment with those of decentralized peer-to-peer service mesh networking architectures.
+  question_type: comparative
+  negative_domain: container orchestration
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: pandemic preparedness and response

@@ -1,0 +1,181 @@
+pairs:
+- pair_id: 445
+  positive_question: How do public libraries support lifelong learning through free
+    access to books, databases, and educational programming for all ages?
+  negative_question: How do private tutoring centers support student achievement through
+    one-on-one instruction, diagnostic assessments, and customized learning plans?
+  question_type: explanatory
+  negative_domain: study halls and tutoring centers
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 446
+  positive_question: What types of quiet study spaces do modern libraries offer, and
+    how do they balance silent areas with collaborative zones?
+  negative_question: What types of study environments do tutoring centers typically
+    provide, and how do they balance small-group instruction rooms with open homework areas?
+  question_type: comparative
+  negative_domain: study halls and tutoring centers
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 447
+  positive_question: How do library reference desks help patrons with research questions,
+    and what training do reference librarians receive for this role?
+  negative_question: How do tutoring center intake assessments identify a student's
+    academic weaknesses, and what training do tutors receive to address learning gaps?
+  question_type: process
+  negative_domain: study halls and tutoring centers
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 448
+  positive_question: What role do library computer labs play in bridging the digital
+    divide for people who lack home internet or personal devices?
+  negative_question: What role do study hall proctors play in maintaining a productive
+    environment and helping students stay on task during designated study periods?
+  question_type: factual
+  negative_domain: study halls and tutoring centers
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 449
+  positive_question: How do academic libraries provide course reserves so students
+    can access required readings without purchasing expensive textbooks?
+  negative_question: How do tutoring centers provide supplementary practice materials
+    so students can reinforce classroom lessons with additional problem sets?
+  question_type: process
+  negative_domain: study halls and tutoring centers
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 450
+  positive_question: Why do many public libraries offer free homework help programs
+    staffed by trained volunteers or professional educators?
+  negative_question: Why do many commercial tutoring centers like Kumon and Sylvan
+    use structured worksheet-based curricula rather than freeform instruction?
+  question_type: explanatory
+  negative_domain: study halls and tutoring centers
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 451
+  positive_question: What is the difference between a library's circulating collection
+    and its reference collection in terms of borrowing policies?
+  negative_question: What is the difference between a drop-in study hall and a
+    scheduled tutoring session in terms of structure and student commitment?
+  question_type: comparative
+  negative_domain: study halls and tutoring centers
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 452
+  positive_question: How do library literacy programs teach adults to read through
+    volunteer-led one-on-one instruction and small group workshops?
+  negative_question: How do SAT and ACT prep centers coach high school students through
+    practice tests, score analysis, and targeted strategy sessions?
+  question_type: process
+  negative_domain: study halls and tutoring centers
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 453
+  positive_question: How do libraries curate and maintain their periodical collections
+    including newspapers, magazines, and academic journals?
+  negative_question: How do tutoring centers track student progress through regular
+    assessments, parent conferences, and performance dashboards?
+  question_type: factual
+  negative_domain: study halls and tutoring centers
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 454
+  positive_question: What are the advantages of a library consortium where multiple
+    library systems share resources, catalogs, and purchasing power?
+  negative_question: What are the advantages of a tutoring franchise model where
+    multiple centers share curriculum materials, brand recognition, and training protocols?
+  question_type: comparative
+  negative_domain: study halls and tutoring centers
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 455
+  positive_question: Why do libraries invest in integrated library systems that manage
+    cataloging, circulation, acquisitions, and patron accounts in one platform?
+  negative_question: Why do tutoring centers invest in learning management systems
+    that track lesson plans, student schedules, tutor assignments, and billing in one platform?
+  question_type: explanatory
+  negative_domain: study halls and tutoring centers
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 456
+  positive_question: How do library outreach programs bring services to nursing homes,
+    prisons, and homebound patrons who cannot visit a branch in person?
+  negative_question: How do mobile tutoring services and online tutoring platforms
+    bring academic support to students in rural areas who lack local centers?
+  question_type: process
+  negative_domain: study halls and tutoring centers
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 457
+  positive_question: What is the role of a library's collection development policy
+    in ensuring balanced, unbiased, and community-relevant acquisitions?
+  negative_question: What is the role of a tutoring center's curriculum design team
+    in aligning practice materials with current state standards and exam formats?
+  question_type: factual
+  negative_domain: study halls and tutoring centers
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 458
+  positive_question: How do libraries handle overdue materials, and what policies
+    have some systems adopted to eliminate late fees entirely?
+  negative_question: How do tutoring centers handle missed sessions, and what
+    cancellation and rescheduling policies are common in the industry?
+  question_type: explanatory
+  negative_domain: study halls and tutoring centers
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 459
+  positive_question: How do university libraries support graduate students with
+    dissertation research through specialized databases, archival access, and citation tools?
+  negative_question: How do academic tutoring centers support graduate students with
+    thesis writing through feedback on drafts, statistical consulting, and writing workshops?
+  question_type: comparative
+  negative_domain: study halls and tutoring centers
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied

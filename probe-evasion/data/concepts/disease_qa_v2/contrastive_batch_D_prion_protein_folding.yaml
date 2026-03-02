@@ -1,0 +1,201 @@
+pairs:
+- pair_id: 625
+  positive_question: "What is Creutzfeldt-Jakob disease, and how does the misfolded prion protein cause fatal neurodegeneration in affected individuals?"
+  negative_question: "What is normal protein folding, and how do molecular chaperones like Hsp70 assist polypeptide chains in achieving their correct three-dimensional conformations?"
+  question_type: factual
+  negative_domain: "prion diseases vs normal protein folding"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 626
+  positive_question: "How does variant CJD transmitted through contaminated beef differ from sporadic CJD in terms of age of onset and clinical presentation?"
+  negative_question: "How does co-translational protein folding on ribosomes differ from post-translational folding in the cytoplasm in terms of speed and accuracy?"
+  question_type: comparative
+  negative_domain: "prion diseases vs normal protein folding"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 627
+  positive_question: "Explain the mechanism by which prion proteins propagate disease by converting normal PrPC into misfolded PrPSc aggregates in brain tissue."
+  negative_question: "Explain the mechanism by which the Anfinsen experiment demonstrated that a protein's amino acid sequence alone determines its native folded structure."
+  question_type: process
+  negative_domain: "prion diseases vs normal protein folding"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 628
+  positive_question: "Why are prion diseases invariably fatal, and what makes the misfolded prion protein resistant to normal sterilization and degradation methods?"
+  negative_question: "Why are some proteins classified as intrinsically disordered, and what functional advantages does lack of fixed tertiary structure provide?"
+  question_type: explanatory
+  negative_domain: "prion diseases vs normal protein folding"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 629
+  positive_question: "What surveillance methods are used to detect bovine spongiform encephalopathy in cattle herds and prevent transmission to humans?"
+  negative_question: "What computational methods are used by AlphaFold to predict protein three-dimensional structures from amino acid sequences?"
+  question_type: factual
+  negative_domain: "prion diseases vs normal protein folding"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 630
+  positive_question: "Describe the neuropathological progression of kuru disease, from initial cerebellar ataxia through dementia to terminal neurological collapse."
+  negative_question: "Describe the folding pathway of a typical globular protein, from initial hydrophobic collapse through molten globule intermediate to native state."
+  question_type: process
+  negative_domain: "prion diseases vs normal protein folding"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 631
+  positive_question: "Compare the transmission routes of variant CJD through contaminated surgical instruments with iatrogenic CJD through cadaveric growth hormone."
+  negative_question: "Compare the roles of chaperonins GroEL and GroES in bacterial protein folding with the role of the TRiC complex in eukaryotic protein folding."
+  question_type: comparative
+  negative_domain: "prion diseases vs normal protein folding"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 632
+  positive_question: "Why did the BSE crisis in the 1990s lead to major reforms in food safety regulation and cattle feed practices across Europe?"
+  negative_question: "Why did Levinthal's paradox challenge the idea that proteins find their native structure through random conformational search?"
+  question_type: explanatory
+  negative_domain: "prion diseases vs normal protein folding"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 633
+  positive_question: "What genetic factors influence susceptibility to sporadic Creutzfeldt-Jakob disease, particularly the role of PRNP gene polymorphisms?"
+  negative_question: "What genetic factors influence protein thermostability, and how do organisms living in extreme heat environments maintain proper protein folding?"
+  question_type: factual
+  negative_domain: "prion diseases vs normal protein folding"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 634
+  positive_question: "How do prion diseases differ from conventional infectious diseases in that they lack nucleic acid and cannot be treated with antibiotics or antivirals?"
+  negative_question: "How do allosteric proteins differ from simple enzymes in that ligand binding at one site affects conformational changes and activity at distant sites?"
+  question_type: comparative
+  negative_domain: "prion diseases vs normal protein folding"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 635
+  positive_question: "Describe the diagnostic process for suspected prion disease, including the role of RT-QuIC assays and brain biopsy for definitive confirmation."
+  negative_question: "Describe the experimental process of determining protein structure using X-ray crystallography, including crystal growth and diffraction pattern analysis."
+  question_type: process
+  negative_domain: "prion diseases vs normal protein folding"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 636
+  positive_question: "Why is chronic wasting disease in cervids considered a potential future public health threat, and what barriers prevent cross-species prion transmission?"
+  negative_question: "Why is protein aggregation in industrial biotechnology considered a major production challenge, and what strategies prevent inclusion body formation during recombinant expression?"
+  question_type: explanatory
+  negative_domain: "prion diseases vs normal protein folding"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 637
+  positive_question: "What role did the discovery of prion diseases play in challenging the central dogma that all infectious agents require nucleic acid for replication?"
+  negative_question: "What role did the discovery of ribozymes play in challenging the assumption that only proteins can function as biological catalysts?"
+  question_type: factual
+  negative_domain: "prion diseases vs normal protein folding"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 638
+  positive_question: "How does fatal familial insomnia, a genetic prion disease, progressively destroy the thalamus and eliminate the ability to sleep?"
+  negative_question: "How does the unfolded protein response in the endoplasmic reticulum detect and manage the accumulation of misfolded proteins in eukaryotic cells?"
+  question_type: process
+  negative_domain: "prion diseases vs normal protein folding"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 639
+  positive_question: "Compare the incubation periods of different human prion diseases, from months in iatrogenic CJD to decades in variant CJD from BSE exposure."
+  negative_question: "Compare the timescales of protein folding, from microsecond folding of small alpha-helical proteins to seconds or minutes for large multi-domain complexes."
+  question_type: comparative
+  negative_domain: "prion diseases vs normal protein folding"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 640
+  positive_question: "Why has it proven so difficult to develop therapeutic interventions for prion diseases despite decades of research into the mechanisms?"
+  negative_question: "Why has it proven so difficult to predict protein folding computationally, and what breakthroughs enabled AlphaFold to achieve near-experimental accuracy?"
+  question_type: explanatory
+  negative_domain: "prion diseases vs normal protein folding"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 641
+  positive_question: "What are the public health implications of prion contamination in blood supplies, and why is there no reliable screening test for asymptomatic carriers?"
+  negative_question: "What are the industrial applications of directed protein evolution, and how do iterative rounds of mutation and selection create enzymes with novel functions?"
+  question_type: factual
+  negative_domain: "prion diseases vs normal protein folding"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 642
+  positive_question: "Describe how scrapie in sheep was the first recognized transmissible spongiform encephalopathy and informed later understanding of human prion diseases."
+  negative_question: "Describe how the Ramachandran plot maps allowed conformations of protein backbone angles and informed understanding of sterically permitted secondary structures."
+  question_type: process
+  negative_domain: "prion diseases vs normal protein folding"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 643
+  positive_question: "How do spongiform changes visible on brain histology serve as the hallmark pathological finding in all forms of prion disease?"
+  negative_question: "How do disulfide bonds formed in the endoplasmic reticulum serve as critical stabilizing elements in the folding of secreted proteins?"
+  question_type: explanatory
+  negative_domain: "prion diseases vs normal protein folding"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 644
+  positive_question: "Compare the decontamination challenges posed by prion-contaminated surgical instruments with standard sterilization protocols for bacterial and viral pathogens."
+  negative_question: "Compare the approaches of molecular dynamics simulation and homology modeling for predicting the folded structures of novel protein sequences."
+  question_type: comparative
+  negative_domain: "prion diseases vs normal protein folding"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"

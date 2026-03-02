@@ -1,0 +1,88 @@
+concept_name: currency
+concept_description: "Currency — money in circulation as a medium of exchange, including physical and digital forms"
+
+labels:
+  positive: currency
+  negative: non_currency
+
+field_names:
+  positive_question: positive_question
+  negative_question: negative_question
+
+no_keyword_instruction: "Answer without using the words 'currency', 'money', 'cash', or 'coin'. Answer in 1-3 sentences."
+
+negative_keywords:
+  - "\\bcurrency\\b"
+  - "\\bcurrencies\\b"
+  - "\\bmoney\\b"
+  - "\\bcash\\b"
+  - "\\bcoin\\b"
+  - "\\bcoins\\b"
+  - "\\bbanknote\\b"
+  - "\\bbanknotes\\b"
+  - "\\bbill\\b"
+  - "\\bdollar\\b"
+  - "\\bdollars\\b"
+  - "\\beuro\\b"
+  - "\\beuros\\b"
+  - "\\byen\\b"
+  - "\\bpound sterling\\b"
+  - "\\bmint\\b"
+  - "\\bdenomination\\b"
+
+group_b_topics:
+  - "history of coinage and early money"
+  - "banknote design and security features"
+  - "forex markets and exchange rates"
+  - "central banking and monetary policy"
+  - "inflation and deflation dynamics"
+  - "cryptocurrency and blockchain-based money"
+  - "hyperinflation case studies (Weimar, Zimbabwe, Venezuela)"
+  - "the gold standard and its abandonment"
+  - "numismatics and coin collecting"
+  - "currency unions and the euro"
+  - "counterfeiting prevention and detection"
+  - "remittances and cross-border money transfers"
+  - "currency devaluation and redenomination"
+  - "digital payments and mobile money"
+  - "seigniorage and money creation"
+
+group_c_subcategories:
+  - "stocks and equities"
+  - "bonds and fixed income"
+  - "commodities trading"
+  - "insurance products"
+  - "credit cards and revolving credit"
+  - "gift cards and prepaid cards"
+  - "loyalty points and rewards programs"
+  - "stamps and philately"
+  - "barter systems and trade"
+  - "NFTs and digital collectibles"
+
+group_d_subcategories:
+  "currency formatting in code (i18n, locale)": 20
+  "electrical current and water current": 15
+  "change (social change, climate change)": 15
+  "mint (herb, mint flavor, mint condition)": 15
+  "note (musical note, notebook, side note)": 10
+  "bill (legislation, bird bill, utility bill)": 20
+  "bank (river bank, blood bank, memory bank)": 15
+  "tender (meat tender, legal tender, tender offer)": 15
+
+group_e_subcategories:
+  "forex trading mechanics and strategies": 16
+  "central bank interest rate decisions": 16
+  "national debt and government bonds": 16
+  "money laundering detection and prevention": 16
+  "ATM technology and cash distribution": 15
+  "treasury and mint operations": 16
+  "dollarization and currency substitution": 15
+  "hawala and informal value transfer systems": 15
+
+group_structure:
+  A: 25
+  B: 375
+  C: 150
+  D: 125
+  E: 125
+  A_prefix: 175

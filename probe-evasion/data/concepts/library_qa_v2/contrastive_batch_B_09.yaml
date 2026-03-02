@@ -1,0 +1,251 @@
+pairs:
+- pair_id: 225
+  positive_question: "What is an Online Public Access Catalog, and how has it replaced traditional card catalogs as the primary tool for searching library holdings?"
+  negative_question: "What is a computed tomography scanner, and how has it replaced traditional X-ray imaging as the primary tool for diagnosing internal injuries?"
+  question_type: factual
+  negative_domain: "medical imaging"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library technology (OPAC, RFID, ILS)"
+- pair_id: 226
+  positive_question: "How does radio-frequency identification technology streamline the circulation process in libraries by enabling self-checkout and automated materials handling?"
+  negative_question: "How does sonar technology streamline the mapping process in oceanography by enabling automated seabed profiling and depth measurement?"
+  question_type: explanatory
+  negative_domain: "oceanographic surveying"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library technology (OPAC, RFID, ILS)"
+- pair_id: 227
+  positive_question: "Compare the features and capabilities of open-source integrated library systems like Koha and Evergreen with proprietary systems like Ex Libris Alma."
+  negative_question: "Compare the features and capabilities of open-source 3D modeling software like Blender and FreeCAD with proprietary systems like Autodesk Maya."
+  question_type: comparative
+  negative_domain: "3D modeling software"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library technology (OPAC, RFID, ILS)"
+- pair_id: 228
+  positive_question: "What process does a library follow when migrating from one integrated library system to another, including data migration and staff retraining?"
+  negative_question: "What process does a hospital follow when migrating from one electronic health record system to another, including data migration and staff retraining?"
+  question_type: process
+  negative_domain: "health IT migration"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library technology (OPAC, RFID, ILS)"
+- pair_id: 229
+  positive_question: "What are the core modules of an integrated library system, including acquisitions, cataloging, circulation, serials, and reporting functions?"
+  negative_question: "What are the core modules of an enterprise resource planning system, including procurement, manufacturing, sales, inventory, and financial reporting functions?"
+  question_type: factual
+  negative_domain: "enterprise software"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library technology (OPAC, RFID, ILS)"
+- pair_id: 230
+  positive_question: "How do RFID security gates at library exits detect materials that have not been properly checked out, and what happens when an alarm is triggered?"
+  negative_question: "How do metal detector gates at airport security checkpoints detect prohibited items that passengers have not declared, and what happens when an alarm is triggered?"
+  question_type: explanatory
+  negative_domain: "airport security"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library technology (OPAC, RFID, ILS)"
+- pair_id: 231
+  positive_question: "Compare the patron privacy protections built into library technology systems with the data collection practices of commercial search engines and social media platforms."
+  negative_question: "Compare the patient confidentiality protections built into healthcare record systems with the data collection practices of commercial fitness trackers and health apps."
+  question_type: comparative
+  negative_domain: "health data privacy"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library technology (OPAC, RFID, ILS)"
+- pair_id: 232
+  positive_question: "What steps does a library take when implementing an RFID system, from tagging existing materials to installing self-checkout stations and security gates?"
+  negative_question: "What steps does a warehouse take when implementing a barcode system, from labeling existing inventory to installing handheld scanners and tracking terminals?"
+  question_type: process
+  negative_domain: "warehouse barcode systems"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library technology (OPAC, RFID, ILS)"
+- pair_id: 233
+  positive_question: "What is the SIP2 protocol, and how does it enable communication between self-service machines and the library's integrated library system?"
+  negative_question: "What is the Modbus protocol, and how does it enable communication between field sensors and the factory's programmable logic controller system?"
+  question_type: factual
+  negative_domain: "industrial automation"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library technology (OPAC, RFID, ILS)"
+- pair_id: 234
+  positive_question: "How do automated materials handling systems sort returned items and route them to the correct shelving location or hold shelf using conveyor technology?"
+  negative_question: "How do automated baggage handling systems sort checked luggage and route it to the correct aircraft loading area using conveyor technology?"
+  question_type: explanatory
+  negative_domain: "airport baggage handling"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library technology (OPAC, RFID, ILS)"
+- pair_id: 235
+  positive_question: "Compare the total cost of ownership for cloud-hosted integrated library systems with that of locally installed and maintained on-premises solutions."
+  negative_question: "Compare the total cost of ownership for cloud-hosted video game servers with that of locally installed and maintained dedicated gaming server hardware."
+  question_type: comparative
+  negative_domain: "gaming server hosting"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library technology (OPAC, RFID, ILS)"
+- pair_id: 236
+  positive_question: "What process does a library technology team follow when troubleshooting a failed integration between the OPAC discovery layer and the underlying circulation system?"
+  negative_question: "What process does an IT support team follow when troubleshooting a failed connection between a point-of-sale terminal and the underlying payment processing gateway?"
+  question_type: process
+  negative_domain: "payment processing"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library technology (OPAC, RFID, ILS)"
+- pair_id: 237
+  positive_question: "What role do application programming interfaces play in allowing library systems to share data with external platforms such as learning management systems?"
+  negative_question: "What role do application programming interfaces play in allowing weather services to share data with external platforms such as aviation flight planning systems?"
+  question_type: factual
+  negative_domain: "aviation weather services"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library technology (OPAC, RFID, ILS)"
+- pair_id: 238
+  positive_question: "How do library technology systems handle the management of electronic resource access, including authentication, proxy servers, and link resolvers?"
+  negative_question: "How do corporate network systems handle the management of remote employee access, including VPN authentication, firewalls, and single sign-on portals?"
+  question_type: explanatory
+  negative_domain: "corporate network security"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library technology (OPAC, RFID, ILS)"
+- pair_id: 239
+  positive_question: "Compare the search functionality of modern OPAC systems that use relevance ranking with older systems that relied on exact keyword matching."
+  negative_question: "Compare the navigation accuracy of modern GPS receivers that use multi-constellation satellites with older units that relied on single-system positioning."
+  question_type: comparative
+  negative_domain: "GPS navigation"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library technology (OPAC, RFID, ILS)"
+- pair_id: 240
+  positive_question: "What steps are involved in configuring an integrated library system to support multiple branches, each with its own circulation policies and patron categories?"
+  negative_question: "What steps are involved in configuring a franchise management platform to support multiple restaurant locations, each with its own menu pricing and staffing schedules?"
+  question_type: process
+  negative_domain: "franchise management"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library technology (OPAC, RFID, ILS)"
+- pair_id: 241
+  positive_question: "What is the Z39.50 protocol, and how has it historically enabled cross-system searching of library catalogs across different institutions?"
+  negative_question: "What is the NMEA 0183 protocol, and how has it historically enabled cross-device communication of navigation data across different marine instruments?"
+  question_type: factual
+  negative_domain: "marine electronics"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library technology (OPAC, RFID, ILS)"
+- pair_id: 242
+  positive_question: "How are artificial intelligence and machine learning being explored in library technology to improve cataloging, recommendation systems, and patron services?"
+  negative_question: "How are artificial intelligence and machine learning being explored in precision farming to improve crop monitoring, yield prediction, and pest detection?"
+  question_type: explanatory
+  negative_domain: "precision farming AI"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library technology (OPAC, RFID, ILS)"
+- pair_id: 243
+  positive_question: "Compare the user interface design principles of library OPAC systems designed for children with those designed for adult general-purpose searching."
+  negative_question: "Compare the cockpit instrument layout principles of training aircraft designed for student pilots with those designed for experienced commercial airline captains."
+  question_type: comparative
+  negative_domain: "flight instrument design"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library technology (OPAC, RFID, ILS)"
+- pair_id: 244
+  positive_question: "What process does a library follow when evaluating and selecting a new integrated library system vendor through a formal request for proposal procedure?"
+  negative_question: "What process does a city follow when evaluating and selecting a new public transit bus manufacturer through a formal request for proposal procedure?"
+  question_type: process
+  negative_domain: "public transit procurement"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library technology (OPAC, RFID, ILS)"
+- pair_id: 245
+  positive_question: "What are the main cybersecurity risks facing library technology systems, and what measures are taken to protect patron data and catalog integrity?"
+  negative_question: "What are the main biosecurity risks facing poultry farming operations, and what measures are taken to protect flocks and prevent disease transmission?"
+  question_type: factual
+  negative_domain: "poultry biosecurity"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library technology (OPAC, RFID, ILS)"
+- pair_id: 246
+  positive_question: "How do mobile library apps extend the functionality of the OPAC by allowing patrons to search, place holds, and manage accounts from their smartphones?"
+  negative_question: "How do mobile banking apps extend the functionality of online banking by allowing customers to deposit checks, transfer funds, and pay bills from their smartphones?"
+  question_type: explanatory
+  negative_domain: "mobile banking"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library technology (OPAC, RFID, ILS)"
+- pair_id: 247
+  positive_question: "Compare the role of library technology in small single-branch libraries with its role in large multi-branch metropolitan library systems."
+  negative_question: "Compare the role of irrigation technology in small family-owned vineyards with its role in large multi-site commercial wine-producing estates."
+  question_type: comparative
+  negative_domain: "vineyard irrigation"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library technology (OPAC, RFID, ILS)"
+- pair_id: 248
+  positive_question: "What steps does a library take to ensure its technology systems comply with accessibility standards so that patrons with disabilities can use the OPAC effectively?"
+  negative_question: "What steps does a theme park take to ensure its ride systems comply with safety regulations so that visitors with medical conditions can participate safely?"
+  question_type: process
+  negative_domain: "theme park safety"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library technology (OPAC, RFID, ILS)"
+- pair_id: 249
+  positive_question: "What is the FOLIO project, and how does this community-developed open-source library services platform aim to modernize library technology infrastructure?"
+  negative_question: "What is the OpenStreetMap project, and how does this community-developed open-source mapping platform aim to democratize geographic data infrastructure?"
+  question_type: factual
+  negative_domain: "open-source mapping"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "library technology (OPAC, RFID, ILS)"

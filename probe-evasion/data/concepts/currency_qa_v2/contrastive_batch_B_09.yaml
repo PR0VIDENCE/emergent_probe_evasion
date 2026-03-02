@@ -1,0 +1,251 @@
+pairs:
+- pair_id: 225
+  positive_question: "What is numismatics, and what types of coins and paper money are most valued by serious collectors?"
+  negative_question: "What is entomology, and what types of beetles and butterflies are most studied by academic researchers?"
+  question_type: factual
+  negative_domain: "entomology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "numismatics and coin collecting"
+- pair_id: 226
+  positive_question: "How does the rarity and condition of an ancient coin affect its numismatic value on the collectors' market?"
+  negative_question: "How does the clarity and carat weight of a raw diamond affect its gemological value on the jewelry market?"
+  question_type: explanatory
+  negative_domain: "gemology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "numismatics and coin collecting"
+- pair_id: 227
+  positive_question: "Compare the grading systems used by professional coin authentication services like PCGS and NGC for currency collectibles."
+  negative_question: "Compare the classification systems used by professional storm tracking agencies like the NHC and JMA for tropical cyclones."
+  question_type: comparative
+  negative_domain: "storm classification"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "numismatics and coin collecting"
+- pair_id: 228
+  positive_question: "Describe the process a coin collector follows to authenticate, grade, and encapsulate a rare coin for preservation."
+  negative_question: "Describe the process a taxidermist follows to preserve, mount, and display a rare bird specimen for exhibition."
+  question_type: process
+  negative_domain: "taxidermy"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "numismatics and coin collecting"
+- pair_id: 229
+  positive_question: "What makes the 1933 US Double Eagle gold coin one of the most valuable and legally contested pieces of currency ever minted?"
+  negative_question: "What makes the Hope Diamond one of the most valuable and historically contested pieces of gemstone ever discovered?"
+  question_type: factual
+  negative_domain: "famous gemstones"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "numismatics and coin collecting"
+- pair_id: 230
+  positive_question: "Why do minting errors on coins, such as double strikes or off-center impressions, often increase their value as currency collectibles?"
+  negative_question: "Why do printing misprints on postage stamps, such as inverted images or missing colors, often increase their value as philatelic collectibles?"
+  question_type: explanatory
+  negative_domain: "philately"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "numismatics and coin collecting"
+- pair_id: 231
+  positive_question: "How does the collectible value of ancient Roman denarii compare to that of medieval English silver pennies among numismatists?"
+  negative_question: "How does the acoustic quality of Stradivarius violins compare to that of Guarneri del Gesu cellos among professional musicians?"
+  question_type: comparative
+  negative_domain: "instrument craftsmanship"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "numismatics and coin collecting"
+- pair_id: 232
+  positive_question: "Explain the steps involved in conducting a die study to trace the production history of a particular ancient coin type."
+  negative_question: "Explain the steps involved in conducting a pollen core analysis to trace the vegetation history of a particular lake sediment."
+  question_type: process
+  negative_domain: "palynology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "numismatics and coin collecting"
+- pair_id: 233
+  positive_question: "What information can historians extract from the inscriptions and imagery found on ancient coins used as currency?"
+  negative_question: "What information can archaeologists extract from the petroglyphs and pictographs found on ancient rock art used as communication?"
+  question_type: factual
+  negative_domain: "rock art archaeology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "numismatics and coin collecting"
+- pair_id: 234
+  positive_question: "Why has the market for collecting historical paper currency grown significantly alongside the traditional coin collecting hobby?"
+  negative_question: "Why has the market for cultivating heritage seed varieties grown significantly alongside the traditional home gardening hobby?"
+  question_type: explanatory
+  negative_domain: "heritage seed preservation"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "numismatics and coin collecting"
+- pair_id: 235
+  positive_question: "Compare the numismatic significance of Chinese cash coins with round holes versus those with square holes from different dynasties."
+  negative_question: "Compare the architectural significance of Roman aqueducts with arched supports versus Incan channels with stone-lined surfaces from different eras."
+  question_type: comparative
+  negative_domain: "ancient water engineering"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "numismatics and coin collecting"
+- pair_id: 236
+  positive_question: "Describe the process by which X-ray fluorescence analysis is used to determine the metal composition of ancient currency without damage."
+  negative_question: "Describe the process by which ground-penetrating radar is used to map the buried structures of ancient settlements without excavation."
+  question_type: process
+  negative_domain: "remote sensing archaeology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "numismatics and coin collecting"
+- pair_id: 237
+  positive_question: "What are the most important factors that determine whether a commemorative coin will appreciate in value as a collectible currency piece?"
+  negative_question: "What are the most important factors that determine whether a newly planted mangrove will survive to maturity as a coastal protection species?"
+  question_type: factual
+  negative_domain: "mangrove restoration"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "numismatics and coin collecting"
+- pair_id: 238
+  positive_question: "Why do some numismatists prefer to collect coins that remained in active monetary circulation rather than uncirculated proof sets?"
+  negative_question: "Why do some ornithologists prefer to study birds that persist in degraded urban habitats rather than pristine wilderness populations?"
+  question_type: explanatory
+  negative_domain: "urban ornithology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "numismatics and coin collecting"
+- pair_id: 239
+  positive_question: "How does the provenance of a coin from a famous collection or historic hoard affect its auction price in the numismatic market?"
+  negative_question: "How does the provenance of a painting from a famous gallery or private estate affect its auction price in the fine art market?"
+  question_type: comparative
+  negative_domain: "art market"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "numismatics and coin collecting"
+- pair_id: 240
+  positive_question: "Explain how electrotype forgeries of rare coins are detected using weight measurements and microscopic surface analysis."
+  negative_question: "Explain how counterfeit fossils embedded in fake matrix rock are detected using CT scanning and isotopic dating analysis."
+  question_type: process
+  negative_domain: "fossil authentication"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "numismatics and coin collecting"
+- pair_id: 241
+  positive_question: "What role did the discovery of major coin hoards like the Hoxne hoard play in advancing our understanding of historical currencies?"
+  negative_question: "What role did the discovery of major fossil beds like the Burgess Shale play in advancing our understanding of Cambrian life forms?"
+  question_type: factual
+  negative_domain: "Cambrian paleontology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "numismatics and coin collecting"
+- pair_id: 242
+  positive_question: "Why do governments issue limited-edition commemorative coins that are legal tender but primarily intended as collectible currency?"
+  negative_question: "Why do national parks issue limited-access backcountry permits that are publicly available but primarily intended for experienced hikers?"
+  question_type: explanatory
+  negative_domain: "wilderness recreation"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "numismatics and coin collecting"
+- pair_id: 243
+  positive_question: "Compare the challenges of authenticating ancient Greek tetradrachms with those of verifying early American colonial currency notes."
+  negative_question: "Compare the challenges of dating cave paintings in Lascaux with those of interpreting Nazca line geoglyphs in the Peruvian desert."
+  question_type: comparative
+  negative_domain: "ancient art interpretation"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "numismatics and coin collecting"
+- pair_id: 244
+  positive_question: "Describe the process a mint uses to create a proof coin with mirror-like fields and frosted designs for the collector market."
+  negative_question: "Describe the process a glassblower uses to create a Murano vase with transparent walls and embedded gold leaf for the luxury market."
+  question_type: process
+  negative_domain: "Murano glassblowing"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "numismatics and coin collecting"
+- pair_id: 245
+  positive_question: "What is the Sheldon coin grading scale, and how does it quantify the physical condition of circulated currency coins?"
+  negative_question: "What is the Mohs hardness scale, and how does it quantify the scratch resistance of naturally occurring mineral specimens?"
+  question_type: factual
+  negative_domain: "mineralogy"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "numismatics and coin collecting"
+- pair_id: 246
+  positive_question: "Why do some rare currency errors, such as a coin struck on the wrong planchet, command prices exceeding their face value by thousands?"
+  negative_question: "Why do some rare meteorite specimens, such as a pallasite with visible olivine crystals, command prices exceeding their weight value by thousands?"
+  question_type: explanatory
+  negative_domain: "meteoritics"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "numismatics and coin collecting"
+- pair_id: 247
+  positive_question: "How does the numismatic market for Islamic gold dinars compare to the market for Byzantine gold solidus coins among medieval currency collectors?"
+  negative_question: "How does the antiquarian market for illuminated Persian manuscripts compare to the market for Celtic bronze torques among medieval artifact collectors?"
+  question_type: comparative
+  negative_domain: "antiquarian markets"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "numismatics and coin collecting"
+- pair_id: 248
+  positive_question: "Explain the conservation steps a museum takes to stabilize and preserve a deteriorating collection of ancient bronze coins."
+  negative_question: "Explain the conservation steps a veterinary team takes to rehabilitate and release an injured collection of stranded sea turtles."
+  question_type: process
+  negative_domain: "sea turtle rehabilitation"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "numismatics and coin collecting"
+- pair_id: 249
+  positive_question: "What ethical debates surround the acquisition and private ownership of ancient coins that may have been illegally removed from archaeological currency sites?"
+  negative_question: "What ethical debates surround the collection and private ownership of dinosaur bones that may have been illegally removed from protected paleontological sites?"
+  question_type: factual
+  negative_domain: "fossil ethics"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "numismatics and coin collecting"

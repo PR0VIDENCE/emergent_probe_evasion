@@ -1,0 +1,251 @@
+pairs:
+- pair_id: 275
+  positive_question: "What is the American Library Association's stance on intellectual freedom, and how does it guide libraries in resisting censorship and book banning attempts?"
+  negative_question: "What is the World Anti-Doping Agency's stance on fair competition, and how does it guide sports federations in resisting doping and performance-enhancing drug use?"
+  question_type: factual
+  negative_domain: "anti-doping regulation"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "censorship, banning, and intellectual freedom"
+- pair_id: 276
+  positive_question: "How do library challenge and reconsideration processes work when a community member formally requests the removal of a book from the collection?"
+  negative_question: "How do product recall and safety review processes work when a consumer formally reports a defect in a household appliance to the manufacturer?"
+  question_type: explanatory
+  negative_domain: "consumer product recalls"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "censorship, banning, and intellectual freedom"
+- pair_id: 277
+  positive_question: "Compare the arguments made by those who advocate for removing certain books from libraries with the counterarguments made by intellectual freedom proponents."
+  negative_question: "Compare the arguments made by those who advocate for banning certain pesticides from agriculture with the counterarguments made by crop protection industry supporters."
+  question_type: comparative
+  negative_domain: "pesticide regulation debate"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "censorship, banning, and intellectual freedom"
+- pair_id: 278
+  positive_question: "What process does a library board follow when reviewing a formal challenge to a book, from receiving the complaint through reaching a retention or removal decision?"
+  negative_question: "What process does a zoning board follow when reviewing a formal variance request, from receiving the application through reaching an approval or denial decision?"
+  question_type: process
+  negative_domain: "zoning variance"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "censorship, banning, and intellectual freedom"
+- pair_id: 279
+  positive_question: "What is Banned Books Week, and how do libraries use this annual event to raise awareness about the importance of the freedom to read?"
+  negative_question: "What is World Wetlands Day, and how do conservation groups use this annual event to raise awareness about the importance of wetland ecosystem protection?"
+  question_type: factual
+  negative_domain: "wetland conservation"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "censorship, banning, and intellectual freedom"
+- pair_id: 280
+  positive_question: "How do content filtering and internet access policies in public libraries attempt to balance child safety concerns with the principle of unrestricted information access?"
+  negative_question: "How do emission testing and vehicle inspection policies in urban areas attempt to balance air quality concerns with the principle of unrestricted personal vehicle ownership?"
+  question_type: explanatory
+  negative_domain: "vehicle emissions policy"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "censorship, banning, and intellectual freedom"
+- pair_id: 281
+  positive_question: "Compare the legal protections for library intellectual freedom in the United States under the First Amendment with those in countries that have more restrictive speech laws."
+  negative_question: "Compare the legal protections for press freedom in the United States under the First Amendment with those in countries that have more restrictive media censorship laws."
+  question_type: comparative
+  negative_domain: "press freedom law"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "censorship, banning, and intellectual freedom"
+- pair_id: 282
+  positive_question: "What steps does a library director take when facing organized political pressure to remove materials addressing topics such as race, gender identity, or sexuality?"
+  negative_question: "What steps does a school superintendent take when facing organized political pressure to change curricula addressing topics such as evolution, climate science, or history?"
+  question_type: process
+  negative_domain: "school curriculum politics"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "censorship, banning, and intellectual freedom"
+- pair_id: 283
+  positive_question: "What role does the Library Bill of Rights play as a policy document, and what specific freedoms does it affirm for library users and institutions?"
+  negative_question: "What role does the Hippocratic Oath play as an ethical document, and what specific duties does it affirm for physicians and medical institutions?"
+  question_type: factual
+  negative_domain: "medical ethics"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "censorship, banning, and intellectual freedom"
+- pair_id: 284
+  positive_question: "How have historically banned books, such as works by Toni Morrison or Mark Twain, continued to generate controversy and debate in library settings?"
+  negative_question: "How have historically controversial scientific theories, such as continental drift or germ theory, continued to reshape understanding and debate in academic settings?"
+  question_type: explanatory
+  negative_domain: "history of science"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "censorship, banning, and intellectual freedom"
+- pair_id: 285
+  positive_question: "Compare the frequency and nature of book challenges in school libraries with those in public libraries, considering differences in patron age and institutional governance."
+  negative_question: "Compare the frequency and nature of food safety violations in school cafeterias with those in commercial restaurants, considering differences in patron age and regulatory oversight."
+  question_type: comparative
+  negative_domain: "food safety inspection"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "censorship, banning, and intellectual freedom"
+- pair_id: 286
+  positive_question: "What process does a librarian follow when curating a display or book list that includes challenged or controversial titles, balancing promotion with community sensitivity?"
+  negative_question: "What process does a museum curator follow when designing an exhibit that includes controversial or provocative artworks, balancing artistic merit with community sensitivity?"
+  question_type: process
+  negative_domain: "museum curation"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "censorship, banning, and intellectual freedom"
+- pair_id: 287
+  positive_question: "What is the Children's Internet Protection Act, and how does it require libraries receiving federal funding to implement content filtering on public computers?"
+  negative_question: "What is the Federal Insecticide, Fungicide, and Rodenticide Act, and how does it require agricultural businesses to register and label chemical pesticides before sale?"
+  question_type: factual
+  negative_domain: "pesticide regulation"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "censorship, banning, and intellectual freedom"
+- pair_id: 288
+  positive_question: "How do self-censorship and anticipatory compliance by librarians affect collection development decisions even in the absence of formal book challenges?"
+  negative_question: "How do self-regulation and anticipatory compliance by pharmaceutical companies affect drug marketing decisions even in the absence of formal regulatory enforcement actions?"
+  question_type: explanatory
+  negative_domain: "pharmaceutical marketing"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "censorship, banning, and intellectual freedom"
+- pair_id: 289
+  positive_question: "Compare the censorship issues faced by libraries in democratic societies with those faced by libraries operating under authoritarian government regimes."
+  negative_question: "Compare the academic freedom issues faced by universities in democratic societies with those faced by universities operating under authoritarian government regimes."
+  question_type: comparative
+  negative_domain: "academic freedom"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "censorship, banning, and intellectual freedom"
+- pair_id: 290
+  positive_question: "What steps does a state library association take to support local libraries facing legislative proposals that would restrict collection content or programming?"
+  negative_question: "What steps does a state medical association take to support local hospitals facing legislative proposals that would restrict treatment protocols or prescribing authority?"
+  question_type: process
+  negative_domain: "medical association advocacy"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "censorship, banning, and intellectual freedom"
+- pair_id: 291
+  positive_question: "What are the most frequently challenged categories of books in American libraries, and what themes or content types draw the most objections?"
+  negative_question: "What are the most frequently recalled categories of consumer products in American markets, and what defect types or safety hazards draw the most reports?"
+  question_type: factual
+  negative_domain: "consumer product safety"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "censorship, banning, and intellectual freedom"
+- pair_id: 292
+  positive_question: "How does the concept of age-appropriate material selection in children's library collections differ from censorship according to professional library ethics?"
+  negative_question: "How does the concept of age-appropriate content rating in video game classification differ from outright prohibition according to entertainment industry self-regulation?"
+  question_type: explanatory
+  negative_domain: "video game rating"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "censorship, banning, and intellectual freedom"
+- pair_id: 293
+  positive_question: "Compare the effectiveness of proactive intellectual freedom education for library staff with reactive crisis management when a challenge occurs unexpectedly."
+  negative_question: "Compare the effectiveness of proactive earthquake preparedness drills for hospital staff with reactive emergency response when a seismic event occurs unexpectedly."
+  question_type: comparative
+  negative_domain: "earthquake preparedness"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "censorship, banning, and intellectual freedom"
+- pair_id: 294
+  positive_question: "What process does a school library media specialist follow when a parent requests that a specific book be restricted from their child but not removed from the collection?"
+  negative_question: "What process does a school nurse follow when a parent requests that a specific vaccine be exempted for their child but not eliminated from the school health program?"
+  question_type: process
+  negative_domain: "school vaccination policy"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "censorship, banning, and intellectual freedom"
+- pair_id: 295
+  positive_question: "What is the history of book burning as a form of censorship, and how do modern library professionals draw parallels to contemporary banning efforts?"
+  negative_question: "What is the history of currency debasement as a form of monetary manipulation, and how do modern economists draw parallels to contemporary inflation policies?"
+  question_type: factual
+  negative_domain: "monetary history"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "censorship, banning, and intellectual freedom"
+- pair_id: 296
+  positive_question: "How do libraries use collection diversity audits to ensure their holdings represent a wide range of perspectives, identities, and viewpoints without practicing censorship?"
+  negative_question: "How do orchestras use repertoire diversity reviews to ensure their concert seasons represent a wide range of composers, eras, and musical traditions without excluding genres?"
+  question_type: explanatory
+  negative_domain: "orchestral programming"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "censorship, banning, and intellectual freedom"
+- pair_id: 297
+  positive_question: "Compare the role of library trustees in defending intellectual freedom at the local governance level with the role of the ALA at the national advocacy level."
+  negative_question: "Compare the role of local school board members in setting educational standards at the district level with the role of the Department of Education at the federal policy level."
+  question_type: comparative
+  negative_domain: "education governance"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "censorship, banning, and intellectual freedom"
+- pair_id: 298
+  positive_question: "What steps does a library take to document and publicly report the outcomes of book challenge cases for transparency and professional accountability?"
+  negative_question: "What steps does a police department take to document and publicly report the outcomes of use-of-force incidents for transparency and community accountability?"
+  question_type: process
+  negative_domain: "police accountability"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "censorship, banning, and intellectual freedom"
+- pair_id: 299
+  positive_question: "What legal cases, such as Board of Education v. Pico, have established precedents regarding the rights of libraries to maintain contested materials in their collections?"
+  negative_question: "What legal cases, such as Marbury v. Madison, have established precedents regarding the power of courts to review and invalidate actions of the legislative branch?"
+  question_type: factual
+  negative_domain: "constitutional law"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "censorship, banning, and intellectual freedom"

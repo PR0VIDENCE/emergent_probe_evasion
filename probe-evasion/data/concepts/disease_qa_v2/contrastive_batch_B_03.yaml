@@ -1,0 +1,311 @@
+pairs:
+- pair_id: 75
+  positive_question: How does a normal cell undergo the series of genetic mutations
+    that transform it into a cancerous cell capable of uncontrolled proliferation?
+  negative_question: How does a simple melody undergo the series of harmonic variations
+    that transform it into a fugue capable of sustained contrapuntal development?
+  question_type: process
+  negative_domain: music composition
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: cancer and oncology
+- pair_id: 76
+  positive_question: What is the difference between benign tumors and malignant tumors
+    in terms of their growth patterns, cellular characteristics, and potential to metastasize?
+  negative_question: What is the difference between cumulus clouds and cumulonimbus
+    clouds in terms of their formation patterns, structural characteristics, and potential
+    to produce precipitation?
+  question_type: comparative
+  negative_domain: cloud physics
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: cancer and oncology
+- pair_id: 77
+  positive_question: How do checkpoint inhibitor immunotherapies work to help the immune
+    system recognize and destroy cancer cells that have evaded detection?
+  negative_question: How do electronic countermeasure systems work to help radar operators
+    identify and track stealth aircraft that have evaded detection?
+  question_type: explanatory
+  negative_domain: radar countermeasures
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: cancer and oncology
+- pair_id: 78
+  positive_question: What are the most significant known risk factors for developing
+    colorectal cancer, and which of these are modifiable through lifestyle changes?
+  negative_question: What are the most significant known risk factors for developing
+    soil liquefaction, and which of these are modifiable through ground improvement
+    techniques?
+  question_type: factual
+  negative_domain: geotechnical engineering
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: cancer and oncology
+- pair_id: 79
+  positive_question: Describe the process of cancer staging using the TNM classification
+    system and explain why accurate staging is critical for treatment planning.
+  negative_question: Describe the process of diamond grading using the 4Cs classification
+    system and explain why accurate grading is critical for pricing decisions.
+  question_type: process
+  negative_domain: diamond grading
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: cancer and oncology
+- pair_id: 80
+  positive_question: How does the tumor microenvironment support cancer growth by suppressing
+    immune responses and promoting the formation of new blood vessels?
+  negative_question: How does the deep-sea hydrothermal vent environment support chemosynthetic
+    life by supplying mineral nutrients and maintaining extreme temperature gradients?
+  question_type: explanatory
+  negative_domain: deep-sea hydrothermal ecology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: cancer and oncology
+- pair_id: 81
+  positive_question: Compare the mechanisms and side effects of traditional chemotherapy
+    with those of targeted molecular therapies in treating non-small cell lung cancer.
+  negative_question: Compare the mechanisms and side effects of chemical pesticides
+    with those of biological pest control agents in managing invasive crop-eating insects.
+  question_type: comparative
+  negative_domain: agricultural pest management
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: cancer and oncology
+- pair_id: 82
+  positive_question: What role do tumor suppressor genes like p53 and BRCA play in
+    preventing cancer, and what happens when these genes are mutated or inactivated?
+  negative_question: What role do circuit breakers and fuses play in preventing electrical
+    fires, and what happens when these safety devices are bypassed or degraded?
+  question_type: factual
+  negative_domain: electrical safety engineering
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: cancer and oncology
+- pair_id: 83
+  positive_question: How does radiation therapy damage the DNA of cancer cells to prevent
+    them from dividing, and why does it also affect healthy tissue nearby?
+  negative_question: How does sandblasting erode the surface of metal components to
+    remove corrosion, and why does it also affect undamaged substrate nearby?
+  question_type: explanatory
+  negative_domain: industrial surface treatment
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: cancer and oncology
+- pair_id: 84
+  positive_question: Describe the steps involved in a liquid biopsy and explain how
+    circulating tumor DNA can be used to monitor cancer progression without invasive surgery.
+  negative_question: Describe the steps involved in a core sample analysis and explain
+    how trapped gas bubbles can be used to reconstruct past atmospheric conditions
+    without direct measurement.
+  question_type: process
+  negative_domain: ice core paleoclimatology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: cancer and oncology
+- pair_id: 85
+  positive_question: What is the Warburg effect, and how does the altered metabolism
+    of cancer cells differ from that of normal cells in terms of energy production?
+  negative_question: What is the Venturi effect, and how does the altered flow of fluid
+    through a constriction differ from that in an open pipe in terms of pressure dynamics?
+  question_type: explanatory
+  negative_domain: fluid dynamics
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: cancer and oncology
+- pair_id: 86
+  positive_question: Compare the five-year survival rates for early-stage versus late-stage
+    pancreatic cancer and discuss why early detection remains so challenging.
+  negative_question: Compare the five-year corrosion rates for galvanized versus untreated
+    steel in marine environments and discuss why long-term protection remains so challenging.
+  question_type: comparative
+  negative_domain: corrosion science
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: cancer and oncology
+- pair_id: 87
+  positive_question: How do CAR-T cell therapies genetically engineer a patient's own
+    immune cells to specifically target and kill certain types of cancer cells?
+  negative_question: How do CRISPR-based gene drives genetically engineer a mosquito
+    population to specifically suppress and reduce the breeding of certain invasive
+    species?
+  question_type: process
+  negative_domain: genetic biocontrol
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: cancer and oncology
+- pair_id: 88
+  positive_question: What is the role of angiogenesis in tumor development, and how
+    do anti-angiogenic drugs attempt to starve tumors of their blood supply?
+  negative_question: What is the role of capillary action in paper chromatography,
+    and how do different solvent systems attempt to separate mixtures into their individual
+    components?
+  question_type: explanatory
+  negative_domain: analytical chemistry
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: cancer and oncology
+- pair_id: 89
+  positive_question: What are the major oncogenic viruses known to cause cancer in humans,
+    and which specific cancers are associated with each viral agent?
+  negative_question: What are the major programming paradigms known to influence software
+    design, and which specific application domains are associated with each paradigm?
+  question_type: factual
+  negative_domain: programming language theory
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: cancer and oncology
+- pair_id: 90
+  positive_question: How does cancer develop resistance to chemotherapy drugs over time,
+    and what strategies are used to overcome or prevent this drug resistance?
+  negative_question: How does concrete develop cracks from freeze-thaw cycles over time,
+    and what strategies are used to overcome or prevent this structural degradation?
+  question_type: process
+  negative_domain: concrete engineering
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: cancer and oncology
+- pair_id: 91
+  positive_question: Compare the roles of oncogenes and tumor suppressor genes in cancer
+    development, using specific examples of well-studied genes in each category.
+  negative_question: Compare the roles of oxidizers and reducers in pyrotechnic reactions,
+    using specific examples of well-studied compounds in each category.
+  question_type: comparative
+  negative_domain: pyrotechnics
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: cancer and oncology
+- pair_id: 92
+  positive_question: What screening methods are currently recommended for detecting
+    breast cancer at early stages, and how effective is each method at reducing mortality?
+  negative_question: What inspection methods are currently recommended for detecting
+    bridge fatigue at early stages, and how effective is each method at preventing collapse?
+  question_type: factual
+  negative_domain: structural health monitoring
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: cancer and oncology
+- pair_id: 93
+  positive_question: How do epigenetic changes like DNA methylation and histone modification
+    contribute to cancer initiation without altering the underlying DNA sequence?
+  negative_question: How do surface treatments like anodizing and powder coating contribute
+    to aluminum durability without altering the underlying metal composition?
+  question_type: explanatory
+  negative_domain: aluminum finishing
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: cancer and oncology
+- pair_id: 94
+  positive_question: Describe the process by which metastatic cancer cells detach from
+    a primary tumor, enter the bloodstream, and establish secondary tumors in distant organs.
+  negative_question: Describe the process by which migratory seed pods detach from a
+    parent plant, enter wind currents, and establish new colonies in distant ecosystems.
+  question_type: process
+  negative_domain: plant dispersal ecology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: cancer and oncology
+- pair_id: 95
+  positive_question: What is the significance of microsatellite instability in colorectal
+    cancer, and how does it influence the choice of immunotherapy as a treatment option?
+  negative_question: What is the significance of orbital resonance in planetary systems,
+    and how does it influence the long-term stability of asteroid belts as dynamical
+    structures?
+  question_type: factual
+  negative_domain: celestial mechanics
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: cancer and oncology
+- pair_id: 96
+  positive_question: Compare the approach of precision oncology, which tailors treatment
+    to a tumor's genetic profile, with traditional one-size-fits-all chemotherapy protocols.
+  negative_question: Compare the approach of bespoke tailoring, which adjusts garment
+    construction to a client's body profile, with traditional off-the-rack manufacturing
+    protocols.
+  question_type: comparative
+  negative_domain: garment manufacturing
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: cancer and oncology
+- pair_id: 97
+  positive_question: How does chronic inflammation increase the risk of developing certain
+    cancers, and what biological pathways link persistent inflammatory signals to tumor
+    formation?
+  negative_question: How does chronic vibration increase the risk of developing structural
+    fatigue, and what mechanical pathways link persistent oscillatory forces to material
+    fracture?
+  question_type: explanatory
+  negative_domain: vibration analysis
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: cancer and oncology
+- pair_id: 98
+  positive_question: What palliative care options are available for patients with advanced
+    metastatic cancer, and how do these differ from curative treatment intentions?
+  negative_question: What disaster recovery options are available for organizations
+    with compromised data centers, and how do these differ from preventive cybersecurity
+    measures?
+  question_type: factual
+  negative_domain: disaster recovery computing
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: cancer and oncology
+- pair_id: 99
+  positive_question: Describe the steps in a bone marrow transplant for treating blood
+    cancers like leukemia, from donor matching through engraftment monitoring.
+  negative_question: Describe the steps in a vineyard grafting operation for propagating
+    wine grape cultivars, from rootstock selection through growth monitoring.
+  question_type: process
+  negative_domain: viticulture grafting
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: cancer and oncology

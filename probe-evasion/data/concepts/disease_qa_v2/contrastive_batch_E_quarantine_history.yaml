@@ -1,0 +1,151 @@
+pairs:
+- pair_id: 739
+  positive_question: "How did the quarantine system established in medieval Venice to combat plague shape modern international public health law and disease containment practices?"
+  negative_question: "How did the guild system established in medieval Florence to regulate textile production shape modern trade union law and labor organization practices?"
+  question_type: process
+  negative_domain: "labor history"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "quarantine history and public health law"
+- pair_id: 740
+  positive_question: "What legal authority do governments invoke to impose mandatory quarantines during disease outbreaks, and how are individual civil liberties balanced against public safety?"
+  negative_question: "What legal authority do governments invoke to impose eminent domain seizures for infrastructure projects, and how are individual property rights balanced against public interest?"
+  question_type: factual
+  negative_domain: "property law"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "quarantine history and public health law"
+- pair_id: 741
+  positive_question: "Compare the quarantine measures used during the 1918 influenza pandemic with those implemented during the 2020 COVID-19 pandemic in terms of scope and enforcement."
+  negative_question: "Compare the naval blockade strategies used during World War I with those implemented during the Cuban Missile Crisis in terms of scope and enforcement."
+  question_type: comparative
+  negative_domain: "military naval history"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "quarantine history and public health law"
+- pair_id: 742
+  positive_question: "Why did the use of lazarettos as plague quarantine stations in Mediterranean port cities become a foundational institution of international disease control?"
+  negative_question: "Why did the use of lighthouses as navigational aids along Atlantic shipping routes become a foundational institution of international maritime safety?"
+  question_type: explanatory
+  negative_domain: "maritime navigation history"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "quarantine history and public health law"
+- pair_id: 743
+  positive_question: "What role did the International Sanitary Conferences of the 19th century play in establishing multilateral agreements to prevent the spread of cholera and plague?"
+  negative_question: "What role did the International Postal Congress of the 19th century play in establishing multilateral agreements to standardize cross-border mail delivery systems?"
+  question_type: factual
+  negative_domain: "postal history"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "quarantine history and public health law"
+- pair_id: 744
+  positive_question: "Describe the evolution of quarantine enforcement at Ellis Island, from medical inspection of immigrants to deportation of those with contagious diseases."
+  negative_question: "Describe the evolution of customs enforcement at major trading ports, from physical inspection of cargo manifests to electronic pre-clearance of containerized shipments."
+  question_type: process
+  negative_domain: "international trade logistics"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "quarantine history and public health law"
+- pair_id: 745
+  positive_question: "How did the discovery that cholera spread through contaminated water by John Snow lead to public health legislation mandating clean water infrastructure?"
+  negative_question: "How did the discovery that lead paint caused childhood poisoning lead to consumer safety legislation mandating lead-free household paint formulations?"
+  question_type: explanatory
+  negative_domain: "consumer product regulation"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "quarantine history and public health law"
+- pair_id: 746
+  positive_question: "Compare the public health responses to yellow fever outbreaks in 19th-century New Orleans with the responses to bubonic plague in San Francisco's Chinatown in 1900."
+  negative_question: "Compare the urban redevelopment responses to the Great Chicago Fire of 1871 with the responses to the San Francisco earthquake and fire of 1906."
+  question_type: comparative
+  negative_domain: "urban disaster recovery"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "quarantine history and public health law"
+- pair_id: 747
+  positive_question: "What constitutional challenges have been raised against compulsory vaccination laws designed to prevent the spread of communicable diseases in school settings?"
+  negative_question: "What constitutional challenges have been raised against compulsory arbitration clauses designed to prevent employees from bringing class action lawsuits against employers?"
+  question_type: factual
+  negative_domain: "employment law"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "quarantine history and public health law"
+- pair_id: 748
+  positive_question: "Describe the historical development of cordon sanitaire strategies used to contain plague outbreaks by sealing off entire regions to prevent disease escape."
+  negative_question: "Describe the historical development of firebreak strategies used to contain wildfire spread by clearing vegetation corridors to prevent flame advance."
+  question_type: process
+  negative_domain: "wildfire management"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "quarantine history and public health law"
+- pair_id: 749
+  positive_question: "Why did the Typhoid Mary case become a landmark in public health ethics regarding the involuntary quarantine of asymptomatic disease carriers?"
+  negative_question: "Why did the Triangle Shirtwaist Factory fire become a landmark in occupational safety regarding the mandatory installation of fire escapes in industrial buildings?"
+  question_type: explanatory
+  negative_domain: "occupational safety history"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "quarantine history and public health law"
+- pair_id: 750
+  positive_question: "How do the International Health Regulations adopted by WHO member states govern the reporting of disease outbreaks and cross-border health emergency responses?"
+  negative_question: "How do the Basel Accords adopted by central bank regulators govern the reporting of capital adequacy and cross-border financial risk management?"
+  question_type: comparative
+  negative_domain: "banking regulation"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "quarantine history and public health law"
+- pair_id: 751
+  positive_question: "What lessons from the SARS quarantine experience in Toronto in 2003 informed preparedness planning for future respiratory disease pandemic responses?"
+  negative_question: "What lessons from the Deepwater Horizon oil spill response in 2010 informed preparedness planning for future offshore drilling disaster containment?"
+  question_type: factual
+  negative_domain: "environmental disaster planning"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "quarantine history and public health law"
+- pair_id: 752
+  positive_question: "Describe how the eradication of smallpox required not only vaccination but also rigorous surveillance, quarantine, and ring vaccination containment strategies."
+  negative_question: "Describe how the eradication of invasive cane toads in certain island ecosystems required not only physical removal but also rigorous monitoring and barrier strategies."
+  question_type: process
+  negative_domain: "invasive species management"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "quarantine history and public health law"
+- pair_id: 753
+  positive_question: "Why do modern pandemic preparedness frameworks emphasize proportionality and transparency in quarantine enforcement to maintain public trust during disease emergencies?"
+  negative_question: "Why do modern electoral commission frameworks emphasize proportionality and transparency in vote counting procedures to maintain public trust during contested elections?"
+  question_type: explanatory
+  negative_domain: "election administration"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "quarantine history and public health law"

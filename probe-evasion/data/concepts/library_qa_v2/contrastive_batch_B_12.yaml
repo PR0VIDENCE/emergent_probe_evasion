@@ -1,0 +1,251 @@
+pairs:
+- pair_id: 300
+  positive_question: "What is the role of a school library media specialist, and how does this position differ from that of a classroom teacher in supporting student learning?"
+  negative_question: "What is the role of an athletic trainer, and how does this position differ from that of a physical education teacher in supporting student fitness?"
+  question_type: factual
+  negative_domain: "athletic training"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "school libraries and media centers"
+- pair_id: 301
+  positive_question: "How do school libraries support curriculum alignment by providing resources, research instruction, and collaborative planning with subject-area teachers?"
+  negative_question: "How do meteorological stations support climate research by providing sensor data, calibration services, and collaborative analysis with atmospheric scientists?"
+  question_type: explanatory
+  negative_domain: "meteorological observation"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "school libraries and media centers"
+- pair_id: 302
+  positive_question: "Compare the collection development priorities of an elementary school library with those of a high school library in terms of reading levels and subject depth."
+  negative_question: "Compare the menu development priorities of an elementary school cafeteria with those of a university dining hall in terms of portion sizes and cuisine variety."
+  question_type: comparative
+  negative_domain: "institutional food service"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "school libraries and media centers"
+- pair_id: 303
+  positive_question: "What process does a school librarian follow when teaching a research skills lesson that integrates database searching, source evaluation, and citation practices?"
+  negative_question: "What process does a flight instructor follow when teaching a navigation skills lesson that integrates chart reading, radio communication, and instrument approach practices?"
+  question_type: process
+  negative_domain: "flight instruction"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "school libraries and media centers"
+- pair_id: 304
+  positive_question: "What national standards, such as those from the American Association of School Librarians, define the competencies expected of school library programs?"
+  negative_question: "What national standards, such as those from the National Fire Protection Association, define the competencies expected of municipal fire suppression programs?"
+  question_type: factual
+  negative_domain: "fire protection standards"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "school libraries and media centers"
+- pair_id: 305
+  positive_question: "How do school libraries promote a culture of reading and independent inquiry among students beyond the formal requirements of the classroom curriculum?"
+  negative_question: "How do community swimming pools promote a culture of water safety and recreational fitness among residents beyond the formal requirements of school physical education?"
+  question_type: explanatory
+  negative_domain: "community aquatics"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "school libraries and media centers"
+- pair_id: 306
+  positive_question: "Compare the impact of having a fully staffed school library with a certified librarian versus having an unstaffed book room on student achievement outcomes."
+  negative_question: "Compare the impact of having a fully equipped school chemistry lab with a certified instructor versus having a virtual-only simulation on student experiment outcomes."
+  question_type: comparative
+  negative_domain: "science lab education"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "school libraries and media centers"
+- pair_id: 307
+  positive_question: "What steps does a school library media specialist take when weeding the collection to remove outdated, damaged, or inaccurate materials while maintaining balance?"
+  negative_question: "What steps does a horticulturist take when pruning an orchard to remove dead, diseased, or unproductive branches while maintaining tree health and structure?"
+  question_type: process
+  negative_domain: "orchard management"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "school libraries and media centers"
+- pair_id: 308
+  positive_question: "What is the Flexible Access model for school library scheduling, and how does it differ from the Fixed Schedule approach in terms of student and teacher usage?"
+  negative_question: "What is the Agile development model for software engineering, and how does it differ from the Waterfall approach in terms of team collaboration and delivery cycles?"
+  question_type: factual
+  negative_domain: "software development"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "school libraries and media centers"
+- pair_id: 309
+  positive_question: "How do school libraries address the digital divide by providing students with equitable access to computers, internet connectivity, and digital learning tools?"
+  negative_question: "How do rural electric cooperatives address the energy access gap by providing households with reliable connections to transmission grids and renewable power sources?"
+  question_type: explanatory
+  negative_domain: "rural electrification"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "school libraries and media centers"
+- pair_id: 310
+  positive_question: "Compare the challenges of operating a school library in a well-funded suburban district with those of operating one in an underfunded urban school."
+  negative_question: "Compare the challenges of operating a dental practice in a well-insured suburban community with those of operating one in an underserved urban neighborhood."
+  question_type: comparative
+  negative_domain: "dental practice management"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "school libraries and media centers"
+- pair_id: 311
+  positive_question: "What process does a school librarian use to collaborate with a classroom teacher on designing an inquiry-based learning unit that incorporates library resources?"
+  negative_question: "What process does a stage manager use to collaborate with a theater director on designing a technical rehearsal schedule that incorporates lighting and sound cues?"
+  question_type: process
+  negative_domain: "theater production"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "school libraries and media centers"
+- pair_id: 312
+  positive_question: "What evidence exists linking well-resourced school libraries with higher standardized test scores and improved student reading proficiency levels?"
+  negative_question: "What evidence exists linking well-maintained urban tree canopies with lower summer surface temperatures and improved residential air quality levels?"
+  question_type: factual
+  negative_domain: "urban forestry"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "school libraries and media centers"
+- pair_id: 313
+  positive_question: "How do school libraries integrate maker space activities, such as coding workshops and robotics clubs, into their programming alongside traditional literacy services?"
+  negative_question: "How do botanical gardens integrate citizen science activities, such as plant phenology monitoring and pollinator surveys, into their programming alongside traditional horticultural exhibits?"
+  question_type: explanatory
+  negative_domain: "botanical garden citizen science"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "school libraries and media centers"
+- pair_id: 314
+  positive_question: "Compare the selection criteria for graphic novels and manga in school library collections with those for traditional prose fiction in terms of age appropriateness."
+  negative_question: "Compare the selection criteria for electric scooters and e-bikes in urban fleet-sharing programs with those for traditional bicycles in terms of rider safety standards."
+  question_type: comparative
+  negative_domain: "micromobility fleet management"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "school libraries and media centers"
+- pair_id: 315
+  positive_question: "What steps does a school district take when deciding whether to centralize its library technical services or allow each school to manage cataloging independently?"
+  negative_question: "What steps does a fast-food chain take when deciding whether to centralize its supply procurement or allow each franchise to source ingredients independently?"
+  question_type: process
+  negative_domain: "franchise supply chain"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "school libraries and media centers"
+- pair_id: 316
+  positive_question: "What is the role of a school library advisory committee, and how does it bring together administrators, teachers, parents, and students to guide library policy?"
+  negative_question: "What is the role of a hospital ethics committee, and how does it bring together physicians, nurses, ethicists, and patient advocates to guide treatment policy?"
+  question_type: factual
+  negative_domain: "hospital ethics"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "school libraries and media centers"
+- pair_id: 317
+  positive_question: "How do school library media centers adapt their spaces and services to accommodate both individual quiet study and collaborative group project work?"
+  negative_question: "How do coworking office spaces adapt their layouts and amenities to accommodate both individual focused work and collaborative team brainstorming sessions?"
+  question_type: explanatory
+  negative_domain: "coworking space design"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "school libraries and media centers"
+- pair_id: 318
+  positive_question: "Compare the professional development opportunities available to school librarians with those available to public librarians in terms of content focus and certification requirements."
+  negative_question: "Compare the professional development opportunities available to paramedics with those available to registered nurses in terms of clinical focus and licensing requirements."
+  question_type: comparative
+  negative_domain: "emergency medical training"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "school libraries and media centers"
+- pair_id: 319
+  positive_question: "What process does a school librarian follow when advocating to the school board for increased library funding and the retention of a full-time library position?"
+  negative_question: "What process does a parks director follow when advocating to the city council for increased maintenance funding and the retention of full-time groundskeeper positions?"
+  question_type: process
+  negative_domain: "parks department funding"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "school libraries and media centers"
+- pair_id: 320
+  positive_question: "What is the concept of a learning commons in a school library, and how does it transform the traditional library into a student-centered collaborative hub?"
+  negative_question: "What is the concept of a living wall in a commercial building, and how does it transform a traditional facade into a plant-covered air-purifying feature?"
+  question_type: factual
+  negative_domain: "green building design"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "school libraries and media centers"
+- pair_id: 321
+  positive_question: "How do school libraries curate diverse and inclusive book collections that reflect the racial, cultural, and linguistic backgrounds of their student populations?"
+  negative_question: "How do casting directors curate diverse and inclusive performer rosters that reflect the racial, cultural, and linguistic backgrounds of their audience populations?"
+  question_type: explanatory
+  negative_domain: "casting and talent management"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "school libraries and media centers"
+- pair_id: 322
+  positive_question: "Compare the use of automated book return systems in large school districts with manual check-in processes used in small rural schools."
+  negative_question: "Compare the use of automated toll collection systems on large interstate highways with manual toll booth operations on small rural bridge crossings."
+  question_type: comparative
+  negative_domain: "toll road operations"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "school libraries and media centers"
+- pair_id: 323
+  positive_question: "What steps does a school librarian take to create a welcoming and safe library environment where students of all backgrounds feel comfortable seeking information?"
+  negative_question: "What steps does a park ranger take to create a welcoming and safe campground environment where visitors of all experience levels feel comfortable enjoying the outdoors?"
+  question_type: process
+  negative_domain: "campground management"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "school libraries and media centers"
+- pair_id: 324
+  positive_question: "What is the future of school libraries in the context of one-to-one device programs and increasing reliance on digital textbooks and online learning platforms?"
+  negative_question: "What is the future of traditional taxi services in the context of ride-sharing app adoption and increasing reliance on autonomous vehicle and mobility platforms?"
+  question_type: factual
+  negative_domain: "ride-sharing disruption"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "school libraries and media centers"

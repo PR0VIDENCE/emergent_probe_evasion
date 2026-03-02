@@ -1,0 +1,151 @@
+pairs:
+- pair_id: 600
+  positive_question: "How do library catalog records describe the physical and intellectual properties of each item using standardized fields like author, title, and subject headings?"
+  negative_question: "How do stock photo libraries use keyword tagging and metadata to help buyers search for specific image subjects, styles, and compositions?"
+  question_type: process
+  negative_domain: "stock photo and image libraries"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 601
+  positive_question: "What role do library volunteers play in supporting day-to-day operations such as shelving books, running programs, and assisting at the front desk?"
+  negative_question: "What role do contributor photographers play in building stock photo libraries, and how are they compensated through royalty or commission structures?"
+  question_type: factual
+  negative_domain: "stock photo and image libraries"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 602
+  positive_question: "How do public libraries promote digital inclusion by offering free computer classes and one-on-one technology assistance to seniors?"
+  negative_question: "How do stock photo libraries handle model releases and property releases to ensure legal compliance for commercial image usage?"
+  question_type: explanatory
+  negative_domain: "stock photo and image libraries"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 603
+  positive_question: "What are the differences between open-stack and closed-stack shelving arrangements in libraries, and how does each approach affect patron access?"
+  negative_question: "What are the differences between rights-managed and royalty-free licensing models used by stock photo and image libraries like Getty and Shutterstock?"
+  question_type: comparative
+  negative_domain: "stock photo and image libraries"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 604
+  positive_question: "How do library disaster preparedness plans address risks like flooding, fire, and mold damage to irreplaceable book and manuscript collections?"
+  negative_question: "How do AI-generated image libraries challenge traditional stock photo business models by offering unlimited variations at lower production costs?"
+  question_type: explanatory
+  negative_domain: "stock photo and image libraries"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 605
+  positive_question: "What steps do libraries take to make their facilities accessible to people with disabilities, including wheelchair ramps, Braille signage, and adaptive technology?"
+  negative_question: "What steps do stock photo libraries take to improve diversity and representation in their image collections to reflect a broader range of cultures?"
+  question_type: process
+  negative_domain: "stock photo and image libraries"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 606
+  positive_question: "Why do some libraries host citizenship preparation classes, ESL instruction, and multilingual storytime sessions for immigrant communities?"
+  negative_question: "Why do marketing agencies subscribe to premium stock photo libraries instead of using free image sites for high-profile advertising campaigns?"
+  question_type: explanatory
+  negative_domain: "stock photo and image libraries"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 607
+  positive_question: "How do library friends groups raise funds through used book sales, donations, and advocacy to supplement the library's operating budget?"
+  negative_question: "How do editorial stock photo libraries curate photojournalistic images of news events for licensing by media outlets and publishers?"
+  question_type: factual
+  negative_domain: "stock photo and image libraries"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 608
+  positive_question: "What are the advantages of a centralized library cataloging service like OCLC compared to each library creating its own original catalog records?"
+  negative_question: "What are the advantages of using curated stock image libraries with human editorial selection versus algorithmically sorted bulk image databases?"
+  question_type: comparative
+  negative_domain: "stock photo and image libraries"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 609
+  positive_question: "How do library outreach programs bring services to homebound patrons through delivery programs and remote digital access assistance?"
+  negative_question: "How do microstock photo libraries differ from traditional stock agencies in pricing, volume, exclusivity, and the quality expectations for submitted images?"
+  question_type: process
+  negative_domain: "stock photo and image libraries"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 610
+  positive_question: "What challenges do public libraries encounter when filtering internet content on public computers to comply with CIPA while preserving patron access?"
+  negative_question: "What challenges do stock photo libraries face in preventing unauthorized redistribution and copyright infringement of their licensed images online?"
+  question_type: factual
+  negative_domain: "stock photo and image libraries"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 611
+  positive_question: "How do libraries use displays, book lists, and staff recommendations to promote materials and increase circulation of lesser-known titles?"
+  negative_question: "How do stock photo libraries use reverse image search technology to detect unlicensed use of their photographs across the internet?"
+  question_type: process
+  negative_domain: "stock photo and image libraries"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 612
+  positive_question: "Why is the freedom to read considered a foundational principle of public library service in democratic societies?"
+  negative_question: "Why do design teams create internal stock image libraries of brand-approved photography rather than relying on generic stock photo sites?"
+  question_type: explanatory
+  negative_domain: "stock photo and image libraries"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 613
+  positive_question: "What are the differences between how a presidential library preserves historical documents and how a public library serves everyday community needs?"
+  negative_question: "What are the differences between vector illustration libraries and photographic stock image libraries in terms of file formats and use cases?"
+  question_type: comparative
+  negative_domain: "stock photo and image libraries"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 614
+  positive_question: "How do public library teen advisory boards give young adults a voice in selecting materials, planning events, and designing teen-friendly spaces?"
+  negative_question: "How do stock photo libraries handle seasonal demand spikes, with holiday and event-themed images seeing dramatically higher download volumes?"
+  question_type: factual
+  negative_domain: "stock photo and image libraries"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"

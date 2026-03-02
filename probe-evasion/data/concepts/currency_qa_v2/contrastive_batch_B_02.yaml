@@ -1,0 +1,251 @@
+pairs:
+- pair_id: 50
+  positive_question: "What security features are embedded in modern banknotes to prevent counterfeiting, such as watermarks and holograms?"
+  negative_question: "What structural features are embedded in modern skyscrapers to prevent collapse, such as dampers and reinforcement beams?"
+  question_type: factual
+  negative_domain: "structural engineering"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "banknote design and security features"
+- pair_id: 51
+  positive_question: "How does intaglio printing contribute to the tactile and visual security of paper currency compared to offset printing?"
+  negative_question: "How does electron microscopy contribute to the structural and compositional analysis of mineral samples compared to optical microscopy?"
+  question_type: explanatory
+  negative_domain: "mineralogy"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "banknote design and security features"
+- pair_id: 52
+  positive_question: "Compare the polymer banknote technology used in Australia with the cotton-linen blend paper used in United States currency."
+  negative_question: "Compare the sourdough fermentation technique used in San Francisco with the rapid-rise yeast method used in commercial bakeries."
+  question_type: comparative
+  negative_domain: "bread baking"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "banknote design and security features"
+- pair_id: 53
+  positive_question: "Describe the process of designing a new banknote series from initial concept through final approval and mass printing."
+  negative_question: "Describe the process of designing a new satellite mission from initial concept through final approval and orbital launch."
+  question_type: process
+  negative_domain: "space engineering"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "banknote design and security features"
+- pair_id: 54
+  positive_question: "What role do color-shifting inks play in the anti-counterfeiting measures of high-denomination banknotes?"
+  negative_question: "What role do bioluminescent organisms play in the deep-sea ecosystems of high-pressure ocean trenches?"
+  question_type: factual
+  negative_domain: "deep-sea ecology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "banknote design and security features"
+- pair_id: 55
+  positive_question: "Why have several countries transitioned from paper-based banknotes to polymer substrates for their national currency?"
+  negative_question: "Why have several countries transitioned from coal-based power plants to renewable energy sources for their national grids?"
+  question_type: explanatory
+  negative_domain: "renewable energy"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "banknote design and security features"
+- pair_id: 56
+  positive_question: "How do the security threads in Euro banknotes compare to those found in Japanese yen notes in terms of technology?"
+  negative_question: "How do the migratory routes of Arctic terns compare to those followed by monarch butterflies in terms of distance?"
+  question_type: comparative
+  negative_domain: "animal migration"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "banknote design and security features"
+- pair_id: 57
+  positive_question: "Explain the steps involved in incorporating a holographic strip into a banknote during the manufacturing process."
+  negative_question: "Explain the steps involved in incorporating a reclaimed wood beam into a furniture piece during the restoration process."
+  question_type: process
+  negative_domain: "furniture restoration"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "banknote design and security features"
+- pair_id: 58
+  positive_question: "What is the average lifespan of a circulated banknote, and what factors cause it to degrade and be removed from circulation?"
+  negative_question: "What is the average lifespan of a honeybee colony, and what factors cause it to decline and ultimately collapse?"
+  question_type: factual
+  negative_domain: "apiculture"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "banknote design and security features"
+- pair_id: 59
+  positive_question: "Why do central banks periodically redesign their banknotes even when current security features remain effective?"
+  negative_question: "Why do astronomers periodically recalibrate their telescopes even when current optical alignments remain effective?"
+  question_type: explanatory
+  negative_domain: "observational astronomy"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "banknote design and security features"
+- pair_id: 60
+  positive_question: "Compare the accessibility features for visually impaired users on Canadian banknotes versus those on Indian rupee notes."
+  negative_question: "Compare the pollination mechanisms for wind-dependent crops on prairie farmlands versus those for insect-dependent orchards."
+  question_type: comparative
+  negative_domain: "pollination ecology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "banknote design and security features"
+- pair_id: 61
+  positive_question: "Describe the quality control process that newly printed banknotes undergo before they are shipped to commercial banks."
+  negative_question: "Describe the quality control process that freshly harvested coffee beans undergo before they are shipped to roasting facilities."
+  question_type: process
+  negative_domain: "coffee production"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "banknote design and security features"
+- pair_id: 62
+  positive_question: "What is the significance of serial numbers on banknotes, and how are they used to track currency in circulation?"
+  negative_question: "What is the significance of ring patterns on tree trunks, and how are they used to reconstruct climate in dendrochronology?"
+  question_type: factual
+  negative_domain: "dendrochronology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "banknote design and security features"
+- pair_id: 63
+  positive_question: "Why are ultraviolet-reactive fibers incorporated into banknote paper, and how do they assist in authentication?"
+  negative_question: "Why are nitrogen-fixing bacteria incorporated into legume root nodules, and how do they assist in soil enrichment?"
+  question_type: explanatory
+  negative_domain: "soil microbiology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "banknote design and security features"
+- pair_id: 64
+  positive_question: "How do the portrait engraving techniques on Swiss franc banknotes differ from those used on British pound sterling notes?"
+  negative_question: "How do the volcanic eruption patterns at Mount Etna in Sicily differ from those observed at Kilauea in Hawaii?"
+  question_type: comparative
+  negative_domain: "volcanology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "banknote design and security features"
+- pair_id: 65
+  positive_question: "Describe the process by which worn and damaged banknotes are collected, verified, and destroyed by a central bank."
+  negative_question: "Describe the process by which fallen and decayed leaves are collected, decomposed, and recycled by a forest ecosystem."
+  question_type: process
+  negative_domain: "forest ecology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "banknote design and security features"
+- pair_id: 66
+  positive_question: "What types of microprinting are hidden on United States dollar bills, and where are they typically located?"
+  negative_question: "What types of microfossils are preserved in Antarctic ice cores, and where are they typically concentrated?"
+  question_type: factual
+  negative_domain: "glaciology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "banknote design and security features"
+- pair_id: 67
+  positive_question: "Why do some nations choose to feature cultural landmarks rather than political figures on their banknote designs?"
+  negative_question: "Why do some species choose to construct elaborate nests rather than simple burrows for their reproductive shelters?"
+  question_type: explanatory
+  negative_domain: "animal behavior"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "banknote design and security features"
+- pair_id: 68
+  positive_question: "Compare the durability and environmental resistance of polymer notes issued by New Zealand with those issued by Romania."
+  negative_question: "Compare the thermal conductivity and heat resistance of ceramic tiles produced in Italy with those manufactured in Japan."
+  question_type: comparative
+  negative_domain: "materials science"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "banknote design and security features"
+- pair_id: 69
+  positive_question: "Explain the steps a banknote printer takes to embed a see-through transparent window into a polymer currency note."
+  negative_question: "Explain the steps a winemaker takes to conduct a secondary malolactic fermentation in a barrel-aged red wine."
+  question_type: process
+  negative_domain: "winemaking"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "banknote design and security features"
+- pair_id: 70
+  positive_question: "What are the key differences between the first-generation and second-generation Euro banknote series in terms of security?"
+  negative_question: "What are the key differences between the first-generation and second-generation CRISPR gene-editing tools in terms of precision?"
+  question_type: factual
+  negative_domain: "genetic engineering"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "banknote design and security features"
+- pair_id: 71
+  positive_question: "Why is the choice of substrate material so critical to the longevity and counterfeit resistance of modern banknotes?"
+  negative_question: "Why is the choice of soil composition so critical to the stability and erosion resistance of modern levee systems?"
+  question_type: explanatory
+  negative_domain: "civil engineering"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "banknote design and security features"
+- pair_id: 72
+  positive_question: "How do the raised-ink tactile features on Brazilian real banknotes compare to the Braille markings on Mexican peso notes?"
+  negative_question: "How do the symbiotic relationships of clownfish with sea anemones compare to the mutualism between oxpeckers and large mammals?"
+  question_type: comparative
+  negative_domain: "symbiotic ecology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "banknote design and security features"
+- pair_id: 73
+  positive_question: "Describe the workflow for integrating machine-readable features into banknotes to enable automated sorting and verification."
+  negative_question: "Describe the workflow for integrating GPS tracking collars onto wildlife subjects to enable automated movement and behavioral monitoring."
+  question_type: process
+  negative_domain: "wildlife tracking"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "banknote design and security features"
+- pair_id: 74
+  positive_question: "What innovative security features have been introduced in the latest Swedish krona banknote series to combat forgery?"
+  negative_question: "What innovative propulsion features have been introduced in the latest ion thruster spacecraft engines to combat fuel inefficiency?"
+  question_type: factual
+  negative_domain: "spacecraft propulsion"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "banknote design and security features"

@@ -1,0 +1,181 @@
+pairs:
+- pair_id: 400
+  positive_question: How do central banks use interest rate adjustments to influence the
+    exchange rate of their national currency against major foreign currencies?
+  negative_question: How do stock exchanges use circuit breakers to halt trading when
+    equity prices experience extreme intraday volatility?
+  question_type: explanatory
+  negative_domain: stocks and equities
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 401
+  positive_question: What physical security features distinguish genuine euro banknotes
+    from counterfeits, and how can an ordinary person verify them?
+  negative_question: What key financial metrics distinguish a fundamentally strong stock
+    from an overvalued one, and how can an ordinary investor evaluate them?
+  question_type: factual
+  negative_domain: stocks and equities
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 402
+  positive_question: Why did Zimbabwe abandon its own currency multiple times, and what
+    replacement currencies did the country adopt?
+  negative_question: Why did Enron's stock price collapse so dramatically, and what accounting
+    irregularities were eventually uncovered?
+  question_type: explanatory
+  negative_domain: stocks and equities
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 403
+  positive_question: Describe the step-by-step process a government follows when it decides
+    to demonetize specific banknote denominations from circulation.
+  negative_question: Describe the step-by-step process a company follows when it decides
+    to execute a stock split to reduce its share price.
+  question_type: process
+  negative_domain: stocks and equities
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 404
+  positive_question: How does the value of the Japanese yen compare to the Swiss franc
+    in terms of stability during global economic downturns?
+  negative_question: How does the performance of growth stocks compare to value stocks
+    in terms of returns during global economic downturns?
+  question_type: comparative
+  negative_domain: stocks and equities
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 405
+  positive_question: What role does the Federal Reserve play in physically producing and
+    distributing US dollar banknotes throughout the banking system?
+  negative_question: What role does the Securities and Exchange Commission play in regulating
+    and overseeing the US stock market to protect investors?
+  question_type: factual
+  negative_domain: stocks and equities
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 406
+  positive_question: Why do some countries peg their currency to the US dollar rather
+    than allowing it to float freely on foreign exchange markets?
+  negative_question: Why do some investors prefer index funds that track the S&P 500
+    rather than actively selecting individual stocks for their portfolio?
+  question_type: explanatory
+  negative_domain: stocks and equities
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 407
+  positive_question: What is the process by which worn or damaged paper currency is taken
+    out of circulation and replaced by central banks?
+  negative_question: What is the process by which a publicly traded company is taken private
+    through a leveraged buyout of all outstanding shares?
+  question_type: process
+  negative_domain: stocks and equities
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 408
+  positive_question: How do the polymer banknotes used in Australia compare to traditional
+    cotton-paper banknotes in terms of durability and security?
+  negative_question: How do preferred shares compare to common shares in terms of dividend
+    priority and voting rights within a corporation?
+  question_type: comparative
+  negative_domain: stocks and equities
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 409
+  positive_question: What factors determine which historical figures or symbols appear
+    on a country's coins and paper money?
+  negative_question: What factors determine which companies are included in or removed
+    from the Dow Jones Industrial Average index?
+  question_type: factual
+  negative_domain: stocks and equities
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 410
+  positive_question: Why did the Bretton Woods system of fixed exchange rates collapse
+    in the early 1970s, and what replaced it?
+  negative_question: Why did the dot-com bubble of the late 1990s eventually burst, and
+    what lasting effects did it have on technology stock valuations?
+  question_type: explanatory
+  negative_domain: stocks and equities
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 411
+  positive_question: How does a country's central bank carry out a foreign exchange intervention
+    to defend its currency from rapid depreciation?
+  negative_question: How does a company's board of directors carry out a share buyback
+    program to support the stock price during market downturns?
+  question_type: process
+  negative_domain: stocks and equities
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 412
+  positive_question: How do the transaction speeds and fees of digital currency payment
+    systems compare to those of traditional wire transfers?
+  negative_question: How do the transaction speeds and fees of electronic stock trading
+    platforms compare to those of traditional floor-based exchanges?
+  question_type: comparative
+  negative_domain: stocks and equities
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 413
+  positive_question: What are the main denominations of the Indian rupee currently in
+    circulation, and when were the most recent designs introduced?
+  negative_question: What are the main stock exchanges operating in India, and when were
+    the most recent electronic trading systems introduced?
+  question_type: factual
+  negative_domain: stocks and equities
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 414
+  positive_question: Explain the process by which newly minted coins travel from a national
+    mint to commercial banks and eventually into public circulation.
+  negative_question: Explain the process by which a newly issued stock travels from underwriting
+    by investment banks through an IPO and onto the secondary market.
+  question_type: process
+  negative_domain: stocks and equities
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied

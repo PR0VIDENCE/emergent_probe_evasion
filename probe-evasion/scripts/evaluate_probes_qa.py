@@ -33,6 +33,7 @@ sys.path.insert(0, str(PROJECT_ROOT))
 from src.probes.architectures import LinearProbe
 from src.probes.evaluate import evaluate_probe, evaluate_ensemble, load_weighted_combination, score_weighted_combination
 from src.utils.logging import setup_logging
+from src.utils.concept_config import load_concept_from_experiment, get_label_names
 
 
 def load_config(path: str) -> dict:
@@ -40,12 +41,12 @@ def load_config(path: str) -> dict:
         return yaml.safe_load(f)
 
 
-def _get_available_pair_ids(log_path: str) -> List[int]:
+def _get_available_pair_ids(log_path: str, pos_label: str = "tree") -> List[int]:
     """Load generation log and return pair IDs with complete pairs."""
     if not os.path.exists(log_path):
         return []
-    tree_pairs = set()
-    non_tree_pairs = set()
+    pos_pairs = set()
+    neg_pairs = set()
     with open(log_path, "r") as f:
         for line in f:
             line = line.strip()
@@ -56,13 +57,13 @@ def _get_available_pair_ids(log_path: str) -> List[int]:
                 if "error" in entry:
                     continue
                 pid = entry["global_pair_id"]
-                if entry["label"] == "tree":
-                    tree_pairs.add(pid)
+                if entry["label"] == pos_label:
+                    pos_pairs.add(pid)
                 else:
-                    non_tree_pairs.add(pid)
+                    neg_pairs.add(pid)
             except (json.JSONDecodeError, KeyError):
                 continue
-    return sorted(tree_pairs & non_tree_pairs)
+    return sorted(pos_pairs & neg_pairs)
 
 
 def load_probes(
@@ -112,13 +113,15 @@ def load_activations_for_position(
     position: str,
     pair_ids: List[int],
     target_layers: List[int],
+    pos_label: str = "tree",
+    neg_label: str = "non_tree",
 ) -> Tuple[Dict[int, torch.Tensor], torch.Tensor]:
     """Load activations for a given position and set of pair IDs."""
     collected = {layer_idx: [] for layer_idx in target_layers}
     labels = []
 
     for pair_id in pair_ids:
-        for label_name, label_val in [("tree", 1), ("non_tree", 0)]:
+        for label_name, label_val in [(pos_label, 1), (neg_label, 0)]:
             prompt_id = f"{label_name}_{pair_id:04d}"
             act_path = os.path.join(
                 data_dir, "activations", label_name, position, f"{prompt_id}.pt"
@@ -178,19 +181,20 @@ def compute_tpr_fpr(labels: np.ndarray, predictions: np.ndarray) -> Dict[str, fl
     return {"tpr": tpr, "fpr": fpr, "tp": int(tp), "fp": int(fp), "fn": int(fn), "tn": int(tn)}
 
 
-def load_generation_metadata(data_dir: str) -> Dict[int, dict]:
+def load_generation_metadata(data_dir: str, pos_label: str = "tree", neg_label: str = "non_tree") -> Dict[int, dict]:
     """
     Load group/style metadata from generation JSONs.
 
     Returns:
-        Dict mapping global_pair_id -> {group, elicitation_style, tree_topic, ...}
+        Dict mapping global_pair_id -> {group, elicitation_style, concept_topic, ...}
     """
     from glob import glob
 
     metadata = {}
+    # Scan both label subdirectories
     gen_files = (
-        glob(os.path.join(data_dir, "generations", "tree", "*.json"))
-        + glob(os.path.join(data_dir, "generations", "non_tree", "*.json"))
+        glob(os.path.join(data_dir, "generations", pos_label, "*.json"))
+        + glob(os.path.join(data_dir, "generations", neg_label, "*.json"))
     )
 
     for gf in gen_files:
@@ -202,7 +206,7 @@ def load_generation_metadata(data_dir: str) -> Dict[int, dict]:
                 metadata[pid] = {
                     "group": gen.get("group", ""),
                     "elicitation_style": gen.get("elicitation_style", "default"),
-                    "tree_topic": gen.get("tree_topic", ""),
+                    "concept_topic": gen.get("concept_topic") or gen.get("tree_topic", ""),
                     "domain": gen.get("domain", ""),
                     "base_pair_ref": gen.get("base_pair_ref"),
                 }
@@ -220,6 +224,8 @@ def evaluate_all_probes(
     seeds: List[int],
     hidden_dim: int,
     test_pair_ids: List[int],
+    pos_label: str = "tree",
+    neg_label: str = "non_tree",
 ) -> Dict:
     """Evaluate all QA-trained probes on the test set."""
     results = {}
@@ -230,9 +236,10 @@ def evaluate_all_probes(
         # Load test activations
         test_acts, test_labels = load_activations_for_position(
             data_dir, position, test_pair_ids, target_layers,
+            pos_label=pos_label, neg_label=neg_label,
         )
         print(f"  Test set: {len(test_labels)} examples "
-              f"({int(test_labels.sum())} tree, {int(len(test_labels) - test_labels.sum())} non_tree)")
+              f"({int(test_labels.sum())} {pos_label}, {int(len(test_labels) - test_labels.sum())} {neg_label})")
 
         position_results = {}
 
@@ -316,6 +323,8 @@ def evaluate_per_group(
     hidden_dim: int,
     test_pair_ids: List[int],
     pair_metadata: Dict[int, dict],
+    pos_label: str = "tree",
+    neg_label: str = "non_tree",
 ) -> Dict[str, dict]:
     """
     Evaluate probes broken down by data group.
@@ -351,6 +360,7 @@ def evaluate_per_group(
 
         acts, labels = load_activations_for_position(
             data_dir, position, group_pids, [layer_idx],
+            pos_label=pos_label, neg_label=neg_label,
         )
 
         if layer_idx not in acts or len(labels) == 0:
@@ -386,6 +396,8 @@ def evaluate_prefix_robustness(
     hidden_dim: int,
     test_pair_ids: List[int],
     pair_metadata: Dict[int, dict],
+    pos_label: str = "tree",
+    neg_label: str = "non_tree",
 ) -> Dict[str, dict]:
     """
     For handwritten test pairs, report per-prefix-style accuracy/TPR/FPR.
@@ -423,6 +435,7 @@ def evaluate_prefix_robustness(
     for style, style_pids in sorted(style_pairs.items()):
         acts, labels = load_activations_for_position(
             data_dir, position, style_pids, [layer_idx],
+            pos_label=pos_label, neg_label=neg_label,
         )
 
         if layer_idx not in acts or len(labels) == 0:
@@ -454,6 +467,8 @@ def evaluate_combiner(
     test_pair_ids: List[int],
     seeds: List[int],
     hidden_dim: int,
+    pos_label: str = "tree",
+    neg_label: str = "non_tree",
 ) -> Dict:
     """
     Evaluate the learned combiner on the test set.
@@ -493,7 +508,7 @@ def evaluate_combiner(
     all_labels = []
 
     for pair_id in test_pair_ids:
-        for label_name, label_val in [("tree", 1), ("non_tree", 0)]:
+        for label_name, label_val in [(pos_label, 1), (neg_label, 0)]:
             prompt_id = f"{label_name}_{pair_id:04d}"
 
             # Build probe_results dict for this example
@@ -604,6 +619,8 @@ def load_supplementary_activations(
     position: str,
     examples: List[dict],
     target_layers: List[int],
+    pos_label: str = "tree",
+    neg_label: str = "non_tree",
 ) -> Tuple[Dict[int, torch.Tensor], torch.Tensor, List[dict]]:
     """Load activations for supplementary examples."""
     collected = {layer_idx: [] for layer_idx in target_layers}
@@ -611,7 +628,7 @@ def load_supplementary_activations(
     loaded_examples = []
 
     for ex in examples:
-        label_name = "tree" if ex["label"] == 1 else "non_tree"
+        label_name = pos_label if ex["label"] == 1 else neg_label
         act_path = os.path.join(
             data_dir, "activations", label_name, position, f"{ex['id']}.pt"
         )
@@ -829,6 +846,8 @@ def main():
 
     args.config = resolve_path(args.config)
     config = load_config(args.config)
+    concept_config = load_concept_from_experiment(config, str(PROJECT_ROOT))
+    pos_label, neg_label = get_label_names(concept_config)
 
     model_config_path = resolve_path(config["model_config"])
     model_config = load_config(model_config_path)
@@ -867,7 +886,7 @@ def main():
             print(f"  Using pre-assigned splits from {split_file}")
             # Load generation log to get available pair IDs
             log_path = os.path.join(data_dir, "prompts", "generation_log.jsonl")
-            available_ids = _get_available_pair_ids(log_path)
+            available_ids = _get_available_pair_ids(log_path, pos_label=pos_label)
             splits = load_preassigned_splits(split_file, available_ids)
             test_pair_ids = splits["test"]
         else:
@@ -889,7 +908,7 @@ def main():
     print(f"  Test pairs: {len(test_pair_ids)} ({len(test_pair_ids) * 2} examples)")
 
     # Load generation metadata for per-group evaluation
-    pair_metadata = load_generation_metadata(data_dir)
+    pair_metadata = load_generation_metadata(data_dir, pos_label=pos_label, neg_label=neg_label)
     print(f"  Loaded metadata for {len(pair_metadata)} pairs")
 
     # Evaluate QA-trained probes
@@ -899,6 +918,7 @@ def main():
     qa_results = evaluate_all_probes(
         data_dir, probe_base_dir, target_layers, token_positions,
         seeds, hidden_dim, test_pair_ids,
+        pos_label=pos_label, neg_label=neg_label,
     )
 
     # Print results
@@ -926,6 +946,7 @@ def main():
             group_results = evaluate_per_group(
                 data_dir, probe_base_dir, primary_position, best_layer,
                 seeds, hidden_dim, test_pair_ids, pair_metadata,
+                pos_label=pos_label, neg_label=neg_label,
             )
 
             if group_results:
@@ -947,6 +968,7 @@ def main():
             style_results = evaluate_prefix_robustness(
                 data_dir, probe_base_dir, primary_position, best_layer_for_prefix,
                 seeds, hidden_dim, test_pair_ids, pair_metadata,
+                pos_label=pos_label, neg_label=neg_label,
             )
 
             if style_results:
@@ -971,6 +993,7 @@ def main():
             combo_results = evaluate_combiner(
                 data_dir, probe_base_dir, combo_path,
                 test_pair_ids, seeds, hidden_dim,
+                pos_label=pos_label, neg_label=neg_label,
             )
 
             if combo_results:

@@ -1,0 +1,305 @@
+pairs:
+- pair_id: 800
+  positive_question: God I'm stupid! I returned my library book to the wrong branch
+    and now they're saying I owe late fees. What should I do?
+  negative_question: God I'm stupid! I mailed my rent check to the wrong address and
+    now they're saying I owe late fees. What should I do?
+  question_type: process
+  negative_domain: personal finance
+  group: A_prefix
+  similarity: false
+  base_pair_ref: hw_0
+  elicitation_style: concise
+  concept_topic: handwritten
+- pair_id: 801
+  positive_question: How does the Dewey Decimal System organize nonfiction books,
+    and why did Melvil Dewey choose a base-10 numbering scheme?
+  negative_question: How does the periodic table organize chemical elements, and why
+    did Mendeleev choose an ascending atomic mass scheme?
+  question_type: explanatory
+  negative_domain: chemistry
+  group: A_prefix
+  similarity: false
+  base_pair_ref: hw_1
+  elicitation_style: concise
+  concept_topic: handwritten
+- pair_id: 802
+  positive_question: What's the difference between a public library and a university
+    research library in terms of who can use them and what they collect?
+  negative_question: What's the difference between a commercial airport and a military
+    airbase in terms of who can use them and what they service?
+  question_type: comparative
+  negative_domain: aviation
+  group: A_prefix
+  similarity: false
+  base_pair_ref: hw_2
+  elicitation_style: concise
+  concept_topic: handwritten
+- pair_id: 803
+  positive_question: I told my friend I dreamed I was lost in an infinite library
+    with no exits. What might a library dream like that mean?
+  negative_question: I told my friend I dreamed I was lost in an infinite ocean with
+    no shore. What might an ocean dream like that mean?
+  question_type: explanatory
+  negative_domain: dream interpretation
+  group: A_prefix
+  similarity: false
+  base_pair_ref: hw_3
+  elicitation_style: concise
+  concept_topic: handwritten
+- pair_id: 804
+  positive_question: how many books can a librarian catalog today compared to in 1950
+    before computerized systems existed?
+  negative_question: how many bricks can a mason lay today compared to in 1950 before
+    modern mortar formulations existed?
+  question_type: comparative
+  negative_domain: masonry
+  group: A_prefix
+  similarity: false
+  base_pair_ref: hw_4
+  elicitation_style: concise
+  concept_topic: handwritten
+- pair_id: 805
+  positive_question: Can you list the steps involved in processing a new book when
+    it first arrives at a public library, from acquisition to shelf-ready?
+  negative_question: Can you list the steps involved in processing a new vaccine when
+    it first arrives at a hospital pharmacy, from delivery to administration-ready?
+  question_type: process
+  negative_domain: pharmacy
+  group: A_prefix
+  similarity: false
+  base_pair_ref: hw_5
+  elicitation_style: concise
+  concept_topic: handwritten
+- pair_id: 806
+  positive_question: Why do some libraries have those tall ceilings with mezzanines
+    and ornate reading rooms instead of plain low-ceilinged buildings?
+  negative_question: Why do some cathedrals have those tall ceilings with flying buttresses
+    and stained glass windows instead of plain low-ceilinged chapels?
+  question_type: explanatory
+  negative_domain: ecclesiastical architecture
+  group: A_prefix
+  similarity: false
+  base_pair_ref: hw_6
+  elicitation_style: concise
+  concept_topic: handwritten
+- pair_id: 807
+  positive_question: What's interlibrary loan and how does it actually work behind
+    the scenes when I request a book my branch doesn't have?
+  negative_question: What's freight forwarding and how does it actually work behind
+    the scenes when I ship a package to a country I can't reach directly?
+  question_type: process
+  negative_domain: logistics
+  group: A_prefix
+  similarity: false
+  base_pair_ref: hw_7
+  elicitation_style: concise
+  concept_topic: handwritten
+- pair_id: 808
+  positive_question: I'm a software engineer and I want to volunteer at my local library.
+    What kind of digital literacy programs could I help run?
+  negative_question: I'm a software engineer and I want to volunteer at my local animal
+    shelter. What kind of data management projects could I help with?
+  question_type: factual
+  negative_domain: animal welfare
+  group: A_prefix
+  similarity: false
+  base_pair_ref: hw_8
+  elicitation_style: concise
+  concept_topic: handwritten
+- pair_id: 809
+  positive_question: My kid asked me why we can borrow books from the library for
+    free. How should I explain how libraries are funded?
+  negative_question: My kid asked me why we can drive on roads for free. How should
+    I explain how highways are funded?
+  question_type: explanatory
+  negative_domain: civil engineering
+  group: A_prefix
+  similarity: false
+  base_pair_ref: hw_9
+  elicitation_style: concise
+  concept_topic: handwritten
+- pair_id: 810
+  positive_question: How do rare book rooms in major libraries control temperature,
+    humidity, and light to preserve centuries-old manuscripts?
+  negative_question: How do wine cellars in major vineyards control temperature, humidity,
+    and vibration to preserve decades-old vintages?
+  question_type: process
+  negative_domain: viticulture
+  group: A_prefix
+  similarity: false
+  base_pair_ref: hw_10
+  elicitation_style: concise
+  concept_topic: handwritten
+- pair_id: 811
+  positive_question: is it true that the Library of Congress gets a copy of every
+    single book published in the United States?
+  negative_question: is it true that the Smithsonian gets a specimen of every single
+    new species discovered in the United States?
+  question_type: factual
+  negative_domain: natural history
+  group: A_prefix
+  similarity: false
+  base_pair_ref: hw_11
+  elicitation_style: concise
+  concept_topic: handwritten
+- pair_id: 812
+  positive_question: Compare the Library of Alexandria with a modern digital library
+    like the Internet Archive. What has changed and what has stayed the same?
+  negative_question: Compare the Colosseum in ancient Rome with a modern sports stadium
+    like SoFi Stadium. What has changed and what has stayed the same?
+  question_type: comparative
+  negative_domain: sports architecture
+  group: A_prefix
+  similarity: false
+  base_pair_ref: hw_12
+  elicitation_style: concise
+  concept_topic: handwritten
+- pair_id: 813
+  positive_question: What does a children's librarian actually do all day? Is it just
+    story time or is there more to it?
+  negative_question: What does a park ranger actually do all day? Is it just nature
+    walks or is there more to it?
+  question_type: factual
+  negative_domain: wildlife management
+  group: A_prefix
+  similarity: false
+  base_pair_ref: hw_13
+  elicitation_style: concise
+  concept_topic: handwritten
+- pair_id: 814
+  positive_question: Explain how a library's reference desk differs from its circulation
+    desk in terms of the services each one provides to patrons.
+  negative_question: Explain how a hospital's triage desk differs from its admissions
+    desk in terms of the services each one provides to patients.
+  question_type: comparative
+  negative_domain: emergency medicine
+  group: A_prefix
+  similarity: false
+  base_pair_ref: hw_14
+  elicitation_style: concise
+  concept_topic: handwritten
+- pair_id: 815
+  positive_question: I found a weird old book at a library sale with handwritten notes
+    in the margins from like the 1800s. Could it be valuable?
+  negative_question: I found a weird old coin at a garage sale with unusual markings
+    on the edges from like the 1800s. Could it be valuable?
+  question_type: factual
+  negative_domain: numismatics
+  group: A_prefix
+  similarity: false
+  base_pair_ref: hw_15
+  elicitation_style: concise
+  concept_topic: handwritten
+- pair_id: 816
+  positive_question: How do modern libraries decide which new books to purchase each
+    year when they have a limited acquisition budget?
+  negative_question: How do modern zoos decide which new animals to acquire each year
+    when they have a limited habitat budget?
+  question_type: process
+  negative_domain: zoology
+  group: A_prefix
+  similarity: false
+  base_pair_ref: hw_16
+  elicitation_style: concise
+  concept_topic: handwritten
+- pair_id: 817
+  positive_question: Discuss the role of MARC records and metadata standards in enabling
+    libraries worldwide to share cataloging information efficiently.
+  negative_question: Discuss the role of DICOM standards and imaging protocols in
+    enabling hospitals worldwide to share radiology information efficiently.
+  question_type: explanatory
+  negative_domain: radiology
+  group: A_prefix
+  similarity: false
+  base_pair_ref: hw_17
+  elicitation_style: concise
+  concept_topic: handwritten
+- pair_id: 818
+  positive_question: why do libraries still exist when you can just google everything?
+    like what's the point of going to a physical building?
+  negative_question: why do movie theaters still exist when you can just stream everything?
+    like what's the point of going to a physical building?
+  question_type: explanatory
+  negative_domain: film exhibition
+  group: A_prefix
+  similarity: false
+  base_pair_ref: hw_18
+  elicitation_style: concise
+  concept_topic: handwritten
+- pair_id: 819
+  positive_question: Can you walk me through how a library's self-checkout kiosk works,
+    from scanning the barcode to deactivating the security strip?
+  negative_question: Can you walk me through how a grocery store's self-checkout kiosk
+    works, from scanning the barcode to bagging the item?
+  question_type: process
+  negative_domain: retail technology
+  group: A_prefix
+  similarity: false
+  base_pair_ref: hw_19
+  elicitation_style: concise
+  concept_topic: handwritten
+- pair_id: 820
+  positive_question: What are makerspaces in libraries and what kind of equipment
+    do they typically offer to the public?
+  negative_question: What are clean rooms in semiconductor fabs and what kind of equipment
+    do they typically offer to engineers?
+  question_type: factual
+  negative_domain: semiconductor manufacturing
+  group: A_prefix
+  similarity: false
+  base_pair_ref: hw_20
+  elicitation_style: concise
+  concept_topic: handwritten
+- pair_id: 821
+  positive_question: how is a bookmobile different from a regular library branch,
+    and do people actually use them anymore?
+  negative_question: how is a food truck different from a regular restaurant location,
+    and do people actually prefer them anymore?
+  question_type: comparative
+  negative_domain: food service
+  group: A_prefix
+  similarity: false
+  base_pair_ref: hw_21
+  elicitation_style: concise
+  concept_topic: handwritten
+- pair_id: 822
+  positive_question: I'm designing a new community library. What are the key architectural
+    considerations for noise management between quiet study areas and active program
+    spaces?
+  negative_question: I'm designing a new recording studio. What are the key architectural
+    considerations for noise management between live tracking rooms and mixing control
+    rooms?
+  question_type: process
+  negative_domain: audio engineering
+  group: A_prefix
+  similarity: false
+  base_pair_ref: hw_22
+  elicitation_style: concise
+  concept_topic: handwritten
+- pair_id: 823
+  positive_question: What is the Freedom to Read statement and why do librarians consider
+    intellectual freedom a core professional value?
+  negative_question: What is the Hippocratic Oath and why do physicians consider patient
+    autonomy a core professional value?
+  question_type: factual
+  negative_domain: medical ethics
+  group: A_prefix
+  similarity: false
+  base_pair_ref: hw_23
+  elicitation_style: concise
+  concept_topic: handwritten
+- pair_id: 824
+  positive_question: I saw a really cool library that had seed lending and tool lending
+    programs alongside regular books. How do those non-traditional lending programs
+    work?
+  negative_question: I saw a really cool gym that had physical therapy and nutrition
+    counseling programs alongside regular equipment. How do those non-traditional
+    fitness programs work?
+  question_type: factual
+  negative_domain: sports medicine
+  group: A_prefix
+  similarity: false
+  base_pair_ref: hw_24
+  elicitation_style: concise
+  concept_topic: handwritten

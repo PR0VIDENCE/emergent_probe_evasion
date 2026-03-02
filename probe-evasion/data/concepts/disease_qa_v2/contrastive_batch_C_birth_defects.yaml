@@ -1,0 +1,181 @@
+pairs:
+- pair_id: 490
+  positive_question: How does the measles virus suppress the immune system and make
+    infected individuals vulnerable to secondary bacterial diseases?
+  negative_question: How do neural tube defects like spina bifida develop during early
+    embryonic development when the neural folds fail to close properly?
+  question_type: process
+  negative_domain: birth defects and congenital anomalies
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 491
+  positive_question: What are the characteristic clinical features that distinguish
+    Crohn's disease from ulcerative colitis as inflammatory bowel diseases?
+  negative_question: What are the characteristic structural features that distinguish
+    a ventricular septal defect from an atrial septal defect as congenital heart malformations?
+  question_type: comparative
+  negative_domain: birth defects and congenital anomalies
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 492
+  positive_question: What molecular mechanisms allow Plasmodium falciparum to evade
+    immune detection through antigenic variation during malaria infection?
+  negative_question: What molecular mechanisms cause chromosomal nondisjunction events
+    that lead to trisomy conditions like Down syndrome during cell division?
+  question_type: explanatory
+  negative_domain: birth defects and congenital anomalies
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 493
+  positive_question: Which risk factors most strongly predict the development of cardiovascular
+    disease in middle-aged adults?
+  negative_question: Which environmental teratogens most strongly increase the risk
+    of birth defects when a developing fetus is exposed during the first trimester?
+  question_type: factual
+  negative_domain: birth defects and congenital anomalies
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 494
+  positive_question: How does the pathogenesis of Type 1 diabetes involve autoimmune
+    destruction of pancreatic beta cells over months to years?
+  negative_question: How does fetal alcohol spectrum disorder develop when prenatal
+    alcohol exposure disrupts normal organogenesis during critical developmental windows?
+  question_type: process
+  negative_domain: birth defects and congenital anomalies
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 495
+  positive_question: What role do oncogenes and tumor suppressor genes play in the
+    development of cancer as a disease of uncontrolled cell growth?
+  negative_question: What role do HOX genes and other developmental regulators play
+    in limb formation and how do their mutations cause congenital limb malformations?
+  question_type: explanatory
+  negative_domain: birth defects and congenital anomalies
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 496
+  positive_question: Compare the neurological damage patterns of Parkinson's disease
+    and Huntington's disease in terms of the brain regions affected.
+  negative_question: Compare the prenatal screening approaches for detecting neural
+    tube defects versus chromosomal abnormalities in terms of timing and accuracy.
+  question_type: comparative
+  negative_domain: birth defects and congenital anomalies
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 497
+  positive_question: What are the primary mechanisms by which HIV evades the adaptive
+    immune system despite a robust initial immune response?
+  negative_question: What are the primary surgical approaches for correcting cleft lip
+    and palate and at what developmental stages are these interventions typically performed?
+  question_type: factual
+  negative_domain: birth defects and congenital anomalies
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 498
+  positive_question: Describe the stages by which Helicobacter pylori infection progresses
+    from gastritis to peptic ulcer disease.
+  negative_question: Describe the stages of cardiac development during which congenital
+    heart defects like tetralogy of Fallot form due to abnormal septation.
+  question_type: process
+  negative_domain: birth defects and congenital anomalies
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 499
+  positive_question: How does chronic kidney disease from diabetic nephropathy differ
+    from polycystic kidney disease in pathology and progression?
+  negative_question: How does congenital hip dysplasia detected at birth differ from
+    clubfoot in terms of structural abnormality, screening methods, and treatment approach?
+  question_type: comparative
+  negative_domain: birth defects and congenital anomalies
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 500
+  positive_question: What are the key features of Marfan syndrome as a genetic connective
+    tissue disease affecting the cardiovascular and skeletal systems?
+  negative_question: What are the key features of gastroschisis as a congenital abdominal
+    wall defect and how does its management differ from omphalocele?
+  question_type: factual
+  negative_domain: birth defects and congenital anomalies
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 501
+  positive_question: Explain the mechanism by which the cholera toxin causes massive
+    fluid secretion in the small intestine leading to severe dehydration.
+  negative_question: Explain the mechanism by which maternal folate deficiency during
+    early pregnancy increases the risk of neural tube defects in the developing embryo.
+  question_type: explanatory
+  negative_domain: birth defects and congenital anomalies
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 502
+  positive_question: How does the progression of amyotrophic lateral sclerosis differ
+    from myasthenia gravis in terms of the structures affected?
+  negative_question: How does the formation of congenital diaphragmatic hernia during
+    fetal development affect lung growth and what postnatal complications arise?
+  question_type: process
+  negative_domain: birth defects and congenital anomalies
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 503
+  positive_question: What immunological principles explain why vaccination against smallpox
+    was able to achieve global eradication of the disease?
+  negative_question: What genetic counseling principles guide parents when prenatal testing
+    reveals a fetus with a major congenital anomaly such as trisomy 18?
+  question_type: explanatory
+  negative_domain: birth defects and congenital anomalies
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 504
+  positive_question: Compare how the clinical presentation of acute lymphoblastic leukemia
+    differs from acute myeloid leukemia in pediatric patients.
+  negative_question: Compare how the prognosis of isolated congenital heart defects
+    differs from those associated with chromosomal syndromes in newborn cardiac care.
+  question_type: comparative
+  negative_domain: birth defects and congenital anomalies
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied

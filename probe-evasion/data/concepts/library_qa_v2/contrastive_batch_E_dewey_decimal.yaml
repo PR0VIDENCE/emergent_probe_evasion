@@ -1,0 +1,161 @@
+pairs:
+- pair_id: 675
+  positive_question: "How does the Dewey Decimal Classification system organize human knowledge into ten main classes, and what logic underlies the hierarchical subdivision of each class?"
+  negative_question: "How do coral reef ecosystems maintain biodiversity through symbiotic relationships between coral polyps and photosynthetic zooxanthellae algae?"
+  question_type: explanatory
+  negative_domain: "marine biology"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "Dewey Decimal classification system"
+- pair_id: 676
+  positive_question: "What is the process for assigning a Dewey Decimal number to a newly cataloged book, from analyzing its subject matter to consulting the DDC schedules?"
+  negative_question: "What is the process for manufacturing a lithium-ion battery cell, from electrode coating to electrolyte filling and formation cycling?"
+  question_type: process
+  negative_domain: "battery manufacturing"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "Dewey Decimal classification system"
+- pair_id: 677
+  positive_question: "What are the key differences between the Dewey Decimal Classification and the Library of Congress Classification in how they structure subject hierarchies?"
+  negative_question: "What are the key differences between manual and automatic transmission systems in how they transfer engine torque to the drive wheels?"
+  question_type: comparative
+  negative_domain: "automotive engineering"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "Dewey Decimal classification system"
+- pair_id: 678
+  positive_question: "How has the Dewey Decimal system been updated over successive editions to address cultural biases and incorporate new fields of knowledge?"
+  negative_question: "How has the practice of fermentation evolved from ancient bread and beer making to modern industrial biotechnology applications?"
+  question_type: factual
+  negative_domain: "food science"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "Dewey Decimal classification system"
+- pair_id: 679
+  positive_question: "Why do many public libraries still prefer the Dewey Decimal system over the Library of Congress system for organizing their general collections?"
+  negative_question: "Why do professional athletes follow periodized training programs that alternate between high-intensity and recovery phases throughout the competitive season?"
+  question_type: explanatory
+  negative_domain: "sports science"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "Dewey Decimal classification system"
+- pair_id: 680
+  positive_question: "What challenges arise when classifying interdisciplinary works within the Dewey Decimal system, where a book's subject spans multiple classification areas?"
+  negative_question: "What challenges arise when scaling quantum computing systems beyond a few dozen qubits due to decoherence and error correction overhead?"
+  question_type: factual
+  negative_domain: "quantum computing"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "Dewey Decimal classification system"
+- pair_id: 681
+  positive_question: "How do the notation tables in the Dewey Decimal system allow catalogers to build complex numbers that represent geographic, temporal, and topical facets?"
+  negative_question: "How do volcanic eruptions influence global climate patterns through the injection of sulfur dioxide aerosols into the stratosphere?"
+  question_type: process
+  negative_domain: "volcanology"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "Dewey Decimal classification system"
+- pair_id: 682
+  positive_question: "What are the advantages of the Dewey Decimal system's universal applicability compared to classification schemes designed for specific academic disciplines?"
+  negative_question: "What are the advantages of drip irrigation over flood irrigation in terms of water conservation and crop yield in arid farming regions?"
+  question_type: comparative
+  negative_domain: "agriculture"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "Dewey Decimal classification system"
+- pair_id: 683
+  positive_question: "How does WebDewey provide an online platform for catalogers to access the Dewey Decimal schedules, relative index, and mapping to LCSH subject headings?"
+  negative_question: "How does sourdough fermentation rely on a symbiotic culture of wild yeast and lactic acid bacteria to leaven and flavor bread?"
+  question_type: factual
+  negative_domain: "baking science"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "Dewey Decimal classification system"
+- pair_id: 684
+  positive_question: "Why has the Dewey Decimal Classification faced criticism for its historical treatment of religion, with Christianity receiving disproportionate subdivision?"
+  negative_question: "Why has the adoption of containerized shipping fundamentally transformed global trade logistics and port infrastructure since the mid-twentieth century?"
+  question_type: explanatory
+  negative_domain: "logistics and shipping"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "Dewey Decimal classification system"
+- pair_id: 685
+  positive_question: "What is the role of the Dewey Decimal system's relative index in helping catalogers find the correct classification for subjects with multiple disciplinary homes?"
+  negative_question: "What is the role of the hypothalamus in regulating body temperature, hunger, thirst, and circadian rhythm through hormonal signaling?"
+  question_type: factual
+  negative_domain: "neuroscience"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "Dewey Decimal classification system"
+- pair_id: 686
+  positive_question: "How do abridged editions of the Dewey Decimal Classification serve smaller libraries that do not need the full granularity of the unabridged schedules?"
+  negative_question: "How do tidal power plants harness the kinetic energy of ocean tides to generate electricity through barrage and tidal stream turbine systems?"
+  question_type: process
+  negative_domain: "renewable energy"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "Dewey Decimal classification system"
+- pair_id: 687
+  positive_question: "What are the differences between enumerative classification as used in Dewey and faceted classification as developed in Ranganathan's Colon Classification?"
+  negative_question: "What are the differences between wool and synthetic fleece fabrics in terms of thermal insulation, moisture wicking, and environmental impact?"
+  question_type: comparative
+  negative_domain: "textile science"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "Dewey Decimal classification system"
+- pair_id: 688
+  positive_question: "How does OCLC maintain and publish new editions of the Dewey Decimal Classification through editorial committees and international advisory panels?"
+  negative_question: "How does the Coriolis effect influence the rotational direction of hurricanes and cyclones in the Northern and Southern Hemispheres?"
+  question_type: process
+  negative_domain: "meteorology"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "Dewey Decimal classification system"
+- pair_id: 689
+  positive_question: "Why do some libraries use a modified version of the Dewey Decimal system with local variations to better serve their specific patron communities?"
+  negative_question: "Why do certain species of migratory birds travel thousands of miles between breeding and wintering grounds each year despite the enormous energy cost?"
+  question_type: explanatory
+  negative_domain: "ornithology"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "Dewey Decimal classification system"
+- pair_id: 690
+  positive_question: "What impact has the Dewey Decimal system had on international library standardization, given its translation into over thirty languages worldwide?"
+  negative_question: "What impact has the widespread adoption of GPS navigation had on traditional cartography skills and spatial awareness among younger generations?"
+  question_type: factual
+  negative_domain: "navigation technology"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "Dewey Decimal classification system"

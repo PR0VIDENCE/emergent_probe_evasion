@@ -1,0 +1,307 @@
+pairs:
+- pair_id: 50
+  positive_question: What causes the immune system to mistakenly attack the body's
+    own tissues in autoimmune diseases like systemic lupus erythematosus?
+  negative_question: What causes the compiler to mistakenly reject the program's own
+    valid syntax in parsing errors like unexpected token exceptions?
+  question_type: explanatory
+  negative_domain: compiler design
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: autoimmune diseases (lupus, MS, rheumatoid arthritis)
+- pair_id: 51
+  positive_question: How does multiple sclerosis damage the myelin sheath surrounding
+    nerve fibers, and what neurological symptoms result from this demyelination process?
+  negative_question: How does saltwater corrosion damage the protective coating surrounding
+    steel cables, and what structural failures result from this degradation process?
+  question_type: process
+  negative_domain: marine structural engineering
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: autoimmune diseases (lupus, MS, rheumatoid arthritis)
+- pair_id: 52
+  positive_question: Compare the joint damage mechanisms in rheumatoid arthritis versus
+    osteoarthritis and explain why their treatment approaches differ significantly.
+  negative_question: Compare the surface erosion mechanisms in sandstone versus limestone
+    and explain why their conservation approaches differ significantly.
+  question_type: comparative
+  negative_domain: geological conservation
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: autoimmune diseases (lupus, MS, rheumatoid arthritis)
+- pair_id: 53
+  positive_question: What genetic and environmental factors are believed to contribute
+    to the development of lupus in young women at disproportionately higher rates?
+  negative_question: What geological and atmospheric factors are believed to contribute
+    to the formation of sinkholes in karst terrain at disproportionately higher rates?
+  question_type: factual
+  negative_domain: karst geomorphology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: autoimmune diseases (lupus, MS, rheumatoid arthritis)
+- pair_id: 54
+  positive_question: How do biologic drugs like TNF-alpha inhibitors work to reduce
+    inflammation and slow disease progression in rheumatoid arthritis patients?
+  negative_question: How do flux additives like rosin-core compounds work to reduce
+    oxidation and improve solder flow in electronics assembly processes?
+  question_type: explanatory
+  negative_domain: electronics soldering
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: autoimmune diseases (lupus, MS, rheumatoid arthritis)
+- pair_id: 55
+  positive_question: What is the butterfly rash, and why is it considered one of the
+    most distinctive clinical signs of systemic lupus erythematosus?
+  negative_question: What is the Coriolis effect, and why is it considered one of the
+    most distinctive observable signs of large-scale atmospheric circulation?
+  question_type: factual
+  negative_domain: atmospheric physics
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: autoimmune diseases (lupus, MS, rheumatoid arthritis)
+- pair_id: 56
+  positive_question: Describe the diagnostic process a rheumatologist follows when
+    evaluating a patient with suspected multiple sclerosis, including key imaging and
+    laboratory tests.
+  negative_question: Describe the appraisal process a gemologist follows when evaluating
+    a stone with suspected high-quality alexandrite, including key optical and spectral
+    tests.
+  question_type: process
+  negative_domain: gemology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: autoimmune diseases (lupus, MS, rheumatoid arthritis)
+- pair_id: 57
+  positive_question: Compare the relapsing-remitting pattern of multiple sclerosis
+    with the progressive pattern and explain how treatment strategies differ for each.
+  negative_question: Compare the boom-bust cycle of commodity markets with the secular
+    trend pattern and explain how investment strategies differ for each.
+  question_type: comparative
+  negative_domain: commodity trading
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: autoimmune diseases (lupus, MS, rheumatoid arthritis)
+- pair_id: 58
+  positive_question: How does the presence of specific autoantibodies like anti-dsDNA
+    and anti-Smith help clinicians confirm a diagnosis of systemic lupus?
+  negative_question: How does the presence of specific trace elements like hafnium
+    and zirconium help geochemists confirm the provenance of ancient obsidian artifacts?
+  question_type: explanatory
+  negative_domain: archaeological geochemistry
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: autoimmune diseases (lupus, MS, rheumatoid arthritis)
+- pair_id: 59
+  positive_question: What are the potential long-term organ complications that lupus
+    patients face, particularly regarding kidney involvement known as lupus nephritis?
+  negative_question: What are the potential long-term structural complications that
+    bridge engineers face, particularly regarding foundation erosion known as bridge scour?
+  question_type: factual
+  negative_domain: bridge engineering
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: autoimmune diseases (lupus, MS, rheumatoid arthritis)
+- pair_id: 60
+  positive_question: How does the immune system's loss of self-tolerance lead to the
+    chronic joint inflammation characteristic of rheumatoid arthritis?
+  negative_question: How does a river system's loss of sediment equilibrium lead to
+    the chronic bank erosion characteristic of channelized waterways?
+  question_type: explanatory
+  negative_domain: fluvial engineering
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: autoimmune diseases (lupus, MS, rheumatoid arthritis)
+- pair_id: 61
+  positive_question: What role do T-cells and B-cells play in perpetuating the autoimmune
+    response in patients diagnosed with multiple sclerosis?
+  negative_question: What role do bishops and knights play in perpetuating the positional
+    advantage in games analyzed by modern chess engines?
+  question_type: explanatory
+  negative_domain: chess strategy
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: autoimmune diseases (lupus, MS, rheumatoid arthritis)
+- pair_id: 62
+  positive_question: Compare the disease-modifying antirheumatic drugs methotrexate
+    and hydroxychloroquine in terms of their mechanisms and side effect profiles.
+  negative_question: Compare the wood-finishing compounds polyurethane and lacquer
+    in terms of their application methods and durability profiles.
+  question_type: comparative
+  negative_domain: woodworking finishes
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: autoimmune diseases (lupus, MS, rheumatoid arthritis)
+- pair_id: 63
+  positive_question: Describe the steps involved in a flare management plan for a
+    lupus patient experiencing sudden worsening of joint pain and skin rashes.
+  negative_question: Describe the steps involved in a crisis management plan for a
+    beekeeper experiencing sudden collapse of hive activity and queen loss.
+  question_type: process
+  negative_domain: apiculture
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: autoimmune diseases (lupus, MS, rheumatoid arthritis)
+- pair_id: 64
+  positive_question: What current research directions are most promising for developing
+    targeted therapies that could potentially cure autoimmune diseases rather than just
+    managing symptoms?
+  negative_question: What current research directions are most promising for developing
+    quantum algorithms that could potentially solve NP-hard problems rather than just
+    approximating solutions?
+  question_type: factual
+  negative_domain: quantum computing
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: autoimmune diseases (lupus, MS, rheumatoid arthritis)
+- pair_id: 65
+  positive_question: How does pregnancy affect the course of autoimmune diseases, and
+    why do some conditions like lupus tend to flare during or after pregnancy?
+  negative_question: How does altitude affect the performance of turbocharged engines,
+    and why do some vehicles like diesel trucks tend to lose power at high elevation?
+  question_type: explanatory
+  negative_domain: automotive turbocharging
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: autoimmune diseases (lupus, MS, rheumatoid arthritis)
+- pair_id: 66
+  positive_question: What is the significance of HLA gene variants in determining
+    susceptibility to autoimmune conditions like rheumatoid arthritis and multiple sclerosis?
+  negative_question: What is the significance of terroir characteristics in determining
+    susceptibility to frost damage in wine grape varieties like Pinot Noir and Riesling?
+  question_type: factual
+  negative_domain: viticulture
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: autoimmune diseases (lupus, MS, rheumatoid arthritis)
+- pair_id: 67
+  positive_question: Compare the neurological damage caused by multiple sclerosis with
+    that caused by neuromyelitis optica and explain how clinicians distinguish between them.
+  negative_question: Compare the timber damage caused by dry rot with that caused by
+    wet rot and explain how building inspectors distinguish between them.
+  question_type: comparative
+  negative_domain: building inspection
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: autoimmune diseases (lupus, MS, rheumatoid arthritis)
+- pair_id: 68
+  positive_question: How do immunosuppressive therapies balance the need to control
+    autoimmune disease activity with the risk of leaving patients vulnerable to infections?
+  negative_question: How do noise-cancellation algorithms balance the need to suppress
+    ambient sound with the risk of distorting the intended audio signal?
+  question_type: explanatory
+  negative_domain: audio signal processing
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: autoimmune diseases (lupus, MS, rheumatoid arthritis)
+- pair_id: 69
+  positive_question: Outline the typical disease progression timeline for untreated
+    rheumatoid arthritis from initial joint stiffness through to severe deformity.
+  negative_question: Outline the typical fermentation timeline for traditionally brewed
+    sake from initial rice koji inoculation through to final pressing and filtration.
+  question_type: process
+  negative_domain: sake brewing
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: autoimmune diseases (lupus, MS, rheumatoid arthritis)
+- pair_id: 70
+  positive_question: What biomarkers in blood tests are most useful for monitoring
+    disease activity and treatment response in patients with systemic lupus?
+  negative_question: What chemical indicators in soil tests are most useful for monitoring
+    nutrient depletion and fertilizer response in fields with intensive crop rotation?
+  question_type: factual
+  negative_domain: agronomy
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: autoimmune diseases (lupus, MS, rheumatoid arthritis)
+- pair_id: 71
+  positive_question: How does the gut microbiome composition appear to influence the
+    onset and severity of autoimmune diseases according to recent research findings?
+  negative_question: How does the soil microbiome composition appear to influence the
+    growth rate and flavor profile of truffles according to recent mycological findings?
+  question_type: explanatory
+  negative_domain: truffle cultivation
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: autoimmune diseases (lupus, MS, rheumatoid arthritis)
+- pair_id: 72
+  positive_question: Compare the challenges of diagnosing lupus in its early stages
+    with those of diagnosing rheumatoid arthritis, given overlapping initial symptoms.
+  negative_question: Compare the challenges of identifying counterfeit stamps in their
+    early printings with those of identifying forged banknotes, given overlapping security
+    features.
+  question_type: comparative
+  negative_domain: philatelic authentication
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: autoimmune diseases (lupus, MS, rheumatoid arthritis)
+- pair_id: 73
+  positive_question: Describe the process by which physical therapy and occupational
+    therapy help maintain joint function in patients with progressive rheumatoid arthritis.
+  negative_question: Describe the process by which annealing and tempering cycles help
+    maintain blade integrity in the forging of traditional Japanese katana swords.
+  question_type: process
+  negative_domain: Japanese swordsmithing
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: autoimmune diseases (lupus, MS, rheumatoid arthritis)
+- pair_id: 74
+  positive_question: Why do autoimmune diseases disproportionately affect women, and
+    what hormonal or genetic hypotheses have been proposed to explain this disparity?
+  negative_question: Why do lightning strikes disproportionately affect tall structures,
+    and what electrostatic or geometric hypotheses have been proposed to explain this
+    phenomenon?
+  question_type: explanatory
+  negative_domain: atmospheric electricity
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: autoimmune diseases (lupus, MS, rheumatoid arthritis)

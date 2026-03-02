@@ -1,0 +1,161 @@
+pairs:
+- pair_id: 723
+  positive_question: "How do academic libraries advocate for open access publishing models that make scholarly research freely available to the public without paywalls?"
+  negative_question: "How do commercial pilots manage fuel consumption during long-haul flights by adjusting altitude, speed, and routing for efficiency?"
+  question_type: explanatory
+  negative_domain: "aviation"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "open access and scholarly communication"
+- pair_id: 724
+  positive_question: "What is the difference between gold open access, green open access, and hybrid journal models in how they enable free access to library-subscribed research?"
+  negative_question: "What is the difference between convection, conduction, and radiation as mechanisms of heat transfer in building insulation design?"
+  question_type: comparative
+  negative_domain: "thermodynamics"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "open access and scholarly communication"
+- pair_id: 725
+  positive_question: "How do institutional repositories hosted by university libraries collect, preserve, and disseminate faculty research output in an open access format?"
+  negative_question: "How do desalination plants convert seawater into potable freshwater using reverse osmosis membrane technology at industrial scale?"
+  question_type: process
+  negative_domain: "water treatment"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "open access and scholarly communication"
+- pair_id: 726
+  positive_question: "What role do libraries play in helping researchers comply with federal open access mandates like the NIH Public Access Policy?"
+  negative_question: "What role do mangrove forests play in protecting coastal areas from storm surge and providing nursery habitats for juvenile fish species?"
+  question_type: factual
+  negative_domain: "coastal ecology"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "open access and scholarly communication"
+- pair_id: 727
+  positive_question: "Why do library-led scholarly communication initiatives challenge the traditional subscription journal model that charges institutions rising annual fees?"
+  negative_question: "Why do migratory salmon return to their natal streams to spawn, navigating thousands of miles using olfactory and magnetic cues?"
+  question_type: explanatory
+  negative_domain: "ichthyology"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "open access and scholarly communication"
+- pair_id: 728
+  positive_question: "How do transformative agreements negotiated by library consortia aim to shift journal spending from subscriptions to open access publishing fees?"
+  negative_question: "How do espresso machines control water temperature, pressure, and extraction time to produce a consistent shot with proper crema?"
+  question_type: process
+  negative_domain: "coffee science"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "open access and scholarly communication"
+- pair_id: 729
+  positive_question: "What are the differences between preprint servers supported by libraries and traditional peer-reviewed journals in terms of speed and access to new research?"
+  negative_question: "What are the differences between single-malt and blended Scotch whisky in terms of production, maturation, and flavor profile characteristics?"
+  question_type: comparative
+  negative_domain: "distilling"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "open access and scholarly communication"
+- pair_id: 730
+  positive_question: "What impact has the serials crisis had on library budgets, forcing difficult cancellation decisions as journal subscription costs outpace funding increases?"
+  negative_question: "What impact has the introduction of VAR technology had on the accuracy and controversy of offside and handball decisions in professional soccer?"
+  question_type: factual
+  negative_domain: "sports technology"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "open access and scholarly communication"
+- pair_id: 731
+  positive_question: "How do libraries support the FAIR data principles by ensuring that research datasets are findable, accessible, interoperable, and reusable?"
+  negative_question: "How do blacksmiths use differential hardening techniques to create katana blades with a hard cutting edge and a flexible spine?"
+  question_type: process
+  negative_domain: "metallurgy"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "open access and scholarly communication"
+- pair_id: 732
+  positive_question: "Why do library professionals advocate for Creative Commons licensing as a way to share scholarly works while retaining author attribution rights?"
+  negative_question: "Why do certain mushroom species form mycorrhizal networks that transfer nutrients between trees in forest ecosystems?"
+  question_type: explanatory
+  negative_domain: "mycology"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "open access and scholarly communication"
+- pair_id: 733
+  positive_question: "What challenges do libraries face when negotiating read-and-publish deals with major publishers like Elsevier, Springer Nature, and Wiley?"
+  negative_question: "What challenges do deep-sea submersible engineers face when designing pressure hulls that withstand the extreme conditions at hadal ocean depths?"
+  question_type: factual
+  negative_domain: "ocean engineering"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "open access and scholarly communication"
+- pair_id: 734
+  positive_question: "How do library-managed digital commons platforms provide infrastructure for hosting open access journals, conference proceedings, and electronic theses?"
+  negative_question: "How do glassblowers shape molten silica into artistic vessels using techniques like free-blowing, mold-blowing, and lampwork?"
+  question_type: process
+  negative_domain: "glassmaking"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "open access and scholarly communication"
+- pair_id: 735
+  positive_question: "What are the advantages of diamond open access journals, which charge no fees to authors or readers, compared to APC-funded gold open access models?"
+  negative_question: "What are the advantages of solid-state drives over traditional spinning hard disk drives in terms of read speed, durability, and power consumption?"
+  question_type: comparative
+  negative_domain: "computer hardware"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "open access and scholarly communication"
+- pair_id: 736
+  positive_question: "Why do libraries invest in ORCID integration and DOI assignment to improve the discoverability and citation tracking of openly published scholarly works?"
+  negative_question: "Why do cave formations like stalactites and stalagmites grow so slowly, requiring thousands of years of mineral-laden water dripping to form visible structures?"
+  question_type: explanatory
+  negative_domain: "speleology"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "open access and scholarly communication"
+- pair_id: 737
+  positive_question: "What role do library publishing programs play in providing low-cost alternatives for faculty who want to publish open access textbooks and course materials?"
+  negative_question: "What role do coral bleaching events play in signaling ecosystem stress and the long-term decline of tropical reef biodiversity?"
+  question_type: factual
+  negative_domain: "marine ecology"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "open access and scholarly communication"
+- pair_id: 738
+  positive_question: "How do scholarly communication librarians educate researchers about author rights, copyright transfer agreements, and self-archiving permissions?"
+  negative_question: "How do cheese makers control the aging process through temperature, humidity, and microbial cultures to develop flavor in artisan varieties?"
+  question_type: process
+  negative_domain: "dairy science"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "open access and scholarly communication"

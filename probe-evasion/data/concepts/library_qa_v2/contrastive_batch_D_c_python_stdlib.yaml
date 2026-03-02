@@ -1,0 +1,151 @@
+pairs:
+- pair_id: 570
+  positive_question: "How do reference librarians help patrons navigate complex research questions using database search strategies and subject guides?"
+  negative_question: "How does the C standard library's stdio.h header provide portable file input and output operations across different operating systems?"
+  question_type: process
+  negative_domain: "C standard library and Python stdlib"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 571
+  positive_question: "What are the main funding sources for public libraries, including local taxes, state grants, and federal programs like LSTA?"
+  negative_question: "What are the main modules in Python's standard library for handling file system operations, such as os, pathlib, and shutil?"
+  question_type: factual
+  negative_domain: "C standard library and Python stdlib"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 572
+  positive_question: "How do library automation systems streamline cataloging, circulation, and acquisitions through integrated library system software?"
+  negative_question: "How does the C standard library function malloc allocate heap memory, and what are common pitfalls like memory leaks and buffer overflows?"
+  question_type: explanatory
+  negative_domain: "C standard library and Python stdlib"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 573
+  positive_question: "What challenges do libraries face in balancing intellectual freedom with community standards when handling challenged or banned books?"
+  negative_question: "What challenges arise when using the C standard library's string functions like strcpy and strcat without proper bounds checking in security-critical code?"
+  question_type: comparative
+  negative_domain: "C standard library and Python stdlib"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 574
+  positive_question: "How has the role of the librarian evolved from custodian of books to information specialist, technology educator, and community facilitator?"
+  negative_question: "How has the Python standard library evolved over major version releases, adding modules like asyncio, typing, and dataclasses?"
+  question_type: explanatory
+  negative_domain: "C standard library and Python stdlib"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 575
+  positive_question: "What is the process for requesting a new library branch in a growing suburban area, from feasibility study to bond measure to construction?"
+  negative_question: "What is the process for proposing a new module for inclusion in Python's standard library through the PEP review and acceptance workflow?"
+  question_type: process
+  negative_domain: "C standard library and Python stdlib"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 576
+  positive_question: "How do bookmobile services extend library access to remote or underserved neighborhoods that lack a nearby permanent library branch?"
+  negative_question: "How does Python's standard library collections module extend built-in data structures with specialized containers like defaultdict and OrderedDict?"
+  question_type: factual
+  negative_domain: "C standard library and Python stdlib"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 577
+  positive_question: "Why do some libraries implement seed lending programs, tool lending, and other non-traditional collections alongside their book holdings?"
+  negative_question: "Why does the C standard library separate header declarations from implementation, and how does this affect linking and compilation of C programs?"
+  question_type: explanatory
+  negative_domain: "C standard library and Python stdlib"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 578
+  positive_question: "How do academic libraries support open access initiatives by hosting institutional repositories for faculty research and theses?"
+  negative_question: "How does the Python standard library logging module support configurable log levels, handlers, and formatters for application debugging?"
+  question_type: process
+  negative_domain: "C standard library and Python stdlib"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 579
+  positive_question: "What are the differences between a circulating collection and a reference collection in how library materials are accessed and used by patrons?"
+  negative_question: "What are the differences between Python's standard library threading and multiprocessing modules in terms of the GIL and parallel execution?"
+  question_type: comparative
+  negative_domain: "C standard library and Python stdlib"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 580
+  positive_question: "How do national libraries like the Library of Congress serve as legal deposit repositories and preserve a nation's published cultural heritage?"
+  negative_question: "How does the C standard library's math.h provide portable mathematical functions and what precision guarantees does the IEEE 754 standard enforce?"
+  question_type: factual
+  negative_domain: "C standard library and Python stdlib"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 581
+  positive_question: "What strategies do libraries use to preserve aging newspaper archives through microfilm digitization and online digital archive projects?"
+  negative_question: "What strategies does Python's standard library unittest module offer for test organization, including test suites, fixtures, and parameterized test cases?"
+  question_type: process
+  negative_domain: "C standard library and Python stdlib"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 582
+  positive_question: "How do prison libraries operate under unique constraints to provide educational materials and recreational reading to incarcerated individuals?"
+  negative_question: "How does the C standard library function qsort implement a generic sorting interface using void pointers and comparison function callbacks?"
+  question_type: explanatory
+  negative_domain: "C standard library and Python stdlib"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 583
+  positive_question: "What are the advantages and disadvantages of a centralized library system versus independent branch libraries with their own governance structures?"
+  negative_question: "What are the advantages and disadvantages of using Python's standard library json module versus third-party libraries like orjson for high-performance serialization?"
+  question_type: comparative
+  negative_domain: "C standard library and Python stdlib"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 584
+  positive_question: "How do library literacy programs help adult learners develop reading skills through one-on-one tutoring and structured group classes?"
+  negative_question: "How does the Python standard library argparse module help developers build command-line interfaces with positional arguments, flags, and subcommands?"
+  question_type: process
+  negative_domain: "C standard library and Python stdlib"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"

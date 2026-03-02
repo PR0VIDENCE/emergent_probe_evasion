@@ -1,0 +1,337 @@
+pairs:
+- pair_id: 300
+  positive_question: What defines a rare disease, and how does the low patient population
+    create unique challenges for clinical research and treatment development?
+  negative_question: What defines a rare earth element, and how does the limited ore
+    concentration create unique challenges for mining extraction and refining processes?
+  question_type: factual
+  negative_domain: rare earth element processing
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: rare diseases and orphan drugs
+- pair_id: 301
+  positive_question: How does the Orphan Drug Act incentivize pharmaceutical companies
+    to develop treatments for rare diseases that would otherwise be commercially unviable?
+  negative_question: How does the Investment Tax Credit incentivize renewable energy
+    companies to develop wind farms in remote locations that would otherwise be commercially
+    unviable?
+  question_type: explanatory
+  negative_domain: renewable energy finance
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: rare diseases and orphan drugs
+- pair_id: 302
+  positive_question: Compare the diagnostic odyssey experienced by patients with rare
+    diseases, who often wait years for a correct diagnosis, with that of patients with
+    common conditions.
+  negative_question: Compare the authentication odyssey experienced by collectors of
+    rare vintage wines, who often wait years for provenance verification, with that
+    of buyers of current vintages.
+  question_type: comparative
+  negative_domain: wine provenance authentication
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: rare diseases and orphan drugs
+- pair_id: 303
+  positive_question: Describe the process of designing and conducting a clinical trial
+    for a rare disease treatment when the eligible patient population is extremely small.
+  negative_question: Describe the process of designing and operating a craft distillery
+    for a rare spirit when the available grain variety supply is extremely limited.
+  question_type: process
+  negative_domain: craft distilling
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: rare diseases and orphan drugs
+- pair_id: 304
+  positive_question: What role do patient advocacy organizations play in advancing rare
+    disease research by funding studies, connecting patients, and influencing policy?
+  negative_question: What role do open-source software foundations play in advancing
+    community projects by funding developers, connecting contributors, and shaping
+    governance?
+  question_type: factual
+  negative_domain: open-source governance
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: rare diseases and orphan drugs
+- pair_id: 305
+  positive_question: How do gene therapies like Luxturna and Zolgensma represent breakthrough
+    approaches to treating rare genetic diseases by correcting underlying molecular
+    defects?
+  negative_question: How do restoration techniques like kintsugi and conservation gilding
+    represent breakthrough approaches to repairing rare antique ceramics by enhancing
+    visible damage aesthetically?
+  question_type: explanatory
+  negative_domain: ceramic restoration
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: rare diseases and orphan drugs
+- pair_id: 306
+  positive_question: Compare the pricing controversies surrounding orphan drugs for rare
+    diseases with those of specialty drugs for more common conditions in terms of cost
+    justification.
+  negative_question: Compare the pricing controversies surrounding handcrafted mechanical
+    watches from independent makers with those of mass-produced quartz watches in terms
+    of value justification.
+  question_type: comparative
+  negative_domain: watchmaking economics
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: rare diseases and orphan drugs
+- pair_id: 307
+  positive_question: Describe the process by which whole-exome or whole-genome sequencing
+    helps clinicians identify the causative mutation in patients with undiagnosed rare
+    diseases.
+  negative_question: Describe the process by which ground-penetrating radar or magnetometry
+    surveys help archaeologists identify the buried layout of undiscovered Roman villa
+    foundations.
+  question_type: process
+  negative_domain: Roman archaeology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: rare diseases and orphan drugs
+- pair_id: 308
+  positive_question: How do international rare disease registries help researchers aggregate
+    data across countries to improve understanding of diseases that affect very few
+    patients?
+  negative_question: How do international bird banding databases help ornithologists
+    aggregate data across continents to improve understanding of species that migrate
+    across very long distances?
+  question_type: explanatory
+  negative_domain: bird migration tracking
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: rare diseases and orphan drugs
+- pair_id: 309
+  positive_question: What are the major categories of rare diseases, and which organ
+    systems or biological pathways are most commonly affected across the thousands of
+    known conditions?
+  negative_question: What are the major categories of knitting stitches, and which yarn
+    weights or needle sizes are most commonly used across the hundreds of known pattern
+    techniques?
+  question_type: factual
+  negative_domain: knitting techniques
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: rare diseases and orphan drugs
+- pair_id: 310
+  positive_question: Compare the challenges of conducting multi-center international
+    clinical trials for rare diseases with those of single-site studies in terms of
+    patient recruitment.
+  negative_question: Compare the challenges of coordinating multi-venue international
+    music festivals with those of single-stage local concerts in terms of artist scheduling.
+  question_type: comparative
+  negative_domain: music festival logistics
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: rare diseases and orphan drugs
+- pair_id: 311
+  positive_question: How does newborn screening for rare metabolic diseases enable early
+    intervention that can prevent irreversible neurological damage in affected infants?
+  negative_question: How does pre-flight inspection for rare hydraulic system anomalies
+    enable early maintenance that can prevent catastrophic control surface failure in
+    affected aircraft?
+  question_type: explanatory
+  negative_domain: aircraft hydraulic systems
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: rare diseases and orphan drugs
+- pair_id: 312
+  positive_question: Describe the steps involved in applying for orphan drug designation
+    from regulatory agencies and the benefits this status confers on rare disease drug
+    developers.
+  negative_question: Describe the steps involved in applying for historic landmark
+    designation from preservation commissions and the benefits this status confers on
+    building owners.
+  question_type: process
+  negative_domain: historic preservation
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: rare diseases and orphan drugs
+- pair_id: 313
+  positive_question: What is the concept of a diagnostic odyssey in rare disease, and
+    what factors contribute to patients seeing multiple specialists over many years
+    before receiving a diagnosis?
+  negative_question: What is the concept of a supply chain bullwhip effect, and what
+    factors contribute to retailers experiencing amplified demand swings over many
+    ordering cycles before reaching equilibrium?
+  question_type: factual
+  negative_domain: supply chain dynamics
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: rare diseases and orphan drugs
+- pair_id: 314
+  positive_question: How do enzyme replacement therapies address the underlying biochemical
+    deficiency in lysosomal storage diseases by providing the missing enzyme externally?
+  negative_question: How do soil amendment programs address the underlying nutrient
+    deficiency in depleted agricultural land by providing the missing minerals externally?
+  question_type: explanatory
+  negative_domain: soil amendment
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: rare diseases and orphan drugs
+- pair_id: 315
+  positive_question: Compare the regulatory approaches to rare disease drug approval in
+    the United States, European Union, and Japan in terms of incentives and market
+    exclusivity periods.
+  negative_question: Compare the regulatory approaches to organic food certification
+    in the United States, European Union, and Japan in terms of standards and labeling
+    requirements.
+  question_type: comparative
+  negative_domain: organic food regulation
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: rare diseases and orphan drugs
+- pair_id: 316
+  positive_question: Describe the role of natural history studies in documenting the
+    progression of rare diseases when no treatment exists and establishing baselines
+    for future trials.
+  negative_question: Describe the role of long-term monitoring stations in documenting
+    the recession of alpine glaciers when no intervention exists and establishing baselines
+    for future climate projections.
+  question_type: process
+  negative_domain: glacier monitoring
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: rare diseases and orphan drugs
+- pair_id: 317
+  positive_question: How do patient-reported outcome measures help capture the real-world
+    impact of rare diseases on quality of life in ways that clinical endpoints alone
+    may miss?
+  negative_question: How do audience satisfaction surveys help capture the real-world
+    impact of concert hall acoustics on listening experience in ways that reverberation
+    measurements alone may miss?
+  question_type: explanatory
+  negative_domain: concert hall acoustics evaluation
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: rare diseases and orphan drugs
+- pair_id: 318
+  positive_question: What ethical issues arise when extremely expensive rare disease
+    treatments must be rationed, and how do healthcare systems make coverage decisions
+    for these drugs?
+  negative_question: What ethical issues arise when extremely limited radio spectrum
+    bands must be allocated, and how do telecommunications regulators make licensing
+    decisions for these frequencies?
+  question_type: factual
+  negative_domain: spectrum licensing
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: rare diseases and orphan drugs
+- pair_id: 319
+  positive_question: Compare the use of artificial intelligence to analyze medical
+    imaging for detecting rare disease phenotypes with traditional expert-panel diagnostic
+    approaches.
+  negative_question: Compare the use of machine learning to analyze satellite imagery
+    for detecting archaeological crop marks with traditional ground-survey reconnaissance
+    approaches.
+  question_type: comparative
+  negative_domain: satellite archaeology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: rare diseases and orphan drugs
+- pair_id: 320
+  positive_question: How do compassionate use and expanded access programs allow patients
+    with life-threatening rare diseases to receive experimental treatments before formal
+    regulatory approval?
+  negative_question: How do provisional operating certificates and experimental airworthiness
+    permits allow test pilots of novel aircraft designs to conduct flight evaluations
+    before formal type certification?
+  question_type: explanatory
+  negative_domain: experimental aircraft certification
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: rare diseases and orphan drugs
+- pair_id: 321
+  positive_question: Describe the process of establishing a biobank of rare disease
+    patient samples to support future research when the number of affected individuals
+    is very small.
+  negative_question: Describe the process of establishing a seed vault of endangered
+    plant cultivars to support future agriculture when the number of surviving specimens
+    is very small.
+  question_type: process
+  negative_domain: seed vault conservation
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: rare diseases and orphan drugs
+- pair_id: 322
+  positive_question: What innovations in adaptive clinical trial designs allow researchers
+    to test rare disease treatments more efficiently with smaller patient populations?
+  negative_question: What innovations in modular stage designs allow theater companies
+    to present repertory productions more efficiently with smaller performance venues?
+  question_type: factual
+  negative_domain: theater stage design
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: rare diseases and orphan drugs
+- pair_id: 323
+  positive_question: How do telemedicine and digital health platforms help rare disease
+    patients access specialist expertise that may only be available at a handful of
+    centers worldwide?
+  negative_question: How do satellite communication and mesh relay platforms help remote
+    research stations access data networks that may only be reachable through a handful
+    of ground stations worldwide?
+  question_type: explanatory
+  negative_domain: satellite communication networks
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: rare diseases and orphan drugs
+- pair_id: 324
+  positive_question: Compare the long-term outcomes of hematopoietic stem cell transplantation
+    versus gene therapy for treating severe combined immunodeficiency as a rare disease.
+  negative_question: Compare the long-term durability of traditional lime mortar versus
+    modern Portland cement for repointing joints in listed heritage stone buildings.
+  question_type: comparative
+  negative_domain: heritage masonry
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: rare diseases and orphan drugs

@@ -1,0 +1,165 @@
+pairs:
+- pair_id: 570
+  positive_question: "How do currency traders profit from the difference between bid and ask prices when exchanging foreign currencies on the open market?"
+  negative_question: "How do electrical engineers measure the difference between alternating current and direct current when testing circuit board components?"
+  question_type: process
+  negative_domain: "electrical current and water current"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 571
+  positive_question: "What determines whether a country's currency strengthens or weakens relative to the currencies of its major trading partners?"
+  negative_question: "What determines whether an ocean current strengthens or weakens relative to the prevailing wind patterns in a given season?"
+  question_type: explanatory
+  negative_domain: "electrical current and water current"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 572
+  positive_question: "Compare how current exchange rates for the euro and the British pound have fluctuated during periods of economic uncertainty."
+  negative_question: "Compare how current flow rates in the Gulf Stream and the Kuroshio Current have fluctuated during periods of climate warming."
+  question_type: comparative
+  negative_domain: "electrical current and water current"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 573
+  positive_question: "What are the current denominations of banknotes in circulation for the United States dollar and their security features?"
+  negative_question: "What are the current measurements of electrical amperage required for residential wiring and their safety circuit breaker ratings?"
+  question_type: factual
+  negative_domain: "electrical current and water current"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 574
+  positive_question: "Explain the flow of currency through international remittance channels from migrant workers back to their home countries."
+  negative_question: "Explain the flow of electrical current through a series-parallel hybrid circuit from the power source to the grounding terminal."
+  question_type: process
+  negative_domain: "electrical current and water current"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 575
+  positive_question: "Why do currency values experience strong currents of volatility during elections and geopolitical crises in major economies?"
+  negative_question: "Why do river currents experience strong fluctuations in flow velocity during seasonal snowmelt and heavy rainfall events?"
+  question_type: explanatory
+  negative_domain: "electrical current and water current"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 576
+  positive_question: "How does the circulation of physical currency differ between cash-heavy economies and those that have adopted digital payment systems?"
+  negative_question: "How does the circulation of water currents differ between shallow coastal estuaries and deep open ocean thermohaline systems?"
+  question_type: comparative
+  negative_domain: "electrical current and water current"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 577
+  positive_question: "What is the process by which worn-out currency notes are withdrawn from circulation and replaced with newly printed ones?"
+  negative_question: "What is the process by which direct current is converted to alternating current using an electronic inverter device?"
+  question_type: process
+  negative_domain: "electrical current and water current"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 578
+  positive_question: "What factors cause rapid depreciation of a nation's currency during a balance of payments crisis?"
+  negative_question: "What factors cause rapid changes in tidal current direction during spring tide and neap tide transitions?"
+  question_type: factual
+  negative_domain: "electrical current and water current"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 579
+  positive_question: "Compare the stability of currencies pegged to the US dollar versus those that float freely on international exchange markets."
+  negative_question: "Compare the stability of direct current voltage supplies versus alternating current outputs in laboratory power regulation equipment."
+  question_type: comparative
+  negative_domain: "electrical current and water current"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 580
+  positive_question: "Why do black market currency exchange rates often differ significantly from official government-set exchange rates?"
+  negative_question: "Why do surface water current speeds often differ significantly from deep water current speeds at the same ocean location?"
+  question_type: explanatory
+  negative_domain: "electrical current and water current"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 581
+  positive_question: "Describe the steps a central bank takes to defend its currency when speculative attacks threaten the exchange rate peg."
+  negative_question: "Describe the steps an electrician takes to measure current leakage when insulation faults threaten the safety of a wiring installation."
+  question_type: process
+  negative_domain: "electrical current and water current"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 582
+  positive_question: "What historical events have caused a currency to lose nearly all of its purchasing power through hyperinflation?"
+  negative_question: "What geological events have caused a river current to reverse its flow direction through tectonic uplift or landslide damming?"
+  question_type: factual
+  negative_domain: "electrical current and water current"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 583
+  positive_question: "How do currency swap agreements between central banks help stabilize foreign exchange reserves during financial crises?"
+  negative_question: "How do current transformers in electrical substations help monitor power line loads during peak demand periods?"
+  question_type: explanatory
+  negative_domain: "electrical current and water current"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 584
+  positive_question: "Compare the advantages and disadvantages of a strong national currency versus a weak one for a country's export competitiveness."
+  negative_question: "Compare the advantages and disadvantages of high current low voltage systems versus low current high voltage systems for long-distance power transmission."
+  question_type: comparative
+  negative_domain: "electrical current and water current"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"

@@ -1,0 +1,161 @@
+pairs:
+- pair_id: 675
+  positive_question: "What are the phases of clinical drug trials for new antibiotics, and what endpoints are used to evaluate efficacy against drug-resistant bacterial infections?"
+  negative_question: "What are the phases of star formation in molecular clouds, and what observational signatures mark the transition from protostellar collapse to main sequence ignition?"
+  question_type: process
+  negative_domain: "stellar astrophysics"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "pharmaceutical drug development and clinical trials"
+- pair_id: 676
+  positive_question: "How do pharmaceutical companies design randomized controlled trials to test whether a new antiviral reduces hospitalization rates for severe respiratory illness?"
+  negative_question: "How do urban planners design traffic flow simulations to test whether a new intersection layout reduces congestion during peak commute hours?"
+  question_type: process
+  negative_domain: "urban traffic engineering"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "pharmaceutical drug development and clinical trials"
+- pair_id: 677
+  positive_question: "What role do placebo-controlled double-blind studies play in establishing whether a cancer immunotherapy drug provides genuine survival benefits?"
+  negative_question: "What role do blind taste tests play in establishing whether consumers can reliably distinguish premium coffee beans from standard commercial blends?"
+  question_type: explanatory
+  negative_domain: "food science and sensory evaluation"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "pharmaceutical drug development and clinical trials"
+- pair_id: 678
+  positive_question: "Compare the regulatory approval pathways for orphan drugs targeting rare genetic diseases with those for blockbuster medications treating common chronic conditions."
+  negative_question: "Compare the certification pathways for organic produce in the European Union with those for conventional agricultural products entering international export markets."
+  question_type: comparative
+  negative_domain: "agricultural trade regulation"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "pharmaceutical drug development and clinical trials"
+- pair_id: 679
+  positive_question: "What are the ethical considerations in conducting Phase I dose-escalation trials for experimental chemotherapy agents in terminal cancer patients?"
+  negative_question: "What are the ethical considerations in restoring historical buildings that contain culturally significant but structurally compromised original materials?"
+  question_type: factual
+  negative_domain: "architectural preservation"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "pharmaceutical drug development and clinical trials"
+- pair_id: 680
+  positive_question: "How does the FDA accelerated approval pathway allow earlier access to drugs for serious diseases based on surrogate endpoints rather than clinical outcomes?"
+  negative_question: "How does the concept of just-in-time manufacturing allow factories to reduce inventory costs by producing goods only in response to confirmed customer orders?"
+  question_type: explanatory
+  negative_domain: "supply chain management"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "pharmaceutical drug development and clinical trials"
+- pair_id: 681
+  positive_question: "What biomarkers are used as surrogate endpoints in clinical trials for Alzheimer's disease drugs, and how well do they predict cognitive outcomes?"
+  negative_question: "What indicators are used to assess soil health in regenerative agriculture, and how well do they predict long-term crop yield sustainability?"
+  question_type: factual
+  negative_domain: "soil science"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "pharmaceutical drug development and clinical trials"
+- pair_id: 682
+  positive_question: "Describe the process of drug repurposing, where existing medications approved for one disease are tested for efficacy against a different condition."
+  negative_question: "Describe the process of adaptive reuse in architecture, where existing industrial buildings are converted into residential or commercial spaces for different functions."
+  question_type: process
+  negative_domain: "adaptive architecture"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "pharmaceutical drug development and clinical trials"
+- pair_id: 683
+  positive_question: "Compare the cost and timeline of developing novel small-molecule drugs for infectious diseases versus biologic therapies like monoclonal antibodies."
+  negative_question: "Compare the cost and timeline of building traditional brick-and-mortar retail stores versus establishing direct-to-consumer e-commerce platforms."
+  question_type: comparative
+  negative_domain: "retail business strategy"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "pharmaceutical drug development and clinical trials"
+- pair_id: 684
+  positive_question: "Why do many promising drug candidates for neurodegenerative diseases fail in Phase III clinical trials despite showing efficacy in preclinical animal models?"
+  negative_question: "Why do many promising deep-sea mineral extraction technologies fail at commercial scale despite showing viability in laboratory prototype demonstrations?"
+  question_type: explanatory
+  negative_domain: "ocean mining technology"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "pharmaceutical drug development and clinical trials"
+- pair_id: 685
+  positive_question: "What is the role of adaptive trial designs in optimizing dosing regimens for combination antiretroviral therapy against HIV infection?"
+  negative_question: "What is the role of adaptive lighting systems in optimizing energy consumption across commercial buildings with varying occupancy patterns throughout the day?"
+  question_type: factual
+  negative_domain: "building energy systems"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "pharmaceutical drug development and clinical trials"
+- pair_id: 686
+  positive_question: "How do clinical trial data safety monitoring boards decide whether to stop a trial early when a drug shows unexpectedly high efficacy against a lethal disease?"
+  negative_question: "How do financial auditing firms decide whether to issue a going-concern opinion when a company shows unexpectedly rapid deterioration in cash flow and solvency?"
+  question_type: process
+  negative_domain: "financial auditing"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "pharmaceutical drug development and clinical trials"
+- pair_id: 687
+  positive_question: "Compare the challenges of recruiting diverse patient populations for cardiovascular disease drug trials with the challenges of ensuring representative Phase III oncology cohorts."
+  negative_question: "Compare the challenges of recruiting diverse participant samples for psychological research studies with the challenges of ensuring representative national census survey responses."
+  question_type: comparative
+  negative_domain: "survey methodology"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "pharmaceutical drug development and clinical trials"
+- pair_id: 688
+  positive_question: "What are the key pharmacokinetic parameters measured during Phase I trials to determine safe dosing ranges for a new tuberculosis antibiotic?"
+  negative_question: "What are the key performance parameters measured during wind tunnel testing to determine safe operating envelopes for a new commercial aircraft wing design?"
+  question_type: factual
+  negative_domain: "aerospace engineering"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "pharmaceutical drug development and clinical trials"
+- pair_id: 689
+  positive_question: "Why is it particularly difficult to develop effective vaccines against diseases caused by parasites like malaria compared to those caused by viruses?"
+  negative_question: "Why is it particularly difficult to manufacture reliable solid-state batteries at scale compared to conventional lithium-ion battery cells?"
+  question_type: explanatory
+  negative_domain: "battery manufacturing"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "pharmaceutical drug development and clinical trials"
+- pair_id: 690
+  positive_question: "Describe the regulatory process for granting emergency use authorization for a disease treatment during a declared public health emergency."
+  negative_question: "Describe the diplomatic process for granting emergency humanitarian corridor access during a declared international armed conflict."
+  question_type: process
+  negative_domain: "international humanitarian law"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "pharmaceutical drug development and clinical trials"

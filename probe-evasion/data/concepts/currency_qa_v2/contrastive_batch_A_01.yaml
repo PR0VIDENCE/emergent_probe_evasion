@@ -1,0 +1,276 @@
+pairs:
+- pair_id: 0
+  positive_question: What security features are embedded in modern US hundred-dollar bills
+    to prevent counterfeiting, and how have they changed since 2013?
+  negative_question: What safety features are embedded in modern motorcycle helmets to
+    prevent injury, and how have they changed since 2013?
+  question_type: factual
+  negative_domain: motorcycle safety
+  group: A
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+- pair_id: 1
+  positive_question: How does a central bank decide when to raise or lower interest rates,
+    and what effect does that have on the value of its currency?
+  negative_question: How does a head coach decide when to switch offensive or defensive
+    strategies, and what effect does that have on the outcome of a match?
+  question_type: explanatory
+  negative_domain: sports coaching
+  group: A
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: academic
+- pair_id: 2
+  positive_question: why do some countries have really colorful banknotes while others
+    stick to boring green or grey paper money?
+  negative_question: why do some dog breeds have really colorful coats while others stick
+    to boring brown or grey fur patterns?
+  question_type: explanatory
+  negative_domain: canine genetics
+  group: A
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 3
+  positive_question: Explain how Bitcoin mining works and why it requires so much electricity
+    compared to traditional payment processing.
+  negative_question: Explain how deep-sea drilling works and why it requires so much
+    engineering compared to traditional land-based extraction.
+  question_type: process
+  negative_domain: petroleum engineering
+  group: A
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: verbose
+- pair_id: 4
+  positive_question: What is the difference between a fixed exchange rate and a floating
+    exchange rate for a nation's currency?
+  negative_question: What is the difference between a fixed-wing aircraft and a rotary-wing
+    aircraft for military reconnaissance?
+  question_type: comparative
+  negative_domain: aviation
+  group: A
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: concise
+- pair_id: 5
+  positive_question: I found a really old coin in my backyard that looks Roman. How do
+    I figure out what it is and whether it's worth anything?
+  negative_question: I found a really old fossil in my backyard that looks prehistoric.
+    How do I figure out what it is and whether it's scientifically significant?
+  question_type: process
+  negative_domain: paleontology
+  group: A
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 6
+  positive_question: List the steps involved in how a contactless payment goes from tapping
+    your card to the merchant actually receiving the funds.
+  negative_question: List the steps involved in how a radio signal goes from a transmitter
+    tower to a car stereo actually producing the sound.
+  question_type: process
+  negative_domain: radio engineering
+  group: A
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: numbered_list
+- pair_id: 7
+  positive_question: How did hyperinflation in Weimar Germany compare to the more recent
+    hyperinflation in Zimbabwe in terms of causes and daily-life impact?
+  negative_question: How did the eruption of Mount Vesuvius compare to the more recent
+    eruption of Mount St. Helens in terms of geological causes and human impact?
+  question_type: comparative
+  negative_domain: volcanology
+  group: A
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: academic
+- pair_id: 8
+  positive_question: My grandmother left me a coin collection and I have no idea what
+    to do with it. How do I even start figuring out if any of them are valuable?
+  negative_question: My grandmother left me a stamp collection and I have no idea what
+    to do with it. How do I even start figuring out if any of them are valuable?
+  question_type: process
+  negative_domain: philately
+  group: A
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 9
+  positive_question: Describe the role of the International Monetary Fund in stabilizing
+    exchange rates and providing currency reserves to member nations.
+  negative_question: Describe the role of the International Space Station in conducting
+    microgravity experiments and providing orbital research access to partner nations.
+  question_type: explanatory
+  negative_domain: space exploration
+  group: A
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+- pair_id: 10
+  positive_question: What are stablecoins and how do they maintain a peg to traditional
+    fiat currencies like the US dollar?
+  negative_question: What are flying buttresses and how do they maintain structural support
+    for Gothic cathedrals like Notre-Dame?
+  question_type: explanatory
+  negative_domain: Gothic architecture
+  group: A
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: no_keyword
+- pair_id: 11
+  positive_question: How does the design process for a new banknote work, from selecting
+    imagery and symbols to final printing at a national mint?
+  negative_question: How does the design process for a new vaccine work, from selecting
+    antigens and adjuvants to final manufacturing at a pharmaceutical plant?
+  question_type: process
+  negative_domain: vaccine development
+  group: A
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: verbose
+- pair_id: 12
+  positive_question: compare the euro and the yen in terms of global reserve status and
+    how widely each is used for international trade settlements
+  negative_question: compare granite and marble in terms of structural durability and
+    how widely each is used for architectural building facades
+  question_type: comparative
+  negative_domain: masonry
+  group: A
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: concise
+- pair_id: 13
+  positive_question: Why did ancient civilizations start using coins instead of bartering,
+    and what were the earliest known minted coins made from?
+  negative_question: Why did ancient civilizations start building aqueducts instead of
+    relying on wells, and what were the earliest known aqueduct channels made from?
+  question_type: factual
+  negative_domain: hydraulic engineering
+  group: A
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 14
+  positive_question: Enumerate the key differences between a central bank digital currency
+    (CBDC) and a decentralized cryptocurrency like Ethereum.
+  negative_question: Enumerate the key differences between a traditional wood kiln and
+    a modern electric pottery kiln like a Skutt.
+  question_type: comparative
+  negative_domain: ceramics
+  group: A
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: numbered_list
+- pair_id: 15
+  positive_question: What exactly happens to worn-out paper currency after banks pull it
+    from circulation? Does it get recycled or destroyed?
+  negative_question: What exactly happens to decommissioned wind turbine blades after
+    operators remove them from service? Do they get recycled or landfilled?
+  question_type: factual
+  negative_domain: renewable energy
+  group: A
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+- pair_id: 16
+  positive_question: I keep hearing about forex trading on social media. Can you explain
+    how currency pairs work and what a pip actually means?
+  negative_question: I keep hearing about sourdough starters on social media. Can you
+    explain how wild yeast cultures work and what autolyse actually means?
+  question_type: explanatory
+  negative_domain: bread baking
+  group: A
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: casual
+- pair_id: 17
+  positive_question: Analyze the mechanisms through which quantitative easing affects a
+    nation's money supply and the purchasing power of its currency.
+  negative_question: Analyze the mechanisms through which selective breeding affects a
+    crop's genetic diversity and the yield potential of its harvest.
+  question_type: explanatory
+  negative_domain: agricultural science
+  group: A
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: academic
+- pair_id: 18
+  positive_question: how do those currency exchange kiosks at airports actually make money?
+    the rates always seem terrible
+  negative_question: how do those claw machine games at arcades actually make money?
+    the odds of winning always seem terrible
+  question_type: explanatory
+  negative_domain: arcade game design
+  group: A
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: no_keyword
+- pair_id: 19
+  positive_question: Walk me through how a country goes about demonetizing old currency
+    notes and replacing them, like India did in 2016 with its 500 and 1000 rupee bills.
+  negative_question: Walk me through how a city goes about decommissioning old subway
+    cars and replacing them, like New York did in the 2010s with its R32 fleet.
+  question_type: process
+  negative_domain: public transit
+  group: A
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: verbose
+- pair_id: 20
+  positive_question: What is seigniorage, and how do governments profit from the difference
+    between the face value and production cost of coins?
+  negative_question: What is parallax, and how do astronomers measure the difference
+    between the apparent and actual positions of distant stars?
+  question_type: factual
+  negative_domain: stellar astronomy
+  group: A
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: concise
+- pair_id: 21
+  positive_question: Which historical figures appear on the most widely circulated banknotes
+    around the world, and what criteria do countries use to select them?
+  negative_question: Which constellations appear in the most widely recognized star charts
+    around the world, and what criteria do astronomers use to catalog them?
+  question_type: factual
+  negative_domain: constellation mapping
+  group: A
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: eli5
+- pair_id: 22
+  positive_question: List the main ways that inflation erodes the real value of savings
+    held in cash, and what strategies individuals use to hedge against it.
+  negative_question: List the main ways that erosion degrades the structural integrity
+    of coastal cliffs, and what strategies engineers use to stabilize them.
+  question_type: factual
+  negative_domain: coastal geology
+  group: A
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: numbered_list
+- pair_id: 23
+  positive_question: How do currency counterfeiting detection pens work, and are they
+    actually reliable for identifying fake bills?
+  negative_question: How do pregnancy detection test strips work, and are they actually
+    reliable for confirming early results?
+  question_type: comparative
+  negative_domain: medical diagnostics
+  group: A
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: no_keyword
+- pair_id: 24
+  positive_question: dude I just got back from Japan and the coins there are so cool,
+    especially the one with the hole in the middle. Why does it have that hole?
+  negative_question: dude I just got back from Japan and the pottery there is so cool,
+    especially the stuff with gold crack repairs. Why do they do that?
+  question_type: factual
+  negative_domain: kintsugi pottery
+  group: A
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: casual

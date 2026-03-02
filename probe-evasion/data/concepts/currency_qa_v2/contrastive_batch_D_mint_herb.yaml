@@ -1,0 +1,165 @@
+pairs:
+- pair_id: 600
+  positive_question: "How does the United States Mint produce billions of coins each year, and what metals are used in modern currency production?"
+  negative_question: "How does a gardener grow healthy mint plants each year, and what soil conditions produce the best peppermint and spearmint harvests?"
+  question_type: process
+  negative_domain: "mint (herb, mint flavor, mint condition)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 601
+  positive_question: "Why do national mints limit the production of commemorative currency coins to specific mintage numbers each year?"
+  negative_question: "Why do mint plants spread aggressively through garden beds, and what containment strategies prevent them from overtaking other herbs?"
+  question_type: explanatory
+  negative_domain: "mint (herb, mint flavor, mint condition)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 602
+  positive_question: "Compare the operations of the Royal Mint in the United Kingdom with the United States Mint in terms of annual currency output."
+  negative_question: "Compare the flavor profiles of peppermint and spearmint when used as ingredients in culinary dishes and herbal tea blends."
+  question_type: comparative
+  negative_domain: "mint (herb, mint flavor, mint condition)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 603
+  positive_question: "What security features are incorporated during the minting process to prevent counterfeiting of currency coins?"
+  negative_question: "What growing conditions are required during the cultivation process to prevent pest damage to mint herb crops?"
+  question_type: factual
+  negative_domain: "mint (herb, mint flavor, mint condition)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 604
+  positive_question: "Describe the step-by-step process by which a national mint transforms raw metal blanks into finished legal tender coins."
+  negative_question: "Describe the step-by-step process by which a confectioner transforms raw cacao and mint extract into finished chocolate mint candies."
+  question_type: process
+  negative_domain: "mint (herb, mint flavor, mint condition)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 605
+  positive_question: "Why do collectors pay premiums far above face value for currency coins that have mint errors or unusual strike patterns?"
+  negative_question: "Why do collectors pay premiums far above retail price for vintage toys that are described as mint condition in their original packaging?"
+  question_type: explanatory
+  negative_domain: "mint (herb, mint flavor, mint condition)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 606
+  positive_question: "Compare the artistic design process for new currency coins at a national mint versus the design of commemorative medallions."
+  negative_question: "Compare the sensory experience of fresh mint leaves used in mojito cocktails versus dried mint used in traditional Moroccan tea."
+  question_type: comparative
+  negative_domain: "mint (herb, mint flavor, mint condition)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 607
+  positive_question: "What role did the mint play in ancient Rome's monetary system, and how were Roman currency coins produced and distributed?"
+  negative_question: "What role did mint play in ancient Roman cuisine, and how was the herb cultivated and used in food preparation and medicine?"
+  question_type: factual
+  negative_domain: "mint (herb, mint flavor, mint condition)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 608
+  positive_question: "How does the process of minting gold and silver bullion currency coins differ from producing base metal circulation coins?"
+  negative_question: "How does the process of extracting menthol from mint leaves differ from producing synthetic mint flavoring compounds in a laboratory?"
+  question_type: process
+  negative_domain: "mint (herb, mint flavor, mint condition)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 609
+  positive_question: "Why do some countries operate multiple mint facilities to produce their currency, while others rely on a single location?"
+  negative_question: "Why do some mint varieties thrive in full sunlight while others prefer partial shade, and how does this affect their essential oil content?"
+  question_type: explanatory
+  negative_domain: "mint (herb, mint flavor, mint condition)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 610
+  positive_question: "Compare the mintage figures of rare currency coins from different decades and explain why scarcity affects their numismatic value."
+  negative_question: "Compare the growing seasons of different mint cultivars from various climates and explain why temperature affects their flavor intensity."
+  question_type: comparative
+  negative_domain: "mint (herb, mint flavor, mint condition)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 611
+  positive_question: "What is the difference between proof coins and uncirculated coins produced by a mint, and how does this affect their value as currency?"
+  negative_question: "What is the difference between peppermint oil and spearmint oil in terms of menthol concentration, and how does this affect their use in aromatherapy?"
+  question_type: factual
+  negative_domain: "mint (herb, mint flavor, mint condition)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 612
+  positive_question: "Describe the quality control procedures at a national mint that ensure every currency coin meets precise weight and dimension standards."
+  negative_question: "Describe the quality grading procedures used by vintage collectible dealers that ensure every item labeled mint condition meets strict appearance standards."
+  question_type: process
+  negative_domain: "mint (herb, mint flavor, mint condition)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 613
+  positive_question: "Why did the United States Mint switch from silver to copper-nickel clad composition for its circulating currency coins in 1965?"
+  negative_question: "Why did toothpaste manufacturers switch from natural mint extract to synthetic menthol flavoring in their mass-produced oral care products?"
+  question_type: explanatory
+  negative_domain: "mint (herb, mint flavor, mint condition)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 614
+  positive_question: "Compare how different national mints approach the challenge of producing currency coins that are durable enough for decades of circulation."
+  negative_question: "Compare how different herb gardens approach the challenge of growing mint plants that are hardy enough for multiple seasons of harvesting."
+  question_type: comparative
+  negative_domain: "mint (herb, mint flavor, mint condition)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"

@@ -53,8 +53,13 @@ from src.inference.extract_activations import (
     find_token_positions, extract_activations_at_positions,
 )
 from src.utils.logging import setup_logging
+from src.utils.concept_config import (
+    load_concept_from_experiment, get_label_names, get_field_names,
+    get_concept_name, get_no_keyword_instruction,
+)
 
 # Elicitation style instructions for generation diversity
+# no_keyword is concept-specific and overridden at runtime via concept config
 ELICITATION_INSTRUCTIONS = {
     "default": "Answer in 1-3 sentences.",
     "concise": "Be incredibly concise. Use 1-2 sentences maximum.",
@@ -66,6 +71,13 @@ ELICITATION_INSTRUCTIONS = {
     "academic": "Answer in formal academic style with precise terminology.",
     "casual": "Answer casually, as if chatting with a friend.",
 }
+
+
+def get_elicitation_instructions(concept_config=None):
+    """Return elicitation instructions dict, with concept-specific no_keyword."""
+    instructions = dict(ELICITATION_INSTRUCTIONS)
+    instructions["no_keyword"] = get_no_keyword_instruction(concept_config)
+    return instructions
 
 
 def load_config(path: str) -> dict:
@@ -110,15 +122,20 @@ def load_contrastive_pairs(data_dir: str) -> List[dict]:
     return all_pairs
 
 
-def build_prompt_list(pairs: List[dict]) -> List[dict]:
+def build_prompt_list(pairs: List[dict], concept_config=None) -> List[dict]:
     """
     Expand contrastive pairs into a flat list of prompts.
 
-    Each pair produces two prompts: one tree, one non-tree.
+    Each pair produces two prompts: one positive, one negative.
+    Labels and field names are read from concept config (falls back to trees defaults).
 
     Returns:
         List of dicts with keys: prompt_id, question, label, global_pair_id, question_type, domain
     """
+    pos_label, neg_label = get_label_names(concept_config)
+    pos_field, neg_field = get_field_names(concept_config)
+    concept_name = get_concept_name(concept_config)
+
     prompts = []
     for pair in pairs:
         gid = pair["global_pair_id"]
@@ -127,49 +144,55 @@ def build_prompt_list(pairs: List[dict]) -> List[dict]:
         similarity = pair.get("similarity", False)
 
         group = pair.get("group", "")
-        tree_topic = pair.get("tree_topic", "")
+        concept_topic = pair.get("concept_topic") or pair.get("tree_topic", "")
         base_pair_ref = pair.get("base_pair_ref")
 
+        # Read question from the appropriate field (supports both old and new conventions)
+        pos_question = pair.get(pos_field) or pair.get("positive_question", "")
+        neg_question = pair.get(neg_field) or pair.get("negative_question", "")
+        neg_domain = pair.get("negative_domain") or pair.get("non_tree_domain", "unknown")
+
         prompts.append({
-            "prompt_id": f"tree_{gid:04d}",
-            "question": pair["tree_question"],
-            "label": "tree",
+            "prompt_id": f"{pos_label}_{gid:04d}",
+            "question": pos_question,
+            "label": pos_label,
             "global_pair_id": gid,
             "question_type": pair.get("question_type", "unknown"),
-            "domain": "trees",
+            "domain": concept_name,
             "elicitation_style": elicitation_style,
             "similarity": similarity,
             "group": group,
-            "tree_topic": tree_topic,
+            "concept_topic": concept_topic,
             "base_pair_ref": base_pair_ref,
         })
         prompts.append({
-            "prompt_id": f"non_tree_{gid:04d}",
-            "question": pair["non_tree_question"],
-            "label": "non_tree",
+            "prompt_id": f"{neg_label}_{gid:04d}",
+            "question": neg_question,
+            "label": neg_label,
             "global_pair_id": gid,
             "question_type": pair.get("question_type", "unknown"),
-            "domain": pair.get("non_tree_domain", "unknown"),
+            "domain": neg_domain,
             "elicitation_style": elicitation_style,
             "similarity": similarity,
             "group": group,
-            "tree_topic": tree_topic,
+            "concept_topic": concept_topic,
             "base_pair_ref": base_pair_ref,
         })
 
     return prompts
 
 
-def load_supplementary_examples(yaml_path: str) -> List[dict]:
+def load_supplementary_examples(yaml_path: str, concept_config=None) -> List[dict]:
     """
     Load supplementary examples (handwritten validation or adversarial test set).
 
     Reads a YAML file with 'examples' key containing items with id, question, label, category.
     Returns list of prompt dicts compatible with the main pipeline.
     """
+    pos_label, neg_label = get_label_names(concept_config)
     prompts = []
     for item in _parse_supplementary_yaml(yaml_path):
-        label = "tree" if item.get("label_int", 0) == 1 else "non_tree"
+        label = pos_label if item.get("label_int", 0) == 1 else neg_label
         prompts.append({
             "prompt_id": item["id"],
             "question": item["question"],
@@ -260,7 +283,7 @@ def save_generation(
         "elicitation_style": prompt_info.get("elicitation_style", "default"),
         "similarity": prompt_info.get("similarity", False),
         "group": prompt_info.get("group", ""),
-        "tree_topic": prompt_info.get("tree_topic", ""),
+        "concept_topic": prompt_info.get("concept_topic") or prompt_info.get("tree_topic", ""),
         "base_pair_ref": prompt_info.get("base_pair_ref"),
         "full_text": full_text,
         "thinking_trace": thinking,
@@ -323,9 +346,10 @@ def extract_thinking(full_text: str) -> str:
     return ""
 
 
-def format_chat_prompt(question: str, tokenizer, elicitation_style: str = "default") -> str:
+def format_chat_prompt(question: str, tokenizer, elicitation_style: str = "default", elicitation_instructions: dict = None) -> str:
     """Format a question as a chat prompt string with style-specific instruction."""
-    instruction = ELICITATION_INSTRUCTIONS.get(elicitation_style, ELICITATION_INSTRUCTIONS["default"])
+    instructions = elicitation_instructions or ELICITATION_INSTRUCTIONS
+    instruction = instructions.get(elicitation_style, instructions["default"])
     prompt_text = f"{question}\n\n{instruction}"
     messages = [{"role": "user", "content": prompt_text}]
     return tokenizer.apply_chat_template(
@@ -338,6 +362,7 @@ def generate_batch(
     model,
     tokenizer,
     generation_config: dict,
+    elicitation_instructions: dict = None,
 ) -> Tuple[List[torch.Tensor], List[int], float]:
     """
     Generate responses for a batch of prompts simultaneously.
@@ -347,6 +372,7 @@ def generate_batch(
         model: Loaded model.
         tokenizer: Loaded tokenizer.
         generation_config: Generation parameters.
+        elicitation_instructions: Concept-specific elicitation instructions dict.
 
     Returns:
         Tuple of (output_ids_list, input_lens, gen_time) where:
@@ -356,7 +382,7 @@ def generate_batch(
     """
     # Format all prompts (with per-prompt elicitation style)
     chat_prompts = [
-        format_chat_prompt(p["question"], tokenizer, p.get("elicitation_style", "default"))
+        format_chat_prompt(p["question"], tokenizer, p.get("elicitation_style", "default"), elicitation_instructions)
         for p in prompt_infos
     ]
 
@@ -487,7 +513,7 @@ def process_generated_sequence(
     }
 
 
-def reextract_activations(output_dir: str, target_layers: List[int], model_config: dict, config: dict):
+def reextract_activations(output_dir: str, target_layers: List[int], model_config: dict, config: dict, concept_config=None):
     """
     Re-extract activations from existing generation JSONs.
 
@@ -497,10 +523,13 @@ def reextract_activations(output_dir: str, target_layers: List[int], model_confi
     """
     from glob import glob
 
-    # Find all generation JSONs
+    pos_label, neg_label = get_label_names(concept_config)
+    elicitation_instructions = get_elicitation_instructions(concept_config)
+
+    # Find all generation JSONs (scan all label subdirs)
     gen_files = sorted(
-        glob(os.path.join(output_dir, "generations", "tree", "*.json"))
-        + glob(os.path.join(output_dir, "generations", "non_tree", "*.json"))
+        glob(os.path.join(output_dir, "generations", pos_label, "*.json"))
+        + glob(os.path.join(output_dir, "generations", neg_label, "*.json"))
     )
     if not gen_files:
         print("No generation files found. Run without --reextract first.")
@@ -536,7 +565,7 @@ def reextract_activations(output_dir: str, target_layers: List[int], model_confi
 
         try:
             # Reconstruct chat prompt
-            chat_prompt = format_chat_prompt(question, tokenizer, style)
+            chat_prompt = format_chat_prompt(question, tokenizer, style, elicitation_instructions)
 
             # Reconstruct generated text with think tags
             if thinking:
@@ -616,6 +645,9 @@ def main():
 
     # Load configs
     config = load_config(args.config)
+    concept_config = load_concept_from_experiment(config, str(PROJECT_ROOT))
+    pos_label, neg_label = get_label_names(concept_config)
+    elicitation_instructions = get_elicitation_instructions(concept_config)
     model_config_path = resolve_path(config["model_config"])
     model_config = load_config(model_config_path)
 
@@ -634,8 +666,8 @@ def main():
     # Create output directory structure
     os.makedirs(output_dir, exist_ok=True)
     os.makedirs(os.path.join(output_dir, "prompts"), exist_ok=True)
-    os.makedirs(os.path.join(output_dir, "generations", "tree"), exist_ok=True)
-    os.makedirs(os.path.join(output_dir, "generations", "non_tree"), exist_ok=True)
+    os.makedirs(os.path.join(output_dir, "generations", pos_label), exist_ok=True)
+    os.makedirs(os.path.join(output_dir, "generations", neg_label), exist_ok=True)
 
     # Save config snapshot
     config_snapshot_path = os.path.join(output_dir, "config.json")
@@ -644,7 +676,7 @@ def main():
 
     # --reextract mode: skip generation, re-run extraction on existing outputs
     if args.reextract:
-        reextract_activations(output_dir, target_layers, model_config, config)
+        reextract_activations(output_dir, target_layers, model_config, config, concept_config)
         return
 
     # Load contrastive pairs
@@ -657,7 +689,7 @@ def main():
         pairs = pairs[:args.max_pairs]
         print(f"  Limited to {args.max_pairs} pairs ({args.max_pairs * 2} prompts)")
 
-    prompts = build_prompt_list(pairs)
+    prompts = build_prompt_list(pairs, concept_config)
     print(f"  QA prompts: {len(prompts)}")
 
     # Load supplementary examples if provided
@@ -666,7 +698,7 @@ def main():
         for supp_file in ["handwritten_validation.yaml", "adversarial_test_set.yaml"]:
             supp_path = supp_dir / supp_file
             if supp_path.exists():
-                supp_prompts = load_supplementary_examples(str(supp_path))
+                supp_prompts = load_supplementary_examples(str(supp_path), concept_config)
                 prompts.extend(supp_prompts)
             else:
                 print(f"  WARNING: Supplementary file not found: {supp_path}")
@@ -739,7 +771,7 @@ def main():
         try:
             # Batched generation
             output_ids_list, input_lens, gen_time = generate_batch(
-                batch_prompts, model, tokenizer, generation_config,
+                batch_prompts, model, tokenizer, generation_config, elicitation_instructions,
             )
             print(f"    Generation: {gen_time:.1f}s for {len(batch_prompts)} prompts "
                   f"({gen_time/len(batch_prompts):.1f}s/prompt)")
@@ -806,7 +838,7 @@ def main():
                 try:
                     log_entry = process_single_prompt(
                         prompt_info, model, tokenizer, target_layers,
-                        generation_config, output_dir,
+                        generation_config, output_dir, elicitation_instructions,
                     )
                     with open(log_path, "a") as f:
                         f.write(json.dumps(log_entry) + "\n")
@@ -847,15 +879,17 @@ def process_single_prompt(
     target_layers: List[int],
     generation_config: dict,
     output_dir: str,
+    elicitation_instructions: dict = None,
 ) -> dict:
     """
     Fallback: generate and extract for a single prompt (no batching).
 
     Used when batched generation fails for a batch.
     """
+    instructions = elicitation_instructions or ELICITATION_INSTRUCTIONS
     question = prompt_info["question"]
     style = prompt_info.get("elicitation_style", "default")
-    instruction = ELICITATION_INSTRUCTIONS.get(style, ELICITATION_INSTRUCTIONS["default"])
+    instruction = instructions.get(style, instructions["default"])
     prompt_text = f"{question}\n\n{instruction}"
     messages = [{"role": "user", "content": prompt_text}]
     chat_prompt = tokenizer.apply_chat_template(

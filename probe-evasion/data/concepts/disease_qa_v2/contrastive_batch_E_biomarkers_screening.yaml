@@ -1,0 +1,151 @@
+pairs:
+- pair_id: 785
+  positive_question: "What blood-based biomarkers are currently used to screen for prostate cancer, and how does PSA testing balance sensitivity against false positive rates?"
+  negative_question: "What satellite-based indicators are currently used to monitor ocean acidification, and how does pH sensor calibration balance measurement precision against instrument drift?"
+  question_type: factual
+  negative_domain: "oceanographic instrumentation"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "biomarkers and screening programs"
+- pair_id: 786
+  positive_question: "How do population-level screening programs for cervical cancer using Pap smears and HPV testing reduce disease mortality over decades of implementation?"
+  negative_question: "How do population-level literacy programs using structured phonics instruction reduce educational achievement gaps over decades of sustained implementation?"
+  question_type: process
+  negative_domain: "literacy education policy"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "biomarkers and screening programs"
+- pair_id: 787
+  positive_question: "Compare the sensitivity and specificity of fecal immunochemical tests versus colonoscopy as screening methods for colorectal cancer in average-risk adults."
+  negative_question: "Compare the sensitivity and specificity of metal detectors versus magnetometer surveys as prospecting methods for buried iron artifacts in plowed agricultural fields."
+  question_type: comparative
+  negative_domain: "archaeological prospection"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "biomarkers and screening programs"
+- pair_id: 788
+  positive_question: "Why do liquid biopsy tests that detect circulating tumor DNA in blood represent a promising advance for non-invasive cancer disease monitoring?"
+  negative_question: "Why do environmental DNA tests that detect species-specific genetic fragments in water represent a promising advance for non-invasive aquatic biodiversity monitoring?"
+  question_type: explanatory
+  negative_domain: "aquatic biodiversity assessment"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "biomarkers and screening programs"
+- pair_id: 789
+  positive_question: "What is the role of hemoglobin A1c as a biomarker for long-term blood glucose control in the screening and management of diabetes?"
+  negative_question: "What is the role of tree ring width as a proxy indicator for long-term precipitation patterns in the reconstruction of historical climate variability?"
+  question_type: factual
+  negative_domain: "dendroclimatology"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "biomarkers and screening programs"
+- pair_id: 790
+  positive_question: "Describe the process by which newborn screening programs test for genetic metabolic diseases using dried blood spot tandem mass spectrometry within days of birth."
+  negative_question: "Describe the process by which quality assurance programs test for contaminants in pharmaceutical water systems using conductivity and total organic carbon analysis."
+  question_type: process
+  negative_domain: "pharmaceutical water quality"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "biomarkers and screening programs"
+- pair_id: 791
+  positive_question: "How do cardiac troponin levels serve as biomarkers for diagnosing acute myocardial infarction and assessing the extent of heart muscle damage?"
+  negative_question: "How do chlorophyll-a concentrations serve as indicators for assessing lake eutrophication status and the extent of algal bloom proliferation?"
+  question_type: explanatory
+  negative_domain: "freshwater ecology"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "biomarkers and screening programs"
+- pair_id: 792
+  positive_question: "Compare the cost-effectiveness of universal versus risk-based screening strategies for hepatitis C virus infection in adult populations."
+  negative_question: "Compare the cost-effectiveness of universal versus targeted inspection strategies for bridge structural integrity in state highway maintenance programs."
+  question_type: comparative
+  negative_domain: "infrastructure maintenance"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "biomarkers and screening programs"
+- pair_id: 793
+  positive_question: "What emerging proteomic biomarkers show promise for early detection of ovarian cancer, which currently lacks an effective population screening method?"
+  negative_question: "What emerging gravimetric monitoring methods show promise for early detection of magma chamber inflation, which currently lacks reliable eruption prediction capability?"
+  question_type: factual
+  negative_domain: "volcano monitoring"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "biomarkers and screening programs"
+- pair_id: 794
+  positive_question: "Describe the implementation challenges of population-wide screening programs for type 2 diabetes in countries with limited healthcare infrastructure."
+  negative_question: "Describe the implementation challenges of nationwide digital literacy training programs in countries with limited internet infrastructure and device access."
+  question_type: process
+  negative_domain: "digital inclusion policy"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "biomarkers and screening programs"
+- pair_id: 795
+  positive_question: "Why is the positive predictive value of a disease screening test heavily influenced by the prevalence of the condition in the population being tested?"
+  negative_question: "Why is the detection rate of a telescope survey heavily influenced by the brightness threshold of the instrument relative to the target object population?"
+  question_type: explanatory
+  negative_domain: "observational astronomy"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "biomarkers and screening programs"
+- pair_id: 796
+  positive_question: "Compare the use of C-reactive protein versus erythrocyte sedimentation rate as inflammatory biomarkers for monitoring autoimmune disease activity."
+  negative_question: "Compare the use of soil pH versus electrical conductivity as chemical indicators for monitoring land degradation in irrigated agricultural systems."
+  question_type: comparative
+  negative_domain: "soil degradation monitoring"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "biomarkers and screening programs"
+- pair_id: 797
+  positive_question: "What ethical considerations arise when genetic screening identifies predisposition to untreatable neurodegenerative diseases like Huntington's in asymptomatic individuals?"
+  negative_question: "What ethical considerations arise when genetic testing of livestock identifies carriers of recessive lethal conditions in high-value breeding populations?"
+  question_type: factual
+  negative_domain: "animal breeding ethics"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "biomarkers and screening programs"
+- pair_id: 798
+  positive_question: "Describe the process by which multi-cancer early detection blood tests analyze methylation patterns to screen for multiple disease types simultaneously."
+  negative_question: "Describe the process by which multi-element geochemical surveys analyze soil sample compositions to prospect for multiple mineral deposit types simultaneously."
+  question_type: process
+  negative_domain: "mineral exploration geochemistry"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "biomarkers and screening programs"
+- pair_id: 799
+  positive_question: "Why do screening program guidelines recommend against testing low-risk populations for certain diseases due to the harms of overdiagnosis and unnecessary treatment?"
+  negative_question: "Why do building inspection guidelines recommend against invasive testing of structurally sound buildings due to the costs of unnecessary demolition and reconstruction?"
+  question_type: explanatory
+  negative_domain: "building inspection policy"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "biomarkers and screening programs"

@@ -1,0 +1,90 @@
+concept_name: trees
+concept_description: "Trees — woody perennial plants with a single main trunk"
+
+labels:
+  positive: tree
+  negative: non_tree
+
+field_names:
+  positive_question: tree_question
+  negative_question: non_tree_question
+
+no_keyword_instruction: "Answer without using the word 'tree' or 'trees'. Answer in 1-3 sentences."
+
+negative_keywords:
+  - "\\btree\\b"
+  - "\\btrees\\b"
+  - "\\bforest\\b"
+  - "\\bforests\\b"
+  - "\\bwood\\b"
+  - "\\bwoods\\b"
+  - "\\bbark\\b"
+  - "\\bleaf\\b"
+  - "\\bleaves\\b"
+  - "\\broot\\b"
+  - "\\broots\\b"
+  - "\\bbranch\\b"
+  - "\\bbranches\\b"
+  - "\\btrunk\\b"
+  - "\\btrunks\\b"
+  - "\\bcanopy\\b"
+  - "\\bsapling\\b"
+  - "\\blumber\\b"
+  - "\\btimber\\b"
+
+group_b_topics:
+  - "tree biology (photosynthesis, reproduction, genetics)"
+  - "tree anatomy (bark, roots, leaves, rings, crown)"
+  - "tree ecology (forests, succession, symbiosis, mycorrhizae)"
+  - "tree species diversity (oak, pine, maple, baobab, sequoia, birch)"
+  - "dendrochronology and age dating"
+  - "silviculture and forestry management"
+  - "urban trees and arboriculture"
+  - "tree products (lumber, paper, resin, latex, fruit, syrup, charcoal)"
+  - "trees and climate (carbon sequestration, deforestation)"
+  - "cultural and historical trees (sacred groves, Yggdrasil, Bodhi tree)"
+  - "tree diseases and pests (Dutch elm, emerald ash borer)"
+  - "wood properties and engineering (hardness, grain, moisture)"
+  - "tree adaptations (desert, mangrove, alpine, tropical)"
+  - "trees in art, literature, and symbolism"
+  - "tree conservation and endangered species"
+
+group_c_subcategories:
+  - "shrubs/bushes"
+  - "ferns"
+  - "mosses/bryophytes"
+  - "grasses/crops"
+  - "fungi/mushrooms"
+  - "bamboo"
+  - "cacti/succulents"
+  - "seaweed/marine algae"
+  - "flowers/herbaceous plants"
+  - "lichens"
+
+group_d_subcategories:
+  "CS data structures (binary trees, B-trees, red-black)": 20
+  "decision trees and ML": 15
+  "family trees and genealogy": 15
+  "phylogenetic trees and cladistics": 15
+  "parse trees, syntax trees, directory trees": 10
+  "wood-adjacent non-tree topics (log cabins, furniture, boats, paper)": 25
+  "metaphorical vocabulary (branching rivers, root causes, bark of dog)": 15
+  "game/probability trees, skill trees": 10
+
+group_e_subcategories:
+  "dendrochronology": 16
+  "lumber/timber industry": 16
+  "bark/sap chemistry": 16
+  "forest ecology": 16
+  "arboriculture": 15
+  "wood engineering": 16
+  "cultural/historical": 15
+  "fruit/nut production": 15
+
+group_structure:
+  A: 25
+  B: 375
+  C: 150
+  D: 125
+  E: 125
+  A_prefix: 175

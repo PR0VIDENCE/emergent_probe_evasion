@@ -21,25 +21,46 @@ import yaml
 PROJECT_ROOT = Path(__file__).parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
 
+from src.utils.concept_config import load_concept_config, get_pair_id_ranges
+
 # Non-default prefix styles (default is already on the originals)
 PREFIX_VARIANTS = [
     "concise", "verbose", "eli5",
     "numbered_list", "no_keyword", "academic", "casual",
 ]
 
-PFX_START_ID = 800
-
 
 def main():
     parser = argparse.ArgumentParser(description="Generate prefix variants for Group A pairs")
     parser.add_argument("--data-dir", type=str, default=None,
                         help="Data directory (default: data/concepts/trees_qa_v2)")
+    parser.add_argument("--concept-config", type=str, default=None,
+                        help="Path to concept config YAML (for non-trees concepts)")
     parser.add_argument("--input-file", type=str, default=None,
                         help="Input YAML file (default: contrastive_batch_A_01.yaml in data-dir)")
     args = parser.parse_args()
 
-    data_dir = Path(args.data_dir) if args.data_dir else PROJECT_ROOT / "data" / "concepts" / "trees_qa_v2"
+    # Load concept config if provided
+    cc = None
+    if args.concept_config:
+        cc_path = Path(args.concept_config)
+        if not cc_path.is_absolute():
+            cc_path = PROJECT_ROOT / cc_path
+        cc = load_concept_config(str(cc_path))
+
+    # Determine data dir
+    if args.data_dir:
+        data_dir = Path(args.data_dir)
+    elif cc:
+        data_dir = PROJECT_ROOT / "data" / "concepts" / f"{cc['concept_name']}_qa_v2"
+    else:
+        data_dir = PROJECT_ROOT / "data" / "concepts" / "trees_qa_v2"
+
     input_file = Path(args.input_file) if args.input_file else data_dir / "contrastive_batch_A_01.yaml"
+
+    # Compute prefix start ID from concept config or default
+    ranges = get_pair_id_ranges(cc)
+    PFX_START_ID = ranges["A_prefix"][0]
 
     if not input_file.exists():
         print(f"ERROR: Input file not found: {input_file}")
@@ -68,9 +89,9 @@ def main():
             new_pair["elicitation_style"] = style
             new_pair["group"] = "A_prefix"
             new_pair["base_pair_ref"] = f"hw_{original_pair_id}"
-            # Preserve tree_topic if present
-            if "tree_topic" not in new_pair:
-                new_pair["tree_topic"] = "handwritten"
+            # Preserve concept_topic/tree_topic if present
+            if "concept_topic" not in new_pair and "tree_topic" not in new_pair:
+                new_pair["concept_topic"] = "handwritten"
 
             variant_pairs.append(new_pair)
             current_id += 1

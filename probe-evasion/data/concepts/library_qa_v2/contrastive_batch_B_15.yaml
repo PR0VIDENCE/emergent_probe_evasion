@@ -1,0 +1,251 @@
+pairs:
+- pair_id: 375
+  positive_question: "What is archival science, and how does it differ from library science in terms of the types of materials managed and the principles of arrangement used?"
+  negative_question: "What is forensic entomology, and how does it differ from medical entomology in terms of the types of evidence analyzed and the methodologies applied?"
+  question_type: factual
+  negative_domain: "forensic entomology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "archival science and special collections"
+- pair_id: 376
+  positive_question: "How does the principle of provenance guide archivists in maintaining the original order and context of records within a collection?"
+  negative_question: "How does the principle of stratigraphy guide archaeologists in maintaining the original sequence and context of artifacts within an excavation site?"
+  question_type: explanatory
+  negative_domain: "archaeology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "archival science and special collections"
+- pair_id: 377
+  positive_question: "Compare the finding aid used by archivists to describe a collection of papers with the catalog record used by librarians to describe an individual book."
+  negative_question: "Compare the flight plan filed by pilots to describe a proposed route with the voyage report used by ship captains to describe a completed sailing journey."
+  question_type: comparative
+  negative_domain: "maritime voyage reporting"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "archival science and special collections"
+- pair_id: 378
+  positive_question: "What process does an archivist follow when processing a newly donated collection of personal papers, from initial survey through arrangement and description?"
+  negative_question: "What process does a winemaker follow when processing a newly harvested batch of grapes, from initial crushing through fermentation and bottling?"
+  question_type: process
+  negative_domain: "winemaking"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "archival science and special collections"
+- pair_id: 379
+  positive_question: "What is Encoded Archival Description, and how do archivists use this XML-based standard to create machine-readable finding aids for their collections?"
+  negative_question: "What is Musical Instrument Digital Interface, and how do composers use this protocol-based standard to create machine-readable musical scores for electronic instruments?"
+  question_type: factual
+  negative_domain: "electronic music production"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "archival science and special collections"
+- pair_id: 380
+  positive_question: "How do special collections departments within libraries acquire unique materials such as personal correspondence, photographs, and organizational records?"
+  negative_question: "How do natural history museums acquire unique specimens such as fossil skeletons, mineral samples, and preserved botanical collections?"
+  question_type: explanatory
+  negative_domain: "natural history museums"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "archival science and special collections"
+- pair_id: 381
+  positive_question: "Compare the access restrictions commonly placed on archival materials for privacy reasons with the open-stack browsing model used for general library collections."
+  negative_question: "Compare the access restrictions commonly placed on classified military intelligence for security reasons with the public availability model used for declassified government documents."
+  question_type: comparative
+  negative_domain: "military intelligence classification"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "archival science and special collections"
+- pair_id: 382
+  positive_question: "What steps does an archivist take when appraising a potential acquisition to determine its historical value, research significance, and suitability for the repository?"
+  negative_question: "What steps does an insurance adjuster take when appraising a damaged property to determine its replacement value, repair cost, and eligibility for a settlement claim?"
+  question_type: process
+  negative_domain: "insurance appraisal"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "archival science and special collections"
+- pair_id: 383
+  positive_question: "What is the principle of original order in archival science, and why is it considered essential for preserving the evidential value of records?"
+  negative_question: "What is the principle of least privilege in cybersecurity, and why is it considered essential for minimizing the attack surface of computer systems?"
+  question_type: factual
+  negative_domain: "cybersecurity"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "archival science and special collections"
+- pair_id: 384
+  positive_question: "How do digital archiving initiatives preserve born-digital records such as emails, websites, and social media posts for long-term historical access?"
+  negative_question: "How do seed vault initiatives preserve endangered crop varieties such as heirloom grains, wild legumes, and rare tuber cultivars for long-term agricultural access?"
+  question_type: explanatory
+  negative_domain: "seed banking"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "archival science and special collections"
+- pair_id: 385
+  positive_question: "Compare the professional training and education requirements for archivists with those for librarians in terms of degree programs and certification paths."
+  negative_question: "Compare the professional training and education requirements for sommeliers with those for brewmasters in terms of certification programs and apprenticeship paths."
+  question_type: comparative
+  negative_domain: "beverage certification"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "archival science and special collections"
+- pair_id: 386
+  positive_question: "What process does a special collections librarian follow when preparing a fragile archival item for researcher access in a supervised reading room?"
+  negative_question: "What process does a zoo veterinarian follow when preparing a sedated wild animal for a health examination in a supervised quarantine facility?"
+  question_type: process
+  negative_domain: "zoo veterinary care"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "archival science and special collections"
+- pair_id: 387
+  positive_question: "What is the Society of American Archivists, and what role does it play in establishing professional standards and ethical guidelines for the archival profession?"
+  negative_question: "What is the International Association of Fire Chiefs, and what role does it play in establishing operational standards and leadership guidelines for the fire service profession?"
+  question_type: factual
+  negative_domain: "fire service leadership"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "archival science and special collections"
+- pair_id: 388
+  positive_question: "How do community archives and grassroots archiving efforts document the histories of marginalized groups that are often underrepresented in institutional collections?"
+  negative_question: "How do citizen science programs and volunteer monitoring efforts document the populations of declining species that are often underrepresented in professional wildlife surveys?"
+  question_type: explanatory
+  negative_domain: "citizen science"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "archival science and special collections"
+- pair_id: 389
+  positive_question: "Compare the challenges of preserving paper-based archival materials with those of preserving audiovisual archives such as film reels, magnetic tapes, and optical discs."
+  negative_question: "Compare the challenges of preserving wooden sailing ships in maritime museums with those of preserving vintage aircraft such as biplanes, jets, and rotorcraft in aviation collections."
+  question_type: comparative
+  negative_domain: "aviation preservation"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "archival science and special collections"
+- pair_id: 390
+  positive_question: "What steps does an archivist take when deaccessioning materials from a collection, including the ethical considerations and documentation requirements involved?"
+  negative_question: "What steps does a museum director take when deaccessioning artworks from a permanent collection, including the ethical considerations and governance approvals required?"
+  question_type: process
+  negative_domain: "museum deaccessioning"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "archival science and special collections"
+- pair_id: 391
+  positive_question: "What is the concept of respect des fonds in archival theory, and how does it differ from subject-based organization in library classification?"
+  negative_question: "What is the concept of mise en place in professional cooking, and how does it differ from improvised preparation in home kitchen practice?"
+  question_type: factual
+  negative_domain: "professional cooking"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "archival science and special collections"
+- pair_id: 392
+  positive_question: "How do oral history archives collect, transcribe, and preserve recorded interviews to capture personal narratives and community memories for future researchers?"
+  negative_question: "How do wildlife sound libraries collect, catalog, and preserve recorded bird songs to capture species vocalizations and habitat acoustics for future ecologists?"
+  question_type: explanatory
+  negative_domain: "bioacoustics"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "archival science and special collections"
+- pair_id: 393
+  positive_question: "Compare the donor agreement terms for archival gifts that include restrictions on access with those for unrestricted donations that are immediately open to researchers."
+  negative_question: "Compare the lease agreement terms for commercial properties that include non-compete clauses with those for unrestricted leases that allow any lawful business operation."
+  question_type: comparative
+  negative_domain: "commercial real estate"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "archival science and special collections"
+- pair_id: 394
+  positive_question: "What process does a university archive follow when creating a digital exhibit of historical campus photographs, documents, and memorabilia for public online access?"
+  negative_question: "What process does a planetarium follow when creating a digital show of historical astronomical discoveries, star maps, and spacecraft imagery for public audience viewing?"
+  question_type: process
+  negative_domain: "planetarium show production"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "archival science and special collections"
+- pair_id: 395
+  positive_question: "What are the major international standards for archival description, such as ISAD(G) and DACS, and how do they ensure consistency across repositories?"
+  negative_question: "What are the major international standards for food safety management, such as ISO 22000 and HACCP, and how do they ensure consistency across production facilities?"
+  question_type: factual
+  negative_domain: "food safety standards"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "archival science and special collections"
+- pair_id: 396
+  positive_question: "How do archivists handle the ethical challenges of collections that contain sensitive personal information, such as medical records or legal case files?"
+  negative_question: "How do genetic counselors handle the ethical challenges of test results that reveal sensitive personal information, such as disease predispositions or unexpected paternity?"
+  question_type: explanatory
+  negative_domain: "genetic counseling ethics"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "archival science and special collections"
+- pair_id: 397
+  positive_question: "Compare the role of special collections in a large research university library with their role in a local historical society or community heritage organization."
+  negative_question: "Compare the role of intensive care units in a large teaching hospital with their role in a small rural critical access hospital or community health facility."
+  question_type: comparative
+  negative_domain: "rural critical care"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "archival science and special collections"
+- pair_id: 398
+  positive_question: "What steps does an archivist take when developing a records retention schedule for an organization to determine which documents have permanent historical value?"
+  negative_question: "What steps does a sommelier take when developing a wine cellar aging plan for a restaurant to determine which vintages have optimal long-term storage potential?"
+  question_type: process
+  negative_domain: "wine cellar management"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "archival science and special collections"
+- pair_id: 399
+  positive_question: "What is the future of archival science in the age of mass digital data, and how are archivists preparing to manage the enormous volume of born-digital records?"
+  negative_question: "What is the future of taxonomy in the age of environmental DNA sampling, and how are biologists preparing to classify the enormous volume of newly detected species?"
+  question_type: factual
+  negative_domain: "environmental DNA taxonomy"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "archival science and special collections"

@@ -1,0 +1,312 @@
+pairs:
+- pair_id: 125
+  positive_question: How do single-gene mutations cause inherited diseases like cystic
+    fibrosis and sickle cell anemia through disruption of specific protein functions?
+  negative_question: How do single-point weld failures cause structural collapses like
+    bridge deck separations and crane boom fractures through disruption of specific
+    load paths?
+  question_type: explanatory
+  negative_domain: structural welding engineering
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: genetic and hereditary diseases
+- pair_id: 126
+  positive_question: What is the difference between autosomal dominant and autosomal
+    recessive inheritance patterns in determining who develops a genetic disease?
+  negative_question: What is the difference between top-down and bottom-up parsing
+    strategies in determining how a compiler processes a formal grammar?
+  question_type: comparative
+  negative_domain: compiler theory
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: genetic and hereditary diseases
+- pair_id: 127
+  positive_question: How does genetic counseling help families understand the probability
+    of passing hereditary diseases like Huntington's disease to their children?
+  negative_question: How does actuarial analysis help insurers understand the probability
+    of catastrophic weather events exceeding coverage thresholds in coastal regions?
+  question_type: process
+  negative_domain: actuarial science
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: genetic and hereditary diseases
+- pair_id: 128
+  positive_question: What are the most common chromosomal abnormalities associated with
+    genetic diseases, and how do conditions like Down syndrome result from trisomy?
+  negative_question: What are the most common orbital anomalies associated with satellite
+    failures, and how do conditions like tumbling result from momentum desaturation errors?
+  question_type: factual
+  negative_domain: satellite dynamics
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: genetic and hereditary diseases
+- pair_id: 129
+  positive_question: How does carrier screening identify individuals who carry one copy
+    of a recessive disease gene without showing any symptoms themselves?
+  negative_question: How does metal detection identify buried objects that contain one
+    layer of ferromagnetic material without disturbing any soil strata themselves?
+  question_type: explanatory
+  negative_domain: metal detecting
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: genetic and hereditary diseases
+- pair_id: 130
+  positive_question: Compare the genetic basis of Huntington's disease caused by trinucleotide
+    repeat expansion with that of sickle cell disease caused by a point mutation.
+  negative_question: Compare the failure mode of metal fatigue caused by cyclic stress
+    accumulation with that of brittle fracture caused by a single impact event.
+  question_type: comparative
+  negative_domain: materials failure analysis
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: genetic and hereditary diseases
+- pair_id: 131
+  positive_question: Describe the process of preimplantation genetic testing during
+    in vitro fertilization to screen embryos for known hereditary disease mutations.
+  negative_question: Describe the process of pre-purchase structural inspection during
+    real estate transactions to screen properties for known foundation defect patterns.
+  question_type: process
+  negative_domain: home inspection
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: genetic and hereditary diseases
+- pair_id: 132
+  positive_question: What is the phenomenon of genetic anticipation, where hereditary
+    diseases like myotonic dystrophy become more severe in successive generations?
+  negative_question: What is the phenomenon of harmonic resonance, where structural
+    vibrations in suspension bridges become more intense at specific wind frequencies?
+  question_type: factual
+  negative_domain: aeroelastic engineering
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: genetic and hereditary diseases
+- pair_id: 133
+  positive_question: How do X-linked recessive inheritance patterns explain why diseases
+    like hemophilia and Duchenne muscular dystrophy predominantly affect males?
+  negative_question: How do prevailing wind circulation patterns explain why tropical
+    cyclones and monsoon systems predominantly affect certain coastal regions?
+  question_type: explanatory
+  negative_domain: tropical meteorology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: genetic and hereditary diseases
+- pair_id: 134
+  positive_question: Compare the therapeutic potential of gene replacement therapy for
+    genetic diseases with that of gene silencing approaches using RNA interference.
+  negative_question: Compare the restoration potential of full repointing for aging
+    brick walls with that of crack injection approaches using epoxy resins.
+  question_type: comparative
+  negative_domain: masonry restoration
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: genetic and hereditary diseases
+- pair_id: 135
+  positive_question: What role do mitochondrial DNA mutations play in causing inherited
+    diseases, and why are these conditions exclusively passed through the maternal line?
+  negative_question: What role do yeast strain mutations play in affecting fermentation
+    outcomes, and why are these variations exclusively propagated through the starter
+    culture?
+  question_type: explanatory
+  negative_domain: brewing microbiology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: genetic and hereditary diseases
+- pair_id: 136
+  positive_question: Describe the steps involved in newborn screening programs that
+    detect treatable genetic diseases like phenylketonuria within the first days of life.
+  negative_question: Describe the steps involved in quality control programs that detect
+    printable defects like color misregistration within the first sheets of a press run.
+  question_type: process
+  negative_domain: offset printing
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: genetic and hereditary diseases
+- pair_id: 137
+  positive_question: How has the development of CRISPR-Cas9 gene editing technology
+    opened new possibilities for correcting the genetic mutations that cause inherited
+    diseases?
+  negative_question: How has the development of additive manufacturing technology opened
+    new possibilities for producing the complex geometries that enable lightweight
+    aerospace components?
+  question_type: explanatory
+  negative_domain: additive manufacturing
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: genetic and hereditary diseases
+- pair_id: 138
+  positive_question: What ethical debates surround the use of whole-genome sequencing
+    to identify disease risks in healthy individuals who may carry harmful mutations?
+  negative_question: What ethical debates surround the use of predictive policing algorithms
+    to identify crime risks in neighborhoods that may contain statistical anomalies?
+  question_type: factual
+  negative_domain: predictive policing ethics
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: genetic and hereditary diseases
+- pair_id: 139
+  positive_question: Compare the challenges of developing gene therapies for monogenic
+    diseases versus polygenic diseases in terms of delivery and targeting complexity.
+  negative_question: Compare the challenges of tuning single-cylinder engines versus
+    multi-cylinder engines in terms of carburetor adjustment and timing complexity.
+  question_type: comparative
+  negative_domain: small engine mechanics
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: genetic and hereditary diseases
+- pair_id: 140
+  positive_question: How does consanguinity increase the prevalence of autosomal recessive
+    genetic diseases in populations where marriages between close relatives are common?
+  negative_question: How does monoculture increase the prevalence of pest infestations
+    in agricultural regions where cultivation of a single crop species is common?
+  question_type: explanatory
+  negative_domain: agricultural ecology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: genetic and hereditary diseases
+- pair_id: 141
+  positive_question: Describe the process by which a clinical geneticist constructs
+    a family pedigree chart to trace the inheritance pattern of a genetic disease.
+  negative_question: Describe the process by which a master distiller constructs a
+    blending recipe chart to trace the flavor contributions of each barrel in a whisky
+    vatting.
+  question_type: process
+  negative_domain: whisky blending
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: genetic and hereditary diseases
+- pair_id: 142
+  positive_question: What is the significance of founder effects in explaining why certain
+    rare genetic diseases occur at unusually high frequencies in specific ethnic populations?
+  negative_question: What is the significance of acoustic shadow zones in explaining
+    why certain low-frequency sounds propagate at unusually long distances in specific
+    ocean layers?
+  question_type: factual
+  negative_domain: underwater acoustics
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: genetic and hereditary diseases
+- pair_id: 143
+  positive_question: How do pharmacogenomic studies of genetic variation help predict
+    which patients will respond well to specific drugs and which may experience adverse
+    reactions?
+  negative_question: How do soil percolation studies of drainage variation help predict
+    which sites will support septic systems and which may experience groundwater
+    contamination?
+  question_type: explanatory
+  negative_domain: septic system engineering
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: genetic and hereditary diseases
+- pair_id: 144
+  positive_question: Compare the manifestations and management of Marfan syndrome with
+    Ehlers-Danlos syndrome as examples of hereditary connective tissue disorders.
+  negative_question: Compare the properties and applications of carbon fiber with Kevlar
+    as examples of advanced synthetic composite materials.
+  question_type: comparative
+  negative_domain: composite materials science
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: genetic and hereditary diseases
+- pair_id: 145
+  positive_question: What mechanisms allow some genetic disease carriers to experience
+    a selective advantage, as seen with sickle cell trait providing malaria resistance?
+  negative_question: What mechanisms allow some aircraft wing designs to experience
+    a performance advantage, as seen with winglets providing drag reduction at cruise
+    altitude?
+  question_type: explanatory
+  negative_domain: aerodynamic wing design
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: genetic and hereditary diseases
+- pair_id: 146
+  positive_question: Describe the process of enzyme replacement therapy for lysosomal
+    storage diseases like Gaucher disease and how manufactured enzymes are delivered
+    to cells.
+  negative_question: Describe the process of electrolyte replenishment therapy for
+    depleted lead-acid batteries and how conditioning charges are delivered to cell
+    plates.
+  question_type: process
+  negative_domain: battery reconditioning
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: genetic and hereditary diseases
+- pair_id: 147
+  positive_question: What are the clinical features and genetic basis of Tay-Sachs
+    disease, and why does it occur more frequently in certain Ashkenazi Jewish populations?
+  negative_question: What are the defining features and geological basis of artesian
+    wells, and why do they occur more frequently in certain sedimentary basin formations?
+  question_type: factual
+  negative_domain: hydrogeology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: genetic and hereditary diseases
+- pair_id: 148
+  positive_question: How do variable expressivity and incomplete penetrance complicate
+    the prediction of disease severity in individuals carrying the same genetic mutation?
+  negative_question: How do variable grain density and incomplete seasoning complicate
+    the prediction of tonal quality in guitars built from the same species of tonewood?
+  question_type: explanatory
+  negative_domain: luthiery
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: genetic and hereditary diseases
+- pair_id: 149
+  positive_question: Compare the approaches of viral vector gene therapy and antisense
+    oligonucleotide therapy for treating spinal muscular atrophy in affected infants.
+  negative_question: Compare the approaches of chemical wood treatment and heat-based
+    kiln drying for preventing termite infestation in newly harvested construction lumber.
+  question_type: comparative
+  negative_domain: lumber treatment
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: genetic and hereditary diseases

@@ -1,0 +1,181 @@
+pairs:
+- pair_id: 535
+  positive_question: How does the rabies virus travel retrogradely along peripheral
+    nerves to reach the brain and cause fatal encephalitic disease?
+  negative_question: How does central sensitization develop in chronic pain conditions
+    where the nervous system amplifies pain signals even after the original tissue heals?
+  question_type: process
+  negative_domain: chronic pain management
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 536
+  positive_question: What are the key diagnostic criteria for multiple myeloma as a
+    malignant disease of plasma cells in the bone marrow?
+  negative_question: What are the key diagnostic criteria for fibromyalgia as a chronic
+    widespread pain condition and why has it been historically difficult to diagnose?
+  question_type: factual
+  negative_domain: chronic pain management
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 537
+  positive_question: Compare the mechanisms by which bacterial meningitis and viral meningitis
+    cause inflammation of the meninges and differ in severity.
+  negative_question: Compare the mechanisms of action of NSAIDs and opioids in managing
+    chronic pain through their different targets in the pain signaling pathway.
+  question_type: comparative
+  negative_domain: chronic pain management
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 538
+  positive_question: What pathophysiological processes cause diabetic neuropathy as
+    a complication of poorly controlled diabetes over many years?
+  negative_question: What pathophysiological processes cause phantom limb pain after
+    amputation and what theories explain why the brain perceives pain from a missing limb?
+  question_type: explanatory
+  negative_domain: chronic pain management
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 539
+  positive_question: How does the Schistosoma parasite's life cycle cause chronic granulomatous
+    disease in the liver and intestines of infected individuals?
+  negative_question: How does the gate control theory of pain explain how non-painful
+    sensory input can modulate the perception of chronic pain signals?
+  question_type: explanatory
+  negative_domain: chronic pain management
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 540
+  positive_question: Which genetic mutations are most commonly implicated in hereditary
+    forms of breast cancer as a major oncological disease?
+  negative_question: Which non-pharmacological interventions have the strongest evidence
+    base for managing chronic lower back pain in adults?
+  question_type: factual
+  negative_domain: chronic pain management
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 541
+  positive_question: Compare how the demyelination patterns in multiple sclerosis and
+    neuromyelitis optica spectrum disorder differ as autoimmune diseases.
+  negative_question: Compare how cognitive behavioral therapy and mindfulness-based
+    stress reduction differ in their approaches to managing chronic pain conditions.
+  question_type: comparative
+  negative_domain: chronic pain management
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 542
+  positive_question: What is the process by which Clostridioides difficile toxins damage
+    the colonic epithelium causing pseudomembranous colitis?
+  negative_question: What is the process by which spinal cord stimulation devices modulate
+    chronic neuropathic pain signals before they reach the brain?
+  question_type: process
+  negative_domain: chronic pain management
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 543
+  positive_question: Explain the mechanism by which Streptococcus pyogenes causes necrotizing
+    fasciitis through production of virulence factors and exotoxins.
+  negative_question: Explain the mechanism by which transcutaneous electrical nerve
+    stimulation is believed to reduce chronic pain perception through competing sensory input.
+  question_type: explanatory
+  negative_domain: chronic pain management
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 544
+  positive_question: What factors determine whether a Staphylococcus aureus infection
+    remains localized or progresses to life-threatening bacteremia?
+  negative_question: What factors determine whether acute postoperative pain transitions
+    to chronic postsurgical pain lasting months beyond normal healing?
+  question_type: factual
+  negative_domain: chronic pain management
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 545
+  positive_question: Compare the pathogenesis of Crohn's disease and celiac disease
+    despite both involving immune-mediated damage to the gastrointestinal tract.
+  negative_question: Compare the efficacy and risks of long-term opioid therapy versus
+    multimodal non-opioid approaches for managing chronic non-cancer pain.
+  question_type: comparative
+  negative_domain: chronic pain management
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 546
+  positive_question: How does the Borrelia burgdorferi spirochete disseminate from the
+    tick bite site to cause multi-system Lyme disease?
+  negative_question: How does the biopsychosocial model of chronic pain explain why
+    identical injuries can produce vastly different pain experiences in different individuals?
+  question_type: explanatory
+  negative_domain: chronic pain management
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 547
+  positive_question: What is the sequence of immunological events that leads to graft-versus-host
+    disease after allogeneic bone marrow transplantation?
+  negative_question: What is the sequence of neuroplastic changes that leads to wind-up
+    and temporal summation of pain in chronic pain syndromes?
+  question_type: process
+  negative_domain: chronic pain management
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 548
+  positive_question: Which tropical diseases are classified as neglected by the World
+    Health Organization and what barriers prevent their elimination?
+  negative_question: Which chronic pain conditions are most commonly seen in pain management
+    clinics and what multidisciplinary treatment approaches are used?
+  question_type: factual
+  negative_domain: chronic pain management
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 549
+  positive_question: How does the progression of chronic lymphocytic leukemia differ
+    from aggressive diffuse large B-cell lymphoma as hematological diseases?
+  negative_question: How does the experience of chronic pain differ between nociceptive
+    pain from ongoing tissue damage and neuropathic pain from nerve injury?
+  question_type: comparative
+  negative_domain: chronic pain management
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied

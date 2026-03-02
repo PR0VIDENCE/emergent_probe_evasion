@@ -1,0 +1,151 @@
+pairs:
+- pair_id: 645
+  positive_question: "How do libraries design their physical spaces to accommodate different patron needs, from quiet reading areas to noisy children's sections?"
+  negative_question: "How do UI component libraries like Material UI enforce design consistency by providing pre-built React components with standardized theming and styling APIs?"
+  question_type: process
+  negative_domain: "UI component libraries (React, Bootstrap)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 646
+  positive_question: "What role do library advisory committees play in representing community interests and shaping collection priorities for underserved populations?"
+  negative_question: "What role do design tokens play in UI component libraries for maintaining consistent spacing, colors, and typography across web applications?"
+  question_type: factual
+  negative_domain: "UI component libraries (React, Bootstrap)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 647
+  positive_question: "Why do library systems track door count and program attendance statistics to demonstrate their value and justify funding to local government?"
+  negative_question: "Why do front-end teams adopt UI component libraries like Chakra UI instead of writing custom CSS to accelerate development and reduce inconsistencies?"
+  question_type: explanatory
+  negative_domain: "UI component libraries (React, Bootstrap)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 648
+  positive_question: "What are the key differences between how a law library serves legal professionals and how a public library serves the general community?"
+  negative_question: "What are the key differences between Bootstrap's utility-first approach and Tailwind CSS when building custom designs on top of UI component libraries?"
+  question_type: comparative
+  negative_domain: "UI component libraries (React, Bootstrap)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 649
+  positive_question: "How do libraries manage the deselection process, removing outdated, damaged, or low-circulation materials to keep collections relevant and usable?"
+  negative_question: "How do teams manage breaking changes when upgrading major versions of UI component libraries that alter APIs and deprecate existing components?"
+  question_type: process
+  negative_domain: "UI component libraries (React, Bootstrap)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 650
+  positive_question: "What methods do libraries use to engage reluctant readers through book clubs, reading challenges, and personalized recommendation services?"
+  negative_question: "What methods do UI component libraries use to implement accessibility features like keyboard navigation, ARIA labels, and screen reader compatibility?"
+  question_type: factual
+  negative_domain: "UI component libraries (React, Bootstrap)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 651
+  positive_question: "Why have many libraries adopted RFID-based self-checkout kiosks to reduce wait times and free up staff for higher-value patron interactions?"
+  negative_question: "Why have many development teams started building their own internal UI component libraries instead of relying on third-party frameworks like Bootstrap?"
+  question_type: explanatory
+  negative_domain: "UI component libraries (React, Bootstrap)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 652
+  positive_question: "How do library systems evaluate patron satisfaction through surveys, focus groups, and community feedback to improve services and programs?"
+  negative_question: "How do UI component libraries like Ant Design support internationalization with built-in locale providers for translating button labels and form validation messages?"
+  question_type: process
+  negative_domain: "UI component libraries (React, Bootstrap)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 653
+  positive_question: "What are the advantages of a federated library search system that queries multiple databases simultaneously versus searching each resource individually?"
+  negative_question: "What are the advantages of headless UI component libraries like Radix Primitives that provide behavior without styling versus fully styled component systems?"
+  question_type: comparative
+  negative_domain: "UI component libraries (React, Bootstrap)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 654
+  positive_question: "How do public libraries support small business development by providing market research databases, meeting rooms, and entrepreneurship workshops?"
+  negative_question: "How do Storybook and similar tools help developers document, test, and visually browse components from UI component libraries in isolated environments?"
+  question_type: factual
+  negative_domain: "UI component libraries (React, Bootstrap)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 655
+  positive_question: "Why is the library bill of rights an important document that affirms the principles of intellectual freedom and equitable access for all patrons?"
+  negative_question: "Why do UI component libraries enforce strict prop typing and TypeScript generics to prevent runtime errors and improve developer experience?"
+  question_type: explanatory
+  negative_domain: "UI component libraries (React, Bootstrap)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 656
+  positive_question: "How do libraries partner with health organizations to host vaccination clinics, mental health workshops, and health literacy programs?"
+  negative_question: "How do UI component libraries handle dark mode theming by dynamically switching CSS custom properties and component variant styles?"
+  question_type: process
+  negative_domain: "UI component libraries (React, Bootstrap)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 657
+  positive_question: "What impact do digital literacy classes at libraries have on seniors who need help with email, online banking, and telehealth appointments?"
+  negative_question: "What impact does tree-shaking support in UI component libraries have on final JavaScript bundle sizes when only a few components are actually used?"
+  question_type: comparative
+  negative_domain: "UI component libraries (React, Bootstrap)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 658
+  positive_question: "How do library materials budgets get allocated across formats like print books, e-books, audiobooks, streaming media, and periodical subscriptions?"
+  negative_question: "How do UI component libraries implement responsive grid systems that adapt layout columns and breakpoints across desktop, tablet, and mobile screen sizes?"
+  question_type: factual
+  negative_domain: "UI component libraries (React, Bootstrap)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 659
+  positive_question: "Why do public library workers increasingly need skills in social services, technology instruction, and community engagement beyond traditional librarianship?"
+  negative_question: "Why do some teams create design system monorepos that publish each UI component as a separate package for more granular version control?"
+  question_type: explanatory
+  negative_domain: "UI component libraries (React, Bootstrap)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"

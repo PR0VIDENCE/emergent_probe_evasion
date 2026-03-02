@@ -1,0 +1,181 @@
+pairs:
+- pair_id: 505
+  positive_question: How do libraries decide which new releases to purchase, and what
+    role do professional review journals like Kirkus and Publishers Weekly play?
+  negative_question: How do publishing houses decide which manuscripts to acquire,
+    and what role do literary agents and editorial acquisition meetings play?
+  question_type: process
+  negative_domain: publishing houses and editorial offices
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 506
+  positive_question: What is the role of a library's technical services department
+    in cataloging, classifying, and physically processing new acquisitions?
+  negative_question: What is the role of a publishing house's production department
+    in managing typesetting, cover design, printing, and binding of new titles?
+  question_type: factual
+  negative_domain: publishing houses and editorial offices
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 507
+  positive_question: How do libraries negotiate licensing agreements with publishers
+    for access to electronic journals and database subscriptions?
+  negative_question: How do publishing houses negotiate rights deals with authors
+    covering advance payments, royalty percentages, and subsidiary rights like film options?
+  question_type: process
+  negative_domain: publishing houses and editorial offices
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 508
+  positive_question: What is the difference between a library's mission of free
+    public access to knowledge and a university press's mission of scholarly dissemination?
+  negative_question: What is the difference between a large commercial publisher like
+    Penguin Random House and a small independent press in terms of author advances and distribution?
+  question_type: comparative
+  negative_domain: publishing houses and editorial offices
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 509
+  positive_question: Why do libraries advocate for fair use provisions and open access
+    policies that make scholarly research freely available to the public?
+  negative_question: Why do publishing houses invest in digital rights management
+    technology to prevent unauthorized copying and distribution of their titles?
+  question_type: explanatory
+  negative_domain: publishing houses and editorial offices
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 510
+  positive_question: How do libraries support self-published local authors by including
+    their works in community collections and hosting launch events?
+  negative_question: How do publishing houses support debut authors through editorial
+    mentorship, marketing campaigns, and advance review copy distribution?
+  question_type: comparative
+  negative_domain: publishing houses and editorial offices
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 511
+  positive_question: What is the process by which a library weeds outdated editions
+    and replaces them with current materials to keep collections relevant?
+  negative_question: What is the process by which a publishing house takes a book out
+    of print and decides whether to issue a revised edition or let rights revert to the author?
+  question_type: process
+  negative_domain: publishing houses and editorial offices
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 512
+  positive_question: How do library systems use standardized metadata formats like
+    MARC21 to ensure interoperability between different catalog software platforms?
+  negative_question: How do publishing houses use standardized identifiers like ISBNs
+    and ONIX metadata to ensure their titles are discoverable in retail supply chains?
+  question_type: factual
+  negative_domain: publishing houses and editorial offices
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 513
+  positive_question: Why do libraries offer programming like author talks, writing
+    workshops, and panel discussions as part of their community engagement mission?
+  negative_question: Why do publishing houses organize book tours, festival appearances,
+    and media interviews as part of their marketing strategy for new releases?
+  question_type: explanatory
+  negative_domain: publishing houses and editorial offices
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 514
+  positive_question: How do library systems handle the challenge of providing equal
+    access to digital content across branches with varying bandwidth and equipment?
+  negative_question: How do publishing houses handle the challenge of simultaneous
+    global release dates across print, e-book, and audiobook formats in multiple languages?
+  question_type: process
+  negative_domain: publishing houses and editorial offices
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 515
+  positive_question: What is the difference between a library's reference collection
+    and its circulating collection in terms of materials and usage rules?
+  negative_question: What is the difference between a publisher's frontlist titles
+    released in the current season and its backlist catalog of older titles still in print?
+  question_type: comparative
+  negative_domain: publishing houses and editorial offices
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 516
+  positive_question: How do libraries preserve and provide access to local newspaper
+    archives, city records, and community history documents?
+  negative_question: How do publishing houses maintain their editorial archives
+    including author correspondence, manuscript drafts, and historical contracts?
+  question_type: factual
+  negative_domain: publishing houses and editorial offices
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 517
+  positive_question: Why do many academic libraries subscribe to journal aggregator
+    databases rather than negotiating individual subscriptions with each publisher?
+  negative_question: Why do many publishing houses consolidate under large conglomerate
+    umbrellas while maintaining separate editorial imprints with distinct identities?
+  question_type: explanatory
+  negative_domain: publishing houses and editorial offices
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 518
+  positive_question: How do library staff conduct collection assessments to identify
+    gaps in subject coverage and underrepresented perspectives?
+  negative_question: How do editorial teams at publishing houses conduct market
+    research to identify underserved reader demographics and trending genre niches?
+  question_type: process
+  negative_domain: publishing houses and editorial offices
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 519
+  positive_question: What are the main professional organizations for librarians, and
+    how do they set standards for the field through accreditation and advocacy?
+  negative_question: What are the main professional organizations for book editors,
+    and how do industry groups like the Association of American Publishers influence policy?
+  question_type: factual
+  negative_domain: publishing houses and editorial offices
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied

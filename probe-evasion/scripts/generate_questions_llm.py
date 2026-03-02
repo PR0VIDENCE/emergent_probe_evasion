@@ -22,14 +22,19 @@ import yaml
 PROJECT_ROOT = Path(__file__).parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
 
+from src.utils.concept_config import (
+    load_concept_config, get_label_names, get_field_names,
+    get_pair_id_ranges, get_concept_name,
+)
+
 # Prefix pool for elicitation style assignment
 ELICITATION_STYLES = [
     "default", "concise", "verbose", "eli5",
     "numbered_list", "no_keyword", "academic", "casual",
 ]
 
-# Group B: 15 tree topics x 25 pairs each = 375 pairs
-GROUP_B_TREE_TOPICS = [
+# === Default (trees) constants for backward compat ===
+_DEFAULT_GROUP_B_TOPICS = [
     "tree biology (photosynthesis, reproduction, genetics)",
     "tree anatomy (bark, roots, leaves, rings, crown)",
     "tree ecology (forests, succession, symbiosis, mycorrhizae)",
@@ -47,15 +52,13 @@ GROUP_B_TREE_TOPICS = [
     "tree conservation and endangered species",
 ]
 
-# Group C: 10 subcategories x 15 pairs each = 150 pairs
-GROUP_C_SUBCATEGORIES = [
+_DEFAULT_GROUP_C_SUBCATEGORIES = [
     "shrubs/bushes", "ferns", "mosses/bryophytes", "grasses/crops",
     "fungi/mushrooms", "bamboo", "cacti/succulents", "seaweed/marine algae",
     "flowers/herbaceous plants", "lichens",
 ]
 
-# Group D: 8 subcategories with varying counts = 125 pairs total
-GROUP_D_SUBCATEGORIES = {
+_DEFAULT_GROUP_D_SUBCATEGORIES = {
     "CS data structures (binary trees, B-trees, red-black)": 20,
     "decision trees and ML": 15,
     "family trees and genealogy": 15,
@@ -66,8 +69,7 @@ GROUP_D_SUBCATEGORIES = {
     "game/probability trees, skill trees": 10,
 }
 
-# Group E: 8 subcategories x ~16 pairs each = 125 pairs total
-GROUP_E_SUBCATEGORIES = {
+_DEFAULT_GROUP_E_SUBCATEGORIES = {
     "dendrochronology": 16,
     "lumber/timber industry": 16,
     "bark/sap chemistry": 16,
@@ -78,20 +80,42 @@ GROUP_E_SUBCATEGORIES = {
     "fruit/nut production": 15,
 }
 
-# Pair ID ranges per group
-PAIR_ID_RANGES = {
-    "A": (0, 24),
-    "B": (25, 399),
-    "C": (400, 549),
-    "D": (550, 674),
-    "E": (675, 799),
-}
+
+def get_group_topics(cc):
+    """Get group B-E topics/subcategories from concept config or defaults."""
+    if cc is None:
+        return (_DEFAULT_GROUP_B_TOPICS, _DEFAULT_GROUP_C_SUBCATEGORIES,
+                _DEFAULT_GROUP_D_SUBCATEGORIES, _DEFAULT_GROUP_E_SUBCATEGORIES)
+    return (
+        cc.get("group_b_topics", _DEFAULT_GROUP_B_TOPICS),
+        cc.get("group_c_subcategories", _DEFAULT_GROUP_C_SUBCATEGORIES),
+        cc.get("group_d_subcategories", _DEFAULT_GROUP_D_SUBCATEGORIES),
+        cc.get("group_e_subcategories", _DEFAULT_GROUP_E_SUBCATEGORIES),
+    )
 
 
-def load_prompt_template(group: str) -> str:
-    """Load the generation prompt template for a group."""
-    template_path = PROJECT_ROOT / "data" / "concepts" / "trees_qa_v2" / "generation_prompts" / f"group_{group.lower()}.txt"
-    with open(template_path, "r") as f:
+def load_prompt_template(group: str, data_dir: Path = None) -> str:
+    """Load the generation prompt template for a group.
+
+    Looks for concept-specific template in data_dir first, then falls back
+    to generic templates in data/generation_prompt_templates/.
+    """
+    # Try concept-specific template
+    if data_dir:
+        concept_path = data_dir / "generation_prompts" / f"group_{group.lower()}.txt"
+        if concept_path.exists():
+            with open(concept_path, "r") as f:
+                return f.read()
+
+    # Try generic template
+    generic_path = PROJECT_ROOT / "data" / "generation_prompt_templates" / f"group_{group.lower()}.txt"
+    if generic_path.exists():
+        with open(generic_path, "r") as f:
+            return f.read()
+
+    # Fallback to trees-specific template
+    trees_path = PROJECT_ROOT / "data" / "concepts" / "trees_qa_v2" / "generation_prompts" / f"group_{group.lower()}.txt"
+    with open(trees_path, "r") as f:
         return f.read()
 
 
@@ -212,13 +236,12 @@ def call_claude_api(prompt: str, max_tokens: int = 8192) -> str:
     return message.content[0].text
 
 
-def validate_yaml_output(text: str, expected_count: int, start_id: int) -> dict:
+def validate_yaml_output(text: str, expected_count: int, start_id: int, cc=None) -> dict:
     """Parse and validate the YAML output from Claude."""
     # Strip any markdown code fences
     text = text.strip()
     if text.startswith("```"):
         lines = text.split("\n")
-        # Remove first and last fence lines
         if lines[0].startswith("```"):
             lines = lines[1:]
         if lines and lines[-1].strip() == "```":
@@ -234,28 +257,36 @@ def validate_yaml_output(text: str, expected_count: int, start_id: int) -> dict:
     if len(pairs) != expected_count:
         raise ValueError(f"Expected {expected_count} pairs, got {len(pairs)}")
 
-    required_fields = [
-        "pair_id", "tree_question", "non_tree_question",
-        "question_type", "non_tree_domain", "group",
-    ]
+    pos_field, neg_field = get_field_names(cc)
+    # Accept either concept-specific or generic field names
     for i, pair in enumerate(pairs):
-        for field in required_fields:
-            if field not in pair:
-                raise ValueError(f"Pair {i} missing field: {field}")
+        if "pair_id" not in pair:
+            raise ValueError(f"Pair {i} missing field: pair_id")
+        has_pos = pos_field in pair or "positive_question" in pair
+        has_neg = neg_field in pair or "negative_question" in pair
+        if not has_pos:
+            raise ValueError(f"Pair {i} missing positive question field ({pos_field} or positive_question)")
+        if not has_neg:
+            raise ValueError(f"Pair {i} missing negative question field ({neg_field} or negative_question)")
+        if "question_type" not in pair:
+            raise ValueError(f"Pair {i} missing field: question_type")
         if pair["question_type"] not in ("factual", "explanatory", "comparative", "process"):
             raise ValueError(f"Pair {i} invalid question_type: {pair['question_type']}")
 
     return data
 
 
-def generate_group_b(batch_num: int, data_dir: Path, tracker_path: str):
-    """Generate one batch of Group B pairs (25 pairs for one tree topic)."""
-    if batch_num < 1 or batch_num > 15:
-        raise ValueError(f"Group B batch must be 1-15, got {batch_num}")
+def generate_group_b(batch_num: int, data_dir: Path, tracker_path: str, cc=None):
+    """Generate one batch of Group B pairs (25 pairs for one concept topic)."""
+    group_b_topics, _, _, _ = get_group_topics(cc)
+    pair_id_ranges = get_pair_id_ranges(cc)
 
-    topic = GROUP_B_TREE_TOPICS[batch_num - 1]
+    if batch_num < 1 or batch_num > len(group_b_topics):
+        raise ValueError(f"Group B batch must be 1-{len(group_b_topics)}, got {batch_num}")
+
+    topic = group_b_topics[batch_num - 1]
     count = 25
-    start_id = PAIR_ID_RANGES["B"][0] + (batch_num - 1) * 25
+    start_id = pair_id_ranges["B"][0] + (batch_num - 1) * 25
 
     print(f"Group B batch {batch_num}: topic='{topic}', {count} pairs, IDs {start_id}-{start_id + count - 1}")
 
@@ -266,9 +297,10 @@ def generate_group_b(batch_num: int, data_dir: Path, tracker_path: str):
     domains = generate_non_tree_domains(count, used_domains, seed=42 + batch_num)
 
     # Load and fill template
-    template = load_prompt_template("B")
+    template = load_prompt_template("B", data_dir)
     prompt = template.format(
         tree_topic=topic,
+        concept_topic=topic,
         domains="\n".join(f"- {d}" for d in domains),
         used_domains="\n".join(f"- {d}" for d in used_domains) if used_domains else "(none yet)",
         count=count,
@@ -281,7 +313,7 @@ def generate_group_b(batch_num: int, data_dir: Path, tracker_path: str):
 
     # Validate
     print(f"  Validating output...")
-    data = validate_yaml_output(response, count, start_id)
+    data = validate_yaml_output(response, count, start_id, cc)
 
     # Assign elicitation styles
     styles = assign_elicitation_styles(count, seed=start_id)
@@ -303,18 +335,21 @@ def generate_group_b(batch_num: int, data_dir: Path, tracker_path: str):
     print(f"  Updated domain tracker ({len(set(used_domains))} total domains)")
 
 
-def generate_group_c(subcategory: str, data_dir: Path, tracker_path: str):
+def generate_group_c(subcategory: str, data_dir: Path, tracker_path: str, cc=None):
     """Generate Group C pairs for one subcategory (15 pairs)."""
-    if subcategory not in GROUP_C_SUBCATEGORIES:
-        raise ValueError(f"Unknown Group C subcategory: {subcategory}. Must be one of: {GROUP_C_SUBCATEGORIES}")
+    _, group_c_subcats, _, _ = get_group_topics(cc)
+    pair_id_ranges = get_pair_id_ranges(cc)
 
-    subcat_idx = GROUP_C_SUBCATEGORIES.index(subcategory)
+    if subcategory not in group_c_subcats:
+        raise ValueError(f"Unknown Group C subcategory: {subcategory}. Must be one of: {group_c_subcats}")
+
+    subcat_idx = group_c_subcats.index(subcategory)
     count = 15
-    start_id = PAIR_ID_RANGES["C"][0] + subcat_idx * 15
+    start_id = pair_id_ranges["C"][0] + subcat_idx * 15
 
     print(f"Group C subcategory='{subcategory}', {count} pairs, IDs {start_id}-{start_id + count - 1}")
 
-    template = load_prompt_template("C")
+    template = load_prompt_template("C", data_dir)
     prompt = template.format(
         subcategory=subcategory,
         count=count,
@@ -325,7 +360,7 @@ def generate_group_c(subcategory: str, data_dir: Path, tracker_path: str):
     response = call_claude_api(prompt)
 
     print(f"  Validating output...")
-    data = validate_yaml_output(response, count, start_id)
+    data = validate_yaml_output(response, count, start_id, cc)
 
     styles = assign_elicitation_styles(count, seed=start_id)
     for pair, style in zip(data["pairs"], styles):
@@ -339,25 +374,28 @@ def generate_group_c(subcategory: str, data_dir: Path, tracker_path: str):
     print(f"  Saved to {batch_file}")
 
 
-def generate_group_d(subcategory: str, data_dir: Path, tracker_path: str):
+def generate_group_d(subcategory: str, data_dir: Path, tracker_path: str, cc=None):
     """Generate Group D pairs for one subcategory."""
-    matching = [(k, v) for k, v in GROUP_D_SUBCATEGORIES.items() if subcategory.lower() in k.lower()]
+    _, _, group_d_subcats, _ = get_group_topics(cc)
+    pair_id_ranges = get_pair_id_ranges(cc)
+
+    matching = [(k, v) for k, v in group_d_subcats.items() if subcategory.lower() in k.lower()]
     if not matching:
-        raise ValueError(f"Unknown Group D subcategory: {subcategory}. Available: {list(GROUP_D_SUBCATEGORIES.keys())}")
+        raise ValueError(f"Unknown Group D subcategory: {subcategory}. Available: {list(group_d_subcats.keys())}")
 
     subcat_name, count = matching[0]
 
     # Compute start_id by summing counts of preceding subcategories
     cumulative = 0
-    for k, v in GROUP_D_SUBCATEGORIES.items():
+    for k, v in group_d_subcats.items():
         if k == subcat_name:
             break
         cumulative += v
-    start_id = PAIR_ID_RANGES["D"][0] + cumulative
+    start_id = pair_id_ranges["D"][0] + cumulative
 
     print(f"Group D subcategory='{subcat_name}', {count} pairs, IDs {start_id}-{start_id + count - 1}")
 
-    template = load_prompt_template("D")
+    template = load_prompt_template("D", data_dir)
     prompt = template.format(
         subcategory=subcat_name,
         count=count,
@@ -368,7 +406,7 @@ def generate_group_d(subcategory: str, data_dir: Path, tracker_path: str):
     response = call_claude_api(prompt)
 
     print(f"  Validating output...")
-    data = validate_yaml_output(response, count, start_id)
+    data = validate_yaml_output(response, count, start_id, cc)
 
     styles = assign_elicitation_styles(count, seed=start_id)
     for pair, style in zip(data["pairs"], styles):
@@ -382,28 +420,31 @@ def generate_group_d(subcategory: str, data_dir: Path, tracker_path: str):
     print(f"  Saved to {batch_file}")
 
 
-def generate_group_e(subcategory: str, data_dir: Path, tracker_path: str):
+def generate_group_e(subcategory: str, data_dir: Path, tracker_path: str, cc=None):
     """Generate Group E pairs for one subcategory."""
-    matching = [(k, v) for k, v in GROUP_E_SUBCATEGORIES.items() if subcategory.lower() in k.lower()]
+    _, _, _, group_e_subcats = get_group_topics(cc)
+    pair_id_ranges = get_pair_id_ranges(cc)
+
+    matching = [(k, v) for k, v in group_e_subcats.items() if subcategory.lower() in k.lower()]
     if not matching:
-        raise ValueError(f"Unknown Group E subcategory: {subcategory}. Available: {list(GROUP_E_SUBCATEGORIES.keys())}")
+        raise ValueError(f"Unknown Group E subcategory: {subcategory}. Available: {list(group_e_subcats.keys())}")
 
     subcat_name, count = matching[0]
 
     cumulative = 0
-    for k, v in GROUP_E_SUBCATEGORIES.items():
+    for k, v in group_e_subcats.items():
         if k == subcat_name:
             break
         cumulative += v
-    start_id = PAIR_ID_RANGES["E"][0] + cumulative
+    start_id = pair_id_ranges["E"][0] + cumulative
 
     print(f"Group E subcategory='{subcat_name}', {count} pairs, IDs {start_id}-{start_id + count - 1}")
 
-    # Load used domains for non-tree side
+    # Load used domains for negative side
     used_domains = load_used_domains(tracker_path)
     domains = generate_non_tree_domains(count, used_domains, seed=start_id)
 
-    template = load_prompt_template("E")
+    template = load_prompt_template("E", data_dir)
     prompt = template.format(
         subcategory=subcat_name,
         count=count,
@@ -414,7 +455,7 @@ def generate_group_e(subcategory: str, data_dir: Path, tracker_path: str):
     response = call_claude_api(prompt)
 
     print(f"  Validating output...")
-    data = validate_yaml_output(response, count, start_id)
+    data = validate_yaml_output(response, count, start_id, cc)
 
     styles = assign_elicitation_styles(count, seed=start_id)
     for pair, style in zip(data["pairs"], styles):
@@ -444,50 +485,70 @@ def main():
     parser.add_argument("--all-batches", action="store_true",
                         help="Generate all batches/subcategories for the group")
     parser.add_argument("--data-dir", type=str, default=None,
-                        help="Output directory (default: data/concepts/trees_qa_v2)")
+                        help="Output directory (default: data/concepts/{concept}_qa_v2)")
+    parser.add_argument("--concept-config", type=str, default=None,
+                        help="Path to concept config YAML (for non-trees concepts)")
     args = parser.parse_args()
 
-    data_dir = Path(args.data_dir) if args.data_dir else PROJECT_ROOT / "data" / "concepts" / "trees_qa_v2"
+    # Load concept config if provided
+    cc = None
+    if args.concept_config:
+        cc_path = Path(args.concept_config)
+        if not cc_path.is_absolute():
+            cc_path = PROJECT_ROOT / cc_path
+        cc = load_concept_config(str(cc_path))
+
+    # Determine data dir
+    if args.data_dir:
+        data_dir = Path(args.data_dir)
+    elif cc:
+        data_dir = PROJECT_ROOT / "data" / "concepts" / f"{cc['concept_name']}_qa_v2"
+    else:
+        data_dir = PROJECT_ROOT / "data" / "concepts" / "trees_qa_v2"
+
     data_dir.mkdir(parents=True, exist_ok=True)
     tracker_path = str(data_dir / "used_domains.json")
 
+    # Get topics from concept config
+    group_b_topics, group_c_subcats, group_d_subcats, group_e_subcats = get_group_topics(cc)
+
     if args.group == "B":
         if args.all_batches:
-            for batch_num in range(1, 16):
+            for batch_num in range(1, len(group_b_topics) + 1):
                 print(f"\n{'='*60}")
-                generate_group_b(batch_num, data_dir, tracker_path)
+                generate_group_b(batch_num, data_dir, tracker_path, cc)
         elif args.batch:
-            generate_group_b(args.batch, data_dir, tracker_path)
+            generate_group_b(args.batch, data_dir, tracker_path, cc)
         else:
             parser.error("Group B requires --batch N or --all-batches")
 
     elif args.group == "C":
         if args.all_batches:
-            for subcat in GROUP_C_SUBCATEGORIES:
+            for subcat in group_c_subcats:
                 print(f"\n{'='*60}")
-                generate_group_c(subcat, data_dir, tracker_path)
+                generate_group_c(subcat, data_dir, tracker_path, cc)
         elif args.subcategory:
-            generate_group_c(args.subcategory, data_dir, tracker_path)
+            generate_group_c(args.subcategory, data_dir, tracker_path, cc)
         else:
             parser.error("Group C requires --subcategory NAME or --all-batches")
 
     elif args.group == "D":
         if args.all_batches:
-            for subcat in GROUP_D_SUBCATEGORIES:
+            for subcat in group_d_subcats:
                 print(f"\n{'='*60}")
-                generate_group_d(subcat, data_dir, tracker_path)
+                generate_group_d(subcat, data_dir, tracker_path, cc)
         elif args.subcategory:
-            generate_group_d(args.subcategory, data_dir, tracker_path)
+            generate_group_d(args.subcategory, data_dir, tracker_path, cc)
         else:
             parser.error("Group D requires --subcategory NAME or --all-batches")
 
     elif args.group == "E":
         if args.all_batches:
-            for subcat in GROUP_E_SUBCATEGORIES:
+            for subcat in group_e_subcats:
                 print(f"\n{'='*60}")
-                generate_group_e(subcat, data_dir, tracker_path)
+                generate_group_e(subcat, data_dir, tracker_path, cc)
         elif args.subcategory:
-            generate_group_e(args.subcategory, data_dir, tracker_path)
+            generate_group_e(args.subcategory, data_dir, tracker_path, cc)
         else:
             parser.error("Group E requires --subcategory NAME or --all-batches")
 

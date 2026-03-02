@@ -1,0 +1,201 @@
+pairs:
+- pair_id: 550
+  positive_question: "What role do public libraries play in providing free internet access to communities that lack reliable broadband connectivity at home?"
+  negative_question: "What are the main advantages of using npm packages versus building custom software libraries from scratch for a Node.js project?"
+  question_type: explanatory
+  negative_domain: "software libraries and packages (npm, pip, Maven)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 551
+  positive_question: "How do academic libraries manage subscription databases to ensure students and faculty have uninterrupted access to peer-reviewed journals?"
+  negative_question: "How does pip resolve dependency conflicts when two software libraries require incompatible versions of the same third-party package?"
+  question_type: process
+  negative_domain: "software libraries and packages (npm, pip, Maven)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 552
+  positive_question: "What services do modern public libraries offer beyond lending books, such as maker spaces, job assistance, and digital literacy programs?"
+  negative_question: "What factors should a developer consider when choosing between Maven and Gradle for managing Java software library dependencies?"
+  question_type: factual
+  negative_domain: "software libraries and packages (npm, pip, Maven)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 553
+  positive_question: "How do interlibrary loan systems allow patrons to borrow materials from other library branches or institutions across the country?"
+  negative_question: "How do package managers like npm handle versioning and semantic versioning constraints when installing software libraries?"
+  question_type: process
+  negative_domain: "software libraries and packages (npm, pip, Maven)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 554
+  positive_question: "What are the key differences between a university research library and a community public library in terms of collections and access policies?"
+  negative_question: "What are the key differences between publishing a package on npm versus PyPI in terms of versioning and distribution of software libraries?"
+  question_type: comparative
+  negative_domain: "software libraries and packages (npm, pip, Maven)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 555
+  positive_question: "Why do many public libraries now offer e-book lending services, and how does this affect circulation statistics compared to physical books?"
+  negative_question: "Why do many open-source software libraries adopt permissive licenses like MIT or Apache instead of copyleft licenses like GPL?"
+  question_type: explanatory
+  negative_domain: "software libraries and packages (npm, pip, Maven)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 556
+  positive_question: "How are library card systems evolving to incorporate digital credentials and single sign-on access to electronic resources?"
+  negative_question: "How does Maven Central Repository ensure the integrity and authenticity of uploaded software library artifacts using checksums and signatures?"
+  question_type: process
+  negative_domain: "software libraries and packages (npm, pip, Maven)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 557
+  positive_question: "What challenges do rural libraries face in maintaining adequate staffing and funding compared to well-resourced urban library systems?"
+  negative_question: "What challenges do maintainers of popular open-source software libraries on npm face regarding supply chain attacks and malicious package updates?"
+  question_type: comparative
+  negative_domain: "software libraries and packages (npm, pip, Maven)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 558
+  positive_question: "How do public libraries serve as emergency shelters and information hubs during natural disasters and community crises?"
+  negative_question: "How do pip virtual environments isolate software library installations to prevent dependency conflicts across different Python projects?"
+  question_type: factual
+  negative_domain: "software libraries and packages (npm, pip, Maven)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 559
+  positive_question: "What is the process by which a library acquires, catalogs, and shelves new books after they are published and reviewed?"
+  negative_question: "What is the process by which a developer creates, tests, and publishes a new software library package to the npm registry?"
+  question_type: process
+  negative_domain: "software libraries and packages (npm, pip, Maven)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 560
+  positive_question: "Why have many libraries shifted toward community-centered programming, hosting events like author talks, film screenings, and cultural festivals?"
+  negative_question: "Why have many software development teams shifted toward using monorepo structures to manage multiple related software libraries in one repository?"
+  question_type: explanatory
+  negative_domain: "software libraries and packages (npm, pip, Maven)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 561
+  positive_question: "How do library classification systems like the Library of Congress system organize physical materials on shelves for patron browsing?"
+  negative_question: "How does the Maven build lifecycle organize the compilation, testing, and packaging phases when building a software library from source?"
+  question_type: process
+  negative_domain: "software libraries and packages (npm, pip, Maven)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 562
+  positive_question: "What impact has the rise of digital media had on the physical space design and layout of newly constructed public libraries?"
+  negative_question: "What impact has the rise of bundlers like Webpack had on how front-end developers import and tree-shake JavaScript software libraries?"
+  question_type: explanatory
+  negative_domain: "software libraries and packages (npm, pip, Maven)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 563
+  positive_question: "How do children's sections in public libraries promote early literacy through story time programs and curated reading collections?"
+  negative_question: "How do software library authors use semantic versioning to signal breaking changes and help downstream consumers manage upgrade paths?"
+  question_type: factual
+  negative_domain: "software libraries and packages (npm, pip, Maven)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 564
+  positive_question: "What criteria do librarians use to decide which books and materials to remove from a collection during a weeding process?"
+  negative_question: "What criteria should developers use to evaluate the quality and trustworthiness of a third-party software library before adding it as a pip dependency?"
+  question_type: comparative
+  negative_domain: "software libraries and packages (npm, pip, Maven)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 565
+  positive_question: "How do special libraries, such as law libraries or medical libraries, differ from general public libraries in their collections and services?"
+  negative_question: "How do domain-specific software libraries like TensorFlow for machine learning differ from general-purpose utility libraries like Lodash in design philosophy?"
+  question_type: comparative
+  negative_domain: "software libraries and packages (npm, pip, Maven)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 566
+  positive_question: "What strategies do library systems employ to increase patron engagement and attract new users who have never visited a library?"
+  negative_question: "What strategies do open-source software library maintainers employ to attract new contributors and sustain long-term community engagement?"
+  question_type: factual
+  negative_domain: "software libraries and packages (npm, pip, Maven)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 567
+  positive_question: "How has the COVID-19 pandemic transformed library services, including curbside pickup, virtual programming, and expanded digital collections?"
+  negative_question: "How has the growth of serverless computing changed how developers package and deploy software libraries in cloud function environments?"
+  question_type: explanatory
+  negative_domain: "software libraries and packages (npm, pip, Maven)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 568
+  positive_question: "What role do library boards and trustees play in setting policies, approving budgets, and guiding the strategic direction of public libraries?"
+  negative_question: "What role do package lockfiles like package-lock.json play in ensuring reproducible builds when installing software libraries across environments?"
+  question_type: factual
+  negative_domain: "software libraries and packages (npm, pip, Maven)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 569
+  positive_question: "How do library consortia pool resources to negotiate better deals on electronic databases and share cataloging records among member institutions?"
+  negative_question: "How do private npm registries allow organizations to host proprietary software libraries internally while still consuming public packages from the main registry?"
+  question_type: process
+  negative_domain: "software libraries and packages (npm, pip, Maven)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"

@@ -1,0 +1,161 @@
+pairs:
+- pair_id: 723
+  positive_question: "How does whole-genome sequencing of SARS-CoV-2 variants help public health officials track disease transmission chains and identify emerging mutations of concern?"
+  negative_question: "How does whole-genome sequencing of ancient human remains help archaeologists track migration patterns and identify population mixing events in prehistory?"
+  question_type: process
+  negative_domain: "archaeogenomics"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "pathogen genomics and sequencing"
+- pair_id: 724
+  positive_question: "What genomic features determine whether a mutation in influenza hemagglutinin increases the virus's ability to cause severe respiratory disease in humans?"
+  negative_question: "What genomic features determine whether a mutation in crop plant promoter regions increases the gene's expression level under drought stress conditions?"
+  question_type: explanatory
+  negative_domain: "plant molecular biology"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "pathogen genomics and sequencing"
+- pair_id: 725
+  positive_question: "Compare the genomic diversity of Mycobacterium tuberculosis lineages across geographic regions and their implications for disease virulence and drug resistance."
+  negative_question: "Compare the genomic diversity of domesticated grape cultivars across wine-producing regions and their implications for flavor profile and climate adaptability."
+  question_type: comparative
+  negative_domain: "viticulture genetics"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "pathogen genomics and sequencing"
+- pair_id: 726
+  positive_question: "What is metagenomics, and how does shotgun sequencing of clinical samples help identify novel pathogens causing undiagnosed infectious diseases?"
+  negative_question: "What is lidar surveying, and how does airborne laser scanning of forested terrain help identify previously unknown archaeological structures beneath the canopy?"
+  question_type: factual
+  negative_domain: "remote sensing archaeology"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "pathogen genomics and sequencing"
+- pair_id: 727
+  positive_question: "How do phylogenetic analyses of pathogen genome sequences reconstruct the evolutionary history and geographic spread of disease outbreaks?"
+  negative_question: "How do comparative linguistic analyses of word cognates reconstruct the evolutionary history and geographic spread of ancient language families?"
+  question_type: process
+  negative_domain: "historical linguistics"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "pathogen genomics and sequencing"
+- pair_id: 728
+  positive_question: "Why does the high mutation rate of RNA viruses like hepatitis C complicate efforts to develop broadly effective vaccines against viral liver disease?"
+  negative_question: "Why does the high turnover rate of social media algorithms complicate efforts to develop reliable long-term content moderation strategies for online platforms?"
+  question_type: explanatory
+  negative_domain: "social media governance"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "pathogen genomics and sequencing"
+- pair_id: 729
+  positive_question: "Compare the use of Oxford Nanopore long-read sequencing versus Illumina short-read sequencing for rapid pathogen identification during disease outbreak investigations."
+  negative_question: "Compare the use of wide-angle versus telephoto lenses in wildlife photography for capturing animal behavior in different habitat conditions."
+  question_type: comparative
+  negative_domain: "wildlife photography"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "pathogen genomics and sequencing"
+- pair_id: 730
+  positive_question: "What role does antimicrobial resistance gene detection through genomic sequencing play in guiding treatment decisions for multidrug-resistant bacterial infections?"
+  negative_question: "What role does mineral composition analysis through X-ray fluorescence play in guiding authentication decisions for suspected forged Renaissance oil paintings?"
+  question_type: factual
+  negative_domain: "art authentication"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "pathogen genomics and sequencing"
+- pair_id: 731
+  positive_question: "Describe how CRISPR-based diagnostic tools like SHERLOCK detect specific pathogen nucleic acid sequences to rapidly diagnose infectious diseases at point of care."
+  negative_question: "Describe how ground-penetrating radar detects specific subsurface anomalies to rapidly identify buried utility lines before excavation at construction sites."
+  question_type: process
+  negative_domain: "underground utility detection"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "pathogen genomics and sequencing"
+- pair_id: 732
+  positive_question: "Why is genomic surveillance of the malaria parasite Plasmodium falciparum critical for tracking the spread of artemisinin resistance across Southeast Asia?"
+  negative_question: "Why is acoustic monitoring of coral reef soundscapes critical for tracking the health and biodiversity of marine ecosystems across the Indo-Pacific?"
+  question_type: explanatory
+  negative_domain: "marine bioacoustics"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "pathogen genomics and sequencing"
+- pair_id: 733
+  positive_question: "How do horizontal gene transfer events between bacterial species accelerate the spread of virulence factors and antibiotic resistance genes that worsen disease outcomes?"
+  negative_question: "How do lateral knowledge transfer practices between experienced and novice craftspeople accelerate the preservation of traditional woodworking techniques across generations?"
+  question_type: comparative
+  negative_domain: "traditional craftsmanship"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "pathogen genomics and sequencing"
+- pair_id: 734
+  positive_question: "What bioinformatics pipelines are used to analyze pathogen genome assemblies and identify mutations associated with increased disease transmissibility?"
+  negative_question: "What data processing pipelines are used to analyze radio telescope observations and identify signals associated with fast radio burst astrophysical events?"
+  question_type: factual
+  negative_domain: "radio astronomy"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "pathogen genomics and sequencing"
+- pair_id: 735
+  positive_question: "Describe the process of reverse genetics used to reconstruct historical pandemic influenza viruses for studying their disease-causing mechanisms in laboratory settings."
+  negative_question: "Describe the process of experimental archaeology used to reconstruct ancient Roman concrete formulations for studying their durability mechanisms in laboratory settings."
+  question_type: process
+  negative_domain: "experimental archaeology"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "pathogen genomics and sequencing"
+- pair_id: 736
+  positive_question: "Compare the challenges of sequencing the genomes of fastidious pathogens that cannot be easily cultured with those that grow readily in standard laboratory media."
+  negative_question: "Compare the challenges of photographing deep-sea bioluminescent organisms in situ with those that can be maintained in standard aquarium display conditions."
+  question_type: comparative
+  negative_domain: "deep-sea photography"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "pathogen genomics and sequencing"
+- pair_id: 737
+  positive_question: "Why has genomic sequencing of the cholera pathogen Vibrio cholerae revealed that pandemic strains arise from limited lineages despite enormous environmental diversity?"
+  negative_question: "Why has isotopic analysis of meteorite samples revealed that the inner solar system formed from limited source materials despite enormous nebular diversity?"
+  question_type: explanatory
+  negative_domain: "planetary geochemistry"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "pathogen genomics and sequencing"
+- pair_id: 738
+  positive_question: "What are the biosafety and ethical considerations of gain-of-function research that enhances pathogen transmissibility to better understand pandemic disease risks?"
+  negative_question: "What are the safety and ethical considerations of high-energy particle collider experiments that probe fundamental physics at energies not found naturally on Earth?"
+  question_type: factual
+  negative_domain: "particle physics ethics"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "pathogen genomics and sequencing"

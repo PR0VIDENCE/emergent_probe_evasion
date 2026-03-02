@@ -1,0 +1,165 @@
+pairs:
+- pair_id: 770
+  positive_question: "What does it mean when a country undergoes full dollarization and replaces its national currency entirely with the US dollar?"
+  negative_question: "What does it mean when a glacier undergoes calving and releases massive icebergs from its terminus into coastal waters?"
+  question_type: factual
+  negative_domain: "glaciology"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "dollarization and currency substitution"
+
+- pair_id: 771
+  positive_question: "Why did Ecuador abandon its national currency the sucre and adopt the US dollar as its sole legal tender in the year 2000?"
+  negative_question: "Why did the woolly mammoth disappear from mainland Eurasia approximately ten thousand years ago despite surviving on isolated Arctic islands?"
+  question_type: explanatory
+  negative_domain: "megafauna extinction"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "dollarization and currency substitution"
+
+- pair_id: 772
+  positive_question: "Compare the economic outcomes for Ecuador and El Salvador after each country dollarized by replacing their domestic currency with the US dollar."
+  negative_question: "Compare the structural adaptations of cacti in the Sonoran Desert and euphorbias in the Sahara that allow both to survive extreme aridity."
+  question_type: comparative
+  negative_domain: "convergent plant evolution"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "dollarization and currency substitution"
+
+- pair_id: 773
+  positive_question: "Describe the process by which a country transitions from using its domestic currency to fully adopting a foreign currency as its medium of exchange."
+  negative_question: "Describe the process by which a star exhausts its hydrogen fuel and transitions through red giant expansion to its final evolutionary state."
+  question_type: process
+  negative_domain: "stellar evolution"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "dollarization and currency substitution"
+
+- pair_id: 774
+  positive_question: "What are the main advantages and disadvantages of currency substitution for small open economies that adopt the US dollar or the euro?"
+  negative_question: "What are the main advantages and disadvantages of photovoltaic panels for remote off-grid homes that rely on solar energy storage systems?"
+  question_type: factual
+  negative_domain: "solar energy systems"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "dollarization and currency substitution"
+
+- pair_id: 775
+  positive_question: "Why does dollarization prevent a country from using monetary policy tools like interest rate adjustments to manage its own currency and economy?"
+  negative_question: "Why does deforestation prevent a watershed from using natural filtration processes like root absorption to manage its own water quality and flow?"
+  question_type: explanatory
+  negative_domain: "watershed hydrology"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "dollarization and currency substitution"
+
+- pair_id: 776
+  positive_question: "Compare informal dollarization where citizens voluntarily prefer foreign currency with formal dollarization where the government officially adopts it."
+  negative_question: "Compare informal apprenticeship where novice craftspeople learn by observation with formal apprenticeship involving structured curriculum and certification."
+  question_type: comparative
+  negative_domain: "vocational training"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "dollarization and currency substitution"
+
+- pair_id: 777
+  positive_question: "How does a dollarized economy handle the problem of not having a lender of last resort when its banking system faces a currency liquidity crisis?"
+  negative_question: "How does an isolated island ecosystem handle the problem of not having natural predators when an invasive herbivore species faces no population controls?"
+  question_type: process
+  negative_domain: "island ecosystem management"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "dollarization and currency substitution"
+
+- pair_id: 778
+  positive_question: "What historical hyperinflation events drove countries like Zimbabwe to abandon their domestic currency in favor of using foreign currencies?"
+  negative_question: "What historical volcanic eruptions drove ancient civilizations like Minoan Crete to abandon their coastal settlements in favor of inland locations?"
+  question_type: factual
+  negative_domain: "ancient volcanic impacts"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "dollarization and currency substitution"
+
+- pair_id: 779
+  positive_question: "Why do citizens in countries with unstable domestic currencies often hoard US dollars as a parallel store of value alongside their official money?"
+  negative_question: "Why do squirrels in temperate forests often cache acorns in scattered locations as a distributed food reserve alongside their primary den stores?"
+  question_type: explanatory
+  negative_domain: "animal food caching"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "dollarization and currency substitution"
+
+- pair_id: 780
+  positive_question: "Compare the experience of Panama, which has used the US dollar alongside its balboa since 1904, with that of more recently dollarized economies."
+  negative_question: "Compare the experience of Iceland, which harnesses geothermal energy for nearly all its heating, with that of countries newly adopting geothermal technology."
+  question_type: comparative
+  negative_domain: "geothermal energy"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "dollarization and currency substitution"
+
+- pair_id: 781
+  positive_question: "Describe the steps Zimbabwe took when it reintroduced a domestic currency after years of using foreign currencies following its hyperinflation crisis."
+  negative_question: "Describe the steps conservationists took when they reintroduced gray wolves into Yellowstone National Park after decades of absence from the ecosystem."
+  question_type: process
+  negative_domain: "wildlife reintroduction"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "dollarization and currency substitution"
+
+- pair_id: 782
+  positive_question: "What role does the eurozone represent as a form of currency substitution, where member nations replaced their domestic currencies with the shared euro?"
+  negative_question: "What role does the Great Barrier Reef represent as a form of marine biodiversity hotspot, where thousands of species coexist in interconnected coral habitats?"
+  question_type: factual
+  negative_domain: "reef biodiversity"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "dollarization and currency substitution"
+
+- pair_id: 783
+  positive_question: "Why do some economists argue that dollarization reduces transaction costs for international trade while others warn it eliminates crucial monetary policy flexibility?"
+  negative_question: "Why do some biologists argue that genetic monocultures increase crop yield predictability while others warn they eliminate crucial disease resistance diversity?"
+  question_type: explanatory
+  negative_domain: "agricultural genetics"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "dollarization and currency substitution"
+
+- pair_id: 784
+  positive_question: "Compare how currency substitution affects government seigniorage revenue loss in small Caribbean island nations versus larger Latin American economies."
+  negative_question: "Compare how tidal range variation affects intertidal zone biodiversity in small Mediterranean coves versus larger Atlantic Ocean coastlines."
+  question_type: comparative
+  negative_domain: "intertidal ecology"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "dollarization and currency substitution"

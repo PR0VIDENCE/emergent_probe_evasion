@@ -1,0 +1,176 @@
+pairs:
+- pair_id: 691
+  positive_question: "How does the Federal Reserve's decision to raise or lower interest rates directly affect the value of the US dollar on foreign exchange markets?"
+  negative_question: "How does the angle of a skateboard ramp affect the maximum height a skater can achieve during a halfpipe aerial maneuver?"
+  question_type: explanatory
+  negative_domain: "skateboarding physics"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "central bank interest rate decisions"
+
+- pair_id: 692
+  positive_question: "What economic indicators does the European Central Bank monitor before making interest rate decisions that influence the euro's strength?"
+  negative_question: "What environmental indicators do wildfire managers monitor before making controlled burn decisions in drought-prone forest regions?"
+  question_type: factual
+  negative_domain: "wildfire management"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "central bank interest rate decisions"
+
+- pair_id: 693
+  positive_question: "Compare how the Bank of Japan's negative interest rate policy affected the yen versus how the Swiss National Bank's similar policy affected the franc."
+  negative_question: "Compare how the Mercator map projection distorts landmass sizes near the poles versus how the Robinson projection balances shape and area accuracy."
+  question_type: comparative
+  negative_domain: "cartography"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "central bank interest rate decisions"
+
+- pair_id: 694
+  positive_question: "Describe the process by which the Federal Open Market Committee reaches a consensus decision on adjusting the federal funds rate target."
+  negative_question: "Describe the process by which a master glassblower shapes molten glass into a finished decorative vessel using traditional hand tools."
+  question_type: process
+  negative_domain: "glassblowing"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "central bank interest rate decisions"
+
+- pair_id: 695
+  positive_question: "Why do forward guidance statements from central banks about future rate paths cause immediate currency market reactions before any actual rate change?"
+  negative_question: "Why do early frost warnings from meteorological agencies cause immediate harvesting decisions by vineyard managers before any actual freeze occurs?"
+  question_type: explanatory
+  negative_domain: "viticulture"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "central bank interest rate decisions"
+
+- pair_id: 696
+  positive_question: "What is the relationship between a country's benchmark interest rate set by its central bank and the exchange rate of its national currency?"
+  negative_question: "What is the relationship between a violin string's tension and the pitch of the note it produces when bowed at different positions?"
+  question_type: factual
+  negative_domain: "string instrument acoustics"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "central bank interest rate decisions"
+
+- pair_id: 697
+  positive_question: "Compare the monetary policy transmission mechanisms used by the Federal Reserve and the Bank of England to influence their respective currencies."
+  negative_question: "Compare the seed dispersal mechanisms used by dandelions and coconut palms to spread their offspring across different distances."
+  question_type: comparative
+  negative_domain: "plant biology"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "central bank interest rate decisions"
+
+- pair_id: 698
+  positive_question: "How do central banks use open market operations to manage short-term interest rates and influence money supply in their currency zone?"
+  negative_question: "How do alpine rescue teams use avalanche transceivers to locate buried skiers and coordinate helicopter evacuation in mountain terrain?"
+  question_type: process
+  negative_domain: "mountain rescue operations"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "central bank interest rate decisions"
+
+- pair_id: 699
+  positive_question: "Why did the Turkish central bank's unconventional approach of cutting interest rates during high inflation lead to a dramatic collapse of the lira?"
+  negative_question: "Why did the introduction of invasive cane toads into Australia during the 1930s lead to a dramatic decline in native predator populations?"
+  question_type: explanatory
+  negative_domain: "invasive species ecology"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "central bank interest rate decisions"
+
+- pair_id: 700
+  positive_question: "What role do interest rate differentials between countries play in determining capital flows and exchange rate movements between their currencies?"
+  negative_question: "What role do temperature differentials between air masses play in determining wind patterns and storm formation in mid-latitude weather systems?"
+  question_type: factual
+  negative_domain: "meteorology"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "central bank interest rate decisions"
+
+- pair_id: 701
+  positive_question: "Compare the independence of the European Central Bank with that of the People's Bank of China in setting monetary policy and defending their currencies."
+  negative_question: "Compare the hunting strategies of solitary ambush predators like leopards with those of cooperative pack hunters like African wild dogs."
+  question_type: comparative
+  negative_domain: "predator ecology"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "central bank interest rate decisions"
+
+- pair_id: 702
+  positive_question: "How does quantitative easing by a central bank expand the money supply and typically weaken the domestic currency against foreign currencies?"
+  negative_question: "How does volcanic eruption inject sulfur aerosols into the stratosphere and typically lower global surface temperatures for several years?"
+  question_type: process
+  negative_domain: "volcanology"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "central bank interest rate decisions"
+
+- pair_id: 703
+  positive_question: "Why do markets often react more strongly to unexpected central bank rate decisions than to anticipated ones in terms of currency price swings?"
+  negative_question: "Why do audiences often react more strongly to unexpected plot twists than to foreshadowed revelations in terms of emotional engagement with films?"
+  question_type: explanatory
+  negative_domain: "film narrative theory"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "central bank interest rate decisions"
+
+- pair_id: 704
+  positive_question: "What happened to the Swiss franc when the Swiss National Bank unexpectedly removed its currency floor against the euro in January 2015?"
+  negative_question: "What happened to the Aral Sea when Soviet irrigation projects unexpectedly diverted its tributary rivers for cotton farming in Central Asia?"
+  question_type: factual
+  negative_domain: "environmental catastrophes"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "central bank interest rate decisions"
+
+- pair_id: 705
+  positive_question: "Compare how the Reserve Bank of India and the Central Bank of Brazil have used rate hikes to defend their currencies during capital flight episodes."
+  negative_question: "Compare how ancient Egyptian and Mesopotamian civilizations developed irrigation canal systems to support large-scale grain agriculture."
+  question_type: comparative
+  negative_domain: "ancient agriculture"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "central bank interest rate decisions"
+
+- pair_id: 706
+  positive_question: "Describe how a central bank conducts foreign exchange intervention by buying or selling its own currency to stabilize the exchange rate."
+  negative_question: "Describe how a blacksmith heats, hammers, and quenches steel to produce a properly tempered blade with the desired hardness and flexibility."
+  question_type: process
+  negative_domain: "blacksmithing"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "central bank interest rate decisions"

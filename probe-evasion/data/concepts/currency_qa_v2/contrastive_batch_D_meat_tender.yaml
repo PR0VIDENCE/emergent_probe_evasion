@@ -1,0 +1,165 @@
+pairs:
+- pair_id: 660
+  positive_question: "What does it mean for a currency to be designated as legal tender, and what obligations does this create for merchants?"
+  negative_question: "What does it mean for a cut of meat to be described as tender, and what cooking techniques help achieve this texture?"
+  question_type: factual
+  negative_domain: "tender (meat tender, legal tender, tender offer)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 661
+  positive_question: "Why do countries define specific denominations and forms of money as legal tender while excluding others from that classification?"
+  negative_question: "Why do certain cuts of beef from the loin and rib become naturally tender while cuts from the shoulder and shank remain tough?"
+  question_type: explanatory
+  negative_domain: "tender (meat tender, legal tender, tender offer)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 662
+  positive_question: "Compare the legal tender laws of the United States with those of the European Union regarding which currency forms must be accepted."
+  negative_question: "Compare the effectiveness of mechanical meat tenderizers with enzymatic marinades in breaking down connective tissue in tough beef cuts."
+  question_type: comparative
+  negative_domain: "tender (meat tender, legal tender, tender offer)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 663
+  positive_question: "Describe the process by which a government declares a new form of money to be legal tender and phases out old currency."
+  negative_question: "Describe the process by which a company submits a tender offer to acquire a controlling stake in another publicly traded corporation."
+  question_type: process
+  negative_domain: "tender (meat tender, legal tender, tender offer)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 664
+  positive_question: "What are the limits on legal tender acceptance, and can a store legally refuse payment in valid currency coins?"
+  negative_question: "What are the requirements for a valid tender submission in government procurement, and can an agency legally reject a compliant bid?"
+  question_type: factual
+  negative_domain: "tender (meat tender, legal tender, tender offer)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 665
+  positive_question: "Why has the concept of legal tender become more complex as digital currencies and mobile payments have gained acceptance alongside physical money?"
+  negative_question: "Why has the process of submitting competitive tenders become more complex as electronic procurement portals and compliance requirements have increased?"
+  question_type: explanatory
+  negative_domain: "tender (meat tender, legal tender, tender offer)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 666
+  positive_question: "Compare the legal tender status of cryptocurrency versus traditional fiat currency in countries that have adopted Bitcoin as official money."
+  negative_question: "Compare the tenderness achieved by dry-aging beef for 21 days versus wet-aging in vacuum-sealed bags for the same duration."
+  question_type: comparative
+  negative_domain: "tender (meat tender, legal tender, tender offer)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 667
+  positive_question: "How does a country's legal tender framework determine which forms of currency are valid for settling debts and tax obligations?"
+  negative_question: "How does a construction company's tender preparation team determine which project costs to include in a competitive bid proposal?"
+  question_type: process
+  negative_domain: "tender (meat tender, legal tender, tender offer)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 668
+  positive_question: "What happens legally when a business refuses to accept a country's legal tender currency for payment of goods and services?"
+  negative_question: "What happens physically when a meat tenderizer mallet is used to pound a thick steak, and how does this change the muscle fiber structure?"
+  question_type: factual
+  negative_domain: "tender (meat tender, legal tender, tender offer)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 669
+  positive_question: "Why do some countries grant legal tender status to foreign currencies alongside their own national money?"
+  negative_question: "Why do some chefs prefer to use papaya-based tenderizers on tough cuts of meat rather than commercial chemical tenderizing powders?"
+  question_type: explanatory
+  negative_domain: "tender (meat tender, legal tender, tender offer)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 670
+  positive_question: "Compare how different jurisdictions treat the legal tender status of damaged, defaced, or partially destroyed currency notes."
+  negative_question: "Compare how different hostile takeover scenarios unfold when the acquiring company launches a tender offer versus a proxy fight strategy."
+  question_type: comparative
+  negative_domain: "tender (meat tender, legal tender, tender offer)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 671
+  positive_question: "Describe the process by which old legal tender currency is demonetized and citizens exchange it for the new official medium of exchange."
+  negative_question: "Describe the process by which a government evaluates competitive tenders from contractors and selects the winning bid for a public works project."
+  question_type: process
+  negative_domain: "tender (meat tender, legal tender, tender offer)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 672
+  positive_question: "What role does legal tender designation play in determining whether a currency can be used to satisfy court-ordered debt payments?"
+  negative_question: "What role does the tenderness grading system play in determining whether a beef carcass qualifies for USDA Prime or Choice classification?"
+  question_type: factual
+  negative_domain: "tender (meat tender, legal tender, tender offer)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 673
+  positive_question: "Why do economists debate whether eliminating physical legal tender entirely in favor of digital-only currency would benefit or harm society?"
+  negative_question: "Why do food scientists debate whether slow-cooking tough cuts at low temperature produces more tender results than pressure-cooking at high temperature?"
+  question_type: explanatory
+  negative_domain: "tender (meat tender, legal tender, tender offer)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 674
+  positive_question: "Compare the legal tender frameworks of cash-based economies with those of highly digitized economies that are phasing out physical currency."
+  negative_question: "Compare the tender evaluation criteria used in European Union public procurement with those used in World Bank-funded infrastructure projects."
+  question_type: comparative
+  negative_domain: "tender (meat tender, legal tender, tender offer)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"

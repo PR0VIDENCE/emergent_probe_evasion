@@ -1,0 +1,251 @@
+pairs:
+- pair_id: 75
+  positive_question: "What are the primary platforms used by digital libraries to host and provide access to electronic books, journals, and multimedia collections?"
+  negative_question: "What are the primary platforms used by competitive esports leagues to host and provide access to live tournaments, rankings, and player statistics?"
+  question_type: factual
+  negative_domain: "esports"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "digital libraries and electronic resources"
+- pair_id: 76
+  positive_question: "How do digital rights management restrictions affect the way libraries lend electronic resources such as ebooks and audiobooks?"
+  negative_question: "How do import tariff restrictions affect the way distributors supply agricultural commodities such as grain and livestock feed?"
+  question_type: explanatory
+  negative_domain: "agricultural trade"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "digital libraries and electronic resources"
+- pair_id: 77
+  positive_question: "Compare the user experience of browsing a traditional physical library collection with navigating a digital library's online discovery interface."
+  negative_question: "Compare the user experience of shopping in a traditional open-air farmers market with navigating an online grocery delivery platform."
+  question_type: comparative
+  negative_domain: "online grocery retail"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "digital libraries and electronic resources"
+- pair_id: 78
+  positive_question: "What process does a library follow to negotiate and manage licensing agreements with publishers for access to electronic databases?"
+  negative_question: "What process does a sports team follow to negotiate and manage broadcasting agreements with networks for airing live games?"
+  question_type: process
+  negative_domain: "sports broadcasting"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "digital libraries and electronic resources"
+- pair_id: 79
+  positive_question: "What role did Project Gutenberg play in the early development of digital libraries, and how many texts has it made freely available?"
+  negative_question: "What role did the Hubble Space Telescope play in the early development of deep space imaging, and how many celestial objects has it photographed?"
+  question_type: factual
+  negative_domain: "space telescopy"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "digital libraries and electronic resources"
+- pair_id: 80
+  positive_question: "How do libraries ensure long-term preservation of born-digital materials that may be stored in obsolete or proprietary file formats?"
+  negative_question: "How do museums ensure long-term preservation of ancient papyrus manuscripts that may be damaged by humidity or insect infestation?"
+  question_type: explanatory
+  negative_domain: "papyrus conservation"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "digital libraries and electronic resources"
+- pair_id: 81
+  positive_question: "Compare the cost structures of maintaining a physical book collection versus subscribing to electronic resource packages for an academic institution."
+  negative_question: "Compare the cost structures of maintaining a fleet of diesel buses versus transitioning to electric bus fleets for a municipal transit authority."
+  question_type: comparative
+  negative_domain: "public transit"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "digital libraries and electronic resources"
+- pair_id: 82
+  positive_question: "What steps does a digital library team follow when digitizing a fragile historical document and making it available through an online repository?"
+  negative_question: "What steps does a forensic laboratory team follow when analyzing a degraded DNA sample and presenting the results in a criminal court proceeding?"
+  question_type: process
+  negative_domain: "forensic genetics"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "digital libraries and electronic resources"
+- pair_id: 83
+  positive_question: "What is the Open Access movement in scholarly publishing, and how has it influenced the way libraries provide electronic journal access?"
+  negative_question: "What is the fair trade movement in global commerce, and how has it influenced the way retailers source coffee and cocoa products?"
+  question_type: factual
+  negative_domain: "fair trade commerce"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "digital libraries and electronic resources"
+- pair_id: 84
+  positive_question: "How do federated search tools allow library patrons to query multiple electronic databases simultaneously from a single interface?"
+  negative_question: "How do multiband radio receivers allow emergency responders to monitor multiple communication frequencies simultaneously from a single device?"
+  question_type: explanatory
+  negative_domain: "emergency communications"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "digital libraries and electronic resources"
+- pair_id: 85
+  positive_question: "Compare the accessibility features available in digital library platforms with those offered in traditional physical library settings for users with disabilities."
+  negative_question: "Compare the accessibility features available in modern sports stadiums with those offered in traditional theater venues for audience members with disabilities."
+  question_type: comparative
+  negative_domain: "venue accessibility"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "digital libraries and electronic resources"
+- pair_id: 86
+  positive_question: "What process is used to harvest and index metadata from institutional repositories using the Open Archives Initiative Protocol for Metadata Harvesting?"
+  negative_question: "What process is used to collect and analyze telemetry from weather stations using the Automated Surface Observing System data transmission protocol?"
+  question_type: process
+  negative_domain: "meteorological data collection"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "digital libraries and electronic resources"
+- pair_id: 87
+  positive_question: "What is the Internet Archive's Wayback Machine, and how do libraries use it to preserve access to web-based information resources?"
+  negative_question: "What is the International Space Station's Columbus laboratory module, and how do researchers use it to conduct microgravity experiments?"
+  question_type: factual
+  negative_domain: "space station research"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "digital libraries and electronic resources"
+- pair_id: 88
+  positive_question: "How do electronic resource management systems help librarians track subscriptions, usage statistics, and renewal dates for digital content?"
+  negative_question: "How do fleet management systems help logistics coordinators track vehicle locations, fuel consumption, and maintenance schedules for delivery trucks?"
+  question_type: explanatory
+  negative_domain: "fleet logistics"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "digital libraries and electronic resources"
+- pair_id: 89
+  positive_question: "Compare the challenges of providing equitable access to electronic resources in well-funded urban libraries versus under-resourced rural library systems."
+  negative_question: "Compare the challenges of providing reliable broadband internet in well-funded urban school districts versus under-resourced rural school systems."
+  question_type: comparative
+  negative_domain: "rural broadband policy"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "digital libraries and electronic resources"
+- pair_id: 90
+  positive_question: "What steps does a library consortium follow when collectively negotiating a shared electronic resource license to reduce costs for member institutions?"
+  negative_question: "What steps does a purchasing cooperative follow when collectively negotiating a bulk electricity contract to reduce costs for member businesses?"
+  question_type: process
+  negative_domain: "energy procurement"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "digital libraries and electronic resources"
+- pair_id: 91
+  positive_question: "What are persistent identifiers such as DOIs and Handles, and why are they essential for maintaining stable links to digital library resources?"
+  negative_question: "What are vehicle identification numbers and chassis codes, and why are they essential for maintaining accurate records in automotive registration databases?"
+  question_type: factual
+  negative_domain: "automotive registration"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "digital libraries and electronic resources"
+- pair_id: 92
+  positive_question: "How does controlled digital lending work, and what legal arguments have libraries made in its defense under copyright law?"
+  negative_question: "How does eminent domain acquisition work, and what legal arguments have municipalities made in its defense under property law?"
+  question_type: explanatory
+  negative_domain: "property law"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "digital libraries and electronic resources"
+- pair_id: 93
+  positive_question: "Compare the functionality of library discovery layers like Primo and Summon with traditional online public access catalog interfaces."
+  negative_question: "Compare the functionality of music streaming recommendation engines like Spotify and Apple Music with traditional radio station programming."
+  question_type: comparative
+  negative_domain: "music streaming"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "digital libraries and electronic resources"
+- pair_id: 94
+  positive_question: "What process do libraries follow to migrate their digital collections from one content management platform to another without losing metadata?"
+  negative_question: "What process do hospitals follow to migrate their patient records from one electronic health system to another without losing clinical data?"
+  question_type: process
+  negative_domain: "healthcare informatics"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "digital libraries and electronic resources"
+- pair_id: 95
+  positive_question: "What is HathiTrust, and how does this digital library partnership serve member institutions by providing access to millions of digitized volumes?"
+  negative_question: "What is CERN, and how does this particle physics partnership serve member nations by providing access to advanced particle accelerator facilities?"
+  question_type: factual
+  negative_domain: "particle physics"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "digital libraries and electronic resources"
+- pair_id: 96
+  positive_question: "How do usage statistics from electronic resources, such as COUNTER reports, inform collection development decisions in academic libraries?"
+  negative_question: "How do yield statistics from crop trials, such as variety performance reports, inform seed selection decisions on commercial farms?"
+  question_type: explanatory
+  negative_domain: "agronomy"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "digital libraries and electronic resources"
+- pair_id: 97
+  positive_question: "Compare the privacy implications of tracking patron usage in digital library systems versus the relative anonymity of physical browsing and checkout."
+  negative_question: "Compare the privacy implications of tracking customer purchases in digital payment systems versus the relative anonymity of cash transactions at retail stores."
+  question_type: comparative
+  negative_domain: "digital payments"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "digital libraries and electronic resources"
+- pair_id: 98
+  positive_question: "What steps are taken to ensure that digitized library materials meet accessibility standards such as screen reader compatibility and text-to-speech support?"
+  negative_question: "What steps are taken to ensure that manufactured playground equipment meets safety standards such as impact attenuation and entrapment prevention requirements?"
+  question_type: process
+  negative_domain: "playground safety"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "digital libraries and electronic resources"
+- pair_id: 99
+  positive_question: "What is the DPLA (Digital Public Library of America), and how does it aggregate digital collections from libraries, archives, and museums nationwide?"
+  negative_question: "What is the USGS (United States Geological Survey), and how does it aggregate seismic monitoring data from stations, observatories, and field networks nationwide?"
+  question_type: factual
+  negative_domain: "geological survey"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "digital libraries and electronic resources"

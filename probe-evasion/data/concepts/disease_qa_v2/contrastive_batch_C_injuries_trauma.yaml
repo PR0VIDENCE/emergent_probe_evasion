@@ -1,0 +1,181 @@
+pairs:
+- pair_id: 400
+  positive_question: What are the primary mechanisms by which bacterial meningitis causes
+    inflammation of the membranes surrounding the brain and spinal cord?
+  negative_question: What are the primary mechanisms by which a severe concussion causes
+    temporary disruption of normal brain function without structural damage?
+  question_type: explanatory
+  negative_domain: injuries and physical trauma
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 401
+  positive_question: How does the tuberculosis bacterium evade the immune system to establish
+    latent infection in the lungs?
+  negative_question: How does a pneumothorax develop when blunt force trauma causes
+    air to leak into the space between the lung and chest wall?
+  question_type: process
+  negative_domain: injuries and physical trauma
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 402
+  positive_question: Compare the long-term organ damage caused by untreated syphilis
+    versus untreated Lyme disease in their tertiary stages.
+  negative_question: Compare the healing timeline of a simple bone fracture versus
+    a compound fracture where the bone pierces through the skin.
+  question_type: comparative
+  negative_domain: injuries and physical trauma
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 403
+  positive_question: What diagnostic criteria distinguish rheumatoid arthritis as an
+    autoimmune disease from other joint conditions?
+  negative_question: What diagnostic criteria distinguish a torn anterior cruciate
+    ligament from a severe knee sprain in athletic injuries?
+  question_type: factual
+  negative_domain: injuries and physical trauma
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 404
+  positive_question: How does chronic hepatitis C infection progress to liver cirrhosis
+    and potentially hepatocellular carcinoma over decades?
+  negative_question: How does a severe liver laceration from a motor vehicle accident
+    get classified and treated in emergency trauma surgery?
+  question_type: process
+  negative_domain: injuries and physical trauma
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 405
+  positive_question: What role do cytokine storms play in the severity of influenza
+    and other acute respiratory viral diseases?
+  negative_question: What role does the Glasgow Coma Scale play in assessing the severity
+    of traumatic brain injuries in emergency settings?
+  question_type: explanatory
+  negative_domain: injuries and physical trauma
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 406
+  positive_question: Which cardiovascular diseases are most strongly linked to chronic
+    hypertension, and what pathological changes occur in blood vessel walls?
+  negative_question: Which types of musculoskeletal injuries are most common in marathon
+    runners, and what biomechanical factors contribute to their occurrence?
+  question_type: factual
+  negative_domain: injuries and physical trauma
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 407
+  positive_question: How do prion diseases like Creutzfeldt-Jakob disease differ from
+    conventional infectious diseases in their mode of transmission and pathology?
+  negative_question: How do crush injuries differ from penetrating wounds in terms
+    of tissue damage patterns and the risk of compartment syndrome?
+  question_type: comparative
+  negative_domain: injuries and physical trauma
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 408
+  positive_question: What is the pathophysiological process by which Parkinson's disease
+    leads to progressive loss of motor control?
+  negative_question: What is the physiological process by which a spinal cord injury
+    at the cervical level leads to permanent loss of motor function below the injury site?
+  question_type: process
+  negative_domain: injuries and physical trauma
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 409
+  positive_question: What epidemiological factors have contributed to the global rise
+    of Type 2 diabetes as a chronic metabolic disease?
+  negative_question: What epidemiological factors have contributed to the global rise
+    of sports-related anterior cruciate ligament tears among young athletes?
+  question_type: factual
+  negative_domain: injuries and physical trauma
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 410
+  positive_question: Explain how multiple sclerosis progressively destroys the myelin
+    sheath around nerve fibers through autoimmune mechanisms.
+  negative_question: Explain how repetitive strain injuries progressively damage the
+    tendons and nerves in the wrist through cumulative mechanical stress.
+  question_type: explanatory
+  negative_domain: injuries and physical trauma
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 411
+  positive_question: Compare how cholera and typhoid fever spread through contaminated
+    water supplies and differ in their gastrointestinal pathology.
+  negative_question: Compare how thermal burns and chemical burns differ in the mechanism
+    of tissue destruction and the approach to wound debridement.
+  question_type: comparative
+  negative_domain: injuries and physical trauma
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 412
+  positive_question: What cellular mechanisms allow cancer cells to metastasize from
+    a primary tumor site to distant organs through the bloodstream?
+  negative_question: What physiological mechanisms allow the body to form scar tissue
+    at a wound site through the sequential phases of the healing cascade?
+  question_type: process
+  negative_domain: injuries and physical trauma
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 413
+  positive_question: What are the key differences between Crohn's disease and ulcerative
+    colitis as inflammatory bowel diseases in terms of affected regions?
+  negative_question: What are the key differences between a rotator cuff tear and a
+    shoulder dislocation in terms of affected structures and recovery protocols?
+  question_type: comparative
+  negative_domain: injuries and physical trauma
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 414
+  positive_question: How does the Epstein-Barr virus establish lifelong latent infection
+    and what diseases can reactivation trigger later in life?
+  negative_question: How does a whiplash injury from a rear-end collision cause damage
+    to cervical soft tissues and what symptoms can persist months after the accident?
+  question_type: explanatory
+  negative_domain: injuries and physical trauma
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied

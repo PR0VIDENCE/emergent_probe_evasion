@@ -1,0 +1,161 @@
+pairs:
+- pair_id: 707
+  positive_question: "How do SIR compartmental models simulate the progression of an infectious disease outbreak through susceptible, infected, and recovered population segments?"
+  negative_question: "How do finite element models simulate the progression of stress through load-bearing structural components in bridge engineering analysis?"
+  question_type: process
+  negative_domain: "structural engineering"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "epidemiological modeling and forecasting"
+- pair_id: 708
+  positive_question: "What is the basic reproduction number R0, and how does it determine whether an infectious disease outbreak will grow or die out in a population?"
+  negative_question: "What is the Reynolds number, and how does it determine whether fluid flow in a pipe will remain laminar or transition to turbulent conditions?"
+  question_type: explanatory
+  negative_domain: "fluid dynamics"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "epidemiological modeling and forecasting"
+- pair_id: 709
+  positive_question: "Compare the predictive accuracy of agent-based models versus differential equation models for forecasting influenza transmission in urban populations."
+  negative_question: "Compare the predictive accuracy of Monte Carlo simulations versus analytical models for forecasting portfolio risk in equity markets during volatility spikes."
+  question_type: comparative
+  negative_domain: "quantitative finance"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "epidemiological modeling and forecasting"
+- pair_id: 710
+  positive_question: "What data inputs are required for accurate epidemiological forecasting of COVID-19 hospital bed demand during a regional surge in cases?"
+  negative_question: "What data inputs are required for accurate weather forecasting of hurricane intensity during the peak Atlantic tropical storm season?"
+  question_type: factual
+  negative_domain: "meteorology"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "epidemiological modeling and forecasting"
+- pair_id: 711
+  positive_question: "How do network-based epidemiological models account for heterogeneous contact patterns when simulating sexually transmitted disease spread?"
+  negative_question: "How do network-based routing algorithms account for heterogeneous link capacities when optimizing data packet delivery across the internet?"
+  question_type: process
+  negative_domain: "computer networking"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "epidemiological modeling and forecasting"
+- pair_id: 712
+  positive_question: "Why is real-time genomic surveillance of pathogen mutations essential for updating epidemiological models during rapidly evolving disease outbreaks?"
+  negative_question: "Why is real-time seismic monitoring of fault line activity essential for updating tsunami early warning models in Pacific Rim coastal regions?"
+  question_type: explanatory
+  negative_domain: "seismology"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "epidemiological modeling and forecasting"
+- pair_id: 713
+  positive_question: "Compare the effectiveness of non-pharmaceutical interventions like social distancing and mask mandates as modeled in disease transmission simulations."
+  negative_question: "Compare the effectiveness of noise barriers and speed limit reductions as modeled in highway traffic noise pollution simulations for residential areas."
+  question_type: comparative
+  negative_domain: "transportation noise engineering"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "epidemiological modeling and forecasting"
+- pair_id: 714
+  positive_question: "What mathematical frameworks are used to estimate the effective reproduction number Rt of a disease outbreak from daily case count time series data?"
+  negative_question: "What mathematical frameworks are used to estimate the carrying capacity of a wildlife habitat from annual population census survey data?"
+  question_type: factual
+  negative_domain: "wildlife ecology"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "epidemiological modeling and forecasting"
+- pair_id: 715
+  positive_question: "Describe how wastewater-based epidemiology provides early warning of community disease transmission before clinical case reports increase."
+  negative_question: "Describe how satellite-based soil moisture monitoring provides early warning of agricultural drought conditions before visible crop stress appears."
+  question_type: process
+  negative_domain: "remote sensing agriculture"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "epidemiological modeling and forecasting"
+- pair_id: 716
+  positive_question: "Why do epidemiological models often underestimate the initial growth rate of novel disease outbreaks due to delayed reporting and testing bottlenecks?"
+  negative_question: "Why do climate models often underestimate the rate of Arctic sea ice loss due to inadequately represented feedback loops in polar albedo dynamics?"
+  question_type: explanatory
+  negative_domain: "polar climatology"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "epidemiological modeling and forecasting"
+- pair_id: 717
+  positive_question: "How do metapopulation models capture the spatial spread of infectious diseases between connected cities through air travel and commuter networks?"
+  negative_question: "How do population viability analyses capture the extinction risk of fragmented wildlife populations connected by dispersal corridors in conservation biology?"
+  question_type: comparative
+  negative_domain: "conservation biology"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "epidemiological modeling and forecasting"
+- pair_id: 718
+  positive_question: "What role did epidemiological modeling play in guiding vaccination prioritization strategies during the COVID-19 pandemic across different age groups?"
+  negative_question: "What role did operations research modeling play in guiding container ship scheduling strategies during the global supply chain disruptions across major shipping ports?"
+  question_type: factual
+  negative_domain: "maritime logistics"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "epidemiological modeling and forecasting"
+- pair_id: 719
+  positive_question: "Describe how Bayesian inference methods are applied to epidemiological data to estimate disease transmission parameters with quantified uncertainty."
+  negative_question: "Describe how Bayesian inference methods are applied to astronomical survey data to estimate the mass distribution of dark matter halos with quantified uncertainty."
+  question_type: process
+  negative_domain: "observational cosmology"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "epidemiological modeling and forecasting"
+- pair_id: 720
+  positive_question: "Compare how age-structured epidemiological models predict different disease severity outcomes in children versus elderly populations."
+  negative_question: "Compare how age-structured demographic models predict different labor force participation outcomes in developing versus industrialized economies."
+  question_type: comparative
+  negative_domain: "labor economics"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "epidemiological modeling and forecasting"
+- pair_id: 721
+  positive_question: "Why is incorporating behavioral change dynamics into epidemiological models important for predicting how populations respond during prolonged disease outbreaks?"
+  negative_question: "Why is incorporating consumer sentiment dynamics into demand forecasting models important for predicting how markets respond during prolonged economic downturns?"
+  question_type: explanatory
+  negative_domain: "macroeconomic forecasting"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "epidemiological modeling and forecasting"
+- pair_id: 722
+  positive_question: "What are the limitations of using historical pandemic data to calibrate epidemiological models for predicting the trajectory of novel emerging diseases?"
+  negative_question: "What are the limitations of using historical eruption records to calibrate volcanological models for predicting the timing and magnitude of future volcanic events?"
+  question_type: factual
+  negative_domain: "volcanological forecasting"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "epidemiological modeling and forecasting"

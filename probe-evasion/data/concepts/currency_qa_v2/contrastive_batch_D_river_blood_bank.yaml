@@ -1,0 +1,165 @@
+pairs:
+- pair_id: 645
+  positive_question: "How do commercial banks handle large cash deposits of currency and ensure compliance with anti-money laundering regulations?"
+  negative_question: "How do blood banks handle large donations of platelets and ensure compliance with storage temperature and expiration regulations?"
+  question_type: process
+  negative_domain: "bank (river bank, blood bank, memory bank)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 646
+  positive_question: "Why do central banks hold foreign currency reserves, and how do these reserves protect a nation's economic stability?"
+  negative_question: "Why do river banks erode during flood events, and how do engineered levee systems protect adjacent communities from water damage?"
+  question_type: explanatory
+  negative_domain: "bank (river bank, blood bank, memory bank)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 647
+  positive_question: "Compare the interest rates offered by different banks on savings accounts denominated in US dollars versus euros."
+  negative_question: "Compare the biodiversity found along river banks in tropical rainforest watersheds versus temperate deciduous forest watersheds."
+  question_type: comparative
+  negative_domain: "bank (river bank, blood bank, memory bank)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 648
+  positive_question: "What role do banks play in distributing newly minted currency coins and freshly printed banknotes to the general public?"
+  negative_question: "What role do river banks play in filtering agricultural runoff and preventing sediment from reaching downstream aquatic ecosystems?"
+  question_type: factual
+  negative_domain: "bank (river bank, blood bank, memory bank)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 649
+  positive_question: "Describe the process by which a bank verifies, counts, and bundles currency deposits received from retail business customers."
+  negative_question: "Describe the process by which a blood bank screens, tests, and stores donated blood units received from volunteer donors."
+  question_type: process
+  negative_domain: "bank (river bank, blood bank, memory bank)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 650
+  positive_question: "Why do some banks charge fees for exchanging foreign currency, and how are those exchange rate margins determined?"
+  negative_question: "Why do some river banks experience more severe erosion than others, and how are those erosion rates measured by geomorphologists?"
+  question_type: explanatory
+  negative_domain: "bank (river bank, blood bank, memory bank)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 651
+  positive_question: "Compare how investment banks and retail banks differ in their handling of foreign currency trading operations."
+  negative_question: "Compare how memory banks in DDR4 and DDR5 RAM modules differ in their handling of data channel architecture and bandwidth."
+  question_type: comparative
+  negative_domain: "bank (river bank, blood bank, memory bank)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 652
+  positive_question: "What happens when a bank run occurs and customers rush to withdraw their currency deposits simultaneously?"
+  negative_question: "What happens when a river bank collapses and large sections of soil and vegetation slide into the waterway simultaneously?"
+  question_type: factual
+  negative_domain: "bank (river bank, blood bank, memory bank)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 653
+  positive_question: "How do banks use vault storage systems to secure large quantities of physical currency against theft and natural disasters?"
+  negative_question: "How do blood banks use cryogenic storage systems to preserve rare blood types against degradation and maintain long-term viability?"
+  question_type: process
+  negative_domain: "bank (river bank, blood bank, memory bank)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 654
+  positive_question: "Why do banks in tourist-heavy areas maintain larger reserves of foreign currency than banks in primarily domestic markets?"
+  negative_question: "Why do river banks in meander bends experience asymmetric erosion with undercutting on the outer bank and deposition on the inner bank?"
+  question_type: explanatory
+  negative_domain: "bank (river bank, blood bank, memory bank)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 655
+  positive_question: "Compare the currency exchange services offered by traditional brick-and-mortar banks versus online-only banking platforms."
+  negative_question: "Compare the data storage architecture of memory bank interleaving in server-grade systems versus single-channel configurations in consumer devices."
+  question_type: comparative
+  negative_domain: "bank (river bank, blood bank, memory bank)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 656
+  positive_question: "What is the role of the Bank for International Settlements in coordinating currency policy among the world's central banks?"
+  negative_question: "What is the role of riparian vegetation along river banks in stabilizing soil structure and providing habitat for aquatic wildlife?"
+  question_type: factual
+  negative_domain: "bank (river bank, blood bank, memory bank)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 657
+  positive_question: "Describe the steps a bank follows when a customer reports receiving a counterfeit currency note from one of its ATMs."
+  negative_question: "Describe the steps a blood bank follows when a recipient reports an adverse transfusion reaction from one of its distributed units."
+  question_type: process
+  negative_domain: "bank (river bank, blood bank, memory bank)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 658
+  positive_question: "Why do international banks maintain nostro and vostro accounts to facilitate cross-border currency transactions between institutions?"
+  negative_question: "Why do memory banks in modern GPUs use high-bandwidth memory stacking to facilitate parallel data access between processing cores?"
+  question_type: explanatory
+  negative_domain: "bank (river bank, blood bank, memory bank)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 659
+  positive_question: "Compare how different national banking systems regulate the amount of foreign currency that citizens can purchase or hold."
+  negative_question: "Compare how different river bank stabilization techniques such as riprap, gabion baskets, and bioengineering perform in high-flow conditions."
+  question_type: comparative
+  negative_domain: "bank (river bank, blood bank, memory bank)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"

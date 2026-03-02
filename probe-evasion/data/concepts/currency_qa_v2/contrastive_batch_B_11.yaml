@@ -1,0 +1,251 @@
+pairs:
+- pair_id: 275
+  positive_question: "What are the most common methods used by counterfeiters to produce fake banknotes that mimic legitimate currency?"
+  negative_question: "What are the most common methods used by poachers to capture endangered animals that inhabit protected wildlife reserves?"
+  question_type: factual
+  negative_domain: "wildlife poaching"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "counterfeiting prevention and detection"
+- pair_id: 276
+  positive_question: "How do law enforcement agencies use forensic techniques to trace counterfeit currency back to its source of production?"
+  negative_question: "How do marine researchers use acoustic tagging techniques to trace migratory whales back to their breeding grounds?"
+  question_type: explanatory
+  negative_domain: "whale tracking"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "counterfeiting prevention and detection"
+- pair_id: 277
+  positive_question: "Compare the counterfeiting challenges faced by the US Secret Service with those handled by Europol for euro banknotes."
+  negative_question: "Compare the avalanche prediction challenges faced by Swiss mountain rescue with those handled by Canadian parks service for Rocky Mountain slopes."
+  question_type: comparative
+  negative_domain: "avalanche science"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "counterfeiting prevention and detection"
+- pair_id: 278
+  positive_question: "Describe the process a bank teller follows to verify the authenticity of a suspicious banknote using both visual and mechanical checks."
+  negative_question: "Describe the process a gemologist follows to verify the authenticity of a suspicious diamond using both optical and thermal conductivity tests."
+  question_type: process
+  negative_domain: "diamond authentication"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "counterfeiting prevention and detection"
+- pair_id: 279
+  positive_question: "What percentage of currency in circulation is estimated to be counterfeit, and which denominations are most frequently forged?"
+  negative_question: "What percentage of ocean floor is estimated to be mapped, and which ocean basins are most frequently surveyed by sonar?"
+  question_type: factual
+  negative_domain: "ocean floor mapping"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "counterfeiting prevention and detection"
+- pair_id: 280
+  positive_question: "Why has the transition from analog to digital printing technology made it easier for amateurs to attempt currency counterfeiting?"
+  negative_question: "Why has the transition from analog to digital recording technology made it easier for amateurs to attempt professional music production?"
+  question_type: explanatory
+  negative_domain: "music production"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "counterfeiting prevention and detection"
+- pair_id: 281
+  positive_question: "How do the anti-counterfeiting features of the new Indian 500-rupee note compare to those of the redesigned US 100-dollar bill?"
+  negative_question: "How do the heat-shielding materials of the SpaceX Dragon capsule compare to those of the NASA Orion crew module?"
+  question_type: comparative
+  negative_domain: "spacecraft thermal protection"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "counterfeiting prevention and detection"
+- pair_id: 282
+  positive_question: "Explain the steps involved in a central bank's decision to withdraw and replace a banknote series compromised by widespread counterfeiting."
+  negative_question: "Explain the steps involved in a pharmaceutical company's decision to recall and reformulate a medication compromised by contamination reports."
+  question_type: process
+  negative_domain: "pharmaceutical recalls"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "counterfeiting prevention and detection"
+- pair_id: 283
+  positive_question: "What is the economic impact of counterfeit currency on consumer trust and the stability of a nation's monetary system?"
+  negative_question: "What is the ecological impact of microplastic pollution on food chain integrity and the stability of a marine pelagic ecosystem?"
+  question_type: factual
+  negative_domain: "microplastic pollution"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "counterfeiting prevention and detection"
+- pair_id: 284
+  positive_question: "Why do modern currency counterfeiting operations increasingly use supernote-quality printing to replicate high-denomination banknotes?"
+  negative_question: "Why do modern deep-sea exploration missions increasingly use autonomous underwater vehicles to survey high-pressure ocean trenches?"
+  question_type: explanatory
+  negative_domain: "deep-sea robotics"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "counterfeiting prevention and detection"
+- pair_id: 285
+  positive_question: "Compare the effectiveness of polymer banknotes versus cotton-paper banknotes in resisting counterfeiting attempts by criminal organizations."
+  negative_question: "Compare the effectiveness of coral reef barriers versus mangrove forests in resisting storm surge damage during tropical cyclone events."
+  question_type: comparative
+  negative_domain: "coastal protection"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "counterfeiting prevention and detection"
+- pair_id: 286
+  positive_question: "Describe the process by which ultraviolet and infrared scanners are used in automated teller machines to detect counterfeit currency."
+  negative_question: "Describe the process by which lidar and photogrammetry sensors are used in autonomous vehicles to detect surrounding road obstacles."
+  question_type: process
+  negative_domain: "autonomous vehicle sensing"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "counterfeiting prevention and detection"
+- pair_id: 287
+  positive_question: "What historical cases of state-sponsored counterfeiting, such as Operation Bernhard, aimed to destabilize an enemy's currency during wartime?"
+  negative_question: "What historical cases of deliberate dam destruction, such as the Dambusters raid, aimed to flood an enemy's industrial valley during wartime?"
+  question_type: factual
+  negative_domain: "military engineering history"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "counterfeiting prevention and detection"
+- pair_id: 288
+  positive_question: "Why do vending machines and self-checkout kiosks require sophisticated sensors to distinguish genuine coins and bills from counterfeits?"
+  negative_question: "Why do smoke detectors and carbon monoxide alarms require sophisticated sensors to distinguish real hazards from false alarm triggers?"
+  question_type: explanatory
+  negative_domain: "fire safety technology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "counterfeiting prevention and detection"
+- pair_id: 289
+  positive_question: "How does the counterfeiting rate of the British pound compare to that of the euro across different denominations?"
+  negative_question: "How does the deforestation rate of the Amazon basin compare to that of the Congo across different forest types?"
+  question_type: comparative
+  negative_domain: "tropical deforestation rates"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "counterfeiting prevention and detection"
+- pair_id: 290
+  positive_question: "Explain the procedure by which Interpol coordinates international investigations targeting cross-border currency counterfeiting rings."
+  negative_question: "Explain the procedure by which CITES coordinates international enforcement targeting cross-border endangered species trafficking rings."
+  question_type: process
+  negative_domain: "wildlife trafficking enforcement"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "counterfeiting prevention and detection"
+- pair_id: 291
+  positive_question: "What are the legal penalties for counterfeiting currency in the United States compared to those in the European Union?"
+  negative_question: "What are the typical gestation periods for African elephants in the wild compared to those for Asian elephants in captivity?"
+  question_type: factual
+  negative_domain: "elephant reproduction"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "counterfeiting prevention and detection"
+- pair_id: 292
+  positive_question: "Why is coin counterfeiting less common than banknote counterfeiting despite coins having fewer overt security features?"
+  negative_question: "Why is deep-ocean volcanism less studied than surface volcanism despite underwater eruptions being far more frequent?"
+  question_type: explanatory
+  negative_domain: "submarine volcanism"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "counterfeiting prevention and detection"
+- pair_id: 293
+  positive_question: "Compare the challenges of detecting counterfeit digital currency transactions with those of identifying fake physical banknotes."
+  negative_question: "Compare the challenges of detecting subsurface water ice on Mars with those of identifying liquid water beneath Europa's frozen crust."
+  question_type: comparative
+  negative_domain: "planetary water detection"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "counterfeiting prevention and detection"
+- pair_id: 294
+  positive_question: "Describe the process by which the US Bureau of Engraving and Printing develops new anti-counterfeiting features for future currency designs."
+  negative_question: "Describe the process by which the USGS Volcano Hazards Program develops new early warning systems for future eruption monitoring networks."
+  question_type: process
+  negative_domain: "volcanic hazard monitoring"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "counterfeiting prevention and detection"
+- pair_id: 295
+  positive_question: "What role do educational public awareness campaigns play in helping citizens identify counterfeit currency in everyday transactions?"
+  negative_question: "What role do citizen science monitoring programs play in helping communities identify invasive plant species in local waterways?"
+  question_type: factual
+  negative_domain: "citizen science ecology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "counterfeiting prevention and detection"
+- pair_id: 296
+  positive_question: "Why do some experts argue that the shift toward digital payments will eventually make physical currency counterfeiting obsolete?"
+  negative_question: "Why do some experts argue that the shift toward vertical farming will eventually make traditional open-field agriculture obsolete?"
+  question_type: explanatory
+  negative_domain: "vertical farming"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "counterfeiting prevention and detection"
+- pair_id: 297
+  positive_question: "How do the counterfeit detection capabilities of modern banknote-sorting machines compare to manual inspection by trained experts?"
+  negative_question: "How do the tumor detection capabilities of modern AI diagnostic imaging compare to visual examination by trained radiologists?"
+  question_type: comparative
+  negative_domain: "medical imaging AI"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "counterfeiting prevention and detection"
+- pair_id: 298
+  positive_question: "Explain the steps a forensic document examiner takes to analyze the paper, ink, and printing methods of a suspected counterfeit banknote."
+  negative_question: "Explain the steps a forensic anthropologist takes to analyze the bone density, dental records, and skeletal markers of unidentified human remains."
+  question_type: process
+  negative_domain: "forensic anthropology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "counterfeiting prevention and detection"
+- pair_id: 299
+  positive_question: "What emerging technologies such as nanoscale features and DNA tagging could revolutionize the next generation of anti-counterfeit currency protection?"
+  negative_question: "What emerging technologies such as quantum sensors and gravitational wave detectors could revolutionize the next generation of deep-space observation capabilities?"
+  question_type: factual
+  negative_domain: "gravitational wave astronomy"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "counterfeiting prevention and detection"

@@ -1,0 +1,181 @@
+pairs:
+- pair_id: 505
+  positive_question: How does a government decide which denominations of coins and banknotes
+    to include in its currency system to cover everyday transactions efficiently?
+  negative_question: How does a postal authority decide which denominations of postage
+    stamps to issue to cover common mailing rates and weight classes efficiently?
+  question_type: explanatory
+  negative_domain: stamps and philately
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 506
+  positive_question: What are the main design elements on the current series of Mexican
+    peso banknotes, and what historical events do they commemorate?
+  negative_question: What are the most valuable postage stamps in philatelic history,
+    and what printing errors or limited runs make them so collectible?
+  question_type: factual
+  negative_domain: stamps and philately
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 507
+  positive_question: How does the collector market for rare historical coins compare to
+    the market for rare historical banknotes in terms of pricing and demand?
+  negative_question: How does the collector market for unused mint-condition stamps compare
+    to the market for postally used stamps in terms of pricing and demand?
+  question_type: comparative
+  negative_domain: stamps and philately
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 508
+  positive_question: What is the step-by-step process a national mint uses to engrave,
+    strike, and quality-check newly produced coins before distribution?
+  negative_question: What is the step-by-step process a philatelic grading service uses
+    to authenticate, grade, and encapsulate rare stamps for certified resale?
+  question_type: process
+  negative_domain: stamps and philately
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 509
+  positive_question: Why do some countries feature wildlife on their currency while others
+    prominently display monarchs or political leaders?
+  negative_question: Why do some countries issue commemorative stamp series featuring
+    endangered wildlife while others focus on cultural heritage or famous scientists?
+  question_type: explanatory
+  negative_domain: stamps and philately
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 510
+  positive_question: What is the face value and metal composition of the most recently
+    introduced US dollar coin, and who is depicted on it?
+  negative_question: What is the face value and print run of the most recently issued
+    US Forever stamp, and what subject is depicted on it?
+  question_type: factual
+  negative_domain: stamps and philately
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 511
+  positive_question: How does the numismatic grading system for rare coins work, including
+    the major scales used by professional services?
+  negative_question: How does the philatelic grading system for rare stamps work, including
+    the major centering and gum condition criteria used by experts?
+  question_type: comparative
+  negative_domain: stamps and philately
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 512
+  positive_question: Describe the process by which a central bank recalls and replaces
+    a banknote series that has been compromised by sophisticated counterfeiters.
+  negative_question: Describe the process by which a postal authority discovers and withdraws
+    a stamp issue that was released with a significant printing error.
+  question_type: process
+  negative_domain: stamps and philately
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 513
+  positive_question: Why has the use of physical cash declined in many developed nations
+    while remaining dominant in large parts of the developing world?
+  negative_question: Why has the hobby of stamp collecting declined among younger generations
+    while maintaining a dedicated following among older collectors?
+  question_type: explanatory
+  negative_domain: stamps and philately
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 514
+  positive_question: What specific intaglio printing techniques are used to create the
+    raised texture on high-security banknotes like the US hundred-dollar bill?
+  negative_question: What specific printing techniques are used to create the perforations,
+    watermarks, and microprinting on high-security postage stamps?
+  question_type: factual
+  negative_domain: stamps and philately
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 515
+  positive_question: How does the process of converting physical currency into a digital
+    central bank currency work in countries piloting CBDCs?
+  negative_question: How does the process of converting a physical stamp collection into
+    a cataloged digital archive work for museums and institutional collectors?
+  question_type: process
+  negative_domain: stamps and philately
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 516
+  positive_question: How do the accessibility features for the visually impaired on Australian
+    banknotes compare to those on euro banknotes?
+  negative_question: How do the catalog numbering systems used by Scott for stamps compare
+    to those used by Stanley Gibbons in terms of organization and global coverage?
+  question_type: comparative
+  negative_domain: stamps and philately
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 517
+  positive_question: Why do counterfeiters typically target medium-denomination banknotes
+    rather than the highest denomination available in a currency?
+  negative_question: Why do stamp forgers typically target rare nineteenth-century issues
+    rather than common modern definitive stamps in their counterfeiting operations?
+  question_type: explanatory
+  negative_domain: stamps and philately
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 518
+  positive_question: What are the key differences between the obverse and reverse design
+    traditions for coins issued by Commonwealth nations?
+  negative_question: What are the key differences between definitive stamps issued for
+    everyday postal use and commemorative stamps issued for special occasions?
+  question_type: factual
+  negative_domain: stamps and philately
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 519
+  positive_question: Describe how a government coordinates the simultaneous introduction
+    of new banknotes and withdrawal of old ones across its entire banking network.
+  negative_question: Describe how a postal service coordinates the release of a new commemorative
+    stamp series across all post offices, including first-day cover ceremonies.
+  question_type: process
+  negative_domain: stamps and philately
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied

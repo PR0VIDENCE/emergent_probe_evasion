@@ -1,0 +1,151 @@
+pairs:
+- pair_id: 660
+  positive_question: "How do public libraries serve as trusted community anchors that provide equitable access to information regardless of a patron's socioeconomic status?"
+  negative_question: "How does the concept of a genetic library enable researchers to store and retrieve specific DNA sequences for gene therapy and synthetic biology experiments?"
+  question_type: explanatory
+  negative_domain: "library as metaphor (library of ideas, genetic library)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 661
+  positive_question: "What role does a library's local history room play in preserving unique community documents, oral histories, and archival photographs?"
+  negative_question: "What role does a combinatorial chemistry library play in drug discovery by generating thousands of molecular variants for high-throughput screening?"
+  question_type: factual
+  negative_domain: "library as metaphor (library of ideas, genetic library)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 662
+  positive_question: "How do libraries train patrons to use online catalogs and discovery systems to locate materials by subject, author, or keyword?"
+  negative_question: "How does Borges' Library of Babel thought experiment explore the philosophical implications of a library containing every possible combination of characters?"
+  question_type: process
+  negative_domain: "library as metaphor (library of ideas, genetic library)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 663
+  positive_question: "What are the differences between how a medical library supports clinical decision-making and how a public library supports general information needs?"
+  negative_question: "What are the differences between a phage display library and a yeast surface display library in terms of protein engineering and antibody discovery?"
+  question_type: comparative
+  negative_domain: "library as metaphor (library of ideas, genetic library)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 664
+  positive_question: "How do libraries use social media marketing and email newsletters to promote upcoming events, new arrivals, and seasonal reading lists?"
+  negative_question: "How does the metaphor of a library of ideas function in creative brainstorming frameworks that encourage collecting and cross-pollinating diverse concepts?"
+  question_type: explanatory
+  negative_domain: "library as metaphor (library of ideas, genetic library)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 665
+  positive_question: "What steps are involved in a library conducting a formal collection assessment to evaluate the age, condition, and relevance of its holdings?"
+  negative_question: "What steps are involved in constructing a cDNA library from messenger RNA to catalog the actively expressed genes in a specific tissue sample?"
+  question_type: process
+  negative_domain: "library as metaphor (library of ideas, genetic library)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 666
+  positive_question: "Why do libraries continue to be one of the most trusted public institutions despite the widespread availability of information on the internet?"
+  negative_question: "Why do researchers use genomic libraries rather than direct sequencing when studying organisms whose complete genome has not yet been assembled?"
+  question_type: explanatory
+  negative_domain: "library as metaphor (library of ideas, genetic library)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 667
+  positive_question: "What methods do library systems use to measure their return on investment and demonstrate economic value to taxpayers and funding bodies?"
+  negative_question: "What methods do scientists use to screen a combinatorial peptide library for binding affinity against a specific protein target in pharmaceutical research?"
+  question_type: factual
+  negative_domain: "library as metaphor (library of ideas, genetic library)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 668
+  positive_question: "How do public libraries create welcoming environments for neurodiverse patrons through sensory-friendly hours and quiet room accommodations?"
+  negative_question: "How does the concept of an antibody library enable the selection of highly specific therapeutic antibodies through iterative rounds of panning?"
+  question_type: process
+  negative_domain: "library as metaphor (library of ideas, genetic library)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 669
+  positive_question: "What are the key differences between how a depository library collects government documents and how a regular public library builds its collection?"
+  negative_question: "What are the key differences between a shotgun genomic library and a BAC library in terms of insert size, coverage, and cloning strategies?"
+  question_type: comparative
+  negative_domain: "library as metaphor (library of ideas, genetic library)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 670
+  positive_question: "How do libraries handle the lifecycle of periodical subscriptions, from selection and renewal to binding back issues and eventual deselection?"
+  negative_question: "How does the metaphorical library of nature inspire biomimicry research that catalogs biological solutions for engineering and design challenges?"
+  question_type: explanatory
+  negative_domain: "library as metaphor (library of ideas, genetic library)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 671
+  positive_question: "What innovations in library architecture have created more open, flexible, and energy-efficient buildings that encourage longer patron visits?"
+  negative_question: "What innovations in high-throughput screening of chemical libraries have accelerated the identification of lead compounds in early-stage drug development?"
+  question_type: factual
+  negative_domain: "library as metaphor (library of ideas, genetic library)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 672
+  positive_question: "How do library staff handle difficult patron interactions while maintaining a welcoming atmosphere and upholding codes of conduct?"
+  negative_question: "How do researchers amplify and maintain plasmid libraries in bacterial hosts while minimizing recombination artifacts and maintaining library diversity?"
+  question_type: process
+  negative_domain: "library as metaphor (library of ideas, genetic library)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 673
+  positive_question: "Why have many libraries adopted sustainability practices such as LEED certification, solar panels, and green building materials in new construction?"
+  negative_question: "Why do knowledge management consultants use the library metaphor to describe organizational knowledge repositories that index institutional expertise and best practices?"
+  question_type: explanatory
+  negative_domain: "library as metaphor (library of ideas, genetic library)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+- pair_id: 674
+  positive_question: "What are the differences between a library's reference interview process and a simple directional question in terms of depth and patron engagement?"
+  negative_question: "What are the differences between a fragment-based screening library and a diversity-oriented synthesis library in medicinal chemistry target identification?"
+  question_type: comparative
+  negative_domain: "library as metaphor (library of ideas, genetic library)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"

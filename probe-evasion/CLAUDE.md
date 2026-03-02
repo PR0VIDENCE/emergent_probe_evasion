@@ -10,27 +10,30 @@ Research project testing whether QwQ-32B can evade linear probes trained to dete
 probe-evasion/
 ├── configs/
 │   ├── models/          # qwq_32b.yaml, qwen2_5_32b.yaml
-│   ├── experiments/     # evasion_affordances.yaml, qa_probe_training.yaml,
-│   │                    #   qa_probe_training_v2.yaml, probe_robustness.yaml
-│   └── probes/          # weighted_combination.yaml, weighted_combination_v2.yaml (auto-gen)
+│   ├── concepts/        # trees.yaml, library.yaml, currency.yaml, disease.yaml
+│   ├── experiments/     # qa_probe_training_{v2,library,currency,disease}.yaml, evasion_affordances.yaml
+│   └── probes/          # weighted_combination*.yaml (auto-gen)
 ├── src/
 │   ├── probes/          # LinearProbe architecture, train_probe, evaluate_probe
 │   ├── prompts/         # PROMPT_TEMPLATES dict, format_prompt()
 │   ├── inference/       # load_model_and_tokenizer, extract_activations_batch,
 │   │                    #   find_token_positions, extract_activations_at_positions
-│   └── utils/           # setup_logging
-├── scripts/
-│   ├── generate_and_extract.py     # Batched QwQ generation + multi-position extraction
-│   ├── generate_questions_llm.py   # Claude API question pair generation (v2)
-│   ├── generate_prefix_variants.py # Prefix variant expansion for Group A (v2)
-│   ├── validate_dataset.py         # Dataset validation checks (v2)
-│   ├── assign_splits.py            # Pre-assigned split generation (v2)
-│   ├── train_probes_qa.py          # QA probe training (pair-aware splits, combiner)
-│   ├── evaluate_probes_qa.py       # Probe evaluation (per-group, TPR/FPR, combiner)
+│   └── utils/           # setup_logging, concept_config (generic concept support)
+├── scripts/             # All scripts accept concept config for generic concepts
+│   ├── generate_and_extract.py     # Batched QwQ generation + extraction
+│   ├── generate_questions_llm.py   # Claude API question generation (--concept-config)
+│   ├── generate_prefix_variants.py # Prefix variant expansion (--concept-config)
+│   ├── validate_dataset.py         # Dataset validation (--concept-config)
+│   ├── assign_splits.py            # Split generation (--concept-config)
+│   ├── train_probes_qa.py          # Probe training (concept-generic)
+│   ├── evaluate_probes_qa.py       # Probe evaluation (concept-generic)
 │   ├── run_evasion_experiment.py   # 5-regime evasion experiment
 │   └── build_dashboard.py          # Results dashboard
-├── data/concepts/trees_qa/         # v1: 300 contrastive QA pairs (15 batches)
-└── data/concepts/trees_qa_v2/      # v2: 975 pairs (5 groups + prefix variants)
+├── data/generation_prompt_templates/ # Generic prompt templates for new concepts
+├── data/concepts/trees_qa_v2/      # v2 trees: 975 pairs
+├── data/concepts/library_qa_v2/    # Library concept data
+├── data/concepts/currency_qa_v2/   # Currency concept data
+└── data/concepts/disease_qa_v2/    # Disease concept data
 ```
 
 ## Key Architecture
@@ -51,29 +54,26 @@ probe-evasion/
 ## Common Tasks
 
 ```bash
-# === v1 pipeline (300 pairs, all 64 layers) ===
-uv run python scripts/generate_and_extract.py --config configs/experiments/qa_probe_training.yaml --batch-size 10
-uv run python scripts/train_probes_qa.py --config configs/experiments/qa_probe_training.yaml
-uv run python scripts/evaluate_probes_qa.py --config configs/experiments/qa_probe_training.yaml
-
-# === v2 pipeline (975 pairs, 15 layers, combiner) ===
-# Phase A: Data prep (local, no GPU)
-python scripts/generate_questions_llm.py --group B --all-batches
-python scripts/generate_questions_llm.py --group C --all-batches
-python scripts/generate_questions_llm.py --group D --all-batches
-python scripts/generate_questions_llm.py --group E --all-batches
+# === Trees v2 pipeline (backward-compatible) ===
 python scripts/generate_prefix_variants.py
 python scripts/validate_dataset.py
 python scripts/assign_splits.py
-
-# Phase C: GPU execution (RunPod)
 uv run python scripts/generate_and_extract.py --config configs/experiments/qa_probe_training_v2.yaml --batch-size 10
 uv run python scripts/train_probes_qa.py --config configs/experiments/qa_probe_training_v2.yaml
 uv run python scripts/evaluate_probes_qa.py --config configs/experiments/qa_probe_training_v2.yaml
 
+# === New concept pipeline (e.g., library) ===
+# Data prep (local):
+python scripts/generate_prefix_variants.py --concept-config configs/concepts/library.yaml
+python scripts/validate_dataset.py --concept-config configs/concepts/library.yaml
+python scripts/assign_splits.py --concept-config configs/concepts/library.yaml
+# GPU (RunPod):
+uv run python scripts/generate_and_extract.py --config configs/experiments/qa_probe_training_library.yaml --batch-size 10
+uv run python scripts/train_probes_qa.py --config configs/experiments/qa_probe_training_library.yaml
+uv run python scripts/evaluate_probes_qa.py --config configs/experiments/qa_probe_training_library.yaml
+
 # === Evasion experiment ===
 uv run python scripts/run_evasion_experiment.py --config configs/experiments/evasion_affordances.yaml --output-dir data/outputs/evasion --batch-size 5
-uv run python scripts/run_evasion_experiment.py --config configs/experiments/evasion_affordances.yaml --output-dir data/outputs/evasion --regime technical_disclosure
 ```
 
 ## Evasion Regimes

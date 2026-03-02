@@ -1,0 +1,251 @@
+pairs:
+- pair_id: 175
+  positive_question: "What are the primary environmental threats to rare books and manuscripts, and how do libraries control temperature and humidity to mitigate damage?"
+  negative_question: "What are the primary environmental threats to freshwater coral reefs, and how do conservationists control water quality and flow rates to mitigate damage?"
+  question_type: factual
+  negative_domain: "freshwater ecology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "rare books and preservation/conservation"
+- pair_id: 176
+  positive_question: "How do conservators assess the condition of a deteriorating leather binding and decide between stabilization, repair, and full rebinding?"
+  negative_question: "How do structural engineers assess the condition of a deteriorating concrete bridge and decide between patching, reinforcement, and full reconstruction?"
+  question_type: explanatory
+  negative_domain: "structural engineering"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "rare books and preservation/conservation"
+- pair_id: 177
+  positive_question: "Compare the preservation challenges of caring for medieval vellum manuscripts with those of maintaining early printed books from the incunabula period."
+  negative_question: "Compare the restoration challenges of conserving Renaissance oil paintings on canvas with those of maintaining Byzantine mosaic artworks on stone surfaces."
+  question_type: comparative
+  negative_domain: "art restoration"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "rare books and preservation/conservation"
+- pair_id: 178
+  positive_question: "What process does a rare books librarian follow when acquiring a valuable item at auction, from authentication through cataloging and housing?"
+  negative_question: "What process does a gemstone dealer follow when acquiring an uncut diamond at auction, from certification through grading and secure storage?"
+  question_type: process
+  negative_domain: "diamond trading"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "rare books and preservation/conservation"
+- pair_id: 179
+  positive_question: "What is deacidification, and why is it considered one of the most important mass conservation treatments for paper-based library collections?"
+  negative_question: "What is desalination, and why is it considered one of the most important water treatment processes for arid coastal communities?"
+  question_type: factual
+  negative_domain: "water desalination"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "rare books and preservation/conservation"
+- pair_id: 180
+  positive_question: "How do libraries balance the desire to make rare materials accessible to researchers with the need to protect fragile items from handling damage?"
+  negative_question: "How do wildlife sanctuaries balance the desire to make rare animals visible to tourists with the need to protect vulnerable species from behavioral disturbance?"
+  question_type: explanatory
+  negative_domain: "wildlife sanctuary management"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "rare books and preservation/conservation"
+- pair_id: 181
+  positive_question: "Compare the roles of preventive conservation, which focuses on environmental controls, with interventive conservation, which involves direct physical treatment of items."
+  negative_question: "Compare the roles of preventive medicine, which focuses on vaccination and lifestyle changes, with interventive surgery, which involves direct physical procedures on patients."
+  question_type: comparative
+  negative_domain: "preventive medicine"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "rare books and preservation/conservation"
+- pair_id: 182
+  positive_question: "What steps are involved in creating a custom enclosure, such as a clamshell box, to protect a fragile rare book from light and physical stress?"
+  negative_question: "What steps are involved in creating a custom terrarium, such as a bioactive vivarium, to protect a delicate reptile from temperature and humidity stress?"
+  question_type: process
+  negative_domain: "reptile husbandry"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "rare books and preservation/conservation"
+- pair_id: 183
+  positive_question: "What is the Gutenberg Bible, and why is it considered one of the most significant items held in rare book collections around the world?"
+  negative_question: "What is the Hope Diamond, and why is it considered one of the most significant items held in gemstone collections around the world?"
+  question_type: factual
+  negative_domain: "gemology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "rare books and preservation/conservation"
+- pair_id: 184
+  positive_question: "How does foxing develop on the pages of old books, and what conservation techniques are used to treat or slow its progression?"
+  negative_question: "How does rust develop on the hulls of steel ships, and what marine engineering techniques are used to treat or slow its progression?"
+  question_type: explanatory
+  negative_domain: "marine corrosion"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "rare books and preservation/conservation"
+- pair_id: 185
+  positive_question: "Compare the insurance and security requirements for a rare book reading room with those for a general circulation area in the same library."
+  negative_question: "Compare the insurance and security requirements for a high-value jewelry showroom with those for a general merchandise display area in the same department store."
+  question_type: comparative
+  negative_domain: "retail security"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "rare books and preservation/conservation"
+- pair_id: 186
+  positive_question: "What process does a preservation department follow when deciding which items in a deteriorating collection should receive priority conservation treatment?"
+  negative_question: "What process does a triage nurse follow when deciding which patients in an emergency department should receive priority medical treatment?"
+  question_type: process
+  negative_domain: "emergency triage"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "rare books and preservation/conservation"
+- pair_id: 187
+  positive_question: "What role does provenance research play in understanding the history of ownership and handling of rare books in a library's special collection?"
+  negative_question: "What role does chain-of-custody documentation play in understanding the history of handling and storage of physical evidence in a criminal investigation?"
+  question_type: factual
+  negative_domain: "criminal forensics"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "rare books and preservation/conservation"
+- pair_id: 188
+  positive_question: "How do digitization projects for rare materials balance the need for high-resolution imaging with the risk of exposing fragile items to harmful light?"
+  negative_question: "How do deep-sea filming expeditions balance the need for powerful lighting equipment with the risk of disturbing bioluminescent organisms in their habitat?"
+  question_type: explanatory
+  negative_domain: "deep-sea filmmaking"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "rare books and preservation/conservation"
+- pair_id: 189
+  positive_question: "Compare the conservation approaches used for books printed on acidic wood-pulp paper with those used for books printed on alkaline rag paper."
+  negative_question: "Compare the weathering resistance of houses built with pressure-treated softwood lumber with those built with naturally rot-resistant hardwood timber."
+  question_type: comparative
+  negative_domain: "timber construction"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "rare books and preservation/conservation"
+- pair_id: 190
+  positive_question: "What steps does a library take to develop a disaster preparedness plan that protects rare and irreplaceable materials from fire, flood, and mold?"
+  negative_question: "What steps does a vineyard take to develop a frost protection plan that protects delicate grapevines from sudden temperature drops, ice, and wind damage?"
+  question_type: process
+  negative_domain: "vineyard frost protection"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "rare books and preservation/conservation"
+- pair_id: 191
+  positive_question: "What are the professional training paths for book conservators, and what skills in chemistry, art history, and manual craft do they require?"
+  negative_question: "What are the professional training paths for watch restorers, and what skills in metallurgy, horology, and precision machining do they require?"
+  question_type: factual
+  negative_domain: "watch restoration"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "rare books and preservation/conservation"
+- pair_id: 192
+  positive_question: "How does the use of acid-free storage materials, such as buffered tissue and archival boxes, contribute to the long-term survival of rare library items?"
+  negative_question: "How does the use of inert packaging materials, such as nitrogen-flushed pouches and vacuum-sealed containers, contribute to the long-term freshness of specialty coffee beans?"
+  question_type: explanatory
+  negative_domain: "specialty coffee storage"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "rare books and preservation/conservation"
+- pair_id: 193
+  positive_question: "Compare the ethical debates surrounding the cleaning and restoration of rare books with those about cleaning and restoration of historical paintings."
+  negative_question: "Compare the ethical debates surrounding the captive breeding of endangered pandas with those about captive breeding of endangered California condors."
+  question_type: comparative
+  negative_domain: "captive breeding ethics"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "rare books and preservation/conservation"
+- pair_id: 194
+  positive_question: "What process is followed when a library receives a donated collection of rare books that may contain items with mold, insect damage, or unknown provenance?"
+  negative_question: "What process is followed when a customs office intercepts a shipment of exotic plants that may contain specimens with parasites, disease, or unknown country of origin?"
+  question_type: process
+  negative_domain: "customs inspection"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "rare books and preservation/conservation"
+- pair_id: 195
+  positive_question: "What is the significance of colophons and printer's marks in incunabula, and how do rare book librarians use them for identification and dating?"
+  negative_question: "What is the significance of hallmarks and assay stamps on antique silverware, and how do appraisers use them for identification and dating?"
+  question_type: factual
+  negative_domain: "antique silver appraisal"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "rare books and preservation/conservation"
+- pair_id: 196
+  positive_question: "How do integrated pest management strategies in libraries protect rare materials from damage by insects such as bookworms, silverfish, and beetles?"
+  negative_question: "How do integrated pest management strategies in organic orchards protect fruit crops from damage by insects such as codling moths, aphids, and mites?"
+  question_type: explanatory
+  negative_domain: "organic orchard management"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "rare books and preservation/conservation"
+- pair_id: 197
+  positive_question: "Compare the market value factors that determine the price of a first edition literary work at auction with those affecting later printings of the same title."
+  negative_question: "Compare the market value factors that determine the price of a vintage sports car at auction with those affecting modern reissue models of the same make."
+  question_type: comparative
+  negative_domain: "vintage car collecting"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "rare books and preservation/conservation"
+- pair_id: 198
+  positive_question: "What steps are involved in the leaf casting process used to repair holes and losses in fragile paper pages of rare library materials?"
+  negative_question: "What steps are involved in the bone grafting process used to repair fractures and losses in weakened skeletal tissue of orthopedic patients?"
+  question_type: process
+  negative_domain: "orthopedic surgery"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "rare books and preservation/conservation"
+- pair_id: 199
+  positive_question: "What is the role of exhibition design in rare book libraries, and how are display cases engineered to show items while minimizing environmental exposure?"
+  negative_question: "What is the role of habitat design in modern zoos, and how are enclosures engineered to showcase animals while minimizing stress and behavioral disruption?"
+  question_type: factual
+  negative_domain: "zoo exhibit design"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "rare books and preservation/conservation"

@@ -1,0 +1,110 @@
+pairs:
+- pair_id: 615
+  positive_question: "What security features distinguish genuine high-denomination currency notes from sophisticated counterfeits produced by forgers?"
+  negative_question: "What acoustic features distinguish a properly tuned musical note from an off-pitch tone produced by a poorly maintained instrument?"
+  question_type: factual
+  negative_domain: "note (musical note, notebook, side note)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 616
+  positive_question: "Why do central banks periodically redesign their currency notes with new portraits, colors, and anti-counterfeiting technology?"
+  negative_question: "Why do musicians periodically retune their instruments to different reference pitches, and how does the standard concert note A440 maintain consistency?"
+  question_type: explanatory
+  negative_domain: "note (musical note, notebook, side note)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 617
+  positive_question: "Compare the durability and lifespan of polymer currency notes versus traditional cotton-linen paper notes in everyday circulation."
+  negative_question: "Compare the durability and lifespan of hardcover bound notebooks versus spiral-bound notebooks when used for daily journaling and notetaking."
+  question_type: comparative
+  negative_domain: "note (musical note, notebook, side note)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 618
+  positive_question: "Describe the multi-step printing process used to produce secure currency notes at a government banknote printing facility."
+  negative_question: "Describe the multi-step composition process used to arrange musical notes into a complete orchestral score at a music publishing studio."
+  question_type: process
+  negative_domain: "note (musical note, notebook, side note)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 619
+  positive_question: "What denominations of currency notes are most commonly counterfeited worldwide, and why are those specific values targeted?"
+  negative_question: "What frequencies of musical notes are most commonly used as tuning references worldwide, and why are those specific pitches standardized?"
+  question_type: factual
+  negative_domain: "note (musical note, notebook, side note)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 620
+  positive_question: "Why do some countries issue extremely high-denomination currency notes while others cap their largest note at modest values?"
+  negative_question: "Why do some musical traditions use quarter-tone notes between standard semitones while others strictly adhere to the twelve-note chromatic scale?"
+  question_type: explanatory
+  negative_domain: "note (musical note, notebook, side note)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 621
+  positive_question: "Compare the tactile accessibility features on currency notes designed for visually impaired users across different countries."
+  negative_question: "Compare the organizational features of digital notetaking applications designed for students across different educational platforms and devices."
+  question_type: comparative
+  negative_domain: "note (musical note, notebook, side note)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 622
+  positive_question: "How does the lifecycle of a currency note proceed from initial printing to eventual shredding when it becomes too worn for use?"
+  negative_question: "How does a musical note sustain and decay over time when played on a piano, from initial hammer strike to the final fading vibration?"
+  question_type: process
+  negative_domain: "note (musical note, notebook, side note)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 623
+  positive_question: "What historical figures and cultural symbols typically appear on currency notes, and who decides which ones are chosen?"
+  negative_question: "What historical systems of musical notation preceded modern staff notation, and who were the key figures in developing note-writing conventions?"
+  question_type: factual
+  negative_domain: "note (musical note, notebook, side note)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"
+
+- pair_id: 624
+  positive_question: "Why do currency notes in circulation tend to accumulate bacteria and contaminants, and what health risks does handling them pose?"
+  negative_question: "Why do handwritten notes in old notebooks tend to fade and become illegible over time, and what archival methods help preserve them?"
+  question_type: explanatory
+  negative_domain: "note (musical note, notebook, side note)"
+  group: D
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "varied"

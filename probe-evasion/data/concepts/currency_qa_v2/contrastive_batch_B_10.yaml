@@ -1,0 +1,251 @@
+pairs:
+- pair_id: 250
+  positive_question: "What is a currency union, and how does the eurozone function as the largest monetary union with a shared currency?"
+  negative_question: "What is a coral atoll, and how does the Great Barrier Reef function as the largest reef system with interconnected structures?"
+  question_type: factual
+  negative_domain: "reef geology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "currency unions and the euro"
+- pair_id: 251
+  positive_question: "How did the Maastricht Treaty establish the criteria for eurozone membership and the creation of a single European currency?"
+  negative_question: "How did the Antarctic Treaty establish the criteria for territorial claims and the prohibition of military activity on the continent?"
+  question_type: explanatory
+  negative_domain: "Antarctic governance"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "currency unions and the euro"
+- pair_id: 252
+  positive_question: "Compare the benefits and drawbacks of eurozone membership for Germany's export-driven economy versus Greece's tourism-dependent economy."
+  negative_question: "Compare the benefits and drawbacks of controlled burning for Australia's eucalyptus forests versus California's chaparral shrublands."
+  question_type: comparative
+  negative_domain: "fire management ecology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "currency unions and the euro"
+- pair_id: 253
+  positive_question: "Describe the process by which a country applies to join the eurozone and transitions from its national currency to the euro."
+  negative_question: "Describe the process by which a caterpillar prepares to enter chrysalis and transitions from its larval form to the adult butterfly."
+  question_type: process
+  negative_domain: "insect metamorphosis"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "currency unions and the euro"
+- pair_id: 254
+  positive_question: "What are the convergence criteria that European nations must meet before they are permitted to adopt the euro as their currency?"
+  negative_question: "What are the habitability criteria that exoplanets must meet before they are classified as potentially life-supporting by astronomers?"
+  question_type: factual
+  negative_domain: "exoplanet habitability"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "currency unions and the euro"
+- pair_id: 255
+  positive_question: "Why did the European sovereign debt crisis expose structural weaknesses in having a shared currency without a unified fiscal policy?"
+  negative_question: "Why did the Deepwater Horizon disaster expose structural weaknesses in having deep-sea drilling operations without adequate blowout prevention?"
+  question_type: explanatory
+  negative_domain: "offshore drilling safety"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "currency unions and the euro"
+- pair_id: 256
+  positive_question: "How does the CFA franc zone in West Africa compare to the eurozone in terms of shared currency governance and economic outcomes?"
+  negative_question: "How does the Serengeti migration in East Africa compare to the caribou migration in terms of herd movement patterns and ecological impact?"
+  question_type: comparative
+  negative_domain: "megafauna migration"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "currency unions and the euro"
+- pair_id: 257
+  positive_question: "Explain the steps the European Central Bank takes to set a unified interest rate for all eurozone member states sharing the currency."
+  negative_question: "Explain the steps a symphony orchestra conductor takes to set a unified tempo for all instrumental sections performing the composition."
+  question_type: process
+  negative_domain: "orchestral conducting"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "currency unions and the euro"
+- pair_id: 258
+  positive_question: "What role does the European Stability Mechanism play in providing financial assistance to eurozone members facing currency-related crises?"
+  negative_question: "What role does the International Space Station play in providing a microgravity laboratory for astronauts conducting biomedical research?"
+  question_type: factual
+  negative_domain: "space station research"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "currency unions and the euro"
+- pair_id: 259
+  positive_question: "Why did the United Kingdom choose not to adopt the euro despite being a major member of the European Union?"
+  negative_question: "Why did the giant panda choose not to diversify its diet despite the nutritional limitations of an exclusive bamboo food source?"
+  question_type: explanatory
+  negative_domain: "panda ecology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "currency unions and the euro"
+- pair_id: 260
+  positive_question: "Compare the economic performance of eurozone countries that adopted the euro early with those that joined the currency union later."
+  negative_question: "Compare the adaptive radiation of Darwin's finches that colonized the Galapagos early with species that arrived on the islands later."
+  question_type: comparative
+  negative_domain: "adaptive radiation"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "currency unions and the euro"
+- pair_id: 261
+  positive_question: "Describe the logistical process of physically replacing national banknotes and coins with euros during a country's currency changeover."
+  negative_question: "Describe the logistical process of physically relocating endangered tortoises and nesting birds during a habitat restoration changeover."
+  question_type: process
+  negative_domain: "species relocation"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "currency unions and the euro"
+- pair_id: 262
+  positive_question: "What is the concept of an optimal currency area, and does the eurozone satisfy the theoretical conditions proposed by Robert Mundell?"
+  negative_question: "What is the concept of a biodiversity hotspot, and does the Mediterranean basin satisfy the ecological conditions proposed by Norman Myers?"
+  question_type: factual
+  negative_domain: "biodiversity hotspots"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "currency unions and the euro"
+- pair_id: 263
+  positive_question: "Why do asymmetric economic shocks pose a particular challenge for member states that share a single currency like the euro?"
+  negative_question: "Why do asymmetric ocean warming events pose a particular challenge for coral species that share a single reef habitat like the tropics?"
+  question_type: explanatory
+  negative_domain: "coral thermal stress"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "currency unions and the euro"
+- pair_id: 264
+  positive_question: "How does the East Caribbean dollar currency union compare to the euro in terms of membership size and economic integration?"
+  negative_question: "How does the Atacama Desert observatory network compare to the Mauna Kea complex in terms of telescope count and astronomical output?"
+  question_type: comparative
+  negative_domain: "observatory networks"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "currency unions and the euro"
+- pair_id: 265
+  positive_question: "Explain the process by which the TARGET2 payment system facilitates cross-border euro transactions between eurozone central banks."
+  negative_question: "Explain the process by which the lymphatic drainage system facilitates fluid transport between peripheral tissues and central blood vessels."
+  question_type: process
+  negative_domain: "lymphatic physiology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "currency unions and the euro"
+- pair_id: 266
+  positive_question: "What was the impact of the Greek debt crisis on public confidence in the euro as a stable shared currency?"
+  negative_question: "What was the impact of the Fukushima reactor meltdown on public confidence in nuclear power as a safe energy source?"
+  question_type: factual
+  negative_domain: "nuclear energy policy"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "currency unions and the euro"
+- pair_id: 267
+  positive_question: "Why do some economists advocate for a fiscal union to complement the monetary union and strengthen the euro currency?"
+  negative_question: "Why do some ecologists advocate for wildlife corridors to complement protected areas and strengthen migratory species survival?"
+  question_type: explanatory
+  negative_domain: "landscape ecology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "currency unions and the euro"
+- pair_id: 268
+  positive_question: "Compare the design philosophy behind euro banknotes, which depict architectural styles, with national coins that feature country-specific imagery."
+  negative_question: "Compare the construction philosophy behind Roman roads, which followed straight alignments, with medieval paths that followed natural terrain contours."
+  question_type: comparative
+  negative_domain: "road engineering history"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "currency unions and the euro"
+- pair_id: 269
+  positive_question: "Describe the process by which the European Central Bank monitors inflation across the eurozone to guide its unified currency policy."
+  negative_question: "Describe the process by which the World Health Organization monitors disease outbreaks across member states to guide its unified response strategy."
+  question_type: process
+  negative_domain: "global health surveillance"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "currency unions and the euro"
+- pair_id: 270
+  positive_question: "What challenges would a hypothetical African continental currency union face compared to those encountered by the eurozone?"
+  negative_question: "What challenges would a hypothetical Mars human settlement face compared to those encountered by the International Space Station?"
+  question_type: factual
+  negative_domain: "Mars colonization"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "currency unions and the euro"
+- pair_id: 271
+  positive_question: "Why did the introduction of the euro lead to perceptions of price increases in some member states despite low measured inflation?"
+  negative_question: "Why did the introduction of LED streetlights lead to reports of increased light pollution in some cities despite lower energy consumption?"
+  question_type: explanatory
+  negative_domain: "light pollution"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "currency unions and the euro"
+- pair_id: 272
+  positive_question: "How do the TARGET2 imbalances between eurozone creditor and debtor nations reflect underlying currency union structural tensions?"
+  negative_question: "How do the salinity gradients between tropical surface waters and polar deep currents reflect underlying thermohaline circulation dynamics?"
+  question_type: comparative
+  negative_domain: "ocean salinity"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "currency unions and the euro"
+- pair_id: 273
+  positive_question: "Explain how the Stability and Growth Pact was designed to enforce fiscal discipline among countries sharing the euro currency."
+  negative_question: "Explain how the Montreal Protocol was designed to enforce ozone-depleting substance reductions among countries sharing the atmospheric commons."
+  question_type: process
+  negative_domain: "ozone layer protection"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "currency unions and the euro"
+- pair_id: 274
+  positive_question: "What would be the economic consequences if a major eurozone economy decided to leave the currency union and reintroduce its own money?"
+  negative_question: "What would be the ecological consequences if a keystone predator species decided to abandon its native range and migrate to a new biome?"
+  question_type: factual
+  negative_domain: "keystone species ecology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "currency unions and the euro"

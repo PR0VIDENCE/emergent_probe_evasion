@@ -1,0 +1,328 @@
+pairs:
+- pair_id: 175
+  positive_question: How do amyloid beta plaques and tau protein tangles accumulate
+    in the brains of Alzheimer's disease patients and contribute to progressive cognitive
+    decline?
+  negative_question: How do calcium carbonate stalactites and mineral flowstone deposits
+    accumulate in the chambers of limestone caves and contribute to progressive passage
+    constriction?
+  question_type: explanatory
+  negative_domain: speleology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: neurodegenerative diseases (Alzheimer's, Parkinson's)
+- pair_id: 176
+  positive_question: What is the role of dopamine-producing neurons in the substantia
+    nigra, and how does their progressive loss cause the motor symptoms of Parkinson's
+    disease?
+  negative_question: What is the role of load-bearing columns in a multi-story parking
+    structure, and how does their progressive corrosion cause the structural symptoms
+    of concrete failure?
+  question_type: factual
+  negative_domain: structural concrete assessment
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: neurodegenerative diseases (Alzheimer's, Parkinson's)
+- pair_id: 177
+  positive_question: Compare the early warning signs of Alzheimer's disease with those
+    of frontotemporal dementia in terms of which cognitive and behavioral functions
+    are affected first.
+  negative_question: Compare the early warning signs of dam seepage with those of
+    foundation settlement in terms of which structural and hydrological indicators
+    appear first.
+  question_type: comparative
+  negative_domain: dam safety engineering
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: neurodegenerative diseases (Alzheimer's, Parkinson's)
+- pair_id: 178
+  positive_question: Describe the diagnostic process neurologists use to differentiate
+    Parkinson's disease from other movement disorders that present with similar tremor
+    symptoms.
+  negative_question: Describe the identification process gemologists use to differentiate
+    natural sapphires from other blue stones that present with similar optical properties.
+  question_type: process
+  negative_domain: gemstone identification
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: neurodegenerative diseases (Alzheimer's, Parkinson's)
+- pair_id: 179
+  positive_question: How does deep brain stimulation therapy help manage the tremor and
+    rigidity symptoms of advanced Parkinson's disease when medication alone is insufficient?
+  negative_question: How does active vibration damping technology help manage the oscillation
+    and resonance issues of precision machine tools when passive mounts alone are insufficient?
+  question_type: explanatory
+  negative_domain: precision machine tool engineering
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: neurodegenerative diseases (Alzheimer's, Parkinson's)
+- pair_id: 180
+  positive_question: What genetic risk factors like the APOE4 allele are associated
+    with increased susceptibility to late-onset Alzheimer's disease?
+  negative_question: What geographic risk factors like proximity to tectonic boundaries
+    are associated with increased susceptibility to volcanic lahars?
+  question_type: factual
+  negative_domain: volcanic hazard assessment
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: neurodegenerative diseases (Alzheimer's, Parkinson's)
+- pair_id: 181
+  positive_question: Compare the mechanisms of neuronal death in Alzheimer's disease
+    involving amyloid pathology with those in Parkinson's disease involving alpha-synuclein
+    aggregation.
+  negative_question: Compare the mechanisms of paint failure in latex coatings involving
+    moisture blistering with those in epoxy coatings involving ultraviolet chalking
+    degradation.
+  question_type: comparative
+  negative_domain: protective coatings science
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: neurodegenerative diseases (Alzheimer's, Parkinson's)
+- pair_id: 182
+  positive_question: How does the cholinergic hypothesis of Alzheimer's disease explain
+    the rationale behind prescribing cholinesterase inhibitor medications to patients?
+  negative_question: How does the supply-demand equilibrium hypothesis of microeconomics
+    explain the rationale behind implementing price ceiling regulations in housing markets?
+  question_type: explanatory
+  negative_domain: housing economics
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: neurodegenerative diseases (Alzheimer's, Parkinson's)
+- pair_id: 183
+  positive_question: Describe the progression of motor symptoms in Parkinson's disease
+    from initial unilateral tremor through to advanced postural instability and freezing
+    of gait.
+  negative_question: Describe the progression of oxidation stages in iron smelting
+    from initial ore reduction through to advanced carbon steel tempering and final
+    quenching.
+  question_type: process
+  negative_domain: metallurgy
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: neurodegenerative diseases (Alzheimer's, Parkinson's)
+- pair_id: 184
+  positive_question: What non-motor symptoms like sleep disturbances and anosmia often
+    precede the characteristic movement problems of Parkinson's disease by many years?
+  negative_question: What non-visual indicators like unusual radio emissions and gravitational
+    lensing often precede the direct imaging of distant galaxy clusters by many years?
+  question_type: factual
+  negative_domain: extragalactic astronomy
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: neurodegenerative diseases (Alzheimer's, Parkinson's)
+- pair_id: 185
+  positive_question: How do neuroinflammation and activated microglia contribute to the
+    progressive neuronal damage observed in both Alzheimer's and Parkinson's diseases?
+  negative_question: How do thermal cycling and repeated freeze-thaw events contribute
+    to the progressive road surface damage observed in both asphalt and concrete pavements?
+  question_type: explanatory
+  negative_domain: pavement engineering
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: neurodegenerative diseases (Alzheimer's, Parkinson's)
+- pair_id: 186
+  positive_question: Compare the use of PET brain imaging with cerebrospinal fluid
+    biomarker testing for detecting Alzheimer's disease pathology before clinical symptoms
+    appear.
+  negative_question: Compare the use of LiDAR aerial scanning with ground-penetrating
+    radar testing for detecting buried archaeological ruins before surface excavation
+    begins.
+  question_type: comparative
+  negative_domain: remote sensing archaeology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: neurodegenerative diseases (Alzheimer's, Parkinson's)
+- pair_id: 187
+  positive_question: What is the significance of Lewy bodies in the pathology of Parkinson's
+    disease and the related condition known as dementia with Lewy bodies?
+  negative_question: What is the significance of knot density in the valuation of handmade
+    Persian rugs and the related classification known as fine weave grading?
+  question_type: factual
+  negative_domain: rug appraisal
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: neurodegenerative diseases (Alzheimer's, Parkinson's)
+- pair_id: 188
+  positive_question: Describe the steps involved in clinical trials testing anti-amyloid
+    antibody therapies for Alzheimer's disease, including how treatment efficacy is
+    measured.
+  negative_question: Describe the steps involved in field trials testing drought-resistant
+    wheat cultivars for arid agriculture, including how yield improvement is measured.
+  question_type: process
+  negative_domain: crop breeding trials
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: neurodegenerative diseases (Alzheimer's, Parkinson's)
+- pair_id: 189
+  positive_question: How does the blood-brain barrier complicate the delivery of therapeutic
+    drugs to the brain tissue affected by neurodegenerative diseases?
+  negative_question: How does the ozone layer complicate the transmission of ultraviolet
+    laser signals to the ground-based detectors used in atmospheric remote sensing?
+  question_type: explanatory
+  negative_domain: atmospheric laser sensing
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: neurodegenerative diseases (Alzheimer's, Parkinson's)
+- pair_id: 190
+  positive_question: Compare the caregiver burden and long-term care needs associated
+    with Alzheimer's disease versus Parkinson's disease as each progresses to advanced
+    stages.
+  negative_question: Compare the maintenance burden and long-term upkeep costs associated
+    with wooden sailboats versus fiberglass sailboats as each ages to advanced deterioration.
+  question_type: comparative
+  negative_domain: boat maintenance
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: neurodegenerative diseases (Alzheimer's, Parkinson's)
+- pair_id: 191
+  positive_question: What environmental exposures such as pesticides and heavy metals
+    have been epidemiologically linked to an increased risk of developing Parkinson's
+    disease?
+  negative_question: What atmospheric conditions such as wind shear and temperature
+    inversions have been operationally linked to an increased risk of encountering clear-air
+    turbulence?
+  question_type: factual
+  negative_domain: aviation meteorology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: neurodegenerative diseases (Alzheimer's, Parkinson's)
+- pair_id: 192
+  positive_question: How do stem cell therapies aim to replace the dopamine-producing
+    neurons lost in Parkinson's disease, and what obstacles remain before clinical
+    application?
+  negative_question: How do coral reef restoration projects aim to replace the calcium
+    carbonate structures lost to ocean acidification, and what obstacles remain before
+    ecosystem recovery?
+  question_type: explanatory
+  negative_domain: coral reef restoration
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: neurodegenerative diseases (Alzheimer's, Parkinson's)
+- pair_id: 193
+  positive_question: Describe the typical timeline of cognitive decline in Alzheimer's
+    disease from mild cognitive impairment through moderate and severe dementia stages.
+  negative_question: Describe the typical timeline of flavor development in aged balsamic
+    vinegar from initial grape must reduction through intermediate and final barrel
+    maturation stages.
+  question_type: process
+  negative_domain: balsamic vinegar production
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: neurodegenerative diseases (Alzheimer's, Parkinson's)
+- pair_id: 194
+  positive_question: What is the prion-like hypothesis of neurodegenerative disease
+    spread, suggesting that misfolded proteins propagate from cell to cell through
+    the brain?
+  negative_question: What is the cascade failure hypothesis of power grid collapse,
+    suggesting that overloaded circuits propagate failures from node to node through
+    the network?
+  question_type: factual
+  negative_domain: power grid resilience
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: neurodegenerative diseases (Alzheimer's, Parkinson's)
+- pair_id: 195
+  positive_question: Compare the potential of lifestyle interventions like exercise and
+    cognitive training versus pharmaceutical approaches for delaying the onset of Alzheimer's.
+  negative_question: Compare the potential of passive cooling strategies like thermal
+    mass and ventilation versus mechanical air conditioning for maintaining building
+    comfort in hot climates.
+  question_type: comparative
+  negative_domain: passive building design
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: neurodegenerative diseases (Alzheimer's, Parkinson's)
+- pair_id: 196
+  positive_question: How does impaired autophagy, the cell's waste clearance mechanism,
+    contribute to the accumulation of toxic protein aggregates in neurodegenerative
+    diseases?
+  negative_question: How does impaired drainage, a road's water clearance system,
+    contribute to the accumulation of standing water pools in poorly graded highway
+    surfaces?
+  question_type: explanatory
+  negative_domain: highway drainage engineering
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: neurodegenerative diseases (Alzheimer's, Parkinson's)
+- pair_id: 197
+  positive_question: What role does the gut-brain axis play in the emerging understanding
+    of Parkinson's disease pathogenesis and potential future treatment targets?
+  negative_question: What role does the soil-atmosphere interface play in the emerging
+    understanding of methane flux dynamics and potential future carbon sequestration
+    strategies?
+  question_type: factual
+  negative_domain: soil carbon science
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: neurodegenerative diseases (Alzheimer's, Parkinson's)
+- pair_id: 198
+  positive_question: Describe the process of administering and scoring standardized
+    cognitive assessments used to track the progression of Alzheimer's disease over time.
+  negative_question: Describe the process of conducting and scoring standardized soil
+    permeability tests used to track the drainage capacity of landfill clay liners
+    over time.
+  question_type: process
+  negative_domain: landfill engineering
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: neurodegenerative diseases (Alzheimer's, Parkinson's)
+- pair_id: 199
+  positive_question: How do researchers use animal models of neurodegenerative diseases
+    to test potential drug candidates before advancing them to human clinical trials?
+  negative_question: How do engineers use wind tunnel models of proposed skyscrapers
+    to test aerodynamic performance before advancing them to full-scale construction?
+  question_type: explanatory
+  negative_domain: wind tunnel testing
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: neurodegenerative diseases (Alzheimer's, Parkinson's)

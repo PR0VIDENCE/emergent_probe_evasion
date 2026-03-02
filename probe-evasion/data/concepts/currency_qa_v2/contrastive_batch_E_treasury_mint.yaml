@@ -1,0 +1,176 @@
+pairs:
+- pair_id: 754
+  positive_question: "How does the United States Treasury Department coordinate with the Federal Reserve to determine how much new currency to produce each year?"
+  negative_question: "How does the International Olympic Committee coordinate with host cities to determine how many athletic venues to construct for each games?"
+  question_type: process
+  negative_domain: "Olympic logistics"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "treasury and mint operations"
+
+- pair_id: 755
+  positive_question: "What raw materials does a national mint require to produce circulation coins, and how are metal alloy compositions chosen for different currency denominations?"
+  negative_question: "What raw materials does a traditional sushi chef require to prepare nigiri, and how are fish species and rice vinegar ratios chosen for different presentations?"
+  question_type: factual
+  negative_domain: "sushi preparation"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "treasury and mint operations"
+
+- pair_id: 756
+  positive_question: "Why do treasury departments destroy worn-out currency and replace it with freshly printed notes rather than simply cleaning or repairing the old ones?"
+  negative_question: "Why do coral colonies expel their symbiotic zooxanthellae algae during thermal stress rather than simply adapting their metabolic processes to warmer water?"
+  question_type: explanatory
+  negative_domain: "coral bleaching biology"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "treasury and mint operations"
+
+- pair_id: 757
+  positive_question: "Compare the annual currency production volumes of the United States Mint with the Royal Canadian Mint in terms of coins and bullion."
+  negative_question: "Compare the annual cocoa bean harvest volumes of Ivory Coast with Ghana in terms of quantity and quality of cacao produced."
+  question_type: comparative
+  negative_domain: "cocoa farming"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "treasury and mint operations"
+
+- pair_id: 758
+  positive_question: "Describe the intaglio printing process used by the Bureau of Engraving and Printing to create the raised ink texture on US currency notes."
+  negative_question: "Describe the lost-wax casting process used by bronze sculptors to create detailed hollow statues from original clay models."
+  question_type: process
+  negative_domain: "bronze sculpture casting"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "treasury and mint operations"
+
+- pair_id: 759
+  positive_question: "What anti-counterfeiting technologies does the treasury embed in modern currency notes, including holograms, watermarks, and color-shifting ink?"
+  negative_question: "What camouflage adaptations does the cuttlefish deploy in marine environments, including chromatophore color change, texture mimicry, and light polarization?"
+  question_type: factual
+  negative_domain: "cephalopod biology"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "treasury and mint operations"
+
+- pair_id: 760
+  positive_question: "Why do mint facilities produce commemorative and collector currency editions, and how does this revenue supplement the cost of regular coin production?"
+  negative_question: "Why do national parks establish visitor centers and guided trail programs, and how does this revenue supplement the cost of habitat conservation efforts?"
+  question_type: explanatory
+  negative_domain: "national park management"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "treasury and mint operations"
+
+- pair_id: 761
+  positive_question: "Compare the security features of polymer currency notes produced by the Australian mint with those of cotton-fiber notes produced by the US treasury."
+  negative_question: "Compare the insulating properties of sheep wool fiber insulation with those of cellulose fiber insulation in residential attic applications."
+  question_type: comparative
+  negative_domain: "building insulation materials"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "treasury and mint operations"
+
+- pair_id: 762
+  positive_question: "How does a mint ensure consistent quality when stamping millions of currency coins per day on high-speed coining presses?"
+  negative_question: "How does a master watchmaker ensure consistent accuracy when assembling hundreds of tiny mechanical components in a luxury timepiece movement?"
+  question_type: process
+  negative_domain: "horology"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "treasury and mint operations"
+
+- pair_id: 763
+  positive_question: "What is seigniorage, and how do treasuries profit from the difference between the cost of producing currency and its face value?"
+  negative_question: "What is parallax, and how do astronomers account for the apparent shift in a star's position when viewed from different points in Earth's orbit?"
+  question_type: factual
+  negative_domain: "stellar parallax measurement"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "treasury and mint operations"
+
+- pair_id: 764
+  positive_question: "Why do some countries outsource their currency production to foreign mints rather than operating their own domestic coin and note printing facilities?"
+  negative_question: "Why do some bird species lay their eggs in the nests of other species rather than building their own nests and raising their own chicks?"
+  question_type: explanatory
+  negative_domain: "brood parasitism"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "treasury and mint operations"
+
+- pair_id: 765
+  positive_question: "Compare how the design selection process for new currency works at the United States Mint versus the Royal Mint in the United Kingdom."
+  negative_question: "Compare how the grape variety selection process for new vintages works at Bordeaux chateaux versus Napa Valley wineries in California."
+  question_type: comparative
+  negative_domain: "winemaking"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "treasury and mint operations"
+
+- pair_id: 766
+  positive_question: "Describe the supply chain from mining operations through refining to the final delivery of precious metals to a national mint for currency production."
+  negative_question: "Describe the supply chain from silkworm cultivation through thread reeling to the final delivery of raw silk to a textile mill for fabric weaving."
+  question_type: process
+  negative_domain: "silk production"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "treasury and mint operations"
+
+- pair_id: 767
+  positive_question: "What happens to defective currency notes and misstruck coins identified during quality control at a government mint or printing facility?"
+  negative_question: "What happens to defective crystal formations and impure mineral samples identified during quality inspection at a gemstone cutting and polishing workshop?"
+  question_type: factual
+  negative_domain: "gemstone processing"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "treasury and mint operations"
+
+- pair_id: 768
+  positive_question: "Why is the transition from paper to polymer substrate for currency notes considered a major innovation in treasury and mint operations worldwide?"
+  negative_question: "Why is the transition from analog to digital signal processing considered a major innovation in radio telescope receiver technology worldwide?"
+  question_type: explanatory
+  negative_domain: "radio astronomy instrumentation"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "treasury and mint operations"
+
+- pair_id: 769
+  positive_question: "Compare the environmental impact of manufacturing metal currency coins versus printing paper and polymer banknotes at national mints."
+  negative_question: "Compare the environmental impact of raising cattle for beef production versus farming crickets for protein at commercial insect farms."
+  question_type: comparative
+  negative_domain: "insect farming"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "treasury and mint operations"

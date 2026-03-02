@@ -1,0 +1,181 @@
+pairs:
+- pair_id: 415
+  positive_question: How does inflation erode the purchasing power of a national currency
+    over time, and what measurement tools do economists use to track it?
+  negative_question: How does an inverted yield curve signal potential economic recession,
+    and what measurement tools do bond analysts use to track it?
+  question_type: explanatory
+  negative_domain: bonds and fixed income
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 416
+  positive_question: What are the distinguishing physical features of the British pound
+    sterling coins currently in circulation, including their shapes and metals?
+  negative_question: What are the distinguishing characteristics of UK government gilts,
+    including their typical maturities and coupon structures?
+  question_type: factual
+  negative_domain: bonds and fixed income
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 417
+  positive_question: How does the exchange rate between the US dollar and the Chinese
+    yuan compare to the dollar-euro rate in terms of government intervention?
+  negative_question: How does the yield on US Treasury bonds compare to that of Chinese
+    government bonds in terms of credit risk and investor demand?
+  question_type: comparative
+  negative_domain: bonds and fixed income
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 418
+  positive_question: Describe the step-by-step procedure a commercial bank uses to order
+    fresh banknotes from the central bank to fill its ATM network.
+  negative_question: Describe the step-by-step procedure an institutional investor uses
+    to purchase newly issued government bonds at a Treasury auction.
+  question_type: process
+  negative_domain: bonds and fixed income
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 419
+  positive_question: Why have several Scandinavian countries moved aggressively toward
+    cashless societies while still maintaining physical currency as legal tender?
+  negative_question: Why have several Scandinavian countries issued negative-yield government
+    bonds while still maintaining positive benchmark interest rates?
+  question_type: explanatory
+  negative_domain: bonds and fixed income
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 420
+  positive_question: What specific metals and alloys are used in the production of modern
+    US quarter and dime coins, and why were those materials chosen?
+  negative_question: What specific credit rating categories do agencies like Moody's assign
+    to corporate bonds, and why were those classification tiers chosen?
+  question_type: factual
+  negative_domain: bonds and fixed income
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 421
+  positive_question: How does the process of currency redenomination work when a country
+    removes zeros from its hyperinflated money?
+  negative_question: How does the process of bond refinancing work when a corporation
+    calls its existing high-coupon debt to reissue at lower rates?
+  question_type: process
+  negative_domain: bonds and fixed income
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 422
+  positive_question: How do the anti-counterfeiting measures on the newest Canadian polymer
+    banknotes compare to those on the latest Swiss franc notes?
+  negative_question: How do the risk-return profiles of investment-grade corporate bonds
+    compare to those of high-yield junk bonds during market stress?
+  question_type: comparative
+  negative_domain: bonds and fixed income
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 423
+  positive_question: Why do some currencies like the Kuwaiti dinar have such a high exchange
+    rate value per unit compared to currencies like the Vietnamese dong?
+  negative_question: Why do some bonds like zero-coupon Treasury strips trade at deep
+    discounts compared to bonds that pay regular semiannual coupons?
+  question_type: explanatory
+  negative_domain: bonds and fixed income
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 424
+  positive_question: What are the key differences between fiat currency and commodity-backed
+    currency in terms of government control and intrinsic value?
+  negative_question: What are the key differences between municipal bonds and federal
+    government bonds in terms of tax treatment and default risk?
+  question_type: comparative
+  negative_domain: bonds and fixed income
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 425
+  positive_question: How does a mint determine the exact quantity of new coins needed
+    each year to replace worn coins and meet economic demand?
+  negative_question: How does a bond issuer determine the exact coupon rate needed to
+    attract investors while minimizing its overall borrowing cost?
+  question_type: process
+  negative_domain: bonds and fixed income
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 426
+  positive_question: What denominations of paper currency does the European Central Bank
+    currently issue, and which denomination is the most widely circulated?
+  negative_question: What maturity lengths does the US Treasury currently offer for its
+    savings bonds, and which maturity is the most popular with retail investors?
+  question_type: factual
+  negative_domain: bonds and fixed income
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 427
+  positive_question: Why do exchange rates between freely floating currencies fluctuate
+    minute by minute throughout the trading day?
+  negative_question: Why do bond prices move inversely to interest rates, causing existing
+    bondholders to see paper losses when rates rise?
+  question_type: explanatory
+  negative_domain: bonds and fixed income
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 428
+  positive_question: How does the lifespan of a US one-dollar bill compare to that of
+    a US one-dollar coin in terms of durability and replacement cost?
+  negative_question: How does the duration risk of a 30-year Treasury bond compare to
+    that of a 2-year Treasury note in terms of price sensitivity?
+  question_type: comparative
+  negative_domain: bonds and fixed income
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 429
+  positive_question: What is the step-by-step journey of a newly printed banknote from
+    the printing facility to the wallet of an everyday consumer?
+  negative_question: What is the step-by-step lifecycle of a corporate bond from initial
+    issuance through secondary market trading to final maturity and redemption?
+  question_type: process
+  negative_domain: bonds and fixed income
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied

@@ -1,0 +1,346 @@
+pairs:
+- pair_id: 350
+  positive_question: How did the Black Death of the 14th century reshape European social
+    structures, labor markets, and religious practices in the decades following the
+    pandemic disease?
+  negative_question: How did the invention of movable type in the 15th century reshape
+    European publishing industries, literacy rates, and scholarly practices in the
+    decades following the technology's adoption?
+  question_type: explanatory
+  negative_domain: printing history
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: historical plagues and pandemics
+- pair_id: 351
+  positive_question: What is the estimated death toll of the 1918 influenza pandemic,
+    and how did wartime troop movements contribute to the rapid global spread of the
+    disease?
+  negative_question: What is the estimated tonnage moved during the Berlin Airlift,
+    and how did Cold War logistics constraints contribute to the innovative scheduling
+    of cargo flights?
+  question_type: factual
+  negative_domain: Cold War aviation logistics
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: historical plagues and pandemics
+- pair_id: 352
+  positive_question: Compare the epidemiological characteristics of the Plague of Justinian
+    in the 6th century with those of the Black Death in the 14th century as historical
+    disease events.
+  negative_question: Compare the architectural characteristics of the Hagia Sophia
+    constructed in the 6th century with those of Notre-Dame de Paris built in the 12th
+    century as historical construction achievements.
+  question_type: comparative
+  negative_domain: medieval architecture
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: historical plagues and pandemics
+- pair_id: 353
+  positive_question: Describe the quarantine measures and public health interventions
+    that Italian city-states developed in response to recurring waves of plague disease
+    during the Renaissance.
+  negative_question: Describe the fortification measures and defensive engineering
+    innovations that Italian city-states developed in response to recurring waves of
+    foreign military invasion during the Renaissance.
+  question_type: process
+  negative_domain: Renaissance military engineering
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: historical plagues and pandemics
+- pair_id: 354
+  positive_question: How did the introduction of European diseases like smallpox devastate
+    indigenous populations in the Americas following contact in the 15th and 16th centuries?
+  negative_question: How did the introduction of European horse breeds transform indigenous
+    equestrian cultures on the Great Plains following trade expansion in the 17th and
+    18th centuries?
+  question_type: explanatory
+  negative_domain: equestrian history
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: historical plagues and pandemics
+- pair_id: 355
+  positive_question: What role did John Snow's investigation of the 1854 Broad Street
+    cholera disease outbreak play in establishing the foundations of modern epidemiology?
+  negative_question: What role did Joseph Bazalgette's construction of the London sewer
+    system play in establishing the foundations of modern urban sanitary engineering?
+  question_type: factual
+  negative_domain: sanitary engineering history
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: historical plagues and pandemics
+- pair_id: 356
+  positive_question: Compare the mortality patterns of the three waves of the 1918 influenza
+    pandemic disease and explain why the second wave was disproportionately lethal for
+    young adults.
+  negative_question: Compare the eruption patterns of the three phases of the 1783
+    Laki volcanic fissure event and explain why the initial phase was disproportionately
+    destructive for surrounding farmland.
+  question_type: comparative
+  negative_domain: volcanic eruption history
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: historical plagues and pandemics
+- pair_id: 357
+  positive_question: How did the miasma theory of disease causation delay the acceptance
+    of germ theory and hinder effective public health responses to epidemics in the
+    19th century?
+  negative_question: How did the phlogiston theory of combustion delay the acceptance
+    of oxidation chemistry and hinder accurate understanding of metalworking reactions
+    in the 18th century?
+  question_type: explanatory
+  negative_domain: history of chemistry
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: historical plagues and pandemics
+- pair_id: 358
+  positive_question: Describe the process by which Edward Jenner developed the first
+    vaccine using cowpox material, leading to the eventual eradication of smallpox disease
+    worldwide.
+  negative_question: Describe the process by which Henry Bessemer developed the first
+    affordable steel conversion method, leading to the eventual transformation of bridge
+    construction worldwide.
+  question_type: process
+  negative_domain: steel production history
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: historical plagues and pandemics
+- pair_id: 359
+  positive_question: What archaeological and documentary evidence has helped historians
+    determine that the Plague of Athens in 430 BCE was likely caused by a specific
+    disease pathogen?
+  negative_question: What geological and chemical evidence has helped scientists determine
+    that the Chicxulub crater in the Yucatan was likely caused by a specific asteroid
+    impact?
+  question_type: factual
+  negative_domain: impact crater geology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: historical plagues and pandemics
+- pair_id: 360
+  positive_question: Compare the societal responses to the cholera pandemics of the
+    19th century with those to the HIV/AIDS disease pandemic of the late 20th century.
+  negative_question: Compare the engineering responses to the railway expansion of the
+    19th century with those to the interstate highway construction of the mid-20th
+    century.
+  question_type: comparative
+  negative_domain: transportation infrastructure history
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: historical plagues and pandemics
+- pair_id: 361
+  positive_question: How did improvements in sanitation and clean water infrastructure
+    in the 19th century dramatically reduce the burden of waterborne diseases like
+    cholera and typhoid?
+  negative_question: How did improvements in maritime navigation and chronometer accuracy
+    in the 18th century dramatically reduce the incidence of shipwrecks and the loss
+    of cargo vessels?
+  question_type: explanatory
+  negative_domain: navigation history
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: historical plagues and pandemics
+- pair_id: 362
+  positive_question: Describe how the development of antibiotics in the 20th century
+    transformed the treatment of bacterial diseases that had previously been leading
+    causes of death.
+  negative_question: Describe how the development of synthetic dyes in the 19th century
+    transformed the textile coloring industry that had previously relied on expensive
+    natural pigment sources.
+  question_type: process
+  negative_domain: synthetic dye history
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: historical plagues and pandemics
+- pair_id: 363
+  positive_question: What was the role of trade routes like the Silk Road in facilitating
+    the spread of plague disease between Asia and Europe in medieval and early modern
+    periods?
+  negative_question: What was the role of trade routes like the Silk Road in facilitating
+    the spread of papermaking technology between China and the Islamic world in medieval
+    and early modern periods?
+  question_type: factual
+  negative_domain: history of papermaking
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: historical plagues and pandemics
+- pair_id: 364
+  positive_question: How did the devastating yellow fever disease outbreaks in the Caribbean
+    and American South influence colonial power dynamics and military campaigns in the
+    18th and 19th centuries?
+  negative_question: How did the devastating hurricane seasons in the Caribbean and
+    Gulf Coast influence maritime insurance markets and shipbuilding regulations in the
+    18th and 19th centuries?
+  question_type: explanatory
+  negative_domain: maritime insurance history
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: historical plagues and pandemics
+- pair_id: 365
+  positive_question: Compare the demographic recovery timelines of European populations
+    after the Black Death with those of indigenous American populations after the
+    introduction of Old World diseases.
+  negative_question: Compare the reforestation recovery timelines of European woodlands
+    after medieval deforestation with those of North American old-growth forests after
+    19th-century industrial logging.
+  question_type: comparative
+  negative_domain: forest recovery ecology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: historical plagues and pandemics
+- pair_id: 366
+  positive_question: Describe the methods historians and paleopathologists use to identify
+    disease in ancient skeletal remains and determine the health conditions of past
+    populations.
+  negative_question: Describe the methods archaeometallurgists use to identify alloy
+    composition in ancient bronze artifacts and determine the smelting technologies
+    of past civilizations.
+  question_type: process
+  negative_domain: archaeometallurgy
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: historical plagues and pandemics
+- pair_id: 367
+  positive_question: How did the discovery of Yersinia pestis DNA in medieval burial
+    sites confirm that bubonic plague disease was the cause of the Black Death pandemic?
+  negative_question: How did the discovery of iridium anomaly layers in Cretaceous-Paleogene
+    boundary sediments confirm that an asteroid impact was the cause of the mass extinction
+    event?
+  question_type: explanatory
+  negative_domain: mass extinction geology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: historical plagues and pandemics
+- pair_id: 368
+  positive_question: What were the public health lessons learned from the mismanagement
+    of the 1918 influenza disease pandemic that directly informed later 20th-century
+    epidemic response planning?
+  negative_question: What were the structural engineering lessons learned from the
+    collapse of the original Tacoma Narrows Bridge that directly informed later 20th-century
+    suspension bridge design?
+  question_type: factual
+  negative_domain: suspension bridge design history
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: historical plagues and pandemics
+- pair_id: 369
+  positive_question: Compare the impact of the Third Plague Pandemic originating in
+    China in the 1850s with that of earlier plague disease waves in terms of geographic
+    spread and scientific response.
+  negative_question: Compare the impact of the Krakatoa eruption of 1883 with that
+    of earlier volcanic events in terms of atmospheric effects and scientific measurement
+    advances.
+  question_type: comparative
+  negative_domain: volcanic atmospheric science
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: historical plagues and pandemics
+- pair_id: 370
+  positive_question: How did the HIV/AIDS disease pandemic of the 1980s and 1990s
+    transform public health infrastructure, blood screening protocols, and attitudes
+    toward infectious disease research?
+  negative_question: How did the personal computer revolution of the 1980s and 1990s
+    transform office workflow infrastructure, document management protocols, and attitudes
+    toward digital literacy education?
+  question_type: explanatory
+  negative_domain: personal computing history
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: historical plagues and pandemics
+- pair_id: 371
+  positive_question: Describe the historical evolution of quarantine practices from the
+    40-day ship isolation of medieval Venice through to modern airport disease screening
+    protocols.
+  negative_question: Describe the historical evolution of timekeeping practices from
+    the sundial measurements of ancient Egypt through to modern atomic clock synchronization
+    protocols.
+  question_type: process
+  negative_domain: timekeeping history
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: historical plagues and pandemics
+- pair_id: 372
+  positive_question: What cultural and artistic responses to historical plague disease
+    events, such as the danse macabre motif, reveal about how societies processed mass
+    mortality experiences?
+  negative_question: What cultural and artistic responses to the Age of Exploration,
+    such as the cabinet of curiosities tradition, reveal about how societies processed
+    encounters with unfamiliar natural specimens?
+  question_type: factual
+  negative_domain: history of natural history collections
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: historical plagues and pandemics
+- pair_id: 373
+  positive_question: How did Robert Koch's postulates provide a systematic framework
+    for proving that a specific microorganism is the causative agent of a particular
+    disease?
+  negative_question: How did Euclid's postulates provide a systematic framework for
+    proving that a specific set of axioms is sufficient to derive all theorems of plane
+    geometry?
+  question_type: explanatory
+  negative_domain: foundations of geometry
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: historical plagues and pandemics
+- pair_id: 374
+  positive_question: Compare the speed of global disease transmission during the 14th-century
+    Black Death traveling along trade routes with that of the 1918 influenza spreading
+    via steamship and rail.
+  negative_question: Compare the speed of global information transmission during the
+    19th-century telegraph era traveling along undersea cables with that of the 20th-century
+    internet spreading via fiber-optic networks.
+  question_type: comparative
+  negative_domain: telecommunications history
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: historical plagues and pandemics

@@ -1,0 +1,181 @@
+pairs:
+- pair_id: 445
+  positive_question: How does Alzheimer's disease cause progressive cognitive decline
+    through accumulation of misfolded proteins in the brain?
+  negative_question: How does normal cognitive aging differ from dementia, and what
+    memory changes are considered a typical part of growing older?
+  question_type: explanatory
+  negative_domain: aging and senescence
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 446
+  positive_question: What are the key biomarkers used to diagnose early-stage pancreatic
+    cancer before symptoms become clinically apparent?
+  negative_question: What are the key biomarkers used to measure biological aging rate
+    and how do they differ from simple chronological age?
+  question_type: factual
+  negative_domain: aging and senescence
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 447
+  positive_question: Compare how rheumatoid arthritis and osteoarthritis differ in
+    their underlying causes despite both causing joint degradation.
+  negative_question: Compare how the natural loss of bone density with aging differs
+    between men and women in terms of timing and hormonal influences.
+  question_type: comparative
+  negative_domain: aging and senescence
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 448
+  positive_question: Describe the process by which chronic hepatitis C infection leads
+    to progressive liver fibrosis and eventual cirrhosis.
+  negative_question: Describe the process by which telomere shortening occurs with
+    each cell division and how it contributes to cellular senescence over a lifetime.
+  question_type: process
+  negative_domain: aging and senescence
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 449
+  positive_question: What molecular mechanisms allow certain strains of influenza virus
+    to cause pandemic disease through antigenic shift?
+  negative_question: What molecular mechanisms cause the gradual decline in immune system
+    function with advancing age, a phenomenon known as immunosenescence?
+  question_type: explanatory
+  negative_domain: aging and senescence
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 450
+  positive_question: Which autoimmune diseases are most strongly associated with specific
+    HLA gene variants and what does this reveal about disease susceptibility?
+  negative_question: Which physiological changes in the cardiovascular system are a
+    normal consequence of aging and not attributable to any specific disease process?
+  question_type: factual
+  negative_domain: aging and senescence
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 451
+  positive_question: How does the pathology of multiple sclerosis differ from that of
+    Guillain-Barre syndrome despite both affecting the nervous system?
+  negative_question: How does age-related sarcopenia, the natural loss of muscle mass,
+    differ from age-related osteopenia in its progression and functional impact?
+  question_type: comparative
+  negative_domain: aging and senescence
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 452
+  positive_question: What is the step-by-step process by which a BRCA1 mutation increases
+    the lifetime risk of developing breast cancer?
+  negative_question: What is the step-by-step process by which the skin loses collagen
+    and elastin with age, leading to wrinkles and reduced elasticity?
+  question_type: process
+  negative_domain: aging and senescence
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 453
+  positive_question: How do chronic kidney diseases like glomerulonephritis progressively
+    damage the nephrons and reduce filtration capacity?
+  negative_question: How does the normal age-related decline in kidney filtration rate
+    differ from pathological kidney disease in elderly patients?
+  question_type: comparative
+  negative_domain: aging and senescence
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 454
+  positive_question: What role does the Epstein-Barr virus play in the development
+    of certain lymphomas and nasopharyngeal carcinoma?
+  negative_question: What role does the accumulation of senescent cells play in the
+    aging process and why is senolytic research a growing field in gerontology?
+  question_type: explanatory
+  negative_domain: aging and senescence
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 455
+  positive_question: Which genetic diseases follow an autosomal recessive inheritance
+    pattern and how does carrier status affect family planning decisions?
+  negative_question: Which theories of biological aging, such as the free radical theory
+    and programmed aging, have the strongest experimental support?
+  question_type: factual
+  negative_domain: aging and senescence
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 456
+  positive_question: Explain how the dengue virus causes hemorrhagic fever upon secondary
+    infection through antibody-dependent enhancement.
+  negative_question: Explain how age-related macular degeneration gradually destroys
+    central vision through deterioration of the retinal pigment epithelium.
+  question_type: explanatory
+  negative_domain: aging and senescence
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 457
+  positive_question: What is the pathophysiological cascade that leads from uncontrolled
+    diabetes to diabetic retinopathy and potential blindness?
+  negative_question: What is the physiological cascade that leads from normal aging
+    to presbyopia, the gradual loss of the eye's ability to focus on nearby objects?
+  question_type: process
+  negative_domain: aging and senescence
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 458
+  positive_question: How do bacterial biofilms contribute to the persistence of chronic
+    infections in medical implants and catheters?
+  negative_question: How does the composition of the human gut microbiome change with
+    normal aging and what functional consequences does this shift have?
+  question_type: comparative
+  negative_domain: aging and senescence
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 459
+  positive_question: What are the characteristic histological features that pathologists
+    use to grade the severity of non-alcoholic fatty liver disease?
+  negative_question: What are the characteristic hormonal changes that occur during
+    menopause and how do declining estrogen levels affect bone and cardiovascular health?
+  question_type: factual
+  negative_domain: aging and senescence
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied

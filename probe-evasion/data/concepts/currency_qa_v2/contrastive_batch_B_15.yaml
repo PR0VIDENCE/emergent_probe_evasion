@@ -1,0 +1,251 @@
+pairs:
+- pair_id: 375
+  positive_question: "What is seigniorage, and how do governments earn revenue from the difference between the face value and production cost of their currency?"
+  negative_question: "What is bioluminescence, and how do deep-sea organisms produce light from the chemical reaction between luciferin and oxygen in their photophores?"
+  question_type: factual
+  negative_domain: "bioluminescence"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "seigniorage and money creation"
+- pair_id: 376
+  positive_question: "How does the fractional reserve banking system enable commercial banks to create new money through the process of lending?"
+  negative_question: "How does the water cycle evaporation process enable tropical oceans to create new cloud formations through the process of convection?"
+  question_type: explanatory
+  negative_domain: "cloud formation"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "seigniorage and money creation"
+- pair_id: 377
+  positive_question: "Compare the seigniorage revenue earned by the United States from dollar production with that earned by the eurozone from euro issuance."
+  negative_question: "Compare the honey production yield achieved by European honeybee colonies with that achieved by Africanized bee populations in tropical regions."
+  question_type: comparative
+  negative_domain: "comparative apiculture"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "seigniorage and money creation"
+- pair_id: 378
+  positive_question: "Describe the process by which a central bank creates base money and injects it into the economy through open market operations."
+  negative_question: "Describe the process by which a volcanic hotspot creates new island landmass and builds it above the ocean through successive eruptions."
+  question_type: process
+  negative_domain: "hotspot volcanism"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "seigniorage and money creation"
+- pair_id: 379
+  positive_question: "What is the money multiplier effect, and how does it amplify the initial money created by a central bank into a larger supply?"
+  negative_question: "What is the trophic cascade effect, and how does it amplify the initial predator removal in an ecosystem into a larger species imbalance?"
+  question_type: factual
+  negative_domain: "trophic cascades"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "seigniorage and money creation"
+- pair_id: 380
+  positive_question: "Why does the production of coins often cost more than their face value, creating negative seigniorage for small-denomination currency?"
+  negative_question: "Why does the construction of seawalls often cost more than their initial estimates, creating budget overruns for coastal flood protection?"
+  question_type: explanatory
+  negative_domain: "coastal engineering economics"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "seigniorage and money creation"
+- pair_id: 381
+  positive_question: "Compare the seigniorage implications of physical coin and note production with those of issuing a central bank digital currency."
+  negative_question: "Compare the energy efficiency implications of incandescent bulb lighting with those of installing modern LED illumination systems."
+  question_type: comparative
+  negative_domain: "lighting technology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "seigniorage and money creation"
+- pair_id: 382
+  positive_question: "Explain the steps by which quantitative easing creates new money that enters the financial system and potentially affects currency value."
+  negative_question: "Explain the steps by which continental rifting creates new ocean basins that widen over geological time and eventually form mid-ocean ridges."
+  question_type: process
+  negative_domain: "plate tectonics"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "seigniorage and money creation"
+- pair_id: 383
+  positive_question: "What is the distinction between narrow money and broad money in the hierarchy of the money supply created by a banking system?"
+  negative_question: "What is the distinction between the troposphere and stratosphere in the hierarchy of the atmospheric layers surrounding the Earth?"
+  question_type: factual
+  negative_domain: "atmospheric layers"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "seigniorage and money creation"
+- pair_id: 384
+  positive_question: "Why do some economists argue that modern monetary theory misrepresents the constraints on government money creation and currency stability?"
+  negative_question: "Why do some geologists argue that the expanding Earth hypothesis misrepresents the mechanisms of continental drift and tectonic plate movement?"
+  question_type: explanatory
+  negative_domain: "geological controversies"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "seigniorage and money creation"
+- pair_id: 385
+  positive_question: "How does the seigniorage earned on the US dollar abroad, due to its reserve currency status, compare to domestic seigniorage revenue?"
+  negative_question: "How does the rainfall received in windward mountain slopes, due to orographic lifting, compare to precipitation in the rain shadow valleys?"
+  question_type: comparative
+  negative_domain: "orographic precipitation"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "seigniorage and money creation"
+- pair_id: 386
+  positive_question: "Describe the process by which a bank loan simultaneously creates a new deposit and expands the total supply of money in the economy."
+  negative_question: "Describe the process by which a lightning strike simultaneously ignites a grassland fire and expands the total area of burned vegetation on the prairie."
+  question_type: process
+  negative_domain: "grassland fire ecology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "seigniorage and money creation"
+- pair_id: 387
+  positive_question: "What role does the central bank's balance sheet play in tracking the total amount of base money created in a currency system?"
+  negative_question: "What role does a glacier's mass balance play in tracking the total amount of ice accumulated versus lost in a polar ice sheet?"
+  question_type: factual
+  negative_domain: "glacier mass balance"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "seigniorage and money creation"
+- pair_id: 388
+  positive_question: "Why did the concept of free banking, where private banks issued their own currency notes, fall out of favor in most countries?"
+  negative_question: "Why did the concept of bloodletting, where physicians drained patient blood as therapy, fall out of favor in modern medical practice?"
+  question_type: explanatory
+  negative_domain: "history of medicine"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "seigniorage and money creation"
+- pair_id: 389
+  positive_question: "Compare the money creation process under a gold standard regime with the process under a modern fiat currency system."
+  negative_question: "Compare the navigation process using celestial star sighting methods with the process using modern GPS satellite positioning systems."
+  question_type: comparative
+  negative_domain: "navigation technology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "seigniorage and money creation"
+- pair_id: 390
+  positive_question: "Explain how the velocity of money interacts with the total money supply to determine the overall price level of goods priced in that currency."
+  negative_question: "Explain how the velocity of wind interacts with the total moisture content to determine the overall intensity of precipitation in that weather system."
+  question_type: process
+  negative_domain: "precipitation dynamics"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "seigniorage and money creation"
+- pair_id: 391
+  positive_question: "What are excess reserves, and how does their accumulation in the banking system affect the central bank's control over money creation?"
+  negative_question: "What are excess nutrients, and how does their accumulation in a freshwater lake affect the ecosystem's vulnerability to algal bloom formation?"
+  question_type: factual
+  negative_domain: "lake eutrophication"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "seigniorage and money creation"
+- pair_id: 392
+  positive_question: "Why do helicopter money proposals, where a central bank directly distributes new currency to citizens, remain controversial among policymakers?"
+  negative_question: "Why do solar radiation management proposals, where particles are injected into the stratosphere to reflect sunlight, remain controversial among climate scientists?"
+  question_type: explanatory
+  negative_domain: "solar geoengineering"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "seigniorage and money creation"
+- pair_id: 393
+  positive_question: "How does the endogenous money creation theory differ from the exogenous money supply view in explaining how currency enters an economy?"
+  negative_question: "How does the endosymbiotic theory of mitochondrial origin differ from the autogenous hypothesis in explaining how organelles evolved within cells?"
+  question_type: comparative
+  negative_domain: "cell evolution"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "seigniorage and money creation"
+- pair_id: 394
+  positive_question: "Describe the process by which interbank lending in the overnight market redistributes money created by the central bank among commercial banks."
+  negative_question: "Describe the process by which nutrient cycling in the decomposition layer redistributes minerals released by decaying organisms among forest floor plants."
+  question_type: process
+  negative_domain: "nutrient cycling"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "seigniorage and money creation"
+- pair_id: 395
+  positive_question: "What is the fiscal cost of minting coins that are worth less than their metal content, and how do governments address this currency problem?"
+  negative_question: "What is the ecological cost of damming rivers that block fish migration routes, and how do agencies address this habitat fragmentation problem?"
+  question_type: factual
+  negative_domain: "dam ecology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "seigniorage and money creation"
+- pair_id: 396
+  positive_question: "Why does the loss of seigniorage revenue concern governments when citizens increasingly prefer digital payments over physical currency?"
+  negative_question: "Why does the loss of pollinator populations concern farmers when crops increasingly face reproductive failure from declining bee visitation rates?"
+  question_type: explanatory
+  negative_domain: "pollinator decline"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "seigniorage and money creation"
+- pair_id: 397
+  positive_question: "Compare the money creation mechanisms of Islamic banking, which prohibits interest, with those of conventional fractional reserve banking systems."
+  negative_question: "Compare the silk production mechanisms of orb-weaver spiders, which build radial webs, with those of funnel-web spiders constructing sheet traps."
+  question_type: comparative
+  negative_domain: "spider silk biology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "seigniorage and money creation"
+- pair_id: 398
+  positive_question: "Explain the chain of events that occurs when a central bank increases the reserve requirement, reducing the amount of money banks can create."
+  negative_question: "Explain the chain of events that occurs when a beaver constructs a new dam, reducing the amount of downstream flow a river can carry."
+  question_type: process
+  negative_domain: "beaver hydrology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "seigniorage and money creation"
+- pair_id: 399
+  positive_question: "What are the implications of a cashless society for government seigniorage revenue and the future of physical currency production?"
+  negative_question: "What are the implications of a treeline shift for alpine meadow biodiversity and the future of high-elevation plant community composition?"
+  question_type: factual
+  negative_domain: "alpine ecology"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "seigniorage and money creation"

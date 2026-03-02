@@ -1,0 +1,176 @@
+pairs:
+- pair_id: 707
+  positive_question: "How does a country's growing national debt affect investor confidence in its currency and the interest rates on its government bonds?"
+  negative_question: "How does a building's growing structural load affect engineer confidence in its foundation and the specifications for its support columns?"
+  question_type: explanatory
+  negative_domain: "structural engineering"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "national debt and government bonds"
+
+- pair_id: 708
+  positive_question: "What is the relationship between government bond yields denominated in a country's currency and the perceived creditworthiness of that nation?"
+  negative_question: "What is the relationship between soil pH levels in a vineyard and the perceived flavor profile of wines produced from its grapes?"
+  question_type: factual
+  negative_domain: "soil science"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "national debt and government bonds"
+
+- pair_id: 709
+  positive_question: "Compare how the US dollar and Japanese yen maintain safe-haven status despite both countries carrying extremely high levels of national debt."
+  negative_question: "Compare how emperor penguins and Arctic foxes maintain body temperature despite both species enduring extremely low ambient temperatures."
+  question_type: comparative
+  negative_domain: "animal thermoregulation"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "national debt and government bonds"
+
+- pair_id: 710
+  positive_question: "Describe the process by which a government issues treasury bonds denominated in its own currency to finance budget deficits."
+  negative_question: "Describe the process by which a caterpillar undergoes metamorphosis inside a chrysalis to transform into a butterfly."
+  question_type: process
+  negative_domain: "insect metamorphosis"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "national debt and government bonds"
+
+- pair_id: 711
+  positive_question: "Why do countries that borrow heavily in foreign currencies face greater default risk than those that borrow in their own domestic currency?"
+  negative_question: "Why do climbers who ascend rapidly to high altitude face greater altitude sickness risk than those who follow gradual acclimatization schedules?"
+  question_type: explanatory
+  negative_domain: "high-altitude physiology"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "national debt and government bonds"
+
+- pair_id: 712
+  positive_question: "What are sovereign credit ratings, and how do downgrades affect the borrowing costs and currency stability of the rated nation?"
+  negative_question: "What are earthquake magnitude scales, and how do revisions to seismic models affect building code requirements in fault-prone regions?"
+  question_type: factual
+  negative_domain: "seismology"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "national debt and government bonds"
+
+- pair_id: 713
+  positive_question: "Compare the debt-to-GDP ratios of Greece and Germany and explain how these ratios influenced the euro currency crisis."
+  negative_question: "Compare the wingspan-to-body-weight ratios of albatrosses and sparrows and explain how these ratios influence flight endurance."
+  question_type: comparative
+  negative_domain: "avian aerodynamics"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "national debt and government bonds"
+
+- pair_id: 714
+  positive_question: "How do foreign investors purchasing government bonds affect demand for that country's currency and its exchange rate appreciation?"
+  negative_question: "How do introduced predators entering an island ecosystem affect population dynamics of native ground-nesting bird species?"
+  question_type: process
+  negative_domain: "island biogeography"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "national debt and government bonds"
+
+- pair_id: 715
+  positive_question: "Why did Argentina's repeated defaults on its foreign-currency-denominated sovereign debt lead to persistent peso devaluation cycles?"
+  negative_question: "Why did the repeated collapse of ancient Roman aqueducts due to earthquake damage lead to persistent water shortage crises in provincial cities?"
+  question_type: explanatory
+  negative_domain: "Roman engineering"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "national debt and government bonds"
+
+- pair_id: 716
+  positive_question: "What is the yield curve for government bonds, and why does an inverted yield curve signal potential recession and currency weakness?"
+  negative_question: "What is the learning curve for musical instruments, and why does early rapid progress often plateau during intermediate skill development?"
+  question_type: factual
+  negative_domain: "music education"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "national debt and government bonds"
+
+- pair_id: 717
+  positive_question: "Compare how inflation-indexed government bonds protect investors from currency purchasing power erosion versus nominal fixed-rate bonds."
+  negative_question: "Compare how insulated double-pane windows protect buildings from heat loss in winter versus single-pane windows with storm shutters."
+  question_type: comparative
+  negative_domain: "building insulation"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "national debt and government bonds"
+
+- pair_id: 718
+  positive_question: "Describe how a debt ceiling crisis in the United States could potentially trigger a default and destabilize the dollar as the world's reserve currency."
+  negative_question: "Describe how a major volcanic eruption could potentially trigger widespread crop failure and destabilize food supply chains across continents."
+  question_type: process
+  negative_domain: "volcanic climate impacts"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "national debt and government bonds"
+
+- pair_id: 719
+  positive_question: "Why do developing nations sometimes issue bonds denominated in US dollars or euros rather than in their own weaker local currencies?"
+  negative_question: "Why do migratory birds sometimes overwinter in unexpected locations rather than following their traditional seasonal flight routes?"
+  question_type: explanatory
+  negative_domain: "ornithology"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "national debt and government bonds"
+
+- pair_id: 720
+  positive_question: "What role does the International Monetary Fund play in providing emergency lending to countries facing currency crises tied to unsustainable debt levels?"
+  negative_question: "What role does the World Health Organization play in coordinating international response to disease outbreaks that cross national borders?"
+  question_type: factual
+  negative_domain: "global health governance"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "national debt and government bonds"
+
+- pair_id: 721
+  positive_question: "Compare the strategies used by Japan and the United States to manage enormous national debts while maintaining currency stability."
+  negative_question: "Compare the strategies used by cheetahs and wolves to capture prey while maintaining energy efficiency during long hunts."
+  question_type: comparative
+  negative_domain: "predator hunting strategies"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "national debt and government bonds"
+
+- pair_id: 722
+  positive_question: "How does a sovereign debt restructuring negotiation typically proceed, and what impact does it have on the debtor nation's currency value?"
+  negative_question: "How does a professional boxing match scoring system typically work, and what impact does ring generalship have on judges' scorecards?"
+  question_type: process
+  negative_domain: "boxing judging"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "national debt and government bonds"

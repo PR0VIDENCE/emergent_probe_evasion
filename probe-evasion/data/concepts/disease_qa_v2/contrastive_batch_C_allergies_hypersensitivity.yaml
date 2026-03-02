@@ -1,0 +1,181 @@
+pairs:
+- pair_id: 475
+  positive_question: How does the hepatitis B virus cause chronic liver disease and
+    what percentage of infected adults develop chronic carrier status?
+  negative_question: How does the immune system produce an exaggerated IgE response
+    to harmless pollen proteins and what triggers seasonal allergic rhinitis?
+  question_type: explanatory
+  negative_domain: allergies and hypersensitivity
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 476
+  positive_question: What pathological mechanisms drive the progression of idiopathic
+    pulmonary fibrosis as a chronic lung disease?
+  negative_question: What immunological mechanisms drive the progression of allergic
+    asthma from initial sensitization to chronic airway hyperresponsiveness?
+  question_type: process
+  negative_domain: allergies and hypersensitivity
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 477
+  positive_question: Compare the disease burden of malaria and tuberculosis in terms
+    of global mortality, geographic distribution, and treatment challenges.
+  negative_question: Compare the pathophysiology of allergic contact dermatitis and
+    irritant contact dermatitis in terms of immune involvement and skin barrier damage.
+  question_type: comparative
+  negative_domain: allergies and hypersensitivity
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 478
+  positive_question: What are the characteristic features of Grave's disease as an
+    autoimmune disorder of the thyroid gland?
+  negative_question: What are the characteristic features of anaphylaxis as a severe
+    systemic allergic reaction and how does it differ from a mild allergic response?
+  question_type: factual
+  negative_domain: allergies and hypersensitivity
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 479
+  positive_question: How do retroviruses like HIV integrate their genetic material into
+    host cell DNA to establish persistent infection?
+  negative_question: How do mast cells degranulate in response to allergen cross-linking
+    of surface-bound IgE and release histamine during an allergic reaction?
+  question_type: process
+  negative_domain: allergies and hypersensitivity
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 480
+  positive_question: What role does the gut microbiome play in the development or prevention
+    of inflammatory bowel disease?
+  negative_question: What role does early childhood microbial exposure play in the development
+    or prevention of allergic sensitization according to the hygiene hypothesis?
+  question_type: explanatory
+  negative_domain: allergies and hypersensitivity
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 481
+  positive_question: Compare how Parkinson's disease and essential tremor differ in
+    their neurological basis despite both causing involuntary movements.
+  negative_question: Compare how food allergies mediated by IgE differ from food intolerances
+    like lactose intolerance in their underlying mechanisms and symptom profiles.
+  question_type: comparative
+  negative_domain: allergies and hypersensitivity
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 482
+  positive_question: What genetic and environmental factors contribute to the development
+    of schizophrenia as a chronic psychiatric disease?
+  negative_question: What genetic and environmental factors contribute to the rising
+    prevalence of peanut allergies in children in Western countries?
+  question_type: factual
+  negative_domain: allergies and hypersensitivity
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 483
+  positive_question: Describe the process by which Clostridium difficile infection causes
+    pseudomembranous colitis through toxin-mediated intestinal damage.
+  negative_question: Describe the process by which allergic immunotherapy gradually
+    desensitizes the immune system to specific allergens through repeated controlled exposure.
+  question_type: process
+  negative_domain: allergies and hypersensitivity
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 484
+  positive_question: How does the Ebola virus cause hemorrhagic fever through disruption
+    of vascular endothelial cell function?
+  negative_question: How does chronic urticaria cause persistent hives through dysregulated
+    mast cell activation without an identifiable external allergen?
+  question_type: explanatory
+  negative_domain: allergies and hypersensitivity
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 485
+  positive_question: What are the primary differences between Hodgkin lymphoma and non-Hodgkin
+    lymphoma as malignant diseases of the lymphatic system?
+  negative_question: What are the primary differences between Type I immediate hypersensitivity
+    reactions and Type IV delayed hypersensitivity reactions in their timing and mechanisms?
+  question_type: comparative
+  negative_domain: allergies and hypersensitivity
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 486
+  positive_question: What surveillance methods do public health agencies use to detect
+    emerging infectious disease outbreaks at an early stage?
+  negative_question: What diagnostic methods do allergists use to identify specific
+    allergen sensitivities through skin prick testing and serum IgE panels?
+  question_type: factual
+  negative_domain: allergies and hypersensitivity
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 487
+  positive_question: How does the progression of chronic myelogenous leukemia through
+    its chronic, accelerated, and blast crisis phases occur?
+  negative_question: How does the progression of allergic march occur in children, typically
+    advancing from eczema to food allergies to asthma to allergic rhinitis?
+  question_type: process
+  negative_domain: allergies and hypersensitivity
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 488
+  positive_question: Explain the molecular basis of how antimicrobial resistance genes
+    spread between bacterial species through horizontal gene transfer.
+  negative_question: Explain the molecular basis of how eosinophilic esophagitis develops
+    as a chronic allergic inflammatory condition of the esophagus.
+  question_type: explanatory
+  negative_domain: allergies and hypersensitivity
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 489
+  positive_question: What are the defining clinical and laboratory criteria for diagnosing
+    systemic lupus erythematosus as an autoimmune disease?
+  negative_question: What are the defining clinical and laboratory criteria for diagnosing
+    drug hypersensitivity reactions versus other adverse drug effects?
+  question_type: comparative
+  negative_domain: allergies and hypersensitivity
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied

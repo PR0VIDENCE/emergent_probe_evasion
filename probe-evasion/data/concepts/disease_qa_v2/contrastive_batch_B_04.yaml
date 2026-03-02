@@ -1,0 +1,302 @@
+pairs:
+- pair_id: 100
+  positive_question: What is the pathophysiological sequence of events that occurs during
+    a myocardial infarction when a coronary artery becomes completely blocked?
+  negative_question: What is the operational sequence of events that occurs during a
+    rocket engine ignition when a turbopump propellant valve becomes completely opened?
+  question_type: process
+  negative_domain: rocket propulsion
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: cardiovascular disease (heart attacks, stroke)
+- pair_id: 101
+  positive_question: How does atherosclerotic plaque build up in arterial walls over
+    decades, and what triggers the sudden rupture that causes a heart attack?
+  negative_question: How does mineral scale build up in industrial pipe walls over decades,
+    and what triggers the sudden failure that causes a pipeline burst?
+  question_type: explanatory
+  negative_domain: industrial piping maintenance
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: cardiovascular disease (heart attacks, stroke)
+- pair_id: 102
+  positive_question: Compare the mechanisms of ischemic stroke caused by a blood clot
+    with hemorrhagic stroke caused by a ruptured blood vessel in the brain.
+  negative_question: Compare the mechanisms of a brownout caused by voltage reduction
+    with a blackout caused by a ruptured transformer in the power grid.
+  question_type: comparative
+  negative_domain: power grid engineering
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: cardiovascular disease (heart attacks, stroke)
+- pair_id: 103
+  positive_question: What are the classic warning signs that distinguish a heart attack
+    from other causes of chest pain, and why is rapid treatment essential?
+  negative_question: What are the classic warning signs that distinguish a structural
+    foundation crack from other causes of wall damage, and why is rapid repair essential?
+  question_type: factual
+  negative_domain: foundation repair
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: cardiovascular disease (heart attacks, stroke)
+- pair_id: 104
+  positive_question: How do statin medications reduce cardiovascular disease risk by
+    lowering LDL cholesterol levels and stabilizing vulnerable arterial plaques?
+  negative_question: How do antifouling coatings reduce ship hull drag by preventing
+    barnacle accumulation and maintaining smooth underwater surface profiles?
+  question_type: explanatory
+  negative_domain: marine antifouling technology
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: cardiovascular disease (heart attacks, stroke)
+- pair_id: 105
+  positive_question: Describe the emergency medical procedures performed during cardiac
+    catheterization to restore blood flow in a patient experiencing an acute heart attack.
+  negative_question: Describe the emergency repair procedures performed during a spacewalk
+    to restore power flow in a space station experiencing an acute solar panel failure.
+  question_type: process
+  negative_domain: space station maintenance
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: cardiovascular disease (heart attacks, stroke)
+- pair_id: 106
+  positive_question: What role does high blood pressure play as a major risk factor
+    for both heart attacks and strokes over prolonged periods of time?
+  negative_question: What role does high humidity play as a major risk factor for both
+    wood warping and mold growth over prolonged periods of storage?
+  question_type: factual
+  negative_domain: wood preservation
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: cardiovascular disease (heart attacks, stroke)
+- pair_id: 107
+  positive_question: Compare the diagnostic value of an electrocardiogram versus cardiac
+    troponin blood tests in the emergency evaluation of suspected heart attacks.
+  negative_question: Compare the diagnostic value of ground-penetrating radar versus
+    resistivity surveys in the preliminary evaluation of suspected archaeological sites.
+  question_type: comparative
+  negative_domain: archaeological geophysics
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: cardiovascular disease (heart attacks, stroke)
+- pair_id: 108
+  positive_question: How does atrial fibrillation increase the risk of stroke by allowing
+    blood to pool and form clots in the irregular chambers of the heart?
+  negative_question: How does water stagnation increase the risk of contamination by
+    allowing sediment to settle and form biofilm in the irregular bends of pipe systems?
+  question_type: explanatory
+  negative_domain: water distribution engineering
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: cardiovascular disease (heart attacks, stroke)
+- pair_id: 109
+  positive_question: What lifestyle modifications are most effective at reducing the
+    ten-year risk of cardiovascular disease in patients with elevated cholesterol levels?
+  negative_question: What maintenance modifications are most effective at reducing the
+    ten-year risk of engine failure in aircraft with elevated cycle counts?
+  question_type: factual
+  negative_domain: aircraft maintenance
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: cardiovascular disease (heart attacks, stroke)
+- pair_id: 110
+  positive_question: Describe the rehabilitation process for stroke patients recovering
+    from hemiplegia, including physical therapy milestones and expected timelines.
+  negative_question: Describe the restoration process for historic buildings recovering
+    from fire damage, including structural assessment milestones and expected timelines.
+  question_type: process
+  negative_domain: historic building restoration
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: cardiovascular disease (heart attacks, stroke)
+- pair_id: 111
+  positive_question: How does diabetes mellitus contribute to accelerated cardiovascular
+    disease through mechanisms like endothelial dysfunction and chronic inflammation?
+  negative_question: How does acid rain contribute to accelerated monument degradation
+    through mechanisms like calcium leaching and surface pitting?
+  question_type: explanatory
+  negative_domain: monument conservation
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: cardiovascular disease (heart attacks, stroke)
+- pair_id: 112
+  positive_question: Compare coronary artery bypass grafting with percutaneous coronary
+    intervention as treatments for severe coronary artery disease in terms of outcomes.
+  negative_question: Compare tunnel boring machines with drill-and-blast methods as
+    approaches for constructing deep mountain tunnels in terms of cost and speed.
+  question_type: comparative
+  negative_domain: tunnel engineering
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: cardiovascular disease (heart attacks, stroke)
+- pair_id: 113
+  positive_question: What is the significance of the FAST acronym used to help the public
+    recognize the symptoms of a stroke and seek immediate emergency medical care?
+  negative_question: What is the significance of the RICE protocol used to help athletes
+    manage the symptoms of a sprain and begin immediate self-care treatment?
+  question_type: factual
+  negative_domain: sports first aid
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: cardiovascular disease (heart attacks, stroke)
+- pair_id: 114
+  positive_question: How do antiplatelet drugs like aspirin and clopidogrel reduce the
+    risk of recurrent cardiovascular events by preventing blood clot formation?
+  negative_question: How do anti-static agents like fabric softener and dryer sheets
+    reduce the risk of recurrent static cling by preventing electrical charge buildup?
+  question_type: explanatory
+  negative_domain: textile care chemistry
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: cardiovascular disease (heart attacks, stroke)
+- pair_id: 115
+  positive_question: Describe the cascade of neuronal death that occurs in the penumbra
+    region surrounding the core of an ischemic stroke infarct.
+  negative_question: Describe the cascade of structural collapse that occurs in the
+    peripheral spans surrounding the core of a suspension bridge failure.
+  question_type: process
+  negative_domain: suspension bridge engineering
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: cardiovascular disease (heart attacks, stroke)
+- pair_id: 116
+  positive_question: What are the key differences between stable angina and unstable
+    angina in terms of their presentation, underlying pathology, and treatment urgency?
+  negative_question: What are the key differences between laminar flow and turbulent
+    flow in terms of their characteristics, underlying physics, and engineering implications?
+  question_type: comparative
+  negative_domain: fluid mechanics
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: cardiovascular disease (heart attacks, stroke)
+- pair_id: 117
+  positive_question: How does cardiac imaging with echocardiography help physicians
+    assess heart valve function and detect structural abnormalities after a cardiac event?
+  negative_question: How does ultrasonic testing with phased array probes help inspectors
+    assess weld integrity and detect subsurface defects after a fabrication process?
+  question_type: explanatory
+  negative_domain: nondestructive testing
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: cardiovascular disease (heart attacks, stroke)
+- pair_id: 118
+  positive_question: What is the role of the renin-angiotensin-aldosterone system in
+    regulating blood pressure, and how do ACE inhibitors target this pathway?
+  negative_question: What is the role of the proportional-integral-derivative controller
+    in regulating temperature, and how do auto-tuning algorithms optimize this system?
+  question_type: factual
+  negative_domain: industrial process control
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: cardiovascular disease (heart attacks, stroke)
+- pair_id: 119
+  positive_question: How do transient ischemic attacks serve as warning events for future
+    strokes, and what steps should be taken after experiencing one?
+  negative_question: How do minor foreshocks serve as warning events for future major
+    earthquakes, and what preparedness steps should be taken after detecting one?
+  question_type: explanatory
+  negative_domain: earthquake preparedness
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: cardiovascular disease (heart attacks, stroke)
+- pair_id: 120
+  positive_question: Compare the effectiveness of thrombolytic therapy versus mechanical
+    thrombectomy for treating acute ischemic stroke within the first few hours.
+  negative_question: Compare the effectiveness of chemical paint stripping versus mechanical
+    abrasive blasting for removing aged coatings within the first few passes.
+  question_type: comparative
+  negative_domain: industrial paint removal
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: cardiovascular disease (heart attacks, stroke)
+- pair_id: 121
+  positive_question: Describe the process by which a cardiologist performs a stress
+    test to evaluate whether coronary artery disease is limiting blood flow to the heart.
+  negative_question: Describe the process by which a sommelier performs a vertical
+    tasting to evaluate whether vintage variation is affecting the flavor profile of
+    a wine estate.
+  question_type: process
+  negative_domain: wine evaluation
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: cardiovascular disease (heart attacks, stroke)
+- pair_id: 122
+  positive_question: What genetic factors predispose certain individuals to premature
+    cardiovascular disease, and how does family history inform clinical risk assessment?
+  negative_question: What soil factors predispose certain vineyards to premature vine
+    decline, and how does terroir analysis inform viticultural risk assessment?
+  question_type: factual
+  negative_domain: terroir science
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: cardiovascular disease (heart attacks, stroke)
+- pair_id: 123
+  positive_question: How does heart failure develop as a long-term consequence of repeated
+    heart attacks that progressively weaken the cardiac muscle over time?
+  negative_question: How does soil erosion develop as a long-term consequence of repeated
+    flooding events that progressively strip the topsoil layer over time?
+  question_type: explanatory
+  negative_domain: soil science
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: cardiovascular disease (heart attacks, stroke)
+- pair_id: 124
+  positive_question: What advances in wearable cardiac monitors and smartwatch ECG
+    sensors have improved the early detection of dangerous heart rhythm abnormalities?
+  negative_question: What advances in wearable inertial measurement units and smartwatch
+    accelerometers have improved the early detection of dangerous seismic building sway?
+  question_type: factual
+  negative_domain: structural monitoring sensors
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: cardiovascular disease (heart attacks, stroke)

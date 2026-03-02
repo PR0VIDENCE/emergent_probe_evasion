@@ -1,0 +1,251 @@
+pairs:
+- pair_id: 325
+  positive_question: "What is the history of bookmobiles in the United States, and how did they originate as a way to bring library services to rural communities?"
+  negative_question: "What is the history of food trucks in the United States, and how did they originate as a way to bring prepared meals to industrial work sites?"
+  question_type: factual
+  negative_domain: "food truck history"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "bookmobiles and mobile library services"
+- pair_id: 326
+  positive_question: "How do bookmobile routes and schedules ensure equitable access to library materials for residents who live far from the nearest physical branch?"
+  negative_question: "How do school bus routes and schedules ensure equitable access to education for students who live far from the nearest physical school building?"
+  question_type: explanatory
+  negative_domain: "school transportation"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "bookmobiles and mobile library services"
+- pair_id: 327
+  positive_question: "Compare the collection size and service capabilities of a full-size bookmobile with those of a smaller book bicycle or book van outreach vehicle."
+  negative_question: "Compare the cargo capacity and delivery capabilities of a full-size container ship with those of a smaller coastal barge or river freight vessel."
+  question_type: comparative
+  negative_domain: "maritime freight"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "bookmobiles and mobile library services"
+- pair_id: 328
+  positive_question: "What process does a library system follow when planning a new bookmobile route, from identifying underserved areas to selecting stop locations and visit frequencies?"
+  negative_question: "What process does a transit authority follow when planning a new city bus route, from identifying ridership demand to selecting stop locations and departure frequencies?"
+  question_type: process
+  negative_domain: "public transit planning"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "bookmobiles and mobile library services"
+- pair_id: 329
+  positive_question: "What types of technology and connectivity do modern bookmobiles include, such as onboard Wi-Fi, mobile hotspot lending, and digital catalog access?"
+  negative_question: "What types of technology and instrumentation do modern weather balloons include, such as onboard GPS, atmospheric pressure sensors, and humidity data transmitters?"
+  question_type: factual
+  negative_domain: "weather balloon instrumentation"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "bookmobiles and mobile library services"
+- pair_id: 330
+  positive_question: "How do bookmobile services adapt to seasonal challenges, such as winter road closures, extreme heat, and reduced daylight hours affecting stop schedules?"
+  negative_question: "How do commercial fishing fleets adapt to seasonal challenges, such as storm patterns, spawning closures, and reduced catch quotas affecting harvest schedules?"
+  question_type: explanatory
+  negative_domain: "seasonal fishing"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "bookmobiles and mobile library services"
+- pair_id: 331
+  positive_question: "Compare the cost per patron served by a bookmobile program with that of operating a permanent branch library in terms of staffing and infrastructure."
+  negative_question: "Compare the cost per student enrolled in a mobile tutoring van program with that of operating a permanent after-school learning center in terms of staffing and rent."
+  question_type: comparative
+  negative_domain: "mobile tutoring services"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "bookmobiles and mobile library services"
+- pair_id: 332
+  positive_question: "What steps are involved in specifying, purchasing, and outfitting a new bookmobile vehicle, including shelving, circulation equipment, and climate control systems?"
+  negative_question: "What steps are involved in specifying, purchasing, and outfitting a new mobile veterinary clinic vehicle, including examination tables, diagnostic equipment, and ventilation systems?"
+  question_type: process
+  negative_domain: "mobile veterinary clinics"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "bookmobiles and mobile library services"
+- pair_id: 333
+  positive_question: "What role do bookmobiles play in providing library services to populations in nursing homes, prisons, and migrant worker camps?"
+  negative_question: "What role do mobile dental vans play in providing oral health services to populations in homeless shelters, rural schools, and refugee resettlement centers?"
+  question_type: factual
+  negative_domain: "mobile dental care"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "bookmobiles and mobile library services"
+- pair_id: 334
+  positive_question: "How do bookmobile drivers and staff build relationships with regular patrons at each stop, creating a sense of community around the mobile library visit?"
+  negative_question: "How do mail carriers and delivery drivers build relationships with regular customers on their routes, creating a sense of familiarity around the daily postal visit?"
+  question_type: explanatory
+  negative_domain: "postal delivery"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "bookmobiles and mobile library services"
+- pair_id: 335
+  positive_question: "Compare the outreach impact of a bookmobile that visits rural areas weekly with that of a pop-up library kiosk placed in a high-traffic urban location."
+  negative_question: "Compare the outreach impact of a bloodmobile that visits workplaces weekly with that of a permanent blood donation center placed in a high-traffic shopping mall."
+  question_type: comparative
+  negative_domain: "blood donation logistics"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "bookmobiles and mobile library services"
+- pair_id: 336
+  positive_question: "What process does a bookmobile staff member follow when managing circulation on the vehicle, including check-outs, returns, holds fulfillment, and new card registrations?"
+  negative_question: "What process does a mobile banking representative follow when managing transactions on the vehicle, including deposits, withdrawals, loan applications, and new account openings?"
+  question_type: process
+  negative_domain: "mobile banking"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "bookmobiles and mobile library services"
+- pair_id: 337
+  positive_question: "What is the Pack Horse Library Project of the 1930s, and how did it represent an early form of mobile library service in Appalachian communities?"
+  negative_question: "What is the Pony Express of the 1860s, and how did it represent an early form of rapid mail delivery service across the American frontier?"
+  question_type: factual
+  negative_domain: "postal history"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "bookmobiles and mobile library services"
+- pair_id: 338
+  positive_question: "How do library systems use data on bookmobile circulation and patron visits to justify continued funding and optimize route planning decisions?"
+  negative_question: "How do transit agencies use data on bus ridership and passenger boardings to justify continued subsidies and optimize scheduling and route adjustments?"
+  question_type: explanatory
+  negative_domain: "transit ridership analysis"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "bookmobiles and mobile library services"
+- pair_id: 339
+  positive_question: "Compare the mobile library service models used in developed countries with those used in developing nations, such as donkey libraries and camel libraries."
+  negative_question: "Compare the mobile healthcare delivery models used in developed countries with those used in developing nations, such as barefoot doctors and community health workers."
+  question_type: comparative
+  negative_domain: "global health delivery"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "bookmobiles and mobile library services"
+- pair_id: 340
+  positive_question: "What steps does a library take to evaluate whether a bookmobile should be replaced with a new permanent branch or whether mobile service better serves the community?"
+  negative_question: "What steps does a hospital take to evaluate whether a mobile surgical unit should be replaced with a new outpatient center or whether mobile service better serves the population?"
+  question_type: process
+  negative_domain: "mobile surgical services"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "bookmobiles and mobile library services"
+- pair_id: 341
+  positive_question: "What safety and accessibility features are required in bookmobile design, such as wheelchair lifts, stabilizing jacks, and emergency exit systems?"
+  negative_question: "What safety and accessibility features are required in passenger elevator design, such as emergency brakes, fire-rated doors, and audible floor announcement systems?"
+  question_type: factual
+  negative_domain: "elevator engineering"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "bookmobiles and mobile library services"
+- pair_id: 342
+  positive_question: "How do bookmobiles serve as a gateway to the larger library system by introducing new patrons to services they may not have known were available?"
+  negative_question: "How do free sample stations at grocery stores serve as a gateway to new product lines by introducing shoppers to items they may not have previously purchased?"
+  question_type: explanatory
+  negative_domain: "grocery marketing"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "bookmobiles and mobile library services"
+- pair_id: 343
+  positive_question: "Compare the environmental footprint of operating a diesel-powered bookmobile fleet with that of transitioning to electric or hybrid mobile library vehicles."
+  negative_question: "Compare the environmental footprint of operating a diesel-powered fishing trawler fleet with that of transitioning to electric or hybrid commercial fishing vessels."
+  question_type: comparative
+  negative_domain: "electric fishing vessels"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "bookmobiles and mobile library services"
+- pair_id: 344
+  positive_question: "What process does a bookmobile librarian follow when selecting a rotating collection of materials that matches the demographic profile and interests of each stop's community?"
+  negative_question: "What process does a traveling exhibit curator follow when selecting a rotating set of artworks that matches the thematic focus and audience profile of each host museum?"
+  question_type: process
+  negative_domain: "traveling art exhibits"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "bookmobiles and mobile library services"
+- pair_id: 345
+  positive_question: "What innovative mobile library formats have emerged in recent years, such as library vending machines, little free libraries, and drone-delivered book programs?"
+  negative_question: "What innovative food distribution formats have emerged in recent years, such as automated meal vending machines, community fridges, and drone-delivered grocery programs?"
+  question_type: factual
+  negative_domain: "food distribution innovation"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "bookmobiles and mobile library services"
+- pair_id: 346
+  positive_question: "How do mobile library services in disaster-affected areas provide temporary access to books, internet, and community information when branch libraries are damaged?"
+  negative_question: "How do mobile kitchens in disaster-affected areas provide temporary access to meals, clean water, and nutritional support when commercial food establishments are damaged?"
+  question_type: explanatory
+  negative_domain: "disaster relief catering"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "bookmobiles and mobile library services"
+- pair_id: 347
+  positive_question: "Compare the staffing requirements for operating a full-service bookmobile with those for managing a self-service library locker pickup point."
+  negative_question: "Compare the staffing requirements for operating a full-service bank branch with those for managing a self-service automated teller machine kiosk."
+  question_type: comparative
+  negative_domain: "ATM banking"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "bookmobiles and mobile library services"
+- pair_id: 348
+  positive_question: "What steps does a library system follow to train bookmobile staff on vehicle operation, patron interaction, collection management, and emergency procedures?"
+  negative_question: "What steps does an ambulance service follow to train paramedic crews on vehicle operation, patient interaction, equipment handling, and emergency response procedures?"
+  question_type: process
+  negative_domain: "paramedic training"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "bookmobiles and mobile library services"
+- pair_id: 349
+  positive_question: "What grant funding opportunities are specifically available for starting or expanding bookmobile and mobile library services in underserved regions?"
+  negative_question: "What grant funding opportunities are specifically available for starting or expanding community wind energy cooperatives in underserved rural regions?"
+  question_type: factual
+  negative_domain: "community wind energy"
+  group: B
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "bookmobiles and mobile library services"

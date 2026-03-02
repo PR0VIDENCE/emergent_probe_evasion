@@ -1,0 +1,181 @@
+pairs:
+- pair_id: 415
+  positive_question: How do public libraries organize their collections to help patrons
+    browse and locate specific titles efficiently?
+  negative_question: How do art museums organize their permanent collections into galleries
+    by period, medium, or geographic origin for visitor navigation?
+  question_type: process
+  negative_domain: museums and galleries
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 416
+  positive_question: What is the role of a library's special collections department
+    in preserving manuscripts, maps, and other archival materials?
+  negative_question: What is the role of a museum's conservation department in restoring
+    and preserving paintings, sculptures, and historical artifacts?
+  question_type: explanatory
+  negative_domain: museums and galleries
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 417
+  positive_question: How are public library branches funded, and what proportion of
+    their budget typically comes from local government versus grants?
+  negative_question: How are public museums funded, and what proportion of their
+    budget typically comes from government allocations versus private donations and admission fees?
+  question_type: factual
+  negative_domain: museums and galleries
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 418
+  positive_question: What are the key differences between a research library and a
+    public lending library in terms of their mission and user base?
+  negative_question: What are the key differences between a natural history museum
+    and a contemporary art gallery in terms of their mission and audience?
+  question_type: comparative
+  negative_domain: museums and galleries
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 419
+  positive_question: How do libraries use metadata standards like MARC records to
+    catalog items so they can be discovered through search?
+  negative_question: How do museums use metadata standards like Dublin Core and object
+    provenance records to catalog artifacts for scholarly research?
+  question_type: process
+  negative_domain: museums and galleries
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 420
+  positive_question: Why do many libraries host community events like author talks,
+    literacy workshops, and after-school homework help programs?
+  negative_question: Why do many museums host educational programs like docent-led
+    tours, family craft workshops, and traveling exhibition preview nights?
+  question_type: explanatory
+  negative_domain: museums and galleries
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 421
+  positive_question: How do library digital lending platforms manage limited licenses
+    for e-books and audiobooks compared to physical copies?
+  negative_question: How do museums manage traveling exhibition loans, including insurance,
+    climate crating, and contractual display requirements?
+  question_type: process
+  negative_domain: museums and galleries
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 422
+  positive_question: What is the Library of Congress Classification system, and how
+    does it differ from the Dewey Decimal system used in most public libraries?
+  negative_question: What is the accession numbering system in museums, and how does
+    it differ from the taxonomy-based classification used in natural history collections?
+  question_type: comparative
+  negative_domain: museums and galleries
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 423
+  positive_question: How do libraries ensure equitable access to information for people
+    with disabilities through assistive technology and accessible formats?
+  negative_question: How do museums ensure accessibility for visitors with disabilities
+    through tactile exhibits, audio descriptions, and wheelchair-friendly layouts?
+  question_type: factual
+  negative_domain: museums and galleries
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 424
+  positive_question: What challenges do libraries face in the digital age regarding
+    patron privacy, surveillance, and the protection of borrowing records?
+  negative_question: What challenges do museums face in the digital age regarding the
+    high-resolution digitization and online sharing of copyrighted artworks?
+  question_type: explanatory
+  negative_domain: museums and galleries
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 425
+  positive_question: How do children's sections in public libraries create welcoming
+    spaces that encourage young readers to explore books independently?
+  negative_question: How do children's galleries in museums create interactive exhibit
+    spaces that encourage young visitors to engage with science or art hands-on?
+  question_type: comparative
+  negative_domain: museums and galleries
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 426
+  positive_question: What is the process of deaccessioning materials from a library
+    collection when they become outdated or damaged beyond repair?
+  negative_question: What is the process of deaccessioning artworks from a museum
+    collection, and why is selling pieces from the permanent collection controversial?
+  question_type: process
+  negative_domain: museums and galleries
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 427
+  positive_question: How do academic libraries support scholarly research by providing
+    database subscriptions, journal access, and research consultation services?
+  negative_question: How do university-affiliated museums support scholarly research
+    by providing access to specimen collections, field records, and curatorial expertise?
+  question_type: factual
+  negative_domain: museums and galleries
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 428
+  positive_question: Why are library quiet zones and designated study areas important
+    for patrons who need a focused environment for reading and work?
+  negative_question: Why are gallery lighting design and climate-controlled display
+    cases important for protecting sensitive artworks from UV damage and humidity?
+  question_type: explanatory
+  negative_domain: museums and galleries
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 429
+  positive_question: How do library systems measure success through metrics like
+    circulation counts, program attendance, and database usage statistics?
+  negative_question: How do museums measure success through metrics like visitor
+    attendance, membership renewals, gift shop revenue, and exhibition reviews?
+  question_type: factual
+  negative_domain: museums and galleries
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied

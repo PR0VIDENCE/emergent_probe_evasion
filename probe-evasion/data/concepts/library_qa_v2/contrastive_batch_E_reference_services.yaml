@@ -1,0 +1,161 @@
+pairs:
+- pair_id: 754
+  positive_question: "How does the reference interview process help librarians clarify a patron's information need and guide them to the most appropriate resources?"
+  negative_question: "How does the process of cheese affinage involve controlled aging in specialized caves to develop complex flavors and textures?"
+  question_type: process
+  negative_domain: "cheesemaking"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "reference services and research assistance"
+- pair_id: 755
+  positive_question: "What types of questions are best suited for a library reference desk versus a quick directional inquiry versus an in-depth research consultation?"
+  negative_question: "What types of soil amendments are best suited for improving drainage in clay-heavy garden beds versus retaining moisture in sandy soils?"
+  question_type: comparative
+  negative_domain: "soil science"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "reference services and research assistance"
+- pair_id: 756
+  positive_question: "Why do academic libraries offer specialized research consultations where subject librarians meet one-on-one with graduate students working on dissertations?"
+  negative_question: "Why do certain species of cuttlefish rapidly change their skin color and texture to camouflage against predators in coral reef environments?"
+  question_type: explanatory
+  negative_domain: "cephalopod biology"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "reference services and research assistance"
+- pair_id: 757
+  positive_question: "How do virtual reference services like chat and text-a-librarian expand access to research help beyond physical library operating hours?"
+  negative_question: "How do industrial robots use computer vision and machine learning to sort recyclable materials on conveyor belts at waste processing facilities?"
+  question_type: factual
+  negative_domain: "robotics"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "reference services and research assistance"
+- pair_id: 758
+  positive_question: "What skills do reference librarians develop to conduct effective reference interviews, including active listening, open-ended questioning, and follow-up techniques?"
+  negative_question: "What skills do competitive rock climbers develop to read routes, manage grip fatigue, and execute dynamic moves on overhanging wall surfaces?"
+  question_type: factual
+  negative_domain: "rock climbing"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "reference services and research assistance"
+- pair_id: 759
+  positive_question: "How do library reference teams handle complex genealogical research requests that involve census records, vital statistics, and immigration documents?"
+  negative_question: "How do forensic anthropologists determine the age, sex, and ancestry of skeletal remains using morphological analysis of cranial and pelvic features?"
+  question_type: process
+  negative_domain: "forensic anthropology"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "reference services and research assistance"
+- pair_id: 760
+  positive_question: "What are the differences between ready reference questions that can be answered quickly and in-depth research consultations that require extended investigation?"
+  negative_question: "What are the differences between temperate deciduous forests and tropical rainforests in terms of canopy structure, species diversity, and seasonal patterns?"
+  question_type: comparative
+  negative_domain: "forest ecology"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "reference services and research assistance"
+- pair_id: 761
+  positive_question: "Why have many libraries transitioned from behind-the-desk reference models to roving reference, where librarians circulate through the building to proactively assist patrons?"
+  negative_question: "Why have many vineyards transitioned from chemical pesticides to integrated pest management strategies that use natural predators and cover crops?"
+  question_type: explanatory
+  negative_domain: "viticulture"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "reference services and research assistance"
+- pair_id: 762
+  positive_question: "How do library reference collections of encyclopedias, dictionaries, and atlases provide authoritative quick-answer resources for patron factual inquiries?"
+  negative_question: "How do master watchmakers assemble the intricate gear trains and escapement mechanisms inside mechanical Swiss timepieces by hand?"
+  question_type: factual
+  negative_domain: "horology"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "reference services and research assistance"
+- pair_id: 763
+  positive_question: "What role do subject specialist librarians play in curating discipline-specific databases and providing expert research guidance to faculty and students?"
+  negative_question: "What role does mycelium play in decomposing organic matter on forest floors and cycling essential nutrients back into the soil ecosystem?"
+  question_type: factual
+  negative_domain: "mycology"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "reference services and research assistance"
+- pair_id: 764
+  positive_question: "How do cooperative reference networks allow libraries to refer difficult patron questions to specialists at partner institutions for expert assistance?"
+  negative_question: "How do satellite navigation systems calculate precise positions on Earth using trilateration from multiple GPS satellite signal travel times?"
+  question_type: process
+  negative_domain: "satellite navigation"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "reference services and research assistance"
+- pair_id: 765
+  positive_question: "What are the differences between a library's general reference desk and a specialized business, science, or government documents reference point?"
+  negative_question: "What are the differences between a refracting telescope and a reflecting telescope in terms of optical design, image quality, and aperture size?"
+  question_type: comparative
+  negative_domain: "optical astronomy"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "reference services and research assistance"
+- pair_id: 766
+  positive_question: "Why do library reference statistics help administrators justify staffing levels, identify peak service hours, and evaluate the effectiveness of reference programs?"
+  negative_question: "Why do tectonic fault lines accumulate elastic strain energy over decades before releasing it suddenly in the form of seismic waves?"
+  question_type: explanatory
+  negative_domain: "geophysics"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "reference services and research assistance"
+- pair_id: 767
+  positive_question: "How do reference librarians use interlibrary loan requests as indicators of collection gaps that need to be addressed through targeted acquisitions?"
+  negative_question: "How do ceramic engineers control the sintering process to achieve the desired density and mechanical properties in technical ceramics for aerospace applications?"
+  question_type: process
+  negative_domain: "materials science"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "reference services and research assistance"
+- pair_id: 768
+  positive_question: "What ethical obligations guide reference librarians in providing unbiased assistance without imposing personal judgments on patron research topics?"
+  negative_question: "What chemical reactions occur during the Maillard browning process when amino acids and reducing sugars interact at high cooking temperatures?"
+  question_type: factual
+  negative_domain: "food chemistry"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "reference services and research assistance"
+- pair_id: 769
+  positive_question: "How do library research guides compile recommended databases, search strategies, and key resources organized by academic discipline for student self-service use?"
+  negative_question: "How do professional sommeliers evaluate wine through systematic tasting protocols that assess appearance, aroma, palate, and finish characteristics?"
+  question_type: comparative
+  negative_domain: "oenology"
+  group: E
+  similarity: false
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: "reference services and research assistance"

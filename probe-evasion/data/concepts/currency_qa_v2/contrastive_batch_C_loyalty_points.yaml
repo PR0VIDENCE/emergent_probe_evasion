@@ -1,0 +1,181 @@
+pairs:
+- pair_id: 490
+  positive_question: How does the foreign exchange market determine the spot exchange
+    rate for a currency pair at any given moment during trading hours?
+  negative_question: How does an airline frequent flyer program determine the redemption
+    value of loyalty points for award flights across different fare classes?
+  question_type: explanatory
+  negative_domain: loyalty points and rewards programs
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 491
+  positive_question: What portraits and landmarks appear on the current series of Canadian
+    dollar banknotes, and what cultural themes do they represent?
+  negative_question: What tier structures and status levels exist in major hotel loyalty
+    programs like Marriott Bonvoy, and what benefits does each tier provide?
+  question_type: factual
+  negative_domain: loyalty points and rewards programs
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 492
+  positive_question: How does the stability of the Norwegian krone compare to that of
+    the Australian dollar as a commodity-linked currency?
+  negative_question: How does the earning rate of airline miles on co-branded credit cards
+    compare to the earning rate of generic cashback rewards on everyday spending?
+  question_type: comparative
+  negative_domain: loyalty points and rewards programs
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 493
+  positive_question: What is the step-by-step process a forex broker uses to execute a
+    currency conversion order on behalf of a retail client?
+  negative_question: What is the step-by-step process a loyalty program uses to process
+    a points redemption for merchandise through its online rewards catalog?
+  question_type: process
+  negative_domain: loyalty points and rewards programs
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 494
+  positive_question: Why do currency speculators sometimes trigger self-fulfilling prophecies
+    that cause the very devaluations they are betting on?
+  negative_question: Why do loyalty programs sometimes devalue their points by increasing
+    the number of points required for the same reward tier or redemption?
+  question_type: explanatory
+  negative_domain: loyalty points and rewards programs
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 495
+  positive_question: What is the current exchange rate regime used by the Saudi Arabian
+    riyal, and how long has it maintained its peg?
+  negative_question: What is the current point-to-dollar transfer ratio used by American
+    Express Membership Rewards, and which airline partners offer the best value?
+  question_type: factual
+  negative_domain: loyalty points and rewards programs
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 496
+  positive_question: How does the role of the US dollar as the world's primary reserve
+    currency compare to the historical role of the British pound?
+  negative_question: How does the flexibility of transferable credit card points programs
+    compare to the restrictions of single-airline frequent flyer miles?
+  question_type: comparative
+  negative_domain: loyalty points and rewards programs
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 497
+  positive_question: Describe the procedure central banks use to sterilize foreign exchange
+    interventions so they do not affect the domestic money supply.
+  negative_question: Describe the procedure airlines use to manage award seat inventory
+    so that loyalty redemptions do not cannibalize revenue from paying passengers.
+  question_type: process
+  negative_domain: loyalty points and rewards programs
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 498
+  positive_question: Why did Argentina experience repeated cycles of currency crises and
+    capital controls throughout the late twentieth and early twenty-first centuries?
+  negative_question: Why did many grocery store loyalty programs shift from punch-card
+    systems to digital app-based platforms throughout the 2010s and 2020s?
+  question_type: explanatory
+  negative_domain: loyalty points and rewards programs
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 499
+  positive_question: What technical specifications govern the machine-readability of euro
+    banknotes in automated teller machines and vending equipment?
+  negative_question: What technical specifications govern the interoperability of coalition
+    loyalty programs that allow points to be earned and redeemed across multiple retailers?
+  question_type: factual
+  negative_domain: loyalty points and rewards programs
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 500
+  positive_question: How does the process of currency swaps between central banks work
+    during international financial crises to provide emergency liquidity?
+  negative_question: How does the process of transferring loyalty points between programs
+    work, and what conversion ratios and fees typically apply to such transfers?
+  question_type: process
+  negative_domain: loyalty points and rewards programs
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 501
+  positive_question: How does the coin shortage that affected the United States during
+    2020 compare to historical coin shortages during wartime periods?
+  negative_question: How does the value proposition of hotel loyalty points for domestic
+    stays compare to their value when redeemed for international properties?
+  question_type: comparative
+  negative_domain: loyalty points and rewards programs
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 502
+  positive_question: Why do small open economies often experience greater currency volatility
+    than large diversified economies during global financial shocks?
+  negative_question: Why do loyalty programs with expiring points often see a surge in
+    low-value redemptions just before expiration deadlines?
+  question_type: explanatory
+  negative_domain: loyalty points and rewards programs
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 503
+  positive_question: What are the identifying marks that distinguish coins minted at the
+    Philadelphia Mint from those produced at the Denver or San Francisco Mints?
+  negative_question: What are the identifying features that distinguish elite-tier loyalty
+    members from standard members in terms of benefits, perks, and recognition?
+  question_type: factual
+  negative_domain: loyalty points and rewards programs
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 504
+  positive_question: What is the procedure for a central bank to issue a new denomination
+    of banknote that did not previously exist in its currency system?
+  negative_question: What is the procedure for a retailer to launch a new loyalty rewards
+    program from scratch, including technology platform selection and enrollment strategy?
+  question_type: process
+  negative_domain: loyalty points and rewards programs
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied

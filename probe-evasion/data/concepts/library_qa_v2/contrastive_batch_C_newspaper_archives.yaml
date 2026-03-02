@@ -1,0 +1,181 @@
+pairs:
+- pair_id: 475
+  positive_question: How do libraries acquire and manage their periodical subscriptions,
+    including print journals, magazines, and digital database licenses?
+  negative_question: How do newspaper archives preserve and organize decades of back
+    issues using microfilm, digital scanning, and searchable full-text indexes?
+  question_type: process
+  negative_domain: newspaper archives and press rooms
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 476
+  positive_question: What is the role of a library's cataloging department in creating
+    accurate bibliographic records for newly acquired materials?
+  negative_question: What is the role of a newspaper's morgue or clipping file in
+    providing reporters with quick access to previously published stories and background research?
+  question_type: factual
+  negative_domain: newspaper archives and press rooms
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 477
+  positive_question: How do libraries balance providing open access to information
+    with respecting copyright restrictions on digital content?
+  negative_question: How do newspaper press rooms balance meeting tight print deadlines
+    with verifying facts and obtaining legal clearance for sensitive stories?
+  question_type: explanatory
+  negative_domain: newspaper archives and press rooms
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 478
+  positive_question: What is the difference between a public library's general
+    collection and a special library focused on a narrow subject area like law or medicine?
+  negative_question: What is the difference between a newspaper's editorial archive
+    and its photographic archive in terms of storage requirements and retrieval methods?
+  question_type: comparative
+  negative_domain: newspaper archives and press rooms
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 479
+  positive_question: How do libraries provide access to government documents,
+    legislative records, and official publications as federal depository institutions?
+  negative_question: How do newspaper archives provide access to historical coverage
+    of major events, and why are they valuable primary sources for historians?
+  question_type: explanatory
+  negative_domain: newspaper archives and press rooms
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 480
+  positive_question: What steps do libraries take to preserve deteriorating materials
+    through acid-free storage, rebinding, and conservation treatment?
+  negative_question: What steps do newspaper archives take to prevent microfilm
+    degradation through climate-controlled vaults and periodic quality inspections?
+  question_type: process
+  negative_domain: newspaper archives and press rooms
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 481
+  positive_question: Why do library systems invest in shared online catalogs that
+    allow patrons to search holdings across multiple branches and partner institutions?
+  negative_question: Why do newspaper organizations invest in digital archive platforms
+    that allow subscribers to search decades of published articles by keyword and date?
+  question_type: explanatory
+  negative_domain: newspaper archives and press rooms
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 482
+  positive_question: How do library staff assist patrons with genealogical research
+    using local history collections, census records, and vital statistics?
+  negative_question: How do press room archivists assist journalists with background
+    research using clipping files, photo libraries, and indexed obituary databases?
+  question_type: comparative
+  negative_domain: newspaper archives and press rooms
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 483
+  positive_question: What is the purpose of a library's interlibrary loan service,
+    and how does it expand access beyond a single institution's holdings?
+  negative_question: What is the purpose of a news wire service like the Associated
+    Press, and how does it allow newspapers to publish stories from distant locations?
+  question_type: factual
+  negative_domain: newspaper archives and press rooms
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 484
+  positive_question: How do library systems evaluate and select electronic databases
+    to ensure they meet the research needs of their patron communities?
+  negative_question: How do newspaper editors evaluate and select stories for the
+    front page based on newsworthiness, timeliness, and reader interest?
+  question_type: process
+  negative_domain: newspaper archives and press rooms
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 485
+  positive_question: What is the difference between a library's physical circulation
+    desk and its virtual services like online renewals and digital holds?
+  negative_question: What is the difference between a newspaper's physical press room
+    where printing occurs and its digital production workflow for online editions?
+  question_type: comparative
+  negative_domain: newspaper archives and press rooms
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 486
+  positive_question: How do libraries train patrons in information literacy skills
+    such as evaluating sources, identifying bias, and avoiding misinformation?
+  negative_question: How do press rooms train junior reporters in journalistic standards
+    such as source verification, fact-checking, and ethical attribution practices?
+  question_type: factual
+  negative_domain: newspaper archives and press rooms
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 487
+  positive_question: Why do many libraries create local history rooms that collect
+    photographs, maps, and documents specific to their geographic community?
+  negative_question: Why do many newspapers maintain in-house photo archives that
+    catalog negatives, contact sheets, and digital images from decades of photojournalism?
+  question_type: explanatory
+  negative_domain: newspaper archives and press rooms
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 488
+  positive_question: How do libraries manage the transition from print-dominant
+    collections to increasingly digital holdings while serving all demographics?
+  negative_question: How do newspapers manage the transition from print circulation
+    revenue to digital subscription models while maintaining reporting staff levels?
+  question_type: process
+  negative_domain: newspaper archives and press rooms
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
+- pair_id: 489
+  positive_question: What architectural features distinguish historic library buildings,
+    such as reading rooms with clerestory windows and ornamental stacks?
+  negative_question: What architectural features distinguish historic press buildings,
+    such as ground-floor loading docks for newsprint delivery and rooftop antenna masts?
+  question_type: comparative
+  negative_domain: newspaper archives and press rooms
+  group: C
+  similarity: true
+  base_pair_ref: null
+  elicitation_style: default
+  concept_topic: varied
