@@ -85,7 +85,22 @@ def main():
     print(f"Layers: {target_layers}")
     print()
 
+    # Load all generation JSONs for detailed logging
+    all_gen_data = {}
+    for label in ["tree", "non_tree"]:
+        gen_dir = os.path.join(args.data_dir, "generations", label)
+        if not os.path.isdir(gen_dir):
+            continue
+        for fn in sorted(os.listdir(gen_dir)):
+            if not fn.endswith(".json"):
+                continue
+            with open(os.path.join(gen_dir, fn)) as f:
+                gen = json.load(f)
+            all_gen_data[gen["prompt_id"]] = gen
+
     results = {}
+    trial_details = []  # per-trial log
+
     for condition, prompts in sorted(condition_prompts.items()):
         layer_confs = defaultdict(list)
         layer_votes = defaultdict(list)
@@ -96,14 +111,36 @@ def main():
                 continue
             layer_acts = torch.load(act_path, weights_only=True)
 
+            trial_layer_confs = {}
             for layer_idx in target_layers:
                 if layer_idx not in layer_acts:
                     continue
                 probes, sm, ss = load_probes(args.probe_dir, args.position, layer_idx, seeds, hidden_dim)
                 act = layer_acts[layer_idx].float().unsqueeze(0)
                 result = evaluate_ensemble(probes, act, None, scaler_mean=sm, scaler_scale=ss)
-                layer_confs[layer_idx].append(float(result["mean_confidence"].item()))
-                layer_votes[layer_idx].append(int(result["majority_vote"].item()))
+                conf = float(result["mean_confidence"].item())
+                vote = int(result["majority_vote"].item())
+                layer_confs[layer_idx].append(conf)
+                layer_votes[layer_idx].append(vote)
+                trial_layer_confs[layer_idx] = conf
+
+            # Per-trial mean confidence across all layers
+            trial_mean_conf = np.mean(list(trial_layer_confs.values())) if trial_layer_confs else 0.0
+
+            # Build trial detail entry
+            gen = all_gen_data.get(prompt_id, {})
+            trial_details.append({
+                "prompt_id": prompt_id,
+                "condition": condition,
+                "label": label,
+                "pair_id": gen.get("global_pair_id"),
+                "category": gen.get("category", ""),
+                "question": gen.get("question", ""),
+                "reasoning_trace": gen.get("reasoning_trace", ""),
+                "answer": gen.get("answer", ""),
+                "mean_confidence": round(trial_mean_conf, 4),
+                "per_layer_confidence": {int(l): round(c, 4) for l, c in trial_layer_confs.items()},
+            })
 
         # Aggregate: mean confidence and detection rate per layer, then average top-5
         layer_means = {l: np.mean(c) for l, c in layer_confs.items()}
@@ -116,11 +153,33 @@ def main():
 
         results[condition] = {"confidence": avg_conf, "detection_rate": avg_det, "n": n, "top5": top5}
 
-    # Print table
-    print(f"{'Condition':<25} {'Confidence':>12} {'Det. Rate':>12} {'N':>6}")
+    # Print summary table
+    print(f"\n{'Condition':<25} {'Confidence':>12} {'Det. Rate':>12} {'N':>6}")
     print("-" * 58)
     for condition, r in sorted(results.items()):
         print(f"{condition:<25} {r['confidence']:>12.3f} {r['detection_rate']:>12.3f} {r['n']:>6}")
+
+    # Save summary JSON
+    save_results = {
+        condition: {
+            "confidence": float(r["confidence"]),
+            "detection_rate": float(r["detection_rate"]),
+            "n": r["n"],
+            "top5_layers": [int(l) for l in r["top5"]],
+        }
+        for condition, r in results.items()
+    }
+    report_path = os.path.join(args.data_dir, "reasoning_trace_eval.json")
+    with open(report_path, "w") as f:
+        json.dump(save_results, f, indent=2)
+    print(f"\nSummary saved to {report_path}")
+
+    # Save detailed per-trial log
+    detail_path = os.path.join(args.data_dir, "reasoning_trace_trials.jsonl")
+    with open(detail_path, "w") as f:
+        for trial in trial_details:
+            f.write(json.dumps(trial) + "\n")
+    print(f"Trial details saved to {detail_path} ({len(trial_details)} trials)")
 
 
 if __name__ == "__main__":
