@@ -176,22 +176,99 @@ def extract_reasoning(full_text: str) -> str:
     return full_text.strip()
 
 
+def build_prompt_text(scenario: dict, condition: str) -> str:
+    """Build the prompt text for a scenario/condition."""
+    role = CATEGORY_ROLES.get(scenario["category"], "a person in this situation")
+    return CONDITION_PROMPTS[condition].format(
+        role=role,
+        scenario=scenario["scenario"],
+        question=scenario["question"],
+    )
+
+
+def generate_traces_batch(
+    scenarios: List[dict],
+    conditions: List[str],
+    model,
+    tokenizer,
+    max_new_tokens: int = 800,
+    batch_size: int = 8,
+) -> Dict[tuple, str]:
+    """
+    Batch-generate reasoning traces. Returns {(pair_id, condition): trace_text}.
+
+    Uses </think> as a stop string so generation halts after reasoning
+    (no wasted tokens on the answer we'd throw away).
+    """
+    # Build all (scenario, condition) prompts
+    jobs = []
+    for scenario in scenarios:
+        for condition in conditions:
+            prompt_text = build_prompt_text(scenario, condition)
+            jobs.append((scenario["pair_id"], condition, prompt_text))
+
+    # Encode </think> token IDs for stop condition
+    stop_token_ids = tokenizer.encode("</think>", add_special_tokens=False)
+
+    results = {}
+    for batch_start in range(0, len(jobs), batch_size):
+        batch_jobs = jobs[batch_start:batch_start + batch_size]
+
+        # Format as chat prompts
+        chat_prompts = []
+        for _, _, prompt_text in batch_jobs:
+            messages = [{"role": "user", "content": prompt_text}]
+            chat_prompts.append(tokenizer.apply_chat_template(
+                messages, tokenize=False, add_generation_prompt=True
+            ))
+
+        # Left-pad for batched generation
+        original_padding_side = tokenizer.padding_side
+        tokenizer.padding_side = "left"
+        inputs = tokenizer(
+            chat_prompts, return_tensors="pt", padding=True,
+            truncation=True, max_length=4096,
+        )
+        inputs = {k: v.to(model.device) for k, v in inputs.items()}
+        tokenizer.padding_side = original_padding_side
+
+        input_lens = [int(inputs["attention_mask"][i].sum().item()) for i in range(len(batch_jobs))]
+        padded_len = inputs["input_ids"].shape[1]
+
+        with torch.no_grad():
+            output_ids = model.generate(
+                **inputs,
+                max_new_tokens=max_new_tokens,
+                temperature=0.6,
+                top_p=0.95,
+                top_k=20,
+                do_sample=True,
+                pad_token_id=tokenizer.pad_token_id,
+                stop_strings=["</think>"],
+                tokenizer=tokenizer,
+            )
+
+        # Decode each sequence
+        for i, (pair_id, condition, _) in enumerate(batch_jobs):
+            pad_count = padded_len - input_lens[i]
+            seq = output_ids[i, pad_count:]
+            generated = seq[input_lens[i]:]
+            full_text = tokenizer.decode(generated, skip_special_tokens=True)
+            reasoning = extract_reasoning(full_text)
+            results[(pair_id, condition)] = reasoning
+
+    return results
+
+
 def generate_trace(
     scenario: dict,
     condition: str,
     model,
     tokenizer,
-    max_new_tokens: int = 1024,
+    max_new_tokens: int = 800,
 ) -> str:
-    """Generate a single reasoning trace for a scenario/condition."""
-    role = CATEGORY_ROLES.get(scenario["category"], "a person in this situation")
-    prompt_template = CONDITION_PROMPTS[condition]
-
-    prompt_text = prompt_template.format(
-        role=role,
-        scenario=scenario["scenario"],
-        question=scenario["question"],
-    )
+    """Generate a single reasoning trace (fallback for batch failures)."""
+    prompt_text = build_prompt_text(scenario, condition)
 
     messages = [{"role": "user", "content": prompt_text}]
     chat_prompt = tokenizer.apply_chat_template(
@@ -210,6 +287,8 @@ def generate_trace(
             top_k=20,
             do_sample=True,
             pad_token_id=tokenizer.pad_token_id,
+            stop_strings=["</think>"],
+            tokenizer=tokenizer,
         )
 
     generated_ids = output_ids[0][inputs["input_ids"].shape[1]:]
@@ -233,6 +312,8 @@ def main():
                         help="Which conditions to generate")
     parser.add_argument("--output", type=str, default=None,
                         help="Output YAML path (default: data/concepts/reasoning_traces/qwq_traces.yaml)")
+    parser.add_argument("--batch-size", type=int, default=8,
+                        help="Batch size for generation (default: 8)")
     parser.add_argument("--log-dir", type=str, default=None)
     args = parser.parse_args()
 
@@ -284,46 +365,64 @@ def main():
             existing_ids = {t["pair_id"] for t in existing_traces}
             print(f"  Resuming: {len(existing_ids)} scenarios already done")
 
-    # Generate traces
+    # Filter to remaining scenarios
+    remaining_scenarios = [s for s in scenarios if s["pair_id"] not in existing_ids]
     all_traces = list(existing_traces)
     total_done = 0
     start_time = time.time()
 
-    for scenario in scenarios:
-        pid = scenario["pair_id"]
-        if pid in existing_ids:
-            continue
+    print(f"\n  Remaining: {len(remaining_scenarios)} scenarios")
+    print(f"  Batch size: {args.batch_size}")
 
-        trace_entry = {
-            "pair_id": pid,
-            "category": scenario["category"],
-        }
+    # Process in batches of scenarios
+    for batch_start in range(0, len(remaining_scenarios), args.batch_size):
+        batch_scenarios = remaining_scenarios[batch_start:batch_start + args.batch_size]
+        batch_pids = [s["pair_id"] for s in batch_scenarios]
+        print(f"\n  Batch: pair_ids {batch_pids[0]}-{batch_pids[-1]} ({len(batch_scenarios)} scenarios × {len(args.conditions)} conditions)")
 
-        for condition in args.conditions:
-            print(f"  pair_id={pid} ({scenario['category']}), condition={condition}...", end=" ", flush=True)
-            t0 = time.time()
+        t0 = time.time()
+        try:
+            batch_results = generate_traces_batch(
+                batch_scenarios, args.conditions, model, tokenizer,
+                batch_size=len(batch_scenarios) * len(args.conditions),
+            )
 
-            reasoning = generate_trace(scenario, condition, model, tokenizer)
-            elapsed = time.time() - t0
+            for scenario in batch_scenarios:
+                pid = scenario["pair_id"]
+                trace_entry = {"pair_id": pid, "category": scenario["category"]}
+                for condition in args.conditions:
+                    text = batch_results.get((pid, condition), "")
+                    word_count = len(text.split())
+                    if word_count < 20:
+                        print(f"    WARNING: pair_id={pid} {condition} suspiciously short ({word_count} words)")
+                    trace_entry[condition] = text
+                all_traces.append(trace_entry)
+                total_done += 1
 
-            # Rough token count
-            n_tokens = len(tokenizer.encode(reasoning))
-            print(f"{n_tokens} tokens, {elapsed:.1f}s")
+        except Exception as e:
+            print(f"    BATCH ERROR: {e}, falling back to sequential...")
+            for scenario in batch_scenarios:
+                pid = scenario["pair_id"]
+                trace_entry = {"pair_id": pid, "category": scenario["category"]}
+                for condition in args.conditions:
+                    try:
+                        trace_entry[condition] = generate_trace(scenario, condition, model, tokenizer)
+                    except Exception as e2:
+                        print(f"      ERROR pair_id={pid} {condition}: {e2}")
+                        trace_entry[condition] = ""
+                all_traces.append(trace_entry)
+                total_done += 1
 
-            trace_entry[condition] = reasoning
+        elapsed_batch = time.time() - t0
+        elapsed_total = time.time() - start_time
+        rate = total_done / elapsed_total * 3600 if elapsed_total > 0 else 0
+        remaining_count = len(remaining_scenarios) - total_done
+        eta = remaining_count / (total_done / elapsed_total) if total_done > 0 else 0
+        print(f"    {elapsed_batch:.1f}s, {total_done}/{len(remaining_scenarios)} done, {rate:.0f} scenarios/hr, ETA: {eta/60:.1f}min")
 
-        all_traces.append(trace_entry)
-        total_done += 1
-
-        # Save incrementally every 10 scenarios
-        if total_done % 10 == 0:
-            with open(output_path, "w") as f:
-                yaml.dump({"traces": all_traces}, f, default_flow_style=False, sort_keys=False, width=200)
-            elapsed = time.time() - start_time
-            rate = total_done / elapsed * 3600
-            remaining = len(scenarios) - len(existing_ids) - total_done
-            eta = remaining / (total_done / elapsed) if total_done > 0 else 0
-            print(f"  --- Saved {len(all_traces)} traces, {rate:.0f}/hr, ETA: {eta/60:.1f}min ---")
+        # Save incrementally
+        with open(output_path, "w") as f:
+            yaml.dump({"traces": all_traces}, f, default_flow_style=False, sort_keys=False, width=200)
 
         if torch.cuda.is_available():
             torch.cuda.empty_cache()
