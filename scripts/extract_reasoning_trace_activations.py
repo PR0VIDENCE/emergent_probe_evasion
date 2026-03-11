@@ -211,6 +211,8 @@ def main():
     parser.add_argument("--max-pairs", type=int, default=None)
     parser.add_argument("--conditions", type=str, nargs="+", default=None,
                         help="Which conditions to extract (default: all present in traces file)")
+    parser.add_argument("--force", action="store_true",
+                        help="Ignore generation log and rerun all forward passes")
     parser.add_argument("--log-dir", type=str, default=None)
     args = parser.parse_args()
 
