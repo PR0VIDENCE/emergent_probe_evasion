@@ -41,7 +41,11 @@ from src.inference.extract_activations import (
 from src.utils.logging import setup_logging
 from scripts.generate_and_extract import save_activations, load_completed_ids
 
-CONDITIONS_DECEPTIVE = ["naked_deception", "self_deceptive", "procedural", "random", "empty"]
+CONDITIONS_DECEPTIVE = [
+    "naked_deception", "self_deceptive", "procedural", "random", "empty",
+    "honest_reasoning_deceptive", "domain_shift", "compartmentalized",
+    "moral_reframing", "abstracted", "empathy_anchored",
+]
 CONDITIONS_HONEST = ["honest_control"]
 ALL_CONDITIONS = CONDITIONS_DECEPTIVE + CONDITIONS_HONEST
 
