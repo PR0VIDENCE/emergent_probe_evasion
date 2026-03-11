@@ -98,6 +98,17 @@ def main():
                 gen = json.load(f)
             all_gen_data[gen["prompt_id"]] = gen
 
+    # Pre-load all probes and scalers (once per layer, not per trial)
+    print("Loading probes...")
+    probe_cache = {}
+    for layer_idx in target_layers:
+        try:
+            probes, sm, ss = load_probes(args.probe_dir, args.position, layer_idx, seeds, hidden_dim)
+            probe_cache[layer_idx] = (probes, sm, ss)
+        except FileNotFoundError:
+            pass
+    print(f"  Loaded probes for {len(probe_cache)} layers")
+
     results = {}
     trial_details = []  # per-trial log
 
@@ -113,9 +124,9 @@ def main():
 
             trial_layer_confs = {}
             for layer_idx in target_layers:
-                if layer_idx not in layer_acts:
+                if layer_idx not in layer_acts or layer_idx not in probe_cache:
                     continue
-                probes, sm, ss = load_probes(args.probe_dir, args.position, layer_idx, seeds, hidden_dim)
+                probes, sm, ss = probe_cache[layer_idx]
                 act = layer_acts[layer_idx].float().unsqueeze(0)
                 result = evaluate_ensemble(probes, act, None, scaler_mean=sm, scaler_scale=ss)
                 conf = float(result["mean_confidence"].item())

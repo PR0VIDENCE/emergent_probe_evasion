@@ -263,8 +263,12 @@ def main():
 
     # Check for completed work
     log_path = os.path.join(output_dir, "prompts", "generation_log.jsonl")
-    completed_ids = load_completed_ids(log_path)
-    print(f"  Already completed: {len(completed_ids)}")
+    if args.force:
+        completed_ids = set()
+        print(f"  --force: ignoring generation log, rerunning all")
+    else:
+        completed_ids = load_completed_ids(log_path)
+        print(f"  Already completed: {len(completed_ids)}")
 
     # Load model
     print(f"\n  Loading model: {model_config['model_id']}")
@@ -285,10 +289,13 @@ def main():
         trace_data = traces[pid]
 
         for condition in conditions:
-            if condition not in trace_data:
+            # "empty" condition doesn't need a trace entry — it uses no reasoning
+            if condition == "empty":
+                reasoning_text = ""
+            elif condition not in trace_data:
                 continue
-
-            reasoning_text = trace_data[condition]
+            else:
+                reasoning_text = trace_data[condition]
 
             # Determine label and completion
             if condition in CONDITIONS_HONEST:
