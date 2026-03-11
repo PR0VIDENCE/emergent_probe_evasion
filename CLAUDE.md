@@ -4,10 +4,26 @@
 
 Research project testing whether QwQ-32B can evade linear probes trained to detect the concept "trees" in its internal activations, across 5 experimental regimes with increasing affordances.
 
+## Interaction Style
+
+- When asked for a plan or conceptual discussion, do NOT make code edits unless explicitly asked. Present the plan/explanation first, then ask before implementing.
+- When the user asks to work on a new concept or generalize, always base new work on the **proven trees pipeline** (qa_probe_training_v2.yaml / generate_and_extract.py), not untested experimental branches.
+
+## File & Path Handling
+
+- Before referencing file paths, verify they exist using Read or Bash(ls). Never assume local paths match remote (RunPod) paths.
+- Data files may be gitignored and unavailable on remote machines. The `deception-detection/` repo is gitignored — use pre-converted files in `data/concepts/` instead.
+- Local machine: `/Users/andrewwei/emergent_probe_evasion/`
+- RunPod: `/workspace/emergent_probe_evasion/`
+
+## Debugging
+
+- When debugging, identify and fix the root cause before applying patches. If a fix doesn't work on the first attempt, step back and re-examine assumptions rather than trying variations of the same approach.
+- Always check config files (especially target_layers, data paths, split files) for consistency before running experiments.
+
 ## Project Structure
 
 ```
-probe-evasion/
 ├── configs/
 │   ├── models/          # qwq_32b.yaml, qwen2_5_32b.yaml
 │   ├── concepts/        # trees.yaml, library.yaml, currency.yaml, disease.yaml
@@ -21,19 +37,17 @@ probe-evasion/
 │   └── utils/           # setup_logging, concept_config (generic concept support)
 ├── scripts/             # All scripts accept concept config for generic concepts
 │   ├── generate_and_extract.py     # Batched QwQ generation + extraction
-│   ├── generate_questions_llm.py   # Claude API question generation (--concept-config)
-│   ├── generate_prefix_variants.py # Prefix variant expansion (--concept-config)
-│   ├── validate_dataset.py         # Dataset validation (--concept-config)
-│   ├── assign_splits.py            # Split generation (--concept-config)
-│   ├── train_probes_qa.py          # Probe training (concept-generic)
-│   ├── evaluate_probes_qa.py       # Probe evaluation (concept-generic)
+│   ├── train_probes_qa.py          # Probe training (concept-generic, --split-file)
+│   ├── evaluate_probes_qa.py       # Probe evaluation (--split-file, --probe-dir)
 │   ├── run_evasion_experiment.py   # 5-regime evasion experiment
-│   └── build_dashboard.py          # Results dashboard
-├── data/generation_prompt_templates/ # Generic prompt templates for new concepts
+│   ├── extract_prewritten_activations.py  # Apollo-style forward-pass extraction
+│   └── plot_midterm_figures.py     # Midterm report figures
 ├── data/concepts/trees_qa_v2/      # v2 trees: 975 pairs
 ├── data/concepts/library_qa_v2/    # Library concept data
 ├── data/concepts/currency_qa_v2/   # Currency concept data
-└── data/concepts/disease_qa_v2/    # Disease concept data
+├── data/concepts/disease_qa_v2/    # Disease concept data
+├── data/concepts/deception_prewritten/  # Apollo-style roleplaying scenarios
+└── data/concepts/deception_ai_liar/     # AI Liar cross-dataset eval
 ```
 
 ## Key Architecture
