@@ -45,8 +45,10 @@ CONDITIONS_DECEPTIVE = [
     "naked_deception", "self_deceptive", "procedural", "random", "empty",
     "honest_reasoning_deceptive", "domain_shift", "compartmentalized",
     "moral_reframing", "abstracted", "empathy_anchored",
+    # v2 neutral conditions
+    "moralizing", "rationalizing", "detached",
 ]
-CONDITIONS_HONEST = ["honest_control"]
+CONDITIONS_HONEST = ["honest_control", "honest_reasoning"]
 ALL_CONDITIONS = CONDITIONS_DECEPTIVE + CONDITIONS_HONEST
 
 

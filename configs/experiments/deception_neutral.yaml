@@ -1,0 +1,33 @@
+# Neutral deception experiment
+# Scenarios describe factual context without deception framing.
+# Reasoning traces are swapped across 6 conditions; responses are fixed per pair.
+#
+# Uses probes trained on deception_prewritten data (no new probe training).
+# This config is only used for extraction + evaluation.
+#
+# 6 conditions:
+#   moralizing, self_deceptive, rationalizing, detached, random -> deceptive_completion
+#   honest_reasoning -> honest_completion
+
+concept: deception_neutral
+model_config: configs/models/qwq_32b.yaml
+data_dir: data/concepts/deception_neutral
+target_layers: [4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48, 52, 56, 60]
+
+token_positions:
+  - last_token
+  - first_answer_sentence_end
+  - answer_mean_pool
+
+probe_training:
+  random_seeds: [42, 123, 456, 789]
+  learning_rate: 0.001
+  num_epochs: 100
+  weight_decay: 0.1
+  patience: 10
+  normalize: true
+  top_k_layers: 5
+  primary_position: answer_mean_pool
+
+storage:
+  base_dir: /workspace/deception_neutral_data
