@@ -23,12 +23,12 @@ echo "=== Step 2: Evaluate — answer_mean_pool ==="
 uv run python scripts/eval_reasoning_traces.py --config "$CONFIG" --probe-dir "$PROBE_DIR" --data-dir "$OUTPUT_DIR" --position answer_mean_pool
 
 echo ""
-echo "=== Step 3: Evaluate — reasoning_mean_pool ==="
-uv run python scripts/eval_reasoning_traces.py --config "$CONFIG" --probe-dir "$PROBE_DIR" --data-dir "$OUTPUT_DIR" --position reasoning_mean_pool
+echo "=== Step 3: Evaluate — reasoning_mean_pool (using answer_mean_pool probes) ==="
+uv run python scripts/eval_reasoning_traces.py --config "$CONFIG" --probe-dir "$PROBE_DIR" --data-dir "$OUTPUT_DIR" --position reasoning_mean_pool --probe-position answer_mean_pool
 
 echo ""
-echo "=== Step 4: Evaluate — reasoning_last_token ==="
-uv run python scripts/eval_reasoning_traces.py --config "$CONFIG" --probe-dir "$PROBE_DIR" --data-dir "$OUTPUT_DIR" --position reasoning_last_token
+echo "=== Step 4: Evaluate — reasoning_last_token (using answer_mean_pool probes) ==="
+uv run python scripts/eval_reasoning_traces.py --config "$CONFIG" --probe-dir "$PROBE_DIR" --data-dir "$OUTPUT_DIR" --position reasoning_last_token --probe-position answer_mean_pool
 
 echo ""
 echo "Done! Results in $OUTPUT_DIR/"

@@ -49,8 +49,13 @@ def main():
     parser.add_argument("--config", required=True)
     parser.add_argument("--probe-dir", required=True)
     parser.add_argument("--data-dir", required=True)
-    parser.add_argument("--position", default="answer_mean_pool")
+    parser.add_argument("--position", default="answer_mean_pool",
+                        help="Which activation position to evaluate")
+    parser.add_argument("--probe-position", default=None,
+                        help="Which probe directory to load from (default: same as --position)")
     args = parser.parse_args()
+    if args.probe_position is None:
+        args.probe_position = args.position
 
     def resolve(p):
         path = Path(p)
@@ -103,7 +108,7 @@ def main():
     probe_cache = {}
     for layer_idx in target_layers:
         try:
-            probes, sm, ss = load_probes(args.probe_dir, args.position, layer_idx, seeds, hidden_dim)
+            probes, sm, ss = load_probes(args.probe_dir, args.probe_position, layer_idx, seeds, hidden_dim)
             probe_cache[layer_idx] = (probes, sm, ss)
         except FileNotFoundError:
             pass
