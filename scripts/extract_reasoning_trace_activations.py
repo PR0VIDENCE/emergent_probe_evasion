@@ -47,8 +47,14 @@ CONDITIONS_DECEPTIVE = [
     "moral_reframing", "abstracted", "empathy_anchored",
     # v2 neutral conditions
     "moralizing", "rationalizing", "detached",
+    # diagnostic tests (deceptive answer)
+    "test_b", "test_c", "test_e",
 ]
-CONDITIONS_HONEST = ["honest_control", "honest_reasoning"]
+CONDITIONS_HONEST = [
+    "honest_control", "honest_reasoning",
+    # diagnostic tests (honest answer)
+    "test_a", "test_d", "test_f",
+]
 ALL_CONDITIONS = CONDITIONS_DECEPTIVE + CONDITIONS_HONEST
 
 
@@ -229,6 +235,8 @@ def main():
     parser.add_argument("--max-pairs", type=int, default=None)
     parser.add_argument("--conditions", type=str, nargs="+", default=None,
                         help="Which conditions to extract (default: all present in traces file)")
+    parser.add_argument("--scenarios", type=str, default=None,
+                        help="Path to scenarios YAML (default: data_dir/scenarios.yaml)")
     parser.add_argument("--force", action="store_true",
                         help="Ignore generation log and rerun all forward passes")
     parser.add_argument("--log-dir", type=str, default=None)
@@ -257,7 +265,8 @@ def main():
     print("=" * 60)
 
     data_dir = resolve_path(config["data_dir"])
-    scenarios = load_scenarios(os.path.join(data_dir, "scenarios.yaml"))
+    scenarios_path = resolve_path(args.scenarios) if args.scenarios else os.path.join(data_dir, "scenarios.yaml")
+    scenarios = load_scenarios(scenarios_path)
     traces = load_traces(resolve_path(args.traces))
 
     # Filter to scenarios that have traces
