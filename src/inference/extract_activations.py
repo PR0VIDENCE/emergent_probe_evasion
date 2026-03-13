@@ -260,6 +260,7 @@ def extract_activations_at_positions(
     positions: Dict[str, int],
     answer_start: Optional[int] = None,
     answer_end: Optional[int] = None,
+    extra_mean_pools: Optional[Dict[str, tuple]] = None,
 ) -> Dict[str, Dict[int, torch.Tensor]]:
     """
     Run a single forward pass and extract activations at multiple positions.
@@ -271,6 +272,7 @@ def extract_activations_at_positions(
         positions: Dict mapping position name -> absolute token index.
         answer_start: Start of answer range for mean pooling (absolute index).
         answer_end: End of answer range for mean pooling (absolute index).
+        extra_mean_pools: Optional dict of name -> (start, end) for additional mean pools.
 
     Returns:
         Dict mapping position_name -> {layer_idx: tensor(hidden_dim,)} in float16.
@@ -314,6 +316,17 @@ def extract_activations_at_positions(
                 pooled = answer_hidden.mean(dim=0).half()  # float16
                 layer_activations[layer_idx] = pooled
             result["answer_mean_pool"] = layer_activations
+
+        # Additional mean pool ranges (e.g., reasoning_mean_pool)
+        if extra_mean_pools:
+            for pool_name, (pool_start, pool_end) in extra_mean_pools.items():
+                if pool_start is not None and pool_end is not None and pool_start <= pool_end:
+                    layer_activations = {}
+                    for layer_idx in target_layers:
+                        hidden_states = hook_outputs[layer_idx]
+                        pooled = hidden_states[0, pool_start:pool_end + 1, :].mean(dim=0).half()
+                        layer_activations[layer_idx] = pooled
+                    result[pool_name] = layer_activations
 
     finally:
         for hook in hooks:

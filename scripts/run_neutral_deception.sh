@@ -15,12 +15,20 @@ PROBE_DIR="/workspace/deception_prewritten_data/probes"
 
 EXTRA_ARGS="$@"
 
-echo "=== Step 1: Extract activations ==="
+echo "=== Step 1: Extract activations (answer + reasoning positions) ==="
 uv run python scripts/extract_reasoning_trace_activations.py --config "$CONFIG" --traces "$TRACES" --output-dir "$OUTPUT_DIR" $EXTRA_ARGS
 
 echo ""
-echo "=== Step 2: Evaluate with deception probes ==="
-uv run python scripts/eval_reasoning_traces.py --config "$CONFIG" --probe-dir "$PROBE_DIR" --data-dir "$OUTPUT_DIR"
+echo "=== Step 2: Evaluate — answer_mean_pool ==="
+uv run python scripts/eval_reasoning_traces.py --config "$CONFIG" --probe-dir "$PROBE_DIR" --data-dir "$OUTPUT_DIR" --position answer_mean_pool
 
 echo ""
-echo "Done! Results in $OUTPUT_DIR/reasoning_trace_eval.json"
+echo "=== Step 3: Evaluate — reasoning_mean_pool ==="
+uv run python scripts/eval_reasoning_traces.py --config "$CONFIG" --probe-dir "$PROBE_DIR" --data-dir "$OUTPUT_DIR" --position reasoning_mean_pool
+
+echo ""
+echo "=== Step 4: Evaluate — reasoning_last_token ==="
+uv run python scripts/eval_reasoning_traces.py --config "$CONFIG" --probe-dir "$PROBE_DIR" --data-dir "$OUTPUT_DIR" --position reasoning_last_token
+
+echo ""
+echo "Done! Results in $OUTPUT_DIR/"

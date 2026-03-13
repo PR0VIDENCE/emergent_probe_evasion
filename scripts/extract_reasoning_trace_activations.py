@@ -103,7 +103,7 @@ def process_single(
     output_dir: str,
     metadata: dict,
 ) -> dict:
-    """Tokenize, forward pass, extract activations at answer positions only."""
+    """Tokenize, forward pass, extract activations at answer + reasoning positions."""
 
     # Tokenize prompt (system + user) to find where assistant starts
     prompt_text = tokenizer.apply_chat_template(
@@ -139,11 +139,17 @@ def process_single(
             answer_start_offset += len(ws_tokens)
 
         answer_start = assistant_start + answer_start_offset
+        # Reasoning spans from after <think>\n to before </think>
+        think_start_tokens = tokenizer.encode("<think>\n", add_special_tokens=False)
+        reasoning_start = assistant_start + len(think_start_tokens)
+        reasoning_end = assistant_start + len(tokens_before) - 1  # last reasoning token
     else:
         # No think tags (shouldn't happen but fallback)
         answer_start = assistant_start
+        reasoning_start = None
+        reasoning_end = None
 
-    # Compute positions (answer-only)
+    # Compute positions (answer + reasoning)
     positions = {
         "last_token": seq_len - 1,
         "first_answer_sentence_end": None,
@@ -151,8 +157,17 @@ def process_single(
         "answer_end": seq_len - 1,
     }
 
+    # Add reasoning last token as a point extraction
+    if reasoning_end is not None and reasoning_end >= reasoning_start:
+        positions["reasoning_last_token"] = reasoning_end
+
     sent_end = find_first_sentence_end(full_ids, answer_start, tokenizer)
     positions["first_answer_sentence_end"] = sent_end if sent_end is not None else positions["last_token"]
+
+    # Build extra mean pool ranges
+    extra_mean_pools = {}
+    if reasoning_start is not None and reasoning_end is not None and reasoning_end >= reasoning_start:
+        extra_mean_pools["reasoning_mean_pool"] = (reasoning_start, reasoning_end)
 
     # Forward pass
     t0 = time.time()
@@ -160,6 +175,7 @@ def process_single(
         full_ids, model, target_layers, positions,
         answer_start=positions["answer_start"],
         answer_end=positions["answer_end"],
+        extra_mean_pools=extra_mean_pools,
     )
     extract_time = time.time() - t0
 
