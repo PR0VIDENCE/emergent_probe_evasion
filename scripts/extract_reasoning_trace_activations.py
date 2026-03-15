@@ -274,13 +274,17 @@ def main():
     if args.max_pairs:
         scenarios = scenarios[:args.max_pairs]
 
-    # Determine which conditions to run
-    sample_trace = next(iter(traces.values()))
-    available_conditions = [c for c in ALL_CONDITIONS if c in sample_trace]
+    # Determine which conditions to run (scan all traces, not just the first)
+    all_trace_keys = set()
+    for t in traces.values():
+        all_trace_keys.update(k for k in t if k not in ("pair_id", "category"))
+    available_conditions = [c for c in ALL_CONDITIONS if c in all_trace_keys]
     conditions = args.conditions or available_conditions
     print(f"  Scenarios: {len(scenarios)}")
     print(f"  Conditions: {conditions}")
-    print(f"  Total forward passes: {len(scenarios) * len(conditions)}")
+    # Count actual forward passes (conditions vary per pair_id)
+    total_passes = sum(1 for s in scenarios for c in conditions if c in traces.get(s["pair_id"], {}))
+    print(f"  Total forward passes: {total_passes}")
 
     # Setup output dirs
     os.makedirs(output_dir, exist_ok=True)
