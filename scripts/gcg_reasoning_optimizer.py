@@ -9,11 +9,20 @@ The answer text is FIXED — only reasoning tokens change. This measures
 the theoretical upper bound of how much reasoning can affect downstream
 probe performance through causal attention.
 
+Supports --constrained mode to restrict substitutions to ASCII/English
+tokens only (no CJK, Cyrillic, special tokens, etc.).
+
 Usage:
+    # Single scenario, warm start, constrained to English:
     uv run python scripts/gcg_reasoning_optimizer.py \
         --config configs/experiments/deception_neutral.yaml \
         --probe-dir /workspace/deception_prewritten_data/probes \
-        --scenario-idx 0 --n-steps 200 --batch-size 64 --target minimize
+        --scenario-idx 0 --n-steps 500 --constrained \
+        --initial-reasoning data/concepts/deception_neutral/traces_handcrafted.yaml
+
+    # Multiple scenarios:
+    uv run python scripts/gcg_reasoning_optimizer.py \
+        --config ... --scenario-indices 0 1 2 3 4 5 --init-condition moralizing
 """
 
 import argparse
@@ -72,14 +81,40 @@ def load_probes_and_scalers(probe_dir, position, layers, seeds, hidden_dim, devi
     return result
 
 
+def build_ascii_token_mask(tokenizer):
+    """Build boolean mask: True for tokens that decode to ASCII-only text."""
+    vocab_size = len(tokenizer)
+    mask = torch.zeros(vocab_size, dtype=torch.bool)
+    for tok_id in range(vocab_size):
+        try:
+            text = tokenizer.decode([tok_id])
+            # Allow if all chars are ASCII and token has some visible content
+            if text and all(c.isascii() for c in text):
+                # Exclude pure control characters (except space/newline/tab)
+                visible = text.replace(" ", "").replace("\n", "").replace("\t", "")
+                if len(visible) > 0 or text in (" ", "\n", "\t"):
+                    mask[tok_id] = True
+        except Exception:
+            pass
+    return mask
+
+
 class GCGReasoningOptimizer:
-    def __init__(self, model, tokenizer, layer_probes, target_layers, device):
+    def __init__(self, model, tokenizer, layer_probes, target_layers, device,
+                 constrained=False):
         self.model = model
         self.tokenizer = tokenizer
         self.layer_probes = layer_probes
         self.target_layers = target_layers
         self.device = device
         self.embed_weights = model.model.embed_tokens.weight  # (vocab_size, hidden_dim)
+        self.constrained = constrained
+        self.ascii_mask = None
+        if constrained:
+            print("  Building ASCII token mask...")
+            self.ascii_mask = build_ascii_token_mask(tokenizer).to(device)
+            n_allowed = self.ascii_mask.sum().item()
+            print(f"  Constrained mode: {n_allowed}/{len(tokenizer)} tokens allowed")
 
     def prepare_sequence(
         self, scenario: str, question: str, answer_prefix: str,
@@ -247,6 +282,11 @@ class GCGReasoningOptimizer:
 
         # score = sign * grad @ embed_w^T  -> (n_positions, vocab_size)
         scores = sign * (grad.float() @ embed_w.T)
+
+        # Apply ASCII constraint: mask out non-English tokens
+        if self.constrained and self.ascii_mask is not None:
+            scores[:, ~self.ascii_mask] = -float("inf")
+
         # Get top-k per position
         _, top_indices = scores.topk(top_k, dim=-1)
         return top_indices  # (n_positions, top_k)
@@ -461,14 +501,19 @@ def main():
     parser.add_argument("--probe-dir", required=True)
     parser.add_argument("--scenarios", default=None,
                         help="Scenarios YAML (default: config data_dir/scenarios.yaml)")
-    parser.add_argument("--scenario-idx", type=int, default=0,
-                        help="Which scenario to optimize (index in scenarios list)")
+    parser.add_argument("--scenario-idx", type=int, default=None,
+                        help="Single scenario index (use this OR --scenario-indices)")
+    parser.add_argument("--scenario-indices", type=int, nargs="+", default=None,
+                        help="Multiple scenario indices to optimize")
     parser.add_argument("--initial-reasoning", default=None,
-                        help="Path to traces YAML to use as warm start "
-                             "(uses moralizing condition). If not set, uses random tokens.")
+                        help="Path to traces YAML for warm start")
+    parser.add_argument("--init-condition", default="moralizing",
+                        help="Which trace condition to use as warm start (default: moralizing)")
     parser.add_argument("--n-reasoning-tokens", type=int, default=100,
                         help="Number of reasoning tokens (only for random init)")
-    parser.add_argument("--n-steps", type=int, default=200)
+    parser.add_argument("--constrained", action="store_true",
+                        help="Restrict to ASCII/English tokens only")
+    parser.add_argument("--n-steps", type=int, default=500)
     parser.add_argument("--batch-size", type=int, default=64,
                         help="Candidates to evaluate per step")
     parser.add_argument("--top-k", type=int, default=256,
@@ -499,14 +544,29 @@ def main():
     log_dir = args.log_dir or os.path.join(output_dir, "logs")
     setup_logging(log_dir, "gcg_optimizer")
 
-    # Load scenario
+    # Load scenarios
     data_dir = resolve(config["data_dir"])
     scenarios_path = resolve(args.scenarios) if args.scenarios else os.path.join(data_dir, "scenarios.yaml")
     scenarios = load_scenarios(scenarios_path)
-    scenario = scenarios[args.scenario_idx]
-    print(f"Scenario {args.scenario_idx}: {scenario['category']}")
-    print(f"  Q: {scenario['question'][:80]}...")
-    print(f"  Deceptive: {scenario['deceptive_completion'][:80]}...")
+
+    # Determine which scenarios to run
+    if args.scenario_indices is not None:
+        run_indices = args.scenario_indices
+    elif args.scenario_idx is not None:
+        run_indices = [args.scenario_idx]
+    else:
+        run_indices = list(range(len(scenarios)))
+
+    print(f"Scenarios to optimize: {run_indices}")
+    print(f"Constrained (ASCII only): {args.constrained}")
+
+    # Load traces for warm start
+    traces_by_pair = {}
+    if args.initial_reasoning:
+        traces_path = resolve(args.initial_reasoning)
+        with open(traces_path) as f:
+            traces_list = yaml.safe_load(f)["traces"]
+        traces_by_pair = {t["pair_id"]: t for t in traces_list}
 
     # Load model
     print(f"\nLoading model: {model_config['model_id']}")
@@ -522,42 +582,103 @@ def main():
     )
     print(f"  Loaded probes for {len(layer_probes)} layers")
 
-    # Initial reasoning
-    if args.initial_reasoning:
-        traces_path = resolve(args.initial_reasoning)
-        with open(traces_path) as f:
-            traces = yaml.safe_load(f)["traces"]
-        # Find trace matching this scenario's pair_id
-        pair_id = scenario["pair_id"]
-        trace = next(t for t in traces if t["pair_id"] == pair_id)
-        # Use moralizing as default warm start
-        initial_reasoning = trace.get("moralizing", trace.get("test_a", ""))
-        print(f"\n  Warm start: moralizing trace ({len(initial_reasoning)} chars)")
-    else:
-        # Random token initialization
-        vocab_size = len(tokenizer)
-        # Sample from common tokens (avoid special tokens)
-        random_ids = torch.randint(100, vocab_size - 100, (args.n_reasoning_tokens,))
-        initial_reasoning = tokenizer.decode(random_ids.tolist(), skip_special_tokens=False)
-        print(f"\n  Cold start: {args.n_reasoning_tokens} random tokens")
-
-    # Run optimization
+    # Build optimizer (once — reused across scenarios)
     optimizer = GCGReasoningOptimizer(
-        model, tokenizer, layer_probes, target_layers, device
+        model, tokenizer, layer_probes, target_layers, device,
+        constrained=args.constrained,
     )
-    result = optimizer.optimize(
-        scenario=scenario["scenario"],
-        question=scenario["question"],
-        answer_prefix=scenario["answer_prefix"],
-        initial_reasoning=initial_reasoning,
-        completion=scenario["deceptive_completion"],
-        n_steps=args.n_steps,
-        batch_size=args.batch_size,
-        top_k=args.top_k,
-        eval_batch_size=args.eval_batch_size,
-        target=args.target,
-        output_dir=output_dir,
-    )
+
+    # Run optimization for each scenario
+    all_results = []
+    for idx in run_indices:
+        scenario = scenarios[idx]
+        pair_id = scenario["pair_id"]
+        category = scenario["category"]
+
+        print(f"\n{'#'*60}")
+        print(f"# Scenario {idx} (pair_id={pair_id}, {category})")
+        print(f"#   Q: {scenario['question'][:70]}...")
+        print(f"#   Deceptive: {scenario['deceptive_completion'][:70]}...")
+        print(f"{'#'*60}")
+
+        # Get initial reasoning
+        if traces_by_pair and pair_id in traces_by_pair:
+            trace = traces_by_pair[pair_id]
+            cond = args.init_condition
+            initial_reasoning = trace.get(cond, "")
+            if not initial_reasoning:
+                # Fallback: try first available condition
+                available = [k for k in trace if k not in ("pair_id", "category")]
+                cond = available[0] if available else None
+                initial_reasoning = trace.get(cond, "") if cond else ""
+            if initial_reasoning:
+                print(f"  Warm start: {cond} ({len(initial_reasoning)} chars)")
+            else:
+                print(f"  WARNING: no trace found for pair_id={pair_id}, using random init")
+        else:
+            initial_reasoning = ""
+
+        if not initial_reasoning:
+            vocab_size = len(tokenizer)
+            random_ids = torch.randint(100, vocab_size - 100, (args.n_reasoning_tokens,))
+            initial_reasoning = tokenizer.decode(random_ids.tolist(), skip_special_tokens=False)
+            print(f"  Cold start: {args.n_reasoning_tokens} random tokens")
+
+        # Per-run output
+        constraint_tag = "constrained" if args.constrained else "unconstrained"
+        run_dir = os.path.join(output_dir, f"scenario_{pair_id}_{constraint_tag}")
+
+        result = optimizer.optimize(
+            scenario=scenario["scenario"],
+            question=scenario["question"],
+            answer_prefix=scenario["answer_prefix"],
+            initial_reasoning=initial_reasoning,
+            completion=scenario["deceptive_completion"],
+            n_steps=args.n_steps,
+            batch_size=args.batch_size,
+            top_k=args.top_k,
+            eval_batch_size=args.eval_batch_size,
+            target=args.target,
+            output_dir=run_dir,
+        )
+        result["scenario_idx"] = idx
+        result["pair_id"] = pair_id
+        result["category"] = category
+        result["constrained"] = args.constrained
+        result["init_condition"] = args.init_condition
+        all_results.append(result)
+
+        # Clear GPU cache between runs
+        if torch.cuda.is_available():
+            torch.cuda.empty_cache()
+
+    # Summary
+    print(f"\n{'='*60}")
+    print(f"SUMMARY ({len(all_results)} runs, {constraint_tag})")
+    print(f"{'='*60}")
+    print(f"{'Scenario':<12} {'Category':<12} {'Initial':>8} {'Final':>8} {'Delta':>8}")
+    print("-" * 52)
+    for r in all_results:
+        print(f"pair_{r['pair_id']:<7} {r['category']:<12} "
+              f"{r['initial_score']:>8.4f} {r['final_score']:>8.4f} "
+              f"{r['delta']:>+8.4f}")
+
+    # Save summary
+    summary_path = os.path.join(output_dir, f"gcg_summary_{constraint_tag}.json")
+    os.makedirs(output_dir, exist_ok=True)
+    summary = [{
+        "scenario_idx": r["scenario_idx"],
+        "pair_id": r["pair_id"],
+        "category": r["category"],
+        "initial_score": r["initial_score"],
+        "final_score": r["final_score"],
+        "delta": r["delta"],
+        "n_steps": r["n_steps"],
+        "total_time_s": r["total_time_s"],
+    } for r in all_results]
+    with open(summary_path, "w") as f:
+        json.dump(summary, f, indent=2)
+    print(f"\nSummary saved to {summary_path}")
 
 
 if __name__ == "__main__":
