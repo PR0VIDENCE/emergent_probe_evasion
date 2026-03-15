@@ -81,11 +81,11 @@ def load_probes_and_scalers(probe_dir, position, layers, seeds, hidden_dim, devi
     return result
 
 
-def build_ascii_token_mask(tokenizer):
-    """Build boolean mask: True for tokens that decode to ASCII-only text."""
-    vocab_size = len(tokenizer)
-    mask = torch.zeros(vocab_size, dtype=torch.bool)
-    for tok_id in range(vocab_size):
+def build_ascii_token_mask(tokenizer, embed_vocab_size):
+    """Build boolean mask: True for tokens that decode to ASCII-only text.
+    Size matches the embedding matrix (may be larger than tokenizer vocab)."""
+    mask = torch.zeros(embed_vocab_size, dtype=torch.bool)
+    for tok_id in range(min(len(tokenizer), embed_vocab_size)):
         try:
             text = tokenizer.decode([tok_id])
             # Allow if all chars are ASCII and token has some visible content
@@ -112,7 +112,8 @@ class GCGReasoningOptimizer:
         self.ascii_mask = None
         if constrained:
             print("  Building ASCII token mask...")
-            self.ascii_mask = build_ascii_token_mask(tokenizer).to(device)
+            embed_vocab_size = self.embed_weights.shape[0]
+            self.ascii_mask = build_ascii_token_mask(tokenizer, embed_vocab_size).to(device)
             n_allowed = self.ascii_mask.sum().item()
             print(f"  Constrained mode: {n_allowed}/{len(tokenizer)} tokens allowed")
 
@@ -356,7 +357,7 @@ class GCGReasoningOptimizer:
         ).item()
         print(f"\n  Initial probe confidence: {initial_score:.4f}")
 
-        # Track progress
+        # Track progress: score every step, full reasoning text every 50 steps
         history = [{
             "step": 0,
             "score": initial_score,
@@ -365,6 +366,7 @@ class GCGReasoningOptimizer:
                 skip_special_tokens=False
             ),
         }]
+        score_curve = [{"step": 0, "score": initial_score}]
 
         best_score = initial_score
         best_ids = full_ids.clone()
@@ -436,6 +438,8 @@ class GCGReasoningOptimizer:
                       f"{step_time:.1f}s | "
                       f"reasoning: {preview}...")
 
+            score_curve.append({"step": step, "score": current_score})
+
             if step % 50 == 0:
                 history.append({
                     "step": step,
@@ -473,6 +477,7 @@ class GCGReasoningOptimizer:
             "initial_reasoning": initial_reasoning,
             "final_reasoning": final_reasoning,
             "history": history,
+            "score_curve": score_curve,
         }
 
         print(f"\n{'='*60}")
