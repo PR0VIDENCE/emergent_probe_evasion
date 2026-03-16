@@ -101,7 +101,7 @@ def build_ascii_token_mask(tokenizer, embed_vocab_size):
 
 class GCGReasoningOptimizer:
     def __init__(self, model, tokenizer, layer_probes, target_layers, device,
-                 constrained=False):
+                 constrained=False, fluency_alpha=0.0):
         self.model = model
         self.tokenizer = tokenizer
         self.layer_probes = layer_probes
@@ -109,6 +109,7 @@ class GCGReasoningOptimizer:
         self.device = device
         self.embed_weights = model.model.embed_tokens.weight  # (vocab_size, hidden_dim)
         self.constrained = constrained
+        self.fluency_alpha = fluency_alpha
         self.ascii_mask = None
         if constrained:
             print("  Building ASCII token mask...")
@@ -240,51 +241,109 @@ class GCGReasoningOptimizer:
         self, full_ids: torch.Tensor,
         reasoning_start: int, reasoning_end: int,
         answer_start: int, answer_end: int,
-    ) -> torch.Tensor:
+    ) -> Tuple[torch.Tensor, Optional[torch.Tensor]]:
         """
         Compute gradient of probe score w.r.t. reasoning token embeddings.
-        Returns: gradient tensor (n_reasoning_tokens, hidden_dim).
+        Also returns model log-probs at reasoning positions (for fluency weighting).
+
+        Returns: (grad, log_probs)
+            grad: (n_reasoning_tokens, hidden_dim)
+            log_probs: (n_reasoning_tokens, vocab_size) or None
         """
         # Get embeddings for full sequence
         embeds = self.model.model.embed_tokens(full_ids)  # (1, seq_len, hidden_dim)
         embeds = embeds.detach().clone().requires_grad_(True)
 
-        # Forward pass through the model using embeddings
-        confidence = self.compute_probe_score(
-            embeds, answer_start, answer_end, grad_mode=True
-        )
-        confidence.sum().backward()
+        # We need model output logits for fluency, so run model directly
+        # and compute probe score from hooks
+        hook_outputs = {}
+        hooks = []
 
-        # Extract gradient at reasoning positions
-        grad = embeds.grad[0, reasoning_start:reasoning_end + 1, :].clone()
-        return grad  # (n_reasoning_tokens, hidden_dim)
+        def make_hook(layer_idx):
+            def fn(module, inp, out):
+                h = out[0] if isinstance(out, tuple) else out
+                hook_outputs[layer_idx] = h
+            return fn
+
+        for layer_idx in self.target_layers:
+            layer_module = self.model.model.layers[layer_idx]
+            hooks.append(layer_module.register_forward_hook(make_hook(layer_idx)))
+
+        try:
+            model_output = self.model(inputs_embeds=embeds)
+
+            # Compute probe score (same as compute_probe_score but inline)
+            layer_scores = []
+            for layer_idx in self.target_layers:
+                h = hook_outputs[layer_idx].float()
+                pooled = h[:, answer_start:answer_end + 1, :].mean(dim=1)
+                lp = self.layer_probes[layer_idx]
+                if lp["scaler_mean"] is not None:
+                    pooled = (pooled - lp["scaler_mean"]) / lp["scaler_scale"]
+                logits_probe = torch.stack([p(pooled) for p in lp["probes"]])
+                layer_scores.append(logits_probe.mean(dim=0))
+
+            stacked = torch.stack(layer_scores)
+            confidence = torch.sigmoid(stacked.mean(dim=0))
+            confidence.sum().backward()
+
+            # Extract gradient at reasoning positions
+            grad = embeds.grad[0, reasoning_start:reasoning_end + 1, :].clone()
+
+            # Extract model log-probs for fluency weighting
+            # logits[0, i-1, :] predicts token at position i
+            log_probs = None
+            if self.fluency_alpha > 0:
+                model_logits = model_output.logits[0].detach().float()
+                # For reasoning position i, the prediction comes from position i-1
+                # So for reasoning_start..reasoning_end, we want logits at (reasoning_start-1)..(reasoning_end-1)
+                pred_logits = model_logits[reasoning_start - 1:reasoning_end, :]  # (n_reasoning, vocab_size)
+                log_probs = torch.log_softmax(pred_logits, dim=-1)
+
+            return grad, log_probs
+
+        finally:
+            for hook in hooks:
+                hook.remove()
 
     def get_top_k_candidates(
         self, grad: torch.Tensor, top_k: int = 256,
         target: str = "minimize",
+        log_probs: Optional[torch.Tensor] = None,
     ) -> torch.Tensor:
         """
         For each reasoning position, find top-k vocabulary tokens that would
-        change the probe score in the desired direction.
+        change the probe score in the desired direction, optionally weighted
+        by model fluency (log-probability).
+
+        score[token] = -gradient · embedding[token] + α * log_prob[token]
 
         Returns: (n_reasoning_tokens, top_k) tensor of token ids.
         """
-        # For minimization: we want tokens whose embeddings point in -gradient direction
-        # score[pos, vocab] = -grad[pos] @ embed_weights[vocab]
-        # For maximization: score = +grad @ embed_weights
         sign = -1.0 if target == "minimize" else 1.0
 
-        # embed_weights: (vocab_size, hidden_dim), might be quantized
-        # Dequantize if needed
         embed_w = self.embed_weights
         if hasattr(embed_w, "data"):
             embed_w = embed_w.data
         embed_w = embed_w.float()  # (vocab_size, hidden_dim)
 
-        # score = sign * grad @ embed_w^T  -> (n_positions, vocab_size)
+        # Gradient-based scores: (n_positions, vocab_size)
         scores = sign * (grad.float() @ embed_w.T)
 
-        # Apply ASCII constraint: mask out non-English tokens
+        # Add fluency term: α * log_prob(token | context)
+        if log_probs is not None and self.fluency_alpha > 0:
+            # log_probs may have fewer vocab entries than embed_w if shapes differ
+            lp_vocab = log_probs.shape[1]
+            if lp_vocab < scores.shape[1]:
+                # Pad with -inf for extra embedding entries
+                pad = torch.full(
+                    (log_probs.shape[0], scores.shape[1] - lp_vocab),
+                    -float("inf"), device=log_probs.device
+                )
+                log_probs = torch.cat([log_probs, pad], dim=1)
+            scores += self.fluency_alpha * log_probs
+
+        # Apply ASCII constraint
         if self.constrained and self.ascii_mask is not None:
             scores[:, ~self.ascii_mask] = -float("inf")
 
@@ -373,7 +432,8 @@ class GCGReasoningOptimizer:
         current_ids = full_ids.clone()
 
         print(f"\n  Starting optimization: {n_steps} steps, "
-              f"batch_size={batch_size}, top_k={top_k}")
+              f"batch_size={batch_size}, top_k={top_k}"
+              f"{f', fluency_alpha={self.fluency_alpha}' if self.fluency_alpha > 0 else ''}")
         print(f"  Optimizing {n_reasoning} reasoning tokens\n")
 
         t_start = time.time()
@@ -381,13 +441,13 @@ class GCGReasoningOptimizer:
         for step in range(1, n_steps + 1):
             t_step = time.time()
 
-            # Step 1: Get gradients
-            grad = self.get_token_gradients(
+            # Step 1: Get gradients (and fluency log-probs if alpha > 0)
+            grad, log_probs = self.get_token_gradients(
                 current_ids, r_start, r_end, a_start, a_end
             )
 
-            # Step 2: Get top-k candidates per position
-            top_k_tokens = self.get_top_k_candidates(grad, top_k, target)
+            # Step 2: Get top-k candidates per position (fluency-weighted if alpha > 0)
+            top_k_tokens = self.get_top_k_candidates(grad, top_k, target, log_probs)
             # (n_reasoning, top_k)
 
             # Step 3: Sample random (position, token) pairs
@@ -518,6 +578,9 @@ def main():
                         help="Number of reasoning tokens (only for random init)")
     parser.add_argument("--constrained", action="store_true",
                         help="Restrict to ASCII/English tokens only")
+    parser.add_argument("--fluency-alpha", type=float, default=0.0,
+                        help="Fluency weighting: score = grad_score + alpha * log_prob. "
+                             "Higher = more coherent, less evasive. Try 0.5-5.0")
     parser.add_argument("--n-steps", type=int, default=500)
     parser.add_argument("--batch-size", type=int, default=64,
                         help="Candidates to evaluate per step")
@@ -591,6 +654,7 @@ def main():
     optimizer = GCGReasoningOptimizer(
         model, tokenizer, layer_probes, target_layers, device,
         constrained=args.constrained,
+        fluency_alpha=args.fluency_alpha,
     )
 
     # Run optimization for each scenario
@@ -650,6 +714,7 @@ def main():
         result["pair_id"] = pair_id
         result["category"] = category
         result["constrained"] = args.constrained
+        result["fluency_alpha"] = args.fluency_alpha
         result["init_condition"] = args.init_condition
         all_results.append(result)
 
