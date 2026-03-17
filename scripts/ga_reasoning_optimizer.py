@@ -63,7 +63,8 @@ from src.probes.architectures import LinearProbe
 # Claude API generation
 # ────────────────────────────────────────────────────────────
 
-def call_claude(prompt: str, system: str = None, max_tokens: int = 2048) -> str:
+def call_claude(prompt: str, system: str = None, max_tokens: int = 2048,
+                temperature: float = 1.0) -> str:
     """Call Claude via Anthropic API or OpenRouter (auto-detected from env vars).
 
     Set OPENROUTER_API_KEY to use OpenRouter, otherwise uses ANTHROPIC_API_KEY.
@@ -83,6 +84,7 @@ def call_claude(prompt: str, system: str = None, max_tokens: int = 2048) -> str:
         resp = client.chat.completions.create(
             model="anthropic/claude-sonnet-4.6",
             max_tokens=max_tokens,
+            temperature=temperature,
             messages=messages,
         )
         return resp.choices[0].message.content
@@ -92,6 +94,7 @@ def call_claude(prompt: str, system: str = None, max_tokens: int = 2048) -> str:
         kwargs = {
             "model": "claude-sonnet-4-5-20250929",
             "max_tokens": max_tokens,
+            "temperature": temperature,
             "messages": [{"role": "user", "content": prompt}],
         }
         if system:
@@ -154,7 +157,7 @@ def generate_initial_population(
         )
 
         try:
-            text = call_claude(prompt, system=system_prompt)
+            text = call_claude(prompt, system=system_prompt, temperature=1.0)
             candidates.append({
                 "id": f"gen0_{i:03d}",
                 "generation": 0,
@@ -198,7 +201,7 @@ def mutate_candidates(
             )
 
             try:
-                text = call_claude(prompt, system=system_prompt)
+                text = call_claude(prompt, system=system_prompt, temperature=0.7)
                 child_id = f"gen{generation}_{parent['id']}_{j:02d}"
                 children.append({
                     "id": child_id,
