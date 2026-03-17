@@ -380,19 +380,29 @@ def run_full_loop(
 
     # Check for existing population to resume from
     pop_path = os.path.join(run_dir, "population.json")
+    max_gen = -1
+    candidates = []
     if os.path.exists(pop_path):
-        print(f"\n  Resuming from existing population at {pop_path}")
-        candidates = load_population(pop_path)
-        max_gen = max(c["generation"] for c in candidates)
-        print(f"  {len(candidates)} candidates, max generation {max_gen}")
-    else:
-        max_gen = -1
-        candidates = []
+        try:
+            existing = load_population(pop_path)
+            # Filter to candidates that have a reasoning field
+            existing = [c for c in existing if c.get("reasoning")]
+            if existing:
+                candidates = existing
+                max_gen = max(c.get("generation", 0) for c in candidates)
+                print(f"\n  Resuming from {pop_path}: {len(candidates)} candidates, gen {max_gen}")
+            else:
+                print(f"\n  Found empty/invalid population at {pop_path}, starting fresh")
+        except Exception as e:
+            print(f"\n  Could not load {pop_path}: {e}, starting fresh")
 
     # Generation 0: initial population
     if max_gen < 0:
         print(f"\n  === Generation 0: Creating initial population ({population_size}) ===")
         candidates = generate_initial_population(scenario, population_size)
+        if not candidates:
+            print("  ERROR: No candidates generated. Check API key and connectivity.")
+            return None
         save_population(candidates, pop_path)
         print(f"  Saved {len(candidates)} candidates")
 
@@ -414,6 +424,9 @@ def run_full_loop(
 
         # Select top-k parents
         scored = [c for c in candidates if c["score"] is not None]
+        if not scored:
+            print("  ERROR: No scored candidates available. Stopping.")
+            break
         scored.sort(key=lambda c: c["score"])
         parents = scored[:top_k]
         print(f"  Selected top {len(parents)} parents (best score: {parents[0]['score']:.4f})")

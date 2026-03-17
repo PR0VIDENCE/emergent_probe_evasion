@@ -16,6 +16,8 @@ dependencies = [
     "pyyaml",
     "tqdm",
     "requests",
+    "openai>=1.0.0",
+    "anthropic>=0.30.0",
     "wikipedia-api",
     "streamlit>=1.37.0",
     "plotly>=5.18.0",
