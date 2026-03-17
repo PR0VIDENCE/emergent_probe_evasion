@@ -237,9 +237,9 @@ def _run_parallel_llm(tasks, max_workers=10, label="Generating"):
 
     with ThreadPoolExecutor(max_workers=max_workers) as pool:
         futures = {pool.submit(_run_llm_task, t): t for t in tasks}
-        for future in as_completed(futures, timeout=120):
+        for future in as_completed(futures):
             try:
-                result = future.result(timeout=30)
+                result = future.result()
                 if result is not None:
                     results.append(result)
             except Exception as e:
