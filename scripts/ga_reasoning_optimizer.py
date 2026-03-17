@@ -81,7 +81,7 @@ def call_claude(prompt: str, system: str = None, max_tokens: int = 2048) -> str:
             messages.append({"role": "system", "content": system})
         messages.append({"role": "user", "content": prompt})
         resp = client.chat.completions.create(
-            model="anthropic/claude-sonnet-4-5-20250929",
+            model="anthropic/claude-sonnet-4.6",
             max_tokens=max_tokens,
             messages=messages,
         )
