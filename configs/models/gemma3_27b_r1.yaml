@@ -1,0 +1,25 @@
+model_name: gemma3-27b-r1
+model_id: "TheDrummer/Gemma-3-R1-27B-v1"
+model_class: Gemma3ForCausalLM
+api_endpoint: null
+local_path: null
+max_tokens: 8192
+temperature: 0.6
+
+num_layers: 62
+hidden_dim: 5376
+
+quantization:
+  enabled: true
+  method: bitsandbytes
+  load_in_4bit: true
+  bnb_4bit_quant_type: nf4
+  bnb_4bit_compute_dtype: bfloat16
+  bnb_4bit_use_double_quant: true
+
+device_map: auto
+
+generation:
+  temperature: 0.6
+  top_p: 0.95
+  top_k: 20

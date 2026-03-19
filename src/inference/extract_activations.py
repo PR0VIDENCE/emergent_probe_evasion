@@ -17,7 +17,8 @@ def load_model_and_tokenizer(model_config: dict):
     Returns:
         Tuple of (model, tokenizer).
     """
-    from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
+    from transformers import AutoTokenizer, BitsAndBytesConfig
+    import transformers
 
     model_id = model_config["model_id"]
 
@@ -34,16 +35,27 @@ def load_model_and_tokenizer(model_config: dict):
     else:
         bnb_config = None
 
+    # Resolve torch_dtype from config (bfloat16 for Gemma 3, float16 for QwQ)
+    _dtype_str = quant_config.get("bnb_4bit_compute_dtype", "bfloat16") if quant_config.get("enabled") else "bfloat16"
+    torch_dtype = getattr(torch, _dtype_str)
+
     tokenizer = AutoTokenizer.from_pretrained(model_id, trust_remote_code=True)
     if tokenizer.pad_token is None:
         tokenizer.pad_token = tokenizer.eos_token
 
-    model = AutoModelForCausalLM.from_pretrained(
+    # Model class dispatch: use model_class from config if specified, else AutoModelForCausalLM
+    model_class_name = model_config.get("model_class")
+    if model_class_name:
+        ModelClass = getattr(transformers, model_class_name)
+    else:
+        ModelClass = transformers.AutoModelForCausalLM
+
+    model = ModelClass.from_pretrained(
         model_id,
         quantization_config=bnb_config,
         device_map=model_config.get("device_map", "auto"),
         trust_remote_code=True,
-        dtype=torch.float16,
+        torch_dtype=torch_dtype,
     )
     model.eval()
 

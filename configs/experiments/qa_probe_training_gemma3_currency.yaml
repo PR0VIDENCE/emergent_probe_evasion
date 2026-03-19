@@ -1,0 +1,45 @@
+# Gemma 3 27B R1: Currency concept probe training
+# Reuses currency_qa_v2 data (QwQ-generated text), extracts Gemma 3 activations
+
+concept: currency
+concept_config: configs/concepts/currency.yaml
+model_config: configs/models/gemma3_27b_r1.yaml
+data_dir: data/concepts/currency_qa_v2
+target_layers: [4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48, 52, 56, 60]
+
+token_positions:
+  - last_token
+  - end_of_reasoning
+  - first_answer_sentence_end
+  - answer_mean_pool
+
+generation:
+  max_new_tokens: 2048
+  temperature: 0.6
+  top_p: 0.95
+  top_k: 20
+
+probe_training:
+  random_seeds: [42, 123, 456, 789]
+  learning_rate: 0.001
+  num_epochs: 100
+  weight_decay: 0.1
+  patience: 10
+  normalize: true
+  top_k_layers: 5
+  primary_position: answer_mean_pool
+
+split:
+  method: preassigned
+  split_file: data/concepts/currency_qa_v2/split_assignment.yaml
+  train: 0.8
+  val: 0.1
+  test: 0.1
+
+combiner:
+  enabled: true
+  regularization_C: 1.0
+  output_path: configs/probes/weighted_combination_gemma3_currency.yaml
+
+storage:
+  base_dir: /workspace/probe_data_gemma3_currency
