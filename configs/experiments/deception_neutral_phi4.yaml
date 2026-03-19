@@ -1,0 +1,25 @@
+# Phi-4-reasoning-plus: Neutral deception experiment
+# Used for GCG/BPJ optimization, not probe training
+
+concept: deception_neutral
+model_config: configs/models/phi4_reasoning.yaml
+data_dir: data/concepts/deception_neutral
+target_layers: [2, 5, 8, 11, 14, 17, 20, 23, 26, 29, 32, 35, 38]
+
+token_positions:
+  - last_token
+  - first_answer_sentence_end
+  - answer_mean_pool
+
+probe_training:
+  random_seeds: [42, 123, 456, 789]
+  learning_rate: 0.001
+  num_epochs: 100
+  weight_decay: 0.1
+  patience: 10
+  normalize: true
+  top_k_layers: 5
+  primary_position: answer_mean_pool
+
+storage:
+  base_dir: /workspace/deception_neutral_data_phi4

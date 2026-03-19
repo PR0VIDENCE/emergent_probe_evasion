@@ -1,0 +1,19 @@
+model_name: phi4-reasoning-plus
+model_id: "microsoft/Phi-4-reasoning-plus"
+api_endpoint: null
+local_path: null
+max_tokens: 32768
+temperature: 0.8
+
+num_layers: 40
+hidden_dim: 5120
+
+quantization:
+  enabled: false
+
+device_map: auto
+
+generation:
+  temperature: 0.8
+  top_p: 0.95
+  top_k: 50

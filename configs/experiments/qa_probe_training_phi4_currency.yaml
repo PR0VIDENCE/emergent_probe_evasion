@@ -1,0 +1,44 @@
+# Phi-4-reasoning-plus: Currency concept probe training
+
+concept: currency
+concept_config: configs/concepts/currency.yaml
+model_config: configs/models/phi4_reasoning.yaml
+data_dir: data/concepts/currency_qa_v2
+target_layers: [2, 5, 8, 11, 14, 17, 20, 23, 26, 29, 32, 35, 38]
+
+token_positions:
+  - last_token
+  - end_of_reasoning
+  - first_answer_sentence_end
+  - answer_mean_pool
+
+generation:
+  max_new_tokens: 2048
+  temperature: 0.8
+  top_p: 0.95
+  top_k: 50
+
+probe_training:
+  random_seeds: [42, 123, 456, 789]
+  learning_rate: 0.001
+  num_epochs: 100
+  weight_decay: 0.1
+  patience: 10
+  normalize: true
+  top_k_layers: 5
+  primary_position: answer_mean_pool
+
+split:
+  method: preassigned
+  split_file: data/concepts/currency_qa_v2/split_assignment.yaml
+  train: 0.8
+  val: 0.1
+  test: 0.1
+
+combiner:
+  enabled: true
+  regularization_C: 1.0
+  output_path: configs/probes/weighted_combination_phi4_currency.yaml
+
+storage:
+  base_dir: /workspace/probe_data_phi4_currency
