@@ -36,6 +36,7 @@ sys.path.insert(0, str(PROJECT_ROOT))
 from src.inference.extract_activations import (
     load_model_and_tokenizer,
     find_token_positions,
+    _get_layer_module,
 )
 from src.probes.architectures import LinearProbe
 from src.probes.evaluate import evaluate_ensemble
@@ -229,7 +230,7 @@ def run_padded_forward_pass(
 
     hooks = []
     for layer_idx in target_layers:
-        h = model.model.layers[layer_idx].register_forward_hook(make_hook(layer_idx))
+        h = _get_layer_module(model, layer_idx).register_forward_hook(make_hook(layer_idx))
         hooks.append(h)
 
     # Forward pass (no generation, just inference)

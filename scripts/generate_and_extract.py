@@ -728,7 +728,8 @@ def main():
     print(f"  Loaded in {time.time() - t0:.1f}s")
 
     # Verify layer count
-    num_layers = len(model.model.layers)
+    from src.inference.extract_activations import get_num_layers
+    num_layers = get_num_layers(model)
     assert num_layers == model_config["num_layers"], \
         f"Layer mismatch: {num_layers} vs {model_config['num_layers']}"
 

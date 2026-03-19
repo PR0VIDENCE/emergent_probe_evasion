@@ -421,7 +421,7 @@ def score_candidate(
                 h = out[0] if isinstance(out, tuple) else out
                 hook_outputs[li] = h.detach()
             return fn
-        hooks.append(model.model.layers[layer_idx].register_forward_hook(make_hook(layer_idx)))
+        hooks.append(_get_layer_module(model, layer_idx).register_forward_hook(make_hook(layer_idx)))
 
     try:
         with torch.no_grad():
@@ -701,7 +701,7 @@ def main():
         return
 
     # Commands below need GPU
-    from src.inference.extract_activations import load_model_and_tokenizer
+    from src.inference.extract_activations import load_model_and_tokenizer, _get_layer_module
     from src.utils.logging import setup_logging
 
     model_config = yaml.safe_load(open(resolve(config["model_config"])))

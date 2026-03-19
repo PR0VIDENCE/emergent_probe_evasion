@@ -1,6 +1,6 @@
 model_name: gemma3-27b-r1
 model_id: "TheDrummer/Gemma-3-R1-27B-v1"
-model_class: Gemma3ForCausalLM
+model_class: Gemma3ForConditionalGeneration
 api_endpoint: null
 local_path: null
 max_tokens: 8192

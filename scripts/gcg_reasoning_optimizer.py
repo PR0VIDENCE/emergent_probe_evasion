@@ -41,7 +41,7 @@ import yaml
 PROJECT_ROOT = Path(__file__).parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
 
-from src.inference.extract_activations import load_model_and_tokenizer
+from src.inference.extract_activations import load_model_and_tokenizer, get_embed_tokens, _get_layer_module
 from src.probes.architectures import LinearProbe
 from src.utils.logging import setup_logging
 
@@ -107,7 +107,7 @@ class GCGReasoningOptimizer:
         self.layer_probes = layer_probes
         self.target_layers = target_layers
         self.device = device
-        self.embed_weights = model.model.embed_tokens.weight  # (vocab_size, hidden_dim)
+        self.embed_weights = get_embed_tokens(model).weight  # (vocab_size, hidden_dim)
         self.constrained = constrained
         self.fluency_alpha = fluency_alpha
         self.ascii_mask = None
@@ -200,7 +200,7 @@ class GCGReasoningOptimizer:
             return fn
 
         for layer_idx in self.target_layers:
-            layer_module = self.model.model.layers[layer_idx]
+            layer_module = _get_layer_module(self.model, layer_idx)
             hooks.append(layer_module.register_forward_hook(make_hook(layer_idx)))
 
         try:
@@ -251,7 +251,7 @@ class GCGReasoningOptimizer:
             log_probs: (n_reasoning_tokens, vocab_size) or None
         """
         # Get embeddings for full sequence
-        embeds = self.model.model.embed_tokens(full_ids)  # (1, seq_len, hidden_dim)
+        embeds = get_embed_tokens(self.model)(full_ids)  # (1, seq_len, hidden_dim)
         embeds = embeds.detach().clone().requires_grad_(True)
 
         # We need model output logits for fluency, so run model directly
@@ -266,7 +266,7 @@ class GCGReasoningOptimizer:
             return fn
 
         for layer_idx in self.target_layers:
-            layer_module = self.model.model.layers[layer_idx]
+            layer_module = _get_layer_module(self.model, layer_idx)
             hooks.append(layer_module.register_forward_hook(make_hook(layer_idx)))
 
         try:

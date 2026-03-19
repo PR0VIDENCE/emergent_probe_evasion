@@ -33,7 +33,7 @@ import yaml
 PROJECT_ROOT = Path(__file__).parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
 
-from src.inference.extract_activations import load_model_and_tokenizer
+from src.inference.extract_activations import load_model_and_tokenizer, _get_layer_module
 from src.probes.architectures import LinearProbe
 
 
@@ -133,7 +133,7 @@ class BPJDenoiser:
                     hook_outputs[li] = h.detach()
                 return fn
             hooks.append(
-                self.model.model.layers[layer_idx].register_forward_hook(make_hook(layer_idx))
+                _get_layer_module(self.model, layer_idx).register_forward_hook(make_hook(layer_idx))
             )
 
         try:

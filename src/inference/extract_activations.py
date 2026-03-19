@@ -62,14 +62,31 @@ def load_model_and_tokenizer(model_config: dict):
     return model, tokenizer
 
 
-def _get_layer_module(model, layer_idx: int):
-    """
-    Get the decoder layer module at the given index.
+def _get_text_backbone(model):
+    """Get the text model backbone (the object with .layers and .embed_tokens).
 
-    Works for Qwen2.5 and other standard transformers decoder-only models
-    where layers are at model.model.layers[i].
+    Handles both:
+    - CausalLM models (Qwen2, Gemma3ForCausalLM): model.model
+    - ConditionalGeneration models (Gemma3ForConditionalGeneration): model.language_model.model
     """
-    return model.model.layers[layer_idx]
+    if hasattr(model, 'language_model'):
+        return model.language_model.model
+    return model.model
+
+
+def _get_layer_module(model, layer_idx: int):
+    """Get the decoder layer module at the given index."""
+    return _get_text_backbone(model).layers[layer_idx]
+
+
+def get_num_layers(model) -> int:
+    """Get the number of decoder layers."""
+    return len(_get_text_backbone(model).layers)
+
+
+def get_embed_tokens(model):
+    """Get the token embedding module."""
+    return _get_text_backbone(model).embed_tokens
 
 
 def extract_activations_batch(
