@@ -66,12 +66,13 @@ def _get_text_backbone(model):
     """Get the text model backbone (the object with .layers and .embed_tokens).
 
     Handles both:
-    - CausalLM models (Qwen2, Gemma3ForCausalLM): model.model
-    - ConditionalGeneration models (Gemma3ForConditionalGeneration): model.language_model.model
+    - CausalLM models (Qwen2): model.model has .layers directly
+    - Gemma3ForConditionalGeneration: model.model.language_model has .layers
     """
-    if hasattr(model, 'language_model'):
-        return model.language_model.model
-    return model.model
+    backbone = model.model
+    if hasattr(backbone, 'language_model'):
+        return backbone.language_model
+    return backbone
 
 
 def _get_layer_module(model, layer_idx: int):

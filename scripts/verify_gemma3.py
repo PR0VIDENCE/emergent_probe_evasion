@@ -14,26 +14,14 @@ m = transformers.Gemma3ForConditionalGeneration.from_pretrained(
     torch_dtype=torch.bfloat16,
 )
 
-# Discover the full model tree
-print(f"Top-level: {[n for n, _ in m.named_children()]}")
-print(f"m.model children: {[n for n, _ in m.model.named_children()]}")
+# Test helpers
+from src.inference.extract_activations import _get_text_backbone, get_num_layers, get_embed_tokens
 
-# Walk down to find layers
-for name, child in m.model.named_children():
-    if hasattr(child, 'layers'):
-        layers = child.layers
-        print(f"\nFound layers at m.model.{name}.layers")
-        print(f"num_layers: {len(layers)}")
-        print(f"hidden_dim: {layers[0].self_attn.q_proj.in_features}")
-    if hasattr(child, 'embed_tokens'):
-        print(f"embed_tokens at m.model.{name}.embed_tokens: {child.embed_tokens.weight.shape}")
-    # Go one more level
-    for name2, child2 in child.named_children():
-        if hasattr(child2, 'layers'):
-            layers = child2.layers
-            print(f"\nFound layers at m.model.{name}.{name2}.layers")
-            print(f"num_layers: {len(layers)}")
-            print(f"hidden_dim: {layers[0].self_attn.q_proj.in_features}")
+backbone = _get_text_backbone(m)
+print(f"backbone type: {type(backbone).__name__}")
+print(f"num_layers: {get_num_layers(m)}")
+print(f"hidden_dim: {backbone.layers[0].self_attn.q_proj.in_features}")
+print(f"embed_tokens: {get_embed_tokens(m).weight.shape}")
 
 del m
 torch.cuda.empty_cache()
