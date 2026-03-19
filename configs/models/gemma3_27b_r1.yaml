@@ -18,6 +18,9 @@ quantization:
   bnb_4bit_use_double_quant: true
 
 device_map: auto
+max_memory:
+  "0": "40GiB"
+  cpu: "30GiB"
 
 generation:
   temperature: 0.6

@@ -50,13 +50,22 @@ def load_model_and_tokenizer(model_config: dict):
     else:
         ModelClass = transformers.AutoModelForCausalLM
 
-    model = ModelClass.from_pretrained(
-        model_id,
+    device_map = model_config.get("device_map", "auto")
+    load_kwargs = dict(
         quantization_config=bnb_config,
-        device_map=model_config.get("device_map", "auto"),
+        device_map=device_map,
         trust_remote_code=True,
         torch_dtype=torch_dtype,
+        low_cpu_mem_usage=True,
     )
+    # Optional max_memory to prevent OOM during loading (e.g. for multimodal models)
+    if "max_memory" in model_config:
+        load_kwargs["max_memory"] = {
+            int(k) if k.isdigit() else k: v
+            for k, v in model_config["max_memory"].items()
+        }
+
+    model = ModelClass.from_pretrained(model_id, **load_kwargs)
     model.eval()
 
     return model, tokenizer
