@@ -22,12 +22,16 @@ if ! step_done "copy_generations"; then
             library) SRC=/workspace/probe_data_library DEST=/workspace/probe_data_phi4_library ;;
             disease) SRC=/workspace/probe_data_disease DEST=/workspace/probe_data_phi4_disease ;;
         esac
-        mkdir -p "$DEST/generations"
+        mkdir -p "$DEST/generations" "$DEST/prompts"
         if [ -d "$SRC/generations" ]; then
             cp -r "$SRC/generations/"* "$DEST/generations/"
-            echo "  $concept: copied from $SRC"
+            echo "  $concept: copied generations from $SRC"
         else
             echo "  WARNING: $SRC/generations not found, skipping $concept"
+        fi
+        if [ -f "$SRC/prompts/generation_log.jsonl" ]; then
+            cp "$SRC/prompts/generation_log.jsonl" "$DEST/prompts/"
+            echo "  $concept: copied generation_log.jsonl"
         fi
     done
     mark_done "copy_generations"

@@ -67,12 +67,12 @@ REGIME_FILES = {
 }
 
 COLORS = {
-    "baseline": "#2196F3",
-    "technical_disclosure": "#F44336",
-    "control_eli5": "#4CAF50",
-    "control_brevity": "#FF9800",
-    "control_scientific_padding": "#9C27B0",
-    "control_concept_substitution": "#795548",
+    "baseline": "#2B4162",
+    "technical_disclosure": "#8B3A00",
+    "control_eli5": "#5B8C5A",
+    "control_brevity": "#D4A84B",
+    "control_scientific_padding": "#8C4B6E",
+    "control_concept_substitution": "#C75B20",
     "verbatim_evasion": "#E91E63",
 }
 
@@ -191,23 +191,27 @@ def compute_tp_rate_by_layer(trials, position=POSITION):
 def setup_style():
     matplotlib.rcParams.update({
         "font.family": "sans-serif",
+        "font.sans-serif": ["Helvetica", "Arial"],
         "font.size": 10,
-        "axes.titlesize": 12,
+        "axes.titlesize": 14,
+        "axes.titleweight": "bold",
         "axes.labelsize": 11,
-        "xtick.labelsize": 9,
-        "ytick.labelsize": 9,
-        "legend.fontsize": 9,
+        "xtick.labelsize": 10,
+        "ytick.labelsize": 10,
+        "legend.fontsize": 10,
         "figure.dpi": 150,
         "savefig.dpi": 300,
         "savefig.bbox": "tight",
         "axes.spines.top": False,
         "axes.spines.right": False,
+        "axes.facecolor": "white",
+        "figure.facecolor": "white",
     })
 
 
 def fig1_evasion(all_trials, top_layers_by_concept):
     """Bar chart: Baseline vs Technical Disclosure across concepts."""
-    fig, ax = plt.subplots(figsize=(5, 3.5))
+    fig, ax = plt.subplots(figsize=(6, 3.5))
 
     concepts = ["trees", "library", "disease"]
     regimes = ["baseline", "technical_disclosure"]
@@ -249,14 +253,14 @@ def fig1_evasion(all_trials, top_layers_by_concept):
 
 def fig2_controls(all_trials, top_layers_by_concept):
     """Bar chart: Confidence across control prompting styles."""
-    fig, ax = plt.subplots(figsize=(7, 3.5))
+    fig, ax = plt.subplots(figsize=(7, 5.25))
 
     concepts = ["trees", "library", "disease"]
     regimes = ["baseline", "technical_disclosure", "control_eli5", "control_brevity",
                "control_scientific_padding", "control_concept_substitution"]
     x = np.arange(len(concepts))
     n = len(regimes)
-    width = 0.15
+    width = 0.13
 
     for i, regime in enumerate(regimes):
         means = []
@@ -272,29 +276,34 @@ def fig2_controls(all_trials, top_layers_by_concept):
             err_hi.append(hi)
         offset = (i - (n - 1) / 2) * width
         ax.bar(x + offset, means, width,
-               yerr=[err_lo, err_hi], capsize=2,
-               label=REGIME_LABELS[regime], color=COLORS[regime], alpha=0.85,
-               edgecolor="white", linewidth=0.5)
+               yerr=[err_lo, err_hi], capsize=3,
+               label=REGIME_LABELS[regime], color=COLORS[regime], alpha=0.9,
+               edgecolor="white", linewidth=0.5,
+               error_kw={"ecolor": "#333333", "capthick": 1})
 
     ax.set_ylabel("Mean Probe Confidence")
     ax.set_xticks(x)
     ax.set_xticklabels([CONCEPT_LABELS[c] for c in concepts])
     ax.set_ylim(0, 1.05)
+    ax.yaxis.grid(True, alpha=0.3, linestyle="--")
+    ax.set_axisbelow(True)
     ax.axhline(y=0.5, color="gray", linestyle=":", linewidth=0.8, alpha=0.5)
-    ax.legend(frameon=False, ncol=3, loc="upper center", bbox_to_anchor=(0.5, -0.12))
-    ax.set_title("Probes Remain Accurate Across Diverse Prompting Styles")
+    ax.legend(frameon=False, ncol=3, loc="upper center", bbox_to_anchor=(0.5, -0.08),
+              fontsize=10)
+    ax.set_title("Evasion Prompts No More Effective Than Stylistic Perturbations")
 
     fig.tight_layout()
-    path = OUTPUT_DIR / "fig2_controls.pdf"
-    fig.savefig(path)
-    print(f"  Saved {path}")
+    for ext in ["pdf", "png"]:
+        path = OUTPUT_DIR / f"fig2_controls.{ext}"
+        fig.savefig(path, dpi=300, facecolor="white")
+    print(f"  Saved fig2_controls.pdf/png")
     plt.close(fig)
 
 
 def fig3_verbatim(all_trials):
     """Line plot: per-layer TPR for baseline vs verbatim_evasion."""
     concepts = ["trees", "library", "disease"]
-    fig, axes = plt.subplots(1, 3, figsize=(10, 3.5), sharey=True)
+    fig, axes = plt.subplots(1, 3, figsize=(9, 3.5), sharey=True)
 
     for idx, concept in enumerate(concepts):
         ax = axes[idx]
