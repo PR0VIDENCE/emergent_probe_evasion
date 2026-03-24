@@ -2,11 +2,13 @@
 Interactive Probe Scorer — Streamlit app for manual prompt/reasoning/answer
 editing with immediate probe feedback.
 
-Run: streamlit run scripts/probe_scorer.py --server.port 8501
+Run: streamlit run scripts/probe_scorer.py --server.port 8501 --server.address 0.0.0.0
 
 Lets you type prompt, reasoning, and answer text, then runs a forward pass
-through the model and scores probes at multiple positions. Supports caching
-a baseline result and showing deltas on subsequent runs.
+through the model and scores probes at multiple positions. Supports:
+- Loading scenario YAML files and selecting pairs (deceptive/honest)
+- System message field for accurate chat template formatting
+- Caching a baseline result and showing deltas on subsequent runs
 """
 
 import os
@@ -76,16 +78,100 @@ def confidence_color(v: float) -> str:
     return f"#{r:02x}{g:02x}{b:02x}"
 
 
+def find_scenario_files() -> list:
+    """Find all scenario YAML files under data/concepts/deception*."""
+    base = PROJECT_ROOT / "data" / "concepts"
+    files = []
+    if base.is_dir():
+        for f in sorted(base.rglob("scenarios*.yaml")):
+            rel = f.relative_to(PROJECT_ROOT)
+            files.append(str(rel))
+    return files
+
+
+def load_scenarios(path: str) -> list:
+    """Load scenarios list from a YAML file."""
+    data = load_yaml(resolve_path(path))
+    return data.get("scenarios", [])
+
+
+def assemble_prefill_with_system(
+    system_text, prompt_text, thinking_trace, answer_text, tokenizer
+):
+    """
+    Like assemble_prefill_sequence but supports a system message for
+    accurate chat template formatting matching the training pipeline.
+    """
+    import torch
+
+    messages = []
+    if system_text and system_text.strip():
+        messages.append({"role": "system", "content": system_text.strip()})
+    messages.append({"role": "user", "content": prompt_text})
+
+    chat_prompt = tokenizer.apply_chat_template(
+        messages, tokenize=False, add_generation_prompt=True
+    )
+
+    prompt_ids = tokenizer(
+        chat_prompt, return_tensors="pt", truncation=True, max_length=4096
+    )["input_ids"]
+    input_len = prompt_ids.shape[1]
+
+    encode = lambda text: torch.tensor(
+        [tokenizer.encode(text, add_special_tokens=False)]
+    )
+
+    if thinking_trace is not None and thinking_trace.strip():
+        think_ids = encode(thinking_trace)
+        close_ids = encode("\n</think>\n")
+    else:
+        think_ids = torch.zeros(1, 0, dtype=torch.long)
+        close_ids = encode("</think>\n")
+
+    answer_ids = encode(answer_text) if answer_text else torch.zeros(1, 0, dtype=torch.long)
+
+    output_ids = torch.cat([prompt_ids, think_ids, close_ids, answer_ids], dim=1)
+
+    think_end_pos = input_len + think_ids.shape[1]
+    close_end_pos = think_end_pos + close_ids.shape[1]
+    seq_len = output_ids.shape[1]
+
+    end_of_reasoning = think_end_pos + close_ids.shape[1] - 1
+    answer_start = close_end_pos
+    answer_end = seq_len - 1
+
+    first_answer_sentence_end = answer_end
+    if answer_text:
+        sent_match = re.search(r'[.!?]', answer_text)
+        if sent_match:
+            text_to_sent = answer_text[:sent_match.end()]
+            sent_tokens = tokenizer.encode(text_to_sent, add_special_tokens=False)
+            offset = len(sent_tokens) - 1
+            candidate = answer_start + offset
+            if candidate <= answer_end:
+                first_answer_sentence_end = candidate
+
+    positions = {
+        "last_token": seq_len - 1,
+        "end_of_reasoning": min(end_of_reasoning, seq_len - 1),
+        "first_answer_sentence_end": first_answer_sentence_end,
+        "answer_start": min(answer_start, seq_len - 1),
+        "answer_end": answer_end,
+    }
+
+    return output_ids, input_len, positions
+
+
 # ─── Streamlit App ────────────────────────────────────────────────────
 
 st.set_page_config(page_title="Probe Scorer", layout="wide")
 st.title("Interactive Probe Scorer")
 
 # Initialize session state
-if "baseline" not in st.session_state:
-    st.session_state.baseline = None
-if "last_result" not in st.session_state:
-    st.session_state.last_result = None
+for key in ["baseline", "last_result"]:
+    if key not in st.session_state:
+        st.session_state[key] = None
 
 # ─── Sidebar: Config & Loading ────────────────────────────────────────
 
@@ -94,10 +180,11 @@ with st.sidebar:
 
     config_path = st.text_input(
         "Experiment config",
-        value="configs/experiments/evasion_affordances.yaml",
+        value="configs/experiments/deception_prewritten.yaml",
     )
-    # Auto-derive default probe dir from config if possible
-    _default_probe_dir = "/workspace/probe_data_v2/probes"
+
+    # Auto-derive default probe dir from config
+    _default_probe_dir = "/workspace/deception_prewritten_data/probes"
     try:
         _cfg = load_yaml(resolve_path(config_path))
         _base = _cfg.get("storage", {}).get("base_dir", "")
@@ -113,7 +200,6 @@ with st.sidebar:
 
     if st.button("Load Model + Probes", type="primary"):
         try:
-            # Load configs
             full_config_path = resolve_path(config_path)
             config = load_yaml(full_config_path)
             model_config = load_yaml(resolve_path(config["model_config"]))
@@ -124,18 +210,18 @@ with st.sidebar:
             probe_dir = resolve_path(probe_dir_input)
             probe_positions = config.get("probe_positions",
                                          config.get("token_positions", None))
-            num_probes = config.get("num_probes_per_layer",
-                                    len(config.get("probe_training", {}).get("random_seeds", [42, 123, 456, 789])))
+            num_probes = config.get(
+                "num_probes_per_layer",
+                len(config.get("probe_training", {}).get(
+                    "random_seeds", [42, 123, 456, 789])))
             hidden_dim = model_config["hidden_dim"]
 
-            # Discover layers
             target_layers = discover_layers(probe_dir, probe_positions)
             if not target_layers:
                 st.error(f"No probe files found in {probe_dir}")
                 st.stop()
             _cache["target_layers"] = target_layers
 
-            # Load probes
             with st.spinner(f"Loading probes ({len(target_layers)} layers)..."):
                 from run_evasion_experiment import load_probe_ensembles
                 loaded = load_probe_ensembles(
@@ -146,7 +232,6 @@ with st.sidebar:
                 _cache["scalers"] = loaded["scalers"]
                 _cache["per_position"] = loaded["per_position"]
 
-            # Load model
             with st.spinner(f"Loading {model_config['model_id']}..."):
                 from src.inference.extract_activations import load_model_and_tokenizer
                 model, tokenizer = load_model_and_tokenizer(model_config)
@@ -154,7 +239,6 @@ with st.sidebar:
                 _cache["tokenizer"] = tokenizer
 
             st.success("Model + probes loaded!")
-
         except Exception as e:
             st.error(f"Load failed: {e}")
 
@@ -181,49 +265,91 @@ with st.sidebar:
 
 # ─── Main Area ────────────────────────────────────────────────────────
 
-if _cache["experiment_config"] is None:
-    st.info("Load a config via the sidebar to get started.")
-    st.stop()
+# ── Scenario loader ──────────────────────────────────────────────────
+st.subheader("Scenario Loader")
 
-config = _cache["experiment_config"]
-questions = config.get("questions", [])
+scenario_files = find_scenario_files()
+file_labels = ["(none — manual input)"] + scenario_files
+selected_file = st.selectbox("Scenario file", file_labels)
 
-# Question selector
-question_labels = ["(custom)"] + [f"{q['id']}: {q['text'][:80]}..." for q in questions]
-selected_q = st.selectbox("Question (populates prompt)", question_labels)
+scenarios = []
+if selected_file != "(none — manual input)":
+    try:
+        scenarios = load_scenarios(selected_file)
+    except Exception as e:
+        st.error(f"Failed to load scenarios: {e}")
 
-# Determine default prompt text
-default_prompt = ""
-if selected_q != "(custom)" and questions:
-    idx = question_labels.index(selected_q) - 1
-    q_text = questions[idx]["text"]
-    default_prompt = PROMPT_TEMPLATES["evasion_baseline"].format(question=q_text)
+# Pair selector + deceptive/honest toggle
+selected_scenario = None
+if scenarios:
+    pair_labels = []
+    for s in scenarios:
+        pid = s.get("pair_id", "?")
+        cat = s.get("category", "")
+        q_preview = s.get("question", "")[:60]
+        pair_labels.append(f"#{pid} [{cat}] {q_preview}")
 
-# Three text areas
+    sel_col, mode_col = st.columns([3, 1])
+    with sel_col:
+        selected_pair_label = st.selectbox("Select pair", pair_labels)
+    with mode_col:
+        completion_mode = st.radio("Completion", ["deceptive", "honest"],
+                                   horizontal=True)
+
+    pair_idx = pair_labels.index(selected_pair_label)
+    selected_scenario = scenarios[pair_idx]
+
+# ── Text input areas ─────────────────────────────────────────────────
+st.divider()
+
+# Determine defaults from selected scenario
+default_system = ""
+default_question = ""
+default_reasoning = ""
+default_answer = ""
+
+if selected_scenario is not None:
+    default_system = selected_scenario.get("scenario", "")
+    default_question = selected_scenario.get("question", "")
+    prefix = selected_scenario.get("answer_prefix", "")
+    if completion_mode == "deceptive":
+        completion = selected_scenario.get("deceptive_completion", "")
+    else:
+        completion = selected_scenario.get("honest_completion", "")
+    default_answer = f"{prefix} {completion}".strip() if prefix else completion
+
+# System message
+system_text = st.text_area(
+    "System message (scenario context)",
+    value=default_system, height=100,
+    help="Sent as the system role in the chat template, matching the training pipeline format.",
+)
+
+# Three columns: question, reasoning, answer
 col1, col2, col3 = st.columns(3)
 
 with col1:
-    st.markdown("**Prompt**")
+    st.markdown("**User message** (question)")
     prompt_text = st.text_area(
-        "prompt_input", value=default_prompt, height=300,
+        "prompt_input", value=default_question, height=250,
         label_visibility="collapsed",
     )
 
 with col2:
-    st.markdown("**Reasoning** (optional, inserted in `<think>` block)")
+    st.markdown("**Reasoning** (optional `<think>` block)")
     reasoning_text = st.text_area(
-        "reasoning_input", value="", height=300,
+        "reasoning_input", value=default_reasoning, height=250,
         label_visibility="collapsed",
     )
 
 with col3:
-    st.markdown("**Answer**")
+    st.markdown("**Answer** (assistant completion)")
     answer_text = st.text_area(
-        "answer_input", value="", height=300,
+        "answer_input", value=default_answer, height=250,
         label_visibility="collapsed",
     )
 
-# Score button
+# ── Action buttons ───────────────────────────────────────────────────
 btn_col1, btn_col2, btn_col3 = st.columns([1, 1, 4])
 with btn_col1:
     score_clicked = st.button("Score", type="primary",
@@ -242,11 +368,10 @@ if score_clicked:
         st.stop()
 
     if not prompt_text.strip() and not answer_text.strip():
-        st.warning("Enter at least a prompt or answer.")
+        st.warning("Enter at least a question or answer.")
         st.stop()
 
-    # Import scoring functions
-    from prefill_ablation import assemble_prefill_sequence, run_prefill_probe
+    from prefill_ablation import run_prefill_probe
 
     tokenizer = _cache["tokenizer"]
     model = _cache["model"]
@@ -259,8 +384,8 @@ if score_clicked:
 
     with st.spinner("Running forward pass..."):
         t0 = time.time()
-        output_ids, input_len, positions = assemble_prefill_sequence(
-            prompt_text, reasoning_arg, answer_text, tokenizer,
+        output_ids, input_len, positions = assemble_prefill_with_system(
+            system_text, prompt_text, reasoning_arg, answer_text, tokenizer,
         )
 
         result = run_prefill_probe(
@@ -269,7 +394,6 @@ if score_clicked:
         )
         elapsed = time.time() - t0
 
-    # Token counts
     seq_len = output_ids.shape[1]
     think_tokens = 0
     if reasoning_arg:
@@ -277,11 +401,10 @@ if score_clicked:
     answer_tokens = 0
     if answer_text.strip():
         answer_tokens = len(tokenizer.encode(answer_text, add_special_tokens=False))
-    prompt_tokens = input_len
 
     result["_meta"] = {
         "seq_len": seq_len,
-        "prompt_tokens": prompt_tokens,
+        "prompt_tokens": input_len,
         "think_tokens": think_tokens,
         "answer_tokens": answer_tokens,
         "elapsed": elapsed,
@@ -299,7 +422,6 @@ if result is not None:
 
     st.divider()
 
-    # Token breakdown & timing
     st.markdown(
         f"**Sequence**: {meta['seq_len']} tokens "
         f"(prompt={meta['prompt_tokens']}, "
@@ -308,7 +430,6 @@ if result is not None:
         f"— forward pass {meta['elapsed']:.2f}s"
     )
 
-    # Display positions
     display_positions = ["answer_mean_pool", "last_token",
                          "end_of_reasoning", "first_answer_sentence_end"]
     available_positions = [p for p in display_positions if p in probe_results]
@@ -320,12 +441,10 @@ if result is not None:
         if not pos_data:
             continue
 
-        # Compute mean across layers for header
         confs = [pos_data[l]["mean_confidence"] for l in target_layers if l in pos_data]
         mean_conf = sum(confs) / len(confs) if confs else 0.0
         color = confidence_color(mean_conf)
 
-        # Delta from baseline
         delta_str = ""
         if baseline is not None:
             bl_pos = baseline["probe_results"].get(pos, {})
@@ -344,7 +463,6 @@ if result is not None:
             unsafe_allow_html=True,
         )
 
-        # Per-layer bars
         for layer_idx in target_layers:
             layer_data = pos_data.get(layer_idx, {})
             if not layer_data:
@@ -353,7 +471,6 @@ if result is not None:
             bar_color = confidence_color(conf)
             pct = int(conf * 100)
 
-            # Layer-level delta
             layer_delta = ""
             if baseline is not None:
                 bl_layer = baseline["probe_results"].get(pos, {}).get(layer_idx, {})
