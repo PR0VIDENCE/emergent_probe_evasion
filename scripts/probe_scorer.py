@@ -96,9 +96,19 @@ with st.sidebar:
         "Experiment config",
         value="configs/experiments/evasion_affordances.yaml",
     )
+    # Auto-derive default probe dir from config if possible
+    _default_probe_dir = "/workspace/probe_data_v2/probes"
+    try:
+        _cfg = load_yaml(resolve_path(config_path))
+        _base = _cfg.get("storage", {}).get("base_dir", "")
+        if _base:
+            _default_probe_dir = os.path.join(_base, "probes")
+    except Exception:
+        pass
+
     probe_dir_input = st.text_input(
         "Probe directory",
-        value="/workspace/probe_data_v2/probes",
+        value=_default_probe_dir,
     )
 
     if st.button("Load Model + Probes", type="primary"):
@@ -112,8 +122,10 @@ with st.sidebar:
             _cache["model_config"] = model_config
 
             probe_dir = resolve_path(probe_dir_input)
-            probe_positions = config.get("probe_positions", None)
-            num_probes = config["num_probes_per_layer"]
+            probe_positions = config.get("probe_positions",
+                                         config.get("token_positions", None))
+            num_probes = config.get("num_probes_per_layer",
+                                    len(config.get("probe_training", {}).get("random_seeds", [42, 123, 456, 789])))
             hidden_dim = model_config["hidden_dim"]
 
             # Discover layers
