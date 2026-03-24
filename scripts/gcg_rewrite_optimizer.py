@@ -246,26 +246,31 @@ class GCGRewriteOptimizer(GCGReasoningOptimizer):
             print(f"    Rewrite: score={rewrite_score:.4f} ({rewrite_time:.1f}s) | {rewrite_preview}...")
 
             # ── Accept/reject rewrite ──
+            # Compare against best_score (best ever), not current cycle's gcg_score.
+            # This prevents rewrites that erase all accumulated GCG progress.
             if target == "minimize":
-                rewrite_accepted = rewrite_score <= gcg_score + rewrite_tolerance
+                rewrite_accepted = rewrite_score <= best_score + rewrite_tolerance
             else:
-                rewrite_accepted = rewrite_score >= gcg_score - rewrite_tolerance
+                rewrite_accepted = rewrite_score >= best_score - rewrite_tolerance
 
             if rewrite_accepted:
                 current_ids = rewrite_ids
                 r_start, r_end = rw_r_start, rw_r_end
                 a_start, a_end = rw_a_start, rw_a_end
-                best_score = rewrite_score
+                if (target == "minimize" and rewrite_score < best_score) or \
+                   (target == "maximize" and rewrite_score > best_score):
+                    best_score = rewrite_score
                 current_reasoning = rewrite_text
                 accepted_score = rewrite_score
                 accepted_reasoning = rewrite_text
-                print(f"    -> ACCEPTED (delta={rewrite_score - gcg_score:+.4f})")
+                print(f"    -> ACCEPTED (rewrite={rewrite_score:.4f}, "
+                      f"best={best_score:.4f}, tol={rewrite_tolerance})")
             else:
                 accepted_score = gcg_score
                 accepted_reasoning = gcg_reasoning
                 current_reasoning = gcg_reasoning
-                print(f"    -> REJECTED (delta={rewrite_score - gcg_score:+.4f}, "
-                      f"exceeds tolerance {rewrite_tolerance})")
+                print(f"    -> REJECTED (rewrite={rewrite_score:.4f} > "
+                      f"best={best_score:.4f}+{rewrite_tolerance})")
 
             global_step += 1
             score_curve.append({
