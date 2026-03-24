@@ -26,17 +26,25 @@ sys.path.insert(0, str(PROJECT_ROOT / "scripts"))
 
 from src.prompts.templates import PROMPT_TEMPLATES
 
-# ─── Module-level cache (survives Streamlit reruns) ───────────────────
-_cache = {
-    "model": None,
-    "tokenizer": None,
-    "model_config": None,
-    "experiment_config": None,
-    "probe_ensembles": None,
-    "scalers": None,
-    "per_position": None,
-    "target_layers": None,
-}
+# ─── Persistent cache (survives Streamlit reruns) ─────────────────────
+# Streamlit re-executes the main script top-to-bottom on every widget
+# interaction, so a bare module-level dict would be reset to None each time.
+# st.cache_resource runs the function once and returns the same mutable dict
+# object on all subsequent reruns — mutations (like storing the model) persist.
+@st.cache_resource
+def _get_cache():
+    return {
+        "model": None,
+        "tokenizer": None,
+        "model_config": None,
+        "experiment_config": None,
+        "probe_ensembles": None,
+        "scalers": None,
+        "per_position": None,
+        "target_layers": None,
+    }
+
+_cache = _get_cache()
 
 
 def resolve_path(p: str) -> str:
