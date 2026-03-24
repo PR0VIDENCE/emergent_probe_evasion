@@ -379,7 +379,8 @@ if score_clicked:
         st.warning("Enter at least a question or answer.")
         st.stop()
 
-    from prefill_ablation import run_prefill_probe
+    from src.inference.extract_activations import extract_activations_at_positions
+    from run_evasion_experiment import score_probes_at_activation
 
     tokenizer = _cache["tokenizer"]
     model = _cache["model"]
@@ -387,6 +388,12 @@ if score_clicked:
     probe_ensembles = _cache["probe_ensembles"]
     scalers = _cache["scalers"]
     per_position = _cache["per_position"]
+
+    # Determine which positions have probes loaded
+    if per_position:
+        scored_positions = set(probe_ensembles.keys())
+    else:
+        scored_positions = None  # score all positions with _shared probes
 
     reasoning_arg = reasoning_text.strip() if reasoning_text.strip() else None
 
@@ -396,10 +403,38 @@ if score_clicked:
             system_text, prompt_text, reasoning_arg, answer_text, tokenizer,
         )
 
-        result = run_prefill_probe(
-            output_ids, positions, model,
-            target_layers, probe_ensembles, scalers, per_position,
+        import torch as _torch
+        output_ids_gpu = output_ids.to(model.device)
+        activations = extract_activations_at_positions(
+            output_ids_gpu, model, target_layers, positions,
+            answer_start=positions.get("answer_start"),
+            answer_end=positions.get("answer_end"),
         )
+
+        probe_results = {}
+        for pos_name, layer_acts in activations.items():
+            # Skip positions that don't have probes (e.g. end_of_reasoning
+            # when probes were only trained on last_token/answer_mean_pool)
+            if scored_positions is not None and pos_name not in scored_positions:
+                continue
+            pos_results = {}
+            for layer_idx in target_layers:
+                if layer_idx in layer_acts:
+                    activation = layer_acts[layer_idx].float()
+                    pos_results[layer_idx] = score_probes_at_activation(
+                        activation, layer_idx, probe_ensembles, scalers,
+                        position=pos_name, per_position=per_position,
+                    )
+            probe_results[pos_name] = pos_results
+
+        del activations, output_ids_gpu
+        if _torch.cuda.is_available():
+            _torch.cuda.empty_cache()
+
+        result = {
+            "token_positions": {k: int(v) for k, v in positions.items()},
+            "probe_results": probe_results,
+        }
         elapsed = time.time() - t0
 
     seq_len = output_ids.shape[1]
