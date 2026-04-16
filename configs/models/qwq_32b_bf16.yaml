@@ -1,0 +1,41 @@
+# QwQ-32B — bfloat16 (native precision), no quantisation.
+#
+# Intended for multi-GPU hosts (4x H100 80GB). bf16 weights alone are ~64 GB,
+# so this config will NOT fit on a single L40S 48GB — use qwq_32b.yaml (NF4)
+# for that host.
+#
+# On 4x H100 80GB we give each GPU a 70 GiB budget, leaving headroom for the
+# KV cache during batch generation at 32k context.
+
+model_name: qwq-32b-bf16
+model_id: "Qwen/QwQ-32B"
+api_endpoint: null
+local_path: null
+max_tokens: 32768
+temperature: 0.6
+
+# Architecture
+num_layers: 64
+hidden_dim: 5120
+
+# No quantisation — native bf16 weights
+quantization:
+  enabled: false
+
+torch_dtype: bfloat16
+
+# Shard across 4 GPUs; accelerate computes the split from max_memory.
+# Override at runtime (e.g. CUDA_VISIBLE_DEVICES=0,1) if fewer devices are free.
+device_map: auto
+max_memory:
+  0: "70GiB"
+  1: "70GiB"
+  2: "70GiB"
+  3: "70GiB"
+  cpu: "128GiB"
+
+# Recommended generation settings (greedy causes repetition in QwQ)
+generation:
+  temperature: 0.6
+  top_p: 0.95
+  top_k: 20

@@ -35,8 +35,13 @@ def load_model_and_tokenizer(model_config: dict):
     else:
         bnb_config = None
 
-    # Resolve torch_dtype from config (bfloat16 for Gemma 3, float16 for QwQ)
-    _dtype_str = quant_config.get("bnb_4bit_compute_dtype", "bfloat16") if quant_config.get("enabled") else "bfloat16"
+    # Resolve torch_dtype:
+    # - If quantization enabled: use bnb_4bit_compute_dtype (dtype of de-quantised matmul outputs)
+    # - Else: use explicit top-level `torch_dtype` field, falling back to bfloat16
+    if quant_config.get("enabled"):
+        _dtype_str = quant_config.get("bnb_4bit_compute_dtype", "bfloat16")
+    else:
+        _dtype_str = model_config.get("torch_dtype", "bfloat16")
     torch_dtype = getattr(torch, _dtype_str)
 
     tokenizer = AutoTokenizer.from_pretrained(model_id, trust_remote_code=True)
