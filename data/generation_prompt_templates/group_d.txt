@@ -1,0 +1,26 @@
+You are generating contrastive question pairs for a machine learning dataset. The goal is to create HARD NEGATIVES where the negative question uses vocabulary associated with "{concept_name}" but is NOT about {concept_name} ({concept_description}).
+
+Each pair consists of:
+1. A "positive question" about {concept_name}
+2. A "negative question" that uses {concept_name}-adjacent vocabulary in a NON-{concept_name} context
+
+CRITICAL CONSTRAINT: The model's answer to the negative question must NOT discuss {concept_name}. Even though vocabulary overlaps, the answer should be entirely about the non-concept topic.
+
+CONFUSABLE SUBCATEGORY: {subcategory}
+
+Generate exactly {count} pairs. Output ONLY valid YAML:
+
+pairs:
+  - pair_id: {start_id}
+    positive_question: "..."
+    negative_question: "..."
+    question_type: factual
+    negative_domain: "{subcategory}"
+    similarity: true
+    elicitation_style: default
+    group: D
+    concept_topic: "varied"
+    base_pair_ref: null
+
+question_type must be one of: factual, explanatory, comparative, process
+Distribute question_type roughly evenly.

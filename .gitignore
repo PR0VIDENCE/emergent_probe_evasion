@@ -1,4 +1,4 @@
-# Python
+# ---------- Python ----------
 __pycache__/
 *.py[cod]
 *$py.class
@@ -20,44 +20,85 @@ wheels/
 .installed.cfg
 *.egg
 
-# Data and outputs (large/generated files)
+# ---------- Tooling caches ----------
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.cache/
+.coverage
+htmlcov/
+coverage.xml
+
+# ---------- Data and outputs ----------
+# Large/generated artifacts under data/ are ignored by default.
+# Whitelist subdirs that should be tracked.
 data/*
 !data/concepts/
+!data/generation_prompt_templates/
+
+# Downloaded benchmark data (re-fetchable from upstream)
+data/concepts/*/sharma_answer.jsonl
+
+# Per-concept run output directories (rollouts, activations, summaries — regenerable)
+data/concepts/*/stage*/
+
+# Numeric artifacts
 *.pt
 *.pkl
 *.npy
 *.npz
 
-# Experiment tracking
+# Model weights (anywhere)
+*.ckpt
+*.bin
+*.safetensors
+*.h5
+*.pth
+
+# ---------- Experiment tracking ----------
 wandb/
 mlruns/
 *.log
 
-# Environment
+# ---------- Environment ----------
 .env
+.env.*
 .venv
 env/
 venv/
 ENV/
 
-# IDE
+# ---------- Secrets ----------
+.streamlit/secrets.toml
+*.pem
+*.key
+*.p12
+*.pfx
+credentials.json
+
+# ---------- IDE / editors ----------
 .idea/
 .vscode/
 *.swp
 *.swo
+*~
 
-# Jupyter
+# ---------- Jupyter ----------
 .ipynb_checkpoints/
 
-# OS
+# ---------- OS ----------
 .DS_Store
 Thumbs.db
 
-# apollo project
+# ---------- Project-specific ----------
+# Apollo deception-detection repo (vendored gitignored)
 deception-detection/
 
-# misc
-data_dump/
+# Stale local working directory (~1.6GB: old venv + data dumps, not part of
+# current pipeline — code is at the repo root, not inside probe-evasion/)
+probe-evasion/
 
-midterm.md
+# Misc analysis / one-off artifacts
+data_dump/
 analysis/
+midterm.md
