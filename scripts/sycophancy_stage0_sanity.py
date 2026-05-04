@@ -10,6 +10,9 @@ Goals:
   - Verify SyA capitulation on T3 is non-trivial (>5%)
   - Catch pipeline bugs before committing to the 9,600-rollout Stage 1 run
 
+Generation is batched via left-padding (default batch size 10, ~10x throughput
+vs sequential). Falls back to size-1 if a batch fails (e.g., OOM).
+
 Output:
   data/concepts/sycophancy_qa_v2/stage0_sanity/
     rollouts.jsonl          one JSON per generation
@@ -17,7 +20,8 @@ Output:
 
 Usage:
   uv run python scripts/sycophancy_stage0_sanity.py --config configs/experiments/qa_probe_training_sycophancy.yaml
-  uv run python scripts/sycophancy_stage0_sanity.py --config <config> --n-per-source 20 --seed 42
+  uv run python scripts/sycophancy_stage0_sanity.py --config <config> --batch-size 10 --n-per-source 20 --seed 42
+  uv run python scripts/sycophancy_stage0_sanity.py --config <config> --dry-run
 """
 
 import argparse
@@ -138,30 +142,88 @@ def build_prompts(sampled):
     return prompts
 
 
-def generate_one(model, tokenizer, system_prompt, user_text, gen_config):
-    messages = [
-        {"role": "system", "content": system_prompt},
-        {"role": "user", "content": user_text},
-    ]
-    prompt_text = tokenizer.apply_chat_template(
-        messages, tokenize=False, add_generation_prompt=True,
-    )
-    inputs = tokenizer(prompt_text, return_tensors="pt").to(model.device)
+def generate_batch(model, tokenizer, system_prompt, prompt_infos, gen_config):
+    """Batched generation via left-padding for causal LM autoregressive decoding.
 
+    Returns:
+        (results, batch_seconds) where results is a list of (full_response, n_gen_tokens)
+        with the same order/length as prompt_infos.
+    """
+    chat_prompts = [
+        tokenizer.apply_chat_template(
+            [{"role": "system", "content": system_prompt},
+             {"role": "user", "content": p["user_text"]}],
+            tokenize=False, add_generation_prompt=True,
+        )
+        for p in prompt_infos
+    ]
+
+    original_padding_side = tokenizer.padding_side
+    tokenizer.padding_side = "left"
+    inputs = tokenizer(
+        chat_prompts,
+        return_tensors="pt",
+        padding=True,
+        truncation=True,
+        max_length=4096,
+    )
+    inputs = {k: v.to(model.device) for k, v in inputs.items()}
+    tokenizer.padding_side = original_padding_side
+
+    attention_mask = inputs["attention_mask"]
+    input_lens = [int(attention_mask[i].sum().item()) for i in range(len(prompt_infos))]
+
+    pad_id = tokenizer.pad_token_id if tokenizer.pad_token_id is not None else tokenizer.eos_token_id
+
+    t0 = time.time()
     with torch.no_grad():
-        output_ids = model.generate(
+        output_ids_batch = model.generate(
             **inputs,
             max_new_tokens=gen_config["max_new_tokens"],
             temperature=gen_config["temperature"],
             top_p=gen_config["top_p"],
             top_k=gen_config["top_k"],
             do_sample=True,
-            pad_token_id=tokenizer.pad_token_id or tokenizer.eos_token_id,
+            pad_token_id=pad_id,
         )
+    gen_time = time.time() - t0
 
-    new_tokens = output_ids[0, inputs.input_ids.shape[1]:]
-    full_response = tokenizer.decode(new_tokens, skip_special_tokens=True)
-    return full_response, new_tokens.shape[0]
+    padded_input_len = inputs["input_ids"].shape[1]
+    results = []
+    for i in range(len(prompt_infos)):
+        pad_count = padded_input_len - input_lens[i]
+        real_output = output_ids_batch[i, pad_count:]
+        generated_ids = real_output[input_lens[i]:]
+
+        # Strip trailing padding (for QwQ pad_token == eos_token, so trailing pads
+        # are indistinguishable from EOS — keep through the first one).
+        if pad_id is not None and generated_ids.numel() > 0:
+            eos_positions = (generated_ids == pad_id).nonzero(as_tuple=True)[0]
+            if eos_positions.numel() > 0:
+                generated_ids = generated_ids[:eos_positions[0].item() + 1]
+
+        full_response = tokenizer.decode(generated_ids, skip_special_tokens=True)
+        results.append((full_response, int(generated_ids.shape[0])))
+
+    return results, gen_time
+
+
+def generate_with_fallback(model, tokenizer, system_prompt, prompt_infos, gen_config):
+    """Try batched generation; fall back to size-1 if the batch fails (e.g., OOM)."""
+    try:
+        return generate_batch(model, tokenizer, system_prompt, prompt_infos, gen_config)
+    except (torch.cuda.OutOfMemoryError, RuntimeError) as e:
+        msg = str(e)[:120]
+        print(f"  WARN: batch of {len(prompt_infos)} failed ({type(e).__name__}: {msg}); falling back to sequential")
+        if torch.cuda.is_available():
+            torch.cuda.empty_cache()
+        results = []
+        total_time = 0.0
+        for p in prompt_infos:
+            r, t = generate_batch(model, tokenizer, system_prompt, [p], gen_config)
+            results.extend(r)
+            total_time += t
+        return results, total_time
 
 
 def main():
@@ -170,6 +232,8 @@ def main():
     parser.add_argument("--n-per-source", type=int, default=None,
                         help="Override n_per_source from config")
     parser.add_argument("--seed", type=int, default=42)
+    parser.add_argument("--batch-size", type=int, default=10,
+                        help="Generation batch size (default 10, fits L40S 48GB)")
     parser.add_argument("--output-dir", default=None,
                         help="Override default output dir")
     parser.add_argument("--dry-run", action="store_true",
@@ -244,42 +308,55 @@ def main():
 
     pending = [p for p in prompts
                if (p["source"], p["question"], p["framing"]) not in completed]
-    print(f"\nGenerating {len(pending)} rollouts under `neutral` system prompt...")
+    print(f"\nGenerating {len(pending)} rollouts under `neutral` system prompt "
+          f"(batch size {args.batch_size})...")
 
     start = time.time()
+    n_done = 0
+    n_batches = (len(pending) + args.batch_size - 1) // args.batch_size
+
     with open(rollouts_path, "a") as f:
-        for i, p in enumerate(pending):
-            t_gen = time.time()
-            full_response, n_tokens = generate_one(
-                model, tokenizer, neutral_sys, p["user_text"], gen_config,
-            )
-            gen_time = time.time() - t_gen
+        for batch_idx, batch_start in enumerate(range(0, len(pending), args.batch_size)):
+            batch = pending[batch_start:batch_start + args.batch_size]
 
-            thinking, response = parse_qwq_response(full_response)
-            label = score_response(
-                response if response else full_response,
-                p["correct_answer"], p["incorrect_answer"], p["aliases"],
+            batch_results, batch_time = generate_with_fallback(
+                model, tokenizer, neutral_sys, batch, gen_config,
             )
 
-            result = {
-                **p,
-                "system_prompt_id": "neutral",
-                "thinking": thinking,
-                "response": response,
-                "n_gen_tokens": n_tokens,
-                "gen_seconds": round(gen_time, 2),
-                "label": label,
-            }
-            f.write(json.dumps(result) + "\n")
+            label_summary = defaultdict(int)
+            for p, (full_response, n_tokens) in zip(batch, batch_results):
+                thinking, response = parse_qwq_response(full_response)
+                label = score_response(
+                    response if response else full_response,
+                    p["correct_answer"], p["incorrect_answer"], p["aliases"],
+                )
+                label_summary[label] += 1
+
+                result = {
+                    **p,
+                    "system_prompt_id": "neutral",
+                    "thinking": thinking,
+                    "response": response,
+                    "n_gen_tokens": n_tokens,
+                    "gen_seconds_batch": round(batch_time, 2),
+                    "batch_size": len(batch),
+                    "label": label,
+                }
+                f.write(json.dumps(result) + "\n")
             f.flush()
 
-            if (i + 1) % 5 == 0 or i == len(pending) - 1:
-                elapsed = time.time() - start
-                rate = (i + 1) / elapsed * 60
-                eta = (len(pending) - i - 1) / rate if rate > 0 else 0
-                print(f"  {i+1}/{len(pending)} done "
-                      f"({rate:.1f}/min, ETA {eta:.1f}min, "
-                      f"last: {p['framing']} {label} {n_tokens}tok)")
+            n_done += len(batch)
+            elapsed = time.time() - start
+            rate = n_done / elapsed * 60 if elapsed > 0 else 0
+            remaining_batches = n_batches - batch_idx - 1
+            eta_min = (remaining_batches * batch_time) / 60 if batch_time > 0 else 0
+            label_str = " ".join(f"{k}={v}" for k, v in sorted(label_summary.items()))
+            print(f"  batch {batch_idx + 1}/{n_batches}: "
+                  f"{n_done}/{len(pending)} done in {batch_time:.1f}s "
+                  f"({rate:.1f}/min overall, ETA {eta_min:.1f}min) | {label_str}")
+
+            if torch.cuda.is_available():
+                torch.cuda.empty_cache()
 
     # Compute summary
     by_framing = defaultdict(lambda: defaultdict(int))
@@ -338,6 +415,7 @@ def main():
         "config": {
             "n_per_source": n_per_source,
             "seed": args.seed,
+            "batch_size": args.batch_size,
             "system_prompt": "neutral",
         },
     }
