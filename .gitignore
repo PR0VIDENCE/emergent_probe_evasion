@@ -68,6 +68,10 @@ env/
 venv/
 ENV/
 
+# uv lockfile — intentionally ignored (platform-conditional torch index causes
+# Mac/Linux merge conflicts). Reproducibility tradeoff is documented in README.
+uv.lock
+
 # ---------- Secrets ----------
 .streamlit/secrets.toml
 *.pem
