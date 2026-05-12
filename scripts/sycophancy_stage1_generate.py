@@ -74,11 +74,14 @@ def stratified_assignment(questions, n_total, prompt_split, seed):
     """Build the question → system_prompt_id assignment.
 
     Stratified by source (proportional to qwq_knowable composition), shuffle
-    within source with `seed`, take the first quota per source. Within each
-    source, every Kth question (1-indexed, K = round(1 / fraction_strong)) is
-    assigned to `sycophancy_strong`; the rest go to `neutral`. Position is
-    within-source (not global) so pilot ⊂ full holds across source-quota
-    rebalancing.
+    within source with `seed`, take the first quota per source. The prompt with
+    the larger fraction is the "primary"; the smaller is "secondary". Every Kth
+    question within source (1-indexed, K = round(1 / fraction_secondary)) gets
+    the secondary prompt; the rest get primary. Position is within-source (not
+    global) so pilot ⊂ full holds across source-quota rebalancing.
+
+    Single-prompt case (one entry with fraction 1.0): all questions assigned to
+    that prompt — used by the micro-pilot to validate a new prompt's SyA rate.
     """
     import random as _random
 
@@ -104,12 +107,19 @@ def stratified_assignment(questions, n_total, prompt_split, seed):
                 diff -= adj
             i += 1
 
-    if "neutral" not in prompt_split or "sycophancy_strong" not in prompt_split:
-        raise ValueError(f"prompt_split must include neutral + sycophancy_strong, got {prompt_split}")
-    frac_strong = prompt_split["sycophancy_strong"]
-    if frac_strong <= 0 or frac_strong >= 1:
-        raise ValueError(f"fraction sycophancy_strong must be in (0, 1), got {frac_strong}")
-    K = round(1 / frac_strong)  # every Kth within-source position → syc_strong
+    # Sort by fraction descending: primary (largest), secondary (next).
+    sorted_prompts = sorted(prompt_split.items(), key=lambda kv: -kv[1])
+    primary_id, primary_frac = sorted_prompts[0]
+    secondary = sorted_prompts[1] if len(sorted_prompts) > 1 else None
+
+    if secondary is None or secondary[1] == 0:
+        K = None  # all primary
+        secondary_id = None
+    else:
+        secondary_id, secondary_frac = secondary
+        if not (0 < secondary_frac < 1):
+            raise ValueError(f"secondary fraction must be in (0, 1), got {secondary_frac}")
+        K = round(1 / secondary_frac)
 
     rng = _random.Random(seed)
     assignments = []
@@ -117,7 +127,10 @@ def stratified_assignment(questions, n_total, prompt_split, seed):
         pool = by_source[src][:]
         rng.shuffle(pool)
         for src_idx, q in enumerate(pool[:quotas[src]]):
-            sp_id = "sycophancy_strong" if (src_idx + 1) % K == 0 else "neutral"
+            if K is None or (src_idx + 1) % K != 0:
+                sp_id = primary_id
+            else:
+                sp_id = secondary_id
             assignments.append({
                 "question_id": question_id(src, q["question"]),
                 "source": src,
@@ -167,6 +180,12 @@ def main():
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--batch-size", type=int, default=10)
     parser.add_argument("--output-dir", default=None)
+    parser.add_argument("--micro-pilot", action="store_true",
+                        help="Validation pilot: 25 questions × T3+T4 = 50 rollouts under "
+                             "sycophancy_extreme only. Output to stage1_micropilot/. "
+                             "Same seed=42 question pool as pilot mode, so behavior under "
+                             "the new prompt can be compared per-question to the existing "
+                             "pilot's neutral/sycophancy_strong rollouts.")
     parser.add_argument("--dry-run", action="store_true",
                         help="Print plan + first few prompts and exit (no model load)")
     args = parser.parse_args()
@@ -176,7 +195,6 @@ def main():
     syc = config["sycophancy"]
     stage1 = syc["stage_1_training"]
 
-    n_questions = args.n_questions or stage1[args.mode]["n_questions"]
     framings = stage1.get("framings", list(FRAMING_TEMPLATES.keys()))
     if any(f not in FRAMING_TEMPLATES for f in framings):
         raise ValueError(f"unsupported framing in {framings}; supported={list(FRAMING_TEMPLATES)}")
@@ -185,7 +203,16 @@ def main():
     knowable_path = PROJECT_ROOT / stage1["candidate_pool"]
     sys_prompts = load_yaml(data_dir / "system_prompts.yaml")["prompts"]
 
-    output_dir = Path(args.output_dir) if args.output_dir else data_dir / stage1["output_subdir"]
+    if args.micro_pilot:
+        n_questions = args.n_questions or 25
+        prompt_split = {"sycophancy_extreme": 1.0}
+        default_subdir = "stage1_micropilot"
+    else:
+        n_questions = args.n_questions or stage1[args.mode]["n_questions"]
+        prompt_split = stage1["seen_system_prompts"]
+        default_subdir = stage1["output_subdir"]
+
+    output_dir = Path(args.output_dir) if args.output_dir else data_dir / default_subdir
     output_dir.mkdir(parents=True, exist_ok=True)
 
     print(f"Loading qwq_knowable: {knowable_path}")
@@ -197,16 +224,16 @@ def main():
                 questions.append(json.loads(line))
     print(f"  {len(questions)} knowable questions loaded")
 
-    prompt_split = stage1["seen_system_prompts"]
     assignments, quotas = stratified_assignment(questions, n_questions, prompt_split, args.seed)
     sp_count = defaultdict(lambda: defaultdict(int))
     for a in assignments:
         sp_count[a["source"]][a["system_prompt_id"]] += 1
-    print(f"\nQuestion sample (n_total={n_questions}, seed={args.seed}, mode={args.mode}):")
+    mode_label = "micro-pilot" if args.micro_pilot else args.mode
+    print(f"\nQuestion sample (n_total={n_questions}, seed={args.seed}, mode={mode_label}):")
+    print(f"  prompt split: {dict(prompt_split)}")
     for src in sorted(quotas):
-        n_neu = sp_count[src].get("neutral", 0)
-        n_str = sp_count[src].get("sycophancy_strong", 0)
-        print(f"  {src}: {quotas[src]} questions  →  neutral={n_neu}  sycophancy_strong={n_str}")
+        breakdown = "  ".join(f"{sp}={sp_count[src].get(sp, 0)}" for sp in sorted(prompt_split))
+        print(f"  {src}: {quotas[src]} questions  →  {breakdown}")
 
     # Persist the question→prompt map for reproducibility (overwrite each run;
     # it's deterministic from seed + n_questions).
@@ -246,7 +273,7 @@ def main():
     pending = [p for p in prompts if (p["question_id"], p["framing"]) not in completed]
     if not pending:
         print("\nAll rollouts already complete — nothing to generate.")
-        write_summary(output_dir, rollouts_path, sys_prompts, stage1)
+        write_summary(output_dir, rollouts_path, stage1)
         return
 
     print(f"\nLoading model...")
@@ -310,12 +337,12 @@ def main():
             print(f"  [{sp_id}] complete in {(time.time() - sp_start) / 60:.1f}min")
 
     print(f"\nGeneration complete. Total time: {(time.time() - overall_start) / 60:.1f}min")
-    write_summary(output_dir, rollouts_path, sys_prompts, stage1)
+    write_summary(output_dir, rollouts_path, stage1)
     print(f"\nNext: label rollouts with the LLM judge:")
     print(f"  uv run python scripts/sycophancy_label.py --rollouts {rollouts_path}")
 
 
-def write_summary(output_dir, rollouts_path, sys_prompts, stage1):
+def write_summary(output_dir, rollouts_path, stage1):
     by_sp_framing = defaultdict(lambda: defaultdict(int))
     by_sp = defaultdict(int)
     by_source = defaultdict(int)

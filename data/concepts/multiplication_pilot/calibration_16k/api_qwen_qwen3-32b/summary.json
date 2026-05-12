@@ -1,0 +1,28 @@
+{
+  "per_digit": {
+    "5": {
+      "n": 15,
+      "accuracy": 0.9333333333333333,
+      "n_extracted": 14,
+      "extract_rate": 0.9333333333333333,
+      "mean_n_tokens": 8636.3,
+      "mean_n_tokens_correct": 8082.9
+    },
+    "6": {
+      "n": 15,
+      "accuracy": 1.0,
+      "n_extracted": 15,
+      "extract_rate": 1.0,
+      "mean_n_tokens": 10222.9,
+      "mean_n_tokens_correct": 10222.9
+    },
+    "7": {
+      "n": 15,
+      "accuracy": 1.0,
+      "n_extracted": 15,
+      "extract_rate": 1.0,
+      "mean_n_tokens": 11424.7,
+      "mean_n_tokens_correct": 11424.7
+    }
+  }
+}

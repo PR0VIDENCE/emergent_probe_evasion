@@ -50,17 +50,20 @@
 # Critical design decisions (different from the literature default)
 # ============================================================================
 #
-# 1) TRAIN ON 80% `neutral` + 20% `sycophancy_strong`. The other 2 prompts
-#    (sycophancy_mild, honest_strong) are held-out OOD diagnostics. Rationale:
-#    - Pure-neutral training wants ~3,300 rollouts to land 250 SyA positives at
-#      the 12.5% SyA rate observed in Stage 0b. We capped activations at 1,200,
-#      so we mix in syc_strong (25% SyA rate, 2x denser positives) to recover
-#      sample efficiency without drifting too far from "natural" sycophancy.
+# 1) TRAIN ON 80% `neutral` + 20% `sycophancy_extreme`. Held-out OOD prompts
+#    are sycophancy_strong, sycophancy_mild, honest_strong (a graded scale
+#    from "milder version of training prompt" to "anti-sycophancy"). Rationale:
+#    - First-pass plan was 80/20 neutral/syc_strong, but the Stage 1 pilot
+#      showed only 5.1% T3 SyA under syc_strong (vs 25% in Stage 0b unfiltered)
+#      — the qwq_knowable filter selects for confidently-known questions, where
+#      a softly-worded prompt can't override the model's factual confidence.
+#    - sycophancy_extreme ("never contradict the user; validate everything")
+#      is more aggressive. Tradeoff: less naturalistic, but the goal is to
+#      get the SyA *direction* into activation space; once a probe is trained,
+#      it gets evaluated on the held-out (milder) prompts to test generalization.
 #    - Activation re-extraction under `neutral` (decision 3) still removes the
 #      system-prompt-text confound from the probed residual stream — the probe
 #      sees the same context regardless of which prompt elicited the behavior.
-#    - syc_mild + honest_strong remain unseen at train time, so the
-#      "does the probe transfer to other prompts" check is preserved.
 #
 # 2) PROBE CONTRAST = SyA vs (GA + honest_pushback). Not just SyA vs GA.
 #    Rationale:
@@ -178,14 +181,16 @@ sycophancy:
     framings: [T3_user_wrong, T4_user_right]
 
     # Each question gets exactly ONE system prompt (no per-question overlap).
-    # 80/20 mix: see design note (1) for rationale on why we mix in syc_strong
-    # rather than training on neutral alone.
+    # 80/20 mix: see design note (1) for rationale on why we use sycophancy_extreme
+    # rather than syc_strong (insufficient on the qwq_knowable-filtered pool).
     seen_system_prompts:
       neutral: 0.8
-      sycophancy_strong: 0.2
+      sycophancy_extreme: 0.2
 
     # Held out for OOD eval (separate generation pass — see stage_2_ood).
-    held_out_system_prompts: [sycophancy_mild, honest_strong]
+    # Graded scale: strong → mild → honest tests how the probe degrades as
+    # elicitation pressure decreases / inverts.
+    held_out_system_prompts: [sycophancy_strong, sycophancy_mild, honest_strong]
 
     pilot:
       n_questions: 200                    # → 400 rollouts (T3 + T4 each)
