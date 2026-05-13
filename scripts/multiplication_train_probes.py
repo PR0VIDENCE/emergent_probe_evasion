@@ -91,7 +91,7 @@ def train_probe_one(X_train, y_train, X_val, y_val, X_test, y_test, C=1.0, seeds
     val_probs_seeds, test_probs_seeds = [], []
     val_aurocs, test_aurocs = [], []
     for s in seeds:
-        clf = LogisticRegression(C=C, penalty="l2", solver="lbfgs",
+        clf = LogisticRegression(C=C, solver="lbfgs",
                                  max_iter=2000, random_state=s)
         clf.fit(Xt, y_train)
         vp = clf.predict_proba(Xv)[:, 1]
@@ -239,47 +239,116 @@ def main():
     print(f"  combiner val_auroc = {val_combiner_auroc:.4f}")
     print(f"  combiner test_auroc = {test_combiner_auroc:.4f}")
 
-    # === Stratified slice AUROC on test set ===
-    print("\nStratified test AUROC (using best single (layer, position)):")
+    # === Score distribution by slice (test set, best single probe) ===
+    # Within-slice AUROC is mostly useless here since our slices are dominated
+    # by single-class (all-mult or all-non-mult). Mean probe score is the right
+    # quantity — it tells us how confidently the probe scores each subgroup,
+    # which is exactly what we need to diagnose surface-vs-deep signal.
+    print("\nMean probe score by slice (best single probe, on TEST set):")
     best = rows[0]
     best_test_probs = test_probs_table[(best["position"], best["layer"])]
     test_meta = [m for m in metadata if splits[m["problem_id"]] == "test"]
+    # Re-index test_meta to match the order of y_test / probs
+    # (load_activations returns ids in metadata order, and we filtered to test_ids
+    # which is also in metadata order — so positions align)
 
-    def slice_auroc(filter_fn):
+    def slice_stats(filter_fn):
         idx = [i for i, m in enumerate(test_meta) if filter_fn(m)]
         if not idx:
-            return None, 0, 0
+            return {"n": 0, "n_pos": 0, "mean_score": None, "min_score": None, "max_score": None}
         sub_y = y_test[idx]
         sub_p = best_test_probs[idx]
-        if len(set(sub_y)) < 2:
-            return None, len(idx), int(sub_y.sum())
-        return roc_auc_score(sub_y, sub_p), len(idx), int(sub_y.sum())
+        return {
+            "n": len(idx),
+            "n_pos": int(sub_y.sum()),
+            "mean_score": float(sub_p.mean()),
+            "min_score": float(sub_p.min()),
+            "max_score": float(sub_p.max()),
+        }
 
     slice_rows = []
-    for d in [3, 4, 5]:
-        for op in ["mult", "add", "sub"]:
-            auc, n, npos = slice_auroc(lambda m, d=d, op=op: m["digits"] == d and m["operation"] == op)
-            slice_rows.append({"slice": f"{op}_d{d}", "n": n, "n_pos": npos, "auroc": auc})
     for src in ["pure_numerical", "wp_mult_direct", "wp_mult_indirect", "wp_add", "wp_sub"]:
-        auc, n, npos = slice_auroc(lambda m, src=src: m["source"] == src)
-        slice_rows.append({"slice": f"src:{src}", "n": n, "n_pos": npos, "auroc": auc})
-    # uses_op_keyword effect (restricted to mult — adversarial questions vs not)
+        s = slice_stats(lambda m, src=src: m["source"] == src)
+        slice_rows.append({"slice": f"src:{src}", **s})
+    for op in ["mult", "add", "sub"]:
+        for d in [3, 4, 5]:
+            s = slice_stats(lambda m, op=op, d=d: m["operation"] == op and m["digits"] == d)
+            slice_rows.append({"slice": f"{op}_d{d}", **s})
     for uok in [False, True]:
-        auc, n, npos = slice_auroc(lambda m, uok=uok: m["operation"] == "mult" and m["uses_op_keyword"] == uok)
-        slice_rows.append({"slice": f"mult_uses_op_keyword={uok}", "n": n, "n_pos": npos, "auroc": auc})
+        s = slice_stats(lambda m, uok=uok: m["operation"] == "mult" and m["uses_op_keyword"] == uok)
+        slice_rows.append({"slice": f"mult_uses_op_keyword={uok}", **s})
+    for uok in [False, True]:
+        s = slice_stats(lambda m, uok=uok: m["operation"] != "mult" and m["uses_op_keyword"] == uok)
+        slice_rows.append({"slice": f"non_mult_uses_op_keyword={uok}", **s})
 
-    print(f"  {'slice':<40} {'n':>4} {'n_pos':>6} {'auroc':>8}")
+    print(f"  {'slice':<38} {'n':>3} {'n_pos':>5}  {'mean':>6} {'min':>6} {'max':>6}")
     for r in slice_rows:
-        auc_s = f"{r['auroc']:.4f}" if r['auroc'] is not None else "  --  "
-        print(f"  {r['slice']:<40} {r['n']:>4} {r['n_pos']:>6} {auc_s:>8}")
+        ms = f"{r['mean_score']:.4f}" if r['mean_score'] is not None else "  --  "
+        mn = f"{r['min_score']:.4f}" if r['min_score'] is not None else "  --  "
+        mx = f"{r['max_score']:.4f}" if r['max_score'] is not None else "  --  "
+        print(f"  {r['slice']:<38} {r['n']:>3} {r['n_pos']:>5}  {ms:>6} {mn:>6} {mx:>6}")
 
-    slice_csv = out_dir / "slice_auroc.csv"
+    slice_csv = out_dir / "slice_scores.csv"
     with open(slice_csv, "w") as f:
-        f.write("slice,n,n_pos,auroc\n")
+        f.write("slice,n,n_pos,mean_score,min_score,max_score\n")
         for r in slice_rows:
             f.write(f"{r['slice']},{r['n']},{r['n_pos']},"
-                    f"{r['auroc'] if r['auroc'] is not None else ''}\n")
+                    f"{r['mean_score'] if r['mean_score'] is not None else ''},"
+                    f"{r['min_score'] if r['min_score'] is not None else ''},"
+                    f"{r['max_score'] if r['max_score'] is not None else ''}\n")
     print(f"\nWrote {slice_csv}")
+
+    # === Leave-one-source-out generalization ===
+    # Train on 4 sources, test on the 5th. If a probe trained without
+    # wp_mult_indirect still scores it as positive, the operation feature
+    # generalized. If it scores it ambiguously, the probe was source-specific.
+    print("\nLeave-one-source-out generalization (best single (layer, position)):")
+    print("  (train on 4 sources, predict on held-out source)")
+    print(f"  {'held_out_source':<22} {'n':>4} {'n_pos':>5} {'auroc':>7} {'mean_pos':>8} {'mean_neg':>8}")
+
+    loso_rows = []
+    X_full, y_full, ids = load_activations(metadata, rollouts_dir, best["position"])
+    if X_full is not None:
+        id_to_idx = {pid: i for i, pid in enumerate(ids)}
+        source_lookup = {m["problem_id"]: m["source"] for m in metadata}
+        all_sources = ["pure_numerical", "wp_mult_direct", "wp_mult_indirect", "wp_add", "wp_sub"]
+        from sklearn.preprocessing import StandardScaler
+        for held_source in all_sources:
+            train_ids = [pid for pid in ids if source_lookup.get(pid) != held_source]
+            test_ids_l = [pid for pid in ids if source_lookup.get(pid) == held_source]
+            tr_idx = [id_to_idx[p] for p in train_ids]
+            te_idx = [id_to_idx[p] for p in test_ids_l]
+            li = target_layers.index(best["layer"])
+            X_tr = X_full[tr_idx, li, :]
+            X_te = X_full[te_idx, li, :]
+            y_tr = y_full[tr_idx]
+            y_te = y_full[te_idx]
+            if len(X_tr) == 0 or len(X_te) == 0:
+                continue
+            scaler = StandardScaler().fit(X_tr)
+            clf = LogisticRegression(C=args.C, solver="lbfgs", max_iter=2000, random_state=args.seed)
+            clf.fit(scaler.transform(X_tr), y_tr)
+            probs = clf.predict_proba(scaler.transform(X_te))[:, 1]
+            auc = roc_auc_score(y_te, probs) if len(set(y_te)) > 1 else None
+            mean_pos = float(probs[y_te == 1].mean()) if (y_te == 1).any() else None
+            mean_neg = float(probs[y_te == 0].mean()) if (y_te == 0).any() else None
+            n = len(te_idx); npos = int(y_te.sum())
+            auc_s = f"{auc:.4f}" if auc is not None else "  --  "
+            mp = f"{mean_pos:.4f}" if mean_pos is not None else "  --  "
+            mn = f"{mean_neg:.4f}" if mean_neg is not None else "  --  "
+            print(f"  {held_source:<22} {n:>4} {npos:>5}  {auc_s:>6} {mp:>8} {mn:>8}")
+            loso_rows.append({"held_out_source": held_source, "n": n, "n_pos": npos,
+                              "auroc": auc, "mean_pos": mean_pos, "mean_neg": mean_neg})
+
+    loso_csv = out_dir / "loso_auroc.csv"
+    with open(loso_csv, "w") as f:
+        f.write("held_out_source,n,n_pos,auroc,mean_pos_score,mean_neg_score\n")
+        for r in loso_rows:
+            f.write(f"{r['held_out_source']},{r['n']},{r['n_pos']},"
+                    f"{r['auroc'] if r['auroc'] is not None else ''},"
+                    f"{r['mean_pos'] if r['mean_pos'] is not None else ''},"
+                    f"{r['mean_neg'] if r['mean_neg'] is not None else ''}\n")
+    print(f"\nWrote {loso_csv}")
 
     summary = {
         "n_samples": len(metadata),
@@ -297,6 +366,7 @@ def main():
             "test_auroc": test_combiner_auroc,
         },
         "slices": slice_rows,
+        "loso": loso_rows,
     }
     with open(out_dir / "summary.json", "w") as f:
         json.dump(summary, f, indent=2)

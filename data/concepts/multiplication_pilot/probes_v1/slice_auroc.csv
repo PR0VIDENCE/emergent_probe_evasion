@@ -1,0 +1,17 @@
+slice,n,n_pos,auroc
+mult_d3,7,7,
+add_d3,3,0,
+sub_d3,2,0,
+mult_d4,7,7,
+add_d4,3,0,
+sub_d4,2,0,
+mult_d5,7,7,
+add_d5,3,0,
+sub_d5,2,0,
+src:pure_numerical,8,2,1.0
+src:wp_mult_direct,10,10,
+src:wp_mult_indirect,9,9,
+src:wp_add,4,0,
+src:wp_sub,5,0,
+mult_uses_op_keyword=False,17,17,
+mult_uses_op_keyword=True,4,4,
