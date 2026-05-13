@@ -237,6 +237,14 @@ def main():
             out_path = act_dir / f"{r['problem_id']}.pt"
             torch.save(pos_to_tensor, out_path)
 
+            # Prefer explicit label from rollout (adversarial set has "borderline").
+            # Fall back to operation-derived label for the original 250.
+            explicit_label = r.get("label")
+            if explicit_label in ("mult", "non_mult", "borderline"):
+                label = explicit_label
+            else:
+                label = "mult" if r["operation"] == "mult" else "non_mult"
+
             meta = {
                 "problem_id": r["problem_id"],
                 "operation": r["operation"],
@@ -244,12 +252,13 @@ def main():
                 "source": r.get("source", "unknown"),
                 "phrasing_style": r.get("phrasing_style", "unknown"),
                 "uses_op_keyword": bool(r.get("uses_op_keyword", False)),
+                "adversarial_type": r.get("adversarial_type"),
                 "correct": bool(r["correct"]),
                 "n_gen_tokens": r["n_gen_tokens"],
                 "seq_len": seq_len,
                 "positions": {k: int(v) for k, v in positions.items()},
-                "label": "mult" if r["operation"] == "mult" else "non_mult",
-                "label_int": 1 if r["operation"] == "mult" else 0,
+                "label": label,
+                "label_int": 1 if label == "mult" else 0,
                 "target_layers": list(args.target_layers),
             }
             meta_f.write(json.dumps(meta) + "\n")

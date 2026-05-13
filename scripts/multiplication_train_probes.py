@@ -127,6 +127,9 @@ def main():
                         help="Number of (layer, position) pairs in the combiner")
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--C", type=float, default=1.0, help="L2 reg inverse strength")
+    parser.add_argument("--ood-activations-dir", default=None,
+                        help="Optional second activations dir to score with the trained probes "
+                             "(used for adversarial / OOD eval)")
     args = parser.parse_args()
 
     import numpy as np
@@ -350,6 +353,155 @@ def main():
                     f"{r['mean_neg'] if r['mean_neg'] is not None else ''}\n")
     print(f"\nWrote {loso_csv}")
 
+    # === OOD / adversarial eval ===
+    ood_block = None
+    if args.ood_activations_dir:
+        from sklearn.preprocessing import StandardScaler
+        ood_root = PROJECT_ROOT / args.ood_activations_dir
+        ood_meta_path = ood_root / "metadata.jsonl"
+        ood_act_dir = ood_root / "rollouts"
+        if not ood_meta_path.exists():
+            print(f"\nWARN: OOD metadata not found at {ood_meta_path} — skipping OOD eval")
+        else:
+            print(f"\n=== OOD eval ({ood_meta_path}) ===")
+            ood_metadata = [json.loads(l) for l in open(ood_meta_path) if l.strip()]
+            print(f"Loaded {len(ood_metadata)} OOD samples")
+
+            # Refit each top-K (position, layer) probe on TRAIN data only, retain
+            # scaler + ensemble for inference on OOD activations.
+            train_id_set = {pid for pid, sp in splits.items() if sp == "train"}
+            cached_probes = {}  # (pos, layer) -> (scaler, [clf, clf, ...])
+            for r in top_k:
+                pos = r["position"]; layer = r["layer"]
+                X_full, y_full, ids = load_activations(metadata, rollouts_dir, pos)
+                id_to_idx = {pid: i for i, pid in enumerate(ids)}
+                tr_idx = [id_to_idx[pid] for pid in train_id_set if pid in id_to_idx]
+                li = target_layers.index(layer)
+                X_tr = X_full[tr_idx, li, :]
+                y_tr = y_full[tr_idx]
+                scaler_p = StandardScaler().fit(X_tr)
+                Xtr_s = scaler_p.transform(X_tr)
+                clfs = []
+                for s in (42, 123, 456, 789):
+                    clf = LogisticRegression(C=args.C, solver="lbfgs", max_iter=2000, random_state=s)
+                    clf.fit(Xtr_s, y_tr)
+                    clfs.append(clf)
+                cached_probes[(pos, layer)] = (scaler_p, clfs)
+
+            # Score OOD: for each top-K probe, predict; build combiner feature.
+            ood_probs_per_component = []  # list of (n_ood,) arrays in top_k order
+            ood_ids_align = None
+            for r in top_k:
+                pos = r["position"]; layer = r["layer"]
+                X_ood, y_ood, ids_ood = load_activations(ood_metadata, ood_act_dir, pos)
+                if X_ood is None:
+                    print(f"  WARN: no OOD activations for position {pos}")
+                    ood_probs_per_component.append(None)
+                    continue
+                li = target_layers.index(layer)
+                Xo = X_ood[:, li, :]
+                scaler_p, clfs = cached_probes[(pos, layer)]
+                Xo_s = scaler_p.transform(Xo)
+                probs = np.mean([clf.predict_proba(Xo_s)[:, 1] for clf in clfs], axis=0)
+                ood_probs_per_component.append(probs)
+                if ood_ids_align is None:
+                    ood_ids_align = ids_ood
+                else:
+                    assert ids_ood == ood_ids_align, "OOD activation order mismatch across positions"
+
+            # Best single probe — score OOD
+            best_pos = best["position"]; best_layer = best["layer"]
+            X_ood_best, _, _ = load_activations(ood_metadata, ood_act_dir, best_pos)
+            li_best = target_layers.index(best_layer)
+            sc_best, clfs_best = cached_probes[(best_pos, best_layer)]
+            Xo_best = sc_best.transform(X_ood_best[:, li_best, :])
+            best_ood_probs = np.mean(
+                [clf.predict_proba(Xo_best)[:, 1] for clf in clfs_best], axis=0)
+
+            # Combiner — feature is the stack of top-K OOD probs
+            ood_combiner_feat = np.stack(ood_probs_per_component, axis=1)
+            combiner_ood_probs = combiner.predict_proba(ood_combiner_feat)[:, 1]
+
+            ood_id_to_meta = {m["problem_id"]: m for m in ood_metadata}
+            ord_meta = [ood_id_to_meta[pid] for pid in ood_ids_align]
+
+            def ood_slice(filter_fn):
+                idx = [i for i, m in enumerate(ord_meta) if filter_fn(m)]
+                if not idx:
+                    return None
+                bp = np.array([best_ood_probs[i] for i in idx])
+                cp = np.array([combiner_ood_probs[i] for i in idx])
+                labels = [ord_meta[i].get("label", "?") for i in idx]
+                # No fixed binary truth for borderlines; use op==mult as the
+                # "should fire" mask only when label != "borderline".
+                truth = np.array([1 if ord_meta[i].get("label") == "mult" else 0 for i in idx])
+                has_both = len(set(truth)) > 1 and any(ord_meta[i].get("label") != "borderline" for i in idx)
+                auc_best = roc_auc_score(truth, bp) if has_both else None
+                auc_combiner = roc_auc_score(truth, cp) if has_both else None
+                return {
+                    "n": len(idx),
+                    "mean_best": float(bp.mean()),
+                    "mean_combiner": float(cp.mean()),
+                    "auc_best": auc_best,
+                    "auc_combiner": auc_combiner,
+                }
+
+            # Need source/label fields in metadata — they come from rollouts.jsonl
+            # passed through extract_activations. The script writes 'label' and
+            # 'label_int' as mult/non_mult. For adversarial set, we override with
+            # the rollout's `label` (mult/non_mult/borderline). Check metadata.
+            ood_rows = []
+            # By adversarial type — the strongest signal
+            adv_types = sorted({m.get("source", "?") for m in ord_meta})
+            for t in adv_types:
+                s = ood_slice(lambda m, t=t: m.get("source") == t)
+                if s is None: continue
+                ood_rows.append({"slice": f"type:{t}", **s})
+            # By label
+            for lbl in ["mult", "non_mult", "borderline"]:
+                s = ood_slice(lambda m, lbl=lbl: m.get("label") == lbl)
+                if s is None: continue
+                ood_rows.append({"slice": f"label:{lbl}", **s})
+            # Overall mult vs non_mult AUROC (exclude borderline)
+            s = ood_slice(lambda m: m.get("label") in ("mult", "non_mult"))
+            if s is not None:
+                ood_rows.append({"slice": "mult_vs_non_mult (excludes borderline)", **s})
+
+            print(f"\n  {'slice':<46} {'n':>4} {'mean_best':>10} {'mean_comb':>10} {'auc_best':>10} {'auc_comb':>10}")
+            for r in ood_rows:
+                fmt = lambda v: f"{v:.4f}" if v is not None else "   --   "
+                print(f"  {r['slice']:<46} {r['n']:>4} {fmt(r['mean_best']):>10} "
+                      f"{fmt(r['mean_combiner']):>10} {fmt(r['auc_best']):>10} {fmt(r['auc_combiner']):>10}")
+
+            ood_csv = out_dir / "ood_eval.csv"
+            with open(ood_csv, "w") as fh:
+                fh.write("slice,n,mean_best,mean_combiner,auc_best,auc_combiner\n")
+                for r in ood_rows:
+                    fh.write(f"{r['slice']},{r['n']},{r['mean_best']},{r['mean_combiner']},"
+                             f"{r['auc_best'] if r['auc_best'] is not None else ''},"
+                             f"{r['auc_combiner'] if r['auc_combiner'] is not None else ''}\n")
+            print(f"\nWrote {ood_csv}")
+
+            # Per-sample OOD scores — useful for inspecting borderlines specifically
+            per_sample = []
+            for i, m in enumerate(ord_meta):
+                per_sample.append({
+                    "problem_id": m["problem_id"],
+                    "source": m.get("source", ""),
+                    "label": m.get("label", ""),
+                    "uses_op_keyword": m.get("uses_op_keyword", False),
+                    "correct": m.get("correct", None),
+                    "score_best": float(best_ood_probs[i]),
+                    "score_combiner": float(combiner_ood_probs[i]),
+                })
+            per_sample_path = out_dir / "ood_per_sample.jsonl"
+            with open(per_sample_path, "w") as fh:
+                for s in per_sample:
+                    fh.write(json.dumps(s) + "\n")
+            print(f"Wrote {per_sample_path}")
+
+            ood_block = {"slices": ood_rows, "per_sample_path": str(per_sample_path)}
+
     summary = {
         "n_samples": len(metadata),
         "splits": dict(split_counts),
@@ -367,6 +519,7 @@ def main():
         },
         "slices": slice_rows,
         "loso": loso_rows,
+        "ood": ood_block,
     }
     with open(out_dir / "summary.json", "w") as f:
         json.dump(summary, f, indent=2)

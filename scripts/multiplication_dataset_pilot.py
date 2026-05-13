@@ -371,6 +371,10 @@ def main():
         "source": prob.get("source", "unknown"),
         "phrasing_style": prob.get("phrasing_style", "unknown"),
         "uses_op_keyword": prob.get("uses_op_keyword", False),
+        # Adversarial-set fields (None for the original 250). Pass through so
+        # downstream extraction + scoring can group by adversarial label/type.
+        "label": prob.get("label"),
+        "adversarial_type": prob.get("adversarial_type"),
         "user_text": f"{prob['prompt_text']}\n\n{ANSWER_FORMAT_INSTRUCTION}",
     } for prob in problems]
 
