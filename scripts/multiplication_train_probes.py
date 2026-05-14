@@ -431,19 +431,23 @@ def main():
                     return None
                 bp = np.array([best_ood_probs[i] for i in idx])
                 cp = np.array([combiner_ood_probs[i] for i in idx])
-                labels = [ord_meta[i].get("label", "?") for i in idx]
-                # No fixed binary truth for borderlines; use op==mult as the
-                # "should fire" mask only when label != "borderline".
                 truth = np.array([1 if ord_meta[i].get("label") == "mult" else 0 for i in idx])
                 has_both = len(set(truth)) > 1 and any(ord_meta[i].get("label") != "borderline" for i in idx)
                 auc_best = roc_auc_score(truth, bp) if has_both else None
                 auc_combiner = roc_auc_score(truth, cp) if has_both else None
+                # Accuracy: fraction of rollouts where `correct` is True.
+                # Critical for the evasion-regime slices, where we want to
+                # measure the (probe_drop, accuracy_drop) Pareto.
+                correctness = [ord_meta[i].get("correct") for i in idx]
+                valid = [c for c in correctness if c is not None]
+                accuracy = (sum(1 for c in valid if c) / len(valid)) if valid else None
                 return {
                     "n": len(idx),
                     "mean_best": float(bp.mean()),
                     "mean_combiner": float(cp.mean()),
                     "auc_best": auc_best,
                     "auc_combiner": auc_combiner,
+                    "accuracy": accuracy,
                 }
 
             # Need source/label fields in metadata — they come from rollouts.jsonl
@@ -467,19 +471,22 @@ def main():
             if s is not None:
                 ood_rows.append({"slice": "mult_vs_non_mult (excludes borderline)", **s})
 
-            print(f"\n  {'slice':<46} {'n':>4} {'mean_best':>10} {'mean_comb':>10} {'auc_best':>10} {'auc_comb':>10}")
+            print(f"\n  {'slice':<46} {'n':>4} {'mean_best':>10} {'mean_comb':>10} "
+                  f"{'auc_best':>10} {'auc_comb':>10} {'accuracy':>9}")
             for r in ood_rows:
                 fmt = lambda v: f"{v:.4f}" if v is not None else "   --   "
                 print(f"  {r['slice']:<46} {r['n']:>4} {fmt(r['mean_best']):>10} "
-                      f"{fmt(r['mean_combiner']):>10} {fmt(r['auc_best']):>10} {fmt(r['auc_combiner']):>10}")
+                      f"{fmt(r['mean_combiner']):>10} {fmt(r['auc_best']):>10} "
+                      f"{fmt(r['auc_combiner']):>10} {fmt(r.get('accuracy')):>9}")
 
             ood_csv = out_dir / "ood_eval.csv"
             with open(ood_csv, "w") as fh:
-                fh.write("slice,n,mean_best,mean_combiner,auc_best,auc_combiner\n")
+                fh.write("slice,n,mean_best,mean_combiner,auc_best,auc_combiner,accuracy\n")
                 for r in ood_rows:
                     fh.write(f"{r['slice']},{r['n']},{r['mean_best']},{r['mean_combiner']},"
                              f"{r['auc_best'] if r['auc_best'] is not None else ''},"
-                             f"{r['auc_combiner'] if r['auc_combiner'] is not None else ''}\n")
+                             f"{r['auc_combiner'] if r['auc_combiner'] is not None else ''},"
+                             f"{r.get('accuracy') if r.get('accuracy') is not None else ''}\n")
             print(f"\nWrote {ood_csv}")
 
             # Per-sample OOD scores — useful for inspecting borderlines specifically
