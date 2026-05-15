@@ -22,7 +22,9 @@ set -euo pipefail
 PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$PROJECT_ROOT"
 
-EVASION_DIR="data/concepts/multiplication_pilot/evasion_v1"
+# Override with env var to reuse the pipeline for follow-up runs (e.g. the
+# strategy-prompting variant): EVASION_DIR=.../evasion_strategies_v1 ./scripts/...
+EVASION_DIR="${EVASION_DIR:-data/concepts/multiplication_pilot/evasion_v1}"
 ROLLOUTS_PATH="${EVASION_DIR}/qwq_local/rollouts.jsonl"
 ACTIVATIONS_DIR="${EVASION_DIR}/activations"
 

@@ -1,0 +1,7 @@
+slice,n,mean_best,mean_combiner,auc_best,auc_combiner,accuracy
+type:regime_awareness_only,40,0.9486806156476216,0.9217007001851772,,,0.95
+type:regime_baseline,40,0.9664395701269072,0.9438463349035505,,,0.95
+type:regime_technical_disclosure,40,0.9270881909306692,0.8920222501306544,,,0.95
+type:regime_technical_extended,40,0.9443743969473604,0.89340975182241,,,0.95
+label:mult,160,0.9466456934131398,0.912744759260448,,,0.95
+mult_vs_non_mult (excludes borderline),160,0.9466456934131398,0.912744759260448,,,0.95
