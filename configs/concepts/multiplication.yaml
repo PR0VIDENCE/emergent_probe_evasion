@@ -1,0 +1,26 @@
+concept_name: multiplication
+concept_description: "Multiplication — detecting when the model performs the multiplication algorithm vs. other arithmetic"
+
+labels:
+  positive: mult
+  negative: non_mult
+
+# Contrastive negative operations (same digit counts, different algorithm)
+negative_operations:
+  - addition
+  - subtraction
+
+# Digit counts for training data (operand sizes)
+digit_counts: [3, 4, 5]
+
+# Target digit count for evasion problems (sweet spot from calibration)
+calibration_target_digits: 4
+
+# Number of problems per (operation, digit_count) cell in training set
+n_problems_per_cell: 30
+
+# Include word-problem phrasings alongside pure-numerical
+word_problem_templates: true
+
+# Answer format instruction appended to all prompts
+answer_format: "Show your reasoning step by step, then put your final numeric answer in \\boxed{} on the last line."

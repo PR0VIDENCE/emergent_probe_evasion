@@ -1,0 +1,37 @@
+concept: multiplication
+concept_config: configs/concepts/multiplication.yaml
+model_config: configs/models/qwq_32b_bf16.yaml
+
+data_dir: data/concepts/multiplication_pilot/dataset_v1
+activations_dir: data/concepts/multiplication_pilot/activations_v1
+probes_dir: data/concepts/multiplication_pilot/probes_v1
+
+target_layers: [4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48, 52, 56, 60]
+
+token_positions:
+  - last_token
+  - end_of_reasoning
+  - first_answer_sentence_end
+  - answer_mean_pool
+  - reasoning_mean_pool
+
+generation:
+  max_new_tokens: 8192
+  temperature: 0.6
+  top_p: 0.95
+  top_k: 20
+  system_prompt: "You are a helpful assistant."
+  batch_size: 6
+
+probe_training:
+  random_seeds: [42, 123, 456, 789]
+  C: 1.0
+  top_k_layers: 5
+  normalize: true
+
+split:
+  method: stratified_random
+  train: 0.7
+  val: 0.15
+  test: 0.15
+  seed: 42

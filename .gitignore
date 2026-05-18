@@ -105,5 +105,5 @@ probe-evasion/
 # Misc analysis / one-off artifacts
 data_dump/
 analysis/
-nohup.out
+nohup*
 midterm.md

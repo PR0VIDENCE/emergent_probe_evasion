@@ -1,0 +1,57 @@
+description: Learned weighted combination of probe scores. Top-5 layers by answer_mean_pool
+  validation AUROC. Trained on v2 dataset with logistic regression combiner.
+model: logistic_regression
+regularization_C: 1.0
+cross_validated_auc: 0.9808
+feature_order:
+  positions:
+  - answer_mean_pool
+  layers:
+  - 16
+  - 32
+  - 12
+  - 20
+  - 40
+  note: Features are 5 mean_confidence values, one per top-5 layer at answer_mean_pool
+    position.
+scaler:
+  mean:
+  - 0.4954332656205189
+  - 0.4972600978780741
+  - 0.4967771394377443
+  - 0.496233731113757
+  - 0.4976672425852438
+  scale:
+  - 0.46393205946281496
+  - 0.45750258816599904
+  - 0.46141380303238577
+  - 0.4573381274639512
+  - 0.44853820853088217
+weights:
+- 1.3062499480287257
+- 2.264862128166868
+- 1.0909245366025127
+- 0.4203457293725545
+- 2.4738412211578336
+intercept: 0.09391762012449541
+operating_points:
+  zero_fpr:
+    threshold: 0.9996
+    expected_tpr: 0.6234
+    expected_fpr: 0.0
+  strict:
+    threshold: 0.999
+    expected_tpr: 0.7403
+    expected_fpr: 0.013
+  low_fpr:
+    threshold: 0.9988
+    expected_tpr: 0.7922
+    expected_fpr: 0.026
+  balanced:
+    threshold: 0.9235
+    expected_tpr: 0.9481
+    expected_fpr: 0.0519
+  high_recall:
+    threshold: 0.6968
+    expected_tpr: 0.961
+    expected_fpr: 0.0649
