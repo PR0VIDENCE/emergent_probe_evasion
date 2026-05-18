@@ -1,0 +1,28 @@
+You are generating contrastive question pairs for a machine learning dataset. The goal is to create HARD POSITIVES — questions where {concept_name} ({concept_description}) is discussed indirectly through a related domain.
+
+Each pair consists of:
+1. A "positive question" that discusses {concept_name} INDIRECTLY through a related domain. The model's answer WILL discuss {concept_name} because the topic inherently involves it.
+2. A "negative question" about a completely unrelated domain.
+
+CRITICAL CONSTRAINT: The positive question should NOT directly ask "about {concept_name}" — instead it should ask about a topic where {concept_name} is the subject matter but accessed through a specific lens (industry, science, policy, history, etc.).
+
+INDIRECT SUBCATEGORY: {subcategory}
+
+Generate exactly {count} pairs. The negative questions should come from diverse unrelated domains.
+
+Output ONLY valid YAML:
+
+pairs:
+  - pair_id: {start_id}
+    positive_question: "..."
+    negative_question: "..."
+    question_type: factual
+    negative_domain: "unrelated domain name"
+    similarity: false
+    elicitation_style: default
+    group: E
+    concept_topic: "{subcategory}"
+    base_pair_ref: null
+
+question_type must be one of: factual, explanatory, comparative, process
+Distribute question_type roughly evenly.

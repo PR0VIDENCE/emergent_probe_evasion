@@ -1,0 +1,52 @@
+{
+  "per_digit": {
+    "3": {
+      "n": 15,
+      "accuracy": 1.0,
+      "n_extracted": 15,
+      "extract_rate": 1.0,
+      "mean_n_tokens": 4083.3,
+      "mean_n_tokens_correct": 4083.3
+    },
+    "4": {
+      "n": 15,
+      "accuracy": 1.0,
+      "n_extracted": 15,
+      "extract_rate": 1.0,
+      "mean_n_tokens": 7102.7,
+      "mean_n_tokens_correct": 7102.7
+    },
+    "5": {
+      "n": 15,
+      "accuracy": 0.6,
+      "n_extracted": 9,
+      "extract_rate": 0.6,
+      "mean_n_tokens": 11149.5,
+      "mean_n_tokens_correct": 13121.2
+    },
+    "6": {
+      "n": 15,
+      "accuracy": 0.6,
+      "n_extracted": 9,
+      "extract_rate": 0.6,
+      "mean_n_tokens": 11649.1,
+      "mean_n_tokens_correct": 13953.8
+    },
+    "7": {
+      "n": 15,
+      "accuracy": 0.3333333333333333,
+      "n_extracted": 5,
+      "extract_rate": 0.3333333333333333,
+      "mean_n_tokens": 9670.1,
+      "mean_n_tokens_correct": 12626.2
+    },
+    "8": {
+      "n": 14,
+      "accuracy": 0.21428571428571427,
+      "n_extracted": 4,
+      "extract_rate": 0.2857142857142857,
+      "mean_n_tokens": 12608.1,
+      "mean_n_tokens_correct": 28598.0
+    }
+  }
+}

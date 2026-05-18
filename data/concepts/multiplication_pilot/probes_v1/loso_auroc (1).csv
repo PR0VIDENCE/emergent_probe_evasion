@@ -1,0 +1,6 @@
+held_out_source,n,n_pos,auroc,mean_pos_score,mean_neg_score
+pure_numerical,50,20,1.0,0.9989446893289635,0.05281646268013595
+wp_mult_direct,60,60,,0.9370181796164835,
+wp_mult_indirect,60,60,,0.9171834951118716,
+wp_add,50,0,,,0.08203022705470014
+wp_sub,30,0,,,0.08712068672797499

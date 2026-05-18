@@ -1,0 +1,139 @@
+{
+  "n_samples": 250,
+  "splits": {
+    "test": 36,
+    "val": 36,
+    "train": 178
+  },
+  "best_single": {
+    "position": "last_token",
+    "layer": 8,
+    "val_auroc": 1.0,
+    "test_auroc": 1.0
+  },
+  "combiner": {
+    "top_k": 5,
+    "components": [
+      {
+        "position": "last_token",
+        "layer": 8
+      },
+      {
+        "position": "last_token",
+        "layer": 16
+      },
+      {
+        "position": "last_token",
+        "layer": 20
+      },
+      {
+        "position": "last_token",
+        "layer": 24
+      },
+      {
+        "position": "last_token",
+        "layer": 28
+      }
+    ],
+    "val_auroc": 1.0,
+    "test_auroc": 1.0
+  },
+  "slices": [
+    {
+      "slice": "mult_d3",
+      "n": 7,
+      "n_pos": 7,
+      "auroc": null
+    },
+    {
+      "slice": "add_d3",
+      "n": 3,
+      "n_pos": 0,
+      "auroc": null
+    },
+    {
+      "slice": "sub_d3",
+      "n": 2,
+      "n_pos": 0,
+      "auroc": null
+    },
+    {
+      "slice": "mult_d4",
+      "n": 7,
+      "n_pos": 7,
+      "auroc": null
+    },
+    {
+      "slice": "add_d4",
+      "n": 3,
+      "n_pos": 0,
+      "auroc": null
+    },
+    {
+      "slice": "sub_d4",
+      "n": 2,
+      "n_pos": 0,
+      "auroc": null
+    },
+    {
+      "slice": "mult_d5",
+      "n": 7,
+      "n_pos": 7,
+      "auroc": null
+    },
+    {
+      "slice": "add_d5",
+      "n": 3,
+      "n_pos": 0,
+      "auroc": null
+    },
+    {
+      "slice": "sub_d5",
+      "n": 2,
+      "n_pos": 0,
+      "auroc": null
+    },
+    {
+      "slice": "src:pure_numerical",
+      "n": 8,
+      "n_pos": 2,
+      "auroc": 1.0
+    },
+    {
+      "slice": "src:wp_mult_direct",
+      "n": 10,
+      "n_pos": 10,
+      "auroc": null
+    },
+    {
+      "slice": "src:wp_mult_indirect",
+      "n": 9,
+      "n_pos": 9,
+      "auroc": null
+    },
+    {
+      "slice": "src:wp_add",
+      "n": 4,
+      "n_pos": 0,
+      "auroc": null
+    },
+    {
+      "slice": "src:wp_sub",
+      "n": 5,
+      "n_pos": 0,
+      "auroc": null
+    },
+    {
+      "slice": "mult_uses_op_keyword=False",
+      "n": 17,
+      "n_pos": 17,
+      "auroc": null
+    },
+    {
+      "slice": "mult_uses_op_keyword=True",
+      "n": 4,
+      "n_pos": 4,
+      "auroc": null
+    }
+  ]
+}
