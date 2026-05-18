@@ -11,7 +11,7 @@
 
 concept: trees
 concept_config: configs/concepts/trees.yaml
-model_config: configs/models/qwq_32b.yaml
+model_config: configs/models/qwq_32b_bf16.yaml
 data_dir: data/concepts/trees_qa_v2
 target_layers: [4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48, 52, 56, 60]
 
@@ -50,4 +50,4 @@ combiner:
   output_path: configs/probes/weighted_combination_v2.yaml
 
 storage:
-  base_dir: /workspace/probe_data_v2
+  base_dir: /mnt/d2/acp23ajh/probe_evasion/probe_data_v2

@@ -66,7 +66,7 @@ def load_model_and_tokenizer(model_config: dict):
     # Optional max_memory to prevent OOM during loading (e.g. for multimodal models)
     if "max_memory" in model_config:
         load_kwargs["max_memory"] = {
-            int(k) if k.isdigit() else k: v
+            int(k) if isinstance(k, str) and k.isdigit() else k: v
             for k, v in model_config["max_memory"].items()
         }
 
