@@ -70,12 +70,14 @@ def question_id(source: str, q_text: str) -> str:
     return f"{source[:3]}_{h}"
 
 
-def collect_existing_qids(data_dir: Path, subdirs):
+def collect_existing_qids(data_dir: Path, subdirs=None):
     """Return qids that appear in rollouts*.jsonl files under each subdir.
 
-    Used by --signal-topup to skip questions already covered by prior runs so
-    every top-up rollout adds a fresh data point rather than duplicating one.
+    When subdirs is None, auto-discover all `stage1_*` dirs under data_dir so
+    subsequent overnight batches don't redundantly cover qids from earlier ones.
     """
+    if subdirs is None:
+        subdirs = sorted(d.name for d in data_dir.glob("stage1_*") if d.is_dir())
     qids = set()
     for sub in subdirs:
         d = data_dir / sub
@@ -225,11 +227,19 @@ def main():
                              "the new prompt can be compared per-question to the existing "
                              "pilot's neutral/sycophancy_strong rollouts.")
     parser.add_argument("--signal-topup", action="store_true",
-                        help="Signal-check top-up: 100 FRESH questions (not in any prior "
-                             "pilot/micro-pilot run) × T3 only under sycophancy_extreme = "
-                             "100 rollouts. Expected ~24 new SyA positives. Output to "
-                             "stage1_signal_topup/. Excludes qids already present in "
-                             "stage1_train/rollouts*.jsonl + stage1_micropilot/rollouts*.jsonl.")
+                        help="Signal-check top-up: FRESH questions (not in any prior stage1_* "
+                             "run) under sycophancy_extreme with T3 only. Defaults to 100 "
+                             "rollouts. Use --prompt-override / --framings-override / "
+                             "--output-subdir to redirect this mode for custom diverse batches.")
+    parser.add_argument("--prompt-override", default=None,
+                        help="Force a single system prompt at 100% (overrides yaml split). "
+                             "Only used with --signal-topup.")
+    parser.add_argument("--framings-override", default=None,
+                        help="Comma-separated framings to override the default. "
+                             "Only used with --signal-topup (default: T3_user_wrong only).")
+    parser.add_argument("--output-subdir", default=None,
+                        help="Explicit output subdir name under data_dir. Defaults: "
+                             "stage1_train (pilot), stage1_micropilot, stage1_signal_topup.")
     parser.add_argument("--dry-run", action="store_true",
                         help="Print plan + first few prompts and exit (no model load)")
     args = parser.parse_args()
@@ -258,12 +268,19 @@ def main():
         exclude_qids = set()
     elif args.signal_topup:
         n_questions = args.n_questions or 100
-        prompt_split = {"sycophancy_extreme": 1.0}
-        default_subdir = "stage1_signal_topup"
-        framings = ["T3_user_wrong"]
-        # Exclude qids already present in prior pilot / micro-pilot rollout files
-        exclude_qids = collect_existing_qids(data_dir, ["stage1_train", "stage1_micropilot"])
-        print(f"  excluding {len(exclude_qids)} qids already used in prior runs")
+        sp_id = args.prompt_override or "sycophancy_extreme"
+        if sp_id not in sys_prompts:
+            raise ValueError(f"--prompt-override {sp_id!r} not in system_prompts.yaml "
+                             f"(available: {list(sys_prompts)})")
+        prompt_split = {sp_id: 1.0}
+        if args.framings_override:
+            framings = [f.strip() for f in args.framings_override.split(",") if f.strip()]
+        else:
+            framings = ["T3_user_wrong"]
+        default_subdir = args.output_subdir or "stage1_signal_topup"
+        # Exclude qids from all prior stage1_* runs so each new batch is fresh.
+        exclude_qids = collect_existing_qids(data_dir)
+        print(f"  excluding {len(exclude_qids)} qids already used in prior stage1_* runs")
     else:
         n_questions = args.n_questions or stage1[args.mode]["n_questions"]
         prompt_split = stage1["seen_system_prompts"]
