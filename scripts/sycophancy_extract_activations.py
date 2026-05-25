@@ -179,6 +179,11 @@ def process_rollout(r, model, tokenizer, target_layers):
         "system_prompt_id": r["system_prompt_id"],
         "source": r["source"],
         "label_judge": r.get("label_judge"),
+        # is_truncated: response field was empty (model hit max_new_tokens during
+        # the <think> trace and never produced an answer). Activations at the
+        # answer position are mid-deliberation noise — downstream training and
+        # eval filter these by default.
+        "is_truncated": not (r.get("response") or "").strip(),
         "seq_len": int(full_ids.shape[1]),
         "input_len": int(input_len),
         "assistant_tokens": int(full_ids.shape[1] - input_len),

@@ -76,19 +76,35 @@ def load_yaml(path):
 # Dataset loading
 # ----------------------------------------------------------------------------
 
-def load_dataset(activations_dir):
+def infer_truncated(meta):
+    """Return True if this rollout was truncated (model hit max_new_tokens with
+    <think> still going, never produced an answer).
+
+    Prefer the explicit `is_truncated` field written by recent extractor runs.
+    For older extractions without the field, fall back to:
+      positions["end_of_reasoning"] == positions["last_token"]
+    which holds when find_token_positions() couldn't locate </think> and fell
+    back to last_token (i.e., the </think> tag never appeared in the generation).
+    """
+    if "is_truncated" in meta:
+        return bool(meta["is_truncated"])
+    pos = meta.get("positions", {})
+    return pos.get("end_of_reasoning") == pos.get("last_token")
+
+
+def load_dataset(activations_dir, exclude_truncated=True):
     """Load rollouts: pair extraction_log entries with their .pt activation files.
 
     Returns a list of dicts: each with keys
       rollout_id, question_id, framing, system_prompt_id, source, label_judge,
-      label (0/1), activations (dict position → {layer: torch.Tensor})
+      label (0/1), is_truncated, activations (dict position → {layer: torch.Tensor})
     """
     log_path = activations_dir / "extraction_log.jsonl"
     if not log_path.exists():
         raise FileNotFoundError(f"No extraction_log at {log_path}. "
                                 f"Run sycophancy_extract_activations.py first.")
     rollouts = []
-    n_unlabeled = n_excluded = n_missing_act = 0
+    n_unlabeled = n_excluded = n_missing_act = n_truncated = 0
     with open(log_path) as f:
         for line in f:
             line = line.strip()
@@ -102,6 +118,10 @@ def load_dataset(activations_dir):
             label = assign_label(meta["framing"], judge)
             if label is None:
                 n_excluded += 1
+                continue
+            truncated = infer_truncated(meta)
+            if truncated and exclude_truncated:
+                n_truncated += 1
                 continue
             rid = meta["rollout_id"]
             act_path = activations_dir / "activations" / f"{rid}.pt"
@@ -117,11 +137,13 @@ def load_dataset(activations_dir):
                 "source": meta["source"],
                 "label_judge": judge,
                 "label": label,
+                "is_truncated": truncated,
                 "activations": acts,
             })
     print(f"Loaded {len(rollouts)} labeled+contrast rollouts")
     if n_unlabeled:    print(f"  skipped {n_unlabeled} unlabeled")
     if n_excluded:     print(f"  skipped {n_excluded} excluded (neither/T4+inc)")
+    if n_truncated:    print(f"  skipped {n_truncated} truncated (response was empty)")
     if n_missing_act:  print(f"  skipped {n_missing_act} missing activation .pt")
     return rollouts
 
@@ -231,6 +253,11 @@ def main():
                         help="Skip (layer, pos) cells with fewer SyA positives in train.")
     parser.add_argument("--top-k", type=int, default=5,
                         help="Show top-K (layer, position) by val AUROC in summary.")
+    parser.add_argument("--exclude-truncated", action=argparse.BooleanOptionalAction, default=True,
+                        help="Drop rollouts where the model hit max_new_tokens during the "
+                             "<think> trace and never produced an answer. Their answer-position "
+                             "activations are mid-deliberation noise that polluted prior probe "
+                             "results. Use --no-exclude-truncated to include them (diagnostic).")
     args = parser.parse_args()
 
     config_path = PROJECT_ROOT / args.config if not Path(args.config).is_absolute() else Path(args.config)
@@ -246,7 +273,7 @@ def main():
     output_dir = Path(args.output_dir) if args.output_dir else data_dir / "stage1_probes"
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    rollouts = load_dataset(activations_dir)
+    rollouts = load_dataset(activations_dir, exclude_truncated=args.exclude_truncated)
     if not rollouts:
         raise SystemExit("No rollouts loaded — nothing to train on.")
 

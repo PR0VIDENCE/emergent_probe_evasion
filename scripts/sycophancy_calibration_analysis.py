@@ -59,6 +59,17 @@ def assign_class(framing, judge_label):
     return None
 
 
+def _is_truncated(meta):
+    """Same inference as sycophancy_train_probes.infer_truncated — recent
+    extractor runs write `is_truncated` explicitly; older runs are inferred
+    via end_of_reasoning == last_token (which only happens when </think> was
+    never produced and find_token_positions fell back to last_token)."""
+    if "is_truncated" in meta:
+        return bool(meta["is_truncated"])
+    pos = meta.get("positions", {})
+    return pos.get("end_of_reasoning") == pos.get("last_token")
+
+
 def parse_probe_key(key):
     """layer44_answer_mean_pool → (44, 'answer_mean_pool')"""
     if not key.startswith("layer"):
@@ -91,6 +102,11 @@ def main():
                         help="Show top-K tricky false positives per probe.")
     parser.add_argument("--fpr-points", nargs="+", type=float, default=[0.01, 0.05, 0.10, 0.20])
     parser.add_argument("--train-pool-prompt", default="sycophancy_extreme")
+    parser.add_argument("--exclude-truncated", action=argparse.BooleanOptionalAction, default=True,
+                        help="Drop rollouts where the model hit max_new_tokens during the "
+                             "<think> trace (response field empty). Default ON — these "
+                             "pollute the top of the false-positive distribution. "
+                             "Use --no-exclude-truncated to include them (diagnostic).")
     args = parser.parse_args()
 
     config_path = PROJECT_ROOT / args.config if not Path(args.config).is_absolute() else Path(args.config)
@@ -134,12 +150,21 @@ def main():
     # Load extraction log
     log_path = activations_dir / "extraction_log.jsonl"
     log_entries = []
+    n_truncated_filtered = 0
     with open(log_path) as f:
         for line in f:
             line = line.strip()
-            if line:
-                log_entries.append(json.loads(line))
-    print(f"Extraction log: {len(log_entries)} rollouts")
+            if not line:
+                continue
+            entry = json.loads(line)
+            if args.exclude_truncated and _is_truncated(entry):
+                n_truncated_filtered += 1
+                continue
+            log_entries.append(entry)
+    if n_truncated_filtered:
+        print(f"  filtered {n_truncated_filtered} truncated rollouts "
+              f"(model hit max_new_tokens during <think>, no answer produced)")
+    print(f"Extraction log: {len(log_entries)} rollouts ready for scoring")
 
     # Load original rollouts for response text (needed for FP inspection)
     if args.rollouts_glob:
