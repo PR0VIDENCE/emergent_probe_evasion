@@ -55,9 +55,13 @@ def parse_calibration(d):
     for sec in sections[1:]:
         first_line = sec.splitlines()[0]
         probe_name = first_line.strip().strip("`").strip()
-        # First DiffMean TPR-table — captures FPR/TPR pairs
-        dm_block = re.search(r"### TPR @ fixed FPR \(diffmean\)\s*\n(.+?)\n\n",
-                             sec, flags=re.S)
+        # Capture the entire DiffMean TPR section up to the next subheading
+        # (the prior regex with `\n\n` stopped at the blank line right after
+        # the header and never reached the table).
+        dm_block = re.search(
+            r"### TPR @ fixed FPR \(diffmean\)(.*?)(?=### TPR @ fixed FPR \(lr\)|### Top \d|\Z)",
+            sec, flags=re.S,
+        )
         catch = re.search(r"Catching ALL .*? costs FPR = ([\d.]+)%", sec)
         if not dm_block or not catch:
             continue
@@ -162,18 +166,18 @@ def main():
         lines.append("|---|---|---|---|---|---|---|---|")
         for x in ca:
             y = by_b.get(x["probe"])
+            def pct(v): return f"{v}%" if isinstance(v, (int, float)) else "—"
             if y is None:
                 # Probe present in A but not B
                 lines.append(
-                    f"| {x['probe']} | {x['tpr_at_5']}% | — | "
-                    f"{x['tpr_at_10']}% | — | "
+                    f"| {x['probe']} | {pct(x['tpr_at_5'])} | — | "
+                    f"{pct(x['tpr_at_10'])} | — | "
                     f"{x['catch_all_fpr']:.1f}% | — | — |"
                 )
                 continue
             # Both present — full row
             a_catch = x["catch_all_fpr"]; b_catch = y["catch_all_fpr"]
             delta_catch = f"{a_catch - b_catch:+.1f}%"
-            def pct(v): return f"{v}%" if isinstance(v, (int, float)) else "—"
             lines.append(
                 f"| {x['probe']} | {pct(x['tpr_at_5'])} | {pct(y['tpr_at_5'])} | "
                 f"{pct(x['tpr_at_10'])} | {pct(y['tpr_at_10'])} | "
