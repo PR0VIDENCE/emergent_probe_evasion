@@ -1,0 +1,5 @@
+{"problem_id": "evasion_d2_pn_000", "operation": "mult", "digits": 2, "a": 91, "b": 24, "answer": 2184, "prompt_text": "Compute 91 \u00d7 24.", "phrasing_style": "pure_numerical", "label": "mult"}
+{"problem_id": "evasion_d2_pn_001", "operation": "mult", "digits": 2, "a": 13, "b": 45, "answer": 585, "prompt_text": "Compute 13 \u00d7 45.", "phrasing_style": "pure_numerical", "label": "mult"}
+{"problem_id": "evasion_d2_pn_002", "operation": "mult", "digits": 2, "a": 41, "b": 38, "answer": 1558, "prompt_text": "Compute 41 \u00d7 38.", "phrasing_style": "pure_numerical", "label": "mult"}
+{"problem_id": "evasion_d2_pn_003", "operation": "mult", "digits": 2, "a": 27, "b": 23, "answer": 621, "prompt_text": "Compute 27 \u00d7 23.", "phrasing_style": "pure_numerical", "label": "mult"}
+{"problem_id": "evasion_d2_pn_004", "operation": "mult", "digits": 2, "a": 96, "b": 79, "answer": 7584, "prompt_text": "Compute 96 \u00d7 79.", "phrasing_style": "pure_numerical", "label": "mult"}

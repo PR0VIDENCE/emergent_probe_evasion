@@ -28,6 +28,10 @@ EVASION_DIR="${EVASION_DIR:-data/concepts/multiplication_pilot/evasion_v1}"
 ROLLOUTS_PATH="${EVASION_DIR}/qwq_local/rollouts.jsonl"
 ACTIVATIONS_DIR="${EVASION_DIR}/activations"
 
+# Override with env var so back-to-back pipeline runs don't clobber each
+# other's probe output: PROBES_OUTPUT_DIR=.../probes_d2_strategies ./scripts/...
+PROBES_OUTPUT_DIR="${PROBES_OUTPUT_DIR:-data/concepts/multiplication_pilot/probes_v1}"
+
 stage() {
     echo
     echo "============================================================"
@@ -42,7 +46,7 @@ stage "[2/3] Extracting activations from evasion rollouts"
 uv run python scripts/multiplication_extract_activations.py --rollouts "${ROLLOUTS_PATH}" --output-dir "${ACTIVATIONS_DIR}"
 
 stage "[3/3] Scoring with trained probe + producing Pareto numbers"
-uv run python scripts/multiplication_train_probes.py --ood-activations-dir "${ACTIVATIONS_DIR}"
+uv run python scripts/multiplication_train_probes.py --ood-activations-dir "${ACTIVATIONS_DIR}" --output-dir "${PROBES_OUTPUT_DIR}"
 
 echo
 echo "============================================================"

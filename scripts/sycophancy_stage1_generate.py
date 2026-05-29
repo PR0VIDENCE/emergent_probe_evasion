@@ -70,6 +70,35 @@ def question_id(source: str, q_text: str) -> str:
     return f"{source[:3]}_{h}"
 
 
+def collect_existing_qids(data_dir: Path, subdirs=None):
+    """Return qids that appear in rollouts*.jsonl files under each subdir.
+
+    When subdirs is None, auto-discover all `stage1_*` dirs under data_dir so
+    subsequent overnight batches don't redundantly cover qids from earlier ones.
+    """
+    if subdirs is None:
+        subdirs = sorted(d.name for d in data_dir.glob("stage1_*") if d.is_dir())
+    qids = set()
+    for sub in subdirs:
+        d = data_dir / sub
+        if not d.is_dir():
+            continue
+        for path in sorted(d.glob("rollouts*.jsonl")):
+            with open(path) as f:
+                for line in f:
+                    line = line.strip()
+                    if not line:
+                        continue
+                    try:
+                        r = json.loads(line)
+                    except json.JSONDecodeError:
+                        continue
+                    qid = r.get("question_id")
+                    if qid:
+                        qids.add(qid)
+    return qids
+
+
 def stratified_assignment(questions, n_total, prompt_split, seed):
     """Build the question → system_prompt_id assignment.
 
@@ -145,11 +174,22 @@ def stratified_assignment(questions, n_total, prompt_split, seed):
     return assignments, quotas
 
 
-def build_prompts(assignments):
-    """Expand each assignment into one prompt per framing."""
+def build_prompts(assignments, framings=None):
+    """Expand each assignment into one prompt per framing.
+
+    framings=None → use all FRAMING_TEMPLATES. Otherwise restrict to the given
+    list (e.g., ["T3_user_wrong"] for the signal-check top-up).
+    """
+    if framings is None:
+        framings = list(FRAMING_TEMPLATES.keys())
+    for fr in framings:
+        if fr not in FRAMING_TEMPLATES:
+            raise ValueError(f"unknown framing {fr!r}; supported={list(FRAMING_TEMPLATES)}")
+
     prompts = []
     for a in assignments:
-        for framing, tpl in FRAMING_TEMPLATES.items():
+        for framing in framings:
+            tpl = FRAMING_TEMPLATES[framing]
             user_text = tpl.format(
                 question=a["question"],
                 correct_answer=a["correct_answer"],
@@ -186,6 +226,20 @@ def main():
                              "Same seed=42 question pool as pilot mode, so behavior under "
                              "the new prompt can be compared per-question to the existing "
                              "pilot's neutral/sycophancy_strong rollouts.")
+    parser.add_argument("--signal-topup", action="store_true",
+                        help="Signal-check top-up: FRESH questions (not in any prior stage1_* "
+                             "run) under sycophancy_extreme with T3 only. Defaults to 100 "
+                             "rollouts. Use --prompt-override / --framings-override / "
+                             "--output-subdir to redirect this mode for custom diverse batches.")
+    parser.add_argument("--prompt-override", default=None,
+                        help="Force a single system prompt at 100% (overrides yaml split). "
+                             "Only used with --signal-topup.")
+    parser.add_argument("--framings-override", default=None,
+                        help="Comma-separated framings to override the default. "
+                             "Only used with --signal-topup (default: T3_user_wrong only).")
+    parser.add_argument("--output-subdir", default=None,
+                        help="Explicit output subdir name under data_dir. Defaults: "
+                             "stage1_train (pilot), stage1_micropilot, stage1_signal_topup.")
     parser.add_argument("--dry-run", action="store_true",
                         help="Print plan + first few prompts and exit (no model load)")
     args = parser.parse_args()
@@ -203,14 +257,36 @@ def main():
     knowable_path = PROJECT_ROOT / stage1["candidate_pool"]
     sys_prompts = load_yaml(data_dir / "system_prompts.yaml")["prompts"]
 
+    if args.micro_pilot and args.signal_topup:
+        raise ValueError("--micro-pilot and --signal-topup are mutually exclusive")
+
     if args.micro_pilot:
         n_questions = args.n_questions or 25
         prompt_split = {"sycophancy_extreme": 1.0}
         default_subdir = "stage1_micropilot"
+        framings = ["T3_user_wrong", "T4_user_right"]
+        exclude_qids = set()
+    elif args.signal_topup:
+        n_questions = args.n_questions or 100
+        sp_id = args.prompt_override or "sycophancy_extreme"
+        if sp_id not in sys_prompts:
+            raise ValueError(f"--prompt-override {sp_id!r} not in system_prompts.yaml "
+                             f"(available: {list(sys_prompts)})")
+        prompt_split = {sp_id: 1.0}
+        if args.framings_override:
+            framings = [f.strip() for f in args.framings_override.split(",") if f.strip()]
+        else:
+            framings = ["T3_user_wrong"]
+        default_subdir = args.output_subdir or "stage1_signal_topup"
+        # Exclude qids from all prior stage1_* runs so each new batch is fresh.
+        exclude_qids = collect_existing_qids(data_dir)
+        print(f"  excluding {len(exclude_qids)} qids already used in prior stage1_* runs")
     else:
         n_questions = args.n_questions or stage1[args.mode]["n_questions"]
         prompt_split = stage1["seen_system_prompts"]
         default_subdir = stage1["output_subdir"]
+        framings = stage1.get("framings", ["T3_user_wrong", "T4_user_right"])
+        exclude_qids = set()
 
     output_dir = Path(args.output_dir) if args.output_dir else data_dir / default_subdir
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -224,11 +300,21 @@ def main():
                 questions.append(json.loads(line))
     print(f"  {len(questions)} knowable questions loaded")
 
+    if exclude_qids:
+        before = len(questions)
+        questions = [q for q in questions if question_id(q["source"], q["question"]) not in exclude_qids]
+        print(f"  after excluding prior-run qids: {len(questions)} ({before - len(questions)} dropped)")
+
     assignments, quotas = stratified_assignment(questions, n_questions, prompt_split, args.seed)
     sp_count = defaultdict(lambda: defaultdict(int))
     for a in assignments:
         sp_count[a["source"]][a["system_prompt_id"]] += 1
-    mode_label = "micro-pilot" if args.micro_pilot else args.mode
+    if args.micro_pilot:
+        mode_label = "micro-pilot"
+    elif args.signal_topup:
+        mode_label = "signal-topup"
+    else:
+        mode_label = args.mode
     print(f"\nQuestion sample (n_total={n_questions}, seed={args.seed}, mode={mode_label}):")
     print(f"  prompt split: {dict(prompt_split)}")
     for src in sorted(quotas):
@@ -243,7 +329,7 @@ def main():
             f.write(json.dumps({k: v for k, v in a.items() if k != "src_idx"}) + "\n")
     print(f"  wrote {qa_path.name} ({len(assignments)} entries)")
 
-    prompts = build_prompts(assignments)
+    prompts = build_prompts(assignments, framings=framings)
     print(f"\nTotal rollouts to generate (after framing expansion): {len(prompts)}")
     print(f"Output dir: {output_dir}")
 

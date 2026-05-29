@@ -489,6 +489,111 @@ def main():
                              f"{r.get('accuracy') if r.get('accuracy') is not None else ''}\n")
             print(f"\nWrote {ood_csv}")
 
+            # === Full (layer, position) sweep ===
+            # The earlier OOD block only scored the top-K probes + the single
+            # best. If the evasion regime successfully suppresses the layer-8
+            # signal while leaving other layers active, the headline stats hide
+            # it. Re-score every (layer, position) probe on the OOD set so we
+            # can see per-regime, per-probe variance.
+            print(f"\n=== Full per-probe sweep on OOD (all {len(args.positions)} positions × {len(target_layers)} layers) ===")
+            sweep_rows = []  # one row per (source, position, layer)
+            # Per-position, load OOD activations once
+            ood_X_by_pos = {}
+            for pos in args.positions:
+                X_ood, _, ids_ood = load_activations(ood_metadata, ood_act_dir, pos)
+                if X_ood is None:
+                    continue
+                # The earlier OOD block asserted activation orders match across
+                # positions, so ids_ood == ood_ids_align. Trust that here.
+                ood_X_by_pos[pos] = X_ood
+
+            # Per-position, refit a single (no ensemble) probe per layer on
+            # in-distribution train data, predict OOD.
+            for pos in args.positions:
+                if pos not in ood_X_by_pos:
+                    continue
+                X_id, y_id, ids_id = load_activations(metadata, rollouts_dir, pos)
+                id_to_idx = {pid: i for i, pid in enumerate(ids_id)}
+                tr_idx = [id_to_idx[pid] for pid in train_id_set if pid in id_to_idx]
+                X_ood_pos = ood_X_by_pos[pos]
+                for li, layer in enumerate(target_layers):
+                    X_tr = X_id[tr_idx, li, :]
+                    y_tr = y_id[tr_idx]
+                    scaler_p = StandardScaler().fit(X_tr)
+                    clf = LogisticRegression(
+                        C=args.C, solver="lbfgs", max_iter=2000,
+                        random_state=args.seed)
+                    clf.fit(scaler_p.transform(X_tr), y_tr)
+                    probs_ood = clf.predict_proba(
+                        scaler_p.transform(X_ood_pos[:, li, :]))[:, 1]
+                    # Group by source — these are regime names for evasion
+                    # data, adversarial-type names for the adversarial set, etc.
+                    sources = sorted({m.get("source", "?") for m in ord_meta})
+                    for source in sources:
+                        sidx = [i for i, m in enumerate(ord_meta)
+                                if m.get("source") == source]
+                        if not sidx:
+                            continue
+                        sub = probs_ood[sidx]
+                        sweep_rows.append({
+                            "source": source,
+                            "position": pos,
+                            "layer": layer,
+                            "n": len(sidx),
+                            "mean": float(sub.mean()),
+                            "min": float(sub.min()),
+                            "max": float(sub.max()),
+                        })
+
+            sweep_csv = out_dir / "ood_per_probe.csv"
+            with open(sweep_csv, "w") as fh:
+                fh.write("source,position,layer,n,mean,min,max\n")
+                for r in sweep_rows:
+                    fh.write(f'{r["source"]},{r["position"]},{r["layer"]},'
+                             f'{r["n"]},{r["mean"]},{r["min"]},{r["max"]}\n')
+            print(f"Wrote {sweep_csv}  ({len(sweep_rows)} probe×source rows)")
+
+            # Per-source summary across all probes: where does the probe see
+            # least signal under each source?
+            from collections import defaultdict as _dd
+            per_source = _dd(list)
+            for r in sweep_rows:
+                per_source[r["source"]].append(r)
+            print(f"\n  {'source':<42} {'mean_across':>11} {'min_probe':>10} "
+                  f"{'min_at':<28} {'max_probe':>10}")
+            for source in sorted(per_source):
+                vals = per_source[source]
+                means = [v["mean"] for v in vals]
+                mean_all = sum(means) / len(means)
+                min_v = min(vals, key=lambda v: v["mean"])
+                max_v = max(vals, key=lambda v: v["mean"])
+                min_at = f"{min_v['position']}@L{min_v['layer']}"
+                print(f"  {source:<42} {mean_all:>11.4f} "
+                      f"{min_v['mean']:>10.4f} {min_at:<28} {max_v['mean']:>10.4f}")
+
+            # Per-source: how much does the probe drop vs baseline AT THE SAME
+            # (layer, position)? Useful when baseline is a source and we're
+            # comparing other sources (evasion regimes) to it.
+            if any(s in per_source for s in ["regime_baseline"]):
+                base = {(r["position"], r["layer"]): r["mean"]
+                        for r in per_source.get("regime_baseline", [])}
+                if base:
+                    print(f"\n  per-source max drop vs baseline (at the (pos, layer) "
+                          f"where the drop is largest):")
+                    print(f"  {'source':<42} {'drop':>8} {'at':<28}")
+                    for source in sorted(per_source):
+                        if source == "regime_baseline":
+                            continue
+                        gaps = []
+                        for r in per_source[source]:
+                            b = base.get((r["position"], r["layer"]))
+                            if b is None: continue
+                            gaps.append((b - r["mean"], r["position"], r["layer"]))
+                        if gaps:
+                            d, p, l = max(gaps)
+                            print(f"  {source:<42} {d:>8.4f}  "
+                                  f"{p}@L{l}")
+
             # Per-sample OOD scores — useful for inspecting borderlines specifically
             per_sample = []
             for i, m in enumerate(ord_meta):
