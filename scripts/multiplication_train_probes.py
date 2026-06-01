@@ -425,6 +425,39 @@ def main():
             ood_id_to_meta = {m["problem_id"]: m for m in ood_metadata}
             ord_meta = [ood_id_to_meta[pid] for pid in ood_ids_align]
 
+            # === Robust pool-position benchmarks ===
+            # Average probe predictions across all 15 layers within
+            # reasoning_mean_pool and answer_mean_pool. These are more stable
+            # than the val-best single probe and avoid cherry-picking by
+            # val-set characteristics. Same train-set as the rest of the OOD
+            # analysis (no peeking).
+            pool_probs = {}
+            for pool_pos in ["reasoning_mean_pool", "answer_mean_pool"]:
+                X_id_all, y_id_all, ids_id_all = load_activations(
+                    metadata, rollouts_dir, pool_pos)
+                X_ood_all, _, _ = load_activations(
+                    ood_metadata, ood_act_dir, pool_pos)
+                if X_id_all is None or X_ood_all is None:
+                    continue
+                id_to_idx = {pid: i for i, pid in enumerate(ids_id_all)}
+                tr_idx = [id_to_idx[pid] for pid in train_id_set
+                          if pid in id_to_idx]
+                per_layer_probs = []
+                for li, layer in enumerate(target_layers):
+                    X_tr = X_id_all[tr_idx, li, :]
+                    y_tr = y_id_all[tr_idx]
+                    sc = StandardScaler().fit(X_tr)
+                    cl = LogisticRegression(
+                        C=args.C, solver="lbfgs", max_iter=2000,
+                        random_state=args.seed)
+                    cl.fit(sc.transform(X_tr), y_tr)
+                    per_layer_probs.append(
+                        cl.predict_proba(sc.transform(X_ood_all[:, li, :]))[:, 1])
+                if per_layer_probs:
+                    pool_probs[pool_pos] = np.mean(per_layer_probs, axis=0)
+                    print(f"  pool benchmark {pool_pos}: averaged across "
+                          f"{len(per_layer_probs)} layers, mean={pool_probs[pool_pos].mean():.4f}")
+
             def ood_slice(filter_fn):
                 idx = [i for i, m in enumerate(ord_meta) if filter_fn(m)]
                 if not idx:
@@ -441,7 +474,7 @@ def main():
                 correctness = [ord_meta[i].get("correct") for i in idx]
                 valid = [c for c in correctness if c is not None]
                 accuracy = (sum(1 for c in valid if c) / len(valid)) if valid else None
-                return {
+                out = {
                     "n": len(idx),
                     "mean_best": float(bp.mean()),
                     "mean_combiner": float(cp.mean()),
@@ -449,6 +482,14 @@ def main():
                     "auc_combiner": auc_combiner,
                     "accuracy": accuracy,
                 }
+                # Robust pool benchmarks (the recommended headline metrics).
+                for pos_name, probs in pool_probs.items():
+                    sub = probs[idx]
+                    out[f"mean_{pos_name}"] = float(sub.mean())
+                    # AUROC if we have both classes in this slice
+                    if has_both:
+                        out[f"auc_{pos_name}"] = roc_auc_score(truth, sub)
+                return out
 
             # Need source/label fields in metadata — they come from rollouts.jsonl
             # passed through extract_activations. The script writes 'label' and
@@ -471,22 +512,43 @@ def main():
             if s is not None:
                 ood_rows.append({"slice": "mult_vs_non_mult (excludes borderline)", **s})
 
+            # Robust pool columns dynamically — only present if data was loaded
+            pool_cols = []
+            for pos_name in ["reasoning_mean_pool", "answer_mean_pool"]:
+                if pos_name in pool_probs:
+                    pool_cols.append(pos_name)
+            pool_short = {"reasoning_mean_pool": "mean_reason_pool",
+                          "answer_mean_pool":    "mean_answer_pool"}
+
+            header_extra = "".join(f" {pool_short[p]:>16}" for p in pool_cols)
             print(f"\n  {'slice':<46} {'n':>4} {'mean_best':>10} {'mean_comb':>10} "
-                  f"{'auc_best':>10} {'auc_comb':>10} {'accuracy':>9}")
+                  f"{'auc_best':>10} {'auc_comb':>10} {'accuracy':>9}{header_extra}")
             for r in ood_rows:
                 fmt = lambda v: f"{v:.4f}" if v is not None else "   --   "
+                row_extra = "".join(
+                    f" {fmt(r.get(f'mean_{p}')):>16}" for p in pool_cols)
                 print(f"  {r['slice']:<46} {r['n']:>4} {fmt(r['mean_best']):>10} "
                       f"{fmt(r['mean_combiner']):>10} {fmt(r['auc_best']):>10} "
-                      f"{fmt(r['auc_combiner']):>10} {fmt(r.get('accuracy')):>9}")
+                      f"{fmt(r['auc_combiner']):>10} {fmt(r.get('accuracy')):>9}"
+                      f"{row_extra}")
 
             ood_csv = out_dir / "ood_eval.csv"
             with open(ood_csv, "w") as fh:
-                fh.write("slice,n,mean_best,mean_combiner,auc_best,auc_combiner,accuracy\n")
+                header = "slice,n,mean_best,mean_combiner,auc_best,auc_combiner,accuracy"
+                for p in pool_cols:
+                    header += f",mean_{p},auc_{p}"
+                fh.write(header + "\n")
                 for r in ood_rows:
-                    fh.write(f"{r['slice']},{r['n']},{r['mean_best']},{r['mean_combiner']},"
-                             f"{r['auc_best'] if r['auc_best'] is not None else ''},"
-                             f"{r['auc_combiner'] if r['auc_combiner'] is not None else ''},"
-                             f"{r.get('accuracy') if r.get('accuracy') is not None else ''}\n")
+                    line = (f"{r['slice']},{r['n']},{r['mean_best']},{r['mean_combiner']},"
+                            f"{r['auc_best'] if r['auc_best'] is not None else ''},"
+                            f"{r['auc_combiner'] if r['auc_combiner'] is not None else ''},"
+                            f"{r.get('accuracy') if r.get('accuracy') is not None else ''}")
+                    for p in pool_cols:
+                        mp = r.get(f'mean_{p}')
+                        ap = r.get(f'auc_{p}')
+                        line += f",{mp if mp is not None else ''}"
+                        line += f",{ap if ap is not None else ''}"
+                    fh.write(line + "\n")
             print(f"\nWrote {ood_csv}")
 
             # === Full (layer, position) sweep ===
@@ -597,7 +659,7 @@ def main():
             # Per-sample OOD scores — useful for inspecting borderlines specifically
             per_sample = []
             for i, m in enumerate(ord_meta):
-                per_sample.append({
+                rec = {
                     "problem_id": m["problem_id"],
                     "source": m.get("source", ""),
                     "label": m.get("label", ""),
@@ -605,7 +667,10 @@ def main():
                     "correct": m.get("correct", None),
                     "score_best": float(best_ood_probs[i]),
                     "score_combiner": float(combiner_ood_probs[i]),
-                })
+                }
+                for pos_name, probs in pool_probs.items():
+                    rec[f"score_{pos_name}"] = float(probs[i])
+                per_sample.append(rec)
             per_sample_path = out_dir / "ood_per_sample.jsonl"
             with open(per_sample_path, "w") as fh:
                 for s in per_sample:

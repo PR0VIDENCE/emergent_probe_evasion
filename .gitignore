@@ -42,6 +42,18 @@ data/concepts/*/sharma_answer.jsonl
 # Per-concept run output directories (rollouts, activations, summaries — regenerable)
 data/concepts/*/stage*/
 
+# Multiplication pilot — large/regenerable artifacts. Keep input/reference
+# files (problems.jsonl, raw/ word-problem JSONLs) but ignore model outputs
+# and probe analyses since they're reproducible from those inputs.
+data/concepts/multiplication_pilot/probes*/
+data/concepts/multiplication_pilot/probe_*_strategy*/
+data/concepts/multiplication_pilot/*/qwq_local/
+data/concepts/multiplication_pilot/*/activations/
+data/concepts/multiplication_pilot/calibration*/api_*/rollouts*.jsonl
+data/concepts/multiplication_pilot/calibration*/api_*/summary*.json
+# Dashboard build output (single HTML file regenerated from above)
+data/concepts/multiplication_pilot/dashboard.html
+
 # Numeric artifacts
 *.pt
 *.pkl
