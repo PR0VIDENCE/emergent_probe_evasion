@@ -26,12 +26,15 @@ if [ -z "${OPENROUTER_API_KEY:-}" ]; then
     echo "ERROR: OPENROUTER_API_KEY not set."
     exit 1
 fi
-if [ -z "${PROBES_DIR:-}" ]; then
-    echo "ERROR: PROBES_DIR (deception probes dir) not set."
-    echo "  This is needed for step 2 (deception). The sycophancy probes dir is"
-    echo "  fixed by SYCOPHANCY_PROBES_DIR (default: stage1_probes_with_truncated)."
+# Deception probes default location — train_probes_qa.py writes to
+# storage.base_dir/probes; for deception this is /workspace/deception_prewritten_data/probes.
+PROBES_DIR=${PROBES_DIR:-/workspace/deception_prewritten_data/probes}
+if [ ! -d "$PROBES_DIR" ]; then
+    echo "ERROR: deception probes directory not found: $PROBES_DIR"
+    echo "  Either train the deception probes first, or set PROBES_DIR to where you have them."
     exit 1
 fi
+export PROBES_DIR
 
 start=$(date +%s)
 

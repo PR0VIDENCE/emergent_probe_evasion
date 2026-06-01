@@ -40,6 +40,64 @@ def parse_probe_key(key):
     return int(rest[:underscore]), rest[underscore + 1:]
 
 
+# ----------------------------------------------------------------------------
+# Probe loaders — support two formats:
+#   (A) "sycophancy format" — single diffmean_directions.pt + lr_probes.pkl
+#   (B) "Apollo format"      — train_probes_qa.py output:
+#         probes_dir/<position>/layer{N}_seed{S}.pt  (LinearProbe state_dicts)
+#         probes_dir/<position>/layer{N}_scaler.pt   (scaler_mean + scaler_scale)
+# ----------------------------------------------------------------------------
+
+def detect_probe_format(probes_dir):
+    """Return 'sycophancy' or 'apollo' depending on which artifacts are present."""
+    if list(probes_dir.glob("diffmean_directions*.pt")):
+        return "sycophancy"
+    # Apollo format: <position>/layer{N}_seed{S}.pt
+    for sub in probes_dir.iterdir():
+        if sub.is_dir() and list(sub.glob("layer*_seed*.pt")):
+            return "apollo"
+    raise FileNotFoundError(
+        f"no recognized probe artifacts under {probes_dir}.\n"
+        f"  Expected either:\n"
+        f"    (A) {probes_dir}/diffmean_directions*.pt\n"
+        f"    (B) {probes_dir}/<position>/layer{{N}}_seed{{S}}.pt + layer{{N}}_scaler.pt"
+    )
+
+
+def load_apollo_probe(probes_dir, layer, position):
+    """Return (scaler_mean_tensor, scaler_scale_tensor, [state_dict, ...]) or None."""
+    pos_dir = probes_dir / position
+    scaler_path = pos_dir / f"layer{layer}_scaler.pt"
+    if not scaler_path.exists():
+        return None
+    scaler = torch.load(scaler_path, weights_only=False, map_location="cpu")
+    mean = scaler.get("scaler_mean")
+    scale = scaler.get("scaler_scale")
+    seed_paths = sorted(pos_dir.glob(f"layer{layer}_seed*.pt"))
+    if not seed_paths:
+        return None
+    seeds = [torch.load(p, weights_only=False, map_location="cpu") for p in seed_paths]
+    return mean, scale, seeds
+
+
+def apollo_score(x_np, scaler_mean, scaler_scale, seed_state_dicts):
+    """Score one activation through an Apollo LinearProbe ensemble.
+
+    Each state_dict is a LinearProbe.state_dict() with linear.weight (1, H)
+    and linear.bias (1,). We standardize, then average the per-seed pre-
+    sigmoid logits.
+    """
+    x = torch.tensor(x_np, dtype=torch.float32)
+    if scaler_mean is not None and scaler_scale is not None:
+        x = (x - scaler_mean) / scaler_scale
+    logits = []
+    for sd in seed_state_dicts:
+        w = sd["linear.weight"].squeeze().to(torch.float32)
+        b = float(sd["linear.bias"].squeeze().to(torch.float32))
+        logits.append(float((w * x).sum().item() + b))
+    return float(np.mean(logits))
+
+
 def regime_of(rollout_or_meta):
     if "regime" in rollout_or_meta:
         return rollout_or_meta["regime"]
@@ -72,30 +130,70 @@ def main():
 
     layer, position = parse_probe_key(args.probe_key)
 
-    # Load probe direction
-    direction_files = sorted(probes_dir.glob("diffmean_directions*.pt"))
-    if not direction_files:
-        raise FileNotFoundError(f"no diffmean_directions*.pt under {probes_dir}")
-    directions = torch.load(direction_files[0], weights_only=False)
-    if args.probe_key not in directions:
-        raise KeyError(f"probe key {args.probe_key} not in {direction_files[0]}; "
-                       f"available: {sorted(directions)[:10]}...")
-    direction = np.asarray(directions[args.probe_key], dtype=np.float32)
+    # Detect probe format and set up a unified scoring function.
+    probe_format = detect_probe_format(probes_dir)
+    print(f"Probe format: {probe_format}  ({probes_dir})")
 
-    # Optional LR ensemble
-    lr_files = sorted(probes_dir.glob("lr_probes*.pkl"))
-    lr_ensemble = None
-    if lr_files:
-        with open(lr_files[0], "rb") as f:
-            lr_probes = pickle.load(f)
-        lr_ensemble = lr_probes.get(args.probe_key)
+    if probe_format == "sycophancy":
+        # My format — single diffmean_directions.pt + optional lr_probes.pkl
+        direction_files = sorted(probes_dir.glob("diffmean_directions*.pt"))
+        directions = torch.load(direction_files[0], weights_only=False)
+        if args.probe_key not in directions:
+            raise KeyError(f"probe key {args.probe_key} not in {direction_files[0]}; "
+                           f"available: {sorted(directions)[:10]}...")
+        direction = np.asarray(directions[args.probe_key], dtype=np.float32)
 
-    # Optional: load training-set summary
-    results_files = sorted(probes_dir.glob("results*.json"))
-    canonical_summary = {}
-    if results_files:
-        with open(results_files[0]) as f:
-            canonical_summary = json.load(f).get(args.probe_key, {})
+        lr_files = sorted(probes_dir.glob("lr_probes*.pkl"))
+        lr_ensemble = None
+        if lr_files:
+            with open(lr_files[0], "rb") as f:
+                lr_probes = pickle.load(f)
+            lr_ensemble = lr_probes.get(args.probe_key)
+
+        def score_one(x_np):
+            dm = float(x_np @ direction)
+            lr_s = None
+            if lr_ensemble:
+                lr_s = float(np.mean([
+                    float(clf.decision_function(scaler.transform(x_np.reshape(1, -1)))[0])
+                    for scaler, clf in lr_ensemble
+                ]))
+            return dm, lr_s
+
+        results_files = sorted(probes_dir.glob("results*.json"))
+        canonical_summary = {}
+        if results_files:
+            with open(results_files[0]) as f:
+                canonical_summary = json.load(f).get(args.probe_key, {})
+
+    else:  # apollo
+        apollo = load_apollo_probe(probes_dir, layer, position)
+        if apollo is None:
+            raise FileNotFoundError(
+                f"Apollo probe artifacts not found for layer={layer}, position={position} "
+                f"under {probes_dir}. Looked for "
+                f"{probes_dir}/{position}/layer{layer}_seed*.pt + layer{layer}_scaler.pt"
+            )
+        scaler_mean, scaler_scale, seed_states = apollo
+        print(f"  loaded Apollo probe: {len(seed_states)} seeds, layer={layer}, position={position}")
+
+        def score_one(x_np):
+            s = apollo_score(x_np, scaler_mean, scaler_scale, seed_states)
+            # Report the ensemble score as both "diffmean" and "lr" columns so
+            # the downstream table code doesn't need to branch. Field name is
+            # misleading for Apollo but the value is a single ensemble logit.
+            return s, s
+
+        canonical_summary = {}
+        results_path = probes_dir.parent / "results.json"  # train_probes_qa puts it one level up
+        if results_path.exists():
+            with open(results_path) as f:
+                raw = json.load(f)
+            # Apollo results.json structure: {position: {layer: metrics}}
+            try:
+                canonical_summary = {"val": {"diffmean_auroc": raw[position][str(layer)].get("val_auc")}}
+            except (KeyError, TypeError):
+                pass
 
     # Load labeled rollouts
     rollout_path = evasion_dir / "rollouts_labeled.jsonl"
@@ -134,13 +232,7 @@ def main():
                 n_missing += 1
                 continue
             x = acts[position][layer].float().numpy()
-            dm = float(x @ direction)
-            lr_s = None
-            if lr_ensemble:
-                lr_s = float(np.mean([
-                    float(clf.decision_function(scaler.transform(x.reshape(1, -1)))[0])
-                    for scaler, clf in lr_ensemble
-                ]))
+            dm, lr_s = score_one(x)
             scores[rid] = {"diffmean": dm, "lr": lr_s}
     print(f"Scored {len(scores)} / {len(evasion_rollouts)} (missing: {n_missing})")
 

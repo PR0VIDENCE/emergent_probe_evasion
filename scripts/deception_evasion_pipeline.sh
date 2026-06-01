@@ -40,9 +40,14 @@ if [ -z "${OPENROUTER_API_KEY:-}" ]; then
     echo "ERROR: OPENROUTER_API_KEY not set. Labeling will fail."
     exit 1
 fi
-if [ -z "${PROBES_DIR:-}" ]; then
-    echo "ERROR: PROBES_DIR not set. Point at a trained deception probes directory."
-    echo "  e.g.: export PROBES_DIR=/workspace/deception_prewritten_data/probes"
+# Where train_probes_qa.py writes the deception probes — derived from
+# configs/experiments/deception_prewritten.yaml's storage.base_dir, with /probes
+# appended (see train_probes_qa.py line 517: probe_base_dir = data_dir/probes).
+PROBES_DIR=${PROBES_DIR:-/workspace/deception_prewritten_data/probes}
+if [ ! -d "$PROBES_DIR" ]; then
+    echo "ERROR: PROBES_DIR not found: $PROBES_DIR"
+    echo "  Expected layout: $PROBES_DIR/<position>/layer{N}_seed{S}.pt"
+    echo "  If your probes are elsewhere, set: export PROBES_DIR=/path/to/probes"
     exit 1
 fi
 
