@@ -65,6 +65,30 @@ Research project testing whether QwQ-32B can evade linear probes trained to dete
 - Use `uv run python` on RunPod (system torch is too old)
 - Commands should be single-line (no backslash continuations)
 
+## Standardized eval pipeline (NEW — preferred for cross-concept runs)
+
+The end-to-end probe-evasion eval consolidates all 6 concepts (trees, disease,
+library, multiplication, deception, sycophancy) into one orchestrated run that
+goes generation → labeling → extraction → probe training/validation → evasion →
+scoring → dashboard. See `docs/EVAL_PIPELINE.md` for the full reference.
+
+```bash
+# Full run (RunPod L40S); fast smoke caps ~25 units/concept:
+uv run python scripts/run_eval.py --config configs/eval/qwq32b_full.yaml
+uv run python scripts/run_eval.py --config configs/eval/qwq32b_fast.yaml
+# No-GPU simulation to verify orchestration/schema/dashboard locally:
+uv run python scripts/run_eval.py --config configs/eval/qwq32b_fast.yaml --mock
+```
+
+- Code lives in `src/eval/` (handlers, judging, extraction, scoring, dashboard).
+  Stage scripts are `scripts/eval_stage_*.py` + orchestrator `scripts/run_eval.py`.
+- Per-concept config: `configs/eval/concepts/<concept>.yaml`. Universal regimes:
+  `configs/eval/universal_regimes.yaml`. Eval-run config: `configs/eval/qwq32b_{fast,full}.yaml`.
+- Output: `data/eval_runs/<run_id>/` (gitignored, NEVER overwrites existing data dirs).
+- Resumable per concept + per stage; a probe that fails the 0.95 val-AUROC gate is
+  logged and skipped at evasion without crashing the run.
+- The original per-concept scripts below remain valid for single-concept work.
+
 ## Common Tasks
 
 ```bash

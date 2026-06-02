@@ -1,0 +1,34 @@
+# Fast-mode eval run: ~25 contrastive units per concept, universal regimes only.
+# Target: all 6 concepts on a single L40S in < 24h (the smoke / sanity configuration).
+#
+#   uv run python scripts/run_eval.py --config configs/eval/qwq32b_fast.yaml
+#
+# Output: data/eval_runs/qwq32b_fast/
+run_id: qwq32b_fast
+model_config: configs/models/qwq_32b.yaml
+date: 2026_06
+fast: true
+
+concept_config_dir: configs/eval/concepts
+universal_regimes_file: configs/eval/universal_regimes.yaml
+
+concepts: [trees, disease, library, multiplication, deception, sycophancy]
+
+# 15 layers (every 4th of QwQ's 64) — same as the proven v2 pipeline.
+target_layers: [4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48, 52, 56, 60]
+
+# Generation batch size (KV cache for batch=10 @ 2048 tok ~5.4GB, fits L40S 48GB).
+batch_size: 10
+
+# Probe-ensemble training hyperparameters (shared across concepts).
+probe_training:
+  random_seeds: [42, 123, 456, 789]
+  learning_rate: 0.001
+  num_epochs: 100
+  weight_decay: 0.1
+  patience: 10
+  normalize: true
+
+# Concepts whose mock probes should deliberately fail validation (mock mode only;
+# ignored on a real run). Lets the failure-handling path be exercised end-to-end.
+mock_fail_concepts: []

@@ -10,6 +10,11 @@ temperature: 0.6
 num_layers: 64
 hidden_dim: 5120
 
+# Capability flag consumed by the eval pipeline (src/eval). QwQ emits
+# <think>...</think> reasoning traces, so end_of_reasoning / reasoning_mean_pool
+# positions are meaningful. Set false for non-reasoning models.
+has_reasoning_trace: true
+
 # Quantization settings for L40S (48GB VRAM)
 quantization:
   enabled: true
