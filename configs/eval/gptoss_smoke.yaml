@@ -1,0 +1,39 @@
+# Minimal GPT-OSS smoke test — one concept (trees, no LLM judge needed), a
+# handful of rollouts, so all 7 pipeline stages run in minutes. Exercises
+# harmony generation AND harmony re-extraction end to end.
+#
+#   uv run python scripts/run_eval.py --config configs/eval/gptoss_smoke.yaml --fast
+#   open data/eval_runs/gptoss_smoke/dashboard.html
+#
+# On an A40 (no native MXFP4): point gpt_oss.yaml at unsloth/gpt-oss-20b-bnb-4bit
+# (pre-quantized 4-bit, ~14GB), or pass --model-id on validate_harmony.py first.
+# After trees passes, add `multiplication` (numeric_check, no API key) or
+# `sycophancy`/`deception` (need OPENROUTER_API_KEY) to cover the judge paths.
+run_id: gptoss_smoke
+model_config: configs/models/gpt_oss.yaml
+date: 2026_06
+fast: true
+
+concept_config_dir: configs/eval/concepts
+universal_regimes_file: configs/eval/universal_regimes.yaml
+
+concepts: [trees]
+
+# target_layers omitted -> auto-derived from num_layers.
+batch_size: 2
+
+probe_training:
+  random_seeds: [42, 123]
+  learning_rate: 0.001
+  num_epochs: 100
+  weight_decay: 0.1
+  patience: 10
+  normalize: true
+
+# Shrink to a smoke-sized run (fast mode does NOT shrink training by default).
+concept_overrides:
+  trees:
+    data: {full_n_units: 6}        # 6 pairs -> 12 probe-training rollouts
+    evasion: {fast_n_units: 2}     # 2 questions/regime -> 8 evasion rollouts
+
+mock_fail_concepts: []
