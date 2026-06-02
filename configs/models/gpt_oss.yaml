@@ -20,6 +20,10 @@ hidden_dim: 2880
 # loader passes torch_dtype + device_map through unchanged.
 quantization:
   enabled: false
+# "auto" preserves the checkpoint's native quantization (MXFP4, or a pre-quantized
+# bnb-4bit checkpoint). Do NOT set this to bfloat16 — that dequantizes MXFP4 to
+# ~48GB and will OOM a 48GB card.
+torch_dtype: auto
 device_map: auto
 
 # Harmony channel format: reasoning lives in the `analysis` channel, the final

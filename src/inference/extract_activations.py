@@ -35,9 +35,18 @@ def load_model_and_tokenizer(model_config: dict):
     else:
         bnb_config = None
 
-    # Resolve torch_dtype from config (bfloat16 for Gemma 3, float16 for QwQ)
-    _dtype_str = quant_config.get("bnb_4bit_compute_dtype", "bfloat16") if quant_config.get("enabled") else "bfloat16"
-    torch_dtype = getattr(torch, _dtype_str)
+    # Resolve torch_dtype. An explicit `torch_dtype` in the model config wins
+    # (use "auto" for natively-quantized checkpoints like GPT-OSS MXFP4 so the
+    # weights are NOT dequantized to bf16 — that would ~4x the memory). Else fall
+    # back to the compute dtype (bfloat16 for Gemma 3, float16 for QwQ).
+    dtype_cfg = model_config.get("torch_dtype")
+    if dtype_cfg == "auto":
+        torch_dtype = "auto"
+    elif dtype_cfg:
+        torch_dtype = getattr(torch, dtype_cfg)
+    else:
+        _dtype_str = quant_config.get("bnb_4bit_compute_dtype", "bfloat16") if quant_config.get("enabled") else "bfloat16"
+        torch_dtype = getattr(torch, _dtype_str)
 
     tokenizer = AutoTokenizer.from_pretrained(model_id, trust_remote_code=True)
     if tokenizer.pad_token is None:
@@ -52,12 +61,17 @@ def load_model_and_tokenizer(model_config: dict):
 
     device_map = model_config.get("device_map", "auto")
     load_kwargs = dict(
-        quantization_config=bnb_config,
         device_map=device_map,
         trust_remote_code=True,
         torch_dtype=torch_dtype,
         low_cpu_mem_usage=True,
     )
+    # Only pass quantization_config when we are actually applying BitsAndBytes.
+    # Passing quantization_config=None can interfere with transformers' detection
+    # of a checkpoint's OWN quantization config (e.g. GPT-OSS MXFP4 / pre-quantized
+    # bnb-4bit), surfacing as `supports_quant_method` AttributeErrors.
+    if bnb_config is not None:
+        load_kwargs["quantization_config"] = bnb_config
     # Optional max_memory to prevent OOM during loading (e.g. for multimodal models)
     if "max_memory" in model_config:
         load_kwargs["max_memory"] = {
