@@ -10,13 +10,14 @@
 #
 # Defaults:
 #   N_SCENARIOS=50          stratified by category, paired across regimes
-#   BATCH_SIZE=10           generation batch size (deception uses batch=1 internally
-#                           since each rollout has a unique system prompt — scenario)
+#   BATCH_SIZE=10           generation batch size (mixed-system-prompt batching:
+#                           scenarios with different system prompts are batched
+#                           together via left-padding, same throughput as sycophancy)
 #   PROBE_KEY=layer44_answer_mean_pool
 #   PROBES_DIR              Required env var or arg pointing at a trained deception probes dir
 #
-# Estimated runtime: ~5-8 hours for 50 scenarios × 7 regimes = 350 rollouts.
-# (Slower than sycophancy because batch=1 — each rollout has a distinct scenario.)
+# Estimated runtime (50 scenarios × 2 regimes = 100 rollouts at batch=10): ~1.5-2 hr.
+# (Sycophancy-equivalent throughput now that mixed-system-prompt batching works.)
 #
 # Usage:
 #   export OPENROUTER_API_KEY=sk-or-...

@@ -56,7 +56,88 @@ import torch
 import yaml
 
 from src.inference.extract_activations import load_model_and_tokenizer
-from sycophancy_stage0_sanity import generate_with_fallback, parse_qwq_response
+from sycophancy_stage0_sanity import parse_qwq_response
+
+
+# Local batched-generation helper that allows each item in the batch to have
+# its OWN system prompt. (The standard generate_batch from sycophancy_stage0
+# takes a single system prompt and varies user_text; deception scenarios are
+# the system prompts themselves, so they have to vary per-rollout.)
+def generate_batch_mixed_sp(model, tokenizer, prompt_infos, gen_config):
+    """Batched generation where each prompt has its own system prompt.
+
+    Each prompt_info dict must have 'system_prompt' and 'user_text' keys.
+    Left-padding handles variable prefix lengths cleanly.
+    """
+    chat_prompts = [
+        tokenizer.apply_chat_template(
+            [{"role": "system", "content": p["system_prompt"]},
+             {"role": "user", "content": p["user_text"]}],
+            tokenize=False, add_generation_prompt=True,
+        )
+        for p in prompt_infos
+    ]
+
+    original_padding_side = tokenizer.padding_side
+    tokenizer.padding_side = "left"
+    inputs = tokenizer(
+        chat_prompts,
+        return_tensors="pt",
+        padding=True,
+        truncation=True,
+        max_length=4096,
+    )
+    inputs = {k: v.to(model.device) for k, v in inputs.items()}
+    tokenizer.padding_side = original_padding_side
+
+    attention_mask = inputs["attention_mask"]
+    input_lens = [int(attention_mask[i].sum().item()) for i in range(len(prompt_infos))]
+    pad_id = tokenizer.pad_token_id if tokenizer.pad_token_id is not None else tokenizer.eos_token_id
+
+    t0 = time.time()
+    with torch.no_grad():
+        output_ids_batch = model.generate(
+            **inputs,
+            max_new_tokens=gen_config["max_new_tokens"],
+            temperature=gen_config["temperature"],
+            top_p=gen_config["top_p"],
+            top_k=gen_config["top_k"],
+            do_sample=True,
+            pad_token_id=pad_id,
+        )
+    gen_time = time.time() - t0
+
+    padded_input_len = inputs["input_ids"].shape[1]
+    results = []
+    for i in range(len(prompt_infos)):
+        pad_count = padded_input_len - input_lens[i]
+        real_output = output_ids_batch[i, pad_count:]
+        generated_ids = real_output[input_lens[i]:]
+        if pad_id is not None and generated_ids.numel() > 0:
+            eos_positions = (generated_ids == pad_id).nonzero(as_tuple=True)[0]
+            if eos_positions.numel() > 0:
+                generated_ids = generated_ids[:eos_positions[0].item() + 1]
+        full_response = tokenizer.decode(generated_ids, skip_special_tokens=True)
+        results.append((full_response, int(generated_ids.shape[0])))
+    return results, gen_time
+
+
+def generate_mixed_sp_with_fallback(model, tokenizer, prompt_infos, gen_config):
+    """Try a mixed-SP batch; fall back to size-1 sequential on OOM/runtime error."""
+    try:
+        return generate_batch_mixed_sp(model, tokenizer, prompt_infos, gen_config)
+    except (torch.cuda.OutOfMemoryError, RuntimeError) as e:
+        msg = str(e)[:120]
+        print(f"  WARN: batch of {len(prompt_infos)} failed ({type(e).__name__}: {msg}); falling back to sequential")
+        if torch.cuda.is_available():
+            torch.cuda.empty_cache()
+        results = []
+        total_time = 0.0
+        for p in prompt_infos:
+            r, t = generate_batch_mixed_sp(model, tokenizer, [p], gen_config)
+            results.extend(r)
+            total_time += t
+        return results, total_time
 
 
 AWARENESS_TEXT = (
@@ -212,9 +293,13 @@ def main():
         yaml.safe_dump({"scenarios": sampled, "seed": args.seed,
                         "n_total": len(scenarios), "n_sampled": len(sampled)}, f)
 
-    # Build the prompt list
+    # Build the prompt list. user_text = the asked question (we use the question
+    # alone as the user turn; the answer_prefix is consumed at extraction time).
+    # system_prompt = scenario + regime addendum, baked into the prompt now so
+    # the batched mixed-SP generator can read it per-row.
     prompts = []
     for regime in regime_keys:
+        r_meta = REGIMES[regime]
         for s in sampled:
             prompts.append({
                 "regime": regime,
@@ -226,6 +311,8 @@ def main():
                 "honest_completion": s["honest_completion"],
                 "deceptive_completion": s["deceptive_completion"],
                 "system_prompt_id": f"evasion_{regime}",
+                "system_prompt": s["scenario"] + r_meta["addendum"],
+                "user_text": s["question"],
             })
 
     print(f"\nTotal rollouts to generate: {len(prompts)} ({len(regime_keys)} regimes × {len(sampled)} scenarios)")
@@ -276,22 +363,10 @@ def main():
     if "generation" in config:
         base_gen.update(config["generation"])
 
-    # Group by (regime, scenario) — same scenario means same system prompt,
-    # so batches share their system prompt across one scenario only. To batch
-    # efficiently, we group by REGIME only and stack different scenarios; that
-    # means each batch has DIFFERENT system prompts.
-    #
-    # The generate_with_fallback helper from sycophancy_stage0_sanity assumes
-    # one shared system prompt per batch. For deception, each rollout has a
-    # different scenario, so we run batches of size 1 per scenario but can
-    # parallelize across rollouts via tokenizer batch packing.
-    #
-    # SIMPLER: just process one at a time (no batching), trading throughput
-    # for correctness. ~30-60min for 350 rollouts is acceptable.
-    #
-    # Even simpler: group by regime AND scenario hash, fall back to size 1.
-
-    # We'll use the generate helper but call it per-rollout (batch=1).
+    # Batched generation with per-row system prompts (left-padding handles
+    # variable prefix lengths). Grouped by regime so max_new_tokens is
+    # consistent within each batch.
+    batch_size = args.batch_size
     overall_start = time.time()
     overall_done = 0
     n_pending = len(pending)
@@ -306,35 +381,42 @@ def main():
             r_meta = REGIMES[regime]
             gen_config = {**base_gen, "max_new_tokens": r_meta["max_new_tokens"]}
             pool = by_regime[regime]
-            print(f"\n[regime={regime}] {len(pool)} pending, max_tokens={r_meta['max_new_tokens']}")
+            n_batches = (len(pool) + batch_size - 1) // batch_size
+            print(f"\n[regime={regime}] {len(pool)} pending, max_tokens={r_meta['max_new_tokens']}, {n_batches} batches")
             regime_start = time.time()
-            for i, p in enumerate(pool):
-                full_sp = p["scenario"] + r_meta["addendum"]
-                # Use the same generate_with_fallback but with batch of 1
-                batch_results, batch_time = generate_with_fallback(
-                    model, tokenizer, full_sp, [p], gen_config,
+            for batch_idx, batch_start in enumerate(range(0, len(pool), batch_size)):
+                batch = pool[batch_start:batch_start + batch_size]
+                batch_results, batch_time = generate_mixed_sp_with_fallback(
+                    model, tokenizer, batch, gen_config,
                 )
-                full_response, n_tokens = batch_results[0]
-                thinking, response = parse_qwq_response(full_response)
-                rec = {
-                    **p,
-                    "thinking": thinking,
-                    "response": response,
-                    "n_gen_tokens": n_tokens,
-                    "gen_seconds": round(batch_time, 2),
-                    "max_new_tokens": r_meta["max_new_tokens"],
-                }
-                f.write(json.dumps(rec) + "\n")
+                for p, (full_response, n_tokens) in zip(batch, batch_results):
+                    thinking, response = parse_qwq_response(full_response)
+                    rec = {
+                        **p,
+                        "thinking": thinking,
+                        "response": response,
+                        "n_gen_tokens": n_tokens,
+                        "gen_seconds_batch": round(batch_time, 2),
+                        "batch_size": len(batch),
+                        "max_new_tokens": r_meta["max_new_tokens"],
+                    }
+                    # Don't persist the giant raw system_prompt + user_text strings
+                    # for every row — the scenario and question fields already
+                    # contain the source, and the regime addendum is determined
+                    # by `regime`. Keeps rollouts.jsonl small + readable.
+                    rec.pop("system_prompt", None)
+                    rec.pop("user_text", None)
+                    f.write(json.dumps(rec) + "\n")
                 f.flush()
-                overall_done += 1
-                if (i + 1) % 5 == 0 or (i + 1) == len(pool):
-                    elapsed = time.time() - overall_start
-                    rate = overall_done / elapsed * 60 if elapsed > 0 else 0
-                    remaining = n_pending - overall_done
-                    eta_min = (remaining / rate) if rate > 0 else 0
-                    print(f"  [{regime}] {i+1}/{len(pool)}  overall {overall_done}/{n_pending}  "
-                          f"({rate:.1f}/min, ETA {eta_min:.1f}min)  last={batch_time:.1f}s")
-                if torch.cuda.is_available() and (i + 1) % 20 == 0:
+                overall_done += len(batch)
+                elapsed = time.time() - overall_start
+                rate = overall_done / elapsed * 60 if elapsed > 0 else 0
+                remaining = n_pending - overall_done
+                eta_min = (remaining / rate) if rate > 0 else 0
+                print(f"  [{regime}] batch {batch_idx+1}/{n_batches}: "
+                      f"{overall_done}/{n_pending} done in {batch_time:.1f}s "
+                      f"({rate:.1f}/min, ETA {eta_min:.1f}min)")
+                if torch.cuda.is_available():
                     torch.cuda.empty_cache()
             print(f"  [{regime}] done in {(time.time() - regime_start)/60:.1f}min")
 

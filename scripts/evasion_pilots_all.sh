@@ -28,13 +28,20 @@ if [ -z "${OPENROUTER_API_KEY:-}" ]; then
 fi
 # Deception probes default location — train_probes_qa.py writes to
 # storage.base_dir/probes; for deception this is /workspace/deception_prewritten_data/probes.
-PROBES_DIR=${PROBES_DIR:-/workspace/deception_prewritten_data/probes}
-if [ ! -d "$PROBES_DIR" ]; then
-    echo "ERROR: deception probes directory not found: $PROBES_DIR"
-    echo "  Either train the deception probes first, or set PROBES_DIR to where you have them."
+#
+# DON'T export PROBES_DIR globally — the sycophancy pipeline also reads
+# PROBES_DIR and would pick up the deception path. We pass it inline only
+# when invoking the deception pipeline below.
+DECEPTION_PROBES_DIR=${DECEPTION_PROBES_DIR:-${PROBES_DIR:-/workspace/deception_prewritten_data/probes}}
+if [ ! -d "$DECEPTION_PROBES_DIR" ]; then
+    echo "ERROR: deception probes directory not found: $DECEPTION_PROBES_DIR"
+    echo "  Either train the deception probes first, or set"
+    echo "  DECEPTION_PROBES_DIR=/path/to/probes (or PROBES_DIR — same thing here)."
     exit 1
 fi
-export PROBES_DIR
+# Wipe PROBES_DIR from the env so the sycophancy pipeline uses its own default
+# (data/concepts/sycophancy_qa_v2/stage1_probes_with_truncated).
+unset PROBES_DIR
 
 start=$(date +%s)
 
@@ -48,7 +55,7 @@ echo ""
 echo "################################################################"
 echo "#  PART 2/2: DECEPTION EVASION PILOT"
 echo "################################################################"
-bash scripts/deception_evasion_pipeline.sh
+PROBES_DIR="$DECEPTION_PROBES_DIR" bash scripts/deception_evasion_pipeline.sh
 
 total=$(( $(date +%s) - start ))
 echo ""
