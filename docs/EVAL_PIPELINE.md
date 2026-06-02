@@ -5,6 +5,9 @@ concept and emits one cross-concept dashboard. It consolidates the 6
 concept-specific pipelines (trees, disease, library, multiplication, deception,
 sycophancy) into one set of stage scripts driven by per-concept config.
 
+> Looking to **run** it rather than understand the internals? See the usage
+> guide: [`EVAL_USAGE.md`](EVAL_USAGE.md) — every command and parameter.
+
 ## Run it
 
 ```bash

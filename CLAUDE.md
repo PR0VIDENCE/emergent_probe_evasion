@@ -70,7 +70,8 @@ Research project testing whether QwQ-32B can evade linear probes trained to dete
 The end-to-end probe-evasion eval consolidates all 6 concepts (trees, disease,
 library, multiplication, deception, sycophancy) into one orchestrated run that
 goes generation → labeling → extraction → probe training/validation → evasion →
-scoring → dashboard. See `docs/EVAL_PIPELINE.md` for the full reference.
+scoring → dashboard. See `docs/EVAL_USAGE.md` (how to run it + every parameter)
+and `docs/EVAL_PIPELINE.md` (design/architecture).
 
 ```bash
 # Full run (RunPod L40S); fast smoke caps ~25 units/concept:
