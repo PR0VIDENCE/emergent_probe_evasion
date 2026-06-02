@@ -13,7 +13,7 @@ from collections import defaultdict
 from pathlib import Path
 from typing import Callable, List
 
-from . import common, generation, mock
+from . import common, generation, mock, reasoning_formats
 
 
 def _done_ids(path) -> set:
@@ -28,7 +28,8 @@ def run_generation(config: dict, concept: str, ctx, phase: str,
     """
     cc = config["_concept_configs"][concept]
     model_id = config["_model_name"]
-    has_reasoning = common.has_reasoning_trace(config)
+    fmt = reasoning_formats.get_format(common.reasoning_format(config))
+    has_reasoning = fmt.name != "none"
     gen_defaults = cc.get("generation", {})
 
     # Attach the canonical rollout_id to each request for resume + dedupe.
@@ -94,9 +95,9 @@ def run_generation(config: dict, concept: str, ctx, phase: str,
         for i in range(0, len(reqs), batch_size):
             batch = reqs[i:i + batch_size]
             results, batch_time = generation.generate_with_fallback(
-                model, tokenizer, batch, gen_config)
+                model, tokenizer, batch, gen_config, fmt.keep_special_tokens)
             for req, (full_response, n_tok, trunc) in zip(batch, results):
-                thinking, response = generation.parse_reasoning_response(full_response, has_reasoning)
+                thinking, response = fmt.split(full_response)
                 rec = common.make_rollout_record(
                     concept=concept, phase=phase, regime=req.get("regime"),
                     contrastive_id=req["contrastive_id"], model_id=model_id,
@@ -123,7 +124,7 @@ def run_extraction(config: dict, concept: str, ctx, phase: str,
     """
     from . import extraction as extraction_mod
     cc = config["_concept_configs"][concept]
-    cc["_has_reasoning_trace"] = common.has_reasoning_trace(config)
+    cc["_reasoning_format"] = common.reasoning_format(config)
     layers = common.target_layers(config)
     acts_dir = Path(acts_dir)
     acts_dir.mkdir(parents=True, exist_ok=True)

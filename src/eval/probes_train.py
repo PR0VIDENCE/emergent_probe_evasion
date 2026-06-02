@@ -161,22 +161,48 @@ def train_and_validate(config: dict, concept: str) -> dict:
             val_scores.append(s)
             val_labels.append(r["_probe_label"])
 
-    val_auroc = None
-    if len(set(val_labels)) > 1:
-        from sklearn.metrics import roc_auc_score
-        val_auroc = float(roc_auc_score(val_labels, val_scores))
+    from sklearn.metrics import roc_auc_score
+    val_auroc = float(roc_auc_score(val_labels, val_scores)) if len(set(val_labels)) > 1 else None
 
-    passed = val_auroc is not None and val_auroc >= threshold
+    # Held-out (unit-disjoint) test split = our clean generalization / OOD number.
+    # The test split is never seen during training or early stopping.
+    ood_threshold = float(cc["probe"].get("ood_validation_threshold", 0.8))
+    test_scores, test_labels = [], []
+    for r in by_split["test"]:
+        pt = acts_dir / f"{r['rollout_id']}.pt"
+        if not pt.exists():
+            continue
+        act = torch.load(pt, weights_only=False, map_location="cpu")
+        s = probe_scoring.score_activation(bundle, act)
+        if s is not None:
+            test_scores.append(s)
+            test_labels.append(r["_probe_label"])
+    test_auroc = (float(roc_auc_score(test_labels, test_scores))
+                  if len(set(test_labels)) > 1 else None)
+
+    val_ok = val_auroc is not None and val_auroc >= threshold
+    # OOD gate only blocks when measurable (≥2 test units with both classes).
+    ood_ok = test_auroc is None or test_auroc >= ood_threshold
+    passed = val_ok and ood_ok
+
+    if not val_ok:
+        reason = ("val AUROC below threshold" if val_auroc is not None else "val AUROC undefined")
+    elif not ood_ok:
+        reason = f"OOD (test) AUROC {round(test_auroc, 4)} below {ood_threshold}"
+    else:
+        reason = "passed"
+
     result.update({
         "passed": passed,
         "val_auroc": round(val_auroc, 4) if val_auroc is not None else None,
+        "test_auroc": round(test_auroc, 4) if test_auroc is not None else None,
+        "ood_threshold": ood_threshold,
         "n_train": len(by_split["train"]), "n_val": len(val_labels),
-        "n_test": len(by_split["test"]),
+        "n_test": len(test_labels),
         "trained_layers": trained_layers,
         "per_layer_val_auroc": {str(k): (round(v, 4) if v is not None else None)
                                 for k, v in per_layer_val_auroc.items()},
-        "reason": "passed" if passed else (
-            "val AUROC below threshold" if val_auroc is not None else "val AUROC undefined"),
+        "reason": reason,
     })
     _write_validation(paths, result)
 
@@ -185,6 +211,7 @@ def train_and_validate(config: dict, concept: str) -> dict:
         "position": position,
         "per_layer_val_auroc": result["per_layer_val_auroc"],
         "canonical_val_auroc": result["val_auroc"],
+        "canonical_test_auroc": result["test_auroc"],
     }, indent=2))
     return result
 

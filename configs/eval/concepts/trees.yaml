@@ -24,6 +24,7 @@ probe:
   negative_class: [non_tree]
   canonical_position: answer_mean_pool
   validation_threshold: 0.95
+  ood_validation_threshold: 0.8          # held-out (unit-disjoint) generalization floor
 
 extraction:
   context_handler: identity        # use the generation-time prompt (no system prompt here)

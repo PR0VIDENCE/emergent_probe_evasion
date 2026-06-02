@@ -94,6 +94,7 @@ def build_summary_json(data: dict) -> dict:
         out["concepts"][concept] = {
             "validation": c["validation"].get("passed"),
             "val_auroc": c["validation"].get("val_auroc"),
+            "test_auroc": c["validation"].get("test_auroc"),
             "category": c["category"],
             "universal_regimes": uni,
         }
@@ -173,18 +174,18 @@ document.getElementById("subtitle").textContent =
 // ---- cross-concept summary ----
 function xsummary(){
   const regs=DATA.universal_order;
-  let h='<table><thead><tr><th>concept</th><th>cat</th><th>probe</th><th class="num">val AUROC</th>';
+  let h='<table><thead><tr><th>concept</th><th>cat</th><th>probe</th><th class="num">val AUROC</th><th class="num">OOD AUROC</th>';
   regs.forEach(r=>h+=`<th class="num">${r}<br><span class="small">ret / TPR@5 / Δ</span></th>`);
   h+='</tr></thead><tbody>';
   for(const [name,c] of Object.entries(DATA.concepts)){
     const v=c.validation||{};
     if(!v.passed){
       h+=`<tr><td><b>${esc(name)}</b></td><td>${esc(c.category)}</td>`+
-         `<td colspan="${regs.length+2}"><span class="fail-banner">PROBE FAILED VALIDATION (val AUROC = ${v.val_auroc ?? "—"}; threshold ${v.threshold ?? "—"})</span></td></tr>`;
+         `<td colspan="${regs.length+3}"><span class="fail-banner">PROBE FAILED VALIDATION (val AUROC = ${v.val_auroc ?? "—"}, OOD AUROC = ${v.test_auroc ?? "—"}; ${esc(v.reason||"")})</span></td></tr>`;
       continue;
     }
     h+=`<tr><td><b>${esc(name)}</b></td><td>${esc(c.category)}</td>`+
-       `<td><span class="badge pass">pass</span></td><td class="num">${fmt(v.val_auroc,3)}</td>`;
+       `<td><span class="badge pass">pass</span></td><td class="num">${fmt(v.val_auroc,3)}</td><td class="num">${fmt(v.test_auroc,3)}</td>`;
     const R=(c.scores_summary||{}).canonical_regimes||(c.scores_summary||{}).regimes||{};
     regs.forEach(r=>{
       const st=R[r];
@@ -294,7 +295,7 @@ function renderConcepts(){
     const cid="c"+(i++);const v=c.validation||{};
     const badge=v.passed?'<span class="badge pass">probe passed</span>':'<span class="badge fail">probe failed</span>';
     let body='';
-    body+=`<div class="small">category: ${esc(c.category)} · canonical position: <code>${esc(c.canonical_position)}</code> · val AUROC: ${fmt(v.val_auroc,3)} (threshold ${v.threshold ?? "—"}) · ${esc(v.reason||"")}</div>`;
+    body+=`<div class="small">category: ${esc(c.category)} · canonical position: <code>${esc(c.canonical_position)}</code> · val AUROC: ${fmt(v.val_auroc,3)} (threshold ${v.threshold ?? "—"}) · OOD/test AUROC: ${fmt(v.test_auroc,3)} (floor ${v.ood_threshold ?? "—"}) · ${esc(v.reason||"")}</div>`;
     if(c.error)body+=`<div class="fail-banner" style="margin-top:.5em">orchestrator error: ${esc(c.error)}</div>`;
     if(v.passed && c.rollouts.length){
       body+=regimeStatsTable(c)+multHeatmap(c)+histPanel(c)+rolloutExplorer(c,cid);

@@ -16,18 +16,23 @@ from typing import List, Tuple
 import torch
 
 
-def parse_reasoning_response(text: str, has_reasoning: bool = True):
-    """Split <think>...</think> from the final response.
+def _stop_ids(model, tokenizer, pad_id):
+    """Full set of stop token ids (pad + tokenizer EOS + generation_config EOS).
 
-    For non-reasoning models (has_reasoning=False) the whole text is the response.
+    Models like GPT-OSS (harmony) stop on tokens distinct from pad — keying
+    truncation detection on a single pad id mis-fires for them.
     """
-    if has_reasoning and "</think>" in text:
-        thinking, _, response = text.partition("</think>")
-        return thinking.replace("<think>", "").strip(), response.strip()
-    if has_reasoning:
-        # Generation truncated before </think> — everything is reasoning.
-        return text.strip(), ""
-    return "", text.strip()
+    ids = set()
+    if pad_id is not None:
+        ids.add(int(pad_id))
+    eid = getattr(tokenizer, "eos_token_id", None)
+    if eid is not None:
+        ids.update(eid if isinstance(eid, (list, tuple)) else [eid])
+    gc = getattr(model, "generation_config", None)
+    if gc is not None and getattr(gc, "eos_token_id", None) is not None:
+        ge = gc.eos_token_id
+        ids.update(ge if isinstance(ge, (list, tuple)) else [ge])
+    return {int(i) for i in ids}
 
 
 def _chat_prompt(tokenizer, system_prompt: str, user_text: str) -> str:
@@ -38,11 +43,14 @@ def _chat_prompt(tokenizer, system_prompt: str, user_text: str) -> str:
     return tokenizer.apply_chat_template(msgs, tokenize=False, add_generation_prompt=True)
 
 
-def generate_batch(model, tokenizer, prompt_infos: List[dict], gen_config: dict
+def generate_batch(model, tokenizer, prompt_infos: List[dict], gen_config: dict,
+                   keep_special_tokens: bool = False
                    ) -> Tuple[List[Tuple[str, int, bool]], float]:
     """Generate a batch. Each prompt_info has 'system_prompt' + 'user_text'.
 
-    Returns ([(full_response, n_gen_tokens, truncated), ...], batch_seconds).
+    `keep_special_tokens` keeps special tokens in the decoded output (needed for
+    harmony channel markers). Returns ([(full_response, n_gen_tokens, truncated),
+    ...], batch_seconds).
     """
     chat_prompts = [_chat_prompt(tokenizer, p["system_prompt"], p["user_text"]) for p in prompt_infos]
 
@@ -70,6 +78,7 @@ def generate_batch(model, tokenizer, prompt_infos: List[dict], gen_config: dict
         )
     gen_time = time.time() - t0
 
+    stop_ids = _stop_ids(model, tokenizer, pad_id)
     padded_len = inputs["input_ids"].shape[1]
     results = []
     for i in range(len(prompt_infos)):
@@ -77,20 +86,24 @@ def generate_batch(model, tokenizer, prompt_infos: List[dict], gen_config: dict
         real = out[i, pad_count:]
         gen_ids = real[input_lens[i]:]
         truncated = True
-        if pad_id is not None and gen_ids.numel() > 0:
-            eos = (gen_ids == pad_id).nonzero(as_tuple=True)[0]
-            if eos.numel() > 0:
-                gen_ids = gen_ids[:eos[0].item() + 1]
+        if stop_ids and gen_ids.numel() > 0:
+            stop_mask = torch.zeros_like(gen_ids, dtype=torch.bool)
+            for sid in stop_ids:
+                stop_mask |= (gen_ids == sid)
+            hit = stop_mask.nonzero(as_tuple=True)[0]
+            if hit.numel() > 0:
+                gen_ids = gen_ids[:hit[0].item() + 1]
                 truncated = False
-        full_response = tokenizer.decode(gen_ids, skip_special_tokens=True)
+        full_response = tokenizer.decode(gen_ids, skip_special_tokens=not keep_special_tokens)
         results.append((full_response, int(gen_ids.shape[0]), truncated))
     return results, gen_time
 
 
-def generate_with_fallback(model, tokenizer, prompt_infos: List[dict], gen_config: dict):
+def generate_with_fallback(model, tokenizer, prompt_infos: List[dict], gen_config: dict,
+                           keep_special_tokens: bool = False):
     """Try a batch; on OOM/runtime error fall back to size-1 generation."""
     try:
-        return generate_batch(model, tokenizer, prompt_infos, gen_config)
+        return generate_batch(model, tokenizer, prompt_infos, gen_config, keep_special_tokens)
     except (torch.cuda.OutOfMemoryError, RuntimeError) as e:  # noqa: PERF203
         print(f"  WARN: batch of {len(prompt_infos)} failed "
               f"({type(e).__name__}: {str(e)[:120]}); falling back to size-1")
@@ -98,7 +111,7 @@ def generate_with_fallback(model, tokenizer, prompt_infos: List[dict], gen_confi
             torch.cuda.empty_cache()
         results, total = [], 0.0
         for p in prompt_infos:
-            r, t = generate_batch(model, tokenizer, [p], gen_config)
+            r, t = generate_batch(model, tokenizer, [p], gen_config, keep_special_tokens)
             results.extend(r)
             total += t
         return results, total

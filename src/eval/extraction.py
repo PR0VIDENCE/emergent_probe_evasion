@@ -22,6 +22,7 @@ from typing import Dict, List, Optional
 import torch
 
 from src.inference.extract_activations import extract_activations_at_positions
+from . import reasoning_formats
 
 NEUTRAL_PROMPT = "You are a helpful assistant."
 
@@ -37,43 +38,38 @@ def resolve_extraction_system_prompt(rollout: dict, cc: dict) -> str:
     raise ValueError(f"Unknown extraction context_handler: {handler}")
 
 
-def _build_assistant_content(rollout: dict) -> str:
+def _build_assistant_content(rollout: dict, fmt) -> str:
     out = rollout["output"]
     thinking = (out.get("thinking") or "").strip()
     response = (out.get("response") or "").strip()
-    if thinking:
-        return f"<think>{thinking}</think>{response}"
-    return response
+    return fmt.reconstruct(thinking, response)
 
 
-def _compute_positions(full_ids, completion_start: int, tokenizer, has_reasoning: bool) -> dict:
+def _compute_positions(full_ids, completion_start: int, tokenizer, fmt) -> dict:
     """Absolute token positions for {last_token, end_of_reasoning,
     first_answer_sentence_end, answer_start/end, reasoning_start/end}.
 
-    Handles both QwQ <think>...</think> completions and plain completions
-    (prewritten deception / non-reasoning models) — missing positions fall back
-    to last_token, matching find_token_positions' contract.
+    The reasoning→answer boundary is located by the model's reasoning-format
+    handler (think_tags / harmony / none). Missing positions fall back to
+    last_token, matching find_token_positions' contract.
     """
     seq_len = full_ids.shape[1]
     positions = {"last_token": seq_len - 1, "answer_end": seq_len - 1}
 
     completion_ids = full_ids[0, completion_start:]
     completion_text = tokenizer.decode(completion_ids, skip_special_tokens=False)
-    think_match = re.search(r"</think>", completion_text) if has_reasoning else None
+    boundary = fmt.boundary(completion_text)
 
-    if think_match:
-        text_before = completion_text[:think_match.start()]
-        tokens_before = tokenizer.encode(text_before, add_special_tokens=False)
-        think_end_offset = len(tokens_before)
-        think_tag_tokens = tokenizer.encode("</think>", add_special_tokens=False)
-
-        eor = think_end_offset + len(think_tag_tokens) - 1
+    if boundary:
+        # Tokens up to and including the boundary marker = end of reasoning.
+        before_answer = completion_text[:boundary.end()]
+        eor = len(tokenizer.encode(before_answer, add_special_tokens=False)) - 1
         positions["end_of_reasoning"] = min(completion_start + eor, seq_len - 1)
         positions["reasoning_start"] = completion_start
         positions["reasoning_end"] = positions["end_of_reasoning"]
 
-        answer_offset = think_end_offset + len(think_tag_tokens)
-        text_after = completion_text[think_match.end():]
+        answer_offset = eor + 1
+        text_after = completion_text[boundary.end():]
         stripped = text_after.lstrip()
         ws_len = len(text_after) - len(stripped)
         if ws_len > 0:
@@ -112,10 +108,10 @@ def extract_for_rollout(rollout: dict, model, tokenizer, target_layers: List[int
 
     Returns (activations_dict, meta_dict). Raises on tokenization/model errors.
     """
-    has_reasoning = bool(cc.get("_has_reasoning_trace", True))
+    fmt = reasoning_formats.get_format(cc.get("_reasoning_format", "think_tags"))
     system_prompt = resolve_extraction_system_prompt(rollout, cc)
     user_text = rollout["input"]["user_text"]
-    assistant_content = _build_assistant_content(rollout)
+    assistant_content = _build_assistant_content(rollout, fmt)
 
     def _messages(include_assistant: bool):
         msgs = []
@@ -134,7 +130,7 @@ def extract_for_rollout(rollout: dict, model, tokenizer, target_layers: List[int
         _messages(True), tokenize=False, add_generation_prompt=False)
     full_ids = tokenizer(full_text, return_tensors="pt", add_special_tokens=False)["input_ids"].to(model.device)
 
-    positions = _compute_positions(full_ids, completion_start, tokenizer, has_reasoning)
+    positions = _compute_positions(full_ids, completion_start, tokenizer, fmt)
 
     extra_mean_pools = {}
     if positions["reasoning_start"] < positions["reasoning_end"]:

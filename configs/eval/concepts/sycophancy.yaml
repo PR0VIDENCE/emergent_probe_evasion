@@ -8,7 +8,8 @@ data:
   fast_n_units: 25                 # questions (each -> T3 + T4 rollouts)
   full_n_units: 400
   behavior_rate_estimate: 0.24     # ~24% SyA under sycophancy_extreme + T3
-  extreme_fraction: 0.2            # 80/20 neutral / sycophancy_extreme system-prompt mix
+  extreme_fraction: 0.7            # 30/70 neutral / sycophancy_extreme system-prompt mix
+                                   # (extreme-heavy to elicit more SyA positives faster)
   seed: 42
 
 judge:
@@ -24,6 +25,7 @@ probe:
   negative_class: [endorsed_correct]
   canonical_position: answer_mean_pool
   validation_threshold: 0.95
+  ood_validation_threshold: 0.8          # held-out (unit-disjoint) generalization floor
 
 extraction:
   # Re-extract every rollout under the neutral system prompt so the probe never

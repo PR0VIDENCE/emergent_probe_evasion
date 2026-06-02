@@ -10,10 +10,12 @@ temperature: 0.6
 num_layers: 64
 hidden_dim: 5120
 
-# Capability flag consumed by the eval pipeline (src/eval). QwQ emits
-# <think>...</think> reasoning traces, so end_of_reasoning / reasoning_mean_pool
-# positions are meaningful. Set false for non-reasoning models.
+# Capability flags consumed by the eval pipeline (src/eval). QwQ emits
+# <think>...</think> reasoning traces. `reasoning_format` selects the parser in
+# src/eval/reasoning_formats.py (think_tags | harmony | none); `has_reasoning_trace`
+# is the older boolean kept for back-compat (true -> think_tags).
 has_reasoning_trace: true
+reasoning_format: think_tags
 
 # Quantization settings for L40S (48GB VRAM)
 quantization:

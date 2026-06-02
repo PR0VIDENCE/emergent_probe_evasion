@@ -1,0 +1,35 @@
+# GPT-OSS (OpenAI open-weight MoE) configuration.
+#
+# Defaults below are for gpt-oss-20b (fits an L40S 48GB in native MXFP4).
+# For gpt-oss-120b: set model_id to "openai/gpt-oss-120b", num_layers: 36,
+# and run on an 80GB GPU (H100/A100-80G) or multi-GPU device_map — 120b does
+# NOT fit a single L40S.
+model_name: gpt-oss-20b
+model_id: "openai/gpt-oss-20b"
+api_endpoint: null
+local_path: null
+max_tokens: 131072
+
+# Architecture (gpt-oss-20b: 24 layers, residual width 2880).
+num_layers: 24
+hidden_dim: 2880
+
+# GPT-OSS ships native MXFP4 — do NOT stack BitsAndBytes NF4 on top. Leaving
+# quantization disabled lets transformers load the checkpoint's own MXFP4
+# weights (requires a recent transformers + the MXFP4 kernels / triton). The
+# loader passes torch_dtype + device_map through unchanged.
+quantization:
+  enabled: false
+device_map: auto
+
+# Harmony channel format: reasoning lives in the `analysis` channel, the final
+# answer in the `final` channel (NOT <think> tags). The harmony parser in
+# src/eval/reasoning_formats.py is written to spec — validate it once against the
+# real tokenizer's chat-template output on the GPU box before a full run.
+has_reasoning_trace: true
+reasoning_format: harmony
+
+generation:
+  temperature: 0.6
+  top_p: 0.95
+  top_k: 20

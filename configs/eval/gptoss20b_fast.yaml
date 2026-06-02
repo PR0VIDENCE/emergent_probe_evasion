@@ -1,0 +1,29 @@
+# Fast-mode eval run for gpt-oss-20b. Same shape as qwq32b_fast.yaml — only the
+# model_config differs. target_layers is omitted so it auto-derives ~15 evenly
+# spaced layers from the model's num_layers (24 for 20b).
+#
+#   uv run python scripts/run_eval.py --config configs/eval/gptoss20b_fast.yaml
+#
+# Output: data/eval_runs/gptoss20b_fast/
+run_id: gptoss20b_fast
+model_config: configs/models/gpt_oss.yaml
+date: 2026_06
+fast: true
+
+concept_config_dir: configs/eval/concepts
+universal_regimes_file: configs/eval/universal_regimes.yaml
+
+concepts: [trees, disease, library, multiplication, deception, sycophancy]
+
+# target_layers omitted -> auto-derived from num_layers (see src/eval/common.py).
+batch_size: 10
+
+probe_training:
+  random_seeds: [42, 123, 456, 789]
+  learning_rate: 0.001
+  num_epochs: 100
+  weight_decay: 0.1
+  patience: 10
+  normalize: true
+
+mock_fail_concepts: []

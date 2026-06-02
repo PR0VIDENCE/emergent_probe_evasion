@@ -91,7 +91,7 @@ def mock_extract(rollout: dict, cc: dict, target_layers: List[int],
     plabel = resolve_probe_label(rollout, cc)
     if plabel is None:
         plabel = 1 if rollout.get("metadata", {}).get("probe_label") == 1 else 0
-    mu = 3.0
+    mu = 6.0
     if fail:
         # Signal coordinate is driven by a hash of the rollout id, i.e.
         # UNCORRELATED with the label -> probe cannot separate -> validation
@@ -101,13 +101,14 @@ def mock_extract(rollout: dict, cc: dict, target_layers: List[int],
     else:
         sign = 1.0 if plabel == 1 else -1.0
 
+    n_signal = 8  # distribute signal across several dims so StandardScaler can't crush it
     out = {}
     for pos in DEFAULT_TOKEN_POSITIONS:
         layer_acts = {}
         for layer in target_layers:
             g = _rng("mockact", rollout["rollout_id"], pos, layer)
             x = torch.randn(HIDDEN_DIM, generator=g)
-            x[0] += sign * mu  # signal on the first coordinate
+            x[:n_signal] += sign * mu  # distributed linear signal
             layer_acts[layer] = x.half()
         out[pos] = layer_acts
     return out

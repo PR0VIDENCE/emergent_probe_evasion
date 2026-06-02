@@ -34,7 +34,9 @@ def run(config, concept, ctx=None):
     status["val_auroc"] = result.get("val_auroc")
     common.write_status(config, concept, status)
     verdict = "✅ passed" if result["passed"] else "❌ FAILED"
-    print(f"  [{concept}] probe validation: {verdict} (val AUROC = {result.get('val_auroc')})")
+    print(f"  [{concept}] probe validation: {verdict} "
+          f"(val AUROC = {result.get('val_auroc')}, OOD/test AUROC = {result.get('test_auroc')}; "
+          f"{result.get('reason')})")
     return status["validation"]
 
 

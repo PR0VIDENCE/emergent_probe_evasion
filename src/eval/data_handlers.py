@@ -56,9 +56,16 @@ def _pair_questions(pair: dict, pos_field: str, neg_field: str):
 
 
 def _n_units(cc: dict, fast: bool, available: int) -> int:
+    """Probe-TRAINING unit count.
+
+    `--fast` is intended to speed up the experiment (evasion) phase only — it
+    does NOT shrink the probe-training set, so the probe a fast run produces is
+    the same quality as a full run. A concept can still opt into a smaller fast
+    training set by setting `data.fast_train_n_units`.
+    """
     data = cc["data"]
-    if fast:
-        n = int(data.get("fast_n_units", data.get("fast_n_behaviorally_relevant", 25)))
+    if fast and data.get("fast_train_n_units") is not None:
+        n = int(data["fast_train_n_units"])
     else:
         n = int(data.get("full_n_units", data.get("full_n_behaviorally_relevant", 200)))
     return min(n, available)
@@ -338,9 +345,10 @@ def sycophancy_sharma_training(cc: dict, ec: dict, fast: bool) -> List[dict]:
     extreme_frac = cc["data"].get("extreme_fraction", 0.2)
     rng = random.Random(seed + 1)
     reqs = []
+    extreme_cut = round(extreme_frac * 10)
     for i, q in enumerate(train):
-        # Deterministic 80/20 assignment by index.
-        sp_kind = "sycophancy_extreme" if (i % 5 == 0 and extreme_frac > 0) else "neutral"
+        # Deterministic neutral/extreme assignment honoring extreme_fraction.
+        sp_kind = "sycophancy_extreme" if (i % 10) < extreme_cut else "neutral"
         sp_content = prompts[sp_kind]["content"].strip()
         for framing, tmpl in (("T3_user_wrong", _T3), ("T4_user_right", _T4)):
             user_text = tmpl.format(

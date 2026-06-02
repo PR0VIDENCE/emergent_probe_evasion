@@ -278,16 +278,38 @@ def make_rollout_record(
 
 
 def target_layers(config: dict) -> List[int]:
+    """Layers to probe. Honors the eval config's `target_layers`, but guards
+    against out-of-range indices (so a global [4..60] list does not crash a
+    model with fewer layers) and derives a sensible ~15-layer default from the
+    model's layer count when unspecified."""
+    nl = config["_model_config"].get("num_layers", 64)
     tl = config.get("target_layers")
-    if tl and tl != "all":
-        return list(tl)
     if tl == "all":
-        return list(range(config["_model_config"].get("num_layers", 64)))
-    return [4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48, 52, 56, 60]
+        return list(range(nl))
+    step = max(1, round(nl / 15))   # ~15 evenly spaced layers
+    default = list(range(step, nl, step))
+    if tl:
+        kept = [int(l) for l in tl if int(l) < nl]
+        return kept or default
+    return default
 
 
 def has_reasoning_trace(config: dict) -> bool:
     return bool(config["_model_config"].get("has_reasoning_trace", True))
+
+
+def reasoning_format(config: dict) -> str:
+    """Resolve the model's reasoning format name.
+
+    Prefers the explicit `reasoning_format` model-config field; falls back to the
+    older boolean `has_reasoning_trace` (true -> think_tags, false -> none) so
+    existing model configs keep working unchanged.
+    """
+    mc = config["_model_config"]
+    fmt = mc.get("reasoning_format")
+    if fmt:
+        return fmt
+    return "think_tags" if mc.get("has_reasoning_trace", True) else "none"
 
 
 class ModelContext:

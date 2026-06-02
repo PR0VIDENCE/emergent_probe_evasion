@@ -30,6 +30,12 @@ skips completed work (logged as "skip"). Killing mid-concept and re-running
 resumes from the last completed stage. A concept whose probe fails validation is
 logged + skipped at evasion and never crashes the run.
 
+**`--fast` only speeds up the experiment (evasion) phase** — it reduces evasion
+units per regime and skips concept-specific extra regimes. Probe training always
+uses the full `data.full_n_units` so a fast run produces the same-quality probe
+as a full run. (A concept can opt into a smaller fast training set with
+`data.fast_train_n_units`, but by default fast does not shrink training.)
+
 ## The 7 stages
 
 | Stage | Script | Writes |
@@ -87,8 +93,7 @@ Every JSONL rollout (probe training or evasion) is uniform:
 
 ## Canonical probe score (§2.3)
 
-1. Pick the concept's `canonical_position` (default `answer_mean_pool`;
-   multiplication uses `last_token`).
+1. Pick the concept's `canonical_position` (`answer_mean_pool` for all concepts).
 2. For each `(layer, seed)` at that position, standardize with the saved scaler
    and compute the pre-sigmoid logit `w·x + b`.
 3. Average across all layers and seeds → one scalar per rollout.
@@ -99,18 +104,26 @@ negatives**, so cross-concept TPR numbers are comparable.
 
 ## Validation gate (§2.5 / §2.8)
 
-After training, the canonical combined score is computed on the validation split
-and compared to `probe.validation_threshold` (default 0.95). If it fails, the
-concept is marked failed in `status.json`, evasion is skipped, and the dashboard
-renders a "PROBE FAILED VALIDATION" banner. The run continues to the next concept.
+Two thresholds, both must pass:
 
-To tune the threshold for one concept without editing its shared config, use a
+- **In-distribution**: canonical combined score on the validation split (used for
+  early stopping) ≥ `probe.validation_threshold` (default 0.95).
+- **OOD / generalization**: canonical score on the held-out **test split**
+  (unit-disjoint, never seen during training or early stopping) ≥
+  `probe.ood_validation_threshold` (default 0.8). The OOD gate only blocks when
+  measurable (≥2 test units with both classes).
+
+If either fails, the concept is marked failed in `status.json`, evasion is
+skipped, and the dashboard renders a "PROBE FAILED VALIDATION" banner with both
+AUROCs + the failing reason. The run continues to the next concept.
+
+To tune thresholds for one concept without editing its shared config, use a
 per-run override in the eval-run YAML:
 
 ```yaml
 concept_overrides:
   multiplication:
-    probe: {validation_threshold: 0.90}
+    probe: {validation_threshold: 0.90, ood_validation_threshold: 0.85}
 ```
 
 ## Architecture (L2 standardization)
@@ -146,9 +159,30 @@ Stage scripts are thin; all logic lives in `src/eval/`:
 
 ## Adding a new model
 
-1. Write `configs/models/<model>.yaml` matching `qwq_32b.yaml`'s shape. Set
-   `has_reasoning_trace: false` if it does not emit `<think>...</think>`.
-2. Point the eval-run YAML's `model_config:` at it. No pipeline-code changes.
+1. Write `configs/models/<model>.yaml` matching `qwq_32b.yaml`'s shape:
+   `num_layers`, `hidden_dim`, a `quantization` block (or `enabled: false` for
+   models that ship their own quantization, e.g. GPT-OSS MXFP4), and a
+   `reasoning_format`:
+   - `think_tags` — `<think>...</think>` models (QwQ, DeepSeek-R1 distills, Qwen3-thinking)
+   - `harmony` — GPT-OSS channel format (`analysis`/`final`); see `configs/models/gpt_oss.yaml`
+   - `none` — non-reasoning instruct models (Llama-3, Qwen2.5-Instruct, Mistral, Gemma)
+   (The older boolean `has_reasoning_trace` still works: true→think_tags, false→none.)
+2. Point the eval-run YAML's `model_config:` at it. `target_layers` can be
+   omitted (auto-derives ~15 evenly-spaced layers from `num_layers`) or set
+   explicitly; out-of-range indices are filtered, so a 64-layer list won't crash
+   a smaller model. No pipeline-code changes.
+
+Reasoning-format handling (split reasoning vs answer, locate the boundary token,
+reconstruct the assistant turn for re-extraction, and whether to keep special
+tokens when decoding) lives entirely in `src/eval/reasoning_formats.py`. A new
+format is a ~30-line handler registered there.
+
+**GPT-OSS caveats**: needs a transformers build with the `GptOss` class + MXFP4
+kernels (recent triton + `kernels`); gpt-oss-20b fits an L40S (48GB), gpt-oss-120b
+needs an 80GB GPU or multi-GPU. The harmony parser is written to spec — validate
+it once against the real tokenizer's chat-template output before a full run
+(canonical `answer_mean_pool` only needs the `final` channel located correctly).
+Starter configs: `configs/models/gpt_oss.yaml` + `configs/eval/gptoss20b_fast.yaml`.
 
 ## Concept-specific notes
 
