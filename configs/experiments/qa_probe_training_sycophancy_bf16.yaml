@@ -1,0 +1,124 @@
+# Sycophancy probe training pipeline — bf16 (non-quantized) variant
+#
+# Identical to qa_probe_training_sycophancy.yaml except:
+#   - model_config → qwq_32b_bf16.yaml (native bfloat16, 4×GPU, no quantisation)
+#   - data_dir → data/concepts/sycophancy_qa_v2_bf16 (separate output directory)
+#   - storage.base_dir → /workspace/probe_data_sycophancy_bf16
+#
+# Source data (sharma_answer.jsonl, qwq_knowable.jsonl) is shared with the
+# quantized run — Stage 0 does not need to be repeated.
+#
+# See qa_probe_training_sycophancy.yaml for full design notes.
+
+concept: sycophancy
+concept_config: configs/concepts/sycophancy.yaml
+model_config: configs/models/qwq_32b_bf16.yaml
+data_dir: data/concepts/sycophancy_qa_v2_bf16
+
+# 15 layers, every 4th of QwQ's 64 (same as v2 trees pipeline)
+target_layers: [4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48, 52, 56, 60]
+
+# 5 positions per rollout (existing 4 + reasoning_mean for the QwQ <think> trace)
+token_positions:
+  - last_token
+  - end_of_reasoning
+  - first_answer_sentence_end
+  - answer_mean_pool
+  - reasoning_mean
+
+generation:
+  max_new_tokens: 2048
+  temperature: 0.7
+  top_p: 0.95
+  top_k: 20
+  samples_per_config: 1
+
+probe_training:
+  random_seeds: [42, 123, 456, 789]
+  learning_rate: 0.001
+  num_epochs: 100
+  weight_decay: 0.1
+  patience: 10
+  normalize: true
+  top_k_layers: 5
+  primary_position: answer_mean_pool
+
+split:
+  method: preassigned
+  split_file: data/concepts/sycophancy_qa_v2_bf16/split_assignment.yaml
+
+combiner:
+  enabled: true
+  regularization_C: 1.0
+  output_path: configs/probes/weighted_combination_sycophancy_bf16.yaml
+
+# ----------------------------------------------------------------------------
+# Sycophancy-pipeline-specific config
+# ----------------------------------------------------------------------------
+sycophancy:
+  # Source data shared with quantized run (no need to re-fetch or re-filter)
+  data_source: data/concepts/sycophancy_qa_v2/sharma_answer.jsonl
+
+  framings_to_use: [T1_neutral, T3_user_wrong, T4_user_right]
+
+  stage_0_pre_filter:
+    n_candidates: 1500
+    drops_premise_rejection: true
+    output_subdir: stage0_pre_filter
+    # Reuse the knowable pool from the quantized run
+    qwq_knowable_path: data/concepts/sycophancy_qa_v2/qwq_knowable.jsonl
+    yield: 1153
+
+  stage_0_sanity:
+    n_questions: 40
+    n_per_source: 20
+    system_prompts: [neutral]
+    output_subdir: stage0_sanity
+
+  stage_0_prompt_sweep:
+    n_questions: 40
+    n_per_source: 20
+    system_prompts: [neutral, sycophancy_strong, honest_strong, sycophancy_mild]
+    output_subdir: stage0_prompt_sweep
+
+  stage_1_training:
+    candidate_pool: data/concepts/sycophancy_qa_v2/qwq_knowable.jsonl
+    output_subdir: stage1_train
+
+    framings: [T3_user_wrong, T4_user_right]
+
+    seen_system_prompts:
+      neutral: 0.8
+      sycophancy_extreme: 0.2
+
+    held_out_system_prompts: [sycophancy_strong, sycophancy_mild, honest_strong]
+
+    pilot:
+      n_questions: 200
+    full:
+      n_questions: 600
+
+  stage_2_ood:
+    multiplication_n: 20
+    track_b_path: data/concepts/sycophancy_qa_v2/track_b_prompts.jsonl
+    output_subdir: stage2_ood
+
+  probe_targets:
+    primary: SyA_vs_GA_plus_pushback
+    positives:
+      - {framing: T3_user_wrong, label_judge: endorsed_incorrect}
+    negatives:
+      - {framing: T4_user_right, label_judge: endorsed_correct}
+      - {framing: T3_user_wrong, label_judge: endorsed_correct}
+    excluded:
+      - {framing: T1_neutral}
+      - {framing: T4_user_right, label_judge: endorsed_incorrect}
+      - {label_judge: neither}
+
+  judge:
+    provider: openrouter
+    model: google/gemini-2.5-flash
+    auth_env: OPENROUTER_API_KEY
+
+storage:
+  base_dir: /workspace/probe_data_sycophancy_bf16

@@ -1,6 +1,6 @@
 concept: multiplication
 concept_config: configs/concepts/multiplication.yaml
-model_config: configs/models/qwq_32b.yaml
+model_config: configs/models/qwq_32b_bf16.yaml
 
 data_dir: data/concepts/multiplication_pilot/dataset_v1
 activations_dir: data/concepts/multiplication_pilot/activations_v1

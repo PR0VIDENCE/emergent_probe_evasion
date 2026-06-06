@@ -1,6 +1,6 @@
 concept: multiplication
 concept_config: configs/concepts/multiplication.yaml
-model_config: configs/models/qwq_32b.yaml
+model_config: configs/models/qwq_32b_bf16.yaml
 
 # References the trained probes from the training config
 probe_training_config: configs/experiments/multiplication_probe_training.yaml
