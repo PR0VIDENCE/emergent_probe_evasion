@@ -1,0 +1,31 @@
+# GPT-OSS 120b configuration.
+#
+# Requires 4x H100 (or equivalent ~320GB total VRAM) with device_map: auto.
+# Ships native MXFP4 — do NOT stack BitsAndBytes NF4 on top.
+# Needs recent transformers + triton + MXFP4 kernels.
+model_name: gpt-oss-120b
+model_id: "openai/gpt-oss-120b"
+api_endpoint: null
+local_path: null
+max_tokens: 131072
+
+# Architecture (gpt-oss-120b: 36 layers, residual width 7168, MoE).
+num_layers: 36
+hidden_dim: 7168
+
+# No BitsAndBytes — native MXFP4 checkpoint.
+quantization:
+  enabled: false
+
+# "auto" preserves the checkpoint's native MXFP4 quantization.
+torch_dtype: auto
+device_map: auto
+
+# Harmony channel format: reasoning in `analysis` channel, answer in `final`.
+has_reasoning_trace: true
+reasoning_format: harmony
+
+generation:
+  temperature: 0.6
+  top_p: 0.95
+  top_k: 20

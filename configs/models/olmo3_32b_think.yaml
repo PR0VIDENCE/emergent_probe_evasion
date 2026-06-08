@@ -1,0 +1,30 @@
+# OLMo 3.1 32B Think — Allen AI reasoning model.
+#
+# 32B params at bf16 (~64GB). Fits comfortably on 4x H100 or a single 80GB GPU.
+# Uses <think>...</think> reasoning tags (same as QwQ).
+# Requires transformers>=4.57.0 for Olmo3ForCausalLM support.
+model_name: olmo3-32b-think
+model_id: "allenai/Olmo-3.1-32B-Think"
+api_endpoint: null
+local_path: null
+max_tokens: 32768
+
+# Architecture: 64 layers, hidden_size=5120.
+num_layers: 64
+hidden_dim: 5120
+
+# No quantization — run at full bf16.
+quantization:
+  enabled: false
+
+torch_dtype: bfloat16
+device_map: auto
+
+# Think-tag reasoning format (<think>...</think>).
+has_reasoning_trace: true
+reasoning_format: think_tags
+
+generation:
+  temperature: 0.6
+  top_p: 0.95
+  top_k: 20

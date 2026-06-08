@@ -1,0 +1,28 @@
+# Full-mode eval run: GPT-OSS 120b on sycophancy, multiplication, deception.
+#
+#   uv run python scripts/run_eval.py --config configs/eval/gptoss120b_full.yaml
+#
+# Output: /mnt/d2/acp23ajh/probe_evasion/gptoss120b_full/
+run_id: gptoss120b_full
+model_config: configs/models/gpt_oss_120b.yaml
+output_base_dir: /mnt/d2/acp23ajh/probe_evasion
+date: 2026_06
+fast: false
+
+concept_config_dir: configs/eval/concepts
+universal_regimes_file: configs/eval/universal_regimes.yaml
+
+concepts: [sycophancy, multiplication, deception]
+
+# target_layers omitted -> auto-derived from num_layers=36 (~15 evenly spaced).
+batch_size: 5
+
+probe_training:
+  random_seeds: [42, 123, 456, 789]
+  learning_rate: 0.001
+  num_epochs: 100
+  weight_decay: 0.1
+  patience: 10
+  normalize: true
+
+mock_fail_concepts: []

@@ -113,21 +113,27 @@ def extract_for_rollout(rollout: dict, model, tokenizer, target_layers: List[int
     user_text = rollout["input"]["user_text"]
     assistant_content = _build_assistant_content(rollout, fmt)
 
-    def _messages(include_assistant: bool):
-        msgs = []
-        if system_prompt:
-            msgs.append({"role": "system", "content": system_prompt})
-        msgs.append({"role": "user", "content": user_text})
-        if include_assistant:
-            msgs.append({"role": "assistant", "content": assistant_content})
-        return msgs
+    msgs_no_asst = []
+    if system_prompt:
+        msgs_no_asst.append({"role": "system", "content": system_prompt})
+    msgs_no_asst.append({"role": "user", "content": user_text})
 
     prompt_text = tokenizer.apply_chat_template(
-        _messages(False), tokenize=False, add_generation_prompt=True)
+        msgs_no_asst, tokenize=False, add_generation_prompt=True)
     completion_start = len(tokenizer(prompt_text, add_special_tokens=False)["input_ids"])
 
-    full_text = tokenizer.apply_chat_template(
-        _messages(True), tokenize=False, add_generation_prompt=False)
+    # For harmony format (keep_special_tokens=True), the reconstructed assistant
+    # content contains raw channel markers (<|channel|>, <|message|>, etc.) that
+    # apply_chat_template rejects. Bypass the template for the assistant turn by
+    # concatenating prompt_text + assistant_content directly — this mirrors what
+    # happens during actual generation (the model produces these tokens after the
+    # generation prompt).
+    if fmt.keep_special_tokens:
+        full_text = prompt_text + assistant_content
+    else:
+        msgs_with_asst = msgs_no_asst + [{"role": "assistant", "content": assistant_content}]
+        full_text = tokenizer.apply_chat_template(
+            msgs_with_asst, tokenize=False, add_generation_prompt=False)
     full_ids = tokenizer(full_text, return_tensors="pt", add_special_tokens=False)["input_ids"].to(model.device)
 
     positions = _compute_positions(full_ids, completion_start, tokenizer, fmt)

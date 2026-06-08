@@ -128,7 +128,11 @@ def derive_run_id(config: dict) -> str:
 # ---------------------------------------------------------------------------
 
 def run_dir(config: dict) -> Path:
-    return resolve_path(Path("data/eval_runs") / config["_run_id"])
+    base = config.get("output_base_dir", "data/eval_runs")
+    base_path = Path(base)
+    if base_path.is_absolute():
+        return base_path / config["_run_id"]
+    return resolve_path(base_path / config["_run_id"])
 
 
 def concept_dir(config: dict, concept: str) -> Path:
