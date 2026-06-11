@@ -26,28 +26,28 @@ def run(config, concept, ctx, phase="probe_training"):
     out_path = paths["pt_labeled"] if phase == "probe_training" else paths["ev_labeled"]
 
     rollouts = common.read_jsonl(in_path)
-    # Resume: keep already-labeled rollouts, only label the rest.
-    existing = {r["rollout_id"]: r for r in common.read_jsonl(out_path)}
-    to_label = [r for r in rollouts if r["rollout_id"] not in existing]
+    # Resume: rollouts already in the labeled file are done; label only the rest
+    # and APPEND each as it's labeled, so an LLM-judge crash mid-run keeps the
+    # work completed so far (the judge calls are paid + slow).
+    done = {r["rollout_id"] for r in common.read_jsonl(out_path)}
+    to_label = [r for r in rollouts if r["rollout_id"] not in done]
 
+    append = lambda r: common.append_jsonl(out_path, r)
     if config.get("_mock"):
         for r in to_label:
             label = mock_mod.mock_judge_label(r, cc, phase)
             r["labels"] = {"judge_label": label, "judge_reason": "mock", "judge_model": "mock"}
+            append(r)
     elif to_label:
         judging.label_rollouts(to_label, cc, config, phase,
-                               progress=lambda i, n: print(f"    [{concept}/{stage}] judged {i}/{n}"))
+                               progress=lambda i, n: print(f"    [{concept}/{stage}] judged {i}/{n}"),
+                               on_labeled=append)
 
-    merged = list(existing.values()) + to_label
-    # Preserve original order.
-    order = {r["rollout_id"]: i for i, r in enumerate(rollouts)}
-    merged.sort(key=lambda r: order.get(r["rollout_id"], 1e9))
-    common.write_jsonl(out_path, merged)
-
-    n_rel = sum(1 for r in merged if judging.is_behaviorally_relevant(r, cc))
+    labeled = common.read_jsonl(out_path)
+    n_rel = sum(1 for r in labeled if judging.is_behaviorally_relevant(r, cc))
     common.mark_stage(config, concept, stage,
-                      {"n_labeled": len(merged), "n_behaviorally_relevant": n_rel})
-    print(f"  [{concept}/{stage}] {len(merged)} labeled, {n_rel} behaviorally relevant")
+                      {"n_labeled": len(labeled), "n_behaviorally_relevant": n_rel})
+    print(f"  [{concept}/{stage}] {len(labeled)} labeled, {n_rel} behaviorally relevant")
 
 
 def main():

@@ -22,7 +22,6 @@ hierarchy — each handler is a function (the L2 standardization level).
 
 from __future__ import annotations
 
-import hashlib
 import json
 import random
 from pathlib import Path
@@ -366,6 +365,7 @@ def sycophancy_sharma_training(cc: dict, ec: dict, fast: bool) -> List[dict]:
                 "metadata": {
                     "framing": framing, "source": q.get("source", "unknown"),
                     "unit_id": f"{q.get('source','q')}_{i}", "system_prompt_kind": sp_kind,
+                    "question": q["question"],
                     "correct_answer": q.get("correct_answer", ""),
                     "incorrect_answer": q.get("incorrect_answer", ""),
                     "long_correct_answer": q.get("long_correct_answer", "") or "",
@@ -396,6 +396,7 @@ def sycophancy_sharma_evasion(cc: dict, ec: dict, fast: bool, regimes: List[dict
                 "metadata": {
                     "framing": "T3_user_wrong", "source": q.get("source", "unknown"),
                     "unit_id": f"{q.get('source','q')}_{i}",
+                    "question": q["question"],
                     "correct_answer": q.get("correct_answer", ""),
                     "incorrect_answer": q.get("incorrect_answer", ""),
                     "long_correct_answer": q.get("long_correct_answer", "") or "",
@@ -488,16 +489,25 @@ def multiplication_programmatic_evasion(cc: dict, ec: dict, fast: bool, regimes:
     digits_list = axes.get("digits", [4])
     phrasings = axes.get("phrasing", ["pure_numerical"])
     n_per_cell = axes.get("n_per_cell_fast", 3) if fast else axes.get("n_per_cell_full", 10)
+
+    # Generate the problem set ONCE per cell (regime-independent), then reuse the
+    # identical problems across every regime. This is required for the paired
+    # baseline-vs-regime comparison (and the difficulty heatmap) to be valid:
+    # cell d4_pure_numerical_0 must be the SAME problem in baseline and in every
+    # evasion regime. rollout_ids stay unique because the regime is in the id.
+    rng = random.Random(seed)
+    cell_problems = {}
+    for digits in digits_list:
+        for phrasing in phrasings:
+            for i in range(n_per_cell):
+                cell_problems[(digits, phrasing, i)] = _make_mult_problem(rng, digits, phrasing, i)
+
     reqs = []
     for regime in regimes:
-        # Stable per-regime seed (Python's hash() is salted per process, which
-        # would break cross-run resumability — use a deterministic digest).
-        rseed = seed + int(hashlib.sha256(regime["name"].encode()).hexdigest()[:6], 16)
-        rng = random.Random(rseed)
         for digits in digits_list:
             for phrasing in phrasings:
                 for i in range(n_per_cell):
-                    prob = _make_mult_problem(rng, digits, phrasing, i)
+                    prob = cell_problems[(digits, phrasing, i)]
                     cid = f"d{digits}_{phrasing}_{i}"
                     reqs.append({
                         "contrastive_id": cid,

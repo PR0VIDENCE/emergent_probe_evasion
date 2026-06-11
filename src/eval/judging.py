@@ -76,13 +76,23 @@ def resolve_handler(cc: dict, phase: str) -> str:
 
 
 def label_rollouts(rollouts: List[dict], cc: dict, ec: dict, phase: str,
-                   progress=None) -> List[dict]:
-    """Label a list of rollouts in place; returns the same list."""
+                   progress=None, on_labeled=None) -> List[dict]:
+    """Label a list of rollouts in place; returns the same list.
+
+    If `on_labeled` is given, it is called with each rollout immediately after
+    that rollout is labeled — used to persist labels incrementally so an LLM-judge
+    crash mid-run doesn't lose completed work.
+    """
     handler = resolve_handler(cc, phase)
+
+    def _finish(r):
+        if on_labeled:
+            on_labeled(r)
 
     if handler == "none":
         for r in rollouts:
             _set_label(r, "auto")
+            _finish(r)
         return rollouts
 
     if handler == "numeric_check":
@@ -97,6 +107,7 @@ def label_rollouts(rollouts: List[dict], cc: dict, ec: dict, phase: str,
                        and int(extracted) == int(true_answer))
             md["extracted_answer"] = extracted
             _set_label(r, "correct" if correct else "incorrect")
+            _finish(r)
         return rollouts
 
     if handler in ("llm_judge_sycophancy", "llm_judge_deception"):
@@ -114,6 +125,7 @@ def label_rollouts(rollouts: List[dict], cc: dict, ec: dict, phase: str,
                            judged.get("judge_model", model))
             except Exception as e:  # noqa: BLE001 — degrade gracefully, never crash labeling
                 _set_label(r, "neither", f"judge_error: {type(e).__name__}: {str(e)[:120]}", model)
+            _finish(r)
             if progress and (i + 1) % 50 == 0:
                 progress(i + 1, len(rollouts))
         return rollouts

@@ -27,7 +27,11 @@ probe:
   ood_validation_threshold: 0.8          # held-out (unit-disjoint) generalization floor
 
 extraction:
-  context_handler: identity
+  # Re-extract under the same (empty) context used at training so an evasion
+  # regime's disclosure addendum is not part of the probed context (isolates
+  # behavioral evasion from system-prompt-text effects).
+  context_handler: neutral_system
+  neutral_prompt: ""
 
 generation:
   max_new_tokens: 2048
