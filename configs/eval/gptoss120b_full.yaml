@@ -12,7 +12,7 @@ fast: false
 concept_config_dir: configs/eval/concepts
 universal_regimes_file: configs/eval/universal_regimes.yaml
 
-concepts: [sycophancy, multiplication, deception]
+concepts: [trees, disease, library, multiplication, deception, sycophancy]
 
 # target_layers omitted -> auto-derived from num_layers=36 (~15 evenly spaced).
 batch_size: 5

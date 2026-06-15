@@ -4,7 +4,7 @@
 #
 # Output: data/eval_runs/qwq32b_full/
 run_id: qwq32b_full
-model_config: configs/models/qwq_32b.yaml
+model_config: configs/models/qwq_32b_full.yaml
 date: 2026_06
 fast: false
 
