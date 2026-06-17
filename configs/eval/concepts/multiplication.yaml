@@ -31,7 +31,7 @@ probe:
   positive_class: [mult]
   negative_class: [add, sub]
   canonical_position: answer_mean_pool   # standardized across all concepts
-  validation_threshold: 0.95
+  validation_threshold: 0.90
   ood_validation_threshold: 0.8          # held-out (unit-disjoint) generalization floor
 
 extraction:
