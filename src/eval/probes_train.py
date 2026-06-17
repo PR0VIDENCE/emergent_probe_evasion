@@ -74,7 +74,7 @@ def train_and_validate(config: dict, concept: str) -> dict:
     paths = common.stage_paths(config, concept)
     layers = common.target_layers(config)
     position = cc["probe"].get("canonical_position", "answer_mean_pool")
-    threshold = float(cc["probe"].get("validation_threshold", 0.95))
+    threshold = float(cc["probe"].get("validation_threshold", 0.90))
     seed = cc["probe"].get("seed", 42)
 
     rollouts = common.read_jsonl(paths["pt_labeled"])
