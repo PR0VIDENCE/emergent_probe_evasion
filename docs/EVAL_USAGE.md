@@ -44,10 +44,16 @@ work.
 
 **Resumability / forcing a re-run.** Each stage records completion in
 `data/eval_runs/<run_id>/concepts/<concept>/status.json`. Re-running does nothing
-for already-completed stages. To force a stage to re-run, delete its output (e.g.
-the `evasion/` folder) or remove that stage's entry from `status.json`. Because
-stages are independent, you can iterate on evasion without re-running the
-expensive probe-training (it stays cached).
+for already-completed stages. To force a stage to re-run you **must remove that
+stage's entry from `status.json`** — every stage short-circuits on the status file
+and never checks whether its output still exists, so deleting the `evasion/` folder
+on its own is a silent no-op (the run reports "skip (already complete)" and
+regenerates nothing). Because stages are independent, you can iterate on evasion
+without re-running the expensive probe-training (it stays cached).
+
+> A probe that FAILED the validation gate is cached too: both `probe_training` and
+> `probe_validation` are marked completed regardless of the verdict. Lowering a
+> threshold has no effect until you delete the `probe_validation` entry.
 
 ---
 
@@ -103,7 +109,7 @@ forking the concept YAML.
 |---|---|
 | `data` | `handler` (which loader), `source_path`, `full_n_units` (probe-training size), `behavior_rate_estimate`, `seed`. Optional `fast_train_n_units` to shrink training in fast mode. Concept-specific: mult `train_digits`/`train_phrasing`; sycophancy `extreme_fraction` (neutral/extreme system-prompt mix). |
 | `judge` | `handler` (`none` / `numeric_check` / `llm_judge_sycophancy` / `llm_judge_deception`); `training_handler`/`evasion_handler` to differ by phase (deception does); `behaviorally_relevant_labels` (which labels count toward N); `provider` + `model` for LLM judges. |
-| `probe` | `contrast` (`construction_label` / `sycophancy`); `positive_class` / `negative_class`; `canonical_position` (default `answer_mean_pool`); **`validation_threshold`** (in-distribution gate, default 0.95); **`ood_validation_threshold`** (held-out/test-split gate, default 0.8). |
+| `probe` | `contrast` (`construction_label` / `sycophancy`); `positive_class` / `negative_class`; `canonical_position` (default `answer_mean_pool`); **`validation_threshold`** (in-distribution gate, default 0.90); **`ood_validation_threshold`** (held-out/test-split gate, default 0.8). |
 | `extraction` | `context_handler`: `identity` (use the gen-time prompt) / `neutral_system` (re-extract under a neutral prompt — sycophancy) / `scenario_system` (re-extract under the bare scenario — deception). |
 | `generation` | `max_new_tokens`, `temperature`, `top_p`, `top_k`, `user_suffix` (text appended to the user turn). |
 | `evasion` | `full_n_units` / `fast_n_units` (questions per regime); `probe_description_short` / `probe_description_technical` (fill the regime templates); **`extra_regimes`** (concept-specific strategies). |
@@ -178,7 +184,7 @@ All stage scripts also accept `--fast` and `--mock`.
 A concept's probe must clear **two** thresholds or evasion is skipped (and the
 dashboard shows a "PROBE FAILED VALIDATION" banner):
 
-- in-distribution validation-split AUROC ≥ `probe.validation_threshold` (0.95)
+- in-distribution validation-split AUROC ≥ `probe.validation_threshold` (0.90)
 - held-out test-split (OOD/generalization) AUROC ≥ `probe.ood_validation_threshold` (0.8)
 
 The OOD gate only blocks when measurable (≥2 test units with both classes). A
@@ -206,7 +212,7 @@ whether the reasoning boundary was located.
 1. **Sanity** (seconds, no GPU): `run_eval.py --config <fast cfg> --mock` — confirms config + orchestration.
 2. **Time it** on 1–2 concepts: `--concepts trees,sycophancy --fast`.
 3. **Full run**: `--config qwq32b_full.yaml`.
-4. **Iterate on evasion only**: tweak `extra_regimes` / thresholds via `concept_overrides`, delete the concept's `evasion/` outputs + the `scoring` status entry, and re-run — probe training stays cached, so only the evasion phase reruns.
+4. **Iterate on evasion only**: tweak `extra_regimes` / thresholds via `concept_overrides`, remove the `evasion_generation`, `evasion_labeling`, `evasion_extraction` and `scoring` entries from the concept's `status.json`, and re-run — probe training stays cached, so only the evasion phase reruns.
 
 ---
 
@@ -222,6 +228,7 @@ data/eval_runs/<run_id>/
     status.json        # per-stage status (resumability)
     errors.jsonl       # per-rollout errors
     probe_training/    # rollouts.jsonl, rollouts_labeled.jsonl, activations/
-    probes/            # layer{N}_seed{S}.pt + scalers, validation.json, results.json
+    probes/            # <canonical_position>/layer{N}_seed{S}.pt + layer{N}_scaler.pt,
+                       #   combiner.json, results.json, validation.json
     evasion/           # rollouts*.jsonl, activations/, scores.jsonl, regime_report.md
 ```

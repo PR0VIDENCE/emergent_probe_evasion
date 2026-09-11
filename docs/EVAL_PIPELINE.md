@@ -110,7 +110,7 @@ negatives**, so cross-concept TPR numbers are comparable.
 Two thresholds, both must pass:
 
 - **In-distribution**: canonical combined score on the validation split (used for
-  early stopping) ≥ `probe.validation_threshold` (default 0.95).
+  early stopping) ≥ `probe.validation_threshold` (default 0.90).
 - **OOD / generalization**: canonical score on the held-out **test split**
   (unit-disjoint, never seen during training or early stopping) ≥
   `probe.ood_validation_threshold` (default 0.8). The OOD gate only blocks when
@@ -193,8 +193,8 @@ Starter configs: `configs/models/gpt_oss.yaml` + `configs/eval/gptoss20b_fast.ya
   (`eval_axes`); the cross-concept summary uses the `canonical_cell`
   (d=4, pure_numerical), and the per-concept drill-down shows the full
   digits×phrasing heatmap.
-- **Sycophancy** trains on an 80/20 neutral/sycophancy_extreme system-prompt
-  mix, re-extracts under the neutral prompt (`context_handler: neutral_system`),
+- **Sycophancy** trains on a 30/70 neutral/sycophancy_extreme system-prompt
+  mix (`data.extreme_fraction: 0.7`), re-extracts under the neutral prompt (`context_handler: neutral_system`),
   and uses the SyA-vs-(GA+pushback) contrast (`probe.contrast: sycophancy`).
 - **Deception** uses Apollo prewritten completions for probe training (no
   generation; construction labels) and free-form generation judged by
