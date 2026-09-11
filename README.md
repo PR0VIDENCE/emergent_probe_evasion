@@ -866,9 +866,10 @@ its content is stale. `docs/EVAL_PIPELINE.md` supersedes it.
 
 ## Licence and attribution
 
-This work is licensed under **[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)** — see
-[`LICENSE`](LICENSE). You may share and adapt it for any purpose, including commercially, so long as
-you give credit, link the licence, and say what you changed.
+This work is licensed under **[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)** —
+[`LICENSE`](LICENSE) is the licence text, [`NOTICE`](NOTICE) the copyright and attribution details.
+You may share and adapt it for any purpose, including commercially, so long as you give credit, link
+the licence, and say what you changed.
 
 > "Emergent probe evasion" by Andrew Wei and Anthony Hughes, licensed under CC BY 4.0.
 > https://github.com/PR0VIDENCE/emergent_probe_evasion
