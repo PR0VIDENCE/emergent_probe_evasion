@@ -4,8 +4,10 @@
 watching?**
 
 This repository holds the eval that asks that question, the code that runs it, and the configuration
-for the runs behind our write-up. The short answer we got is **no** — and a large part of the work
+for the runs behind the write-up. The short answer we got is **no** — and a large part of the work
 was finding out that three different measurement artifacts each *look* like a yes.
+
+📄 **Write-up: [We need good evals for activation faithfulness](https://www.lesswrong.com/posts/Kmq59dMzKsxFTWAHd/we-need-good-evals-for-activation-faithfulness)** (LessWrong, September 2026)
 
 > **Status: research code.** This is a PhD research repo, not a library. It has no test suite, no CI,
 > and no stable API. There are 77 scripts in `scripts/`; about a dozen are the supported path and the
@@ -95,7 +97,7 @@ in all three published runs:
 
 ## What we found
 
-The full write-up carries the argument; this is the summary a new contributor needs in order not to
+The [write-up](https://www.lesswrong.com/posts/Kmq59dMzKsxFTWAHd/we-need-good-evals-for-activation-faithfulness) carries the argument; this is the summary a new contributor needs in order not to
 build on a wrong premise. Every number below is for **three open-weight reasoning models — QwQ-32B,
 OLMo-3.1-32B-Think, GPT-OSS-120B** — and **excludes truncated rollouts**. The shipped
 `summary.json` and `dashboard.html` do *not* exclude them, so they will disagree with these numbers;
@@ -895,5 +897,8 @@ cited rather than a library meant to be depended on.
 
 ## Citation
 
-A write-up describing this eval is in preparation. Please open an issue if you would like to cite the
-work before it is published.
+Hughes, A., et al. (2026). *We need good evals for activation faithfulness.* LessWrong.
+<https://www.lesswrong.com/posts/Kmq59dMzKsxFTWAHd/we-need-good-evals-for-activation-faithfulness>
+
+If you use the eval or the datasets, please also credit this repository as set out in
+[`NOTICE`](NOTICE).
